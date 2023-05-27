@@ -1,4 +1,4 @@
-     OPT h- s+
+     OPT h-
      INS "d2/M.FNT"
      INS "d2/S.FNT"
      INS "d2/F.FNT"

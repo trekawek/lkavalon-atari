@@ -16,13 +16,16 @@ Now the code can be compiled with [MADS](https://mads.atari8.info/) and the [che
 ## Compilation
 
 ```bash
-mads main.asm -o:robbo.xex
+mads main.asm -o:bin/robbo.xex
 ```
 
-## Files
+Or with Make:
 
-Available executable files:
+```bash
+make
+```
 
-* [main.asm](main.asm) - full game,
-* [demo.asm](demo.asm) - as above, but with demo levels (the demo version has a different title text too, but it wasn't available in the source pack),
-* [saver.asm](saver.asm) - can be used to save the game to tape.
+Checksums can be validated with:
+```bash
+make test
+```

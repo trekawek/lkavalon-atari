@@ -61,6 +61,7 @@ Sources were downloaded from the [Atari XL/XE Source Archive](http://sources.pig
 * for the levels, I introduced a custom text format, visually similar to ATASCII
   * it can be compiled with [level-parser.go](util/level-parser.go),
   * original ASM files are available too and can be compiled with MADS,
-  * replacing ATASCII characters in `dta c''` with `dta b()` is not practical, as it'd make the design unreadable.
+  * replacing ATASCII characters in `dta c''` with `dta b()` is not practical, as it'd make the design unreadable,
+* `opt`s were updated to support [MADS modifiers](https://www.wudsn.com/tmp/projects/mads/en/pseudo-commands/#opt).
 
 Now the code can be compiled with [MADS](https://mads.atari8.info/) and the [checksums](checksum.md5) of the compiled modules match the ones from the [original archive](archive).

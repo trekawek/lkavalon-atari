@@ -12,12 +12,12 @@ Original program:
 * [d1/TITLE.ASM](d1/TITLE.ASM) - title screen,
 * [d1/RS.ASM](d1/RS.ASM) - saver utility,
 
-Levels in a format supported by [level-parser.go](util/level-parser.go), original .ASM files are available too:
+Levels in `txt` format can be compiled by [level-parser.go](util/level-parser.go). Original ASM files can't be browsed in Github, because of the untranslated ATASCII characters:
 
-* [d2/C1.txt](d2/C1.txt) / [d2/C1.ASM](d2/C1.ASM)
-* [d2/C2.txt](d2/C2.txt) / [d2/C2.ASM](d2/C2.ASM)
-* [d2/C3.txt](d2/C3.txt) / [d2/C3.ASM](d2/C3.ASM)
-* [d2/DEMOL.txt](d2/DEMOL.txt) / [d2/DEMOL.ASM](d2/DEMOL.ASM)
+* d2/C1: [txt](d2/C1.txt) / [ASM](d2/C1.ASM)
+* d2/C2: [txt](d2/C2.txt) / [ASM](d2/C2.ASM)
+* d2/C3: [txt](d2/C3.txt) / [ASM](d2/C3.ASM)
+* d2/DEMOL: [txt](d2/DEMOL.txt) / [ASM](d2/DEMOL.ASM)
 
 MADS files linking all the objects and producing executables:
 

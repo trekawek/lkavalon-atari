@@ -4,17 +4,6 @@
 
 This repository contains the source code of the 8-bit Atari game Robbo, created by Janusz Pelc in 1989 and published by LK Avalon.
 
-Sources were downloaded from the [Atari XL/XE Source Archive](http://sources.pigwa.net/) and then stripped of the ATASCII characters, so they can be read and edited in ASCII editors. In particular:
-
-* all ATASCII characters in `dta c''` and `dta d''` statements were replaced with `dta b()` (see [dta-escape.go](util/dta-escape.go)),
-* all ATASCII characters in comments were replaced with ASCII characters,
-* for the levels, I introduced a custom text format, visually similar to ATASCII
-  * it can be compiled with [level-parser.go](util/level-parser.go),
-  * original ASM files are available too and can be compiled with MADS,
-  * replacing ATASCII characters in `dta c''` with `dta b()` is not practical, as it'd make the design unreadable.
-
-Now the code can be compiled with [MADS](https://mads.atari8.info/) and the [checksums](checksum.md5) of the compiled modules match the ones from the [original archive](archive).
-
 ## Source files
 
 Original program:
@@ -25,10 +14,10 @@ Original program:
 
 Levels in a format supported by [level-parser.go](util/level-parser.go), original .ASM files are available too:
 
-* [d2/C1.txt](d2/C1.txt)
-* [d2/C2.txt](d2/C2.txt)
-* [d2/C3.txt](d2/C3.txt)
-* [d2/DEMOL.txt](d2/DEMOL.txt) - demo
+* [d2/C1.txt](d2/C1.txt) / [d2/C1.ASM](d2/C1.ASM)
+* [d2/C2.txt](d2/C2.txt) / [d2/C2.ASM](d2/C2.ASM)
+* [d2/C3.txt](d2/C3.txt) / [d2/C3.ASM](d2/C3.ASM)
+* [d2/DEMOL.txt](d2/DEMOL.txt) / [d2/DEMOL.ASM](d2/DEMOL.ASM)
 
 MADS files linking all the objects and producing executables:
 
@@ -61,3 +50,17 @@ Checksums can be validated with:
 ```bash
 make test
 ```
+
+## Record of applied changes
+
+Sources were downloaded from the [Atari XL/XE Source Archive](http://sources.pigwa.net/) and then stripped of the ATASCII characters, so they can be read and edited in ASCII editors. In particular:
+
+* ATASCII new line codes were translated to ASCII,
+* all ATASCII characters in `dta c''` and `dta d''` statements were replaced with `dta b()` (see [dta-escape.go](util/dta-escape.go)),
+* all ATASCII characters in comments were replaced with ASCII characters,
+* for the levels, I introduced a custom text format, visually similar to ATASCII
+  * it can be compiled with [level-parser.go](util/level-parser.go),
+  * original ASM files are available too and can be compiled with MADS,
+  * replacing ATASCII characters in `dta c''` with `dta b()` is not practical, as it'd make the design unreadable.
+
+Now the code can be compiled with [MADS](https://mads.atari8.info/) and the [checksums](checksum.md5) of the compiled modules match the ones from the [original archive](archive).

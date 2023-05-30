@@ -44,7 +44,7 @@ func escapeDtaContent(in string, t string, inversedModifier string) string {
 
 	result := strings.Builder{}
 	for _, b := range []byte(in) {
-		if b >= 32 {
+		if b >= 32 && b <= 127 {
 			result.WriteByte(b)
 		} else {
 			b = translateCharacter(b, inversed, internal)
@@ -55,12 +55,31 @@ func escapeDtaContent(in string, t string, inversedModifier string) string {
 }
 
 func translateCharacter(b byte, inversed bool, internal bool) byte {
-	result := b
+	var result byte
 	if internal {
-		result += 64
+		if b >= 128 {
+			result = atasciiToInternal(b-128) + 128
+		} else {
+			result = atasciiToInternal(b)
+		}
+	} else {
+		result = b
 	}
+
 	if inversed {
 		result += 128
+	}
+	return result
+}
+
+func atasciiToInternal(b byte) byte {
+	result := b
+	if b >= 0 && b < 32 {
+		result += 64
+	} else if b >= 32 && b < 95 {
+		result -= 32
+	} else if b >= 96 && b < 127 {
+		// do nothing
 	}
 	return result
 }

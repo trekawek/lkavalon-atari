@@ -3,7 +3,7 @@ saver  equ $100
 mess   equ $480
 title  equ $3800
 
-     opt h+
+     opt h+ s+
      org $2e0
      dta a(saver)
 
@@ -354,9 +354,9 @@ dl   equ *
 dlad dta a(dl)
 
 scrn equ *
- dta d' †è	 † † 	 (C)1989 by Laboratorium '
- dta d' †å†ô†ô†ô†ô  Komputerowe  Avalon   '
- dta d' †ôèå†å†åèå Kopiowanie zabronione! '
+ dta d' ',B($80),B($CF),B($4F),B($49),B($55),d' ',B($80),B($55),d' ',B($80),B($55),d' ',B($49),B($55),d' (C)1989 by Laboratorium '
+ dta d' ',B($80),B($CC),B($4C),B($80),B($D9),B($59),B($80),B($D9),B($59),B($80),B($D9),B($59),B($80),B($D9),B($59),d'  Komputerowe  Avalon   '
+ dta d' ',B($80),B($D9),B($59),B($CF),B($CC),B($4C),B($80),B($CC),B($4C),B($80),B($CC),B($4C),B($CF),B($CC),B($4C),d' Kopiowanie zabronione! '
 
 myht  dta a(ok-1)
 cname dta c'C:',b($9b)

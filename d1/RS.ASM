@@ -3,7 +3,7 @@ saver  equ $100
 mess   equ $480
 title  equ $3800
 
-     opt h+ s+
+     opt h+
      org $2e0
      dta a(saver)
 

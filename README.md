@@ -14,13 +14,6 @@ Using ASM files for the levels would be difficult, as escaping ATASCII character
 
 Now the code can be compiled with [MADS](https://mads.atari8.info/) and the [checksums](checksum.md5) of the compiled modules match the ones from the [original archive](archive).
 
-## Requirements
-
-* MADS assembler
-* optionally, for building maps:
-  * make
-  * golang
-
 ## Source files
 
 Original files:
@@ -42,11 +35,20 @@ MADS files linking all the objects and producing executables:
 
 ## Compilation
 
+### Requirements
+
+* MADS assembler
+* optionally, for building maps:
+  * make
+  * golang
+
+### Commands
+
 ```bash
 mads main.asm -o:bin/robbo.xex
 ```
 
-Or with Make:
+Or with make:
 
 ```bash
 make

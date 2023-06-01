@@ -2,7 +2,7 @@
 
 ![Fred](img/fred.png)
 
-This repository contains the source code of the 8-bit Atari game Fred, created by Janusz Pelc in 1990 and published by LK Avalon.
+This repository contains the source code of the 8-bit Atari game Fred, created by Mirosław Liminowicz in 1990 and published by LK Avalon.
 
 ## Source files
 

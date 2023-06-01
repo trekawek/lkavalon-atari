@@ -15,9 +15,9 @@
      ICL "d1/TI.ASM"
      .endl
 
-     .local
-     ICL "d1/SHOWPIC.ASM"
-     .endl
+;     .local
+;     ICL "d1/SHOWPIC.ASM"
+;     .endl
 
      .local
      ICL "d1/GR.ASM"
@@ -34,6 +34,6 @@
      INS "d2/GRA.PLR"
      INS "d2/GRA.STA"
      INS "d2/FAZY.FNT"
-     INS "d2/FRED.PIC"
+;     INS "d2/FRED.PIC"
      INS "d2/GRA.FNT"
      INS "d2/FRED.AMC"

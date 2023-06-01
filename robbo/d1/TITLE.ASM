@@ -1045,7 +1045,7 @@ LINE DTA A($FFFF)
 
 TEXT EQU *
      DTA D'        '
-     DTA ,B($59),B($5A),D'6>=> b'
+     DTA B($59),B($5A),D'6>=> b'
      DTA D'y Avalon'
      DTA D'        '
 
@@ -1075,13 +1075,13 @@ TEXT EQU *
      DTA D'SHIFT   '
 
 
- DTA ,B($40),B($40),B($40)
+ DTA B($40),B($40),B($40)
 INST EQU *
  DTA D'          '
  DTA D' '*
  DTA D'Instrukcja'*
- DTA ,B($C3),D' '*
- DTA ,B($40),B($40)
+ DTA B($C3),D' '*
+ DTA B($40),B($40)
 
 
  DTA D'    Robbo  m'
@@ -1094,11 +1094,11 @@ INST EQU *
  DTA D'  z wrogiego'
  DTA D'  uk]adu'
  DTA D'planetarnego'
- DTA ,B($41),D'  na kt_rym'
+ DTA B($41),D'  na kt_rym'
  DTA D'  zosta]'
  DTA D'podst\pnie u'
  DTA D'wi\ziony',B($42)
- DTA ,B($40),B($40)
+ DTA B($40),B($40)
  DTA D'    Na ka|de'
  DTA D'j  planecie '
  DTA D'czeka na'
@@ -1112,7 +1112,7 @@ INST EQU *
  DTA D'i\kszo{[ kap'
  DTA D'su] jest'
  DTA D'niekompletna'
- DTA ,B($41),D' dlatego Ro'
+ DTA B($41),D' dlatego Ro'
  DTA D'bbo musi'
  DTA D'zebra[ odpow'
  DTA D'iedni@ liczb'
@@ -1138,7 +1138,7 @@ INST EQU *
  DTA D'zbiera[ lub '
  DTA D'strzela[ do '
  DTA D'nich',B($42)
- DTA ,B($40),B($40)
+ DTA B($40),B($40)
  DTA D'  Je{li  Rob'
  DTA D'bo  znajdzie'
  DTA D'  si\  w'
@@ -1147,7 +1147,7 @@ INST EQU *
  DTA D' wci{nij'
  DTA D'klawisz '
  DTA D' ESC '*
- DTA ,B($42),B($40),B($40)
+ DTA B($42),B($40),B($40)
  DTA D'  Pami\taj',B($41),D' '
  DTA D' |e  ka|d@  '
  DTA D' planet\'
@@ -1173,7 +1173,7 @@ INST EQU *
 *DTA D'i\ciu os_b',B($41),D' '
 *DTA D'kt_re do'
 *DTA D'nas  napisz@'
-*DTA ,B($41),D'   nagrod@ '
+*DTA B($41),D'   nagrod@ '
 *DTA D'  b\dzie'
 *DTA D'specjalny   '
 *DTA D'egzemplarz  '
@@ -1218,7 +1218,7 @@ INST EQU *
  DTA D'         8=?'
  DTA D'655 Strzy|_w'
 
- DTA ,B($40)
+ DTA B($40)
  DTA B($FF)
 
 ********************

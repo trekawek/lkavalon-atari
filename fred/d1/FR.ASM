@@ -1260,7 +1260,7 @@ moveproc equ *
  dta a(r),a(rght),a(left),a(ju),a(dn)
  dta a(jr),a(jl),a(kam),a(spr)
 
-bomb dta ,B($FF)
+bomb dta B($FF)
 bomhk dta d' '
 
 fst  equ *

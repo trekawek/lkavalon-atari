@@ -19,19 +19,19 @@ chad equ hlp2
  jmp titini
 
 xpoke dta b($00)
-tico dta ,B($82),B($A4),B($EA),d'( '  ;-kol czolowki
+tico dta B($82),B($A4),B($EA),d'( '  ;-kol czolowki
 
 ********************
 
-dl dta ,B($F0),d'pp',B($C4),a(scrn1),B($C4),a(scrn1)
- dta ,B($C4),a(scrn1+$20),B($C4),a(scrn1+$20)
- dta ,B($C4),a(scrn1+$40),B($C4),a(scrn1+$40)
- dta ,B($C4),a(scrn1+$60),B($C4),a(scrn1+$60)
- dta ,B($C4),a(scrn1+$80),B($C4),a(scrn1+$80)
- dta ,B($C4),a(scrn1+$a0),B($C4),a(scrn1+$a0)
- dta ,B($C4),a(scrn1+$c0),B($C4),a(scrn1+$c0)
- dta ,B($C4),a(scrn1+$e0),B($C4),a(scrn1+$e0)
- dta ,B($C4),a(scrn1+$100),B($C4),a(scrn1+$100)
+dl dta B($F0),d'pp',B($C4),a(scrn1),B($C4),a(scrn1)
+ dta B($C4),a(scrn1+$20),B($C4),a(scrn1+$20)
+ dta B($C4),a(scrn1+$40),B($C4),a(scrn1+$40)
+ dta B($C4),a(scrn1+$60),B($C4),a(scrn1+$60)
+ dta B($C4),a(scrn1+$80),B($C4),a(scrn1+$80)
+ dta B($C4),a(scrn1+$a0),B($C4),a(scrn1+$a0)
+ dta B($C4),a(scrn1+$c0),B($C4),a(scrn1+$c0)
+ dta B($C4),a(scrn1+$e0),B($C4),a(scrn1+$e0)
+ dta B($C4),a(scrn1+$100),B($C4),a(scrn1+$100)
  dta d'p@',B($C4),a(scrn1+$120),B($C4),a(scrn1+$120)
  dta d'p',b($d4),a(scrn1+$140),b($d4),a(scrn1+$140)
  dta b($41),a(dl)
@@ -591,7 +591,7 @@ dli1 lda dlmo
  pla
  rti
 
-c  dta ,B($11),B($07),B($03),B($0D),B($1C)
+c  dta B($11),B($07),B($03),B($0D),B($1C)
 
 mess equ *
  dta a($0409),B($DC),B($80)
@@ -609,17 +609,17 @@ mess equ *
 char dta c' ',B($80)
 
  dta a($0101),d'  ',B($9C),d'     ',B($C4),B($80)
- dta ,B($B3),c' congratulations',B($00),B($00)
- dta ,B($B2),c' you have  completed'
- dta ,B($00),B($00),B($00),B($00),B($00),B($00)
- dta ,B($B5),c'game over',B($80)
+ dta B($B3),c' congratulations',B($00),B($00)
+ dta B($B2),c' you have  completed'
+ dta B($00),B($00),B($00),B($00),B($00),B($00)
+ dta B($B5),c'game over',B($80)
 
  dta a($1408),B($9A),B($80)
- dta ,B($F3),B($E5),B($EC),B($E5),B($E3),B($F4),c' ',B($EC),B($E5),B($F6),B($E5),B($EC),B($80)
+ dta B($F3),B($E5),B($EC),B($E5),B($E3),B($F4),c' ',B($EC),B($E5),B($F6),B($E5),B($EC),B($80)
 
 txt equ *
- dta ,B($B4),c'zeppelin games presents  ',B($E6),B($F2),B($E5),B($E4)
- dta ,B($B6)
+ dta B($B4),c'zeppelin games presents  ',B($E6),B($F2),B($E5),B($E4)
+ dta B($B6)
  dta c'you have to survive in full'
  dta c' of adventures and dangers '
  dta c'travel through wild land',B($B6)
@@ -628,9 +628,9 @@ txt equ *
  dta c'you can choose: ',B($F3),B($F4),B($EF),B($EE),B($E5),B($F3)
  dta c' right and down, ',B($F3),B($F0),B($F2),B($E1),B($F9)
  dta c' left and down'
- dta ,B($B6),c' ',B($E7),B($EF),B($EF),B($E4),B($A0),B($EC),B($F5),B($E3),B($EB),c' '
- dta ,B($B9),B($B2)
- dta ,B($00)
+ dta B($B6),c' ',B($E7),B($EF),B($EF),B($E4),B($A0),B($EC),B($F5),B($E3),B($EB),c' '
+ dta B($B9),B($B2)
+ dta B($00)
 
 pass  dta c'chaos'
 titac dta b($80)

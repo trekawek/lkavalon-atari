@@ -55,9 +55,7 @@ make test
 
 Sources were downloaded from the [Atari XL/XE Source Archive](http://sources.pigwa.net/) and then stripped of the ATASCII characters, so they can be read and edited in ASCII editors. In particular:
 
-* ATASCII new line codes were translated to ASCII,
-* all ATASCII characters in `dta c''` and `dta d''` statements were replaced with `dta b()` (see [dta-escape.go](util/dta-escape.go)),
-* all ATASCII characters in comments were replaced with ASCII characters,
+* sources were translated with [convert-atascii.go](../util/convert-atascii.go) and manually cleaned up,
 * for the levels, I introduced a custom text format, visually similar to ATASCII
   * it can be compiled with [level-parser.go](util/level-parser.go),
   * original ASM files are available too and can be compiled with MADS,

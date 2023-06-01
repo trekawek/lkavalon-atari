@@ -1,0 +1,21 @@
+ZGRYWANIE:
+
+ustawic VER w COMMON.ASM
+KEY
+MAKEFRED (zrobic OBeJoty)
+(LF)
+
+wylezie FRED
+
+if VER=0  then gotowe
+
+if VER=1  then
+          FRED        |
+          CSAV.OBJ    | FRED.TAP
+
+if VER=ff then
+          DSAV.OBJ    |
+          SHOWPIC.OBJ |
+          FRED.PIC    |
+          FRED        | FRED.DSK
+

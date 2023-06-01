@@ -8,22 +8,22 @@ This repository contains the source code of the 8-bit Atari game Fred, created b
 
 Original program:
 
-* [d1/COMMON.ASM]([d1/COMMON.ASM]) - common labels,
+* [d1/COMMON.ASM](d1/COMMON.ASM) - common labels,
 * game implementation:
-  * [d1/CI.ASM]([d1/CI.ASM]) and its newer version [d2/CI.ASM]([d2/CI.ASM]),
-  * [d1/FR.ASM]([d1/FR.ASM]),
-  * [d1/GR.ASM]([d1/GR.ASM]),
-* [d1/SO.ASM]([d1/SO.ASM]) - sounds,
-* [d1/TI.ASM]([d1/TI.ASM]) - title screen,
-* [d2/AMP.ASM]([d1/AMP.ASM]) - music player,
-* [d1/SHOWPIC.ASM]([d1/SHOWPIC.ASM]) - optional loader picture display,
+  * [d1/CI.ASM](d1/CI.ASM) and its newer version [d2/CI.ASM](d2/CI.ASM),
+  * [d1/FR.ASM](d1/FR.ASM),
+  * [d1/GR.ASM](d1/GR.ASM),
+* [d1/SO.ASM](d1/SO.ASM) - sounds,
+* [d1/TI.ASM](d1/TI.ASM) - title screen,
+* [d2/AMP.ASM](d1/AMP.ASM) - music player,
+* [d1/SHOWPIC.ASM](d1/SHOWPIC.ASM) - optional loader picture display,
 
 Saver:
 
 * [d1/FRED.DOC](d1/FRED.DOC) - original linking instructions,
 * [d1/MAKEFRED.ASM](d1/MAKEFRED.ASM) - prepares executable,
-* [d1/CSAV.ASM]([d1/CSAV.ASM]) - casette saver,
-* [d1/DSAV.ASM]([d1/DSAV.ASM]) - disk saver.
+* [d1/CSAV.ASM](d1/CSAV.ASM) - casette saver,
+* [d1/DSAV.ASM](d1/DSAV.ASM) - disk saver.
 
 Binary files:
 

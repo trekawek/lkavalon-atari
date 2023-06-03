@@ -43,5 +43,4 @@
      INS "d2/LEVEL1.FNT"
      INS "d2/LEVEL1.DTA"
      INS "d2/LEVEL1.STA"
-     INS "d2/SCREEN.FNT"
      INS "d2/TITLE.FNT"

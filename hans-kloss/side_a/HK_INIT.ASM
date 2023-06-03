@@ -1,0 +1,2 @@
+••••••••••••••••••
+›ü Inicjalizer gry  ü›ü   "Hans Kloss"   ü›ü ---------------- ü›ü                  ü›ü 14 th March 1992 ü›ü     01:32 am     ü›Šˆ›› opt 37› org $480›› lda #0› sta 580› lda $d301› and #2› beq *+4› clc› rts›› lda #33› sta 559› lda <newdl› sta 560› lda >newdl› sta 561› lda #1› sta 580› jsr $f2fd› jmp $e477››newdl    equ *›› dta b($70),b($70),b($70)› dta b($42),a(napis),b(2)› dta b($41),a(newdl)››napis    equ *›› dta d'  ×ãúùôõê ú ÷ãéóîéåôùí ÏĞÔÉÏÎ¡  '› dta d'    Nacisnij dowolny klawisz    '›› end›

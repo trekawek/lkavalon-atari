@@ -2,7 +2,7 @@
 
 ![Robbo](img/robbo.png)
 
-This repository contains the source code of the 8-bit Atari game Robbo, created by Janusz Pelc in 1989 and published by LK Avalon.
+This directory contains the source code of the 8-bit Atari game Robbo, created by Janusz Pelc in 1989 and published by LK Avalon.
 
 ## Source files
 
@@ -25,41 +25,6 @@ MADS files linking all the objects and producing executables:
 * [demo.asm](demo.asm)
 * [saver.asm](saver.asm)
 
-## Compilation
+## Levels
 
-### Requirements
-
-* MADS assembler
-* optionally, for building maps:
-  * make
-  * golang
-
-### Commands
-
-```bash
-mads main.asm -o:bin/robbo.xex
-```
-
-Or with make:
-
-```bash
-make
-```
-
-Checksums can be validated with:
-```bash
-make test
-```
-
-## Record of applied changes
-
-Sources were downloaded from the [Atari XL/XE Source Archive](http://sources.pigwa.net/) and then stripped of the ATASCII characters, so they can be read and edited in ASCII editors. In particular:
-
-* sources were translated with [convert-atascii.go](../util/convert-atascii.go) and manually cleaned up,
-* for the levels, I introduced a custom text format, visually similar to ATASCII
-  * it can be compiled with [level-parser.go](util/level-parser.go),
-  * original ASM files are available too and can be compiled with MADS,
-  * replacing ATASCII characters in `dta c''` with `dta b()` is not practical, as it'd make the design unreadable,
-* `opt`s were updated to support [MADS modifiers](https://www.wudsn.com/tmp/projects/mads/en/pseudo-commands/#opt).
-
-Now the code can be compiled with [MADS](https://mads.atari8.info/) and the [checksums](checksum.md5) of the compiled modules match the ones from the [original archive](archive).
+For the levels, I introduced a custom text format, visually similar to ATASCII. It can be compiled with [level-parser.go](util/level-parser.go), original ASM files are available too and can be compiled with MADS. Replacing ATASCII characters in `dta c''` with `dta b()` is not practical, as it'd make the design unreadable,

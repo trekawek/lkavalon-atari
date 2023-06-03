@@ -1,4 +1,4 @@
-     OPT h+ s+
+     OPT h+
      .local
      ICL "d1/FR.ASM"
      .endl

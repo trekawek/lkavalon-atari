@@ -2,7 +2,7 @@
 
 ![Fred](img/fred.png)
 
-This repository contains the source code of the 8-bit Atari game Fred, created by Mirosław Liminowicz in 1990 and published by LK Avalon.
+This directory contains the source code of the 8-bit Atari game Fred, created by Mirosław Liminowicz in 1990 and published by LK Avalon.
 
 ## Source files
 
@@ -40,32 +40,3 @@ Binary files:
 MADS file linking all the objects and producing executables:
 
 * [main.asm](main.asm)
-
-## Compilation
-
-### Requirements
-
-* MADS assembler
-
-### Commands
-
-```bash
-mads main.asm -o:bin/fred.xex
-```
-
-Or with make:
-
-```bash
-make
-```
-
-Checksums can be validated with:
-```bash
-make test
-```
-
-## Record of applied changes
-
-Sources were downloaded from the [Atari XL/XE Source Archive](http://sources.pigwa.net/), translated with [convert-atascii.go](../util/convert-atascii.go) and manually cleaned up.
-
-Now the code can be compiled with [MADS](https://mads.atari8.info/) and the [checksums](checksum.md5) of the compiled modules match the ones from the [original archive](archive).

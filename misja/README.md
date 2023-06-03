@@ -2,7 +2,7 @@
 
 ![Misja](img/misja.png)
 
-This directory contains the source code of the 8-bit Atari game Fred, created by Janusz Pelc in 1990 and published by LK Avalon.
+This directory contains the source code of the 8-bit Atari game Misja, created by Janusz Pelc in 1990 and published by LK Avalon.
 
 ## Source files
 

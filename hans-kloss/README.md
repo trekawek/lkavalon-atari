@@ -2,7 +2,7 @@
 
 ![Hans Kloss](img/hans-kloss.png)
 
-This directory contains the source code of the 8-bit Atari game Hans Kloss, created by Dariusz �ołna in 1992 and published by LK Avalon.
+This directory contains the source code of the 8-bit Atari game Hans Kloss, created by Dariusz Żołna in 1992 and published by LK Avalon.
 
 ## Source files
 

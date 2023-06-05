@@ -11,3 +11,6 @@ bin/digi-duck.xex: src/INIT.FNT src/INIT.OBJ src/DIGI.DTA src/DIGI.CMC src/DIGI.
 
 test: src/DUCK.OBJ src/INIT.OBJ
 	md5sum --check checksum.md5
+
+clean:
+	rm bin/*.xex src/INIT.OBJ src/DUCK.OBJ

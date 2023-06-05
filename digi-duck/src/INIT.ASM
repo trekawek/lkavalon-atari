@@ -35,8 +35,8 @@ newdl    equ *
 
 screen   equ *
 
- dta d'        !"#$%&#$  ''()*+,-.      ';**
- dta d'        /0123412  56789:;<      ';**
+ dta d'        !"#$%&#$  ''()*+,-.      '*;*
+ dta d'        /0123412  56789:;<      '*;*
  dta d'         >? @ABCDEF GHIJK       '
  dta d'         L MNNO PQRSTUVWX       '
 

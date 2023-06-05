@@ -21,7 +21,7 @@ Original program:
 
 Binary files:
 
-* [d2/ENEMY.FNT](d2/ENENY.FNT) - enemies font (`$4000`),
+* [d2/ENEMY.FNT](d2/ENEMY.FNT) - enemies font (`$4000`),
 * [d2/HERO.PLR](d2/HERO.PLR) - player font (`$6000`),
 * [d2/INFO.FNT](d2/INFO.FNT) - text font (`$4800`),
 * [d2/LEVEL1.DTA](d2/LEVEL1.DTA) - level data (`$1240`),

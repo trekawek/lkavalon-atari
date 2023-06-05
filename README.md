@@ -6,6 +6,7 @@ Sources were downloaded from [Atari XL/XE Source Archive](http://sources.pigwa.n
 
 ## Available sources
 
+* [Digi Duck](digi-duck)
 * [Fred](fred)
 * [Hans Kloss](hans-kloss)
 * [Misja](misja)

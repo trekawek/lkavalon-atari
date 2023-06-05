@@ -7,6 +7,7 @@ Sources were downloaded from [Atari XL/XE Source Archive](http://sources.pigwa.n
 ## Available sources
 
 * [Fred](fred)
+* [Hans Kloss](hans-kloss)
 * [Misja](misja)
 * [Robbo](robbo)
 

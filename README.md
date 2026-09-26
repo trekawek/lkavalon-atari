@@ -20,7 +20,7 @@ Sources were downloaded from [Atari XL/XE Source Archive](http://sources.pigwa.n
 * MADS assembler
 * GNU make
 * golang - optionally, for running extra tools
-* Python 3 - optionally, for decoding Watson's packed source
+* Python 3 - for Heartlight's cave data and Watson's packed source tools
 
 ## Compilation
 
@@ -41,4 +41,4 @@ Run the available build checks with:
 make test
 ```
 
-Heartlight builds the two machine-code objects supplied in its archive. Automat Perkusyjny builds the original disk and cassette XEX files byte for byte. Watson assembles two source revisions, but its archive has no matching executable for a binary comparison. See each directory's README for details.
+Heartlight builds a standalone XEX from its original objects and the caves embedded in its BASIC loader. Automat Perkusyjny builds the original disk and cassette XEX files byte for byte. Watson assembles two source revisions, but its archive has no matching executable for a binary comparison. See each directory's README for details.

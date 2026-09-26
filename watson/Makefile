@@ -2,7 +2,7 @@ MADS ?= mads
 
 .PHONY: all test clean
 
-all: bin/watson.xex bin/watson-5.xex
+all: bin/watson.xex bin/wacio.xex
 
 bin/WATSON2.OBJ: src/WATSON2.ASM
 	@mkdir -p bin
@@ -24,14 +24,11 @@ bin/NEW.OBJ: src/NEW.ASM src/DEC.ASM src/NEW2.ASM
 	@mkdir -p bin
 	$(MADS) src/NEW.ASM -o:$@
 
-bin/watson.xex: main.asm bin/WATSON2.OBJ bin/AUX2.OBJ bin/WGEM.OBJ
-	$(MADS) main.asm -o:$@ -s
+bin/wacio.xex: main-wacio.asm bin/WATSON2.OBJ bin/AUX2.OBJ bin/WGEM.OBJ
+	$(MADS) main-wacio.asm -o:$@ -s
 
-bin/watson-5.xex: main-5.asm bin/WATSON.OBJ bin/NEW.OBJ
-	$(MADS) main-5.asm -o:$@ -s
-
-test: all
-	@echo 'Watson: source assembly passed; no matching executable is present in the archive.'
+bin/watson.xex: main-watson.asm bin/WATSON.OBJ bin/NEW.OBJ
+	$(MADS) main-watson.asm -o:$@ -s
 
 clean:
 	rm -f bin/*.OBJ bin/*.xex

@@ -12,9 +12,9 @@ bin/HLREAD.OBJ: d1/HLREAD.ASM
 	@mkdir -p bin
 	$(MADS) d1/HLREAD.ASM -o:$@
 
-bin/CAVES.OBJ: d1/HL.BAS util/build-caves.py
+bin/CAVES.OBJ: d1/HL.LST util/build-caves.py
 	@mkdir -p bin
-	python3 util/build-caves.py d1/HL.BAS $@
+	python3 util/build-caves.py d1/HL.LST $@
 
 bin/heartlight.xex: main.asm bin/CAVES.OBJ d1/HL.FNT bin/HL.OBJ
 	$(MADS) main.asm -o:$@ -s

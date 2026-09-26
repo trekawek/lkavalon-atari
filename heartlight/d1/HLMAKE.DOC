@@ -1,1 +1,29 @@
- - D1:XLF› -   wyczyscic pamiec od $680 do $690››› - D1:HLREAD.OBJ› - CAR› - RUN "D:HLREAD.BAS"› -   usunac zera w ostatniej linii› -   dopisac na jej koncu ,-1› -   przyjac wszystkie linie› -   usunac linie do linii 499› - LIST "D:HLREAD.LST"››› - RUN "D:HLAPD.BAS"› -   z HL.FNT i .OBJ powstanie .DTA› - RUN "D:HLCONV.BAS"› -   dopisac zera w ostatnej linii› - LIST "D:HL.LST"››› - LOAD "D:HL.BAS"› - ENTER "D:HL.LST"› - ENTER "D:HLREAD.LST"› - SAVE "D:HL.BAS"››››
+ - D1:XLF
+ -   wyczyscic pamiec od $680 do $690
+
+
+ - D1:HLREAD.OBJ
+ - CAR
+ - RUN "D:HLREAD.BAS"
+ -   usunac zera w ostatniej linii
+ -   dopisac na jej koncu ,-1
+ -   przyjac wszystkie linie
+ -   usunac linie do linii 499
+ - LIST "D:HLREAD.LST"
+
+
+ - RUN "D:HLAPD.BAS"
+ -   z HL.FNT i .OBJ powstanie .DTA
+ - RUN "D:HLCONV.BAS"
+ -   dopisac zera w ostatnej linii
+ - LIST "D:HL.LST"
+
+
+ - LOAD "D:HL.BAS"
+ - ENTER "D:HL.LST"
+ - ENTER "D:HLREAD.LST"
+ - SAVE "D:HL.BAS"
+
+
+
+

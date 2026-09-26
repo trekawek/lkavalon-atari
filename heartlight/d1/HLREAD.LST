@@ -1,0 +1,11 @@
+10 A=1536
+20 FOR B=530 TO 730 STEP 10
+30 ? B;" DATA ";
+40 FOR C=1 TO 7
+50 ? PEEK(A);",";:A=A+1
+60 NEXT C
+70 ? "~"
+80 NEXT B
+500 REM -----------------------------
+510 REM :  Program wczytujacy dane  :
+520 REM -----------------------------

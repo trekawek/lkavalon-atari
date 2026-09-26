@@ -83,8 +83,22 @@ The source also maps Shift+Control plus a letter directly to a menu action:
 
 These letter shortcuts execute the actions directly; **Shift+Control+P writes immediately**. On a disk error, choose **Abort** or **Retry** with Left/Right and Return, or press A/R; Esc aborts.
 
+## Comparison with AtariOnline executables
+
+The six [AtariOnline disk utilities](https://atarionline.pl/v01/index.php?ct=utils&sub=6.+Stacja+dyskietek) below were downloaded and compared as XEX files and as loaded memory segments. Neither assembled binary matches any of them byte for byte, even after disregarding XEX segment order. `watson-5.xex` is 6,793 bytes; `watson.xex` is 5,144 bytes.
+
+| Reference files | Sizes | Comparison |
+| --- | ---: | --- |
+| [Watson (v1)](https://atarionline.pl/v01/utils2.php?ct=utils2&sub=6.%20Stacja%20dyskietek&title=+Watson&file=Watson+%28v1%29.xex), [Watson (v2)](https://atarionline.pl/v01/utils2.php?ct=utils2&sub=6.%20Stacja%20dyskietek&title=+Watson&file=Watson+%28v2%29.xex) | 8,335 bytes each | Closest to `watson-5.xex`: corresponding `$7F80` entry table and `$8000` screen/code segment, with substantial identical data. Neither matches `watson.xex`. |
+| [Turbo-Watson 4.0](https://atarionline.pl/v01/utils2.php?ct=utils2&sub=6.%20Stacja%20dyskietek&title=+Turbo-Watson&file=Turbo+Watson+4.0.xex), [Turbo-Watson 4.2](https://atarionline.pl/v01/utils2.php?ct=utils2&sub=6.%20Stacja%20dyskietek&title=+Turbo-Watson&file=Turbo-Watson+4.2.xex) | 8,246 / 8,250 bytes | Different load layout from both builds; no complete loaded segment matches either. |
+| [Wacio Small Watson (v1)](https://atarionline.pl/v01/utils2.php?ct=utils2&sub=6.%20Stacja%20dyskietek&title=+Wacio+Small+Watson&file=Wacio+Small+Watson+%28v1%29.xex), [Wacio Small Watson (v2)](https://atarionline.pl/v01/utils2.php?ct=utils2&sub=6.%20Stacja%20dyskietek&title=+Wacio+Small+Watson&file=Wacio+Small+Watson+%28v2%29.xex) | 2,335 / 1,961 bytes | Share a relocated 81-byte machine-code routine with `watson.xex`, but their other code and loaders differ. Neither matches `watson-5.xex`. |
+
+The two AtariOnline Watson files have identical segment layout and differ in only 15 bytes: 14 in the `$8000` screen/code segment and one at `$48FB`. Their RUNAD is `$8410` and INITAD is `$7FE4`, the same entry points invoked by the `$0480` startup stub in `watson-5.xex`. Watson (v1) also shares an exact 909-byte run at `$8091`–`$841D` with that build. But the online files include modules at `$4800` and `$5000` that are absent from the source build, and their auxiliary module starts at `$6800` instead of `$6C00`. This explains why the supplied source cannot reproduce either online Watson executable as it stands.
+
+The 81-byte routine shared with Wacio is at `$846E` in `watson.xex`, `$81BD` in Wacio (v1), and `$81C0` in Wacio (v2). It shows reused code, not an executable match. The Turbo-Watson versions are separate builds; their main code loads at `$5A00` rather than either local build's `$8000` or `$8100`.
+
 ## Build and verification status
 
 `make test` checks that both source sets assemble with MADS; the recorded build used MADS 2.1.7. Each XEX ends with a RUNAD vector pointing to its startup stub at `$0480`. Both versions were checked to reach their disk monitor screens in Atari800 4.2.0. The Watson 5.0 auxiliary menu was also opened in the emulator. In this Atari800 setup, host Shift+Control+Return did not open the later version's menu; its modifier shortcuts and most disk operations are documented from the source and have not been exercised end to end.
 
-**The archive has no matching Watson executable or disk image**, so these generated XEX files cannot yet be verified byte for byte against an original. The XEX files combine the assembled object segments in source order; original loader details have not been verified.
+**The source archive has no matching Watson executable or disk image**, and none of the AtariOnline executables above is an exact match. Byte-identical verification therefore remains open. The XEX files combine the assembled object segments in source order; original loader details have not been verified.

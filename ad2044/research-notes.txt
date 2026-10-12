@@ -1,0 +1,110 @@
+AD2044 semantic-name recovery
+============================
+
+This pass replaces 370 address-based placeholders with inferred descriptive
+names. It changes source identifiers and comments, not the saved game headers,
+addresses or code. The dictionary has 473 recovered/matched names, 425 inferred
+names and three unresolved placeholders. A source match to another GAM revision
+can still be a candidate, as stated in that entry's evidence.
+
+Read symbols.txt for the per-word evidence, stack effects and decoded callers.
+tools/names.json is the editable metadata; make decompile regenerates the Forth,
+dictionary.json, symbols.txt and string-catalog owner names from it.
+
+METHOD AND MEMORY MAP
+
+Names follow the complete data flow: a variable's readers and writers, table
+layout, action dispatch and text labels, rather than a lone literal address.
+Important anchors include Atari CH=$02FC, STICK0=$0278, GTIA TRIG0=$D010,
+SDMCTL=$022F, VDSLST=$0200, NMIEN=$D40E and PORTB=$D301. Hardware registers
+and OS shadow variables are distinguished. A trigger read is active-low;
+a direction-mask result need not be a normalized 0/1 boolean.
+
+For example, $4369 supplies the current room and $4678 indexes its byte exit
+mask. $6F8A selects a bit from that mask; $7BD6 and $7C04 set and clear it.
+$6FA1 gathers available relative directions for the direction menu. Thus
+ROOM-EXIT-OPEN? describes $6F8A without guessing its erased five-letter name.
+An original-runtime probe confirms that mask 10 gives 0,2,0,8 for directions
+0,1,2,3. Other probes check joystick nibble decoding, CH consumption, action
+parameters, byte pairs, map fields, counted strings and cursor registers.
+
+Game handlers were checked against all 76 action-label/dispatch entries.
+Object-specific stories are not invented from generic handlers: names describe
+operations such as ACT-EAT, ACT-TAKE-ITEM and ACT-PRESS-ADD-COUNTER. Existing
+bugs or asymmetries remain: the ACT-THROW-RELOCATE-ROOM handler consumes the
+selected inventory slot even after a failed item comparison.
+
+AUTHOR TUTORIAL CROSS-CHECKS
+
+All eleven supplied installments were read. They describe Extended fig-Forth,
+its assembler and the author's editors; they are not the game's missing source
+screens. Similar examples alone do not establish an erased original spelling.
+The archived listings contain transcription defects and published errata.
+
+Issues 1-4/92 explain the language, variables, allocated buffers and 0/1 truth
+values. VARIABLE followed by ALLOT helps explain stale editor text inside
+reserved game buffers. The tutorial's PAUSE resets the OS clock; AD2044's PAUSE
+waits for successive changes of the low clock byte instead. The latter matches
+the preserved GAM listing (09_B_Ekrany.TXT screen 3, lines 20-23).
+
+Issue 5/92 identifies the APX interpreter and places its banner at $1ED1, matching
+the retained game kernel. The X!, Y! and POS examples agree with $364A, $3658
+and $3683: a column cell at $55, a row byte at $54 and the combined setter.
+
+Issue 6-7/92 independently confirms <=< at $34F2 through its full threaded
+body and surviving name length/final character. Its INPUT$ example does not
+match AD2044's bounded custom input editor, so that editor keeps the inferred
+READ-COUNTED-INPUT name.
+
+Issue 8/92 identifies Ragsdale Assembler 1.1. Its INDEX table matches all 32
+bytes at $2A94; MAC at $2FD6 matches its threaded body and immediate header.
+The original postfix assembler can choose instruction width from the operand
+value. The reconstruction's separate assembler uses explicit widths to retain
+absolute instructions whose operands happen to be below $0100.
+
+Issues 9-10/92 explain native Forth's downward-growing parameter stack at X,
+XSAVE, NEXT, POP and POPTWO. The distinction between Forth return through NEXT
+and assembly return through RTS clarifies $54A9 and $54E3: these are assembly
+subroutines, not words that can be called directly by the Forth interpreter.
+
+Issue 11-12/92 corroborates SELECT and cursor helpers and documents INSTR and
+character conversion. The game's INSTR at $3071 searches forward for the first
+match; the tutorial implementation searches backward. A runtime probe with
+repeated characters checks this distinction. ASC-PEEK also has a different
+native implementation in the game, despite the related interface.
+
+Issue 1-2/93 supplies the PDL/Z%/D%/PMOVE family for accessing RAM beneath the
+OS ROM. Its parameter roles corroborate $548C/$5495/$549E/$5514, but AD2044
+performs the banked copy through deferred VBI machinery. These entries retain
+descriptive inferred names instead of asserting an identical tutorial routine.
+
+Sources:
+https://tajemnice.atari8.info/1_92/1_92_forth.html
+https://tajemnice.atari8.info/2_92/2_92_forth.html
+https://tajemnice.atari8.info/3_92/3_92_forth.html
+https://tajemnice.atari8.info/4_92/4_92_forth.html
+https://tajemnice.atari8.info/5_92/5_92_forth.html
+https://tajemnice.atari8.info/6-7_92/6-7_92_forth.html
+https://tajemnice.atari8.info/8_92/8_92_forth.html
+https://tajemnice.atari8.info/9_92/9_92_forth.html
+https://tajemnice.atari8.info/10_92/10_92_forth.html
+https://tajemnice.atari8.info/11-12_92/11-12_92_forth.html
+https://tajemnice.atari8.info/1-2_93/1-2_93_forth.html
+https://github.com/ptodt/gam-forth
+
+UNRESOLVED AND VALIDATION
+
+w4381: a persisted cell initially containing 1; no proven consumer.
+w6C9A: a constant containing $1EFF; no proven consumer.
+w78BA: a cell initially containing 0; no proven consumer.
+
+They retain address-based identifiers because their purpose is not established.
+These notes and the new aliases do not claim recovery of the erased spellings.
+
+All 17,896 noncomment emission tokens in the three dictionary source files are
+unchanged after resolving old/new target aliases to their CFA. The 206-screen
+source ATR was also compiled from an initially blank program region through
+the original APX compiler in Atari800. Every disk payload byte matches the
+release; only the writable ATR header flag differs. Host HERE is $8435, leaving
+6,859 bytes below the streaming writer's $9F00 limit. See the local report at
+build/runtime-validation/semantic-load-report.json and tools/test_semantics.py.

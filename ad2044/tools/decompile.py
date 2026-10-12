@@ -7,6 +7,7 @@ Forth sources does not run this decompiler or read the reference game disks.
 import argparse
 import importlib.util
 import json
+import textwrap
 from collections import Counter
 from pathlib import Path
 
@@ -103,6 +104,10 @@ def identifiers(words, names):
             if counts[entry['name']] > 1:
                 ident += f"_{word['cfa']:04X}"
             word.update(name=entry['name'], evidence=entry['evidence'])
+            for field in ('confidence', 'stack_effect', 'category',
+                          'calling_convention', 'source_refs'):
+                if field in entry:
+                    word[field] = entry[field]
         else:
             ident = f"w{word['cfa']:04X}"
             word.update(name=ident, evidence='Unknown erased name; CFA identifier')
@@ -278,6 +283,53 @@ def emit_region(out, data, start, end):
     out.raw(data[at:end])
 
 
+def save_symbol_notes(root, data, words):
+    """Readable evidence and decoded callers for descriptive inferred names."""
+    by_cfa = {word['cfa']: word for word in words}
+    callers = {word['cfa']: set() for word in words}
+    for word in words:
+        if word['code'] != 0x1441:
+            continue
+        instructions, _ = decode(data, word['pfa'], word['end'], by_cfa)
+        for insn in instructions:
+            callers[insn['cfa']].add(word['cfa'])
+            if 'compiled_cfa' in insn:
+                callers[insn['compiled_cfa']].add(word['cfa'])
+    lines = [
+        'Inferred descriptive symbols - ' + root.name,
+        '',
+        'These names describe observed behavior; they are not recovered spellings.',
+        'Hexadecimal CFA = code-field address; NFA = dictionary name address.',
+        'Stack effects use bottom-to-top Forth order: inputs -- outputs.',
+        'Callers list decoded colon calls and COMPILE operands only. Native calls,',
+        'raw DOES> tails and data-driven dispatch can add further references.',
+        '',
+    ]
+    for word in words:
+        if not (word.get('confidence') == 'inferred' or
+                word['evidence'].startswith('Inferred descriptive name')):
+            continue
+        location = ('headerless native entry' if word.get('headerless')
+                    else f"NFA {word['nfa']:04X}")
+        lines.append(f"{word['cfa']:04X} {word['id']} ({location})")
+        if word.get('stack_effect'):
+            lines.append('  Stack: ' + word['stack_effect'])
+        if word.get('category'):
+            lines.append('  Group: ' + word['category'])
+        if word.get('calling_convention'):
+            lines.append('  Entry: ' + word['calling_convention'])
+        lines.extend(textwrap.wrap(word['evidence'], 96,
+                                   initial_indent='  ', subsequent_indent='  '))
+        refs = [f"{cfa:04X} {by_cfa[cfa]['id']}" for cfa in sorted(callers[word['cfa']])]
+        lines.extend(textwrap.wrap('Decoded callers: ' + (', '.join(refs) or 'none'),
+                                   96, initial_indent='  ', subsequent_indent='    ',
+                                   break_on_hyphens=False))
+        for reference in word.get('source_refs', ()):
+            lines.append('  Related source: ' + reference)
+        lines.append('')
+    (root / 'symbols.txt').write_text('\n'.join(lines) + '\n', encoding='ascii')
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--reference', type=Path,
@@ -329,6 +381,10 @@ def main():
             out.line()
             out.comment(f"{word['name']} | NFA {word['nfa']:04X} CFA {word['cfa']:04X}")
             out.comment(word['evidence'])
+            if word.get('stack_effect'):
+                out.comment('Stack: ' + word['stack_effect'])
+            if word.get('calling_convention'):
+                out.comment(word['calling_convention'])
             catalog.annotate(out, word)
             out.line(f"AT {word['nfa']:04X}")
             out.comment('Saved dictionary header: flags, name bytes, link' if not word.get('headerless')
@@ -366,6 +422,7 @@ def main():
     side2 = ROOT / 'reference/ad2044-side2.atr'
     (assets / 'side2-data.bin').write_bytes(side2.read_bytes()[16:])
     catalog.save(ROOT)
+    save_symbol_notes(ROOT, data, words)
     print(f"Recovered {len(words)} words ({len(names)} names), {dict(stats)}")
 
 

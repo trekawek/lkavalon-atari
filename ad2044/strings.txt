@@ -48,39 +48,39 @@ $3F6C t.LOAD-ASSET-GROUP - Inline strings
 $47AD t.CLEAR-TEXT-AREA - Inline strings
   $47C0 inline: " [1E]"
 
-$49B7 w49B7 - Inline strings
+$49B7 t.PROMPT-DISK-READ-ERROR - Inline strings
   $49CC inline: "   BLAD ODCZYTU Z DYSKU"
   $49E8 inline: " NACISNIJ DOWOLNY KLAWISZ"
 
-$4A14 w4A14 - Inline strings
+$4A14 t.PROMPT-FLIP-DISK - Inline strings
   $4A29 inline: "      ODWROC DYSKIETKE"
   $4A44 inline: " I NACISNIJ DOWOLNY KLAWISZ"
 
-$53C9 w53C9 - Inline strings
+$53C9 t.PATCH-VBI-CALL - Inline strings
   $53F9 inline: "ERROR VBI"
 
-$577A w577A - Inline strings
+$577A t.EDIT-BACKSPACE - Inline strings
   $5794 inline: "[1E]=[1E]"
 
-$6D0A w6D0A - Hunger messages
+$6D0A t.HUNGER-MESSAGES - Hunger messages
   $6D14 item 0 line 1: "ZEMDLALES Z GLODU"
   $6D29 item 1 line 1: "JESTES BARDZO GLODNY"
   $6D41 item 2 line 1: "CZUJESZ GLOD"
   $6D51 item 3 line 1: "CZUJESZ SSANIE W ZOLADKU"
 
-$6D82 w6D82 - Inline strings
+$6D82 t.SHOW-MESSAGE - Inline strings
   $6D93 inline: " [1E]"
 
-$6FC7 w6FC7 - Direction labels
+$6FC7 t.RELATIVE-DIRECTION-LABELS - Direction labels
   $6FCF item 0: "PROSTO"
   $6FD7 item 1: "W PRAWO"
   $6FE0 item 2: "W TYL"
   $6FE7 item 3: "W LEWO"
 
-$7033 w7033 - Inline strings
+$7033 t.DRAW-EXIT-MENU - Inline strings
   $7067 inline: "NIC"
 
-$72E2 w72E2 - Action labels
+$72E2 t.ACTION-LABELS - Action labels
   $72EA item 0: "NIC"
   $72EF item 1: "WROC"
   $72F5 item 2: "ZBLIZENIE"
@@ -178,32 +178,32 @@ $7A5A t.PRINT-FLIP-DISK - Inline strings
   $7A72 inline: "[3B][3B]"
   $7A7E inline: "ODWROC DYSK"
 
-$7BBB w7BBB - Message lines
+$7BBB t.MSG-CANNOT-CARRY - Message lines
   $7BC1 line 1: "NIE UNIESIESZ"
 
-$7DF0 w7DF0 - Message lines
+$7DF0 t.MSG-GLUTTONY - Message lines
   $7DF6 line 1: "OBZARSTWO TO GRZECH"
 
-$7EA8 w7EA8 - Message lines
+$7EA8 t.MSG-WITH-WHAT - Message lines
   $7EAE line 1: "CZYM?"
 
-$8037 w8037 - Message lines
+$8037 t.MSG-SMOKING-HARMFUL - Message lines
   $803D line 1: "PALENIE SZKODZI"
 
-$8389 w8389 - Inline strings
+$8389 t.READ-CHECKED-ANSWER - Inline strings
   $8398 inline: "=?="
 
-$86D7 w86D7 - Message lines
+$86D7 t.MSG-WHAT - Message lines
   $86DD line 1: "CO?"
 
-$8836 w8836 - Message lines
+$8836 t.MSG-ARE-YOU-ADULT - Message lines
   $883C line 1: "JESTES DOROSLY?"
 
-$8967 w8967 - Message lines
+$8967 t.MSG-ALL-RIGHT - Message lines
   $896D line 1: "W PORZADKU"
 
-$8A0A w8A0A - Message lines
+$8A0A t.MSG-ENTER-PASSWORD - Message lines
   $8A10 line 1: "PODAJ HASLO"
 
-$8D37 w8D37 - Message lines
+$8D37 t.MSG-WHICH - Message lines
   $8D3D line 1: "JAKIE"

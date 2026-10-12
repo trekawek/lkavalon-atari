@@ -12,10 +12,17 @@ Start reading [src/30-game.fth](src/30-game.fth). The dictionary contains 901
 entries: 786 in the main chain, 113 in additional vocabularies, and two native
 entry points without headers. Of these, 550 are colon definitions.
 [dictionary.json](dictionary.json) records addresses and naming evidence.
-There are 473 recovered or matched names, 55 explicitly inferred descriptive
-names, and 373 unknown names represented by their code-field address.
+There are 473 recovered or matched names, 425 explicitly inferred descriptive
+names, and three unknown names represented by their code-field address.
 Names matched against a different GAM FORTH revision remain candidates; they
 do not change the compiled bytes.
+
+[symbols.txt](symbols.txt) gives the inferred names, behavior evidence, known
+stack effects and decoded callers. For example, the former `w6F8A` is now
+`t.ROOM-EXIT-OPEN?`: it tests a direction bit in the current room's exit mask.
+The remaining `w4381`, `w6C9A` and `w78BA` have no proven consumers that establish
+their purpose. [research-notes.txt](research-notes.txt) records the memory-map
+anchors, tutorial comparisons and limits of the naming evidence.
 
 ## Sources
 
@@ -46,6 +53,11 @@ The decoder follows counted records and resolves action aliases once. It
 excludes unused buffer contents and text in the separate binary disk assets.
 `make decompile` regenerates both catalogs and annotations. `BYTES` still
 controls the compiled data; editing a comment or catalog does not change it.
+
+`make decompile` also regenerates the symbol catalog. Naming metadata lives in
+[tools/names.json](tools/names.json); `confidence: inferred` identifies
+descriptive names rather than recovered original spellings. Stack effects and
+assembly-only calling conventions appear beside the affected definitions.
 
 The build deliberately preserves addresses: machine code, variables, tables,
 and disk overlays contain absolute pointers. Ordinary `: name ... ;` compiling
@@ -256,6 +268,14 @@ path from the source ATR. All 2080 sectors matched the reference media, and
 the menu, first-room, and cursor-movement screenshots matched the original
 pixel for pixel. Local evidence is in `build/runtime-validation/`.
 
+[tools/test_semantics.py](tools/test_semantics.py) executes selected original
+game words on the 6502 to check the inferred meanings, including exit masks,
+joystick deltas, keyboard input, action-record fields and counted strings.
+The 206-screen source ATR with descriptive names was compiled through actual
+Atari800 `LOAD`; its payload matches the original. The build interpreter's
+dictionary ends at `$8435`, below the writer's `$9F00` limit. Local evidence is
+in `build/runtime-validation/semantic-load-report.json`.
+
 ## Provenance
 
 The starting investigation is bartgo's
@@ -273,5 +293,8 @@ Additional naming evidence comes from the preserved
 `09_A_Forth`, `11_A_Graf`, and `42_A_GrafDos` dictionaries. The
 [APX fig-Forth documentation](https://atariwiki.org/wiki/Wiki.jsp?page=Extended%20Atari%20FIG-Forth%20APX20029)
 explains the original block editor, compiler, and saving conventions.
+Roland Pantola's [Forth tutorial](https://tajemnice.atari8.info/1_92/1_92_forth.html)
+corroborates several words and calling conventions; [research-notes.txt](research-notes.txt)
+compares all eleven installments and links each one.
 The game, original runtime, and original resource data retain their authors'
 rights; reconstruction does not relicense them.

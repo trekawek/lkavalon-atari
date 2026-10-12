@@ -34,6 +34,7 @@ test: all test-graphics
 	$(PYTHON) tools/test_compiler.py
 	$(PYTHON) tools/test_decompiler.py
 	$(PYTHON) tools/test_assembler.py
+	$(PYTHON) tools/test_semantics.py
 	$(PYTHON) tools/test_text_records.py
 	$(PYTHON) ../util/extract_music.py --game ad2044 --check
 	$(PYTHON) tools/test_music_sap.py

@@ -1713,8 +1713,11 @@ DOCOL
 LIT16 36E5 LIT16 199F t.! t.." LIT16 1977 LIT16 199F t.! t.;S
 AT 3718
 
-( w371E | NFA 3718 CFA 371E )
-( Unknown erased name; CFA identifier )
+( GAM-DISK-VOCABULARY | NFA 3718 CFA 371E )
+( Inferred descriptive name, not recovered original: DODOES )
+( vocabulary using the shared VOCABULARY runtime $1E30; its )
+( private dictionary head points to DSL at NFA $382E, with )
+( LDIR, DIRS and DIRL in that chain. )
 AT 3718
 ( Saved dictionary header: flags, name bytes, link )
 BYTES C30000CFF936
@@ -1850,8 +1853,11 @@ DOCOL
 t.DIRL t.DSL t.;S
 AT 387E
 
-( w3885 | NFA 387E CFA 3885 )
-( Unknown erased name; CFA identifier )
+( LIST-GAM-DIRECTORY | NFA 387E CFA 3885 )
+( Inferred descriptive name, not recovered original: )
+( Iterates group indices 1 through B/BUF-1, invokes LDIR, )
+( prints group index and returned sector/count fields with )
+( .R, and stops on directory/error status or ?TERMINAL. )
 AT 387E
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 84000000D26E38
@@ -2243,8 +2249,11 @@ t.DUP t.DUP t.@ t.+ t.@ t.DUP t.>R t.<MOVE t.R> LIT16 0230 t.!
 t.;S
 AT 3B7D
 
-( w3B84 | NFA 3B7D CFA 3B84 )
-( Unknown erased name; CFA identifier )
+( INIT-TEXT-DISPLAY | NFA 3B7D CFA 3B84 )
+( Inferred descriptive name, not recovered original: )
+( Installs display-list descriptor 0DL through ?DL, emits )
+( ATASCII clear-screen $7D, and selects the ROM character )
+( set with CHBAS [$02F4]=$E0. )
 AT 3B7D
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 84000000B0433B
@@ -2252,8 +2261,11 @@ DOCOL
 t.0DL t.?DL LIT8 7D t.EMIT LIT16 00E0 LIT16 02F4 t.C! t.;S
 AT 3B9B
 
-( w3BA6 | NFA 3B9B CFA 3BA6 )
-( Unknown erased name; CFA identifier )
+( INIT-GRAPHICS-DISPLAY | NFA 3B9B CFA 3BA6 )
+( Inferred descriptive name, not recovered original: )
+( Installs TYTDL through ?DL, clears $1040 bytes at ADGR )
+( [160x104 four-color bitmap], and emits $7D to clear the )
+( accompanying text area. )
 AT 3B9B
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 8800000000000000B37D3B
@@ -2262,13 +2274,15 @@ t.TYTDL t.?DL t.ADGR t.@ LIT16 1040 t.ERASE LIT8 7D t.EMIT
 t.;S
 AT 3BBD
 
-( w3BC9 | NFA 3BBD CFA 3BC9 )
-( Unknown erased name; CFA identifier )
+( INIT-GRAPHICS-B800-FONT | NFA 3BBD CFA 3BC9 )
+( Inferred descriptive name, not recovered original: Runs )
+( graphics-display initialization at $3BA6 then sets CHBAS )
+( [$02F4]=$B8, selecting character data at $B800. )
 AT 3BBD
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 890000000000000000B39B3B
 DOCOL
-w3BA6 LIT16 00B8 LIT16 02F4 t.C! t.;S
+t.INIT-GRAPHICS-DISPLAY LIT16 00B8 LIT16 02F4 t.C! t.;S
 AT 3BD9
 
 ( RCM | NFA 3BD9 CFA 3BDF )
@@ -2710,8 +2724,10 @@ DOCOL
 t.RESOURCE-BASE t.@ t.;S
 AT 3EEB
 
-( w3EF2 | NFA 3EEB CFA 3EF2 )
-( Unknown erased name; CFA identifier )
+( PRINT-RESOURCE-FREE-SPACE | NFA 3EEB CFA 3EF2 )
+( Inferred descriptive name, not recovered original: Prints )
+( RESOURCE-BASE@ minus HERE minus 32 with U.; this is free )
+( space below the resource buffer, not total machine RAM. )
 AT 3EEB
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 84000000C5DD3E
@@ -2729,8 +2745,11 @@ DOCOL
 t.RESOURCE-BASE@ t.DYC t.ZK t.@ t.;S
 AT 3F15
 
-( w3F1D | NFA 3F15 CFA 3F1D )
-( Unknown erased name; CFA identifier )
+( CLEAR-RESOURCE-BUFFER | NFA 3F15 CFA 3F1D )
+( Inferred descriptive name, not recovered original: ERASEs )
+( the half-open range [RESOURCE-BASE@,$A8FC]. Both )
+( asset-group loaders call it before loading resources. )
+( Stack: -- )
 AT 3F15
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 8500000000C2023F
@@ -2738,8 +2757,12 @@ DOCOL
 t.RESOURCE-BASE@ t.DUP LIT16 A8FC t.SWAP t.- t.ERASE t.;S
 AT 3F2F
 
-( w3F37 | NFA 3F2F CFA 3F37 )
-( Unknown erased name; CFA identifier )
+( GAME-FONT-BASE | NFA 3F2F CFA 3F37 )
+( Inferred descriptive name, not recovered original: )
+( Constant $BC00; INSTALL-SCENE-ASSETS copies resource 1 )
+( here and selects CHBAS=$BC. Glyph selection $5B69 adds )
+( eight times the glyph number to this base. )
+( Stack: -- addr )
 AT 3F2F
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 8500000000CB153F
@@ -2755,9 +2778,9 @@ AT 3F3B
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000CC2F3F
 DOCOL
-w3BA6 t.0 t.RESOURCE-ADDR t.ADGR t.@ t.<MOVE t.1
-t.RESOURCE-ADDR t.OUNT w3F37 t.SWAP t.CMOVE LIT8 BC LIT16 02F4
-t.C! t.;S
+t.INIT-GRAPHICS-DISPLAY t.0 t.RESOURCE-ADDR t.ADGR t.@ t.<MOVE
+t.1 t.RESOURCE-ADDR t.OUNT t.GAME-FONT-BASE t.SWAP t.CMOVE
+LIT8 BC LIT16 02F4 t.C! t.;S
 AT 3F66
 
 ( LOAD-ASSET-GROUP | NFA 3F66 CFA 3F6C )
@@ -2768,11 +2791,11 @@ AT 3F66
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000D43B3F
 DOCOL
-t.>R w3F1D
+t.>R t.CLEAR-RESOURCE-BUFFER
 ( label 3F72 )
 t.0 t.RESOURCE-ADDR LIT8 50 t.R t.BLOAD t.DUP
 t.0BRANCH CELL 000E ( -> 3F8F )
-w3B84
+t.INIT-TEXT-DISPLAY
 ( Game text:  ERROR  )
 t.(S")
 BYTES 07A0C5D2D2CFD2A0
@@ -2811,8 +2834,12 @@ t.(LOOP) CELL FFE8 ( -> 3FB7 )
 t.;S
 AT 3FD3
 
-( w3FDA | NFA 3FD3 CFA 3FDA )
-( Unknown erased name; CFA identifier )
+( GAME-DISPLAY-LIST | NFA 3FD3 CFA 3FDA )
+( Inferred descriptive name, not recovered original: )
+( Constant $A910, matching the TYTDL display-list )
+( destination. Game and title color initialization set DLI )
+( bits in entries at this base. )
+( Stack: -- addr )
 AT 3FD3
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 84000000CCA93F
@@ -2820,8 +2847,12 @@ DOCON
 CELL A910
 AT 3FDE
 
-( w3FE4 | NFA 3FDE CFA 3FE4 )
-( Unknown erased name; CFA identifier )
+( ENABLE-DLI-AT | NFA 3FDE CFA 3FE4 )
+( Inferred descriptive name, not recovered original: Sets )
+( bit $80 in the byte at the supplied address. Callers pass )
+( display-list instruction addresses, marking those scan )
+( lines for DLI. )
+( Stack: addr -- )
 AT 3FDE
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000A1D33F
@@ -2829,8 +2860,12 @@ DOCOL
 t.DUP t.C@ LIT16 0080 t.OR t.SWAP t.C! t.;S
 AT 3FF6
 
-( w4000 | NFA 3FF6 CFA 4000 )
-( Unknown erased name; CFA identifier )
+( GAME-COLOR-TABLE | NFA 3FF6 CFA 4000 )
+( Inferred descriptive name, not recovered original: The )
+( game DLI uses this byte table through zero-page pointer )
+( $DB. Initial first triple $24,$F8,$FC supplies COLPF0..2; )
+( byte +6 also initializes COLOR3 shadow $02C7. )
+( Stack: -- addr )
 AT 3FF6
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 8600000000004CA0DE3F
@@ -2838,8 +2873,12 @@ DOVAR
 BYTES 24F8FCE42C28CA5420202020202020202020
 AT 4014
 
-( w401A | NFA 4014 CFA 401A )
-( Unknown erased name; CFA identifier )
+( DLI-COLOR-OFFSET | NFA 4014 CFA 401A )
+( Inferred descriptive name, not recovered original: Byte )
+( at PFA $401C is the offset into the color table: handler )
+( $403C reads a triple, advances it by three, and resets it )
+( to zero when VCOUNT reaches $40. )
+( Stack: -- addr )
 AT 4014
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000D3F63F
@@ -2847,8 +2886,12 @@ DOVAR
 CELL 0000
 AT 401E
 
-( w4025 | NFA 401E CFA 4025 )
-( Unknown erased name; CFA identifier )
+( DLI-COLOR-POINTER | NFA 401E CFA 4025 )
+( Inferred descriptive name, not recovered original: )
+( Constant $00DB, the address of the zero-page pointer used )
+( by LDA [$DB],Y in color DLI $403C. Game/title )
+( initialization stores the active color-table address here. )
+( Stack: -- addr )
 AT 401E
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 84000000CC1440
@@ -2856,8 +2899,12 @@ DOCON
 CELL 00DB
 AT 4029
 
-( w402F | NFA 4029 CFA 402F )
-( Unknown erased name; CFA identifier )
+( NMI-ENABLE-SHADOW | NFA 4029 CFA 402F )
+( Inferred descriptive name, not recovered original: Stored )
+( byte mirrors values written to ANTIC NMIEN $D40E by )
+( $4070/$40B2: $E0 with color DLI enabled, $60 when it is )
+( disabled. )
+( Stack: -- addr )
 AT 4029
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000C91E40
@@ -2865,8 +2912,12 @@ DOVAR
 CELL 0060
 AT 4033
 
-( w403A | NFA 4033 CFA 403A )
-( Unknown erased name; CFA identifier )
+( COLOR-TABLE-DLI | NFA 4033 CFA 403A )
+( Inferred descriptive name, not recovered original: Native )
+( interrupt routine at $403C saves A/Y/status, writes three )
+( successive bytes from [$DB],Y to COLPF0..2 )
+( [$D016..$D018], advances/reset table index using VCOUNT )
+( $D40B, then RTI. )
 AT 4033
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 84000000A92940
@@ -2898,48 +2949,70 @@ PLP                  ( 4065 )
 RTI                  ( 4066 )
 AT 4067
 
-( w4070 | NFA 4067 CFA 4070 )
-( Unknown erased name; CFA identifier )
+( INSTALL-COLOR-DLI | NFA 4067 CFA 4070 )
+( Inferred descriptive name, not recovered original: Stores )
+( the supplied entry address in VDSLST $0200, clears )
+( DLI-COLOR-OFFSET, ORs $E0 into NMI-ENABLE-SHADOW and )
+( writes NMIEN $D40E. )
+( Stack: entry -- )
 AT 4067
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 860000000000C93340
 DOCOL
-LIT16 0200 t.! t.0 w401A t.! w402F t.C@ LIT16 00E0 t.OR t.DUP
-w402F t.C! LIT16 D40E t.C! t.;S
+LIT16 0200 t.! t.0 t.DLI-COLOR-OFFSET t.! t.NMI-ENABLE-SHADOW
+t.C@ LIT16 00E0 t.OR t.DUP t.NMI-ENABLE-SHADOW t.C! LIT16 D40E
+t.C! t.;S
 AT 4096
 
-( w409E | NFA 4096 CFA 409E )
-( Unknown erased name; CFA identifier )
+( ENABLE-COLOR-DLI | NFA 4096 CFA 409E )
+( Inferred descriptive name, not recovered original: Passes )
+( native handler address $403C to INSTALL-COLOR-DLI. )
+( Stack: -- )
 AT 4096
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 8500000000CC6740
 DOCOL
-LIT16 403C w4070 t.;S
+LIT16 403C t.INSTALL-COLOR-DLI t.;S
 AT 40A8
 
-( w40B2 | NFA 40A8 CFA 40B2 )
-( Unknown erased name; CFA identifier )
+( DISABLE-COLOR-DLI | NFA 40A8 CFA 40B2 )
+( Inferred descriptive name, not recovered original: Sets )
+( shadow NMI mask $60, waits one frame, copies the active )
+( table first triple to COLOR0..2 shadows $02C4..$02C6, )
+( writes NMIEN=$60, and copies the same triple to )
+( $D016..$D018. )
+( Stack: -- )
 AT 40A8
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 87000000000000C99640
 DOCOL
-LIT16 0060 w402F t.C! t.1 t.PAUSE w4025 t.@ LIT16 02C4
-LIT16 0003 t.CMOVE LIT16 0060 LIT16 D40E t.C! w4025 t.@
-LIT16 D016 LIT16 0003 t.CMOVE t.;S
+LIT16 0060 t.NMI-ENABLE-SHADOW t.C! t.1 t.PAUSE
+t.DLI-COLOR-POINTER t.@ LIT16 02C4 LIT16 0003 t.CMOVE
+LIT16 0060 LIT16 D40E t.C! t.DLI-COLOR-POINTER t.@ LIT16 D016
+LIT16 0003 t.CMOVE t.;S
 AT 40E8
 
-( w40EF | NFA 40E8 CFA 40EF )
-( Unknown erased name; CFA identifier )
+( INIT-GAME-COLOR-DLI | NFA 40E8 CFA 40EF )
+( Inferred descriptive name, not recovered original: )
+( Selects GAME-COLOR-TABLE via $DB, sets DLI bits at )
+( display-list offsets 1 and $6D, installs the color DLI, )
+( and writes color-table byte +6 to COLOR3 $02C7. )
+( Stack: -- )
 AT 40E8
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 84000000D0A840
 DOCOL
-w4000 w4025 t.! w3FDA t.1+ w3FE4 w3FDA LIT16 006D t.+ w3FE4
-w409E w4000 LIT16 0006 t.+ t.C@ LIT16 02C7 t.C! t.;S
+t.GAME-COLOR-TABLE t.DLI-COLOR-POINTER t.! t.GAME-DISPLAY-LIST
+t.1+ t.ENABLE-DLI-AT t.GAME-DISPLAY-LIST LIT16 006D t.+
+t.ENABLE-DLI-AT t.ENABLE-COLOR-DLI t.GAME-COLOR-TABLE
+LIT16 0006 t.+ t.C@ LIT16 02C7 t.C! t.;S
 AT 411B
 
-( w4124 | NFA 411B CFA 4124 )
-( Unknown erased name; CFA identifier )
+( BYTE-ARRAY | NFA 411B CFA 4124 )
+( Inferred descriptive name, not recovered original: )
+( Defining word <BUILDS ALLOT DOES> + ;. Instances such as )
+( ROOM-EXIT-MASKS add a byte index to their data base; )
+( unlike ARRAY, the index is not doubled. )
 AT 411B
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 860000000000D9E840
@@ -2962,8 +3035,12 @@ t.<BUILDS t.2 t.* t.ALLOT t.DOES>
 BYTES 8D13D5140F2004137712
 AT 414E
 
-( w4154 | NFA 414E CFA 4154 )
-( Unknown erased name; CFA identifier )
+( INVENTORY-BLOCK-SIZE | NFA 414E CFA 4154 )
+( Inferred descriptive name, not recovered original: )
+( Constant $0200 used as the stride and transfer length for )
+( cached inventory blocks in $557C,$5594,$55A8 and the )
+( nine-block copy loop $55D3. )
+( Stack: -- bytes )
 AT 414E
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000CC3041
@@ -2971,8 +3048,14 @@ DOCON
 CELL 0200
 AT 4158
 
-( w415E | NFA 4158 CFA 415E )
-( Unknown erased name; CFA identifier )
+( INVENTORY-BLOCK-BUFFER | NFA 4158 CFA 415E )
+( Inferred descriptive name, not recovered original: )
+( 512-byte working block exchanged with extended-memory )
+( inventory slots by $5594/$55A8 using $4154 as length. )
+( $5366 returns this buffer plus two as its record )
+( collection. Allocation contains stale source bytes )
+( initially. )
+( Stack: -- addr )
 AT 4158
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000DA4E41
@@ -2998,8 +3081,12 @@ BYTES 2020202020202020202020202020202020203A204152524159203C42
 BYTES 55494C44532032202A20
 AT 4362
 
-( w4369 | NFA 4362 CFA 4369 )
-( Unknown erased name; CFA identifier )
+( CURRENT-ROOM | NFA 4362 CFA 4369 )
+( Inferred descriptive name, not recovered original: $5AEC )
+( stores the incoming room number here before loading its )
+( resource group. Rendering, map, exit-mask and )
+( object-action code read this value. )
+( Stack: -- addr )
 AT 4362
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 84000000CD5841
@@ -3007,8 +3094,14 @@ DOVAR
 CELL 0000
 AT 436D
 
-( w4377 | NFA 436D CFA 4377 )
-( Unknown erased name; CFA identifier )
+( ENERGY | NFA 436D CFA 4377 )
+( Inferred descriptive name, not recovered original: )
+( Counter starts at 30; entering a room decrements it )
+( through $6DD5 and compares hunger-message thresholds. )
+( Eating/drinking actions add to it, smoking subtracts 30 )
+( with a minimum of one, and input handling checks for )
+( exhaustion. )
+( Stack: -- addr )
 AT 436D
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 87000000000000C16243
@@ -3025,8 +3118,13 @@ DOVAR
 CELL 0001
 AT 4385
 
-( w438B | NFA 4385 CFA 438B )
-( Unknown erased name; CFA identifier )
+( ROOM-OBJECT-STATE | NFA 4385 CFA 438B )
+( Inferred descriptive name, not recovered original: )
+( Mutable nested u16-length records indexed by $520C with )
+( [room view]. The returned per-view object-ID lists are )
+( modified by $70A2/$70FC; the whole block is included in )
+( saved game state. )
+( Stack: -- addr )
 AT 4385
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000C27B43
@@ -3050,8 +3148,12 @@ BYTES 00000300036F00030004000004000200000003000100000000000000
 BYTES 0000000000000000000000000006
 AT 455B
 
-( w4563 | NFA 455B CFA 4563 )
-( Unknown erased name; CFA identifier )
+( ROOM-TABLE-CAPACITY | NFA 455B CFA 4563 )
+( Inferred descriptive name, not recovered original: )
+( Constant 90; the room map table allocates 90 cells and )
+( exit-mask table 90 bytes. $4B2D uses capacity-1 to find )
+( the final exit-mask byte for the saved-state extent. )
+( Stack: -- count )
 AT 455B
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 8500000000CD8543
@@ -3059,8 +3161,12 @@ DOCON
 CELL 005A
 AT 4567
 
-( w456E | NFA 4567 CFA 456E )
-( Unknown erased name; CFA identifier )
+( INVENTORY-SLOT-RECORDS | NFA 4567 CFA 456E )
+( Inferred descriptive name, not recovered original: Four )
+( mutable three-byte records, accessed by $773C as )
+( base+3*slot; initial triples contain zero object IDs and )
+( paired display coordinates [2,25],[6,25],[2,56],[6,56]. )
+( Stack: -- addr )
 AT 4567
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 84000000C55B45
@@ -3068,8 +3174,13 @@ DOVAR
 BYTES 0002190006190002380006382020
 AT 457E
 
-( w4584 | NFA 457E CFA 4584 )
-( Unknown erased name; CFA identifier )
+( ROOM-MAP-DESCRIPTORS | NFA 457E CFA 4584 )
+( Inferred descriptive name, not recovered original: )
+( Cell-array indexed by room. First byte packs map )
+( position; second byte low three bits give facing for )
+( $6ECA, bit 3 is the visited flag used by $5BF6/$7763, and )
+( upper bits select map glyphs in $5B9E. )
+( Stack: room -- addr )
 AT 457E
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000D06745
@@ -3084,8 +3195,13 @@ BYTES 00000000000000000000000000000000000000000000000000000000
 BYTES 0000000000000000000000000000
 AT 463C
 
-( w4642 | NFA 463C CFA 4642 )
-( Unknown erased name; CFA identifier )
+( PUZZLE-STATE-CELLS | NFA 463C CFA 4642 )
+( Inferred descriptive name, not recovered original: )
+( Cell-array fetched/stored through $8230/$823F. Game )
+( actions use its elements as flags, exclusive selections )
+( and counters: $82B0/$82EA increment/decrement and )
+( $8453/$8470 add/subtract action parameters. )
+( Stack: index -- addr )
 AT 463C
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000D97E45
@@ -3095,8 +3211,12 @@ BYTES 44410000000000000000000000000000000000000000010001000000
 BYTES 000000000800
 AT 4666
 
-( w466D | NFA 4666 CFA 466D )
-( Unknown erased name; CFA identifier )
+( CURRENT-MAP-FLOOR | NFA 4666 CFA 466D )
+( Inferred descriptive name, not recovered original: Stores )
+( the floor/section chosen from a room number by $5C36. )
+( $5C86 renders its number; $5CF6 and $6EE6 use its )
+( room-range limits while drawing/navigating the map. )
+( Stack: -- addr )
 AT 4666
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 84000000DA3C46
@@ -3104,8 +3224,13 @@ DOVAR
 CELL 0002
 AT 4671
 
-( w4678 | NFA 4671 CFA 4678 )
-( Unknown erased name; CFA identifier )
+( ROOM-EXIT-MASKS | NFA 4671 CFA 4678 )
+( Inferred descriptive name, not recovered original: )
+( Byte-array base $467C indexed by room. $6F8A tests )
+( 1<<direction in the current room byte; $7BD6 sets the bit )
+( and $7C04 clears it. Returned address and indexing )
+( verified by executing the original 6502 Forth. )
+( Stack: room -- addr )
 AT 4671
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 84000000D26646
@@ -3117,8 +3242,13 @@ BYTES 000000000020CE85494C4B4FCDE3447D145A008423525AC5B9469914
 BYTES 0002190006190002
 AT 46D6
 
-( w46DE | NFA 46D6 CFA 46DE )
-( Unknown erased name; CFA identifier )
+( SAVE-GAM-GROUP | NFA 46D6 CFA 46DE )
+( Inferred descriptive name, not recovered original: Uses )
+( DIRS/DSL with write direction, preserving requested )
+( count/group on the return stack. Updates the cached )
+( directory count; if the previous group count was zero and )
+( the transfer succeeded, writes the directory sector DIRB. )
+( Stack: addr count group -- error )
 AT 46D6
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 8500000000C57146
@@ -3132,8 +3262,13 @@ t.DROP t.ADIR t.@ t.DIRB t.1 t.0 t.-DISK t.0=_12DE t.0=_12DE
 t.;S
 AT 472C
 
-( w4732 | NFA 472C CFA 4732 )
-( Unknown erased name; CFA identifier )
+( BYTE+! | NFA 472C CFA 4732 )
+( Inferred descriptive name, not recovered original: SWAP )
+( OVER C@ + SWAP C!: adds a value to the byte at addr, )
+( storing modulo 256. Used by byte counters and palette )
+( fades. Original 6502 execution confirms 250+10 stores 4 )
+( and leaves no stack result. )
+( Stack: delta addr -- )
 AT 472C
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000A1D646
@@ -3141,8 +3276,13 @@ DOCOL
 t.SWAP t.OVER t.C@ t.+ t.SWAP t.C! t.;S
 AT 4742
 
-( w4748 | NFA 4742 CFA 4748 )
-( Unknown erased name; CFA identifier )
+( READ-AND-CLEAR-KEYCODE | NFA 4742 CFA 4748 )
+( Inferred descriptive name, not recovered original: )
+( Returns CH [$02FC] and writes $FF back to that )
+( keyboard-code latch; unlike KEY it neither waits nor )
+( converts the scan code. Original 6502 execution confirms )
+( a latched 42 is returned and CH becomes 255. )
+( Stack: -- keycode )
 AT 4742
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000C12C47
@@ -3150,8 +3290,14 @@ DOCOL
 LIT16 02FC t.C@ LIT16 00FF LIT16 02FC t.C! t.;S
 AT 475C
 
-( w4763 | NFA 475C CFA 4763 )
-( Unknown erased name; CFA identifier )
+( LENGTH-RECORD-ADDR | NFA 475C CFA 4763 )
+( Inferred descriptive name, not recovered original: Calls )
+( DYC to skip index u16-length records from base, then )
+( returns its zero-page source pointer ZK. The result )
+( points at the selected record length cell. Original 6502 )
+( execution on a synthetic [length=2,payload=2bytes] first )
+( record returns base+4 for index one. )
+( Stack: index base -- record )
 AT 475C
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 84000000C44247
@@ -3180,8 +3326,12 @@ t.(LOOP) CELL FFE4 ( -> 477E )
 t.;S
 AT 479E
 
-( w47A4 | NFA 479E CFA 47A4 )
-( Unknown erased name; CFA identifier )
+( TEXT-CLEAR-ENABLED | NFA 479E CFA 47A4 )
+( Inferred descriptive name, not recovered original: )
+( CLEAR-TEXT-AREA checks this cell before erasing. Setting )
+( zero suppresses one clearing pass; CLEAR-TEXT-AREA always )
+( resets it to one on return. )
+( Stack: -- addr )
 AT 479E
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000D36D47
@@ -3197,7 +3347,7 @@ AT 47A8
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 8200C59E47
 DOCOL
-w47A4 t.@
+t.TEXT-CLEAR-ENABLED t.@
 t.0BRANCH CELL 0019 ( -> 47CE )
 t.0 t.0 t.POS
 ( ATASCII text:  [1E] )
@@ -3205,25 +3355,31 @@ t.(.")
 BYTES 02201E
 LIT16 0058 t.@ LIT16 0208 t.ERASE
 ( label 47CE )
-t.1 w47A4 t.! t.;S
+t.1 t.TEXT-CLEAR-ENABLED t.! t.;S
 AT 47D6
 
-( w47DC | NFA 47D6 CFA 47DC )
-( Unknown erased name; CFA identifier )
+( PAUSE-COLOR-DLI | NFA 47D6 CFA 47DC )
+( Inferred descriptive name, not recovered original: )
+( Wrapper around DISABLE-COLOR-DLI, called before disk )
+( transfers and scene changes to stabilize playfield colors. )
+( Stack: -- )
 AT 47D6
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000BDA847
 DOCOL
-w40B2 t.;S
+t.DISABLE-COLOR-DLI t.;S
 AT 47E2
 
-( w47E9 | NFA 47E2 CFA 47E9 )
-( Unknown erased name; CFA identifier )
+( RESUME-COLOR-DLI | NFA 47E2 CFA 47E9 )
+( Inferred descriptive name, not recovered original: )
+( Wrapper around ENABLE-COLOR-DLI, called after disk/scene )
+( work and while showing disk prompts. )
+( Stack: -- )
 AT 47E2
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 84000000BED647
 DOCOL
-w409E t.;S
+t.ENABLE-COLOR-DLI t.;S
 AT 47EF
 
 ( SAVED-DMACTL | NFA 47EF CFA 47F5 )
@@ -3265,11 +3421,15 @@ AT 482C
 BYTES 8500000000CE1648
 DOCOL
 t.LOAD-GAME-ASSETS t.DISABLE-DISPLAY-DMA
-t.INSTALL-SCENE-ASSETS w40EF t.RESTORE-DISPLAY-DMA t.;S
+t.INSTALL-SCENE-ASSETS t.INIT-GAME-COLOR-DLI
+t.RESTORE-DISPLAY-DMA t.;S
 AT 4842
 
-( w4847 | NFA 4842 CFA 4847 )
-( Unknown erased name; CFA identifier )
+( TEXT-FRAME-VOCABULARY | NFA 4842 CFA 4847 )
+( Inferred descriptive name, not recovered original: DODOES )
+( vocabulary using $1E30; its private dictionary chain )
+( contains #RT, #RTC, EKP, G#D, G#, D#, S# and [RAM], which )
+( draw character-cell frames. )
 AT 4842
 ( Saved dictionary header: flags, name bytes, link )
 BYTES C200D22C48
@@ -3418,8 +3578,12 @@ t.#RTC t.#RT t.3 t.CMOVE t.G# t.#RTC t.3 t.+ t.#RT t.3 t.CMOVE
 t.S# t.#RTC LIT16 0006 t.+ t.#RT t.3 t.CMOVE t.D# t.;S
 AT 4938
 
-( w4940 | NFA 4938 CFA 4940 )
-( Unknown erased name; CFA identifier )
+( DRAW-TEXT-FRAME | NFA 4938 CFA 4940 )
+( Inferred descriptive name, not recovered original: )
+( Computes SAVMSC [$58]+40*Y@+X@ into EKP, invokes [RAM] )
+( with supplied width/height, then increments both text )
+( coordinates to enter the frame interior. )
+( Stack: width height -- )
 AT 4938
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 8500000000C14248
@@ -3428,17 +3592,26 @@ LIT16 0058 t.@ t.Y@ LIT16 0028 t.* t.+ t.X@ t.+ t.EKP t.!
 t.(RAM) t.X@ t.1+ t.X! t.Y@ t.1+ t.Y! t.;S
 AT 496A
 
-( w4973 | NFA 496A CFA 4973 )
-( Unknown erased name; CFA identifier )
+( DRAW-CENTERED-TEXT-FRAME | NFA 496A CFA 4973 )
+( Inferred descriptive name, not recovered original: Sets X )
+( to 20-floor[width/2], then calls DRAW-TEXT-FRAME with the )
+( original width and height. Used for menus, direction )
+( lists and disk prompts. )
+( Stack: width height -- )
 AT 496A
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 860000000000C13849
 DOCOL
-t.OVER t.2 t./ LIT16 0014 t.SWAP t.- t.X! w4940 t.;S
+t.OVER t.2 t./ LIT16 0014 t.SWAP t.- t.X! t.DRAW-TEXT-FRAME
+t.;S
 AT 4989
 
-( w498F | NFA 4989 CFA 498F )
-( Unknown erased name; CFA identifier )
+( OBJECT-RECORD-BASE | NFA 4989 CFA 498F )
+( Inferred descriptive name, not recovered original: )
+( Constant 2 added by $56A7 after doubling an object )
+( number, forming its picture-record index while reserving )
+( records 0/1. )
+( Stack: -- index )
 AT 4989
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000B06A49
@@ -3446,8 +3619,12 @@ DOCON
 CELL 0002
 AT 4993
 
-( w499A | NFA 4993 CFA 499A )
-( Unknown erased name; CFA identifier )
+( ROOM-GROUP-OFFSET | NFA 4993 CFA 499A )
+( Inferred descriptive name, not recovered original: )
+( Constant 5 added to side-one room numbers by $59E9 to )
+( obtain resource group numbers. Rooms beyond the side-one )
+( threshold use the alternate side-two formula. )
+( Stack: -- offset )
 AT 4993
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 84000000B08949
@@ -3455,8 +3632,12 @@ DOCON
 CELL 0005
 AT 499E
 
-( w49A3 | NFA 499E CFA 49A3 )
-( Unknown erased name; CFA identifier )
+( NEXT-TEXT-ROW-AT-X | NFA 499E CFA 49A3 )
+( Inferred descriptive name, not recovered original: )
+( Duplicates x into X!, increments Y through Y@ 1+ Y!, and )
+( leaves x on the data stack for a later margin restore. )
+( Used between disk-prompt lines. )
+( Stack: x -- x )
 AT 499E
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 8200CC9349
@@ -3464,42 +3645,56 @@ DOCOL
 t.DUP t.X! t.Y@ t.1+ t.Y! t.;S
 AT 49B1
 
-( w49B7 | NFA 49B1 CFA 49B7 )
-( Unknown erased name; CFA identifier )
+( PROMPT-DISK-READ-ERROR | NFA 49B1 CFA 49B7 )
+( Inferred descriptive name, not recovered original: Draws )
+( a centered 28x4 frame, prints BLAD ODCZYTU Z DYSKU and )
+( NACISNIJ DOWOLNY KLAWISZ, beeps, waits for KEY, and )
+( clears the prompt. )
+( Stack: -- )
 AT 49B1
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000D29E49
 DOCOL
-t.CLEAR-TEXT-AREA w47E9 t.CR LIT16 001C t.4 w4973 t.X@
+t.CLEAR-TEXT-AREA t.RESUME-COLOR-DLI t.CR LIT16 001C t.4
+t.DRAW-CENTERED-TEXT-FRAME t.X@
 ( Game text:    BLAD ODCZYTU Z DYSKU )
 t.(S")
 BYTES 173D3D3D426C61443D4F44435A5954553D5A3D4459534B55
-w49A3
+t.NEXT-TEXT-ROW-AT-X
 ( Game text:  NACISNIJ DOWOLNY KLAWISZ )
 t.(S")
 BYTES 193D4E414349734E494A3D444F574F4C4E593D4B4C415749535A
-t.BEEP t.KEY t.2DROP t.CLEAR-TEXT-AREA w47DC t.;S
+t.BEEP t.KEY t.2DROP t.CLEAR-TEXT-AREA t.PAUSE-COLOR-DLI t.;S
 AT 4A0D
 
-( w4A14 | NFA 4A0D CFA 4A14 )
-( Unknown erased name; CFA identifier )
+( PROMPT-FLIP-DISK | NFA 4A0D CFA 4A14 )
+( Inferred descriptive name, not recovered original: Draws )
+( a centered 30x4 frame, prints ODWROC DYSKIETKE and I )
+( NACISNIJ DOWOLNY KLAWISZ, waits for KEY, and clears the )
+( prompt. )
+( Stack: -- )
 AT 4A0D
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 84000000D2B149
 DOCOL
-t.CLEAR-TEXT-AREA w47E9 t.CR LIT16 001E t.4 w4973 t.X@
+t.CLEAR-TEXT-AREA t.RESUME-COLOR-DLI t.CR LIT16 001E t.4
+t.DRAW-CENTERED-TEXT-FRAME t.X@
 ( Game text:       ODWROC DYSKIETKE )
 t.(S")
 BYTES 163D3D3D3D3D3D4F4457526F633D4459534B4945544B65
-w49A3
+t.NEXT-TEXT-ROW-AT-X
 ( Game text:  I NACISNIJ DOWOLNY KLAWISZ )
 t.(S")
 BYTES 1B3D493D4E414349534E494A3D444F574F4C4E593D4B4C415749535A
-t.KEY t.2DROP t.CLEAR-TEXT-AREA w47DC t.;S
+t.KEY t.2DROP t.CLEAR-TEXT-AREA t.PAUSE-COLOR-DLI t.;S
 AT 4A69
 
-( w4A6F | NFA 4A69 CFA 4A6F )
-( Unknown erased name; CFA identifier )
+( REQUIRED-DISK-SIDE | NFA 4A69 CFA 4A6F )
+( Inferred descriptive name, not recovered original: )
+( Desired side marker compared by $4AC8 with the first byte )
+( read from directory sector DIRB. Room loading sets it )
+( from $59E9; restart/save/menu paths select side one. )
+( Stack: -- addr )
 AT 4A69
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000C40D4A
@@ -3507,8 +3702,12 @@ DOVAR
 CELL 0001
 AT 4A73
 
-( w4A79 | NFA 4A73 CFA 4A79 )
-( Unknown erased name; CFA identifier )
+( READ-DISK-SIDE | NFA 4A73 CFA 4A79 )
+( Inferred descriptive name, not recovered original: Reads )
+( directory sector DIRB into PAD on drive one. On success )
+( returns PAD C@ followed by zero; on failure returns a )
+( nonzero error flag. )
+( Stack: -- side 0 | error )
 AT 4A73
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000C4694A
@@ -3521,8 +3720,11 @@ t.PAD t.C@ t.SWAP
 t.;S
 AT 4A99
 
-( w4A9F | NFA 4A99 CFA 4A9F )
-( Unknown erased name; CFA identifier )
+( TRANSFER-BUFFER | NFA 4A99 CFA 4A9F )
+( Inferred descriptive name, not recovered original: Retry )
+( loop $4AC8 saves the caller buffer address here and )
+( reuses it for each BLOAD/SAVE-GAM-GROUP attempt. )
+( Stack: -- addr )
 AT 4A99
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000A9734A
@@ -3530,8 +3732,12 @@ DOVAR
 CELL 436B
 AT 4AA3
 
-( w4AA9 | NFA 4AA3 CFA 4AA9 )
-( Unknown erased name; CFA identifier )
+( TRANSFER-SECTOR-COUNT | NFA 4AA3 CFA 4AA9 )
+( Inferred descriptive name, not recovered original: Retry )
+( loop $4AC8 saves its sector-count/buffer-capacity )
+( argument here and passes it back to BLOAD or )
+( SAVE-GAM-GROUP. )
+( Stack: -- addr )
 AT 4AA3
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000A9994A
@@ -3539,8 +3745,11 @@ DOVAR
 CELL 0007
 AT 4AAD
 
-( w4AB3 | NFA 4AAD CFA 4AB3 )
-( Unknown erased name; CFA identifier )
+( TRANSFER-GROUP | NFA 4AAD CFA 4AB3 )
+( Inferred descriptive name, not recovered original: Retry )
+( loop $4AC8 saves the resource group number here and uses )
+( it on each transfer attempt. )
+( Stack: -- addr )
 AT 4AAD
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000A9A34A
@@ -3548,8 +3757,12 @@ DOVAR
 CELL 0014
 AT 4AB7
 
-( w4ABC | NFA 4AB7 CFA 4ABC )
-( Unknown erased name; CFA identifier )
+( TRANSFER-IS-LOAD | NFA 4AB7 CFA 4ABC )
+( Inferred descriptive name, not recovered original: )
+( Nonzero selects BLOAD in retry loop $4AC8; zero selects )
+( SAVE-GAM-GROUP. Used by state and inventory read/write )
+( wrappers. )
+( Stack: -- addr )
 AT 4AB7
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 8200D3AD4A
@@ -3557,87 +3770,120 @@ DOVAR
 CELL 0000
 AT 4AC0
 
-( w4AC8 | NFA 4AC0 CFA 4AC8 )
-( Unknown erased name; CFA identifier )
+( RETRY-GROUP-TRANSFER | NFA 4AC0 CFA 4AC8 )
+( Inferred descriptive name, not recovered original: Caches )
+( buffer/count/group, reads and checks REQUIRED-DISK-SIDE, )
+( calls BLOAD or SAVE-GAM-GROUP according to )
+( TRANSFER-IS-LOAD, and retries after the appropriate )
+( error/flip-disk prompt until success. )
+( Stack: addr count group -- )
 AT 4AC0
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 8500000000A9B74A
 DOCOL
-w4AB3 t.! w4AA9 t.! w4A9F t.!
+t.TRANSFER-GROUP t.! t.TRANSFER-SECTOR-COUNT t.!
+t.TRANSFER-BUFFER t.!
 ( label 4AD6 )
-w4A79 t.0=_12DE
+t.READ-DISK-SIDE t.0=_12DE
 t.0BRANCH CELL 0042 ( -> 4B1E )
-w4A6F t.@ t.=
+t.REQUIRED-DISK-SIDE t.@ t.=
 t.0BRANCH CELL 0030 ( -> 4B16 )
-w4A9F t.@ w4AA9 t.@ w4AB3 t.@ w4ABC t.@
+t.TRANSFER-BUFFER t.@ t.TRANSFER-SECTOR-COUNT t.@
+t.TRANSFER-GROUP t.@ t.TRANSFER-IS-LOAD t.@
 t.0BRANCH CELL 0008 ( -> 4B02 )
 t.BLOAD
 t.BRANCH CELL 0004 ( -> 4B04 )
 ( label 4B02 )
-w46DE
+t.SAVE-GAM-GROUP
 ( label 4B04 )
 t.0BRANCH CELL 000A ( -> 4B10 )
-w49B7 t.0
+t.PROMPT-DISK-READ-ERROR t.0
 t.BRANCH CELL 0004 ( -> 4B12 )
 ( label 4B10 )
 t.1
 ( label 4B12 )
 t.BRANCH CELL 0006 ( -> 4B1A )
 ( label 4B16 )
-w4A14 t.0
+t.PROMPT-FLIP-DISK t.0
 ( label 4B1A )
 t.BRANCH CELL 0006 ( -> 4B22 )
 ( label 4B1E )
-w49B7 t.0
+t.PROMPT-DISK-READ-ERROR t.0
 ( label 4B22 )
 t.0BRANCH CELL FFB2 ( -> 4AD6 )
 t.;S
 AT 4B28
 
-( w4B2D | NFA 4B28 CFA 4B2D )
-( Unknown erased name; CFA identifier )
+( GAME-STATE-DISK-RANGE | NFA 4B28 CFA 4B2D )
+( Inferred descriptive name, not recovered original: )
+( Returns CURRENT-ROOM storage address followed by the )
+( sector count covering state through )
+( ROOM-EXIT-MASKS[ROOM-TABLE-CAPACITY-1], computed as byte )
+( distance/B/BUF+1. Original 6502 execution returns address )
+( $436B and seven sectors. )
+( Stack: -- addr sectors )
 AT 4B28
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 8200C9C04A
 DOCOL
-w4369 w4563 t.1 t.- w4678 t.OVER t.- t.B/BUF t./ t.1+ t.;S
+t.CURRENT-ROOM t.ROOM-TABLE-CAPACITY t.1 t.- t.ROOM-EXIT-MASKS
+t.OVER t.- t.B/BUF t./ t.1+ t.;S
 AT 4B45
 
-( w4B4C | NFA 4B45 CFA 4B4C )
-( Unknown erased name; CFA identifier )
+( LOAD-INITIAL-STATE | NFA 4B45 CFA 4B4C )
+( Inferred descriptive name, not recovered original: Sets )
+( TRANSFER-IS-LOAD and reads group $13 [19] into )
+( GAME-STATE-DISK-RANGE. Called by new-game initialization )
+( and the ending restart path. )
+( Stack: -- )
 AT 4B45
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 84000000C3284B
 DOCOL
-t.1 w4ABC t.! w4B2D LIT8 13 w4AC8 t.;S
+t.1 t.TRANSFER-IS-LOAD t.! t.GAME-STATE-DISK-RANGE LIT8 13
+t.RETRY-GROUP-TRANSFER t.;S
 AT 4B5D
 
-( w4B64 | NFA 4B5D CFA 4B64 )
-( Unknown erased name; CFA identifier )
+( LOAD-SAVED-STATE | NFA 4B5D CFA 4B64 )
+( Inferred descriptive name, not recovered original: Sets )
+( TRANSFER-IS-LOAD and reads group $14 [20] into )
+( GAME-STATE-DISK-RANGE; the game load-command wrapper )
+( invokes it after restoring inventory. )
+( Stack: -- )
 AT 4B5D
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 84000000CE454B
 DOCOL
-t.1 w4ABC t.! w4B2D LIT8 14 w4AC8 t.;S
+t.1 t.TRANSFER-IS-LOAD t.! t.GAME-STATE-DISK-RANGE LIT8 14
+t.RETRY-GROUP-TRANSFER t.;S
 AT 4B75
 
-( w4B7C | NFA 4B75 CFA 4B7C )
-( Unknown erased name; CFA identifier )
+( SAVE-GAME-STATE | NFA 4B75 CFA 4B7C )
+( Inferred descriptive name, not recovered original: Clears )
+( TRANSFER-IS-LOAD and writes GAME-STATE-DISK-RANGE to )
+( group $14 [20]; the game save-command wrapper invokes it )
+( after saving inventory. )
+( Stack: -- )
 AT 4B75
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 84000000CE5D4B
 DOCOL
-t.0 w4ABC t.! w4B2D LIT8 14 w4AC8 t.;S
+t.0 t.TRANSFER-IS-LOAD t.! t.GAME-STATE-DISK-RANGE LIT8 14
+t.RETRY-GROUP-TRANSFER t.;S
 AT 4B8D
 
-( w4B95 | NFA 4B8D CFA 4B95 )
-( Unknown erased name; CFA identifier )
+( LOAD-RESOURCE-GROUP | NFA 4B8D CFA 4B95 )
+( Inferred descriptive name, not recovered original: Clears )
+( the resource buffer, selects load direction, and calls )
+( RETRY-GROUP-TRANSFER with resource base and capacity $50 )
+( sectors, preserving the supplied group number. )
+( Stack: group -- )
 AT 4B8D
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 8500000000C2754B
 DOCOL
-w3F1D t.1 w4ABC t.! t.0 t.RESOURCE-ADDR LIT8 50 t.ROT w4AC8
-t.;S
+t.CLEAR-RESOURCE-BUFFER t.1 t.TRANSFER-IS-LOAD t.! t.0
+t.RESOURCE-ADDR LIT8 50 t.ROT t.RETRY-GROUP-TRANSFER t.;S
 AT 4BAC
 
 ( CPM | NFA 4BAC CFA 4BB2 )
@@ -3797,8 +4043,12 @@ DOCOL
 t.DK t.! t.ZK t.! t.;S
 AT 4CEA
 
-( w4CF3 | NFA 4CEA CFA 4CF3 )
-( Unknown erased name; CFA identifier )
+( PM-COPY-PARAMETERS! | NFA 4CEA CFA 4CF3 )
+( Inferred descriptive name, not recovered original: Stores )
+( plane count in ILPM and bytes per plane in +DOD; cursor-Y )
+( placement supplies 13 bytes and three planes. Same )
+( dataflow appears as DL-IL! in GAM source screen 7. )
+( Stack: bytes-per-plane planes -- )
 AT 4CEA
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 860000000000A1D54C
@@ -3806,8 +4056,12 @@ DOCOL
 t.ILPM t.! t.+DOD t.! t.;S
 AT 4CFF
 
-( w4D05 | NFA 4CFF CFA 4D05 )
-( Unknown erased name; CFA identifier )
+( COPY-PM-PLANES | NFA 4CFF CFA 4D05 )
+( Inferred descriptive name, not recovered original: Native )
+( code copies +DOD bytes from ZK to DK for ILPM planes, )
+( advances source by +DOD and destination by $100 per )
+( plane, preserving Forth X and returning through NEXT. )
+( Stack: -- )
 AT 4CFF
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000A6EA4C
@@ -3828,14 +4082,18 @@ LDX.ZP D1            ( 4D20 )
 JMP.ABS 0F47         ( 4D22 )
 AT 4D25
 
-( w4D2C | NFA 4D25 CFA 4D2C )
-( Unknown erased name; CFA identifier )
+( SET-CURSOR-PM-Y | NFA 4D25 CFA 4D2C )
+( Inferred descriptive name, not recovered original: Copies )
+( the fixed three 13-byte cursor planes at $4CA1 to )
+( PMBASE@+y using ZD-PM!, PM-COPY-PARAMETERS! and )
+( COPY-PM-PLANES after a frame wait. )
+( Stack: y -- )
 AT 4D25
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 84000000A1FF4C
 DOCOL
-LIT16 4CA1 t.SWAP t.PMBASE@ t.+ t.ZD-PM! LIT8 0D t.3 w4CF3 t.1
-t.PAUSE w4D05 t.;S
+LIT16 4CA1 t.SWAP t.PMBASE@ t.+ t.ZD-PM! LIT8 0D t.3
+t.PM-COPY-PARAMETERS! t.1 t.PAUSE t.COPY-PM-PLANES t.;S
 AT 4D49
 
 ( VARRAY | NFA 4D49 CFA 4D52 )
@@ -3851,8 +4109,14 @@ t.<BUILDS t., t.ALLOT t.DOES>
 BYTES A513E413E413041316167712
 AT 4D68
 
-( w4D70 | NFA 4D68 CFA 4D70 )
-( Unknown erased name; CFA identifier )
+( CURSOR-CONTEXT | NFA 4D68 CFA 4D70 )
+( Inferred descriptive name, not recovered original: Index )
+( variable shared by the four VARRAY cursor tables. Even )
+( entries select X and adjacent odd entries select Y; )
+( contexts 0/2/4/6 select different screen regions. GAM )
+( screen 8 describes the analogous GDZIE variable as )
+( selecting the serviced area. )
+( Stack: -- addr )
 AT 4D68
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 8500000000C5494D
@@ -3860,8 +4124,13 @@ DOVAR
 CELL 0000
 AT 4D74
 
-( w4D7C | NFA 4D74 CFA 4D7C )
-( Unknown erased name; CFA identifier )
+( CURSOR-ORIGIN | NFA 4D74 CFA 4D7C )
+( Inferred descriptive name, not recovered original: VARRAY )
+( indexed implicitly by CURSOR-CONTEXT; supplies the origin )
+( added to index*step by $4DD8/$4E3E. Adjacent bytes hold )
+( X/Y origins; $518C and $6FF4 update them for scene/menu )
+( placement. )
+( Stack: -- addr )
 AT 4D74
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 8500000000B0684D
@@ -3870,8 +4139,12 @@ DODOES
 BYTES 5C4D724D531C3634202020202020
 AT 4D8C
 
-( w4D92 | NFA 4D8C CFA 4D92 )
-( Unknown erased name; CFA identifier )
+( CURSOR-GRID-POS | NFA 4D8C CFA 4D92 )
+( Inferred descriptive name, not recovered original: VARRAY )
+( indexed by CURSOR-CONTEXT, holding the current grid index )
+( for the selected axis. $4DD8 sets it; $4E3E changes it )
+( after movement; callers also access adjacent X/Y bytes. )
+( Stack: -- addr )
 AT 4D8C
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000D0744D
@@ -3880,8 +4153,12 @@ DODOES
 BYTES 5C4D724D00000000202020202020
 AT 4DA2
 
-( w4DA9 | NFA 4DA2 CFA 4DA9 )
-( Unknown erased name; CFA identifier )
+( CURSOR-GRID-STEP | NFA 4DA2 CFA 4DA9 )
+( Inferred descriptive name, not recovered original: VARRAY )
+( indexed by CURSOR-CONTEXT, supplying pixels per grid )
+( step. X/Y steps initially 4 and 6; $4DD8 computes )
+( origin+index*step and $4E3E animates across that interval. )
+( Stack: -- addr )
 AT 4DA2
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 84000000C48C4D
@@ -3890,8 +4167,12 @@ DODOES
 BYTES 5C4D724D04060F1F202004082020
 AT 4DB9
 
-( w4DC1 | NFA 4DB9 CFA 4DC1 )
-( Unknown erased name; CFA identifier )
+( CURSOR-GRID-LIMIT | NFA 4DB9 CFA 4DC1 )
+( Inferred descriptive name, not recovered original: VARRAY )
+( indexed by CURSOR-CONTEXT, storing maximum permitted grid )
+( index. $51B9 writes hit-map width-1/height-1; $4EA4 )
+( compares current index against these limits. )
+( Stack: -- addr )
 AT 4DB9
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 8500000000D8A24D
@@ -3900,42 +4181,60 @@ DODOES
 BYTES 5C4D724D130E0101202000202020
 AT 4DD1
 
-( w4DD8 | NFA 4DD1 CFA 4DD8 )
-( Unknown erased name; CFA identifier )
+( SET-CURSOR-GRID-INDEX | NFA 4DD1 CFA 4DD8 )
+( Inferred descriptive name, not recovered original: Stores )
+( index in CURSOR-GRID-POS for the active context and )
+( returns index*CURSOR-GRID-STEP+CURSOR-ORIGIN. Original )
+( 6502 execution with index=3, step=4 and origin=40 returns )
+( 52 and stores grid index 3. )
+( Stack: index -- pixel )
 AT 4DD1
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 84000000A1B94D
 DOCOL
-t.DUP w4D92 t.C! w4DA9 t.C@ t.* w4D7C t.C@ t.+ t.;S
+t.DUP t.CURSOR-GRID-POS t.C! t.CURSOR-GRID-STEP t.C@ t.*
+t.CURSOR-ORIGIN t.C@ t.+ t.;S
 AT 4DEE
 
-( w4DF4 | NFA 4DEE CFA 4DF4 )
-( Unknown erased name; CFA identifier )
+( SET-CURSOR-X | NFA 4DEE CFA 4DF4 )
+( Inferred descriptive name, not recovered original: )
+( Converts/stores the grid index with $4DD8 then passes the )
+( resulting horizontal hardware coordinate to XPM!. )
+( Stack: index -- )
 AT 4DEE
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000A1D14D
 DOCOL
-w4DD8 t.XPM! t.;S
+t.SET-CURSOR-GRID-INDEX t.XPM! t.;S
 AT 4DFC
 
-( w4E02 | NFA 4DFC CFA 4E02 )
-( Unknown erased name; CFA identifier )
+( SET-CURSOR-Y | NFA 4DFC CFA 4E02 )
+( Inferred descriptive name, not recovered original: )
+( Temporarily increments CURSOR-CONTEXT to its paired Y )
+( entry, converts/stores the grid index, copies the cursor )
+( planes at the resulting Y position, then restores context. )
+( Stack: index -- )
 AT 4DFC
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000A1EE4D
 DOCOL
-t.1 w4D70 t.+! w4DD8 w4D2C LIT16 FFFF w4D70 t.+! t.;S
+t.1 t.CURSOR-CONTEXT t.+! t.SET-CURSOR-GRID-INDEX
+t.SET-CURSOR-PM-Y LIT16 FFFF t.CURSOR-CONTEXT t.+! t.;S
 AT 4E18
 
-( w4E1F | NFA 4E18 CFA 4E1F )
-( Unknown erased name; CFA identifier )
+( SET-CURSOR-PIXEL | NFA 4E18 CFA 4E1F )
+( Inferred descriptive name, not recovered original: )
+( Selects SET-CURSOR-PM-Y for odd CURSOR-CONTEXT and XPM! )
+( for even contexts. The input is already a hardware pixel )
+( coordinate, not a grid index. )
+( Stack: pixel -- )
 AT 4E18
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 84000000A1FC4D
 DOCOL
-w4D70 t.@ t.2 t.MOD
+t.CURSOR-CONTEXT t.@ t.2 t.MOD
 t.0BRANCH CELL 0008 ( -> 4E33 )
-w4D2C
+t.SET-CURSOR-PM-Y
 t.BRANCH CELL 0004 ( -> 4E35 )
 ( label 4E33 )
 t.XPM!
@@ -3943,47 +4242,58 @@ t.XPM!
 t.;S
 AT 4E37
 
-( w4E3E | NFA 4E37 CFA 4E3E )
-( Unknown erased name; CFA identifier )
+( ANIMATE-CURSOR-STEP | NFA 4E37 CFA 4E3E )
+( Inferred descriptive name, not recovered original: For a )
+( nonzero signed grid delta, derives the current hardware )
+( position, iterates intermediate positions through )
+( SET-CURSOR-PIXEL using delta as loop step, then updates )
+( CURSOR-GRID-POS by delta. Zero delta is discarded. )
+( Stack: delta -- )
 AT 4E37
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 84000000AB184E
 DOCOL
-t.>R w4D92 t.C@ w4DA9 t.C@ t.* w4D7C t.C@ t.+ t.R t.0=_12DE
+t.>R t.CURSOR-GRID-POS t.C@ t.CURSOR-GRID-STEP t.C@ t.*
+t.CURSOR-ORIGIN t.C@ t.+ t.R t.0=_12DE
 t.0BRANCH CELL 000A ( -> 4E62 )
 t.R> t.2DROP
 t.BRANCH CELL 003A ( -> 4E9A )
 ( label 4E62 )
-t.R t.SWAP t.R t.+ t.DUP w4DA9 t.C@ t.R t.* t.+ t.DUP t.R t.-
-t.SWAP t.ROT t.(DO)
+t.R t.SWAP t.R t.+ t.DUP t.CURSOR-GRID-STEP t.C@ t.R t.* t.+
+t.DUP t.R t.- t.SWAP t.ROT t.(DO)
 ( label 4E82 )
-t.I w4E1F t.OVER
+t.I t.SET-CURSOR-PIXEL t.OVER
 t.(+LOOP) CELL FFF8 ( -> 4E82 )
-t.2DROP w4D92 t.C@ t.R> t.+ w4D92 t.C!
+t.2DROP t.CURSOR-GRID-POS t.C@ t.R> t.+ t.CURSOR-GRID-POS t.C!
 ( label 4E9A )
 t.;S
 AT 4E9C
 
-( w4EA4 | NFA 4E9C CFA 4EA4 )
-( Unknown erased name; CFA identifier )
+( STEP-CURSOR-BOUNDED | NFA 4E9C CFA 4EA4 )
+( Inferred descriptive name, not recovered original: )
+( Accepts the joystick step -1/0/+1; negative motion runs )
+( only above index zero, positive motion only below )
+( CURSOR-GRID-LIMIT, then calls ANIMATE-CURSOR-STEP. It is )
+( not a general clamp for arbitrary multi-cell deltas. )
+( Stack: delta -- )
 AT 4E9C
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 8500000000A1374E
 DOCOL
 t.DUP t.0<_12F3
 t.0BRANCH CELL 001A ( -> 4EC6 )
-w4D92 t.C@ t.0 t.>
+t.CURSOR-GRID-POS t.C@ t.0 t.>
 t.0BRANCH CELL 0008 ( -> 4EC0 )
-w4E3E
+t.ANIMATE-CURSOR-STEP
 t.BRANCH CELL 0004 ( -> 4EC2 )
 ( label 4EC0 )
 t.DROP
 ( label 4EC2 )
 t.BRANCH CELL 0018 ( -> 4EDC )
 ( label 4EC6 )
-w4D92 t.C@ w4DC1 t.C@ t.<
+t.CURSOR-GRID-POS t.C@ t.CURSOR-GRID-LIMIT t.C@ t.<
 t.0BRANCH CELL 0008 ( -> 4EDA )
-w4E3E
+t.ANIMATE-CURSOR-STEP
 t.BRANCH CELL 0004 ( -> 4EDC )
 ( label 4EDA )
 t.DROP
@@ -3991,22 +4301,30 @@ t.DROP
 t.;S
 AT 4EDE
 
-( w4EE5 | NFA 4EDE CFA 4EE5 )
-( Unknown erased name; CFA identifier )
+( STEP-CURSOR-X | NFA 4EDE CFA 4EE5 )
+( Inferred descriptive name, not recovered original: )
+( Wrapper around STEP-CURSOR-BOUNDED for the current even/X )
+( context. WAIT-GAME-INPUT calls it after applying Y motion. )
+( Stack: dx -- )
 AT 4EDE
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 84000000A19C4E
 DOCOL
-w4EA4 t.;S
+t.STEP-CURSOR-BOUNDED t.;S
 AT 4EEB
 
-( w4EF2 | NFA 4EEB CFA 4EF2 )
-( Unknown erased name; CFA identifier )
+( STEP-CURSOR-Y | NFA 4EEB CFA 4EF2 )
+( Inferred descriptive name, not recovered original: )
+( Temporarily increments CURSOR-CONTEXT to the paired Y )
+( entry, calls STEP-CURSOR-BOUNDED, then restores the )
+( context. )
+( Stack: dy -- )
 AT 4EEB
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 84000000A1DE4E
 DOCOL
-t.1 w4D70 t.+! w4EA4 LIT16 FFFF w4D70 t.+! t.;S
+t.1 t.CURSOR-CONTEXT t.+! t.STEP-CURSOR-BOUNDED LIT16 FFFF
+t.CURSOR-CONTEXT t.+! t.;S
 AT 4F06
 
 ( TG0 | NFA 4F06 CFA 4F0C )
@@ -4062,8 +4380,12 @@ DOCON
 CELL FFFF
 AT 4F4B
 
-( w4F51 | NFA 4F4B CFA 4F51 )
-( Unknown erased name; CFA identifier )
+( STICK-X-DELTA-TABLE | NFA 4F4B CFA 4F51 )
+( Inferred descriptive name, not recovered original: SELECT )
+( vector for raw STICK code minus five, containing )
+( [1,1,1,0,-1,-1,-1,0,0,0,0]. $4F98 combines it with the Y )
+( table; the same vector is XST in GAM source screen 10. )
+( Stack: index -- dx )
 AT 4F4B
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000D4424F
@@ -4072,8 +4394,12 @@ DODOES
 BYTES B430CD14CD14CD14C514474F474F474FC514C514C514C5147712
 AT 4F6D
 
-( w4F73 | NFA 4F6D CFA 4F73 )
-( Unknown erased name; CFA identifier )
+( STICK-Y-DELTA-TABLE | NFA 4F6D CFA 4F73 )
+( Inferred descriptive name, not recovered original: SELECT )
+( vector for raw STICK code minus five, containing )
+( [1,-1,0,0,1,-1,0,0,1,-1,0]. $4F98 combines it with the X )
+( table; the same vector is YST in GAM source screen 10. )
+( Stack: index -- dy )
 AT 4F6D
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000D44B4F
@@ -4082,28 +4408,46 @@ DODOES
 BYTES B430CD14474FC514C514CD14474FC514C514CD14474FC5147712
 AT 4F8F
 
-( w4F98 | NFA 4F8F CFA 4F98 )
-( Unknown erased name; CFA identifier )
+( STICK>DELTAS | NFA 4F8F CFA 4F98 )
+( Inferred descriptive name, not recovered original: )
+( Subtracts five from a raw OS STICK nibble, then executes )
+( the X and Y selector vectors. Examples: 15->0,0; )
+( 14->0,-1; 13->0,1; 11->-1,0; 7->1,0. Input is a STICK )
+( value, not a controller number. GAM screen 10 documents )
+( the same STI>XY stack effect. Original 6502 execution )
+( confirms all nine valid direction/neutral nibble values. )
+( Stack: stick -- dx dy )
 AT 4F8F
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 860000000000D96D4F
 DOCOL
-LIT16 0005 t.- t.DUP w4F51 t.SWAP w4F73 t.;S
+LIT16 0005 t.- t.DUP t.STICK-X-DELTA-TABLE t.SWAP
+t.STICK-Y-DELTA-TABLE t.;S
 AT 4FAA
 
-( w4FB4 | NFA 4FAA CFA 4FB4 )
-( Unknown erased name; CFA identifier )
+( INIT-CURSOR-PLAYERS | NFA 4FAA CFA 4FB4 )
+( Inferred descriptive name, not recovered original: Sets )
+( SDMCTL $022F=$3E and GPRIOR $026F=1, chooses PMBASE )
+( $A000, clears/configures/enables player graphics, and )
+( positions X/Y using the stored cursor grid indices. )
+( Stack: -- )
 AT 4FAA
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 87000000000000CD8F4F
 DOCOL
 LIT16 003E LIT16 022F t.C! t.1 LIT16 026F t.C! LIT16 00A0
-t.PMBASE! t.C-PM t.?COL-PM t.ON-PM w4D92 t.C@ w4DF4 w4D92 t.1+
-t.C@ w4E02 t.;S
+t.PMBASE! t.C-PM t.?COL-PM t.ON-PM t.CURSOR-GRID-POS t.C@
+t.SET-CURSOR-X t.CURSOR-GRID-POS t.1+ t.C@ t.SET-CURSOR-Y t.;S
 AT 4FE4
 
-( w4FEB | NFA 4FE4 CFA 4FEB )
-( Unknown erased name; CFA identifier )
+( HIT-MAP-BUFFER | NFA 4FE4 CFA 4FEB )
+( Inferred descriptive name, not recovered original: )
+( Decoded hit-map buffer: first bytes are width and height, )
+( followed by one object/hit ID per cell. $5147 indexes )
+( x+y*width+2, $5261 decompresses resource masks here, and )
+( $51B9 derives cursor limits. Allocation initially )
+( contains stale Forth/source bytes. )
+( Stack: -- addr )
 AT 4FE4
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 84000000C2AA4F
@@ -4123,22 +4467,31 @@ BYTES 0F6F0220142D00000000000000000000000101010101000000000000
 BYTES 13604F
 AT 5140
 
-( w5147 | NFA 5140 CFA 5147 )
-( Unknown erased name; CFA identifier )
+( HIT-MAP-CELL@ | NFA 5140 CFA 5147 )
+( Inferred descriptive name, not recovered original: )
+( Calculates HIT-MAP-BUFFER+2+x+y*width and fetches the )
+( byte; HANDLE-GAME-INPUT uses it to obtain the selected )
+( object ID. )
+( Stack: x y -- object )
 AT 5140
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 84000000C0E44F
 DOCOL
-w4FEB t.C@ t.* t.+ w4FEB t.+ t.2+ t.C@ t.;S
+t.HIT-MAP-BUFFER t.C@ t.* t.+ t.HIT-MAP-BUFFER t.+ t.2+ t.C@
+t.;S
 AT 515B
 
-( w5162 | NFA 515B CFA 5162 )
-( Unknown erased name; CFA identifier )
+( COPY-HIT-MAP | NFA 515B CFA 5162 )
+( Inferred descriptive name, not recovered original: Skips )
+( the length-prefixed picture with DUP @ + 2+, then )
+( expands/copies the following record into HIT-MAP-BUFFER )
+( using <MOVE. )
+( Stack: record -- )
 AT 515B
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 84000000C24051
 DOCOL
-t.DUP t.@ t.+ t.2+ w4FEB t.<MOVE t.;S
+t.DUP t.@ t.+ t.2+ t.HIT-MAP-BUFFER t.<MOVE t.;S
 AT 5172
 
 ( XR | NFA 5172 CFA 5177 )
@@ -4163,51 +4516,73 @@ DOCON
 CELL 0014
 AT 5184
 
-( w518C | NFA 5184 CFA 518C )
-( Unknown erased name; CFA identifier )
+( SET-HIT-MAP-ORIGIN | NFA 5184 CFA 518C )
+( Inferred descriptive name, not recovered original: )
+( Converts FIRST's picture x/y into cursor origins: )
+( x*current horizontal step+XR and y+YR, storing the two )
+( bytes in $4D7C. )
+( Stack: -- )
 AT 5184
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 8500000000B07B51
 DOCOL
-t.FIRST t.C@ w4DA9 t.C@ t.* t.XR t.+ w4D7C t.C! t.FIRST t.1+
-t.C@ t.YR t.+ w4D7C t.1+ t.C! t.;S
+t.FIRST t.C@ t.CURSOR-GRID-STEP t.C@ t.* t.XR t.+
+t.CURSOR-ORIGIN t.C! t.FIRST t.1+ t.C@ t.YR t.+
+t.CURSOR-ORIGIN t.1+ t.C! t.;S
 AT 51B2
 
-( w51B9 | NFA 51B2 CFA 51B9 )
-( Unknown erased name; CFA identifier )
+( SET-HIT-MAP-LIMITS | NFA 51B2 CFA 51B9 )
+( Inferred descriptive name, not recovered original: Stores )
+( HIT-MAP-BUFFER width-1 and height-1 in the two )
+( cursor-limit bytes at $4DC1. )
+( Stack: -- )
 AT 51B2
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 84000000D88451
 DOCOL
-w4FEB t.C@ t.1 t.- w4DC1 t.C! w4FEB t.1+ t.C@ t.1 t.- w4DC1
-t.1+ t.C! t.;S
+t.HIT-MAP-BUFFER t.C@ t.1 t.- t.CURSOR-GRID-LIMIT t.C!
+t.HIT-MAP-BUFFER t.1+ t.C@ t.1 t.- t.CURSOR-GRID-LIMIT t.1+
+t.C! t.;S
 AT 51D9
 
-( w51E0 | NFA 51D9 CFA 51E0 )
-( Unknown erased name; CFA identifier )
+( DRAW-PICTURE-WITH-HIT-MAP | NFA 51D9 CFA 51E0 )
+( Inferred descriptive name, not recovered original: Finds )
+( and draws a resource using ?PCOBJ, derives cursor origin, )
+( copies its following hit-map, and sets cursor limits; )
+( resource 2 forces hit-map height 16. )
+( Stack: resource -- )
 AT 51D9
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 84000000D2B251
 DOCOL
-t.DUP t.>R t.RESOURCE-ADDR t.DUP t.?PCOBJ w518C w5162 t.R> t.2
-t.=
+t.DUP t.>R t.RESOURCE-ADDR t.DUP t.?PCOBJ t.SET-HIT-MAP-ORIGIN
+t.COPY-HIT-MAP t.R> t.2 t.=
 t.0BRANCH CELL 000A ( -> 5202 )
-t.16 w4FEB t.1+ t.C!
+t.16 t.HIT-MAP-BUFFER t.1+ t.C!
 ( label 5202 )
-w51B9 t.;S
+t.SET-HIT-MAP-LIMITS t.;S
 AT 5206
 
-( w520C | NFA 5206 CFA 520C )
-( Unknown erased name; CFA identifier )
+( ROOM-VIEW-OBJECTS | NFA 5206 CFA 520C )
+( Inferred descriptive name, not recovered original: )
+( Indexes mutable ROOM-OBJECT-STATE at $438B by room, then )
+( indexes that record's payload by view. $70A2/$70FC remove )
+( and insert IDs in the returned length-prefixed list. )
+( Stack: room view -- record )
 AT 5206
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000C2D951
 DOCOL
-t.SWAP w438B w4763 t.2+ w4763 t.;S
+t.SWAP t.ROOM-OBJECT-STATE t.LENGTH-RECORD-ADDR t.2+
+t.LENGTH-RECORD-ADDR t.;S
 AT 521A
 
-( w521F | NFA 521A CFA 521F )
-( Unknown erased name; CFA identifier )
+( PICTURE-COLORS-PTR | NFA 521A CFA 521F )
+( Inferred descriptive name, not recovered original: $522A )
+( stores the address of five color bytes immediately before )
+( a picture's odd flag. $588D copies its first three bytes )
+( to ADC's palette destination. )
+( Stack: -- address )
 AT 521A
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 8200C30652
@@ -4215,15 +4590,19 @@ DOVAR
 CELL 0000
 AT 5223
 
-( w522A | NFA 5223 CFA 522A )
-( Unknown erased name; CFA identifier )
+( EXPAND-PICTURE | NFA 5223 CFA 522A )
+( Inferred descriptive name, not recovered original: )
+( Locates the resource's final flag, remembers trailing )
+( colors when the flag is odd, and expands the record into )
+( FIRST using <MOVE. )
+( Stack: resource -- )
 AT 5223
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 84000000C61A52
 DOCOL
 t.RESOURCE-ADDR t.DUP t.OUNT t.+ t.1 t.- t.DUP t.C@ t.2 t.MOD
 t.0BRANCH CELL 0010 ( -> 5252 )
-LIT16 0005 t.- w521F t.!
+LIT16 0005 t.- t.PICTURE-COLORS-PTR t.!
 t.BRANCH CELL 0004 ( -> 5254 )
 ( label 5252 )
 t.DROP
@@ -4231,17 +4610,24 @@ t.DROP
 t.FIRST t.<MOVE t.;S
 AT 525A
 
-( w5261 | NFA 525A CFA 5261 )
-( Unknown erased name; CFA identifier )
+( LOAD-HIT-MAP | NFA 525A CFA 5261 )
+( Inferred descriptive name, not recovered original: Looks )
+( up the resource with RESOURCE-ADDR and expands it into )
+( HIT-MAP-BUFFER using <MOVE. )
+( Stack: resource -- )
 AT 525A
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 84000000D42352
 DOCOL
-t.RESOURCE-ADDR w4FEB t.<MOVE t.;S
+t.RESOURCE-ADDR t.HIT-MAP-BUFFER t.<MOVE t.;S
 AT 526B
 
-( w5270 | NFA 526B CFA 5270 )
-( Unknown erased name; CFA identifier )
+( OVERLAY-X-OFFSET | NFA 526B CFA 5270 )
+( Inferred descriptive name, not recovered original: $52A1 )
+( stores overlay x minus base-picture x; $5308 uses the )
+( same byte-column offset when composing the corresponding )
+( hit-map. )
+( Stack: -- address )
 AT 526B
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 8200D85A52
@@ -4249,8 +4635,12 @@ DOVAR
 CELL 0000
 AT 5274
 
-( w5279 | NFA 5274 CFA 5279 )
-( Unknown erased name; CFA identifier )
+( OVERLAY-Y-OFFSET | NFA 5274 CFA 5279 )
+( Inferred descriptive name, not recovered original: $52A1 )
+( stores overlay y minus base-picture y; $5308 divides this )
+( difference by six when locating the overlay in the )
+( hit-map. )
+( Stack: -- address )
 AT 5274
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 8200D96B52
@@ -4258,8 +4648,11 @@ DOVAR
 CELL 0000
 AT 527D
 
-( w5283 | NFA 527D CFA 5283 )
-( Unknown erased name; CFA identifier )
+( BLIT-ROW-STRIDE! | NFA 527D CFA 5283 )
+( Inferred descriptive name, not recovered original: Stores )
+( the cell in P-CCM+6, the destination row-step documented )
+( by GAM FORTH 11_B_Graf.TXT screen 84/89. )
+( Stack: stride -- )
 AT 527D
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000A17452
@@ -4267,8 +4660,11 @@ DOCOL
 t.P-CCM LIT16 0006 t.+ t.! t.;S
 AT 5291
 
-( w5296 | NFA 5291 CFA 5296 )
-( Unknown erased name; CFA identifier )
+( OVERLAY-PICTURE-BUFFER | NFA 5291 CFA 5296 )
+( Inferred descriptive name, not recovered original: )
+( Constant $A4E8 is the scratch destination where $52A1 )
+( expands a picture before copying its pixels into FIRST. )
+( Stack: -- address )
 AT 5291
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 8200C47D52
@@ -4276,43 +4672,64 @@ DOCON
 CELL A4E8
 AT 529A
 
-( w52A1 | NFA 529A CFA 52A1 )
-( Unknown erased name; CFA identifier )
+( COMPOSE-PICTURE-OVERLAY | NFA 529A CFA 52A1 )
+( Inferred descriptive name, not recovered original: )
+( Expands a positioned picture at $A4E8, computes relative )
+( x/y, sets CCMOV source and destination inside FIRST, )
+( copies with the base picture's row width, then restores )
+( stride 40. )
+( Stack: resource -- )
 AT 529A
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 84000000C69152
 DOCOL
-t.RESOURCE-ADDR w5296 t.<MOVE w5296 t.2+ t.OXY t.XY-CCM! w5296
-t.4 t.+ w5296 t.C@ t.FIRST t.C@ t.- t.DUP w5270 t.! w5296 t.1+
-t.C@ t.FIRST t.1+ t.C@ t.- t.DUP w5279 t.! t.FIRST t.2+ t.C@
-t.* t.+ t.FIRST t.+ t.4 t.+ t.ZD-CCM! t.FIRST t.2+ t.C@ w5283
-t.CCMOV LIT16 0028 w5283 t.;S
+t.RESOURCE-ADDR t.OVERLAY-PICTURE-BUFFER t.<MOVE
+t.OVERLAY-PICTURE-BUFFER t.2+ t.OXY t.XY-CCM!
+t.OVERLAY-PICTURE-BUFFER t.4 t.+ t.OVERLAY-PICTURE-BUFFER t.C@
+t.FIRST t.C@ t.- t.DUP t.OVERLAY-X-OFFSET t.!
+t.OVERLAY-PICTURE-BUFFER t.1+ t.C@ t.FIRST t.1+ t.C@ t.- t.DUP
+t.OVERLAY-Y-OFFSET t.! t.FIRST t.2+ t.C@ t.* t.+ t.FIRST t.+
+t.4 t.+ t.ZD-CCM! t.FIRST t.2+ t.C@ t.BLIT-ROW-STRIDE! t.CCMOV
+LIT16 0028 t.BLIT-ROW-STRIDE! t.;S
 AT 5301
 
-( w5308 | NFA 5301 CFA 5308 )
-( Unknown erased name; CFA identifier )
+( COMPOSE-HIT-MAP-OVERLAY | NFA 5301 CFA 5308 )
+( Inferred descriptive name, not recovered original: )
+( Temporarily sets RCM=0, expands a mask into PAD, computes )
+( its destination in HIT-MAP-BUFFER from saved overlay )
+( offsets, calls CCMOV, and restores RCM and stride 40. )
+( Stack: resource -- )
 AT 5301
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 84000000D49A52
 DOCOL
 t.RCM t.C@ t.SWAP t.0 t.RCM t.C! t.RESOURCE-ADDR t.PAD t.<MOVE
-t.PAD t.OXY t.XY-CCM! t.PAD t.2+ w5270 t.@ w5279 t.@
-LIT16 0006 t./MOD t.SWAP t.0=_12DE t.0=_12DE t.+ w4FEB t.C@
-t.* t.+ w4FEB t.+ t.2+ t.ZD-CCM! w4FEB t.C@ w5283 t.CCMOV
-LIT16 0028 w5283 t.RCM t.C! t.;S
+t.PAD t.OXY t.XY-CCM! t.PAD t.2+ t.OVERLAY-X-OFFSET t.@
+t.OVERLAY-Y-OFFSET t.@ LIT16 0006 t./MOD t.SWAP t.0=_12DE
+t.0=_12DE t.+ t.HIT-MAP-BUFFER t.C@ t.* t.+ t.HIT-MAP-BUFFER
+t.+ t.2+ t.ZD-CCM! t.HIT-MAP-BUFFER t.C@ t.BLIT-ROW-STRIDE!
+t.CCMOV LIT16 0028 t.BLIT-ROW-STRIDE! t.RCM t.C! t.;S
 AT 5360
 
-( w5366 | NFA 5360 CFA 5366 )
-( Unknown erased name; CFA identifier )
+( INVENTORY-RESOURCE-BASE | NFA 5360 CFA 5366 )
+( Inferred descriptive name, not recovered original: )
+( Returns INVENTORY-BLOCK-BUFFER+2. $5374 patches )
+( RESOURCE-ADDR's first threaded call to this word when )
+( accessing the current 512-byte inventory block. )
+( Stack: -- address )
 AT 5360
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000B00153
 DOCOL
-w415E t.2+ t.;S
+t.INVENTORY-BLOCK-BUFFER t.2+ t.;S
 AT 536E
 
-( w5374 | NFA 536E CFA 5374 )
-( Unknown erased name; CFA identifier )
+( USE-INVENTORY-RESOURCES | NFA 536E CFA 5374 )
+( Inferred descriptive name, not recovered original: )
+( Patches the CFA operand at $3F0B to $5366, selecting the )
+( inventory-block resource base, and sets the graphics copy )
+( mode RCM to 2. )
+( Stack: -- )
 AT 536E
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000DA6053
@@ -4320,8 +4737,11 @@ DOCOL
 LIT16 5368 t.CFA LIT16 3F0B t.! t.2 t.RCM t.C! t.;S
 AT 538A
 
-( w5390 | NFA 538A CFA 5390 )
-( Unknown erased name; CFA identifier )
+( USE-SCENE-RESOURCES | NFA 538A CFA 5390 )
+( Inferred descriptive name, not recovered original: )
+( Restores the CFA at $3F0B to RESOURCE-BASE@ [$3EE3] and )
+( sets RCM to zero after inventory resource access. )
+( Stack: -- )
 AT 538A
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000BE6E53
@@ -4329,8 +4749,12 @@ DOCOL
 LIT16 3EE5 t.CFA LIT16 3F0B t.! t.0 t.RCM t.C! t.;S
 AT 53A6
 
-( w53B0 | NFA 53A6 CFA 53B0 )
-( Unknown erased name; CFA identifier )
+( SPLIT-CELL-BYTES | NFA 53A6 CFA 53B0 )
+( Inferred descriptive name, not recovered original: Native )
+( $53B2 saves the original high byte, allocates one )
+( data-stack cell, leaves original low and high as separate )
+( zero-extended cells, then jumps to NEXT. )
+( Stack: u -- low high )
 AT 53A6
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 87000000000000C28A53
@@ -4345,8 +4769,12 @@ STA.ZPX 01           ( 53BC )
 JMP.ABS 0F47         ( 53BE )
 AT 53C1
 
-( w53C9 | NFA 53C1 CFA 53C9 )
-( Unknown erased name; CFA identifier )
+( PATCH-VBI-CALL | NFA 53C1 CFA 53C9 )
+( Inferred descriptive name, not recovered original: Parses )
+( a Forth name with -FIND, computes buffer+1+3*slot, writes )
+( JSR opcode $20 and that word's PFA; prints ERROR VBI if )
+( lookup fails. )
+( Stack: slot buffer -- )
 AT 53C1
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 8500000000A9A653
@@ -4365,8 +4793,12 @@ BYTES 094552524F5220564249
 t.;S
 AT 5404
 
-( w540C | NFA 5404 CFA 540C )
-( Unknown erased name; CFA identifier )
+( VBI-CALL-BUFFER | NFA 5404 CFA 540C )
+( Inferred descriptive name, not recovered original: )
+( Contains NOP slots, JSR $54E5 and terminal JMP $5F6F. )
+( RUN-VBI1 installs entry $540F; $5438 patches three-byte )
+( calls in this buffer. )
+( Stack: -- address )
 AT 5404
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 8500000000B1C153
@@ -4375,17 +4807,23 @@ BYTES EAEAEAEA20E554EAEAEAEAEAEAEAEAEAEAEAEAEAEAEAEAEAEAEAEAEA
 BYTES EAEAEA4C6F5F20
 AT 5431
 
-( w5438 | NFA 5431 CFA 5438 )
-( Unknown erased name; CFA identifier )
+( SET-VBI-CALL | NFA 5431 CFA 5438 )
+( Inferred descriptive name, not recovered original: Passes )
+( VBI-CALL-BUFFER to $53C9, which parses a word name and )
+( writes its JSR entry into the selected VBI slot. )
+( Stack: slot -- )
 AT 5431
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 84000000B10454
 DOCOL
-w540C w53C9 t.;S
+t.VBI-CALL-BUFFER t.PATCH-VBI-CALL t.;S
 AT 5440
 
-( w5448 | NFA 5440 CFA 5448 )
-( Unknown erased name; CFA identifier )
+( EXIT-DEFERRED-VBI | NFA 5440 CFA 5448 )
+( Inferred descriptive name, not recovered original: Native )
+( body is JMP $E462, the Atari OS deferred-VBI exit vector )
+( XITVBV. No Forth NEXT is executed on this path. )
+( Stack: -- )
 AT 5440
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 8500000000A93154
@@ -4426,8 +4864,14 @@ LDX.ZP D1            ( 5481 )
 JMP.ABS 0F47         ( 5483 )
 AT 5486
 
-( w548C | NFA 5486 CFA 548C )
-( Unknown erased name; CFA identifier )
+( OS-RAM-COPY-LENGTH | NFA 5486 CFA 548C )
+( Inferred descriptive name, not recovered original: $5514 )
+( stores the requested byte length; native $54AB copies its )
+( high-byte count of full pages followed by the low-byte )
+( tail. The author tutorial 1-2/93 describes the related )
+( PDL/Z%/D%/PMOVE parameter roles, but its native )
+( copy/banking implementation differs from this game. )
+( Stack: -- address )
 AT 5486
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000CC6954
@@ -4446,8 +4890,14 @@ DOCON
 CELL 00DD
 AT 5499
 
-( w549E | NFA 5499 CFA 549E )
-( Unknown erased name; CFA identifier )
+( OS-RAM-COPY-DEST | NFA 5499 CFA 549E )
+( Inferred descriptive name, not recovered original: )
+( Constant $00DF is the zero-page destination pointer for )
+( native $54AB; paired with Z% at $00DD for the source. The )
+( author tutorial 1-2/93 describes the related )
+( PDL/Z%/D%/PMOVE parameter roles, but its native )
+( copy/banking implementation differs from this game. )
+( Stack: -- address )
 AT 5499
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 8200A59054
@@ -4455,8 +4905,15 @@ DOCON
 CELL 00DF
 AT 54A2
 
-( w54A9 | NFA 54A2 CFA 54A9 )
-( Unknown erased name; CFA identifier )
+( COPY-OS-RAM-BYTES | NFA 54A2 CFA 54A9 )
+( Inferred descriptive name, not recovered original: Native )
+( $54AB reads source [$DD],Y and writes destination )
+( [$DF],Y, copying full pages and a remaining tail from )
+( $548E/$548F; returns with RTS for the VBI wrapper. Ends )
+( in RTS; invoked as an assembly subroutine, not directly )
+( through the Forth interpreter, consistent with the author )
+( tutorial 9/92. )
+( 6502 subroutine: JSR/RTS; not directly Forth-callable )
 AT 54A2
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 84000000A99954
@@ -4484,8 +4941,12 @@ BNE 54CA             ( 54D1 )
 RTS                  ( 54D3 )
 AT 54D4
 
-( w54D9 | NFA 54D4 CFA 54D9 )
-( Unknown erased name; CFA identifier )
+( OS-RAM-COPY-PENDING | NFA 54D4 CFA 54D9 )
+( Inferred descriptive name, not recovered original: $5514 )
+( sets this flag and waits until it clears. $54E5 tests it )
+( before the VBI RAM copy and clears it after restoring the )
+( OS ROM mapping. )
+( Stack: -- address )
 AT 54D4
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 8200C4A254
@@ -4493,8 +4954,15 @@ DOVAR
 CELL 0000
 AT 54DD
 
-( w54E3 | NFA 54DD CFA 54E3 )
-( Unknown erased name; CFA identifier )
+( VBI-COPY-UNDER-OS | NFA 54DD CFA 54E3 )
+( Inferred descriptive name, not recovered original: If a )
+( copy is pending, native $54E5 saves X, disables DLI via )
+( NMIEN=$60, sets PORTB=$FE to expose RAM under the OS ROM, )
+( copies via $54AB, restores PORTB=$FF/NMIEN, and clears )
+( the flag. Ends in RTS; invoked as an assembly subroutine, )
+( not directly through the Forth interpreter, consistent )
+( with the author tutorial 9/92. )
+( 6502 subroutine: JSR/RTS; not directly Forth-callable )
 AT 54DD
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000D6D454
@@ -4517,21 +4985,33 @@ STA.ABS 54DB         ( 5508 )
 RTS                  ( 550B )
 AT 550C
 
-( w5514 | NFA 550C CFA 5514 )
-( Unknown erased name; CFA identifier )
+( COPY-UNDER-OS | NFA 550C CFA 5514 )
+( Inferred descriptive name, not recovered original: Stores )
+( source in Z%, destination at $DF and length at $548E, )
+( sets the pending flag, and waits for the VBI handler to )
+( finish the RAM-under-OS transfer. The author tutorial )
+( 1-2/93 describes the related PDL/Z%/D%/PMOVE parameter )
+( roles, but its native copy/banking implementation differs )
+( from this game. )
+( Stack: source destination length -- )
 AT 550C
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 8500000000C5DD54
 DOCOL
-w548C t.! w549E t.! t.Z% t.! t.1 w54D9 t.!
+t.OS-RAM-COPY-LENGTH t.! t.OS-RAM-COPY-DEST t.! t.Z% t.! t.1
+t.OS-RAM-COPY-PENDING t.!
 ( label 5528 )
-w54D9 t.C@ t.0=_12DE
+t.OS-RAM-COPY-PENDING t.C@ t.0=_12DE
 t.0BRANCH CELL FFF8 ( -> 5528 )
 t.;S
 AT 5534
 
-( w553A | NFA 5534 CFA 553A )
-( Unknown erased name; CFA identifier )
+( INITIAL-INVENTORY-GROUP | NFA 5534 CFA 553A )
+( Inferred descriptive name, not recovered original: )
+( Constant 21 selects the nine-block initial inventory )
+( resource group; $5655 loads it through the common )
+( inventory-group transfer. )
+( Stack: -- group )
 AT 5534
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000DA0C55
@@ -4539,8 +5019,11 @@ DOCON
 CELL 0015
 AT 553E
 
-( w5544 | NFA 553E CFA 5544 )
-( Unknown erased name; CFA identifier )
+( SAVED-INVENTORY-GROUP | NFA 553E CFA 5544 )
+( Inferred descriptive name, not recovered original: )
+( Constant 23 selects the saved inventory resource group; )
+( $5634 writes it and $5644 loads it. )
+( Stack: -- group )
 AT 553E
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000DA3455
@@ -4548,8 +5031,12 @@ DOCON
 CELL 0017
 AT 5548
 
-( w554E | NFA 5548 CFA 554E )
-( Unknown erased name; CFA identifier )
+( CURRENT-INVENTORY-BLOCK | NFA 5548 CFA 554E )
+( Inferred descriptive name, not recovered original: )
+( Indexes one of nine 512-byte blocks cached under OS ROM. )
+( $5674 switches the index when resolving an inventory )
+( object. )
+( Stack: -- address )
 AT 5548
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000CC3E55
@@ -4557,8 +5044,12 @@ DOVAR
 CELL 0000
 AT 5552
 
-( w5558 | NFA 5552 CFA 5558 )
-( Unknown erased name; CFA identifier )
+( INVENTORY-CACHE-BYTES | NFA 5552 CFA 5558 )
+( Inferred descriptive name, not recovered original: )
+( Constant $1200=4608 is nine 512-byte collections; $55BA )
+( divides it by 128 to obtain the disk-transfer sector )
+( count. )
+( Stack: -- bytes )
 AT 5552
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000CC4855
@@ -4566,8 +5057,11 @@ DOCON
 CELL 1200
 AT 555C
 
-( w5563 | NFA 555C CFA 5563 )
-( Unknown erased name; CFA identifier )
+( INVENTORY-CACHE-BASE | NFA 555C CFA 5563 )
+( Inferred descriptive name, not recovered original: )
+( Variable initialized to $D800; its value is the )
+( RAM-under-OS base for the nine inventory resource blocks. )
+( Stack: -- address )
 AT 555C
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 84000000B05255
@@ -4575,111 +5069,163 @@ DOVAR
 CELL D800
 AT 5567
 
-( w556D | NFA 5567 CFA 556D )
-( Unknown erased name; CFA identifier )
+( INVENTORY-CACHE-BASE@ | NFA 5567 CFA 556D )
+( Inferred descriptive name, not recovered original: )
+( Fetches the base address stored by INVENTORY-CACHE-BASE )
+( [$5563]. )
+( Stack: -- address )
 AT 5567
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000B05C55
 DOCOL
-w5563 t.@ t.;S
+t.INVENTORY-CACHE-BASE t.@ t.;S
 AT 5575
 
-( w557C | NFA 5575 CFA 557C )
-( Unknown erased name; CFA identifier )
+( INVENTORY-CACHED-BLOCK | NFA 5575 CFA 557C )
+( Inferred descriptive name, not recovered original: )
+( Returns inventory-cache base plus CURRENT-INVENTORY-BLOCK )
+( times the 512-byte block size at $4154. )
+( Stack: -- address )
 AT 5575
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 84000000C16755
 DOCOL
-w554E t.@ w4154 t.* w556D t.+ t.;S
+t.CURRENT-INVENTORY-BLOCK t.@ t.INVENTORY-BLOCK-SIZE t.*
+t.INVENTORY-CACHE-BASE@ t.+ t.;S
 AT 558C
 
-( w5594 | NFA 558C CFA 5594 )
-( Unknown erased name; CFA identifier )
+( STORE-INVENTORY-BLOCK | NFA 558C CFA 5594 )
+( Inferred descriptive name, not recovered original: Copies )
+( the visible INVENTORY-BLOCK-BUFFER to its selected )
+( 512-byte cache block under OS ROM through $5514. )
+( Stack: -- )
 AT 558C
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 8500000000C17555
 DOCOL
-w415E w557C w4154 w5514 t.;S
+t.INVENTORY-BLOCK-BUFFER t.INVENTORY-CACHED-BLOCK
+t.INVENTORY-BLOCK-SIZE t.COPY-UNDER-OS t.;S
 AT 55A0
 
-( w55A8 | NFA 55A0 CFA 55A8 )
-( Unknown erased name; CFA identifier )
+( FETCH-INVENTORY-BLOCK | NFA 55A0 CFA 55A8 )
+( Inferred descriptive name, not recovered original: Copies )
+( the selected 512-byte cache block under OS ROM into )
+( visible INVENTORY-BLOCK-BUFFER through $5514. )
+( Stack: -- )
 AT 55A0
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 8500000000DA8C55
 DOCOL
-w557C w415E w4154 w5514 t.;S
+t.INVENTORY-CACHED-BLOCK t.INVENTORY-BLOCK-BUFFER
+t.INVENTORY-BLOCK-SIZE t.COPY-UNDER-OS t.;S
 AT 55B4
 
-( w55BA | NFA 55B4 CFA 55BA )
-( Unknown erased name; CFA identifier )
+( TRANSFER-INVENTORY-GROUP | NFA 55B4 CFA 55BA )
+( Inferred descriptive name, not recovered original: Uses )
+( resource zero as the staging address, divides $1200 by )
+( 128 for 36 sectors, and invokes the retrying group )
+( transfer at $4AC8. )
+( Stack: group -- )
 AT 55B4
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000CCA055
 DOCOL
-t.0 t.RESOURCE-ADDR w5558 LIT8 80 t./ t.ROT w4AC8 t.;S
+t.0 t.RESOURCE-ADDR t.INVENTORY-CACHE-BYTES LIT8 80 t./ t.ROT
+t.RETRY-GROUP-TRANSFER t.;S
 AT 55CD
 
-( w55D3 | NFA 55CD CFA 55D3 )
-( Unknown erased name; CFA identifier )
+( COPY-INVENTORY-CACHE | NFA 55CD CFA 55D3 )
+( Inferred descriptive name, not recovered original: Copies )
+( nine consecutive 512-byte blocks through COPY-UNDER-OS, )
+( advancing source and destination by 512 each iteration. )
+( Stack: source destination -- )
 AT 55CD
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000D6B455
 DOCOL
 LIT8 09 t.0 t.(DO)
 ( label 55DC )
-t.2DUP w4154 w5514 t.SWAP w4154 t.+ t.SWAP w4154 t.+
+t.2DUP t.INVENTORY-BLOCK-SIZE t.COPY-UNDER-OS t.SWAP
+t.INVENTORY-BLOCK-SIZE t.+ t.SWAP t.INVENTORY-BLOCK-SIZE t.+
 t.(LOOP) CELL FFEC ( -> 55DC )
 t.2DROP t.;S
 AT 55F6
 
-( w55FE | NFA 55F6 CFA 55FE )
-( Unknown erased name; CFA identifier )
+( WRITE-INVENTORY-GROUP | NFA 55F6 CFA 55FE )
+( Inferred descriptive name, not recovered original: )
+( Selects disk-write mode, copies all nine cache blocks to )
+( resource-zero staging RAM, then writes the selected )
+( resource group with $55BA. )
+( Stack: group -- )
 AT 55F6
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 8500000000A9CD55
 DOCOL
-t.0 w4ABC t.! w556D t.0 t.RESOURCE-ADDR w55D3 w55BA t.;S
+t.0 t.TRANSFER-IS-LOAD t.! t.INVENTORY-CACHE-BASE@ t.0
+t.RESOURCE-ADDR t.COPY-INVENTORY-CACHE
+t.TRANSFER-INVENTORY-GROUP t.;S
 AT 5612
 
-( w561A | NFA 5612 CFA 561A )
-( Unknown erased name; CFA identifier )
+( READ-INVENTORY-GROUP | NFA 5612 CFA 561A )
+( Inferred descriptive name, not recovered original: )
+( Selects disk-read mode, loads the group into )
+( resource-zero staging RAM, then copies its nine blocks )
+( into the RAM-under-OS cache. )
+( Stack: group -- )
 AT 5612
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 8500000000A9F655
 DOCOL
-t.1 w4ABC t.! w55BA t.0 t.RESOURCE-ADDR w556D w55D3 t.;S
+t.1 t.TRANSFER-IS-LOAD t.! t.TRANSFER-INVENTORY-GROUP t.0
+t.RESOURCE-ADDR t.INVENTORY-CACHE-BASE@ t.COPY-INVENTORY-CACHE
+t.;S
 AT 562E
 
-( w5634 | NFA 562E CFA 5634 )
-( Unknown erased name; CFA identifier )
+( SAVE-INVENTORY-CACHE | NFA 562E CFA 5634 )
+( Inferred descriptive name, not recovered original: Writes )
+( saved inventory group 23 and then stores the current )
+( visible block into the cache; this is the exact original )
+( call order. )
+( Stack: -- )
 AT 562E
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000C11256
 DOCOL
-w5544 w55FE w5594 t.;S
+t.SAVED-INVENTORY-GROUP t.WRITE-INVENTORY-GROUP
+t.STORE-INVENTORY-BLOCK t.;S
 AT 563E
 
-( w5644 | NFA 563E CFA 5644 )
-( Unknown erased name; CFA identifier )
+( LOAD-SAVED-INVENTORY | NFA 563E CFA 5644 )
+( Inferred descriptive name, not recovered original: Reads )
+( saved inventory group 23 into the cache and fetches the )
+( selected visible block. )
+( Stack: -- )
 AT 563E
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000C12E56
 DOCOL
-w5544 w561A w55A8 t.;S
+t.SAVED-INVENTORY-GROUP t.READ-INVENTORY-GROUP
+t.FETCH-INVENTORY-BLOCK t.;S
 AT 564E
 
-( w5655 | NFA 564E CFA 5655 )
-( Unknown erased name; CFA identifier )
+( LOAD-INITIAL-INVENTORY | NFA 564E CFA 5655 )
+( Inferred descriptive name, not recovered original: Reads )
+( initial inventory group 21 into the cache and fetches the )
+( selected visible block. )
+( Stack: -- )
 AT 564E
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 84000000D03E56
 DOCOL
-w553A w561A w55A8 t.;S
+t.INITIAL-INVENTORY-GROUP t.READ-INVENTORY-GROUP
+t.FETCH-INVENTORY-BLOCK t.;S
 AT 565F
 
-( w5665 | NFA 565F CFA 5665 )
-( Unknown erased name; CFA identifier )
+( INVENTORY-BLOCK-INDEX | NFA 565F CFA 5665 )
+( Inferred descriptive name, not recovered original: )
+( Divides its argument by four. $5674 applies it after )
+( subtracting 102 from an inventory object ID. )
+( Stack: index -- block )
 AT 565F
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000CC4E56
@@ -4687,34 +5233,50 @@ DOCOL
 t.4 t./ t.;S
 AT 566D
 
-( w5674 | NFA 566D CFA 5674 )
-( Unknown erased name; CFA identifier )
+( SELECT-INVENTORY-OBJECT | NFA 566D CFA 5674 )
+( Inferred descriptive name, not recovered original: )
+( Selects inventory resource lookup, subtracts 102 from the )
+( object ID, saves/fetches a 512-byte block if the quotient )
+( by four changes, and returns the remainder modulo four. )
+( Stack: object -- local-index )
 AT 566D
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 84000000A95F56
 DOCOL
-w5374 LIT8 66 t.- t.DUP w5665 w554E t.@ t.= t.0=_12DE
+t.USE-INVENTORY-RESOURCES LIT8 66 t.- t.DUP
+t.INVENTORY-BLOCK-INDEX t.CURRENT-INVENTORY-BLOCK t.@ t.=
+t.0=_12DE
 t.0BRANCH CELL 0010 ( -> 569B )
-t.CLEAR-TEXT-AREA w5594 t.DUP w5665 w554E t.! w55A8
+t.CLEAR-TEXT-AREA t.STORE-INVENTORY-BLOCK t.DUP
+t.INVENTORY-BLOCK-INDEX t.CURRENT-INVENTORY-BLOCK t.!
+t.FETCH-INVENTORY-BLOCK
 ( label 569B )
 t.4 t.MOD t.;S
 AT 56A1
 
-( w56A7 | NFA 56A1 CFA 56A7 )
-( Unknown erased name; CFA identifier )
+( OBJECT-PICTURE-RESOURCE | NFA 56A1 CFA 56A7 )
+( Inferred descriptive name, not recovered original: IDs )
+( above 100 are resolved through $5674; the local ID is )
+( then doubled and offset by resource 2, selecting an image )
+( followed by its hit-map. )
+( Stack: object -- resource )
 AT 56A1
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000D76D56
 DOCOL
 t.DUP LIT8 64 t.>
 t.0BRANCH CELL 0004 ( -> 56B6 )
-w5674
+t.SELECT-INVENTORY-OBJECT
 ( label 56B6 )
-t.2 t.* w498F t.+ t.;S
+t.2 t.* t.OBJECT-RECORD-BASE t.+ t.;S
 AT 56C0
 
-( w56C5 | NFA 56C0 CFA 56C5 )
-( Unknown erased name; CFA identifier )
+( COMPILE-BYTE-LIST | NFA 56C0 CFA 56C5 )
+( Inferred descriptive name, not recovered original: )
+( Compiles a counted byte list at HERE: parses hexadecimal )
+( numbers, emits values below 256, stops on a value at )
+( least 256, and fills the initial count byte. )
+( Stack: -- )
 AT 56C0
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 8200A9A156
@@ -4729,19 +5291,26 @@ t.BRANCH CELL FFE4 ( -> 56D1 )
 t.DROP t.R> t.C! t.;S
 AT 56F7
 
-( w5700 | NFA 56F7 CFA 5700 )
-( Unknown erased name; CFA identifier )
+( BYTE-LIST-DEFINER | NFA 56F7 CFA 5700 )
+( Inferred descriptive name, not recovered original: Uses )
+( <BUILDS and $56C5 to create a byte list. Its DOES> thread )
+( applies COUNT then the membership helper at $3071. )
+( Stack: -- )
 AT 56F7
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 85000000003AA0C056
 DOCOL
-t.<BUILDS w56C5 t.DOES>
+t.<BUILDS t.COMPILE-BYTE-LIST t.DOES>
 ( Trailing code/data at 5708; retained exactly )
 BYTES FE1871307712
 AT 570E
 
-( w5714 | NFA 570E CFA 5714 )
-( Unknown erased name; CFA identifier )
+( ACCEPTED-KEY-CODES | NFA 570E CFA 5714 )
+( Inferred descriptive name, not recovered original: )
+( Created by the byte-list definer; holds sixteen raw CH )
+( keycodes. $5730 tests this collection before calling KEY; )
+( INSTR returns a one-based match index or zero. )
+( Stack: keycode -- index-or-zero )
 AT 570E
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000CCF756
@@ -4750,8 +5319,12 @@ DODOES
 BYTES 0857101C2C3C2736370E0F020607202226212F
 AT 5729
 
-( w5730 | NFA 5729 CFA 5730 )
-( Unknown erased name; CFA identifier )
+( READ-EDIT-KEY | NFA 5729 CFA 5730 )
+( Inferred descriptive name, not recovered original: Clears )
+( CH [$02FC] to $FF, maps joystick trigger to raw keycode )
+( $0C, waits for a listed CH code below 64, then obtains )
+( the ATASCII character through KEY. )
+( Stack: -- character )
 AT 5729
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 84000000CA0E57
@@ -4762,13 +5335,18 @@ t.0 t.TRIGGER@ t.0=_12DE
 t.0BRANCH CELL 000B ( -> 574E )
 LIT8 0C LIT16 02FC t.C!
 ( label 574E )
-LIT16 02FC t.C@ t.DUP w5714 t.0=_12DE t.SWAP t.64 t.< t.*
+LIT16 02FC t.C@ t.DUP t.ACCEPTED-KEY-CODES t.0=_12DE t.SWAP
+t.64 t.< t.*
 t.0BRANCH CELL FFD7 ( -> 573B )
 t.KEY t.;S
 AT 576A
 
-( w5770 | NFA 576A CFA 5770 )
-( Unknown erased name; CFA identifier )
+( TEXT-INPUT-MAX-LENGTH | NFA 576A CFA 5770 )
+( Inferred descriptive name, not recovered original: $57EE )
+( stores the caller's maximum length; $57A7 refuses to )
+( append characters once the counted buffer reaches this )
+( value. )
+( Stack: -- address )
 AT 576A
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000D82957
@@ -4776,8 +5354,12 @@ DOVAR
 CELL 0000
 AT 5774
 
-( w577A | NFA 5774 CFA 577A )
-( Unknown erased name; CFA identifier )
+( EDIT-BACKSPACE | NFA 5774 CFA 577A )
+( Inferred descriptive name, not recovered original: For )
+( ATASCII $7E and a nonempty counted buffer, emits )
+( $1E,$3D,$1E [cursor-left, the game-font blank glyph, )
+( cursor-left] and decrements the count via $4732. )
+( Stack: buffer character -- buffer character )
 AT 5774
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000D96A57
@@ -4787,41 +5369,54 @@ t.0BRANCH CELL 0010 ( -> 579F )
 ( ATASCII text: [1E]=[1E] )
 t.(.")
 BYTES 031E3D1E
-t.OVER t.-1 t.SWAP w4732
+t.OVER t.-1 t.SWAP t.BYTE+!
 ( label 579F )
 t.;S
 AT 57A1
 
-( w57A7 | NFA 57A1 CFA 57A7 )
-( Unknown erased name; CFA identifier )
+( EDIT-APPEND-CHAR | NFA 57A1 CFA 57A7 )
+( Inferred descriptive name, not recovered original: )
+( Appends and echoes a character while the buffer is below )
+( its limit, excluding backspace $7E and return $9B; )
+( increments the count. )
+( Stack: buffer character -- buffer character )
 AT 57A1
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000D27457
 DOCOL
-t.OVER t.C@ w5770 t.@ t.< t.OVER LIT8 7E t.= t.0=_12DE t.*
-t.OVER LIT8 9B t.= t.0=_12DE t.*
+t.OVER t.C@ t.TEXT-INPUT-MAX-LENGTH t.@ t.< t.OVER LIT8 7E t.=
+t.0=_12DE t.* t.OVER LIT8 9B t.= t.0=_12DE t.*
 t.0BRANCH CELL 0018 ( -> 57E3 )
 t.DUP t.EMIT t.2DUP t.SWAP t.COUNT t.+ t.C! t.OVER t.1 t.SWAP
-w4732
+t.BYTE+!
 ( label 57E3 )
 t.;S
 AT 57E5
 
-( w57EE | NFA 57E5 CFA 57EE )
-( Unknown erased name; CFA identifier )
+( READ-COUNTED-INPUT | NFA 57E5 CFA 57EE )
+( Inferred descriptive name, not recovered original: Clears )
+( the counted buffer and loops through key input, backspace )
+( and append handlers until return is received with a )
+( nonzero length. )
+( Stack: maximum buffer -- )
 AT 57E5
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 860000000000A4A157
 DOCOL
-t.SWAP w5770 t.! t.0 t.OVER t.C!
+t.SWAP t.TEXT-INPUT-MAX-LENGTH t.! t.0 t.OVER t.C!
 ( label 57FC )
-w5730 w577A w57A7 LIT8 9B t.= t.OVER t.C@ t.*
+t.READ-EDIT-KEY t.EDIT-BACKSPACE t.EDIT-APPEND-CHAR LIT8 9B
+t.= t.OVER t.C@ t.*
 t.0BRANCH CELL FFED ( -> 57FC )
 t.DROP t.;S
 AT 5815
 
-( w581A | NFA 5815 CFA 581A )
-( Unknown erased name; CFA identifier )
+( VIEW-STACK | NFA 5815 CFA 581A )
+( Inferred descriptive name, not recovered original: )
+( Counted stack of 16-bit scene/view IDs. $582D pushes, )
+( $5855 reads the top, and $5868 pops; its byte count is )
+( capped at ten. )
+( Stack: -- address )
 AT 5815
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 8200D0E557
@@ -4829,76 +5424,102 @@ DOVAR
 BYTES 000005414C4C4F5420202020
 AT 5828
 
-( w582D | NFA 5828 CFA 582D )
-( Unknown erased name; CFA identifier )
+( PUSH-VIEW | NFA 5828 CFA 582D )
+( Inferred descriptive name, not recovered original: When )
+( VIEW-STACK's byte count is below ten, stores the view at )
+( base+count+2 and increments the count by two. At full )
+( capacity it leaves the argument on the data stack. )
 AT 5828
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 8200D01558
 DOCOL
-w581A t.C@ LIT16 000A t.<
+t.VIEW-STACK t.C@ LIT16 000A t.<
 t.0BRANCH CELL 0014 ( -> 584F )
-w581A t.C@ t.2+ w581A t.+ t.! t.2 w581A w4732
+t.VIEW-STACK t.C@ t.2+ t.VIEW-STACK t.+ t.! t.2 t.VIEW-STACK
+t.BYTE+!
 ( label 584F )
 t.;S
 AT 5851
 
-( w5855 | NFA 5851 CFA 5855 )
-( Unknown erased name; CFA identifier )
+( CURRENT-VIEW | NFA 5851 CFA 5855 )
+( Inferred descriptive name, not recovered original: )
+( Fetches the cell at VIEW-STACK plus its byte count; count )
+( zero therefore returns the initial zero view. )
+( Stack: -- view )
 AT 5851
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 81D02858
 DOCOL
-w581A t.DUP t.C@ t.+ t.@ t.;S
+t.VIEW-STACK t.DUP t.C@ t.+ t.@ t.;S
 AT 5863
 
-( w5868 | NFA 5863 CFA 5868 )
-( Unknown erased name; CFA identifier )
+( POP-VIEW | NFA 5863 CFA 5868 )
+( Inferred descriptive name, not recovered original: )
+( Fetches the top view, then decrements VIEW-STACK's )
+( nonzero byte count by two. )
+( Stack: -- view )
 AT 5863
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 8200BE5158
 DOCOL
-w581A t.C@ w581A t.+ t.@ w581A t.C@
+t.VIEW-STACK t.C@ t.VIEW-STACK t.+ t.@ t.VIEW-STACK t.C@
 t.0BRANCH CELL 000A ( -> 5884 )
-LIT16 FFFE w581A w4732
+LIT16 FFFE t.VIEW-STACK t.BYTE+!
 ( label 5884 )
 t.;S
 AT 5886
 
-( w588D | NFA 5886 CFA 588D )
-( Unknown erased name; CFA identifier )
+( COMPOSE-CURRENT-VIEW | NFA 5886 CFA 588D )
+( Inferred descriptive name, not recovered original: )
+( Expands the base picture and hit-map, obtains current )
+( room/view object IDs through $520C, composes each image )
+( and hit-map overlay, restores colors, and sets cursor )
+( origin and limits. )
+( Stack: resource -- )
 AT 5886
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 84000000B16358
 DOCOL
-t.DUP t.>R w522A t.R t.1+ w5261 w4369 t.@ w5855 w520C t.OUNT
+t.DUP t.>R t.EXPAND-PICTURE t.R t.1+ t.LOAD-HIT-MAP
+t.CURRENT-ROOM t.@ t.CURRENT-VIEW t.ROOM-VIEW-OBJECTS t.OUNT
 t.0 t.(DO)
 ( label 58A9 )
-t.DUP t.I t.+ t.C@ t.DUP w56A7 t.SWAP
+t.DUP t.I t.+ t.C@ t.DUP t.OBJECT-PICTURE-RESOURCE t.SWAP
 t.0BRANCH CELL 0010 ( -> 58C9 )
-t.DUP w52A1 t.1+ w5308 w5390
+t.DUP t.COMPOSE-PICTURE-OVERLAY t.1+ t.COMPOSE-HIT-MAP-OVERLAY
+t.USE-SCENE-RESOURCES
 t.BRANCH CELL 0004 ( -> 58CB )
 ( label 58C9 )
 t.DROP
 ( label 58CB )
 t.(LOOP) CELL FFDC ( -> 58A9 )
-t.DROP w521F t.@ t.ADC t.@ t.3 t.CMOVE w518C t.R> t.2 t.=
+t.DROP t.PICTURE-COLORS-PTR t.@ t.ADC t.@ t.3 t.CMOVE
+t.SET-HIT-MAP-ORIGIN t.R> t.2 t.=
 t.0BRANCH CELL 000A ( -> 58F1 )
-t.16 w4FEB t.1+ t.C!
+t.16 t.HIT-MAP-BUFFER t.1+ t.C!
 ( label 58F1 )
-w51B9 t.;S
+t.SET-HIT-MAP-LIMITS t.;S
 AT 58F5
 
-( w58FD | NFA 58F5 CFA 58FD )
-( Unknown erased name; CFA identifier )
+( DRAW-CURRENT-VIEW | NFA 58F5 CFA 58FD )
+( Inferred descriptive name, not recovered original: )
+( Restores scene resource lookup, composes the requested )
+( current view with $588D, then draws the resulting FIRST )
+( bitmap using ?POBJ. )
+( Stack: resource -- )
 AT 58F5
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 8500000000DA8658
 DOCOL
-w5390 w588D t.FIRST t.?POBJ t.;S
+t.USE-SCENE-RESOURCES t.COMPOSE-CURRENT-VIEW t.FIRST t.?POBJ
+t.;S
 AT 5909
 
-( w590E | NFA 5909 CFA 590E )
-( Unknown erased name; CFA identifier )
+( STORE-BYTE-PAIR | NFA 5909 CFA 590E )
+( Inferred descriptive name, not recovered original: Stores )
+( the second byte at address+1 and the first byte at )
+( address. )
+( Stack: first second address -- )
 AT 5909
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 8200B2F558
@@ -4906,8 +5527,11 @@ DOCOL
 t.>R t.R t.1+ t.C! t.R> t.C! t.;S
 AT 591E
 
-( w5923 | NFA 591E CFA 5923 )
-( Unknown erased name; CFA identifier )
+( FETCH-BYTE-PAIR | NFA 591E CFA 5923 )
+( Inferred descriptive name, not recovered original: )
+( Fetches the two consecutive unsigned bytes at address and )
+( address+1. )
+( Stack: address -- first second )
 AT 591E
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 8200B20959
@@ -4915,8 +5539,12 @@ DOCOL
 t.>R t.R t.C@ t.R> t.1+ t.C@ t.;S
 AT 5933
 
-( w5939 | NFA 5933 CFA 5939 )
-( Unknown erased name; CFA identifier )
+( VIEW-CURSOR-POSITIONS | NFA 5933 CFA 5939 )
+( Inferred descriptive name, not recovered original: )
+( Cell-indexed array storing one cursor x/y byte pair per )
+( view-stack depth; WAIT-GAME-INPUT saves positions and )
+( $59A3 restores them. )
+( Stack: depth -- address )
 AT 5933
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000D91E59
@@ -4925,63 +5553,91 @@ DODOES
 BYTES 4441202020202020202020202020
 AT 5949
 
-( w594E | NFA 5949 CFA 594E )
-( Unknown erased name; CFA identifier )
+( USE-SCENE-CURSOR | NFA 5949 CFA 594E )
+( Inferred descriptive name, not recovered original: Sets )
+( CURSOR-CONTEXT [$4D70] to zero before drawing or entering )
+( scene views. )
+( Stack: -- )
 AT 5949
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 8200B03359
 DOCOL
-t.0 w4D70 t.! t.;S
+t.0 t.CURSOR-CONTEXT t.! t.;S
 AT 5958
 
-( w595D | NFA 5958 CFA 595D )
-( Unknown erased name; CFA identifier )
+( VIEW-STACK-DEPTH | NFA 5958 CFA 595D )
+( Inferred descriptive name, not recovered original: )
+( Divides VIEW-STACK's byte count by two to obtain its )
+( number of stored 16-bit views. )
+( Stack: -- depth )
 AT 5958
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 8200AB4959
 DOCOL
-w581A t.C@ t.2 t./ t.;S
+t.VIEW-STACK t.C@ t.2 t./ t.;S
 AT 5969
 
-( w596F | NFA 5969 CFA 596F )
-( Unknown erased name; CFA identifier )
+( CENTER-SCENE-CURSOR | NFA 5969 CFA 596F )
+( Inferred descriptive name, not recovered original: )
+( Fetches HIT-MAP-BUFFER width and height, halves both and )
+( stores the result in CURSOR-GRID-POS. )
+( Stack: -- )
 AT 5969
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000D35859
 DOCOL
-w4FEB w5923 t.2 t./ t.SWAP t.2 t./ t.SWAP w4D92 w590E t.;S
+t.HIT-MAP-BUFFER t.FETCH-BYTE-PAIR t.2 t./ t.SWAP t.2 t./
+t.SWAP t.CURSOR-GRID-POS t.STORE-BYTE-PAIR t.;S
 AT 5987
 
-( w598D | NFA 5987 CFA 598D )
-( Unknown erased name; CFA identifier )
+( ENTER-VIEW | NFA 5987 CFA 598D )
+( Inferred descriptive name, not recovered original: )
+( Selects the scene cursor, pushes the view, converts it to )
+( its picture resource, draws it, and centers the cursor. )
+( Stack: view -- )
 AT 5987
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000C26959
 DOCOL
-w594E t.DUP w582D w56A7 w58FD w596F t.;S
+t.USE-SCENE-CURSOR t.DUP t.PUSH-VIEW t.OBJECT-PICTURE-RESOURCE
+t.DRAW-CURRENT-VIEW t.CENTER-SCENE-CURSOR t.;S
 AT 599D
 
-( w59A3 | NFA 599D CFA 59A3 )
-( Unknown erased name; CFA identifier )
+( LEAVE-VIEW | NFA 599D CFA 59A3 )
+( Inferred descriptive name, not recovered original: Pops )
+( and discards the current view, redraws the previous view )
+( now at the stack top, and restores its saved cursor byte )
+( pair from VIEW-CURSOR-POSITIONS at current stack depth. )
+( Stack: -- )
 AT 599D
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000C28759
 DOCOL
-w594E w5868 t.DROP w5855 w56A7 w58FD w595D w5939 w5923 w4D92
-w590E t.;S
+t.USE-SCENE-CURSOR t.POP-VIEW t.DROP t.CURRENT-VIEW
+t.OBJECT-PICTURE-RESOURCE t.DRAW-CURRENT-VIEW
+t.VIEW-STACK-DEPTH t.VIEW-CURSOR-POSITIONS t.FETCH-BYTE-PAIR
+t.CURSOR-GRID-POS t.STORE-BYTE-PAIR t.;S
 AT 59BD
 
-( w59C3 | NFA 59BD CFA 59C3 )
-( Unknown erased name; CFA identifier )
+( REDRAW-CURRENT-VIEW | NFA 59BD CFA 59C3 )
+( Inferred descriptive name, not recovered original: )
+( Selects the scene cursor and redraws CURRENT-VIEW through )
+( its object-picture resource. )
+( Stack: -- )
 AT 59BD
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000C29D59
 DOCOL
-w594E w5855 w56A7 w58FD t.;S
+t.USE-SCENE-CURSOR t.CURRENT-VIEW t.OBJECT-PICTURE-RESOURCE
+t.DRAW-CURRENT-VIEW t.;S
 AT 59CF
 
-( w59D4 | NFA 59CF CFA 59D4 )
-( Unknown erased name; CFA identifier )
+( SIDE-ONE-LAST-ROOM | NFA 59CF CFA 59D4 )
+( Inferred descriptive name, not recovered original: )
+( Constant 13 is the threshold used by $59E9 to choose side )
+( one versus side two when mapping room IDs to resource )
+( groups. )
+( Stack: -- room )
 AT 59CF
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 8200CBBD59
@@ -4989,8 +5645,12 @@ DOCON
 CELL 000D
 AT 59D8
 
-( w59DF | NFA 59D8 CFA 59DF )
-( Unknown erased name; CFA identifier )
+( GAME-UI-MODE | NFA 59D8 CFA 59DF )
+( Inferred descriptive name, not recovered original: State )
+( cell initialized to one. Value zero enables scene-opening )
+( drawing; value one controls menu transitions; value three )
+( selects compact disk-message decorations. )
+( Stack: -- address )
 AT 59D8
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 84000000DACF59
@@ -4998,24 +5658,32 @@ DOVAR
 CELL 0001
 AT 59E3
 
-( w59E9 | NFA 59E3 CFA 59E9 )
-( Unknown erased name; CFA identifier )
+( ROOM-DISK-GROUP | NFA 59E3 CFA 59E9 )
+( Inferred descriptive name, not recovered original: For )
+( room IDs above 13 returns room-13 and side 2; otherwise )
+( returns room+5 and side 1. $5AEC uses this to load the )
+( room assets. )
+( Stack: room -- group side )
 AT 59E3
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000CBD859
 DOCOL
-t.DUP w59D4 t.>
+t.DUP t.SIDE-ONE-LAST-ROOM t.>
 t.0BRANCH CELL 000C ( -> 59FF )
-w59D4 t.- t.2
+t.SIDE-ONE-LAST-ROOM t.- t.2
 t.BRANCH CELL 0008 ( -> 5A05 )
 ( label 59FF )
-w499A t.+ t.1
+t.ROOM-GROUP-OFFSET t.+ t.1
 ( label 5A05 )
 t.;S
 AT 5A07
 
-( w5A0C | NFA 5A07 CFA 5A0C )
-( Unknown erased name; CFA identifier )
+( FILL-SCENE-BAND | NFA 5A07 CFA 5A0C )
+( Inferred descriptive name, not recovered original: Stores )
+( $15 in the first byte and fills the following nineteen )
+( bytes with $55; used by $5A27 for the scene transition )
+( region. )
+( Stack: address -- )
 AT 5A07
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 8200BEE359
@@ -5023,8 +5691,12 @@ DOCOL
 LIT8 15 t.OVER t.C! t.1+ LIT8 13 LIT8 55 t.FILL t.;S
 AT 5A21
 
-( w5A27 | NFA 5A21 CFA 5A27 )
-( Unknown erased name; CFA identifier )
+( FILL-SCENE-TRANSITION | NFA 5A21 CFA 5A27 )
+( Inferred descriptive name, not recovered original: Writes )
+( paired 20-byte bands from ADGR+$014A and )
+( ADGR+$014A+87*40, moving inward by one 40-byte row for 44 )
+( iterations. )
+( Stack: -- )
 AT 5A21
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000C2075A
@@ -5032,13 +5704,17 @@ DOCOL
 t.ADGR t.@ LIT16 014A t.+ t.DUP LIT8 28 LIT8 57 t.* t.+
 LIT16 06E0 t.0 t.(DO)
 ( label 5A47 )
-t.OVER t.I t.+ w5A0C t.DUP t.I t.- w5A0C LIT8 28
+t.OVER t.I t.+ t.FILL-SCENE-BAND t.DUP t.I t.-
+t.FILL-SCENE-BAND LIT8 28
 t.(+LOOP) CELL FFEB ( -> 5A47 )
 t.2DROP t.;S
 AT 5A62
 
-( w5A67 | NFA 5A62 CFA 5A67 )
-( Unknown erased name; CFA identifier )
+( SCENE-UPPER-COPY-BASE | NFA 5A62 CFA 5A67 )
+( Inferred descriptive name, not recovered original: )
+( Constant $0960 supplies the descending source rows in )
+( $5A7B's paired 20-byte scene copy. )
+( Stack: -- address )
 AT 5A62
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 8200C6215A
@@ -5046,8 +5722,11 @@ DOCON
 CELL 0960
 AT 5A6B
 
-( w5A70 | NFA 5A6B CFA 5A70 )
-( Unknown erased name; CFA identifier )
+( SCENE-LOWER-COPY-BASE | NFA 5A6B CFA 5A70 )
+( Inferred descriptive name, not recovered original: )
+( Constant $0974 supplies the ascending source rows in )
+( $5A7B's paired 20-byte scene copy. )
+( Stack: -- address )
 AT 5A6B
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 8200C6625A
@@ -5055,8 +5734,12 @@ DOCON
 CELL 0974
 AT 5A74
 
-( w5A7B | NFA 5A74 CFA 5A7B )
-( Unknown erased name; CFA identifier )
+( COPY-SCENE-CENTER-ROWS | NFA 5A74 CFA 5A7B )
+( Inferred descriptive name, not recovered original: Copies )
+( 20-byte rows from the two fixed source bases into )
+( destinations around ADGR+$0802, moving upward and )
+( downward by screen rows. )
+( Stack: -- )
 AT 5A74
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 84000000DE6B5A
@@ -5064,37 +5747,52 @@ DOCOL
 t.ADGR t.@ LIT16 0802 t.+ t.DUP LIT8 28 t.+ LIT16 0370 t.0
 t.(DO)
 ( label 5A96 )
-t.OVER w5A67 t.I t.- t.SWAP t.I t.2 t.* t.- LIT8 14 t.CMOVE
-w5A70 t.I t.+ t.OVER t.I t.2 t.* t.+ LIT8 14 t.CMOVE LIT8 14
+t.OVER t.SCENE-UPPER-COPY-BASE t.I t.- t.SWAP t.I t.2 t.* t.-
+LIT8 14 t.CMOVE t.SCENE-LOWER-COPY-BASE t.I t.+ t.OVER t.I t.2
+t.* t.+ LIT8 14 t.CMOVE LIT8 14
 t.(+LOOP) CELL FFCF ( -> 5A96 )
 t.2DROP t.;S
 AT 5ACD
 
-( w5AD4 | NFA 5ACD CFA 5AD4 )
-( Unknown erased name; CFA identifier )
+( ENTER-VIEW-WITH-TRANSITION | NFA 5ACD CFA 5AD4 )
+( Inferred descriptive name, not recovered original: )
+( Selects the scene cursor, pushes the view, composes its )
+( picture, performs the paired center-row scene copy, and )
+( centers the cursor. )
+( Stack: view -- )
 AT 5ACD
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 84000000DE745A
 DOCOL
-w594E t.DUP w582D w56A7 w588D w5A7B w596F t.;S
+t.USE-SCENE-CURSOR t.DUP t.PUSH-VIEW t.OBJECT-PICTURE-RESOURCE
+t.COMPOSE-CURRENT-VIEW t.COPY-SCENE-CENTER-ROWS
+t.CENTER-SCENE-CURSOR t.;S
 AT 5AE6
 
-( w5AEC | NFA 5AE6 CFA 5AEC )
-( Unknown erased name; CFA identifier )
+( LOAD-ROOM-VIEW | NFA 5AE6 CFA 5AEC )
+( Inferred descriptive name, not recovered original: Clears )
+( VIEW-STACK, stores CURRENT-ROOM, maps room to disk )
+( group/side, loads the resource group and enters base view )
+( zero; UI mode zero also draws transition bands. )
+( Stack: room -- )
 AT 5AE6
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000CDCD5A
 DOCOL
-t.0 w581A t.! t.DUP w4369 t.! w59E9 w4A6F t.! w4B95 w59DF t.@
-t.0=_12DE
+t.0 t.VIEW-STACK t.! t.DUP t.CURRENT-ROOM t.!
+t.ROOM-DISK-GROUP t.REQUIRED-DISK-SIDE t.!
+t.LOAD-RESOURCE-GROUP t.GAME-UI-MODE t.@ t.0=_12DE
 t.0BRANCH CELL 0004 ( -> 5B0E )
-w5A27
+t.FILL-SCENE-TRANSITION
 ( label 5B0E )
-t.0 w5AD4 t.;S
+t.0 t.ENTER-VIEW-WITH-TRANSITION t.;S
 AT 5B14
 
-( w5B1A | NFA 5B14 CFA 5B1A )
-( Unknown erased name; CFA identifier )
+( UNPACK-MAP-FIELDS | NFA 5B14 CFA 5B1A )
+( Inferred descriptive name, not recovered original: Reads )
+( one byte and returns [byte & $70]/16 followed by byte & )
+( 7, ignoring the visited bit and top bit. )
+( Stack: address -- high low )
 AT 5B14
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000C2E65A
@@ -5102,8 +5800,11 @@ DOCOL
 t.C@ t.DUP LIT8 70 t.AND t.16 t./ t.SWAP LIT8 07 t.AND t.;S
 AT 5B32
 
-( w5B37 | NFA 5B32 CFA 5B37 )
-( Unknown erased name; CFA identifier )
+( MAP-FLOOR-TABLE-SIZE | NFA 5B32 CFA 5B37 )
+( Inferred descriptive name, not recovered original: )
+( Constant ten bounds the room-range scan in $5C36 over the )
+( map-floor first/end arrays. )
+( Stack: -- count )
 AT 5B32
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 8200D8145B
@@ -5111,8 +5812,11 @@ DOCON
 CELL 000A
 AT 5B3B
 
-( w5B41 | NFA 5B3B CFA 5B41 )
-( Unknown erased name; CFA identifier )
+( MAP-FLOOR-FIRST-ROOM | NFA 5B3B CFA 5B41 )
+( Inferred descriptive name, not recovered original: Byte )
+( array of inclusive lower room-ID bounds. $5C36 scans it; )
+( $5CF6 uses it as the start of a floor's room loop. )
+( Stack: floor -- address )
 AT 5B3B
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000C9325B
@@ -5121,8 +5825,11 @@ DODOES
 BYTES 2C4119161F000F2426262620
 AT 5B4F
 
-( w5B55 | NFA 5B4F CFA 5B55 )
-( Unknown erased name; CFA identifier )
+( MAP-FLOOR-END-ROOM | NFA 5B4F CFA 5B55 )
+( Inferred descriptive name, not recovered original: Byte )
+( array of exclusive upper room-ID bounds, paired with )
+( $5B41 for floor lookup and map redraw loops. )
+( Stack: floor -- address )
 AT 5B4F
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000D83B5B
@@ -5131,17 +5838,23 @@ DODOES
 BYTES 2C411E19240E162527272720
 AT 5B63
 
-( w5B69 | NFA 5B63 CFA 5B69 )
-( Unknown erased name; CFA identifier )
+( MAP-GLYPH-SOURCE! | NFA 5B63 CFA 5B69 )
+( Inferred descriptive name, not recovered original: Sets )
+( P-CCM's source pointer to font base $BC00 plus eight )
+( times the glyph index. )
+( Stack: glyph -- )
 AT 5B63
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000C34F5B
 DOCOL
-t.8 t.* w3F37 t.+ t.P-CCM t.! t.;S
+t.8 t.* t.GAME-FONT-BASE t.+ t.P-CCM t.! t.;S
 AT 5B79
 
-( w5B80 | NFA 5B79 CFA 5B80 )
-( Unknown erased name; CFA identifier )
+( MAP-GLYPH-DEST! | NFA 5B79 CFA 5B80 )
+( Inferred descriptive name, not recovered original: Sets )
+( P-CCM's destination to ADGR+x-byte+40*y for drawing a map )
+( glyph into the bitmap. )
+( Stack: x-byte y -- )
 AT 5B79
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 84000000C7635B
@@ -5149,17 +5862,22 @@ DOCOL
 LIT8 28 t.* t.+ t.ADGR t.@ t.+ t.P-CCM t.2+ t.! t.;S
 AT 5B97
 
-( w5B9E | NFA 5B97 CFA 5B9E )
-( Unknown erased name; CFA identifier )
+( DRAW-VISITED-ROOM | NFA 5B97 CFA 5B9E )
+( Inferred descriptive name, not recovered original: Draws )
+( only descriptors with visited bit $08 set. Uses packed )
+( room coordinates for bitmap position and descriptor )
+( high/low fields to select two eight-row font glyphs. )
+( Stack: room -- )
 AT 5B97
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 84000000D0795B
 DOCOL
-w4584 t.DUP t.1+ t.C@ t.8 t.AND
+t.ROOM-MAP-DESCRIPTORS t.DUP t.1+ t.C@ t.8 t.AND
 t.0BRANCH CELL 003C ( -> 5BEA )
-t.>R t.1 t.8 t.XY-CCM! t.R w5B1A t.8 t.* LIT8 1E t.+ t.SWAP
-LIT8 20 t.+ t.SWAP w5B80 t.R> t.1+ w5B1A t.SWAP t.1+ w5B69
-t.CCMOV LIT16 0005 t.+ w5B69
+t.>R t.1 t.8 t.XY-CCM! t.R t.UNPACK-MAP-FIELDS t.8 t.* LIT8 1E
+t.+ t.SWAP LIT8 20 t.+ t.SWAP t.MAP-GLYPH-DEST! t.R> t.1+
+t.UNPACK-MAP-FIELDS t.SWAP t.1+ t.MAP-GLYPH-SOURCE! t.CCMOV
+LIT16 0005 t.+ t.MAP-GLYPH-SOURCE!
 t.BRANCH CELL 0004 ( -> 5BEC )
 ( label 5BEA )
 t.DROP
@@ -5167,18 +5885,27 @@ t.DROP
 t.;S
 AT 5BEE
 
-( w5BF6 | NFA 5BEE CFA 5BF6 )
-( Unknown erased name; CFA identifier )
+( MARK-CURRENT-MAP-ROOM | NFA 5BEE CFA 5BF6 )
+( Inferred descriptive name, not recovered original: Sets )
+( the descriptor's visited bit, draws its map glyphs, then )
+( repeats CCMOV in mode one for the current-room marker and )
+( restores mode zero. )
+( Stack: room -- )
 AT 5BEE
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 8500000000AB975B
 DOCOL
-t.DUP w4584 t.1+ t.DUP t.C@ t.8 t.OR t.SWAP t.C! w5B9E t.1
-t.RCM t.C! t.CCMOV t.0 t.RCM t.C! t.;S
+t.DUP t.ROOM-MAP-DESCRIPTORS t.1+ t.DUP t.C@ t.8 t.OR t.SWAP
+t.C! t.DRAW-VISITED-ROOM t.1 t.RCM t.C! t.CCMOV t.0 t.RCM t.C!
+t.;S
 AT 5C1C
 
-( w5C22 | NFA 5C1C CFA 5C22 )
-( Unknown erased name; CFA identifier )
+( FIRST-SHARED-MAP-ROOM | NFA 5C1C CFA 5C22 )
+( Inferred descriptive name, not recovered original: )
+( Constant 14 is a special room drawn across map-floor )
+( ranges and treated as belonging to the current floor by )
+( $5C36. )
+( Stack: -- room )
 AT 5C1C
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000B1EE5B
@@ -5186,8 +5913,12 @@ DOCON
 CELL 000E
 AT 5C26
 
-( w5C2C | NFA 5C26 CFA 5C2C )
-( Unknown erased name; CFA identifier )
+( SECOND-SHARED-MAP-ROOM | NFA 5C26 CFA 5C2C )
+( Inferred descriptive name, not recovered original: )
+( Constant 30 is the other shared room: floor lookup )
+( retains CURRENT-MAP-FLOOR, and floors below three include )
+( its map marker. )
+( Stack: -- room )
 AT 5C26
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000B21C5C
@@ -5195,20 +5926,26 @@ DOCON
 CELL 001E
 AT 5C30
 
-( w5C36 | NFA 5C30 CFA 5C36 )
-( Unknown erased name; CFA identifier )
+( ROOM-MAP-FLOOR | NFA 5C30 CFA 5C36 )
+( Inferred descriptive name, not recovered original: )
+( Returns the existing map floor for rooms 14/30; otherwise )
+( finds the room's half-open interval in )
+( MAP-FLOOR-FIRST-ROOM and MAP-FLOOR-END-ROOM. )
+( Stack: room -- floor )
 AT 5C30
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000D0265C
 DOCOL
-t.DUP w5C22 t.= t.OVER w5C2C t.= t.+
+t.DUP t.FIRST-SHARED-MAP-ROOM t.= t.OVER
+t.SECOND-SHARED-MAP-ROOM t.= t.+
 t.0BRANCH CELL 000C ( -> 5C54 )
-t.DROP w466D t.@
+t.DROP t.CURRENT-MAP-FLOOR t.@
 t.BRANCH CELL 002A ( -> 5C7C )
 ( label 5C54 )
-w5B37 t.0 t.(DO)
+t.MAP-FLOOR-TABLE-SIZE t.0 t.(DO)
 ( label 5C5A )
-t.I w5B41 t.C@ t.1 t.- t.OVER t.I w5B55 t.C@ t.<=<
+t.I t.MAP-FLOOR-FIRST-ROOM t.C@ t.1 t.- t.OVER t.I
+t.MAP-FLOOR-END-ROOM t.C@ t.<=<
 t.0BRANCH CELL 0008 ( -> 5C78 )
 t.DROP t.I t.LEAVE
 ( label 5C78 )
@@ -5217,19 +5954,27 @@ t.(LOOP) CELL FFE0 ( -> 5C5A )
 t.;S
 AT 5C7E
 
-( w5C86 | NFA 5C7E CFA 5C86 )
-( Unknown erased name; CFA identifier )
+( DRAW-MAP-FLOOR-NUMBER | NFA 5C7E CFA 5C86 )
+( Inferred descriptive name, not recovered original: )
+( Divides CURRENT-MAP-FLOOR by ten and draws both digit )
+( glyphs, starting at font glyph $46, in adjacent bitmap )
+( columns $22/$23 at row $12. )
+( Stack: -- )
 AT 5C7E
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 8500000000DA305C
 DOCOL
-t.1 t.8 t.XY-CCM! w466D t.@ LIT8 0A t./MOD LIT8 46 t.+ w5B69
-LIT8 22 LIT8 12 w5B80 t.CCMOV LIT8 46 t.+ w5B69 LIT8 23
-LIT8 12 w5B80 t.CCMOV t.;S
+t.1 t.8 t.XY-CCM! t.CURRENT-MAP-FLOOR t.@ LIT8 0A t./MOD
+LIT8 46 t.+ t.MAP-GLYPH-SOURCE! LIT8 22 LIT8 12
+t.MAP-GLYPH-DEST! t.CCMOV LIT8 46 t.+ t.MAP-GLYPH-SOURCE!
+LIT8 23 LIT8 12 t.MAP-GLYPH-DEST! t.CCMOV t.;S
 AT 5CBB
 
-( w5CC2 | NFA 5CBB CFA 5CC2 )
-( Unknown erased name; CFA identifier )
+( CLEAR-MAP-PANEL | NFA 5CBB CFA 5CC2 )
+( Inferred descriptive name, not recovered original: Fills )
+( six bitmap bytes per row with $55 for 48 rows, starting )
+( at ADGR+$04D0 and using the 40-byte screen stride. )
+( Stack: -- )
 AT 5CBB
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 84000000D07E5C
@@ -5241,29 +5986,37 @@ t.(+LOOP) CELL FFED ( -> 5CD6 )
 t.DROP t.;S
 AT 5CEF
 
-( w5CF6 | NFA 5CEF CFA 5CF6 )
-( Unknown erased name; CFA identifier )
+( DRAW-FLOOR-MAP | NFA 5CEF CFA 5CF6 )
+( Inferred descriptive name, not recovered original: Draws )
+( visited rooms in the current floor's room-ID interval, )
+( then includes shared room 14 on nonzero floors and shared )
+( room 30 on floors below three. )
+( Stack: -- )
 AT 5CEF
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 84000000C1BB5C
 DOCOL
-w466D t.@ t.DUP w5B55 t.C@ t.SWAP w5B41 t.C@ t.(DO)
+t.CURRENT-MAP-FLOOR t.@ t.DUP t.MAP-FLOOR-END-ROOM t.C@ t.SWAP
+t.MAP-FLOOR-FIRST-ROOM t.C@ t.(DO)
 ( label 5D0A )
-t.I w5B9E
+t.I t.DRAW-VISITED-ROOM
 t.(LOOP) CELL FFFA ( -> 5D0A )
-w466D t.@
+t.CURRENT-MAP-FLOOR t.@
 t.0BRANCH CELL 0006 ( -> 5D1E )
-w5C22 w5B9E
+t.FIRST-SHARED-MAP-ROOM t.DRAW-VISITED-ROOM
 ( label 5D1E )
-w466D t.@ t.3 t.<
+t.CURRENT-MAP-FLOOR t.@ t.3 t.<
 t.0BRANCH CELL 0006 ( -> 5D2E )
-w5C2C w5B9E
+t.SECOND-SHARED-MAP-ROOM t.DRAW-VISITED-ROOM
 ( label 5D2E )
 t.;S
 AT 5D30
 
-( w5D36 | NFA 5D30 CFA 5D36 )
-( Unknown erased name; CFA identifier )
+( TEXT-NEXT-ROW | NFA 5D30 CFA 5D36 )
+( Inferred descriptive name, not recovered original: )
+( Increments the text cursor's Y coordinate without )
+( changing X. )
+( Stack: -- )
 AT 5D30
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000ABEF5C
@@ -5271,8 +6024,11 @@ DOCOL
 t.Y@ t.1+ t.Y! t.;S
 AT 5D40
 
-( w5D46 | NFA 5D40 CFA 5D46 )
-( Unknown erased name; CFA identifier )
+( MESSAGE-BOX-WIDTH | NFA 5D40 CFA 5D46 )
+( Inferred descriptive name, not recovered original: Walks )
+( a byte-counted list of counted text lines, takes the )
+( longest line length and adds four columns of box padding. )
+( Stack: message -- width )
 AT 5D40
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000CD305D
@@ -5284,22 +6040,31 @@ t.(LOOP) CELL FFF0 ( -> 5D52 )
 t.DROP t.4 t.+ t.;S
 AT 5D6C
 
-( w5D75 | NFA 5D6C CFA 5D75 )
-( Unknown erased name; CFA identifier )
+( PRINT-CENTERED-MESSAGE | NFA 5D6C CFA 5D75 )
+( Inferred descriptive name, not recovered original: Walks )
+( counted message lines, sets X to 20 minus half each )
+( line's length, prints with STYPE, and advances one text )
+( row. )
+( Stack: message -- )
 AT 5D6C
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 860000000000C5405D
 DOCOL
 t.COUNT t.0 t.(DO)
 ( label 5D7D )
-t.DUP t.COUNT LIT16 0014 t.OVER t.2 t./ t.- t.X! t.STYPE w5D36
-t.COUNT t.+
+t.DUP t.COUNT LIT16 0014 t.OVER t.2 t./ t.- t.X! t.STYPE
+t.TEXT-NEXT-ROW t.COUNT t.+
 t.(LOOP) CELL FFE4 ( -> 5D7D )
 t.DROP t.;S
 AT 5D9F
 
-( w5DA6 | NFA 5D9F CFA 5DA6 )
-( Unknown erased name; CFA identifier )
+( SOUND-BANK-ALLOCATION | NFA 5D9F CFA 5DA6 )
+( Inferred descriptive name, not recovered original: )
+( Constant $0E74 [3700] is adjacent to the allocated )
+( sound-bank variable at $5DB3; its allocation size matches )
+( the preserved bank/storage region. No runtime caller was )
+( found. )
+( Stack: -- bytes )
 AT 5D9F
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 84000000D56C5D
@@ -5307,8 +6072,13 @@ DOCON
 CELL 0E74
 AT 5DAA
 
-( w5DB3 | NFA 5DAA CFA 5DB3 )
-( Unknown erased name; CFA identifier )
+( SOUND-ENGINE-AND-DATA | NFA 5DAA CFA 5DB3 )
+( Inferred descriptive name, not recovered original: The )
+( 3706-byte saved variable contains the custom sound )
+( command-stream engine and music/effects. music_sap.py )
+( independently identifies its public $5E00 base and $5F6F )
+( frame entry. )
+( Stack: -- address )
 AT 5DAA
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 860000000000C49F5D
@@ -5448,8 +6218,12 @@ BYTES 00000000000000000000000000000000000000000000000000000000
 BYTES 00000000000000000000
 AT 6C2F
 
-( w6C35 | NFA 6C2F CFA 6C35 )
-( Unknown erased name; CFA identifier )
+( SOUND-ENGINE-BASE | NFA 6C2F CFA 6C35 )
+( Inferred descriptive name, not recovered original: )
+( Constant $5E00 is the public load base of the sound )
+( engine, independently identified and extracted by )
+( music_sap.py. )
+( Stack: -- address )
 AT 6C2F
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000D3AA5D
@@ -5467,8 +6241,11 @@ DOCOL
 LIT16 5E27 t.C! t.;S
 AT 6C4B
 
-( w6C56 | NFA 6C4B CFA 6C56 )
-( Unknown erased name; CFA identifier )
+( RESUME-SOUND | NFA 6C4B CFA 6C56 )
+( Inferred descriptive name, not recovered original: Stores )
+( zero at the sound-stop flag $5E1E. The frame player $5F6F )
+( bypasses playback when this flag is nonzero. )
+( Stack: -- )
 AT 6C4B
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 8800000000000000C3396C
@@ -5476,8 +6253,12 @@ DOCOL
 t.0 LIT16 5E1E t.C! t.;S
 AT 6C62
 
-( w6C68 | NFA 6C62 CFA 6C68 )
-( Unknown erased name; CFA identifier )
+( SILENT-POKEY-REGISTERS | NFA 6C62 CFA 6C68 )
+( Inferred descriptive name, not recovered original: The )
+( first eight bytes are zero. STOP-SOUND copies them to )
+( $D200..$D207, clearing all four POKEY frequency/control )
+( register pairs. )
+( Stack: -- address )
 AT 6C62
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000C94B6C
@@ -5493,7 +6274,8 @@ AT 6C73
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 890000000000000000C3626C
 DOCOL
-t.1 LIT16 5E1E t.C! w6C68 LIT16 D200 t.8 t.CMOVE t.;S
+t.1 LIT16 5E1E t.C! t.SILENT-POKEY-REGISTERS LIT16 D200 t.8
+t.CMOVE t.;S
 AT 6C95
 
 ( w6C9A | NFA 6C95 CFA 6C9A )
@@ -5505,8 +6287,12 @@ DOCON
 CELL 1EFF
 AT 6C9E
 
-( w6CA5 | NFA 6C9E CFA 6CA5 )
-( Unknown erased name; CFA identifier )
+( SOUND-RELOCATION-DELTA | NFA 6C9E CFA 6CA5 )
+( Inferred descriptive name, not recovered original: )
+( Constant $3F00 converts the preserved sound initializer )
+( $1F09 to $5E09 and its stop flag $1F1E to $5E1E in )
+( $6CB0/$6CD7. )
+( Stack: -- offset )
 AT 6C9E
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 84000000DA956C
@@ -5514,17 +6300,23 @@ DOCON
 CELL 3F00
 AT 6CA9
 
-( w6CB0 | NFA 6CA9 CFA 6CB0 )
-( Unknown erased name; CFA identifier )
+( SOUND-INIT-ADDRESS | NFA 6CA9 CFA 6CB0 )
+( Inferred descriptive name, not recovered original: Adds )
+( SOUND-RELOCATION-DELTA to $1F09, yielding the native )
+( sound initializer $5E09 verified by music_sap.py. )
+( Stack: -- address )
 AT 6CA9
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 84000000D29E6C
 DOCOL
-LIT16 1F09 w6CA5 t.+ t.;S
+LIT16 1F09 t.SOUND-RELOCATION-DELTA t.+ t.;S
 AT 6CBC
 
-( w6CC4 | NFA 6CBC CFA 6CC4 )
-( Unknown erased name; CFA identifier )
+( CALL-SOUND-INITIALIZER | NFA 6CBC CFA 6CC4 )
+( Inferred descriptive name, not recovered original: Native )
+( $6CC6 saves Forth X in $D1, calls JSR $5E09 to initialize )
+( the custom sound player, restores X, then jumps to NEXT. )
+( Stack: -- )
 AT 6CBC
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 8500000000A9A96C
@@ -5535,26 +6327,39 @@ LDX.ZP D1            ( 6CCB )
 JMP.ABS 0F47         ( 6CCD )
 AT 6CD0
 
-( w6CD7 | NFA 6CD0 CFA 6CD7 )
-( Unknown erased name; CFA identifier )
+( INITIALIZE-AND-RESUME-SOUND | NFA 6CD0 CFA 6CD7 )
+( Inferred descriptive name, not recovered original: Calls )
+( the native initializer through $6CC4, then clears the )
+( relocated stop flag at $5E1E. )
+( Stack: -- )
 AT 6CD0
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 84000000CFBC6C
 DOCOL
-w6CC4 t.0 LIT16 1F1E w6CA5 t.+ t.C! t.;S
+t.CALL-SOUND-INITIALIZER t.0 LIT16 1F1E
+t.SOUND-RELOCATION-DELTA t.+ t.C! t.;S
 AT 6CE9
 
-( w6CF7 | NFA 6CE9 CFA 6CF7 )
-( Unknown erased name; CFA identifier )
+( RESTART-SOUND | NFA 6CE9 CFA 6CF7 )
+( Inferred descriptive name, not recovered original: Stops )
+( playback, temporarily disables the game VBI, )
+( initializes/resumes the sound engine, then reinstalls )
+( RUN-VBI1. )
+( Stack: -- )
 AT 6CE9
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 8B00000000000000000000C3D06C
 DOCOL
-t.STOP-SOUND t.STOP-VBI1 w6CD7 t.RUN-VBI1 t.;S
+t.STOP-SOUND t.STOP-VBI1 t.INITIALIZE-AND-RESUME-SOUND
+t.RUN-VBI1 t.;S
 AT 6D03
 
-( w6D0A | NFA 6D03 CFA 6D0A )
-( Unknown erased name; CFA identifier )
+( HUNGER-MESSAGES | NFA 6D03 CFA 6D0A )
+( Inferred descriptive name, not recovered original: )
+( Counted message vector contains four Polish energy/hunger )
+( warnings, including 'ZEMDLALES Z GLODU' and 'CZUJESZ )
+( GLOD'; $6DD5 selects a warning by energy threshold. )
+( Stack: index -- record )
 ( Decoded text: Hunger messages )
 ( item 0 line 1 $6D14: ZEMDLALES Z GLODU )
 ( item 1 line 1 $6D29: JESTES BARDZO GLODNY )
@@ -5571,8 +6376,12 @@ BYTES 4A45535A3D476C6F441A000118435A554A45535A3D5353414E49453D
 BYTES 573D7A4F6C61444B55
 AT 6D69
 
-( w6D6F | NFA 6D69 CFA 6D6F )
-( Unknown erased name; CFA identifier )
+( HUNGER-THRESHOLDS | NFA 6D69 CFA 6D6F )
+( Inferred descriptive name, not recovered original: Four )
+( cells contain 0,20,40,50. $6DD5 compares ENERGY after )
+( decrementing it and displays the corresponding )
+( HUNGER-MESSAGES record on equality. )
+( Stack: index -- address )
 AT 6D69
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000C5036D
@@ -5581,8 +6390,12 @@ DODOES
 BYTES 44410000140028003200
 AT 6D7B
 
-( w6D82 | NFA 6D7B CFA 6D82 )
-( Unknown erased name; CFA identifier )
+( SHOW-MESSAGE | NFA 6D7B CFA 6D82 )
+( Inferred descriptive name, not recovered original: For a )
+( nonempty counted multiline message, clears remaining text )
+( rows, sizes a box with $5D46, prints centered lines with )
+( $5D75, and restores the previous Y cursor. )
+( Stack: message -- )
 AT 6D7B
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 84000000D4696D
@@ -5594,30 +6407,41 @@ t.0 t.X!
 t.(.")
 BYTES 02201E
 t.Y@ LIT8 58 t.@ t.Y@ t.1+ LIT8 28 t.* t.+ LIT8 0D t.Y@ t.1+
-t.- LIT8 28 t.* t.ERASE w5D36 t.SWAP t.DUP w5D46 t.OVER t.C@
-t.2+ w4973 w5D75 t.Y!
+t.- LIT8 28 t.* t.ERASE t.TEXT-NEXT-ROW t.SWAP t.DUP
+t.MESSAGE-BOX-WIDTH t.OVER t.C@ t.2+
+t.DRAW-CENTERED-TEXT-FRAME t.PRINT-CENTERED-MESSAGE t.Y!
 ( label 6DCB )
 t.;S
 AT 6DCD
 
-( w6DD5 | NFA 6DCD CFA 6DD5 )
-( Unknown erased name; CFA identifier )
+( CONSUME-ENERGY | NFA 6DCD CFA 6DD5 )
+( Inferred descriptive name, not recovered original: )
+( Decrements ENERGY by one, checks the four hunger )
+( thresholds, selects sound command $13, and displays the )
+( matching hunger warning. Called on entry to a room. )
+( Stack: -- )
 AT 6DCD
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 8500000000C47B6D
 DOCOL
-t.CLEAR-TEXT-AREA t.-1 w4377 t.+! w4377 t.@ t.4 t.0 t.(DO)
+t.CLEAR-TEXT-AREA t.-1 t.ENERGY t.+! t.ENERGY t.@ t.4 t.0
+t.(DO)
 ( label 6DE9 )
-t.DUP t.I w6D6F t.@ t.=
+t.DUP t.I t.HUNGER-THRESHOLDS t.@ t.=
 t.0BRANCH CELL 000F ( -> 6E04 )
-LIT8 13 t.SOUND-COMMAND! t.I w6D0A t.2+ w6D82
+LIT8 13 t.SOUND-COMMAND! t.I t.HUNGER-MESSAGES t.2+
+t.SHOW-MESSAGE
 ( label 6E04 )
 t.(LOOP) CELL FFE3 ( -> 6DE9 )
 t.DROP t.;S
 AT 6E0C
 
-( w6E11 | NFA 6E0C CFA 6E11 )
-( Unknown erased name; CFA identifier )
+( KEEP-MAP-FLOOR-ON-REDRAW | NFA 6E0C CFA 6E11 )
+( Inferred descriptive name, not recovered original: )
+( Normally one; $78C6 clears it before re-entering the )
+( current room so $6E1F performs the full map-panel redraw )
+( rather than its same-floor shortcut. )
+( Stack: -- address )
 AT 6E0C
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 8200D4CD6D
@@ -5625,27 +6449,41 @@ DOVAR
 CELL 0001
 AT 6E15
 
-( w6E1F | NFA 6E15 CFA 6E1F )
-( Unknown erased name; CFA identifier )
+( ENTER-ROOM | NFA 6E15 CFA 6E1F )
+( Inferred descriptive name, not recovered original: )
+( Restarts sound, loads the destination room and display )
+( resources, updates floor number and visited/current-room )
+( map markers, decrements energy, and resets redraw flags. )
+( Stack: room -- )
 AT 6E15
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 87000000000000C10C6E
 DOCOL
-w6CF7 t.DUP w4369 t.@ t.>R t.CLEAR-TEXT-AREA w47DC w5AEC w47E9
-w4000 LIT16 0006 t.+ t.C@ LIT16 02C7 t.C! w5C36 w466D t.@ t.=
-w6E11 t.@ t.*
+t.RESTART-SOUND t.DUP t.CURRENT-ROOM t.@ t.>R
+t.CLEAR-TEXT-AREA t.PAUSE-COLOR-DLI t.LOAD-ROOM-VIEW
+t.RESUME-COLOR-DLI t.GAME-COLOR-TABLE LIT16 0006 t.+ t.C@
+LIT16 02C7 t.C! t.ROOM-MAP-FLOOR t.CURRENT-MAP-FLOOR t.@ t.=
+t.KEEP-MAP-FLOOR-ON-REDRAW t.@ t.*
 t.0BRANCH CELL 0010 ( -> 6E63 )
-t.R w5B9E w4369 t.@ w5BF6
+t.R t.DRAW-VISITED-ROOM t.CURRENT-ROOM t.@
+t.MARK-CURRENT-MAP-ROOM
 t.BRANCH CELL 0016 ( -> 6E77 )
 ( label 6E63 )
-w4369 t.@ t.DUP w5C36 w466D t.! w5C86 w5CC2 w5CF6 w5BF6
+t.CURRENT-ROOM t.@ t.DUP t.ROOM-MAP-FLOOR t.CURRENT-MAP-FLOOR
+t.! t.DRAW-MAP-FLOOR-NUMBER t.CLEAR-MAP-PANEL t.DRAW-FLOOR-MAP
+t.MARK-CURRENT-MAP-ROOM
 ( label 6E77 )
-t.R> t.DROP t.CLEAR-TEXT-AREA w6DD5 t.0 w47A4 t.! t.1 w6E11
-t.! t.;S
+t.R> t.DROP t.CLEAR-TEXT-AREA t.CONSUME-ENERGY t.0
+t.TEXT-CLEAR-ENABLED t.! t.1 t.KEEP-MAP-FLOOR-ON-REDRAW t.!
+t.;S
 AT 6E8D
 
-( w6E93 | NFA 6E8D CFA 6E93 )
-( Unknown erased name; CFA identifier )
+( CARDINAL-STEP-VECTORS | NFA 6E8D CFA 6E93 )
+( Inferred descriptive name, not recovered original: )
+( Cell-indexed byte pairs are [1,0],[2,1],[1,2],[0,1]. )
+( $6EA6 subtracts one from each component to obtain )
+( north/east/south/west deltas. )
+( Stack: direction -- address )
 AT 6E8D
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000D9156E
@@ -5654,44 +6492,61 @@ DODOES
 BYTES 44410100020101020001
 AT 6E9F
 
-( w6EA6 | NFA 6E9F CFA 6EA6 )
-( Unknown erased name; CFA identifier )
+( ROTATED-EXIT-STEP | NFA 6E9F CFA 6EA6 )
+( Inferred descriptive name, not recovered original: Adds )
+( relative direction and facing modulo four, selects )
+( CARDINAL-STEP-VECTORS, then subtracts one from each )
+( unsigned component. )
+( Stack: relative facing -- dx dy )
 AT 6E9F
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 84000000C08D6E
 DOCOL
-t.+ t.4 t.MOD w6E93 t.DUP t.C@ t.1 t.- t.SWAP t.1+ t.C@ t.1
-t.- t.;S
+t.+ t.4 t.MOD t.CARDINAL-STEP-VECTORS t.DUP t.C@ t.1 t.-
+t.SWAP t.1+ t.C@ t.1 t.- t.;S
 AT 6EC4
 
-( w6ECA | NFA 6EC4 CFA 6ECA )
-( Unknown erased name; CFA identifier )
+( CURRENT-EXIT-STEP | NFA 6EC4 CFA 6ECA )
+( Inferred descriptive name, not recovered original: Reads )
+( the current room descriptor's low three orientation bits )
+( and applies $6EA6 to obtain the requested relative exit's )
+( coordinate delta. )
+( Stack: relative -- dx dy )
 AT 6EC4
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000D99F6E
 DOCOL
-w4369 t.@ w4584 t.1+ t.C@ LIT8 07 t.AND w6EA6 t.;S
+t.CURRENT-ROOM t.@ t.ROOM-MAP-DESCRIPTORS t.1+ t.C@ LIT8 07
+t.AND t.ROTATED-EXIT-STEP t.;S
 AT 6EDF
 
-( w6EE6 | NFA 6EDF CFA 6EE6 )
-( Unknown erased name; CFA identifier )
+( RELATIVE-EXIT-ROOM | NFA 6EDF CFA 6EE6 )
+( Inferred descriptive name, not recovered original: )
+( Offsets the current room's packed map position using its )
+( facing and relative exit direction, handles shared rooms )
+( 14/30, and searches the current floor's room descriptors )
+( for the adjacent coordinate. )
+( Stack: direction -- room )
 AT 6EDF
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 84000000CDC46E
 DOCOL
-w6ECA w4369 t.@ w4584 w5B1A t.ROT t.+ t.>R t.+ t.16 t.* t.R>
-t.+ t.DUP w5C22 w4584 t.C@ t.=
+t.CURRENT-EXIT-STEP t.CURRENT-ROOM t.@ t.ROOM-MAP-DESCRIPTORS
+t.UNPACK-MAP-FIELDS t.ROT t.+ t.>R t.+ t.16 t.* t.R> t.+ t.DUP
+t.FIRST-SHARED-MAP-ROOM t.ROOM-MAP-DESCRIPTORS t.C@ t.=
 t.0BRANCH CELL 0008 ( -> 6F16 )
-w5C22
+t.FIRST-SHARED-MAP-ROOM
 t.BRANCH CELL 0010 ( -> 6F24 )
 ( label 6F16 )
-t.DUP w5C2C w4584 t.C@ t.= w5C2C t.*
+t.DUP t.SECOND-SHARED-MAP-ROOM t.ROOM-MAP-DESCRIPTORS t.C@ t.=
+t.SECOND-SHARED-MAP-ROOM t.*
 ( label 6F24 )
 t.-DUP t.0=_12DE
 t.0BRANCH CELL 002A ( -> 6F54 )
-w466D t.@ w5B55 t.C@ w466D t.@ w5B41 t.C@ t.(DO)
+t.CURRENT-MAP-FLOOR t.@ t.MAP-FLOOR-END-ROOM t.C@
+t.CURRENT-MAP-FLOOR t.@ t.MAP-FLOOR-FIRST-ROOM t.C@ t.(DO)
 ( label 6F3E )
-t.I w4584 t.C@ t.OVER t.=
+t.I t.ROOM-MAP-DESCRIPTORS t.C@ t.OVER t.=
 t.0BRANCH CELL 0006 ( -> 6F50 )
 t.I t.LEAVE
 ( label 6F50 )
@@ -5700,8 +6555,12 @@ t.(LOOP) CELL FFEC ( -> 6F3E )
 t.SWAP t.DROP t.;S
 AT 6F5A
 
-( w6F5F | NFA 6F5A CFA 6F5F )
-( Unknown erased name; CFA identifier )
+( AVAILABLE-EXIT-LIST | NFA 6F5A CFA 6F5F )
+( Inferred descriptive name, not recovered original: )
+( Five-byte active buffer: count followed by up to four )
+( relative directions. $6FA1 rebuilds it and $7033/$721C )
+( use it for the movement menu. )
+( Stack: -- address )
 AT 6F5A
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 8200D7DF6E
@@ -5709,42 +6568,60 @@ DOVAR
 BYTES 000005414C4C
 AT 6F67
 
-( w6F6C | NFA 6F67 CFA 6F6C )
-( Unknown erased name; CFA identifier )
+( APPEND-AVAILABLE-EXIT | NFA 6F67 CFA 6F6C )
+( Inferred descriptive name, not recovered original: Stores )
+( a direction at AVAILABLE-EXIT-LIST+count+1 and increments )
+( its byte count. )
+( Stack: direction -- )
 AT 6F67
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 8200A15A6F
 DOCOL
-w6F5F t.DUP t.C@ t.1+ t.+ t.C! t.1 w6F5F w4732 t.;S
+t.AVAILABLE-EXIT-LIST t.DUP t.C@ t.1+ t.+ t.C! t.1
+t.AVAILABLE-EXIT-LIST t.BYTE+! t.;S
 AT 6F82
 
-( w6F8A | NFA 6F82 CFA 6F8A )
-( Unknown erased name; CFA identifier )
+( ROOM-EXIT-OPEN? | NFA 6F82 CFA 6F8A )
+( Inferred descriptive name, not recovered original: )
+( Fetches the current room's byte from ROOM-EXIT-MASKS, )
+( computes 1<<direction with C2^, and ANDs them. The result )
+( is the actual bit value, not a normalized boolean; mask )
+( $0A yields 0,2,0,8 for directions 0..3. )
+( Stack: direction -- bit )
 AT 6F82
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 8500000000C0676F
 DOCOL
-w4369 t.@ w4678 t.C@ t.SWAP t.C2^ t.AND t.;S
+t.CURRENT-ROOM t.@ t.ROOM-EXIT-MASKS t.C@ t.SWAP t.C2^ t.AND
+t.;S
 AT 6F9C
 
-( w6FA1 | NFA 6F9C CFA 6FA1 )
-( Unknown erased name; CFA identifier )
+( COLLECT-AVAILABLE-EXITS | NFA 6F9C CFA 6FA1 )
+( Inferred descriptive name, not recovered original: Clears )
+( the five-byte exit list, tests directions zero through )
+( three with $6F8A, and appends each direction whose bit is )
+( set. )
+( Stack: -- )
 AT 6F9C
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 8200D7826F
 DOCOL
-w6F5F LIT8 05 t.ERASE t.4 t.0 t.(DO)
+t.AVAILABLE-EXIT-LIST LIT8 05 t.ERASE t.4 t.0 t.(DO)
 ( label 6FB0 )
-t.I w6F8A
+t.I t.ROOM-EXIT-OPEN?
 t.0BRANCH CELL 0006 ( -> 6FBC )
-t.I w6F6C
+t.I t.APPEND-AVAILABLE-EXIT
 ( label 6FBC )
 t.(LOOP) CELL FFF2 ( -> 6FB0 )
 t.;S
 AT 6FC2
 
-( w6FC7 | NFA 6FC2 CFA 6FC7 )
-( Unknown erased name; CFA identifier )
+( RELATIVE-DIRECTION-LABELS | NFA 6FC2 CFA 6FC7 )
+( Inferred descriptive name, not recovered original: )
+( Length-prefixed inverse-text labels read PROSTO, W PRAWO, )
+( W TYL, W LEWO. $7033 displays them for available relative )
+( exits. )
+( Stack: direction -- record )
 ( Decoded text: Direction labels )
 ( item 0 $6FCF: PROSTO )
 ( item 1 $6FD7: W PRAWO )
@@ -5759,51 +6636,70 @@ BYTES C13921000600D0D2CFD3D4CF0700D73DD0D2C1D7CF0500D73DD4D9EC
 BYTES 0600D73DCCC5D7CFD9
 AT 6FEE
 
-( w6FF4 | NFA 6FEE CFA 6FF4 )
-( Unknown erased name; CFA identifier )
+( SETUP-MENU-CURSOR | NFA 6FEE CFA 6FF4 )
+( Inferred descriptive name, not recovered original: )
+( Selects cursor context six, sets the vertical limit, )
+( derives cursor origin from current text X/Y using )
+( 4/8-pixel spacing and offsets $30/$7E, and resets its )
+( grid coordinates. )
+( Stack: last-row -- )
 AT 6FEE
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000CDC26F
 DOCOL
-LIT8 06 w4D70 t.! w4DC1 t.1+ t.C! LIT8 30 t.X@ t.4 t.* t.+
-w4D7C t.C! LIT8 7E t.Y@ t.8 t.* t.+ w4D7C t.1+ t.C! t.0 w4D92
-t.! t.;S
+LIT8 06 t.CURSOR-CONTEXT t.! t.CURSOR-GRID-LIMIT t.1+ t.C!
+LIT8 30 t.X@ t.4 t.* t.+ t.CURSOR-ORIGIN t.C! LIT8 7E t.Y@ t.8
+t.* t.+ t.CURSOR-ORIGIN t.1+ t.C! t.0 t.CURSOR-GRID-POS t.!
+t.;S
 AT 702B
 
-( w7033 | NFA 702B CFA 7033 )
-( Unknown erased name; CFA identifier )
+( DRAW-EXIT-MENU | NFA 702B CFA 7033 )
+( Inferred descriptive name, not recovered original: )
+( Collects available exits, creates a text box and menu )
+( cursor, prints the no-action choice NIC, then prints each )
+( available relative direction label. )
+( Stack: -- )
 AT 702B
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 8500000000D2EE6F
 DOCOL
-t.CLEAR-TEXT-AREA t.CR w6FA1 w6F5F t.C@
+t.CLEAR-TEXT-AREA t.CR t.COLLECT-AVAILABLE-EXITS
+t.AVAILABLE-EXIT-LIST t.C@
 t.0BRANCH CELL 0009 ( -> 704A )
 LIT8 0C
 t.BRANCH CELL 0004 ( -> 704C )
 ( label 704A )
 t.8
 ( label 704C )
-w6F5F t.C@ t.3 t.+ w4973 w6F5F t.C@ w6FF4 t.X@ t.2+ t.X! t.X@
+t.AVAILABLE-EXIT-LIST t.C@ t.3 t.+ t.DRAW-CENTERED-TEXT-FRAME
+t.AVAILABLE-EXIT-LIST t.C@ t.SETUP-MENU-CURSOR t.X@ t.2+ t.X!
+t.X@
 ( Game text: NIC )
 t.(S")
 BYTES 034E4943
-t.X! w5D36 w6F5F t.C@
+t.X! t.TEXT-NEXT-ROW t.AVAILABLE-EXIT-LIST t.C@
 t.0BRANCH CELL 0024 ( -> 7098 )
-w6F5F t.C@ t.0 t.(DO)
+t.AVAILABLE-EXIT-LIST t.C@ t.0 t.(DO)
 ( label 707E )
-t.X@ t.I w6F5F t.+ t.1+ t.C@ w6FC7 t.OUNT t.STYPE t.X! w5D36
+t.X@ t.I t.AVAILABLE-EXIT-LIST t.+ t.1+ t.C@
+t.RELATIVE-DIRECTION-LABELS t.OUNT t.STYPE t.X!
+t.TEXT-NEXT-ROW
 t.(LOOP) CELL FFE8 ( -> 707E )
 ( label 7098 )
 t.;S
 AT 709A
 
-( w70A2 | NFA 709A CFA 70A2 )
-( Unknown erased name; CFA identifier )
+( REMOVE-SCENE-OBJECT | NFA 709A CFA 70A2 )
+( Inferred descriptive name, not recovered original: Finds )
+( the room/view's mutable object-ID list through $520C, )
+( scans for the object and replaces the first matching byte )
+( with zero. )
+( Stack: object room view -- )
 AT 709A
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 8500000000A12B70
 DOCOL
-w520C t.OUNT t.0 t.(DO)
+t.ROOM-VIEW-OBJECTS t.OUNT t.0 t.(DO)
 ( label 70AC )
 t.2DUP t.I t.+ t.C@ t.=
 t.0BRANCH CELL 000E ( -> 70C6 )
@@ -5813,17 +6709,24 @@ t.(LOOP) CELL FFE4 ( -> 70AC )
 t.2DROP t.;S
 AT 70CE
 
-( w70D5 | NFA 70CE CFA 70D5 )
-( Unknown erased name; CFA identifier )
+( REMOVE-CURRENT-OBJECT | NFA 70CE CFA 70D5 )
+( Inferred descriptive name, not recovered original: )
+( Supplies CURRENT-ROOM and CURRENT-VIEW to )
+( REMOVE-SCENE-OBJECT. )
+( Stack: object -- )
 AT 70CE
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 84000000A19A70
 DOCOL
-w4369 t.@ w5855 w70A2 t.;S
+t.CURRENT-ROOM t.@ t.CURRENT-VIEW t.REMOVE-SCENE-OBJECT t.;S
 AT 70E1
 
-( w70E9 | NFA 70E1 CFA 70E9 )
-( Unknown erased name; CFA identifier )
+( DUP-THIRD | NFA 70E1 CFA 70E9 )
+( Inferred descriptive name, not recovered original: )
+( Implements >R OVER R> SWAP; used three times by $70FC to )
+( retain its object/room/view arguments while removing a )
+( duplicate entry. )
+( Stack: a b c -- a b c a )
 AT 70E1
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 8500000000D2CE70
@@ -5831,13 +6734,18 @@ DOCOL
 t.>R t.OVER t.R> t.SWAP t.;S
 AT 70F5
 
-( w70FC | NFA 70F5 CFA 70FC )
-( Unknown erased name; CFA identifier )
+( ADD-SCENE-OBJECT | NFA 70F5 CFA 70FC )
+( Inferred descriptive name, not recovered original: )
+( Retains the arguments, removes an existing duplicate with )
+( $70A2, then inserts the object into the first zero slot )
+( of the same mutable room/view list. )
+( Stack: object room view -- )
 AT 70F5
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 84000000A1E170
 DOCOL
-w70E9 w70E9 w70E9 w70A2 w520C t.OUNT t.0 t.(DO)
+t.DUP-THIRD t.DUP-THIRD t.DUP-THIRD t.REMOVE-SCENE-OBJECT
+t.ROOM-VIEW-OBJECTS t.OUNT t.0 t.(DO)
 ( label 710E )
 t.DUP t.I t.+ t.C@ t.0=_12DE
 t.0BRANCH CELL 000C ( -> 7126 )
@@ -5847,13 +6755,16 @@ t.(LOOP) CELL FFE6 ( -> 710E )
 t.2DROP t.;S
 AT 712E
 
-( w7134 | NFA 712E CFA 7134 )
-( Unknown erased name; CFA identifier )
+( ADD-CURRENT-OBJECT | NFA 712E CFA 7134 )
+( Inferred descriptive name, not recovered original: )
+( Supplies CURRENT-ROOM and CURRENT-VIEW to )
+( ADD-SCENE-OBJECT. )
+( Stack: object -- )
 AT 712E
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000A1F570
 DOCOL
-w4369 t.@ w5855 w70FC t.;S
+t.CURRENT-ROOM t.@ t.CURRENT-VIEW t.ADD-SCENE-OBJECT t.;S
 AT 7140
 
 ( NIC | NFA 7140 CFA 7146 )
@@ -5878,8 +6789,13 @@ DOVAR
 CELL 0000
 AT 7154
 
-( w715A | NFA 7154 CFA 715A )
-( Unknown erased name; CFA identifier )
+( ALLOW-GAME-MENU-KEY | NFA 7154 CFA 715A )
+( Inferred descriptive name, not recovered original: )
+( Normally one. WAIT-GAME-INPUT permits CH=$21 to enter the )
+( game menu only when this flag is nonzero and both view )
+( depth and cursor context are zero; special-room movement )
+( clears it. )
+( Stack: -- address )
 AT 7154
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000C44A71
@@ -5895,23 +6811,24 @@ AT 715E
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 8800000000000000C15471
 DOCOL
-LIT8 FF LIT16 02FC t.C! w4377 t.@ t.1 t.< t.INPUT-STATE t.!
+LIT8 FF LIT16 02FC t.C! t.ENERGY t.@ t.1 t.< t.INPUT-STATE t.!
 ( label 7180 )
-t.NIC t.0 LIT8 4D t.C! t.0 t.JOYSTICK@ w4F98 w4EF2 w4EE5
-LIT16 02FC t.C@ LIT8 21 t.=
+t.NIC t.0 LIT8 4D t.C! t.0 t.JOYSTICK@ t.STICK>DELTAS
+t.STEP-CURSOR-Y t.STEP-CURSOR-X LIT16 02FC t.C@ LIT8 21 t.=
 t.0BRANCH CELL 0018 ( -> 71B8 )
-w5855 t.0=_12DE w4D70 t.@ t.0=_12DE t.* w715A t.@ t.*
-t.INPUT-STATE t.!
+t.CURRENT-VIEW t.0=_12DE t.CURSOR-CONTEXT t.@ t.0=_12DE t.*
+t.ALLOW-GAME-MENU-KEY t.@ t.* t.INPUT-STATE t.!
 ( label 71B8 )
 t.0 t.TRIGGER@ t.0=_12DE t.INPUT-STATE t.@ t.+
 t.0BRANCH CELL FFBA ( -> 7180 )
-w4D70 t.@ t.0=_12DE
+t.CURSOR-CONTEXT t.@ t.0=_12DE
 t.0BRANCH CELL 000C ( -> 71DC )
-w4D92 w5923 w595D w5939 w590E
+t.CURSOR-GRID-POS t.FETCH-BYTE-PAIR t.VIEW-STACK-DEPTH
+t.VIEW-CURSOR-POSITIONS t.STORE-BYTE-PAIR
 ( label 71DC )
 t.INPUT-STATE t.@ t.0=_12DE
 t.0BRANCH CELL 0006 ( -> 71EA )
-w4D92 w5923
+t.CURSOR-GRID-POS t.FETCH-BYTE-PAIR
 ( label 71EA )
 t.OFF-PM t.;S
 AT 71EE
@@ -5924,41 +6841,53 @@ AT 71EE
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 8200C75E71
 DOCOL
-w4FB4
+t.INIT-CURSOR-PLAYERS
 ( label 71F7 )
 t.0 t.TRIGGER@ LIT16 0005 t.PAUSE
 t.0BRANCH CELL FFF4 ( -> 71F7 )
 t.;S
 AT 7207
 
-( w720C | NFA 7207 CFA 720C )
-( Unknown erased name; CFA identifier )
+( MOVE-AND-DROP-RESULT | NFA 7207 CFA 720C )
+( Inferred descriptive name, not recovered original: Calls )
+( the movement handler at $7F76 and discards its returned )
+( action result; used after selecting a nonzero )
+( movement-menu row. )
+( Stack: direction -- )
 AT 7207
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 8200CBEE71
 DOCOL
-w7F76 t.DROP t.;S
+t.ENTER-RELATIVE-EXIT t.DROP t.;S
 AT 7214
 
-( w721C | NFA 7214 CFA 721C )
-( Unknown erased name; CFA identifier )
+( CHOOSE-EXIT | NFA 7214 CFA 721C )
+( Inferred descriptive name, not recovered original: Draws )
+( the exit menu and reads its selected row. Zero redraws )
+( the current view; other rows index AVAILABLE-EXIT-LIST )
+( and invoke the movement wrapper at $720C. )
+( Stack: -- )
 AT 7214
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 8500000000D20772
 DOCOL
-w7033 t.WAIT-TRIGGER-RELEASE t.WAIT-GAME-INPUT t.SWAP t.DROP
-t.-DUP
+t.DRAW-EXIT-MENU t.WAIT-TRIGGER-RELEASE t.WAIT-GAME-INPUT
+t.SWAP t.DROP t.-DUP
 t.0BRANCH CELL 000E ( -> 723A )
-w6F5F t.+ t.C@ w720C
+t.AVAILABLE-EXIT-LIST t.+ t.C@ t.MOVE-AND-DROP-RESULT
 t.BRANCH CELL 0004 ( -> 723C )
 ( label 723A )
-w59C3
+t.REDRAW-CURRENT-VIEW
 ( label 723C )
 t.;S
 AT 723E
 
-( w7243 | NFA 723E CFA 7243 )
-( Unknown erased name; CFA identifier )
+( SELECTED-OBJECT | NFA 723E CFA 7243 )
+( Inferred descriptive name, not recovered original: Stores )
+( the hit-map object byte in HANDLE-GAME-INPUT; )
+( object/action menu construction and inventory )
+( normalization subsequently use this value. )
+( Stack: -- address )
 AT 723E
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 8200C51472
@@ -5966,8 +6895,12 @@ DOVAR
 CELL 0000
 AT 7247
 
-( w724D | NFA 7247 CFA 724D )
-( Unknown erased name; CFA identifier )
+( AVAILABLE-ACTION-LIST | NFA 7247 CFA 724D )
+( Inferred descriptive name, not recovered original: Stores )
+( a byte count followed by action IDs beginning at offset )
+( two. $729D builds it, $7548 displays it and $76B7 )
+( dispatches the selected ID. )
+( Stack: -- address )
 AT 7247
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000C53E72
@@ -5975,47 +6908,66 @@ DOVAR
 BYTES 000005414C4C4F54202020202020
 AT 725D
 
-( w7263 | NFA 725D CFA 7263 )
-( Unknown erased name; CFA identifier )
+( APPEND-ACTION-ID | NFA 725D CFA 7263 )
+( Inferred descriptive name, not recovered original: Writes )
+( the action byte at AVAILABLE-ACTION-LIST+count+2, then )
+( increments its count. )
+( Stack: action -- )
 AT 725D
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000A14772
 DOCOL
-w724D t.DUP t.C@ t.+ t.2+ t.C! t.1 w724D w4732 t.;S
+t.AVAILABLE-ACTION-LIST t.DUP t.C@ t.+ t.2+ t.C! t.1
+t.AVAILABLE-ACTION-LIST t.BYTE+! t.;S
 AT 7279
 
-( w7281 | NFA 7279 CFA 7281 )
-( Unknown erased name; CFA identifier )
+( SELECTED-OBJECT-RECORD | NFA 7279 CFA 7281 )
+( Inferred descriptive name, not recovered original: Looks )
+( up resource 1's nested object record selected by )
+( SELECTED-OBJECT, returning its payload after the outer )
+( length cell. )
+( Stack: -- record )
 AT 7279
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 8500000000C25D72
 DOCOL
-t.1 t.RESOURCE-ADDR t.2+ w7243 t.@ t.SWAP w4763 t.2+ t.;S
+t.1 t.RESOURCE-ADDR t.2+ t.SELECTED-OBJECT t.@ t.SWAP
+t.LENGTH-RECORD-ADDR t.2+ t.;S
 AT 7295
 
-( w729D | NFA 7295 CFA 729D )
-( Unknown erased name; CFA identifier )
+( COLLECT-OBJECT-ACTIONS | NFA 7295 CFA 729D )
+( Inferred descriptive name, not recovered original: Clears )
+( the action list, adds action zero, walks the selected )
+( object's length-prefixed action records and appends each )
+( action ID; a nested view also adds action one for return. )
+( Stack: -- )
 AT 7295
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 8500000000C57972
 DOCOL
-t.0 w724D t.! t.0 w7263 w7243 t.@
+t.0 t.AVAILABLE-ACTION-LIST t.! t.0 t.APPEND-ACTION-ID
+t.SELECTED-OBJECT t.@
 t.0BRANCH CELL 001C ( -> 72CB )
-w7281
+t.SELECTED-OBJECT-RECORD
 ( label 72B3 )
-t.DUP t.2+ t.C@ w7263 t.OUNT t.+ t.DUP t.@ t.0=_12DE
+t.DUP t.2+ t.C@ t.APPEND-ACTION-ID t.OUNT t.+ t.DUP t.@
+t.0=_12DE
 t.0BRANCH CELL FFEC ( -> 72B3 )
 t.DROP
 ( label 72CB )
-w5855 t.0=_12DE t.0=_12DE
+t.CURRENT-VIEW t.0=_12DE t.0=_12DE
 t.0BRANCH CELL 0006 ( -> 72D9 )
-t.1 w7263
+t.1 t.APPEND-ACTION-ID
 ( label 72D9 )
 t.;S
 AT 72DB
 
-( w72E2 | NFA 72DB CFA 72E2 )
-( Unknown erased name; CFA identifier )
+( ACTION-LABELS | NFA 72DB CFA 72E2 )
+( Inferred descriptive name, not recovered original: Packed )
+( action-name vector includes NIC, WROC, WEZ and other menu )
+( verbs. One-byte records are aliases to another action )
+( label, resolved by $74FA. )
+( Stack: action -- record )
 ( Decoded text: Action labels )
 ( item 0 $72EA: NIC )
 ( item 1 $72EF: WROC )
@@ -6118,8 +7070,12 @@ BYTES C4DABDC3C8D2CFCDCFD3CFCDD90400D7ECEFFA000000000000000000
 BYTES 00000000000000000000000000000000000000000000000000000184
 AT 74DC
 
-( w74E2 | NFA 74DC CFA 74E2 )
-( Unknown erased name; CFA identifier )
+( DISK-CHECK-SECTOR-BASE | NFA 74DC CFA 74E2 )
+( Inferred descriptive name, not recovered original: )
+( Constant $01F5 [501] is added to both disk-check sector )
+( offsets. GAME-LOOP also subtracts it from $260B to obtain )
+( the -DISK CFA $2416. )
+( Stack: -- sector )
 AT 74DC
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000D3DB72
@@ -6127,8 +7083,12 @@ DOCON
 CELL 01F5
 AT 74E6
 
-( w74ED | NFA 74E6 CFA 74ED )
-( Unknown erased name; CFA identifier )
+( DISK-CHECK-SECTOR-OFFSETS | NFA 74E6 CFA 74ED )
+( Inferred descriptive name, not recovered original: Cells )
+( $0196 and $0197 combine with base $01F5 to address )
+( physical sectors 907 and 908 in the disk-check word at )
+( $7C70. )
+( Stack: -- address )
 AT 74E6
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 84000000CBDC74
@@ -6136,48 +7096,69 @@ DOVAR
 BYTES 96019701
 AT 74F3
 
-( w74FA | NFA 74F3 CFA 74FA )
-( Unknown erased name; CFA identifier )
+( RESOLVE-ACTION-LABEL | NFA 74F3 CFA 74FA )
+( Inferred descriptive name, not recovered original: Looks )
+( up ACTION-LABELS; a record shorter than two bytes )
+( supplies a one-byte alias index, which is resolved once )
+( through the same vector. )
+( Stack: action -- record )
 AT 74F3
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 84000000C2E674
 DOCOL
-w72E2 t.DUP t.@ t.2 t.<
+t.ACTION-LABELS t.DUP t.@ t.2 t.<
 t.0BRANCH CELL 0008 ( -> 7510 )
-t.2+ t.C@ w72E2
+t.2+ t.C@ t.ACTION-LABELS
 ( label 7510 )
 t.;S
 AT 7512
 
-( w7518 | NFA 7512 CFA 7518 )
-( Unknown erased name; CFA identifier )
+( ACTION-MENU-WIDTH | NFA 7512 CFA 7518 )
+( Inferred descriptive name, not recovered original: Scans )
+( the available action IDs, obtains each resolved label's )
+( length cell, chooses the maximum and adds five columns of )
+( padding. )
+( Stack: -- width )
 AT 7512
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000C5F374
 DOCOL
-t.0 w724D t.C@ t.0 t.(DO)
+t.0 t.AVAILABLE-ACTION-LIST t.C@ t.0 t.(DO)
 ( label 7524 )
-w724D t.2+ t.I t.+ t.C@ w74FA t.@ t.MAX
+t.AVAILABLE-ACTION-LIST t.2+ t.I t.+ t.C@
+t.RESOLVE-ACTION-LABEL t.@ t.MAX
 t.(LOOP) CELL FFEE ( -> 7524 )
 LIT16 0005 t.+ t.;S
 AT 7540
 
-( w7548 | NFA 7540 CFA 7548 )
-( Unknown erased name; CFA identifier )
+( DRAW-ACTION-MENU | NFA 7540 CFA 7548 )
+( Inferred descriptive name, not recovered original: Builds )
+( available object actions, sizes their box, sets a )
+( vertical menu cursor and prints each resolved action )
+( label on its own text row. )
+( Stack: -- )
 AT 7540
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 8500000000C21275
 DOCOL
-t.CLEAR-TEXT-AREA t.CR w729D w7518 w724D t.C@ t.2+ w4973 w724D
-t.C@ t.1 t.- w6FF4 t.X@ t.2+ t.X! w724D t.C@ t.0 t.(DO)
+t.CLEAR-TEXT-AREA t.CR t.COLLECT-OBJECT-ACTIONS
+t.ACTION-MENU-WIDTH t.AVAILABLE-ACTION-LIST t.C@ t.2+
+t.DRAW-CENTERED-TEXT-FRAME t.AVAILABLE-ACTION-LIST t.C@ t.1
+t.- t.SETUP-MENU-CURSOR t.X@ t.2+ t.X! t.AVAILABLE-ACTION-LIST
+t.C@ t.0 t.(DO)
 ( label 7572 )
-t.X@ w724D t.2+ t.I t.+ t.C@ w74FA t.OUNT t.STYPE t.X! w5D36
+t.X@ t.AVAILABLE-ACTION-LIST t.2+ t.I t.+ t.C@
+t.RESOLVE-ACTION-LABEL t.OUNT t.STYPE t.X! t.TEXT-NEXT-ROW
 t.(LOOP) CELL FFE8 ( -> 7572 )
 t.;S
 AT 758E
 
-( w7594 | NFA 758E CFA 7594 )
-( Unknown erased name; CFA identifier )
+( SELECTED-ACTION-RECORD | NFA 758E CFA 7594 )
+( Inferred descriptive name, not recovered original: $759F )
+( stores the chosen nested action-record pointer here; )
+( later action parameter readers at $7B54/$7B66 index data )
+( relative to this pointer. )
+( Stack: -- address )
 AT 758E
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000D74075
@@ -6185,8 +7166,12 @@ DOVAR
 CELL 0000
 AT 7598
 
-( w759F | NFA 7598 CFA 759F )
-( Unknown erased name; CFA identifier )
+( SELECT-ACTION-RECORD | NFA 7598 CFA 759F )
+( Inferred descriptive name, not recovered original: )
+( Subtracts one from a nonzero menu row, then selects that )
+( action record through $4763 and saves its pointer at )
+( $7594. Row zero selects the first record. )
+( Stack: row -- )
 AT 7598
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 84000000A18E75
@@ -6195,11 +7180,16 @@ t.DUP
 t.0BRANCH CELL 0006 ( -> 75AB )
 t.1 t.-
 ( label 75AB )
-w7281 w4763 w7594 t.! t.;S
+t.SELECTED-OBJECT-RECORD t.LENGTH-RECORD-ADDR
+t.SELECTED-ACTION-RECORD t.! t.;S
 AT 75B5
 
-( w75BA | NFA 75B5 CFA 75BA )
-( Unknown erased name; CFA identifier )
+( ACTION-HANDLER-PFAS | NFA 75B5 CFA 75BA )
+( Inferred descriptive name, not recovered original: )
+( Cell-indexed table stores action-handler PFAs. $7664 )
+( fetches one, substitutes entry zero when the value is )
+( zero, converts PFA to CFA, and EXECUTEs it. )
+( Stack: action -- address )
 AT 75B5
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 8200C29875
@@ -6213,34 +7203,47 @@ BYTES 9B883A8A628A708A858A978AA98AB981D081DF8A278B4E8B7A8B9E8B
 BYTES A68CFC8B628C7F8C14884C8DE88CC2AA754114AF75E4
 AT 765E
 
-( w7664 | NFA 765E CFA 7664 )
-( Unknown erased name; CFA identifier )
+( EXECUTE-ACTION-ID | NFA 765E CFA 7664 )
+( Inferred descriptive name, not recovered original: )
+( Fetches an action handler PFA, falls back to entry zero )
+( for a null pointer, converts to CFA and executes it; )
+( handlers return the menu-loop result. )
+( Stack: action -- result )
 AT 765E
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000C2B575
 DOCOL
-w75BA t.@ t.-DUP t.0=_12DE
+t.ACTION-HANDLER-PFAS t.@ t.-DUP t.0=_12DE
 t.0BRANCH CELL 0008 ( -> 7678 )
-t.0 w75BA t.@
+t.0 t.ACTION-HANDLER-PFAS t.@
 ( label 7678 )
 t.CFA t.EXECUTE t.;S
 AT 767E
 
-( w7684 | NFA 767E CFA 7684 )
-( Unknown erased name; CFA identifier )
+( NORMALIZE-INVENTORY-OBJECT | NFA 767E CFA 7684 )
+( Inferred descriptive name, not recovered original: For )
+( SELECTED-OBJECT greater than 99, selects its cached )
+( inventory collection via $5674 and replaces the global ID )
+( with local-index+2. )
+( Stack: -- )
 AT 767E
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000DA5E76
 DOCOL
-w7243 t.@ LIT8 63 t.>
+t.SELECTED-OBJECT t.@ LIT8 63 t.>
 t.0BRANCH CELL 000E ( -> 769F )
-w7243 t.@ w5674 t.2+ w7243 t.!
+t.SELECTED-OBJECT t.@ t.SELECT-INVENTORY-OBJECT t.2+
+t.SELECTED-OBJECT t.!
 ( label 769F )
 t.;S
 AT 76A1
 
-( w76A7 | NFA 76A1 CFA 76A7 )
-( Unknown erased name; CFA identifier )
+( DISK-CHECK-IO | NFA 76A1 CFA 76A7 )
+( Inferred descriptive name, not recovered original: )
+( Initially contains 0= 0= ;S. GAME-LOOP replaces its first )
+( token at $76A9 with -DISK [$2416], producing -DISK 0= ;S )
+( for the two-sector disk check. Its stack effect changes )
+( after that patch. )
 AT 76A1
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000C97E76
@@ -6248,22 +7251,32 @@ DOCOL
 t.0=_12DE t.0=_12DE t.;S
 AT 76AF
 
-( w76B7 | NFA 76AF CFA 76B7 )
-( Unknown erased name; CFA identifier )
+( RUN-OBJECT-ACTION-MENU | NFA 76AF CFA 76B7 )
+( Inferred descriptive name, not recovered original: )
+( Normalizes inventory IDs, repeatedly draws the action )
+( menu, waits for selection, saves its action-record )
+( pointer and executes the action ID until its result is )
+( nonzero; restores scene resources. )
+( Stack: -- )
 AT 76AF
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 8500000000D2A176
 DOCOL
-w7684 w7548
+t.NORMALIZE-INVENTORY-OBJECT t.DRAW-ACTION-MENU
 ( label 76BD )
 t.WAIT-TRIGGER-RELEASE t.WAIT-GAME-INPUT t.SWAP t.DROP t.DUP
-w759F w724D t.+ t.2+ t.C@ w7664
+t.SELECT-ACTION-RECORD t.AVAILABLE-ACTION-LIST t.+ t.2+ t.C@
+t.EXECUTE-ACTION-ID
 t.0BRANCH CELL FFE8 ( -> 76BD )
-w5390 t.;S
+t.USE-SCENE-RESOURCES t.;S
 AT 76DB
 
-( w76E1 | NFA 76DB CFA 76E1 )
-( Unknown erased name; CFA identifier )
+( INVENTORY-PICTURE-BUFFER | NFA 76DB CFA 76E1 )
+( Inferred descriptive name, not recovered original: )
+( Scratch picture buffer used by $7840 to generate blank )
+( 3-byte-wide slot images and by $786C to expand inventory )
+( artwork before ?POBJ draws it. )
+( Stack: -- address )
 AT 76DB
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000C6AF76
@@ -6273,17 +7286,25 @@ BYTES 2020202020202020616365676F204E522E454B52206920202020204B
 BYTES 85525A4543DAC2764114DD140F2085525A4543DAD0764114DD
 AT 7734
 
-( w773C | NFA 7734 CFA 773C )
-( Unknown erased name; CFA identifier )
+( INVENTORY-SLOT-ADDR | NFA 7734 CFA 773C )
+( Inferred descriptive name, not recovered original: )
+( Returns INVENTORY-SLOT-RECORDS [$456E] plus three times )
+( the slot index; each record contains an item ID and x/y )
+( placement bytes. )
+( Stack: slot -- address )
 AT 7734
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 8500000000DADB76
 DOCOL
-t.3 t.* w456E t.+ t.;S
+t.3 t.* t.INVENTORY-SLOT-RECORDS t.+ t.;S
 AT 7748
 
-( w774F | NFA 7748 CFA 774F )
-( Unknown erased name; CFA identifier )
+( ROOM-VISIT-COUNT-LIMIT | NFA 7748 CFA 774F )
+( Inferred descriptive name, not recovered original: )
+( Constant 40 bounds $777A's count of visited )
+( room-descriptor bits and supplies its percentage )
+( denominator after subtracting four. )
+( Stack: -- count )
 AT 7748
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 84000000CD3477
@@ -6291,8 +7312,11 @@ DOCON
 CELL 0028
 AT 7753
 
-( w7759 | NFA 7753 CFA 7759 )
-( Unknown erased name; CFA identifier )
+( MISSION-PERCENT | NFA 7753 CFA 7759 )
+( Inferred descriptive name, not recovered original: $777A )
+( stores the percentage derived from visited room bits )
+( here; DRAW-GAME-MENU prints it alongside PROCENT MISJI. )
+( Stack: -- address )
 AT 7753
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000D34877
@@ -6300,26 +7324,35 @@ DOVAR
 CELL 0000
 AT 775D
 
-( w7763 | NFA 775D CFA 7763 )
-( Unknown erased name; CFA identifier )
+( ROOM-VISITED? | NFA 775D CFA 7763 )
+( Inferred descriptive name, not recovered original: Reads )
+( the room descriptor's second byte, tests bit $08 and )
+( normalizes the result with two 0= calls. )
+( Stack: room -- flag )
 AT 775D
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000C05377
 DOCOL
-w4584 t.1+ t.C@ t.8 t.AND t.0=_12DE t.0=_12DE t.;S
+t.ROOM-MAP-DESCRIPTORS t.1+ t.C@ t.8 t.AND t.0=_12DE t.0=_12DE
+t.;S
 AT 7775
 
-( w777A | NFA 7775 CFA 777A )
-( Unknown erased name; CFA identifier )
+( UPDATE-MISSION-PERCENT | NFA 7775 CFA 777A )
+( Inferred descriptive name, not recovered original: Counts )
+( visited flags for room IDs 0..39, multiplies by 100, )
+( divides by 40-4, and stores the value printed as mission )
+( completion percentage. )
+( Stack: -- )
 AT 7775
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 8200A55D77
 DOCOL
-t.0 w774F t.0 t.(DO)
+t.0 t.ROOM-VISIT-COUNT-LIMIT t.0 t.(DO)
 ( label 7784 )
-t.I w7763 t.+
+t.I t.ROOM-VISITED? t.+
 t.(LOOP) CELL FFF8 ( -> 7784 )
-LIT8 64 t.* w774F t.4 t.- t./ w7759 t.! t.;S
+LIT8 64 t.* t.ROOM-VISIT-COUNT-LIMIT t.4 t.- t./
+t.MISSION-PERCENT t.! t.;S
 AT 77A1
 
 ( DRAW-GAME-MENU | NFA 77A1 CFA 77A8 )
@@ -6329,30 +7362,32 @@ AT 77A1
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 84000000D77577
 DOCOL
-t.CLEAR-TEXT-AREA t.CR LIT8 0D LIT16 0006 w4973 t.3 w6FF4 t.X@
-t.2+ t.X! t.X@
+t.CLEAR-TEXT-AREA t.CR LIT8 0D LIT16 0006
+t.DRAW-CENTERED-TEXT-FRAME t.3 t.SETUP-MENU-CURSOR t.X@ t.2+
+t.X! t.X@
 ( Game text: POCZATEK )
 t.(S")
 BYTES 08504F435A6154454B
-t.X! w5D36 t.X@
+t.X! t.TEXT-NEXT-ROW t.X@
 ( Game text: ZAPIS )
 t.(S")
 BYTES 055A41504953
-t.X! w5D36 t.X@
+t.X! t.TEXT-NEXT-ROW t.X@
 ( Game text: ODCZYT )
 t.(S")
 BYTES 064F44435A5954
-t.X! w5D36 t.FORTH
+t.X! t.TEXT-NEXT-ROW t.FORTH
 ( Game text: GRA )
 t.(S")
 BYTES 03475241
-t.CR t.CR w777A w59DF t.@ t.0=_12DE
+t.CR t.CR t.UPDATE-MISSION-PERCENT t.GAME-UI-MODE t.@
+t.0=_12DE
 t.0BRANCH CELL 0032 ( -> 7837 )
-LIT8 1E t.3 w4973 t.X@ t.1+ t.X!
+LIT8 1E t.3 t.DRAW-CENTERED-TEXT-FRAME t.X@ t.1+ t.X!
 ( Game text: WYKONALES  )
 t.(S")
 BYTES 0A57594B4F4E416C45733D
-w7759 t.?
+t.MISSION-PERCENT t.?
 ( Game text: [1E] PROCENT MISJI )
 t.(.")
 BYTES 0F1E3D50524F43454E543D4D49534A49
@@ -6360,37 +7395,54 @@ BYTES 0F1E3D50524F43454E543D4D49534A49
 t.CR t.;S
 AT 783B
 
-( w7840 | NFA 783B CFA 7840 )
-( Unknown erased name; CFA identifier )
+( CLEAR-INVENTORY-SLOT | NFA 783B CFA 7840 )
+( Inferred descriptive name, not recovered original: Fills )
+( scratch picture bytes with $55, copies the slot x/y )
+( coordinates, writes width 3 and height 24, then draws )
+( that blank inventory rectangle via ?POBJ. )
+( Stack: slot-record -- )
 AT 783B
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 8200CDA177
 DOCOL
-w76E1 LIT16 004C LIT16 0055 t.FILL t.1+ w5923 w76E1 w590E t.3
-LIT8 18 w76E1 t.2+ w590E w76E1 t.?POBJ t.;S
+t.INVENTORY-PICTURE-BUFFER LIT16 004C LIT16 0055 t.FILL t.1+
+t.FETCH-BYTE-PAIR t.INVENTORY-PICTURE-BUFFER t.STORE-BYTE-PAIR
+t.3 LIT8 18 t.INVENTORY-PICTURE-BUFFER t.2+ t.STORE-BYTE-PAIR
+t.INVENTORY-PICTURE-BUFFER t.?POBJ t.;S
 AT 7867
 
-( w786C | NFA 7867 CFA 786C )
-( Unknown erased name; CFA identifier )
+( DRAW-INVENTORY-ITEM | NFA 7867 CFA 786C )
+( Inferred descriptive name, not recovered original: )
+( Switches to inventory resource lookup, resolves the )
+( item's image resource, expands it into )
+( INVENTORY-PICTURE-BUFFER and draws it, then restores )
+( scene lookup. )
+( Stack: item -- )
 AT 7867
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 8200D23B78
 DOCOL
-w5374 w56A7 t.RESOURCE-ADDR w76E1 t.<MOVE w76E1 t.?POBJ w5390
-t.;S
+t.USE-INVENTORY-RESOURCES t.OBJECT-PICTURE-RESOURCE
+t.RESOURCE-ADDR t.INVENTORY-PICTURE-BUFFER t.<MOVE
+t.INVENTORY-PICTURE-BUFFER t.?POBJ t.USE-SCENE-RESOURCES t.;S
 AT 7880
 
-( w7887 | NFA 7880 CFA 7887 )
-( Unknown erased name; CFA identifier )
+( DRAW-INVENTORY | NFA 7880 CFA 7887 )
+( Inferred descriptive name, not recovered original: Clears )
+( text, selects RCM=2 and iterates four slot records, )
+( clearing each slot and drawing its nonzero item ID, then )
+( restores RCM=0. )
+( Stack: -- )
 AT 7880
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 84000000C56778
 DOCOL
 t.CLEAR-TEXT-AREA t.2 t.RCM t.C! t.4 t.0 t.(DO)
 ( label 7897 )
-t.I w773C t.DUP w7840 t.C@ t.-DUP
+t.I t.INVENTORY-SLOT-ADDR t.DUP t.CLEAR-INVENTORY-SLOT t.C@
+t.-DUP
 t.0BRANCH CELL 0004 ( -> 78A9 )
-w786C
+t.DRAW-INVENTORY-ITEM
 ( label 78A9 )
 t.(LOOP) CELL FFEC ( -> 7897 )
 t.0 t.RCM t.C! t.;S
@@ -6405,48 +7457,66 @@ DOVAR
 CELL 0000
 AT 78BE
 
-( w78C6 | NFA 78BE CFA 78C6 )
-( Unknown erased name; CFA identifier )
+( RELOAD-CURRENT-ROOM | NFA 78BE CFA 78C6 )
+( Inferred descriptive name, not recovered original: )
+( Disables the same-floor redraw shortcut, sets UI mode )
+( zero, and re-enters CURRENT-ROOM through $6E1F. )
+( Stack: -- )
 AT 78BE
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 8500000000D9B578
 DOCOL
-t.0 w6E11 t.! t.0 w59DF t.! w4369 t.@ w6E1F t.;S
+t.0 t.KEEP-MAP-FLOOR-ON-REDRAW t.! t.0 t.GAME-UI-MODE t.!
+t.CURRENT-ROOM t.@ t.ENTER-ROOM t.;S
 AT 78DC
 
-( w78E1 | NFA 78DC CFA 78E1 )
-( Unknown erased name; CFA identifier )
+( RESTORE-INITIAL-STATE | NFA 78DC CFA 78E1 )
+( Inferred descriptive name, not recovered original: Clears )
+( text, brackets disk operations with display suppression, )
+( requires disk side one, loads the initial inventory and )
+( state groups, and restores the display. )
+( Stack: -- )
 AT 78DC
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 8200CCBE78
 DOCOL
-t.CLEAR-TEXT-AREA w47DC t.1 w4A6F t.! w5655 w3F1D w4B4C w47E9
-t.;S
+t.CLEAR-TEXT-AREA t.PAUSE-COLOR-DLI t.1 t.REQUIRED-DISK-SIDE
+t.! t.LOAD-INITIAL-INVENTORY t.CLEAR-RESOURCE-BUFFER
+t.LOAD-INITIAL-STATE t.RESUME-COLOR-DLI t.;S
 AT 78F7
 
-( w78FD | NFA 78F7 CFA 78FD )
-( Unknown erased name; CFA identifier )
+( CANCEL-GAME-MENU | NFA 78F7 CFA 78FD )
+( Inferred descriptive name, not recovered original: When )
+( UI mode is one, restores initial state and reloads the )
+( current room; otherwise only resets the cursor context to )
+( the scene. It is entry three in the menu dispatch vector. )
+( Stack: -- )
 AT 78F7
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000CEDC78
 DOCOL
-w59DF t.@ t.1 t.=
+t.GAME-UI-MODE t.@ t.1 t.=
 t.0BRANCH CELL 000A ( -> 7913 )
-w78E1 w78C6
+t.RESTORE-INITIAL-STATE t.RELOAD-CURRENT-ROOM
 t.BRANCH CELL 0008 ( -> 7919 )
 ( label 7913 )
-t.0 w4D70 t.!
+t.0 t.CURSOR-CONTEXT t.!
 ( label 7919 )
 t.;S
 AT 791B
 
-( w7923 | NFA 791B CFA 7923 )
-( Unknown erased name; CFA identifier )
+( START-NEW-GAME | NFA 791B CFA 7923 )
+( Inferred descriptive name, not recovered original: )
+( Restores initial state, reloads CURRENT-ROOM and redraws )
+( all four inventory slots; entry zero in the game-menu )
+( dispatch vector. )
+( Stack: -- )
 AT 791B
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 8500000000D9F778
 DOCOL
-w78E1 w78C6 w7887 t.;S
+t.RESTORE-INITIAL-STATE t.RELOAD-CURRENT-ROOM t.DRAW-INVENTORY
+t.;S
 AT 792D
 
 ( HANDLE-GAME-INPUT | NFA 792D CFA 7934 )
@@ -6462,49 +7532,65 @@ DOCOL
 t.WAIT-TRIGGER-RELEASE t.CLEAR-TEXT-AREA t.WAIT-GAME-INPUT
 t.INPUT-STATE t.@ t.0=_12DE
 t.0BRANCH CELL 001A ( -> 795E )
-w5147 t.DUP w7243 t.! t.1 t.=
+t.HIT-MAP-CELL@ t.DUP t.SELECTED-OBJECT t.! t.1 t.=
 t.0BRANCH CELL 0008 ( -> 795C )
-w721C
+t.CHOOSE-EXIT
 t.BRANCH CELL 0004 ( -> 795E )
 ( label 795C )
-w76B7
+t.RUN-OBJECT-ACTION-MENU
 ( label 795E )
 t.INPUT-STATE t.@
 t.0BRANCH CELL FFD2 ( -> 7936 )
-w4377 t.@ t.1 t.<
+t.ENERGY t.@ t.1 t.<
 t.0BRANCH CELL 001A ( -> 798A )
 LIT8 32 t.PAUSE LIT8 19 t.SOUND-COMMAND! LIT16 023A t.PAUSE
-w7923 t.1 w59DF t.!
+t.START-NEW-GAME t.1 t.GAME-UI-MODE t.!
 ( label 798A )
 t.;S
 AT 798C
 
-( w7993 | NFA 798C CFA 7993 )
-( Unknown erased name; CFA identifier )
+( LOAD-SAVED-GAME | NFA 798C CFA 7993 )
+( Inferred descriptive name, not recovered original: Loads )
+( saved inventory cache and state group 20 with display )
+( suppressed, then reloads the current room and draws )
+( inventory; entry two in the menu dispatch vector. )
+( Stack: -- )
 AT 798C
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 84000000D92D79
 DOCOL
-t.CLEAR-TEXT-AREA w47DC w5644 w3F1D w4B64 w47E9 w78C6 w7887
-t.;S
+t.CLEAR-TEXT-AREA t.PAUSE-COLOR-DLI t.LOAD-SAVED-INVENTORY
+t.CLEAR-RESOURCE-BUFFER t.LOAD-SAVED-STATE t.RESUME-COLOR-DLI
+t.RELOAD-CURRENT-ROOM t.DRAW-INVENTORY t.;S
 AT 79A7
 
-( w79AE | NFA 79A7 CFA 79AE )
-( Unknown erased name; CFA identifier )
+( SAVE-CURRENT-GAME | NFA 79A7 CFA 79AE )
+( Inferred descriptive name, not recovered original: If UI )
+( mode is one first restores initial state, then stores the )
+( current inventory block/cache, writes state group 20, )
+( restores display and reloads CURRENT-ROOM; entry one in )
+( the menu dispatch vector. )
+( Stack: -- )
 AT 79A7
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 84000000D98C79
 DOCOL
-w59DF t.@ t.1 t.=
+t.GAME-UI-MODE t.@ t.1 t.=
 t.0BRANCH CELL 0004 ( -> 79BE )
-w78E1
+t.RESTORE-INITIAL-STATE
 ( label 79BE )
-t.CLEAR-TEXT-AREA w47DC w5594 w5634 w3F1D w4B7C w47E9 w78C6
+t.CLEAR-TEXT-AREA t.PAUSE-COLOR-DLI t.STORE-INVENTORY-BLOCK
+t.SAVE-INVENTORY-CACHE t.CLEAR-RESOURCE-BUFFER
+t.SAVE-GAME-STATE t.RESUME-COLOR-DLI t.RELOAD-CURRENT-ROOM
 t.;S
 AT 79D0
 
-( w79D6 | NFA 79D0 CFA 79D6 )
-( Unknown erased name; CFA identifier )
+( GAME-MENU-DISPATCH | NFA 79D0 CFA 79D6 )
+( Inferred descriptive name, not recovered original: )
+( Four-entry threaded switch created by CASE: dispatches )
+( menu rows to new game, save, load, or cancel handlers at )
+( $7923/$79AE/$7993/$78FD. )
+( Stack: choice -- )
 AT 79D0
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000D7A779
@@ -6524,7 +7610,7 @@ LIT8 0E t.2 t.POS
 ( Game text: BLAD DYSKOWY )
 t.(S")
 BYTES 0C426C4144204459534B4F5759
-w59DF t.@ t.3 t.=
+t.GAME-UI-MODE t.@ t.3 t.=
 t.0BRANCH CELL 000C ( -> 7A17 )
 t.16 t.3 t.POS
 ( Game text: [3A] )
@@ -6541,7 +7627,7 @@ AT 7A19
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 8200BFE479
 DOCOL
-w59DF t.@ t.3 t.=
+t.GAME-UI-MODE t.@ t.3 t.=
 t.0BRANCH CELL 000D ( -> 7A37 )
 LIT8 10 t.4 t.POS
 ( Game text: [3B] )
@@ -6562,7 +7648,7 @@ AT 7A55
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 8200BF197A
 DOCOL
-w59DF t.@ t.3 t.=
+t.GAME-UI-MODE t.@ t.3 t.=
 t.0BRANCH CELL 000E ( -> 7A74 )
 LIT8 12 t.1 t.POS
 ( Game text: [3B][3B] )
@@ -6585,7 +7671,7 @@ AT 7A8B
 BYTES 84000000D4557A
 DOCOL
 ( label 7A94 )
-LIT8 58 t.@ LIT16 0190 t.ERASE w4A79
+LIT8 58 t.@ LIT16 0190 t.ERASE t.READ-DISK-SIDE
 t.0BRANCH CELL 0010 ( -> 7AB3 )
 t.PRINT-DISK-ERROR t.PRINT-PRESS-KEY t.0 t.KEY t.DROP
 t.BRANCH CELL 0016 ( -> 7AC7 )
@@ -6607,7 +7693,8 @@ AT 7ACD
 BYTES 84000000D78B7A
 DOCOL
 t.DRAW-GAME-MENU t.WAIT-TRIGGER-RELEASE t.WAIT-GAME-INPUT
-t.SWAP t.DROP t.1 w4A6F t.! w79D6 t.;S
+t.SWAP t.DROP t.1 t.REQUIRED-DISK-SIDE t.!
+t.GAME-MENU-DISPATCH t.;S
 AT 7AEA
 
 ( GAME-LOOP | NFA 7AEA CFA 7AF0 )
@@ -6620,11 +7707,12 @@ AT 7AEA
 BYTES 830000C1CD7A
 DOCOL
 ( label 7AF2 )
-t.0 t.INPUT-STATE t.! LIT16 260B w74E2 t.- LIT16 76A9 t.! t.0
-LIT16 0041 t.C! t.WAIT-FOR-GAME-DISK t.1 w59DF t.! t.RUN-VBI1
-t.DISABLE-DISPLAY-DMA t.INIT-GAME-DISPLAY
-t.RESTORE-DISPLAY-DMA t.1 LIT16 02F0 t.C! t.0 LIT8 52 t.C! t.0
-w5BF6 t.3 w466D t.! w5C86
+t.0 t.INPUT-STATE t.! LIT16 260B t.DISK-CHECK-SECTOR-BASE t.-
+LIT16 76A9 t.! t.0 LIT16 0041 t.C! t.WAIT-FOR-GAME-DISK t.1
+t.GAME-UI-MODE t.! t.RUN-VBI1 t.DISABLE-DISPLAY-DMA
+t.INIT-GAME-DISPLAY t.RESTORE-DISPLAY-DMA t.1 LIT16 02F0 t.C!
+t.0 LIT8 52 t.C! t.0 t.MARK-CURRENT-MAP-ROOM t.3
+t.CURRENT-MAP-FLOOR t.! t.DRAW-MAP-FLOOR-NUMBER
 ( label 7B39 )
 t.HANDLE-GAME-MENU t.HANDLE-GAME-INPUT t.INPUT-STATE t.@ t.8
 t.=

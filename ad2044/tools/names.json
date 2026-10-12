@@ -1266,7 +1266,10 @@
     "nfa": "2a8c",
     "name": "INDEX",
     "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
-    "confidence": "intact-original"
+    "confidence": "intact-original",
+    "source_refs": [
+      "https://tajemnice.atari8.info/8_92/8_92_forth.html"
+    ]
   },
   "2abd": {
     "nfa": "2ab6",
@@ -1726,7 +1729,10 @@
   "2fd6": {
     "nfa": "2fd0",
     "name": "MAC",
-    "evidence": "GAM FORTH 09_A_Forth.ATR CFA $2FD6, identical body after known address relocation; surviving name length and suffix match"
+    "evidence": "GAM FORTH 09_A_Forth.ATR CFA $2FD6, identical body after known address relocation; surviving name length and suffix match",
+    "source_refs": [
+      "https://tajemnice.atari8.info/8_92/8_92_forth.html"
+    ]
   },
   "2ff3": {
     "nfa": "2fec",
@@ -1758,7 +1764,10 @@
   "30aa": {
     "nfa": "30a1",
     "name": "SELECT",
-    "evidence": "GAM FORTH 09_A_Forth.ATR CFA $3497, identical body after known address relocation; surviving name length and suffix match"
+    "evidence": "GAM FORTH 09_A_Forth.ATR CFA $3497, identical body after known address relocation; surviving name length and suffix match",
+    "source_refs": [
+      "https://tajemnice.atari8.info/11-12_92/11-12_92_forth.html"
+    ]
   },
   "30c9": {
     "nfa": "30c2",
@@ -1928,7 +1937,10 @@
   "34f2": {
     "nfa": "34ec",
     "name": "<=<",
-    "evidence": "GAM FORTH 09_A_Forth.ATR CFA $38DF, identical body after known address relocation; surviving name length and suffix match"
+    "evidence": "GAM FORTH 09_A_Forth.ATR CFA $38DF, identical body after known address relocation; surviving name length and suffix match",
+    "source_refs": [
+      "https://tajemnice.atari8.info/6-7_92/6-7_92_forth.html"
+    ]
   },
   "3506": {
     "nfa": "3502",
@@ -1977,27 +1989,44 @@
   "364a": {
     "nfa": "3645",
     "name": "X!",
-    "evidence": "GAM FORTH 09_A_Forth.ATR CFA $3B7E, identical body after known address relocation; surviving name length and suffix match"
+    "evidence": "GAM FORTH 09_A_Forth.ATR CFA $3B7E, identical body after known address relocation; surviving name length and suffix match",
+    "source_refs": [
+      "https://tajemnice.atari8.info/5_92/5_92_forth.html",
+      "https://tajemnice.atari8.info/11-12_92/11-12_92_forth.html"
+    ]
   },
   "3658": {
     "nfa": "3653",
     "name": "Y!",
-    "evidence": "GAM FORTH 09_A_Forth.ATR CFA $3B8C, identical body after known address relocation; surviving name length and suffix match"
+    "evidence": "GAM FORTH 09_A_Forth.ATR CFA $3B8C, identical body after known address relocation; surviving name length and suffix match",
+    "source_refs": [
+      "https://tajemnice.atari8.info/5_92/5_92_forth.html",
+      "https://tajemnice.atari8.info/11-12_92/11-12_92_forth.html"
+    ]
   },
   "3666": {
     "nfa": "3661",
     "name": "X@",
-    "evidence": "GAM FORTH 09_A_Forth.ATR CFA $3B9A, identical body after known address relocation; surviving name length and suffix match"
+    "evidence": "GAM FORTH 09_A_Forth.ATR CFA $3B9A, identical body after known address relocation; surviving name length and suffix match",
+    "source_refs": [
+      "https://tajemnice.atari8.info/11-12_92/11-12_92_forth.html"
+    ]
   },
   "3674": {
     "nfa": "366f",
     "name": "Y@",
-    "evidence": "GAM FORTH 09_A_Forth.ATR CFA $3BA8, identical body after known address relocation; surviving name length and suffix match"
+    "evidence": "GAM FORTH 09_A_Forth.ATR CFA $3BA8, identical body after known address relocation; surviving name length and suffix match",
+    "source_refs": [
+      "https://tajemnice.atari8.info/11-12_92/11-12_92_forth.html"
+    ]
   },
   "3683": {
     "nfa": "367d",
     "name": "POS",
-    "evidence": "GAM FORTH 09_A_Forth.ATR CFA $3BB7, identical body after known address relocation; surviving name length and suffix match"
+    "evidence": "GAM FORTH 09_A_Forth.ATR CFA $3BB7, identical body after known address relocation; surviving name length and suffix match",
+    "source_refs": [
+      "https://tajemnice.atari8.info/5_92/5_92_forth.html"
+    ]
   },
   "3693": {
     "nfa": "368b",
@@ -2016,6 +2045,13 @@
     "name": "S\"",
     "evidence": "GAM FORTH 11_A_Graf.ATR CFA $3434, corresponding word in contiguous 10-definition sequence matching name length/suffix, flags, word kind, and body length",
     "confidence": "sequence-match"
+  },
+  "371e": {
+    "nfa": "3718",
+    "name": "GAM-DISK-VOCABULARY",
+    "evidence": "Inferred descriptive name, not recovered original: DODOES vocabulary using the shared VOCABULARY runtime $1E30; its private dictionary head points to DSL at NFA $382E, with LDIR, DIRS and DIRL in that chain.",
+    "confidence": "inferred",
+    "category": "dictionary"
   },
   "372f": {
     "nfa": "3728",
@@ -2063,6 +2099,13 @@
     "nfa": "386e",
     "name": "BLOAD",
     "evidence": "GAM FORTH 11_A_Graf.ATR CFA $365C, matching dependency at corresponding token in recovered DLOAD (game CFA $3A29); complete parent token streams agree after name relocation"
+  },
+  "3885": {
+    "nfa": "387e",
+    "name": "LIST-GAM-DIRECTORY",
+    "evidence": "Inferred descriptive name, not recovered original: Iterates group indices 1 through B/BUF-1, invokes LDIR, prints group index and returned sector/count fields with .R, and stops on directory/error status or ?TERMINAL.",
+    "confidence": "inferred",
+    "category": "disk"
   },
   "38da": {
     "nfa": "38d3",
@@ -2191,6 +2234,27 @@
     "name": "?DL",
     "evidence": "GAM FORTH 42_A_GrafDos.ATR CFA $42BE, corresponding word in contiguous 8-definition sequence matching name length/suffix, flags, word kind, and body length",
     "confidence": "sequence-match"
+  },
+  "3b84": {
+    "nfa": "3b7d",
+    "name": "INIT-TEXT-DISPLAY",
+    "evidence": "Inferred descriptive name, not recovered original: Installs display-list descriptor 0DL through ?DL, emits ATASCII clear-screen $7D, and selects the ROM character set with CHBAS ($02F4)=$E0.",
+    "confidence": "inferred",
+    "category": "display"
+  },
+  "3ba6": {
+    "nfa": "3b9b",
+    "name": "INIT-GRAPHICS-DISPLAY",
+    "evidence": "Inferred descriptive name, not recovered original: Installs TYTDL through ?DL, clears $1040 bytes at ADGR (160x104 four-color bitmap), and emits $7D to clear the accompanying text area.",
+    "confidence": "inferred",
+    "category": "display"
+  },
+  "3bc9": {
+    "nfa": "3bbd",
+    "name": "INIT-GRAPHICS-B800-FONT",
+    "evidence": "Inferred descriptive name, not recovered original: Runs graphics-display initialization at $3BA6 then sets CHBAS ($02F4)=$B8, selecting character data at $B800.",
+    "confidence": "inferred",
+    "category": "display"
   },
   "3bdf": {
     "nfa": "3bd9",
@@ -2356,11 +2420,34 @@
     "evidence": "Inferred descriptive name, not recovered original: Fetches the resource-base variable CFA3ED9.",
     "confidence": "inferred"
   },
+  "3ef2": {
+    "nfa": "3eeb",
+    "name": "PRINT-RESOURCE-FREE-SPACE",
+    "evidence": "Inferred descriptive name, not recovered original: Prints RESOURCE-BASE@ minus HERE minus 32 with U.; this is free space below the resource buffer, not total machine RAM.",
+    "confidence": "inferred",
+    "category": "memory"
+  },
   "3f09": {
     "nfa": "3f02",
     "name": "RESOURCE-ADDR",
     "evidence": "Inferred descriptive name, not recovered original: Uses resource-base, DYC record lookup, and fetches ZK.",
     "confidence": "inferred"
+  },
+  "3f1d": {
+    "nfa": "3f15",
+    "name": "CLEAR-RESOURCE-BUFFER",
+    "evidence": "Inferred descriptive name, not recovered original: ERASEs the half-open range [RESOURCE-BASE@,$A8FC). Both asset-group loaders call it before loading resources.",
+    "confidence": "inferred",
+    "category": "memory",
+    "stack_effect": "--"
+  },
+  "3f37": {
+    "nfa": "3f2f",
+    "name": "GAME-FONT-BASE",
+    "evidence": "Inferred descriptive name, not recovered original: Constant $BC00; INSTALL-SCENE-ASSETS copies resource 1 here and selects CHBAS=$BC. Glyph selection $5B69 adds eight times the glyph number to this base.",
+    "confidence": "inferred",
+    "category": "display",
+    "stack_effect": "-- addr"
   },
   "3f41": {
     "nfa": "3f3b",
@@ -2385,21 +2472,259 @@
     "name": "PAUSE",
     "evidence": "GAM FORTH 11_A_Graf.ATR CFA $4F82, identical body after known address relocation; surviving name length and suffix match"
   },
+  "3fda": {
+    "nfa": "3fd3",
+    "name": "GAME-DISPLAY-LIST",
+    "evidence": "Inferred descriptive name, not recovered original: Constant $A910, matching the TYTDL display-list destination. Game and title color initialization set DLI bits in entries at this base.",
+    "confidence": "inferred",
+    "category": "display",
+    "stack_effect": "-- addr"
+  },
+  "3fe4": {
+    "nfa": "3fde",
+    "name": "ENABLE-DLI-AT",
+    "evidence": "Inferred descriptive name, not recovered original: Sets bit $80 in the byte at the supplied address. Callers pass display-list instruction addresses, marking those scan lines for DLI.",
+    "confidence": "inferred",
+    "category": "display",
+    "stack_effect": "addr --"
+  },
+  "4000": {
+    "nfa": "3ff6",
+    "name": "GAME-COLOR-TABLE",
+    "evidence": "Inferred descriptive name, not recovered original: The game DLI uses this byte table through zero-page pointer $DB. Initial first triple $24,$F8,$FC supplies COLPF0..2; byte +6 also initializes COLOR3 shadow $02C7.",
+    "confidence": "inferred",
+    "category": "display",
+    "stack_effect": "-- addr"
+  },
+  "401a": {
+    "nfa": "4014",
+    "name": "DLI-COLOR-OFFSET",
+    "evidence": "Inferred descriptive name, not recovered original: Byte at PFA $401C is the offset into the color table: handler $403C reads a triple, advances it by three, and resets it to zero when VCOUNT reaches $40.",
+    "confidence": "inferred",
+    "category": "display",
+    "stack_effect": "-- addr"
+  },
+  "4025": {
+    "nfa": "401e",
+    "name": "DLI-COLOR-POINTER",
+    "evidence": "Inferred descriptive name, not recovered original: Constant $00DB, the address of the zero-page pointer used by LDA ($DB),Y in color DLI $403C. Game/title initialization stores the active color-table address here.",
+    "confidence": "inferred",
+    "category": "display",
+    "stack_effect": "-- addr"
+  },
+  "402f": {
+    "nfa": "4029",
+    "name": "NMI-ENABLE-SHADOW",
+    "evidence": "Inferred descriptive name, not recovered original: Stored byte mirrors values written to ANTIC NMIEN $D40E by $4070/$40B2: $E0 with color DLI enabled, $60 when it is disabled.",
+    "confidence": "inferred",
+    "category": "display",
+    "stack_effect": "-- addr"
+  },
+  "403a": {
+    "nfa": "4033",
+    "name": "COLOR-TABLE-DLI",
+    "evidence": "Inferred descriptive name, not recovered original: Native interrupt routine at $403C saves A/Y/status, writes three successive bytes from ($DB),Y to COLPF0..2 ($D016..$D018), advances/reset table index using VCOUNT $D40B, then RTI.",
+    "confidence": "inferred",
+    "category": "display"
+  },
+  "4070": {
+    "nfa": "4067",
+    "name": "INSTALL-COLOR-DLI",
+    "evidence": "Inferred descriptive name, not recovered original: Stores the supplied entry address in VDSLST $0200, clears DLI-COLOR-OFFSET, ORs $E0 into NMI-ENABLE-SHADOW and writes NMIEN $D40E.",
+    "confidence": "inferred",
+    "category": "display",
+    "stack_effect": "entry --"
+  },
+  "409e": {
+    "nfa": "4096",
+    "name": "ENABLE-COLOR-DLI",
+    "evidence": "Inferred descriptive name, not recovered original: Passes native handler address $403C to INSTALL-COLOR-DLI.",
+    "confidence": "inferred",
+    "category": "display",
+    "stack_effect": "--"
+  },
+  "40b2": {
+    "nfa": "40a8",
+    "name": "DISABLE-COLOR-DLI",
+    "evidence": "Inferred descriptive name, not recovered original: Sets shadow NMI mask $60, waits one frame, copies the active table first triple to COLOR0..2 shadows $02C4..$02C6, writes NMIEN=$60, and copies the same triple to $D016..$D018.",
+    "confidence": "inferred",
+    "category": "display",
+    "stack_effect": "--"
+  },
+  "40ef": {
+    "nfa": "40e8",
+    "name": "INIT-GAME-COLOR-DLI",
+    "evidence": "Inferred descriptive name, not recovered original: Selects GAME-COLOR-TABLE via $DB, sets DLI bits at display-list offsets 1 and $6D, installs the color DLI, and writes color-table byte +6 to COLOR3 $02C7.",
+    "confidence": "inferred",
+    "category": "display",
+    "stack_effect": "--"
+  },
+  "4124": {
+    "nfa": "411b",
+    "name": "BYTE-ARRAY",
+    "evidence": "Inferred descriptive name, not recovered original: Defining word <BUILDS ALLOT DOES> + ;. Instances such as ROOM-EXIT-MASKS add a byte index to their data base; unlike ARRAY, the index is not doubled.",
+    "confidence": "inferred",
+    "category": "dictionary"
+  },
   "4138": {
     "nfa": "4130",
     "name": "ARRAY",
     "evidence": "GAM FORTH 11_A_Graf.ATR CFA $3C7B, identical body after known address relocation; surviving name length and suffix match"
+  },
+  "4154": {
+    "nfa": "414e",
+    "name": "INVENTORY-BLOCK-SIZE",
+    "evidence": "Inferred descriptive name, not recovered original: Constant $0200 used as the stride and transfer length for cached inventory blocks in $557C,$5594,$55A8 and the nine-block copy loop $55D3.",
+    "confidence": "inferred",
+    "category": "inventory",
+    "stack_effect": "-- bytes"
+  },
+  "415e": {
+    "nfa": "4158",
+    "name": "INVENTORY-BLOCK-BUFFER",
+    "evidence": "Inferred descriptive name, not recovered original: 512-byte working block exchanged with extended-memory inventory slots by $5594/$55A8 using $4154 as length. $5366 returns this buffer plus two as its record collection. Allocation contains stale source bytes initially.",
+    "confidence": "inferred",
+    "category": "inventory",
+    "stack_effect": "-- addr"
+  },
+  "4369": {
+    "nfa": "4362",
+    "name": "CURRENT-ROOM",
+    "evidence": "Inferred descriptive name, not recovered original: $5AEC stores the incoming room number here before loading its resource group. Rendering, map, exit-mask and object-action code read this value.",
+    "confidence": "inferred",
+    "category": "rooms",
+    "stack_effect": "-- addr"
+  },
+  "4377": {
+    "nfa": "436d",
+    "name": "ENERGY",
+    "evidence": "Inferred descriptive name, not recovered original: Counter starts at 30; entering a room decrements it through $6DD5 and compares hunger-message thresholds. Eating/drinking actions add to it, smoking subtracts 30 with a minimum of one, and input handling checks for exhaustion.",
+    "confidence": "inferred",
+    "category": "state",
+    "stack_effect": "-- addr"
+  },
+  "438b": {
+    "nfa": "4385",
+    "name": "ROOM-OBJECT-STATE",
+    "evidence": "Inferred descriptive name, not recovered original: Mutable nested u16-length records indexed by $520C with (room view). The returned per-view object-ID lists are modified by $70A2/$70FC; the whole block is included in saved game state.",
+    "confidence": "inferred",
+    "category": "rooms",
+    "stack_effect": "-- addr"
+  },
+  "4563": {
+    "nfa": "455b",
+    "name": "ROOM-TABLE-CAPACITY",
+    "evidence": "Inferred descriptive name, not recovered original: Constant 90; the room map table allocates 90 cells and exit-mask table 90 bytes. $4B2D uses capacity-1 to find the final exit-mask byte for the saved-state extent.",
+    "confidence": "inferred",
+    "category": "rooms",
+    "stack_effect": "-- count"
+  },
+  "456e": {
+    "nfa": "4567",
+    "name": "INVENTORY-SLOT-RECORDS",
+    "evidence": "Inferred descriptive name, not recovered original: Four mutable three-byte records, accessed by $773C as base+3*slot; initial triples contain zero object IDs and paired display coordinates (2,25),(6,25),(2,56),(6,56).",
+    "confidence": "inferred",
+    "category": "inventory",
+    "stack_effect": "-- addr"
+  },
+  "4584": {
+    "nfa": "457e",
+    "name": "ROOM-MAP-DESCRIPTORS",
+    "evidence": "Inferred descriptive name, not recovered original: Cell-array indexed by room. First byte packs map position; second byte low three bits give facing for $6ECA, bit 3 is the visited flag used by $5BF6/$7763, and upper bits select map glyphs in $5B9E.",
+    "confidence": "inferred",
+    "category": "rooms",
+    "stack_effect": "room -- addr"
+  },
+  "4642": {
+    "nfa": "463c",
+    "name": "PUZZLE-STATE-CELLS",
+    "evidence": "Inferred descriptive name, not recovered original: Cell-array fetched/stored through $8230/$823F. Game actions use its elements as flags, exclusive selections and counters: $82B0/$82EA increment/decrement and $8453/$8470 add/subtract action parameters.",
+    "confidence": "inferred",
+    "category": "state",
+    "stack_effect": "index -- addr"
+  },
+  "466d": {
+    "nfa": "4666",
+    "name": "CURRENT-MAP-FLOOR",
+    "evidence": "Inferred descriptive name, not recovered original: Stores the floor/section chosen from a room number by $5C36. $5C86 renders its number; $5CF6 and $6EE6 use its room-range limits while drawing/navigating the map.",
+    "confidence": "inferred",
+    "category": "rooms",
+    "stack_effect": "-- addr"
+  },
+  "4678": {
+    "nfa": "4671",
+    "name": "ROOM-EXIT-MASKS",
+    "evidence": "Inferred descriptive name, not recovered original: Byte-array base $467C indexed by room. $6F8A tests 1<<direction in the current room byte; $7BD6 sets the bit and $7C04 clears it. Returned address and indexing verified by executing the original 6502 Forth.",
+    "confidence": "inferred",
+    "category": "rooms",
+    "stack_effect": "room -- addr"
+  },
+  "46de": {
+    "nfa": "46d6",
+    "name": "SAVE-GAM-GROUP",
+    "evidence": "Inferred descriptive name, not recovered original: Uses DIRS/DSL with write direction, preserving requested count/group on the return stack. Updates the cached directory count; if the previous group count was zero and the transfer succeeded, writes the directory sector DIRB.",
+    "confidence": "inferred",
+    "category": "disk",
+    "stack_effect": "addr count group -- error"
+  },
+  "4732": {
+    "nfa": "472c",
+    "name": "BYTE+!",
+    "evidence": "Inferred descriptive name, not recovered original: SWAP OVER C@ + SWAP C!: adds a value to the byte at addr, storing modulo 256. Used by byte counters and palette fades. Original 6502 execution confirms 250+10 stores 4 and leaves no stack result.",
+    "confidence": "inferred",
+    "category": "memory",
+    "stack_effect": "delta addr --"
+  },
+  "4748": {
+    "nfa": "4742",
+    "name": "READ-AND-CLEAR-KEYCODE",
+    "evidence": "Inferred descriptive name, not recovered original: Returns CH ($02FC) and writes $FF back to that keyboard-code latch; unlike KEY it neither waits nor converts the scan code. Original 6502 execution confirms a latched 42 is returned and CH becomes 255.",
+    "confidence": "inferred",
+    "category": "input",
+    "stack_effect": "-- keycode"
+  },
+  "4763": {
+    "nfa": "475c",
+    "name": "LENGTH-RECORD-ADDR",
+    "evidence": "Inferred descriptive name, not recovered original: Calls DYC to skip index u16-length records from base, then returns its zero-page source pointer ZK. The result points at the selected record length cell. Original 6502 execution on a synthetic [length=2,payload=2bytes] first record returns base+4 for index one.",
+    "confidence": "inferred",
+    "category": "records",
+    "stack_effect": "index base -- record"
   },
   "4774": {
     "nfa": "476d",
     "name": "ILEL",
     "evidence": "GAM FORTH 11_A_Graf.ATR CFA $9AAD, identical body after known address relocation; surviving name length and suffix match"
   },
+  "47a4": {
+    "nfa": "479e",
+    "name": "TEXT-CLEAR-ENABLED",
+    "evidence": "Inferred descriptive name, not recovered original: CLEAR-TEXT-AREA checks this cell before erasing. Setting zero suppresses one clearing pass; CLEAR-TEXT-AREA always resets it to one on return.",
+    "confidence": "inferred",
+    "category": "display",
+    "stack_effect": "-- addr"
+  },
   "47ad": {
     "nfa": "47a8",
     "name": "CLEAR-TEXT-AREA",
     "evidence": "Inferred descriptive name, not recovered original: When text-dirty flag is set, positions at 0,0 and erases $208 bytes at the screen address.",
     "confidence": "inferred"
+  },
+  "47dc": {
+    "nfa": "47d6",
+    "name": "PAUSE-COLOR-DLI",
+    "evidence": "Inferred descriptive name, not recovered original: Wrapper around DISABLE-COLOR-DLI, called before disk transfers and scene changes to stabilize playfield colors.",
+    "confidence": "inferred",
+    "category": "display",
+    "stack_effect": "--"
+  },
+  "47e9": {
+    "nfa": "47e2",
+    "name": "RESUME-COLOR-DLI",
+    "evidence": "Inferred descriptive name, not recovered original: Wrapper around ENABLE-COLOR-DLI, called after disk/scene work and while showing disk prompts.",
+    "confidence": "inferred",
+    "category": "display",
+    "stack_effect": "--"
   },
   "47f5": {
     "nfa": "47ef",
@@ -2424,6 +2749,13 @@
     "name": "INIT-GAME-DISPLAY",
     "evidence": "Inferred descriptive name, not recovered original: Loads group 4, disables DMA, installs assets/display state and restores DMA.",
     "confidence": "inferred"
+  },
+  "4847": {
+    "nfa": "4842",
+    "name": "TEXT-FRAME-VOCABULARY",
+    "evidence": "Inferred descriptive name, not recovered original: DODOES vocabulary using $1E30; its private dictionary chain contains #RT, #RTC, EKP, G#D, G#, D#, S# and (RAM), which draw character-cell frames.",
+    "confidence": "inferred",
+    "category": "dictionary"
   },
   "4857": {
     "nfa": "4851",
@@ -2484,6 +2816,158 @@
     "name": "(RAM)",
     "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
     "confidence": "intact-original"
+  },
+  "4940": {
+    "nfa": "4938",
+    "name": "DRAW-TEXT-FRAME",
+    "evidence": "Inferred descriptive name, not recovered original: Computes SAVMSC ($58)+40*Y@+X@ into EKP, invokes (RAM) with supplied width/height, then increments both text coordinates to enter the frame interior.",
+    "confidence": "inferred",
+    "category": "display",
+    "stack_effect": "width height --"
+  },
+  "4973": {
+    "nfa": "496a",
+    "name": "DRAW-CENTERED-TEXT-FRAME",
+    "evidence": "Inferred descriptive name, not recovered original: Sets X to 20-floor(width/2), then calls DRAW-TEXT-FRAME with the original width and height. Used for menus, direction lists and disk prompts.",
+    "confidence": "inferred",
+    "category": "display",
+    "stack_effect": "width height --"
+  },
+  "498f": {
+    "nfa": "4989",
+    "name": "OBJECT-RECORD-BASE",
+    "evidence": "Inferred descriptive name, not recovered original: Constant 2 added by $56A7 after doubling an object number, forming its picture-record index while reserving records 0/1.",
+    "confidence": "inferred",
+    "category": "records",
+    "stack_effect": "-- index"
+  },
+  "499a": {
+    "nfa": "4993",
+    "name": "ROOM-GROUP-OFFSET",
+    "evidence": "Inferred descriptive name, not recovered original: Constant 5 added to side-one room numbers by $59E9 to obtain resource group numbers. Rooms beyond the side-one threshold use the alternate side-two formula.",
+    "confidence": "inferred",
+    "category": "disk",
+    "stack_effect": "-- offset"
+  },
+  "49a3": {
+    "nfa": "499e",
+    "name": "NEXT-TEXT-ROW-AT-X",
+    "evidence": "Inferred descriptive name, not recovered original: Duplicates x into X!, increments Y through Y@ 1+ Y!, and leaves x on the data stack for a later margin restore. Used between disk-prompt lines.",
+    "confidence": "inferred",
+    "category": "display",
+    "stack_effect": "x -- x"
+  },
+  "49b7": {
+    "nfa": "49b1",
+    "name": "PROMPT-DISK-READ-ERROR",
+    "evidence": "Inferred descriptive name, not recovered original: Draws a centered 28x4 frame, prints BLAD ODCZYTU Z DYSKU and NACISNIJ DOWOLNY KLAWISZ, beeps, waits for KEY, and clears the prompt.",
+    "confidence": "inferred",
+    "category": "disk",
+    "stack_effect": "--"
+  },
+  "4a14": {
+    "nfa": "4a0d",
+    "name": "PROMPT-FLIP-DISK",
+    "evidence": "Inferred descriptive name, not recovered original: Draws a centered 30x4 frame, prints ODWROC DYSKIETKE and I NACISNIJ DOWOLNY KLAWISZ, waits for KEY, and clears the prompt.",
+    "confidence": "inferred",
+    "category": "disk",
+    "stack_effect": "--"
+  },
+  "4a6f": {
+    "nfa": "4a69",
+    "name": "REQUIRED-DISK-SIDE",
+    "evidence": "Inferred descriptive name, not recovered original: Desired side marker compared by $4AC8 with the first byte read from directory sector DIRB. Room loading sets it from $59E9; restart/save/menu paths select side one.",
+    "confidence": "inferred",
+    "category": "disk",
+    "stack_effect": "-- addr"
+  },
+  "4a79": {
+    "nfa": "4a73",
+    "name": "READ-DISK-SIDE",
+    "evidence": "Inferred descriptive name, not recovered original: Reads directory sector DIRB into PAD on drive one. On success returns PAD C@ followed by zero; on failure returns a nonzero error flag.",
+    "confidence": "inferred",
+    "category": "disk",
+    "stack_effect": "-- side 0 | error"
+  },
+  "4a9f": {
+    "nfa": "4a99",
+    "name": "TRANSFER-BUFFER",
+    "evidence": "Inferred descriptive name, not recovered original: Retry loop $4AC8 saves the caller buffer address here and reuses it for each BLOAD/SAVE-GAM-GROUP attempt.",
+    "confidence": "inferred",
+    "category": "disk",
+    "stack_effect": "-- addr"
+  },
+  "4aa9": {
+    "nfa": "4aa3",
+    "name": "TRANSFER-SECTOR-COUNT",
+    "evidence": "Inferred descriptive name, not recovered original: Retry loop $4AC8 saves its sector-count/buffer-capacity argument here and passes it back to BLOAD or SAVE-GAM-GROUP.",
+    "confidence": "inferred",
+    "category": "disk",
+    "stack_effect": "-- addr"
+  },
+  "4ab3": {
+    "nfa": "4aad",
+    "name": "TRANSFER-GROUP",
+    "evidence": "Inferred descriptive name, not recovered original: Retry loop $4AC8 saves the resource group number here and uses it on each transfer attempt.",
+    "confidence": "inferred",
+    "category": "disk",
+    "stack_effect": "-- addr"
+  },
+  "4abc": {
+    "nfa": "4ab7",
+    "name": "TRANSFER-IS-LOAD",
+    "evidence": "Inferred descriptive name, not recovered original: Nonzero selects BLOAD in retry loop $4AC8; zero selects SAVE-GAM-GROUP. Used by state and inventory read/write wrappers.",
+    "confidence": "inferred",
+    "category": "disk",
+    "stack_effect": "-- addr"
+  },
+  "4ac8": {
+    "nfa": "4ac0",
+    "name": "RETRY-GROUP-TRANSFER",
+    "evidence": "Inferred descriptive name, not recovered original: Caches buffer/count/group, reads and checks REQUIRED-DISK-SIDE, calls BLOAD or SAVE-GAM-GROUP according to TRANSFER-IS-LOAD, and retries after the appropriate error/flip-disk prompt until success.",
+    "confidence": "inferred",
+    "category": "disk",
+    "stack_effect": "addr count group --"
+  },
+  "4b2d": {
+    "nfa": "4b28",
+    "name": "GAME-STATE-DISK-RANGE",
+    "evidence": "Inferred descriptive name, not recovered original: Returns CURRENT-ROOM storage address followed by the sector count covering state through ROOM-EXIT-MASKS[ROOM-TABLE-CAPACITY-1], computed as byte distance/B/BUF+1. Original 6502 execution returns address $436B and seven sectors.",
+    "confidence": "inferred",
+    "category": "state",
+    "stack_effect": "-- addr sectors"
+  },
+  "4b4c": {
+    "nfa": "4b45",
+    "name": "LOAD-INITIAL-STATE",
+    "evidence": "Inferred descriptive name, not recovered original: Sets TRANSFER-IS-LOAD and reads group $13 (19) into GAME-STATE-DISK-RANGE. Called by new-game initialization and the ending restart path.",
+    "confidence": "inferred",
+    "category": "state",
+    "stack_effect": "--"
+  },
+  "4b64": {
+    "nfa": "4b5d",
+    "name": "LOAD-SAVED-STATE",
+    "evidence": "Inferred descriptive name, not recovered original: Sets TRANSFER-IS-LOAD and reads group $14 (20) into GAME-STATE-DISK-RANGE; the game load-command wrapper invokes it after restoring inventory.",
+    "confidence": "inferred",
+    "category": "state",
+    "stack_effect": "--"
+  },
+  "4b7c": {
+    "nfa": "4b75",
+    "name": "SAVE-GAME-STATE",
+    "evidence": "Inferred descriptive name, not recovered original: Clears TRANSFER-IS-LOAD and writes GAME-STATE-DISK-RANGE to group $14 (20); the game save-command wrapper invokes it after saving inventory.",
+    "confidence": "inferred",
+    "category": "state",
+    "stack_effect": "--"
+  },
+  "4b95": {
+    "nfa": "4b8d",
+    "name": "LOAD-RESOURCE-GROUP",
+    "evidence": "Inferred descriptive name, not recovered original: Clears the resource buffer, selects load direction, and calls RETRY-GROUP-TRANSFER with resource base and capacity $50 sectors, preserving the supplied group number.",
+    "confidence": "inferred",
+    "category": "disk",
+    "stack_effect": "group --"
   },
   "4bb2": {
     "nfa": "4bac",
@@ -2563,10 +3047,138 @@
     "name": "ZD-PM!",
     "evidence": "GAM FORTH 11_A_Graf.ATR CFA $939D, identical body after known address relocation; surviving name length and suffix match"
   },
+  "4cf3": {
+    "nfa": "4cea",
+    "name": "PM-COPY-PARAMETERS!",
+    "evidence": "Inferred descriptive name, not recovered original: Stores plane count in ILPM and bytes per plane in +DOD; cursor-Y placement supplies 13 bytes and three planes. Same dataflow appears as DL-IL! in GAM source screen 7.",
+    "confidence": "inferred",
+    "category": "display",
+    "stack_effect": "bytes-per-plane planes --"
+  },
+  "4d05": {
+    "nfa": "4cff",
+    "name": "COPY-PM-PLANES",
+    "evidence": "Inferred descriptive name, not recovered original: Native code copies +DOD bytes from ZK to DK for ILPM planes, advances source by +DOD and destination by $100 per plane, preserving Forth X and returning through NEXT.",
+    "confidence": "inferred",
+    "category": "display",
+    "stack_effect": "--"
+  },
+  "4d2c": {
+    "nfa": "4d25",
+    "name": "SET-CURSOR-PM-Y",
+    "evidence": "Inferred descriptive name, not recovered original: Copies the fixed three 13-byte cursor planes at $4CA1 to PMBASE@+y using ZD-PM!, PM-COPY-PARAMETERS! and COPY-PM-PLANES after a frame wait.",
+    "confidence": "inferred",
+    "category": "input",
+    "stack_effect": "y --"
+  },
   "4d52": {
     "nfa": "4d49",
     "name": "VARRAY",
     "evidence": "GAM FORTH 11_A_Graf.ATR CFA $940D, identical body after known address relocation; surviving name length and suffix match"
+  },
+  "4d70": {
+    "nfa": "4d68",
+    "name": "CURSOR-CONTEXT",
+    "evidence": "Inferred descriptive name, not recovered original: Index variable shared by the four VARRAY cursor tables. Even entries select X and adjacent odd entries select Y; contexts 0/2/4/6 select different screen regions. GAM screen 8 describes the analogous GDZIE variable as selecting the serviced area.",
+    "confidence": "inferred",
+    "category": "input",
+    "stack_effect": "-- addr"
+  },
+  "4d7c": {
+    "nfa": "4d74",
+    "name": "CURSOR-ORIGIN",
+    "evidence": "Inferred descriptive name, not recovered original: VARRAY indexed implicitly by CURSOR-CONTEXT; supplies the origin added to index*step by $4DD8/$4E3E. Adjacent bytes hold X/Y origins; $518C and $6FF4 update them for scene/menu placement.",
+    "confidence": "inferred",
+    "category": "input",
+    "stack_effect": "-- addr"
+  },
+  "4d92": {
+    "nfa": "4d8c",
+    "name": "CURSOR-GRID-POS",
+    "evidence": "Inferred descriptive name, not recovered original: VARRAY indexed by CURSOR-CONTEXT, holding the current grid index for the selected axis. $4DD8 sets it; $4E3E changes it after movement; callers also access adjacent X/Y bytes.",
+    "confidence": "inferred",
+    "category": "input",
+    "stack_effect": "-- addr"
+  },
+  "4da9": {
+    "nfa": "4da2",
+    "name": "CURSOR-GRID-STEP",
+    "evidence": "Inferred descriptive name, not recovered original: VARRAY indexed by CURSOR-CONTEXT, supplying pixels per grid step. X/Y steps initially 4 and 6; $4DD8 computes origin+index*step and $4E3E animates across that interval.",
+    "confidence": "inferred",
+    "category": "input",
+    "stack_effect": "-- addr"
+  },
+  "4dc1": {
+    "nfa": "4db9",
+    "name": "CURSOR-GRID-LIMIT",
+    "evidence": "Inferred descriptive name, not recovered original: VARRAY indexed by CURSOR-CONTEXT, storing maximum permitted grid index. $51B9 writes hit-map width-1/height-1; $4EA4 compares current index against these limits.",
+    "confidence": "inferred",
+    "category": "input",
+    "stack_effect": "-- addr"
+  },
+  "4dd8": {
+    "nfa": "4dd1",
+    "name": "SET-CURSOR-GRID-INDEX",
+    "evidence": "Inferred descriptive name, not recovered original: Stores index in CURSOR-GRID-POS for the active context and returns index*CURSOR-GRID-STEP+CURSOR-ORIGIN. Original 6502 execution with index=3, step=4 and origin=40 returns 52 and stores grid index 3.",
+    "confidence": "inferred",
+    "category": "input",
+    "stack_effect": "index -- pixel"
+  },
+  "4df4": {
+    "nfa": "4dee",
+    "name": "SET-CURSOR-X",
+    "evidence": "Inferred descriptive name, not recovered original: Converts/stores the grid index with $4DD8 then passes the resulting horizontal hardware coordinate to XPM!.",
+    "confidence": "inferred",
+    "category": "input",
+    "stack_effect": "index --"
+  },
+  "4e02": {
+    "nfa": "4dfc",
+    "name": "SET-CURSOR-Y",
+    "evidence": "Inferred descriptive name, not recovered original: Temporarily increments CURSOR-CONTEXT to its paired Y entry, converts/stores the grid index, copies the cursor planes at the resulting Y position, then restores context.",
+    "confidence": "inferred",
+    "category": "input",
+    "stack_effect": "index --"
+  },
+  "4e1f": {
+    "nfa": "4e18",
+    "name": "SET-CURSOR-PIXEL",
+    "evidence": "Inferred descriptive name, not recovered original: Selects SET-CURSOR-PM-Y for odd CURSOR-CONTEXT and XPM! for even contexts. The input is already a hardware pixel coordinate, not a grid index.",
+    "confidence": "inferred",
+    "category": "input",
+    "stack_effect": "pixel --"
+  },
+  "4e3e": {
+    "nfa": "4e37",
+    "name": "ANIMATE-CURSOR-STEP",
+    "evidence": "Inferred descriptive name, not recovered original: For a nonzero signed grid delta, derives the current hardware position, iterates intermediate positions through SET-CURSOR-PIXEL using delta as loop step, then updates CURSOR-GRID-POS by delta. Zero delta is discarded.",
+    "confidence": "inferred",
+    "category": "input",
+    "stack_effect": "delta --"
+  },
+  "4ea4": {
+    "nfa": "4e9c",
+    "name": "STEP-CURSOR-BOUNDED",
+    "evidence": "Inferred descriptive name, not recovered original: Accepts the joystick step -1/0/+1; negative motion runs only above index zero, positive motion only below CURSOR-GRID-LIMIT, then calls ANIMATE-CURSOR-STEP. It is not a general clamp for arbitrary multi-cell deltas.",
+    "confidence": "inferred",
+    "category": "input",
+    "stack_effect": "delta --"
+  },
+  "4ee5": {
+    "nfa": "4ede",
+    "name": "STEP-CURSOR-X",
+    "evidence": "Inferred descriptive name, not recovered original: Wrapper around STEP-CURSOR-BOUNDED for the current even/X context. WAIT-GAME-INPUT calls it after applying Y motion.",
+    "confidence": "inferred",
+    "category": "input",
+    "stack_effect": "dx --"
+  },
+  "4ef2": {
+    "nfa": "4eeb",
+    "name": "STEP-CURSOR-Y",
+    "evidence": "Inferred descriptive name, not recovered original: Temporarily increments CURSOR-CONTEXT to the paired Y entry, calls STEP-CURSOR-BOUNDED, then restores the context.",
+    "confidence": "inferred",
+    "category": "input",
+    "stack_effect": "dy --"
   },
   "4f0c": {
     "nfa": "4f06",
@@ -2595,6 +3207,62 @@
     "name": "-1",
     "evidence": "GAM FORTH 11_A_Graf.ATR CFA $9612, identical body after known address relocation; surviving name length and suffix match"
   },
+  "4f51": {
+    "nfa": "4f4b",
+    "name": "STICK-X-DELTA-TABLE",
+    "evidence": "Inferred descriptive name, not recovered original: SELECT vector for raw STICK code minus five, containing [1,1,1,0,-1,-1,-1,0,0,0,0]. $4F98 combines it with the Y table; the same vector is XST in GAM source screen 10.",
+    "confidence": "inferred",
+    "category": "input",
+    "stack_effect": "index -- dx"
+  },
+  "4f73": {
+    "nfa": "4f6d",
+    "name": "STICK-Y-DELTA-TABLE",
+    "evidence": "Inferred descriptive name, not recovered original: SELECT vector for raw STICK code minus five, containing [1,-1,0,0,1,-1,0,0,1,-1,0]. $4F98 combines it with the X table; the same vector is YST in GAM source screen 10.",
+    "confidence": "inferred",
+    "category": "input",
+    "stack_effect": "index -- dy"
+  },
+  "4f98": {
+    "nfa": "4f8f",
+    "name": "STICK>DELTAS",
+    "evidence": "Inferred descriptive name, not recovered original: Subtracts five from a raw OS STICK nibble, then executes the X and Y selector vectors. Examples: 15->0,0; 14->0,-1; 13->0,1; 11->-1,0; 7->1,0. Input is a STICK value, not a controller number. GAM screen 10 documents the same STI>XY stack effect. Original 6502 execution confirms all nine valid direction/neutral nibble values.",
+    "confidence": "inferred",
+    "category": "input",
+    "stack_effect": "stick -- dx dy"
+  },
+  "4fb4": {
+    "nfa": "4faa",
+    "name": "INIT-CURSOR-PLAYERS",
+    "evidence": "Inferred descriptive name, not recovered original: Sets SDMCTL $022F=$3E and GPRIOR $026F=1, chooses PMBASE $A000, clears/configures/enables player graphics, and positions X/Y using the stored cursor grid indices.",
+    "confidence": "inferred",
+    "category": "input",
+    "stack_effect": "--"
+  },
+  "4feb": {
+    "nfa": "4fe4",
+    "name": "HIT-MAP-BUFFER",
+    "evidence": "Inferred descriptive name, not recovered original: Decoded hit-map buffer: first bytes are width and height, followed by one object/hit ID per cell. $5147 indexes x+y*width+2, $5261 decompresses resource masks here, and $51B9 derives cursor limits. Allocation initially contains stale Forth/source bytes.",
+    "confidence": "inferred",
+    "category": "graphics",
+    "stack_effect": "-- addr"
+  },
+  "5147": {
+    "nfa": "5140",
+    "name": "HIT-MAP-CELL@",
+    "evidence": "Inferred descriptive name, not recovered original: Calculates HIT-MAP-BUFFER+2+x+y*width and fetches the byte; HANDLE-GAME-INPUT uses it to obtain the selected object ID.",
+    "confidence": "inferred",
+    "category": "input",
+    "stack_effect": "x y -- object"
+  },
+  "5162": {
+    "nfa": "515b",
+    "name": "COPY-HIT-MAP",
+    "evidence": "Inferred descriptive name, not recovered original: Skips the length-prefixed picture with DUP @ + 2+, then expands/copies the following record into HIT-MAP-BUFFER using <MOVE.",
+    "confidence": "inferred",
+    "category": "graphics",
+    "stack_effect": "record --"
+  },
   "5177": {
     "nfa": "5172",
     "name": "XR",
@@ -2604,6 +3272,174 @@
     "nfa": "517b",
     "name": "YR",
     "evidence": "GAM FORTH 42_A_GrafDos.ATR CFA $91B2, identical body after known address relocation; surviving name length and suffix match"
+  },
+  "518c": {
+    "nfa": "5184",
+    "name": "SET-HIT-MAP-ORIGIN",
+    "evidence": "Inferred descriptive name, not recovered original: Converts FIRST's picture x/y into cursor origins: x*current horizontal step+XR and y+YR, storing the two bytes in $4D7C.",
+    "confidence": "inferred",
+    "category": "input",
+    "stack_effect": "--"
+  },
+  "51b9": {
+    "nfa": "51b2",
+    "name": "SET-HIT-MAP-LIMITS",
+    "evidence": "Inferred descriptive name, not recovered original: Stores HIT-MAP-BUFFER width-1 and height-1 in the two cursor-limit bytes at $4DC1.",
+    "confidence": "inferred",
+    "category": "input",
+    "stack_effect": "--"
+  },
+  "51e0": {
+    "nfa": "51d9",
+    "name": "DRAW-PICTURE-WITH-HIT-MAP",
+    "evidence": "Inferred descriptive name, not recovered original: Finds and draws a resource using ?PCOBJ, derives cursor origin, copies its following hit-map, and sets cursor limits; resource 2 forces hit-map height 16.",
+    "confidence": "inferred",
+    "category": "graphics",
+    "stack_effect": "resource --"
+  },
+  "520c": {
+    "nfa": "5206",
+    "name": "ROOM-VIEW-OBJECTS",
+    "evidence": "Inferred descriptive name, not recovered original: Indexes mutable ROOM-OBJECT-STATE at $438B by room, then indexes that record's payload by view. $70A2/$70FC remove and insert IDs in the returned length-prefixed list.",
+    "confidence": "inferred",
+    "category": "objects",
+    "stack_effect": "room view -- record"
+  },
+  "521f": {
+    "nfa": "521a",
+    "name": "PICTURE-COLORS-PTR",
+    "evidence": "Inferred descriptive name, not recovered original: $522A stores the address of five color bytes immediately before a picture's odd flag. $588D copies its first three bytes to ADC's palette destination.",
+    "confidence": "inferred",
+    "category": "graphics",
+    "stack_effect": "-- address"
+  },
+  "522a": {
+    "nfa": "5223",
+    "name": "EXPAND-PICTURE",
+    "evidence": "Inferred descriptive name, not recovered original: Locates the resource's final flag, remembers trailing colors when the flag is odd, and expands the record into FIRST using <MOVE.",
+    "confidence": "inferred",
+    "category": "graphics",
+    "stack_effect": "resource --"
+  },
+  "5261": {
+    "nfa": "525a",
+    "name": "LOAD-HIT-MAP",
+    "evidence": "Inferred descriptive name, not recovered original: Looks up the resource with RESOURCE-ADDR and expands it into HIT-MAP-BUFFER using <MOVE.",
+    "confidence": "inferred",
+    "category": "graphics",
+    "stack_effect": "resource --"
+  },
+  "5270": {
+    "nfa": "526b",
+    "name": "OVERLAY-X-OFFSET",
+    "evidence": "Inferred descriptive name, not recovered original: $52A1 stores overlay x minus base-picture x; $5308 uses the same byte-column offset when composing the corresponding hit-map.",
+    "confidence": "inferred",
+    "category": "graphics",
+    "stack_effect": "-- address"
+  },
+  "5279": {
+    "nfa": "5274",
+    "name": "OVERLAY-Y-OFFSET",
+    "evidence": "Inferred descriptive name, not recovered original: $52A1 stores overlay y minus base-picture y; $5308 divides this difference by six when locating the overlay in the hit-map.",
+    "confidence": "inferred",
+    "category": "graphics",
+    "stack_effect": "-- address"
+  },
+  "5283": {
+    "nfa": "527d",
+    "name": "BLIT-ROW-STRIDE!",
+    "evidence": "Inferred descriptive name, not recovered original: Stores the cell in P-CCM+6, the destination row-step documented by GAM FORTH 11_B_Graf.TXT screen 84/89.",
+    "confidence": "inferred",
+    "category": "graphics",
+    "stack_effect": "stride --"
+  },
+  "5296": {
+    "nfa": "5291",
+    "name": "OVERLAY-PICTURE-BUFFER",
+    "evidence": "Inferred descriptive name, not recovered original: Constant $A4E8 is the scratch destination where $52A1 expands a picture before copying its pixels into FIRST.",
+    "confidence": "inferred",
+    "category": "graphics",
+    "stack_effect": "-- address"
+  },
+  "52a1": {
+    "nfa": "529a",
+    "name": "COMPOSE-PICTURE-OVERLAY",
+    "evidence": "Inferred descriptive name, not recovered original: Expands a positioned picture at $A4E8, computes relative x/y, sets CCMOV source and destination inside FIRST, copies with the base picture's row width, then restores stride 40.",
+    "confidence": "inferred",
+    "category": "graphics",
+    "stack_effect": "resource --"
+  },
+  "5308": {
+    "nfa": "5301",
+    "name": "COMPOSE-HIT-MAP-OVERLAY",
+    "evidence": "Inferred descriptive name, not recovered original: Temporarily sets RCM=0, expands a mask into PAD, computes its destination in HIT-MAP-BUFFER from saved overlay offsets, calls CCMOV, and restores RCM and stride 40.",
+    "confidence": "inferred",
+    "category": "graphics",
+    "stack_effect": "resource --"
+  },
+  "5366": {
+    "nfa": "5360",
+    "name": "INVENTORY-RESOURCE-BASE",
+    "evidence": "Inferred descriptive name, not recovered original: Returns INVENTORY-BLOCK-BUFFER+2. $5374 patches RESOURCE-ADDR's first threaded call to this word when accessing the current 512-byte inventory block.",
+    "confidence": "inferred",
+    "category": "inventory",
+    "stack_effect": "-- address"
+  },
+  "5374": {
+    "nfa": "536e",
+    "name": "USE-INVENTORY-RESOURCES",
+    "evidence": "Inferred descriptive name, not recovered original: Patches the CFA operand at $3F0B to $5366, selecting the inventory-block resource base, and sets the graphics copy mode RCM to 2.",
+    "confidence": "inferred",
+    "category": "inventory",
+    "stack_effect": "--"
+  },
+  "5390": {
+    "nfa": "538a",
+    "name": "USE-SCENE-RESOURCES",
+    "evidence": "Inferred descriptive name, not recovered original: Restores the CFA at $3F0B to RESOURCE-BASE@ ($3EE3) and sets RCM to zero after inventory resource access.",
+    "confidence": "inferred",
+    "category": "graphics",
+    "stack_effect": "--"
+  },
+  "53b0": {
+    "nfa": "53a6",
+    "name": "SPLIT-CELL-BYTES",
+    "evidence": "Inferred descriptive name, not recovered original: Native $53B2 saves the original high byte, allocates one data-stack cell, leaves original low and high as separate zero-extended cells, then jumps to NEXT.",
+    "confidence": "inferred",
+    "category": "utility",
+    "stack_effect": "u -- low high"
+  },
+  "53c9": {
+    "nfa": "53c1",
+    "name": "PATCH-VBI-CALL",
+    "evidence": "Inferred descriptive name, not recovered original: Parses a Forth name with -FIND, computes buffer+1+3*slot, writes JSR opcode $20 and that word's PFA; prints ERROR VBI if lookup fails.",
+    "confidence": "inferred",
+    "category": "interrupts",
+    "stack_effect": "slot buffer --"
+  },
+  "540c": {
+    "nfa": "5404",
+    "name": "VBI-CALL-BUFFER",
+    "evidence": "Inferred descriptive name, not recovered original: Contains NOP slots, JSR $54E5 and terminal JMP $5F6F. RUN-VBI1 installs entry $540F; $5438 patches three-byte calls in this buffer.",
+    "confidence": "inferred",
+    "category": "interrupts",
+    "stack_effect": "-- address"
+  },
+  "5438": {
+    "nfa": "5431",
+    "name": "SET-VBI-CALL",
+    "evidence": "Inferred descriptive name, not recovered original: Passes VBI-CALL-BUFFER to $53C9, which parses a word name and writes its JSR entry into the selected VBI slot.",
+    "confidence": "inferred",
+    "category": "interrupts",
+    "stack_effect": "slot --"
+  },
+  "5448": {
+    "nfa": "5440",
+    "name": "EXIT-DEFERRED-VBI",
+    "evidence": "Inferred descriptive name, not recovered original: Native body is JMP $E462, the Atari OS deferred-VBI exit vector XITVBV. No Forth NEXT is executed on this path.",
+    "confidence": "inferred",
+    "category": "interrupts",
+    "stack_effect": "--"
   },
   "5457": {
     "nfa": "544d",
@@ -2617,10 +3453,650 @@
     "evidence": "GAM FORTH 09_A_Forth.TXT SCR 27 native implementation: SETVBV deferred-VBI vector $E462 (OS default)",
     "confidence": "source-match"
   },
+  "548c": {
+    "nfa": "5486",
+    "name": "OS-RAM-COPY-LENGTH",
+    "evidence": "Inferred descriptive name, not recovered original: $5514 stores the requested byte length; native $54AB copies its high-byte count of full pages followed by the low-byte tail. The author tutorial 1-2/93 describes the related PDL/Z%/D%/PMOVE parameter roles, but its native copy/banking implementation differs from this game.",
+    "confidence": "inferred",
+    "category": "memory",
+    "stack_effect": "-- address",
+    "source_refs": [
+      "https://tajemnice.atari8.info/1-2_93/1-2_93_forth.html"
+    ]
+  },
   "5495": {
     "nfa": "5490",
     "name": "Z%",
     "evidence": "GAM FORTH 42_A_GrafDos.ATR CFA $9A8A, identical body after known address relocation; surviving name length and suffix match"
+  },
+  "549e": {
+    "nfa": "5499",
+    "name": "OS-RAM-COPY-DEST",
+    "evidence": "Inferred descriptive name, not recovered original: Constant $00DF is the zero-page destination pointer for native $54AB; paired with Z% at $00DD for the source. The author tutorial 1-2/93 describes the related PDL/Z%/D%/PMOVE parameter roles, but its native copy/banking implementation differs from this game.",
+    "confidence": "inferred",
+    "category": "memory",
+    "stack_effect": "-- address",
+    "source_refs": [
+      "https://tajemnice.atari8.info/1-2_93/1-2_93_forth.html"
+    ]
+  },
+  "54a9": {
+    "nfa": "54a2",
+    "name": "COPY-OS-RAM-BYTES",
+    "evidence": "Inferred descriptive name, not recovered original: Native $54AB reads source ($DD),Y and writes destination ($DF),Y, copying full pages and a remaining tail from $548E/$548F; returns with RTS for the VBI wrapper. Ends in RTS; invoked as an assembly subroutine, not directly through the Forth interpreter, consistent with the author tutorial 9/92.",
+    "confidence": "inferred",
+    "category": "memory",
+    "source_refs": [
+      "https://tajemnice.atari8.info/9_92/9_92_forth.html",
+      "https://tajemnice.atari8.info/1-2_93/1-2_93_forth.html"
+    ],
+    "calling_convention": "6502 subroutine: JSR/RTS; not directly Forth-callable"
+  },
+  "54d9": {
+    "nfa": "54d4",
+    "name": "OS-RAM-COPY-PENDING",
+    "evidence": "Inferred descriptive name, not recovered original: $5514 sets this flag and waits until it clears. $54E5 tests it before the VBI RAM copy and clears it after restoring the OS ROM mapping.",
+    "confidence": "inferred",
+    "category": "memory",
+    "stack_effect": "-- address"
+  },
+  "54e3": {
+    "nfa": "54dd",
+    "name": "VBI-COPY-UNDER-OS",
+    "evidence": "Inferred descriptive name, not recovered original: If a copy is pending, native $54E5 saves X, disables DLI via NMIEN=$60, sets PORTB=$FE to expose RAM under the OS ROM, copies via $54AB, restores PORTB=$FF/NMIEN, and clears the flag. Ends in RTS; invoked as an assembly subroutine, not directly through the Forth interpreter, consistent with the author tutorial 9/92.",
+    "confidence": "inferred",
+    "category": "memory",
+    "source_refs": [
+      "https://tajemnice.atari8.info/9_92/9_92_forth.html",
+      "https://tajemnice.atari8.info/1-2_93/1-2_93_forth.html"
+    ],
+    "calling_convention": "6502 subroutine: JSR/RTS; not directly Forth-callable"
+  },
+  "5514": {
+    "nfa": "550c",
+    "name": "COPY-UNDER-OS",
+    "evidence": "Inferred descriptive name, not recovered original: Stores source in Z%, destination at $DF and length at $548E, sets the pending flag, and waits for the VBI handler to finish the RAM-under-OS transfer. The author tutorial 1-2/93 describes the related PDL/Z%/D%/PMOVE parameter roles, but its native copy/banking implementation differs from this game.",
+    "confidence": "inferred",
+    "category": "memory",
+    "stack_effect": "source destination length --",
+    "source_refs": [
+      "https://tajemnice.atari8.info/1-2_93/1-2_93_forth.html"
+    ]
+  },
+  "553a": {
+    "nfa": "5534",
+    "name": "INITIAL-INVENTORY-GROUP",
+    "evidence": "Inferred descriptive name, not recovered original: Constant 21 selects the nine-block initial inventory resource group; $5655 loads it through the common inventory-group transfer.",
+    "confidence": "inferred",
+    "category": "inventory",
+    "stack_effect": "-- group"
+  },
+  "5544": {
+    "nfa": "553e",
+    "name": "SAVED-INVENTORY-GROUP",
+    "evidence": "Inferred descriptive name, not recovered original: Constant 23 selects the saved inventory resource group; $5634 writes it and $5644 loads it.",
+    "confidence": "inferred",
+    "category": "inventory",
+    "stack_effect": "-- group"
+  },
+  "554e": {
+    "nfa": "5548",
+    "name": "CURRENT-INVENTORY-BLOCK",
+    "evidence": "Inferred descriptive name, not recovered original: Indexes one of nine 512-byte blocks cached under OS ROM. $5674 switches the index when resolving an inventory object.",
+    "confidence": "inferred",
+    "category": "inventory",
+    "stack_effect": "-- address"
+  },
+  "5558": {
+    "nfa": "5552",
+    "name": "INVENTORY-CACHE-BYTES",
+    "evidence": "Inferred descriptive name, not recovered original: Constant $1200=4608 is nine 512-byte collections; $55BA divides it by 128 to obtain the disk-transfer sector count.",
+    "confidence": "inferred",
+    "category": "inventory",
+    "stack_effect": "-- bytes"
+  },
+  "5563": {
+    "nfa": "555c",
+    "name": "INVENTORY-CACHE-BASE",
+    "evidence": "Inferred descriptive name, not recovered original: Variable initialized to $D800; its value is the RAM-under-OS base for the nine inventory resource blocks.",
+    "confidence": "inferred",
+    "category": "inventory",
+    "stack_effect": "-- address"
+  },
+  "556d": {
+    "nfa": "5567",
+    "name": "INVENTORY-CACHE-BASE@",
+    "evidence": "Inferred descriptive name, not recovered original: Fetches the base address stored by INVENTORY-CACHE-BASE ($5563).",
+    "confidence": "inferred",
+    "category": "inventory",
+    "stack_effect": "-- address"
+  },
+  "557c": {
+    "nfa": "5575",
+    "name": "INVENTORY-CACHED-BLOCK",
+    "evidence": "Inferred descriptive name, not recovered original: Returns inventory-cache base plus CURRENT-INVENTORY-BLOCK times the 512-byte block size at $4154.",
+    "confidence": "inferred",
+    "category": "inventory",
+    "stack_effect": "-- address"
+  },
+  "5594": {
+    "nfa": "558c",
+    "name": "STORE-INVENTORY-BLOCK",
+    "evidence": "Inferred descriptive name, not recovered original: Copies the visible INVENTORY-BLOCK-BUFFER to its selected 512-byte cache block under OS ROM through $5514.",
+    "confidence": "inferred",
+    "category": "inventory",
+    "stack_effect": "--"
+  },
+  "55a8": {
+    "nfa": "55a0",
+    "name": "FETCH-INVENTORY-BLOCK",
+    "evidence": "Inferred descriptive name, not recovered original: Copies the selected 512-byte cache block under OS ROM into visible INVENTORY-BLOCK-BUFFER through $5514.",
+    "confidence": "inferred",
+    "category": "inventory",
+    "stack_effect": "--"
+  },
+  "55ba": {
+    "nfa": "55b4",
+    "name": "TRANSFER-INVENTORY-GROUP",
+    "evidence": "Inferred descriptive name, not recovered original: Uses resource zero as the staging address, divides $1200 by 128 for 36 sectors, and invokes the retrying group transfer at $4AC8.",
+    "confidence": "inferred",
+    "category": "inventory",
+    "stack_effect": "group --"
+  },
+  "55d3": {
+    "nfa": "55cd",
+    "name": "COPY-INVENTORY-CACHE",
+    "evidence": "Inferred descriptive name, not recovered original: Copies nine consecutive 512-byte blocks through COPY-UNDER-OS, advancing source and destination by 512 each iteration.",
+    "confidence": "inferred",
+    "category": "inventory",
+    "stack_effect": "source destination --"
+  },
+  "55fe": {
+    "nfa": "55f6",
+    "name": "WRITE-INVENTORY-GROUP",
+    "evidence": "Inferred descriptive name, not recovered original: Selects disk-write mode, copies all nine cache blocks to resource-zero staging RAM, then writes the selected resource group with $55BA.",
+    "confidence": "inferred",
+    "category": "inventory",
+    "stack_effect": "group --"
+  },
+  "561a": {
+    "nfa": "5612",
+    "name": "READ-INVENTORY-GROUP",
+    "evidence": "Inferred descriptive name, not recovered original: Selects disk-read mode, loads the group into resource-zero staging RAM, then copies its nine blocks into the RAM-under-OS cache.",
+    "confidence": "inferred",
+    "category": "inventory",
+    "stack_effect": "group --"
+  },
+  "5634": {
+    "nfa": "562e",
+    "name": "SAVE-INVENTORY-CACHE",
+    "evidence": "Inferred descriptive name, not recovered original: Writes saved inventory group 23 and then stores the current visible block into the cache; this is the exact original call order.",
+    "confidence": "inferred",
+    "category": "inventory",
+    "stack_effect": "--"
+  },
+  "5644": {
+    "nfa": "563e",
+    "name": "LOAD-SAVED-INVENTORY",
+    "evidence": "Inferred descriptive name, not recovered original: Reads saved inventory group 23 into the cache and fetches the selected visible block.",
+    "confidence": "inferred",
+    "category": "inventory",
+    "stack_effect": "--"
+  },
+  "5655": {
+    "nfa": "564e",
+    "name": "LOAD-INITIAL-INVENTORY",
+    "evidence": "Inferred descriptive name, not recovered original: Reads initial inventory group 21 into the cache and fetches the selected visible block.",
+    "confidence": "inferred",
+    "category": "inventory",
+    "stack_effect": "--"
+  },
+  "5665": {
+    "nfa": "565f",
+    "name": "INVENTORY-BLOCK-INDEX",
+    "evidence": "Inferred descriptive name, not recovered original: Divides its argument by four. $5674 applies it after subtracting 102 from an inventory object ID.",
+    "confidence": "inferred",
+    "category": "inventory",
+    "stack_effect": "index -- block"
+  },
+  "5674": {
+    "nfa": "566d",
+    "name": "SELECT-INVENTORY-OBJECT",
+    "evidence": "Inferred descriptive name, not recovered original: Selects inventory resource lookup, subtracts 102 from the object ID, saves/fetches a 512-byte block if the quotient by four changes, and returns the remainder modulo four.",
+    "confidence": "inferred",
+    "category": "inventory",
+    "stack_effect": "object -- local-index"
+  },
+  "56a7": {
+    "nfa": "56a1",
+    "name": "OBJECT-PICTURE-RESOURCE",
+    "evidence": "Inferred descriptive name, not recovered original: IDs above 100 are resolved through $5674; the local ID is then doubled and offset by resource 2, selecting an image followed by its hit-map.",
+    "confidence": "inferred",
+    "category": "objects",
+    "stack_effect": "object -- resource"
+  },
+  "56c5": {
+    "nfa": "56c0",
+    "name": "COMPILE-BYTE-LIST",
+    "evidence": "Inferred descriptive name, not recovered original: Compiles a counted byte list at HERE: parses hexadecimal numbers, emits values below 256, stops on a value at least 256, and fills the initial count byte.",
+    "confidence": "inferred",
+    "category": "utility",
+    "stack_effect": "--"
+  },
+  "5700": {
+    "nfa": "56f7",
+    "name": "BYTE-LIST-DEFINER",
+    "evidence": "Inferred descriptive name, not recovered original: Uses <BUILDS and $56C5 to create a byte list. Its DOES> thread applies COUNT then the membership helper at $3071.",
+    "confidence": "inferred",
+    "category": "utility",
+    "stack_effect": "--"
+  },
+  "5714": {
+    "nfa": "570e",
+    "name": "ACCEPTED-KEY-CODES",
+    "evidence": "Inferred descriptive name, not recovered original: Created by the byte-list definer; holds sixteen raw CH keycodes. $5730 tests this collection before calling KEY; INSTR returns a one-based match index or zero.",
+    "confidence": "inferred",
+    "category": "input",
+    "stack_effect": "keycode -- index-or-zero"
+  },
+  "5730": {
+    "nfa": "5729",
+    "name": "READ-EDIT-KEY",
+    "evidence": "Inferred descriptive name, not recovered original: Clears CH ($02FC) to $FF, maps joystick trigger to raw keycode $0C, waits for a listed CH code below 64, then obtains the ATASCII character through KEY.",
+    "confidence": "inferred",
+    "category": "input",
+    "stack_effect": "-- character"
+  },
+  "5770": {
+    "nfa": "576a",
+    "name": "TEXT-INPUT-MAX-LENGTH",
+    "evidence": "Inferred descriptive name, not recovered original: $57EE stores the caller's maximum length; $57A7 refuses to append characters once the counted buffer reaches this value.",
+    "confidence": "inferred",
+    "category": "input",
+    "stack_effect": "-- address"
+  },
+  "577a": {
+    "nfa": "5774",
+    "name": "EDIT-BACKSPACE",
+    "evidence": "Inferred descriptive name, not recovered original: For ATASCII $7E and a nonempty counted buffer, emits $1E,$3D,$1E (cursor-left, the game-font blank glyph, cursor-left) and decrements the count via $4732.",
+    "confidence": "inferred",
+    "category": "input",
+    "stack_effect": "buffer character -- buffer character"
+  },
+  "57a7": {
+    "nfa": "57a1",
+    "name": "EDIT-APPEND-CHAR",
+    "evidence": "Inferred descriptive name, not recovered original: Appends and echoes a character while the buffer is below its limit, excluding backspace $7E and return $9B; increments the count.",
+    "confidence": "inferred",
+    "category": "input",
+    "stack_effect": "buffer character -- buffer character"
+  },
+  "57ee": {
+    "nfa": "57e5",
+    "name": "READ-COUNTED-INPUT",
+    "evidence": "Inferred descriptive name, not recovered original: Clears the counted buffer and loops through key input, backspace and append handlers until return is received with a nonzero length.",
+    "confidence": "inferred",
+    "category": "input",
+    "stack_effect": "maximum buffer --"
+  },
+  "581a": {
+    "nfa": "5815",
+    "name": "VIEW-STACK",
+    "evidence": "Inferred descriptive name, not recovered original: Counted stack of 16-bit scene/view IDs. $582D pushes, $5855 reads the top, and $5868 pops; its byte count is capped at ten.",
+    "confidence": "inferred",
+    "category": "navigation",
+    "stack_effect": "-- address"
+  },
+  "582d": {
+    "nfa": "5828",
+    "name": "PUSH-VIEW",
+    "evidence": "Inferred descriptive name, not recovered original: When VIEW-STACK's byte count is below ten, stores the view at base+count+2 and increments the count by two. At full capacity it leaves the argument on the data stack.",
+    "confidence": "inferred",
+    "category": "navigation"
+  },
+  "5855": {
+    "nfa": "5851",
+    "name": "CURRENT-VIEW",
+    "evidence": "Inferred descriptive name, not recovered original: Fetches the cell at VIEW-STACK plus its byte count; count zero therefore returns the initial zero view.",
+    "confidence": "inferred",
+    "category": "navigation",
+    "stack_effect": "-- view"
+  },
+  "5868": {
+    "nfa": "5863",
+    "name": "POP-VIEW",
+    "evidence": "Inferred descriptive name, not recovered original: Fetches the top view, then decrements VIEW-STACK's nonzero byte count by two.",
+    "confidence": "inferred",
+    "category": "navigation",
+    "stack_effect": "-- view"
+  },
+  "588d": {
+    "nfa": "5886",
+    "name": "COMPOSE-CURRENT-VIEW",
+    "evidence": "Inferred descriptive name, not recovered original: Expands the base picture and hit-map, obtains current room/view object IDs through $520C, composes each image and hit-map overlay, restores colors, and sets cursor origin and limits.",
+    "confidence": "inferred",
+    "category": "graphics",
+    "stack_effect": "resource --"
+  },
+  "58fd": {
+    "nfa": "58f5",
+    "name": "DRAW-CURRENT-VIEW",
+    "evidence": "Inferred descriptive name, not recovered original: Restores scene resource lookup, composes the requested current view with $588D, then draws the resulting FIRST bitmap using ?POBJ.",
+    "confidence": "inferred",
+    "category": "graphics",
+    "stack_effect": "resource --"
+  },
+  "590e": {
+    "nfa": "5909",
+    "name": "STORE-BYTE-PAIR",
+    "evidence": "Inferred descriptive name, not recovered original: Stores the second byte at address+1 and the first byte at address.",
+    "confidence": "inferred",
+    "category": "utility",
+    "stack_effect": "first second address --"
+  },
+  "5923": {
+    "nfa": "591e",
+    "name": "FETCH-BYTE-PAIR",
+    "evidence": "Inferred descriptive name, not recovered original: Fetches the two consecutive unsigned bytes at address and address+1.",
+    "confidence": "inferred",
+    "category": "utility",
+    "stack_effect": "address -- first second"
+  },
+  "5939": {
+    "nfa": "5933",
+    "name": "VIEW-CURSOR-POSITIONS",
+    "evidence": "Inferred descriptive name, not recovered original: Cell-indexed array storing one cursor x/y byte pair per view-stack depth; WAIT-GAME-INPUT saves positions and $59A3 restores them.",
+    "confidence": "inferred",
+    "category": "navigation",
+    "stack_effect": "depth -- address"
+  },
+  "594e": {
+    "nfa": "5949",
+    "name": "USE-SCENE-CURSOR",
+    "evidence": "Inferred descriptive name, not recovered original: Sets CURSOR-CONTEXT ($4D70) to zero before drawing or entering scene views.",
+    "confidence": "inferred",
+    "category": "input",
+    "stack_effect": "--"
+  },
+  "595d": {
+    "nfa": "5958",
+    "name": "VIEW-STACK-DEPTH",
+    "evidence": "Inferred descriptive name, not recovered original: Divides VIEW-STACK's byte count by two to obtain its number of stored 16-bit views.",
+    "confidence": "inferred",
+    "category": "navigation",
+    "stack_effect": "-- depth"
+  },
+  "596f": {
+    "nfa": "5969",
+    "name": "CENTER-SCENE-CURSOR",
+    "evidence": "Inferred descriptive name, not recovered original: Fetches HIT-MAP-BUFFER width and height, halves both and stores the result in CURSOR-GRID-POS.",
+    "confidence": "inferred",
+    "category": "input",
+    "stack_effect": "--"
+  },
+  "598d": {
+    "nfa": "5987",
+    "name": "ENTER-VIEW",
+    "evidence": "Inferred descriptive name, not recovered original: Selects the scene cursor, pushes the view, converts it to its picture resource, draws it, and centers the cursor.",
+    "confidence": "inferred",
+    "category": "navigation",
+    "stack_effect": "view --"
+  },
+  "59a3": {
+    "nfa": "599d",
+    "name": "LEAVE-VIEW",
+    "evidence": "Inferred descriptive name, not recovered original: Pops and discards the current view, redraws the previous view now at the stack top, and restores its saved cursor byte pair from VIEW-CURSOR-POSITIONS at current stack depth.",
+    "confidence": "inferred",
+    "category": "navigation",
+    "stack_effect": "--"
+  },
+  "59c3": {
+    "nfa": "59bd",
+    "name": "REDRAW-CURRENT-VIEW",
+    "evidence": "Inferred descriptive name, not recovered original: Selects the scene cursor and redraws CURRENT-VIEW through its object-picture resource.",
+    "confidence": "inferred",
+    "category": "graphics",
+    "stack_effect": "--"
+  },
+  "59d4": {
+    "nfa": "59cf",
+    "name": "SIDE-ONE-LAST-ROOM",
+    "evidence": "Inferred descriptive name, not recovered original: Constant 13 is the threshold used by $59E9 to choose side one versus side two when mapping room IDs to resource groups.",
+    "confidence": "inferred",
+    "category": "disk",
+    "stack_effect": "-- room"
+  },
+  "59df": {
+    "nfa": "59d8",
+    "name": "GAME-UI-MODE",
+    "evidence": "Inferred descriptive name, not recovered original: State cell initialized to one. Value zero enables scene-opening drawing; value one controls menu transitions; value three selects compact disk-message decorations.",
+    "confidence": "inferred",
+    "category": "ui",
+    "stack_effect": "-- address"
+  },
+  "59e9": {
+    "nfa": "59e3",
+    "name": "ROOM-DISK-GROUP",
+    "evidence": "Inferred descriptive name, not recovered original: For room IDs above 13 returns room-13 and side 2; otherwise returns room+5 and side 1. $5AEC uses this to load the room assets.",
+    "confidence": "inferred",
+    "category": "disk",
+    "stack_effect": "room -- group side"
+  },
+  "5a0c": {
+    "nfa": "5a07",
+    "name": "FILL-SCENE-BAND",
+    "evidence": "Inferred descriptive name, not recovered original: Stores $15 in the first byte and fills the following nineteen bytes with $55; used by $5A27 for the scene transition region.",
+    "confidence": "inferred",
+    "category": "graphics",
+    "stack_effect": "address --"
+  },
+  "5a27": {
+    "nfa": "5a21",
+    "name": "FILL-SCENE-TRANSITION",
+    "evidence": "Inferred descriptive name, not recovered original: Writes paired 20-byte bands from ADGR+$014A and ADGR+$014A+87*40, moving inward by one 40-byte row for 44 iterations.",
+    "confidence": "inferred",
+    "category": "graphics",
+    "stack_effect": "--"
+  },
+  "5a67": {
+    "nfa": "5a62",
+    "name": "SCENE-UPPER-COPY-BASE",
+    "evidence": "Inferred descriptive name, not recovered original: Constant $0960 supplies the descending source rows in $5A7B's paired 20-byte scene copy.",
+    "confidence": "inferred",
+    "category": "graphics",
+    "stack_effect": "-- address"
+  },
+  "5a70": {
+    "nfa": "5a6b",
+    "name": "SCENE-LOWER-COPY-BASE",
+    "evidence": "Inferred descriptive name, not recovered original: Constant $0974 supplies the ascending source rows in $5A7B's paired 20-byte scene copy.",
+    "confidence": "inferred",
+    "category": "graphics",
+    "stack_effect": "-- address"
+  },
+  "5a7b": {
+    "nfa": "5a74",
+    "name": "COPY-SCENE-CENTER-ROWS",
+    "evidence": "Inferred descriptive name, not recovered original: Copies 20-byte rows from the two fixed source bases into destinations around ADGR+$0802, moving upward and downward by screen rows.",
+    "confidence": "inferred",
+    "category": "graphics",
+    "stack_effect": "--"
+  },
+  "5ad4": {
+    "nfa": "5acd",
+    "name": "ENTER-VIEW-WITH-TRANSITION",
+    "evidence": "Inferred descriptive name, not recovered original: Selects the scene cursor, pushes the view, composes its picture, performs the paired center-row scene copy, and centers the cursor.",
+    "confidence": "inferred",
+    "category": "navigation",
+    "stack_effect": "view --"
+  },
+  "5aec": {
+    "nfa": "5ae6",
+    "name": "LOAD-ROOM-VIEW",
+    "evidence": "Inferred descriptive name, not recovered original: Clears VIEW-STACK, stores CURRENT-ROOM, maps room to disk group/side, loads the resource group and enters base view zero; UI mode zero also draws transition bands.",
+    "confidence": "inferred",
+    "category": "navigation",
+    "stack_effect": "room --"
+  },
+  "5b1a": {
+    "nfa": "5b14",
+    "name": "UNPACK-MAP-FIELDS",
+    "evidence": "Inferred descriptive name, not recovered original: Reads one byte and returns (byte & $70)/16 followed by byte & 7, ignoring the visited bit and top bit.",
+    "confidence": "inferred",
+    "category": "map",
+    "stack_effect": "address -- high low"
+  },
+  "5b37": {
+    "nfa": "5b32",
+    "name": "MAP-FLOOR-TABLE-SIZE",
+    "evidence": "Inferred descriptive name, not recovered original: Constant ten bounds the room-range scan in $5C36 over the map-floor first/end arrays.",
+    "confidence": "inferred",
+    "category": "map",
+    "stack_effect": "-- count"
+  },
+  "5b41": {
+    "nfa": "5b3b",
+    "name": "MAP-FLOOR-FIRST-ROOM",
+    "evidence": "Inferred descriptive name, not recovered original: Byte array of inclusive lower room-ID bounds. $5C36 scans it; $5CF6 uses it as the start of a floor's room loop.",
+    "confidence": "inferred",
+    "category": "map",
+    "stack_effect": "floor -- address"
+  },
+  "5b55": {
+    "nfa": "5b4f",
+    "name": "MAP-FLOOR-END-ROOM",
+    "evidence": "Inferred descriptive name, not recovered original: Byte array of exclusive upper room-ID bounds, paired with $5B41 for floor lookup and map redraw loops.",
+    "confidence": "inferred",
+    "category": "map",
+    "stack_effect": "floor -- address"
+  },
+  "5b69": {
+    "nfa": "5b63",
+    "name": "MAP-GLYPH-SOURCE!",
+    "evidence": "Inferred descriptive name, not recovered original: Sets P-CCM's source pointer to font base $BC00 plus eight times the glyph index.",
+    "confidence": "inferred",
+    "category": "map",
+    "stack_effect": "glyph --"
+  },
+  "5b80": {
+    "nfa": "5b79",
+    "name": "MAP-GLYPH-DEST!",
+    "evidence": "Inferred descriptive name, not recovered original: Sets P-CCM's destination to ADGR+x-byte+40*y for drawing a map glyph into the bitmap.",
+    "confidence": "inferred",
+    "category": "map",
+    "stack_effect": "x-byte y --"
+  },
+  "5b9e": {
+    "nfa": "5b97",
+    "name": "DRAW-VISITED-ROOM",
+    "evidence": "Inferred descriptive name, not recovered original: Draws only descriptors with visited bit $08 set. Uses packed room coordinates for bitmap position and descriptor high/low fields to select two eight-row font glyphs.",
+    "confidence": "inferred",
+    "category": "map",
+    "stack_effect": "room --"
+  },
+  "5bf6": {
+    "nfa": "5bee",
+    "name": "MARK-CURRENT-MAP-ROOM",
+    "evidence": "Inferred descriptive name, not recovered original: Sets the descriptor's visited bit, draws its map glyphs, then repeats CCMOV in mode one for the current-room marker and restores mode zero.",
+    "confidence": "inferred",
+    "category": "map",
+    "stack_effect": "room --"
+  },
+  "5c22": {
+    "nfa": "5c1c",
+    "name": "FIRST-SHARED-MAP-ROOM",
+    "evidence": "Inferred descriptive name, not recovered original: Constant 14 is a special room drawn across map-floor ranges and treated as belonging to the current floor by $5C36.",
+    "confidence": "inferred",
+    "category": "map",
+    "stack_effect": "-- room"
+  },
+  "5c2c": {
+    "nfa": "5c26",
+    "name": "SECOND-SHARED-MAP-ROOM",
+    "evidence": "Inferred descriptive name, not recovered original: Constant 30 is the other shared room: floor lookup retains CURRENT-MAP-FLOOR, and floors below three include its map marker.",
+    "confidence": "inferred",
+    "category": "map",
+    "stack_effect": "-- room"
+  },
+  "5c36": {
+    "nfa": "5c30",
+    "name": "ROOM-MAP-FLOOR",
+    "evidence": "Inferred descriptive name, not recovered original: Returns the existing map floor for rooms 14/30; otherwise finds the room's half-open interval in MAP-FLOOR-FIRST-ROOM and MAP-FLOOR-END-ROOM.",
+    "confidence": "inferred",
+    "category": "map",
+    "stack_effect": "room -- floor"
+  },
+  "5c86": {
+    "nfa": "5c7e",
+    "name": "DRAW-MAP-FLOOR-NUMBER",
+    "evidence": "Inferred descriptive name, not recovered original: Divides CURRENT-MAP-FLOOR by ten and draws both digit glyphs, starting at font glyph $46, in adjacent bitmap columns $22/$23 at row $12.",
+    "confidence": "inferred",
+    "category": "map",
+    "stack_effect": "--"
+  },
+  "5cc2": {
+    "nfa": "5cbb",
+    "name": "CLEAR-MAP-PANEL",
+    "evidence": "Inferred descriptive name, not recovered original: Fills six bitmap bytes per row with $55 for 48 rows, starting at ADGR+$04D0 and using the 40-byte screen stride.",
+    "confidence": "inferred",
+    "category": "map",
+    "stack_effect": "--"
+  },
+  "5cf6": {
+    "nfa": "5cef",
+    "name": "DRAW-FLOOR-MAP",
+    "evidence": "Inferred descriptive name, not recovered original: Draws visited rooms in the current floor's room-ID interval, then includes shared room 14 on nonzero floors and shared room 30 on floors below three.",
+    "confidence": "inferred",
+    "category": "map",
+    "stack_effect": "--"
+  },
+  "5d36": {
+    "nfa": "5d30",
+    "name": "TEXT-NEXT-ROW",
+    "evidence": "Inferred descriptive name, not recovered original: Increments the text cursor's Y coordinate without changing X.",
+    "confidence": "inferred",
+    "category": "text",
+    "stack_effect": "--"
+  },
+  "5d46": {
+    "nfa": "5d40",
+    "name": "MESSAGE-BOX-WIDTH",
+    "evidence": "Inferred descriptive name, not recovered original: Walks a byte-counted list of counted text lines, takes the longest line length and adds four columns of box padding.",
+    "confidence": "inferred",
+    "category": "text",
+    "stack_effect": "message -- width"
+  },
+  "5d75": {
+    "nfa": "5d6c",
+    "name": "PRINT-CENTERED-MESSAGE",
+    "evidence": "Inferred descriptive name, not recovered original: Walks counted message lines, sets X to 20 minus half each line's length, prints with STYPE, and advances one text row.",
+    "confidence": "inferred",
+    "category": "text",
+    "stack_effect": "message --"
+  },
+  "5da6": {
+    "nfa": "5d9f",
+    "name": "SOUND-BANK-ALLOCATION",
+    "evidence": "Inferred descriptive name, not recovered original: Constant $0E74 (3700) is adjacent to the allocated sound-bank variable at $5DB3; its allocation size matches the preserved bank/storage region. No runtime caller was found.",
+    "confidence": "inferred",
+    "category": "audio",
+    "stack_effect": "-- bytes"
+  },
+  "5db3": {
+    "nfa": "5daa",
+    "name": "SOUND-ENGINE-AND-DATA",
+    "evidence": "Inferred descriptive name, not recovered original: The 3706-byte saved variable contains the custom sound command-stream engine and music/effects. music_sap.py independently identifies its public $5E00 base and $5F6F frame entry.",
+    "confidence": "inferred",
+    "category": "audio",
+    "stack_effect": "-- address"
+  },
+  "6c35": {
+    "nfa": "6c2f",
+    "name": "SOUND-ENGINE-BASE",
+    "evidence": "Inferred descriptive name, not recovered original: Constant $5E00 is the public load base of the sound engine, independently identified and extracted by music_sap.py.",
+    "confidence": "inferred",
+    "category": "audio",
+    "stack_effect": "-- address"
   },
   "6c41": {
     "nfa": "6c39",
@@ -2628,11 +4104,243 @@
     "evidence": "Inferred descriptive name, not recovered original: Stores its argument at $5E27 inside the music/sound routine.",
     "confidence": "inferred"
   },
+  "6c56": {
+    "nfa": "6c4b",
+    "name": "RESUME-SOUND",
+    "evidence": "Inferred descriptive name, not recovered original: Stores zero at the sound-stop flag $5E1E. The frame player $5F6F bypasses playback when this flag is nonzero.",
+    "confidence": "inferred",
+    "category": "audio",
+    "stack_effect": "--"
+  },
+  "6c68": {
+    "nfa": "6c62",
+    "name": "SILENT-POKEY-REGISTERS",
+    "evidence": "Inferred descriptive name, not recovered original: The first eight bytes are zero. STOP-SOUND copies them to $D200..$D207, clearing all four POKEY frequency/control register pairs.",
+    "confidence": "inferred",
+    "category": "audio",
+    "stack_effect": "-- address"
+  },
   "6c7f": {
     "nfa": "6c73",
     "name": "STOP-SOUND",
     "evidence": "Inferred descriptive name, not recovered original: Stores 1 at sound flag $5E1E, then copies eight saved register bytes to POKEY $D200.",
     "confidence": "inferred"
+  },
+  "6ca5": {
+    "nfa": "6c9e",
+    "name": "SOUND-RELOCATION-DELTA",
+    "evidence": "Inferred descriptive name, not recovered original: Constant $3F00 converts the preserved sound initializer $1F09 to $5E09 and its stop flag $1F1E to $5E1E in $6CB0/$6CD7.",
+    "confidence": "inferred",
+    "category": "audio",
+    "stack_effect": "-- offset"
+  },
+  "6cb0": {
+    "nfa": "6ca9",
+    "name": "SOUND-INIT-ADDRESS",
+    "evidence": "Inferred descriptive name, not recovered original: Adds SOUND-RELOCATION-DELTA to $1F09, yielding the native sound initializer $5E09 verified by music_sap.py.",
+    "confidence": "inferred",
+    "category": "audio",
+    "stack_effect": "-- address"
+  },
+  "6cc4": {
+    "nfa": "6cbc",
+    "name": "CALL-SOUND-INITIALIZER",
+    "evidence": "Inferred descriptive name, not recovered original: Native $6CC6 saves Forth X in $D1, calls JSR $5E09 to initialize the custom sound player, restores X, then jumps to NEXT.",
+    "confidence": "inferred",
+    "category": "audio",
+    "stack_effect": "--"
+  },
+  "6cd7": {
+    "nfa": "6cd0",
+    "name": "INITIALIZE-AND-RESUME-SOUND",
+    "evidence": "Inferred descriptive name, not recovered original: Calls the native initializer through $6CC4, then clears the relocated stop flag at $5E1E.",
+    "confidence": "inferred",
+    "category": "audio",
+    "stack_effect": "--"
+  },
+  "6cf7": {
+    "nfa": "6ce9",
+    "name": "RESTART-SOUND",
+    "evidence": "Inferred descriptive name, not recovered original: Stops playback, temporarily disables the game VBI, initializes/resumes the sound engine, then reinstalls RUN-VBI1.",
+    "confidence": "inferred",
+    "category": "audio",
+    "stack_effect": "--"
+  },
+  "6d0a": {
+    "nfa": "6d03",
+    "name": "HUNGER-MESSAGES",
+    "evidence": "Inferred descriptive name, not recovered original: Counted message vector contains four Polish energy/hunger warnings, including 'ZEMDLALES Z GLODU' and 'CZUJESZ GLOD'; $6DD5 selects a warning by energy threshold.",
+    "confidence": "inferred",
+    "category": "text",
+    "stack_effect": "index -- record"
+  },
+  "6d6f": {
+    "nfa": "6d69",
+    "name": "HUNGER-THRESHOLDS",
+    "evidence": "Inferred descriptive name, not recovered original: Four cells contain 0,20,40,50. $6DD5 compares ENERGY after decrementing it and displays the corresponding HUNGER-MESSAGES record on equality.",
+    "confidence": "inferred",
+    "category": "state",
+    "stack_effect": "index -- address"
+  },
+  "6d82": {
+    "nfa": "6d7b",
+    "name": "SHOW-MESSAGE",
+    "evidence": "Inferred descriptive name, not recovered original: For a nonempty counted multiline message, clears remaining text rows, sizes a box with $5D46, prints centered lines with $5D75, and restores the previous Y cursor.",
+    "confidence": "inferred",
+    "category": "text",
+    "stack_effect": "message --"
+  },
+  "6dd5": {
+    "nfa": "6dcd",
+    "name": "CONSUME-ENERGY",
+    "evidence": "Inferred descriptive name, not recovered original: Decrements ENERGY by one, checks the four hunger thresholds, selects sound command $13, and displays the matching hunger warning. Called on entry to a room.",
+    "confidence": "inferred",
+    "category": "state",
+    "stack_effect": "--"
+  },
+  "6e11": {
+    "nfa": "6e0c",
+    "name": "KEEP-MAP-FLOOR-ON-REDRAW",
+    "evidence": "Inferred descriptive name, not recovered original: Normally one; $78C6 clears it before re-entering the current room so $6E1F performs the full map-panel redraw rather than its same-floor shortcut.",
+    "confidence": "inferred",
+    "category": "map",
+    "stack_effect": "-- address"
+  },
+  "6e1f": {
+    "nfa": "6e15",
+    "name": "ENTER-ROOM",
+    "evidence": "Inferred descriptive name, not recovered original: Restarts sound, loads the destination room and display resources, updates floor number and visited/current-room map markers, decrements energy, and resets redraw flags.",
+    "confidence": "inferred",
+    "category": "navigation",
+    "stack_effect": "room --"
+  },
+  "6e93": {
+    "nfa": "6e8d",
+    "name": "CARDINAL-STEP-VECTORS",
+    "evidence": "Inferred descriptive name, not recovered original: Cell-indexed byte pairs are (1,0),(2,1),(1,2),(0,1). $6EA6 subtracts one from each component to obtain north/east/south/west deltas.",
+    "confidence": "inferred",
+    "category": "navigation",
+    "stack_effect": "direction -- address"
+  },
+  "6ea6": {
+    "nfa": "6e9f",
+    "name": "ROTATED-EXIT-STEP",
+    "evidence": "Inferred descriptive name, not recovered original: Adds relative direction and facing modulo four, selects CARDINAL-STEP-VECTORS, then subtracts one from each unsigned component.",
+    "confidence": "inferred",
+    "category": "navigation",
+    "stack_effect": "relative facing -- dx dy"
+  },
+  "6eca": {
+    "nfa": "6ec4",
+    "name": "CURRENT-EXIT-STEP",
+    "evidence": "Inferred descriptive name, not recovered original: Reads the current room descriptor's low three orientation bits and applies $6EA6 to obtain the requested relative exit's coordinate delta.",
+    "confidence": "inferred",
+    "category": "navigation",
+    "stack_effect": "relative -- dx dy"
+  },
+  "6ee6": {
+    "nfa": "6edf",
+    "name": "RELATIVE-EXIT-ROOM",
+    "evidence": "Inferred descriptive name, not recovered original: Offsets the current room's packed map position using its facing and relative exit direction, handles shared rooms 14/30, and searches the current floor's room descriptors for the adjacent coordinate.",
+    "confidence": "inferred",
+    "category": "navigation",
+    "stack_effect": "direction -- room"
+  },
+  "6f5f": {
+    "nfa": "6f5a",
+    "name": "AVAILABLE-EXIT-LIST",
+    "evidence": "Inferred descriptive name, not recovered original: Five-byte active buffer: count followed by up to four relative directions. $6FA1 rebuilds it and $7033/$721C use it for the movement menu.",
+    "confidence": "inferred",
+    "category": "navigation",
+    "stack_effect": "-- address"
+  },
+  "6f6c": {
+    "nfa": "6f67",
+    "name": "APPEND-AVAILABLE-EXIT",
+    "evidence": "Inferred descriptive name, not recovered original: Stores a direction at AVAILABLE-EXIT-LIST+count+1 and increments its byte count.",
+    "confidence": "inferred",
+    "category": "navigation",
+    "stack_effect": "direction --"
+  },
+  "6f8a": {
+    "nfa": "6f82",
+    "name": "ROOM-EXIT-OPEN?",
+    "evidence": "Inferred descriptive name, not recovered original: Fetches the current room's byte from ROOM-EXIT-MASKS, computes 1<<direction with C2^, and ANDs them. The result is the actual bit value, not a normalized boolean; mask $0A yields 0,2,0,8 for directions 0..3.",
+    "confidence": "inferred",
+    "category": "navigation",
+    "stack_effect": "direction -- bit"
+  },
+  "6fa1": {
+    "nfa": "6f9c",
+    "name": "COLLECT-AVAILABLE-EXITS",
+    "evidence": "Inferred descriptive name, not recovered original: Clears the five-byte exit list, tests directions zero through three with $6F8A, and appends each direction whose bit is set.",
+    "confidence": "inferred",
+    "category": "navigation",
+    "stack_effect": "--"
+  },
+  "6fc7": {
+    "nfa": "6fc2",
+    "name": "RELATIVE-DIRECTION-LABELS",
+    "evidence": "Inferred descriptive name, not recovered original: Length-prefixed inverse-text labels read PROSTO, W PRAWO, W TYL, W LEWO. $7033 displays them for available relative exits.",
+    "confidence": "inferred",
+    "category": "text",
+    "stack_effect": "direction -- record"
+  },
+  "6ff4": {
+    "nfa": "6fee",
+    "name": "SETUP-MENU-CURSOR",
+    "evidence": "Inferred descriptive name, not recovered original: Selects cursor context six, sets the vertical limit, derives cursor origin from current text X/Y using 4/8-pixel spacing and offsets $30/$7E, and resets its grid coordinates.",
+    "confidence": "inferred",
+    "category": "input",
+    "stack_effect": "last-row --"
+  },
+  "7033": {
+    "nfa": "702b",
+    "name": "DRAW-EXIT-MENU",
+    "evidence": "Inferred descriptive name, not recovered original: Collects available exits, creates a text box and menu cursor, prints the no-action choice NIC, then prints each available relative direction label.",
+    "confidence": "inferred",
+    "category": "ui",
+    "stack_effect": "--"
+  },
+  "70a2": {
+    "nfa": "709a",
+    "name": "REMOVE-SCENE-OBJECT",
+    "evidence": "Inferred descriptive name, not recovered original: Finds the room/view's mutable object-ID list through $520C, scans for the object and replaces the first matching byte with zero.",
+    "confidence": "inferred",
+    "category": "objects",
+    "stack_effect": "object room view --"
+  },
+  "70d5": {
+    "nfa": "70ce",
+    "name": "REMOVE-CURRENT-OBJECT",
+    "evidence": "Inferred descriptive name, not recovered original: Supplies CURRENT-ROOM and CURRENT-VIEW to REMOVE-SCENE-OBJECT.",
+    "confidence": "inferred",
+    "category": "objects",
+    "stack_effect": "object --"
+  },
+  "70e9": {
+    "nfa": "70e1",
+    "name": "DUP-THIRD",
+    "evidence": "Inferred descriptive name, not recovered original: Implements >R OVER R> SWAP; used three times by $70FC to retain its object/room/view arguments while removing a duplicate entry.",
+    "confidence": "inferred",
+    "category": "utility",
+    "stack_effect": "a b c -- a b c a"
+  },
+  "70fc": {
+    "nfa": "70f5",
+    "name": "ADD-SCENE-OBJECT",
+    "evidence": "Inferred descriptive name, not recovered original: Retains the arguments, removes an existing duplicate with $70A2, then inserts the object into the first zero slot of the same mutable room/view list.",
+    "confidence": "inferred",
+    "category": "objects",
+    "stack_effect": "object room view --"
+  },
+  "7134": {
+    "nfa": "712e",
+    "name": "ADD-CURRENT-OBJECT",
+    "evidence": "Inferred descriptive name, not recovered original: Supplies CURRENT-ROOM and CURRENT-VIEW to ADD-SCENE-OBJECT.",
+    "confidence": "inferred",
+    "category": "objects",
+    "stack_effect": "object --"
   },
   "7146": {
     "nfa": "7140",
@@ -2644,6 +4352,14 @@
     "name": "INPUT-STATE",
     "evidence": "Inferred descriptive name, not recovered original: Written by input polling; zero selects ordinary handling and value eight makes the main loop reinitialize.",
     "confidence": "inferred"
+  },
+  "715a": {
+    "nfa": "7154",
+    "name": "ALLOW-GAME-MENU-KEY",
+    "evidence": "Inferred descriptive name, not recovered original: Normally one. WAIT-GAME-INPUT permits CH=$21 to enter the game menu only when this flag is nonzero and both view depth and cursor context are zero; special-room movement clears it.",
+    "confidence": "inferred",
+    "category": "input",
+    "stack_effect": "-- address"
   },
   "7169": {
     "nfa": "715e",
@@ -2657,17 +4373,304 @@
     "evidence": "Inferred descriptive name, not recovered original: Calls pointer setup then polls controller-zero trigger with five-tick pauses until released.",
     "confidence": "inferred"
   },
+  "720c": {
+    "nfa": "7207",
+    "name": "MOVE-AND-DROP-RESULT",
+    "evidence": "Inferred descriptive name, not recovered original: Calls the movement handler at $7F76 and discards its returned action result; used after selecting a nonzero movement-menu row.",
+    "confidence": "inferred",
+    "category": "navigation",
+    "stack_effect": "direction --"
+  },
+  "721c": {
+    "nfa": "7214",
+    "name": "CHOOSE-EXIT",
+    "evidence": "Inferred descriptive name, not recovered original: Draws the exit menu and reads its selected row. Zero redraws the current view; other rows index AVAILABLE-EXIT-LIST and invoke the movement wrapper at $720C.",
+    "confidence": "inferred",
+    "category": "navigation",
+    "stack_effect": "--"
+  },
+  "7243": {
+    "nfa": "723e",
+    "name": "SELECTED-OBJECT",
+    "evidence": "Inferred descriptive name, not recovered original: Stores the hit-map object byte in HANDLE-GAME-INPUT; object/action menu construction and inventory normalization subsequently use this value.",
+    "confidence": "inferred",
+    "category": "objects",
+    "stack_effect": "-- address"
+  },
+  "724d": {
+    "nfa": "7247",
+    "name": "AVAILABLE-ACTION-LIST",
+    "evidence": "Inferred descriptive name, not recovered original: Stores a byte count followed by action IDs beginning at offset two. $729D builds it, $7548 displays it and $76B7 dispatches the selected ID.",
+    "confidence": "inferred",
+    "category": "actions",
+    "stack_effect": "-- address"
+  },
+  "7263": {
+    "nfa": "725d",
+    "name": "APPEND-ACTION-ID",
+    "evidence": "Inferred descriptive name, not recovered original: Writes the action byte at AVAILABLE-ACTION-LIST+count+2, then increments its count.",
+    "confidence": "inferred",
+    "category": "actions",
+    "stack_effect": "action --"
+  },
+  "7281": {
+    "nfa": "7279",
+    "name": "SELECTED-OBJECT-RECORD",
+    "evidence": "Inferred descriptive name, not recovered original: Looks up resource 1's nested object record selected by SELECTED-OBJECT, returning its payload after the outer length cell.",
+    "confidence": "inferred",
+    "category": "actions",
+    "stack_effect": "-- record"
+  },
+  "729d": {
+    "nfa": "7295",
+    "name": "COLLECT-OBJECT-ACTIONS",
+    "evidence": "Inferred descriptive name, not recovered original: Clears the action list, adds action zero, walks the selected object's length-prefixed action records and appends each action ID; a nested view also adds action one for return.",
+    "confidence": "inferred",
+    "category": "actions",
+    "stack_effect": "--"
+  },
+  "72e2": {
+    "nfa": "72db",
+    "name": "ACTION-LABELS",
+    "evidence": "Inferred descriptive name, not recovered original: Packed action-name vector includes NIC, WROC, WEZ and other menu verbs. One-byte records are aliases to another action label, resolved by $74FA.",
+    "confidence": "inferred",
+    "category": "text",
+    "stack_effect": "action -- record"
+  },
+  "74e2": {
+    "nfa": "74dc",
+    "name": "DISK-CHECK-SECTOR-BASE",
+    "evidence": "Inferred descriptive name, not recovered original: Constant $01F5 (501) is added to both disk-check sector offsets. GAME-LOOP also subtracts it from $260B to obtain the -DISK CFA $2416.",
+    "confidence": "inferred",
+    "category": "disk",
+    "stack_effect": "-- sector"
+  },
+  "74ed": {
+    "nfa": "74e6",
+    "name": "DISK-CHECK-SECTOR-OFFSETS",
+    "evidence": "Inferred descriptive name, not recovered original: Cells $0196 and $0197 combine with base $01F5 to address physical sectors 907 and 908 in the disk-check word at $7C70.",
+    "confidence": "inferred",
+    "category": "disk",
+    "stack_effect": "-- address"
+  },
+  "74fa": {
+    "nfa": "74f3",
+    "name": "RESOLVE-ACTION-LABEL",
+    "evidence": "Inferred descriptive name, not recovered original: Looks up ACTION-LABELS; a record shorter than two bytes supplies a one-byte alias index, which is resolved once through the same vector.",
+    "confidence": "inferred",
+    "category": "text",
+    "stack_effect": "action -- record"
+  },
+  "7518": {
+    "nfa": "7512",
+    "name": "ACTION-MENU-WIDTH",
+    "evidence": "Inferred descriptive name, not recovered original: Scans the available action IDs, obtains each resolved label's length cell, chooses the maximum and adds five columns of padding.",
+    "confidence": "inferred",
+    "category": "ui",
+    "stack_effect": "-- width"
+  },
+  "7548": {
+    "nfa": "7540",
+    "name": "DRAW-ACTION-MENU",
+    "evidence": "Inferred descriptive name, not recovered original: Builds available object actions, sizes their box, sets a vertical menu cursor and prints each resolved action label on its own text row.",
+    "confidence": "inferred",
+    "category": "ui",
+    "stack_effect": "--"
+  },
+  "7594": {
+    "nfa": "758e",
+    "name": "SELECTED-ACTION-RECORD",
+    "evidence": "Inferred descriptive name, not recovered original: $759F stores the chosen nested action-record pointer here; later action parameter readers at $7B54/$7B66 index data relative to this pointer.",
+    "confidence": "inferred",
+    "category": "actions",
+    "stack_effect": "-- address"
+  },
+  "759f": {
+    "nfa": "7598",
+    "name": "SELECT-ACTION-RECORD",
+    "evidence": "Inferred descriptive name, not recovered original: Subtracts one from a nonzero menu row, then selects that action record through $4763 and saves its pointer at $7594. Row zero selects the first record.",
+    "confidence": "inferred",
+    "category": "actions",
+    "stack_effect": "row --"
+  },
+  "75ba": {
+    "nfa": "75b5",
+    "name": "ACTION-HANDLER-PFAS",
+    "evidence": "Inferred descriptive name, not recovered original: Cell-indexed table stores action-handler PFAs. $7664 fetches one, substitutes entry zero when the value is zero, converts PFA to CFA, and EXECUTEs it.",
+    "confidence": "inferred",
+    "category": "actions",
+    "stack_effect": "action -- address"
+  },
+  "7664": {
+    "nfa": "765e",
+    "name": "EXECUTE-ACTION-ID",
+    "evidence": "Inferred descriptive name, not recovered original: Fetches an action handler PFA, falls back to entry zero for a null pointer, converts to CFA and executes it; handlers return the menu-loop result.",
+    "confidence": "inferred",
+    "category": "actions",
+    "stack_effect": "action -- result"
+  },
+  "7684": {
+    "nfa": "767e",
+    "name": "NORMALIZE-INVENTORY-OBJECT",
+    "evidence": "Inferred descriptive name, not recovered original: For SELECTED-OBJECT greater than 99, selects its cached inventory collection via $5674 and replaces the global ID with local-index+2.",
+    "confidence": "inferred",
+    "category": "inventory",
+    "stack_effect": "--"
+  },
+  "76a7": {
+    "nfa": "76a1",
+    "name": "DISK-CHECK-IO",
+    "evidence": "Inferred descriptive name, not recovered original: Initially contains 0= 0= ;S. GAME-LOOP replaces its first token at $76A9 with -DISK ($2416), producing -DISK 0= ;S for the two-sector disk check. Its stack effect changes after that patch.",
+    "confidence": "inferred",
+    "category": "disk"
+  },
+  "76b7": {
+    "nfa": "76af",
+    "name": "RUN-OBJECT-ACTION-MENU",
+    "evidence": "Inferred descriptive name, not recovered original: Normalizes inventory IDs, repeatedly draws the action menu, waits for selection, saves its action-record pointer and executes the action ID until its result is nonzero; restores scene resources.",
+    "confidence": "inferred",
+    "category": "actions",
+    "stack_effect": "--"
+  },
+  "76e1": {
+    "nfa": "76db",
+    "name": "INVENTORY-PICTURE-BUFFER",
+    "evidence": "Inferred descriptive name, not recovered original: Scratch picture buffer used by $7840 to generate blank 3-byte-wide slot images and by $786C to expand inventory artwork before ?POBJ draws it.",
+    "confidence": "inferred",
+    "category": "inventory",
+    "stack_effect": "-- address"
+  },
+  "773c": {
+    "nfa": "7734",
+    "name": "INVENTORY-SLOT-ADDR",
+    "evidence": "Inferred descriptive name, not recovered original: Returns INVENTORY-SLOT-RECORDS ($456E) plus three times the slot index; each record contains an item ID and x/y placement bytes.",
+    "confidence": "inferred",
+    "category": "inventory",
+    "stack_effect": "slot -- address"
+  },
+  "774f": {
+    "nfa": "7748",
+    "name": "ROOM-VISIT-COUNT-LIMIT",
+    "evidence": "Inferred descriptive name, not recovered original: Constant 40 bounds $777A's count of visited room-descriptor bits and supplies its percentage denominator after subtracting four.",
+    "confidence": "inferred",
+    "category": "map",
+    "stack_effect": "-- count"
+  },
+  "7759": {
+    "nfa": "7753",
+    "name": "MISSION-PERCENT",
+    "evidence": "Inferred descriptive name, not recovered original: $777A stores the percentage derived from visited room bits here; DRAW-GAME-MENU prints it alongside PROCENT MISJI.",
+    "confidence": "inferred",
+    "category": "state",
+    "stack_effect": "-- address"
+  },
+  "7763": {
+    "nfa": "775d",
+    "name": "ROOM-VISITED?",
+    "evidence": "Inferred descriptive name, not recovered original: Reads the room descriptor's second byte, tests bit $08 and normalizes the result with two 0= calls.",
+    "confidence": "inferred",
+    "category": "map",
+    "stack_effect": "room -- flag"
+  },
+  "777a": {
+    "nfa": "7775",
+    "name": "UPDATE-MISSION-PERCENT",
+    "evidence": "Inferred descriptive name, not recovered original: Counts visited flags for room IDs 0..39, multiplies by 100, divides by 40-4, and stores the value printed as mission completion percentage.",
+    "confidence": "inferred",
+    "category": "state",
+    "stack_effect": "--"
+  },
   "77a8": {
     "nfa": "77a1",
     "name": "DRAW-GAME-MENU",
     "evidence": "Inferred descriptive name, not recovered original: Prints POCZaTEK, ZAPIS, ODCZYT, GRA and mission percentage.",
     "confidence": "inferred"
   },
+  "7840": {
+    "nfa": "783b",
+    "name": "CLEAR-INVENTORY-SLOT",
+    "evidence": "Inferred descriptive name, not recovered original: Fills scratch picture bytes with $55, copies the slot x/y coordinates, writes width 3 and height 24, then draws that blank inventory rectangle via ?POBJ.",
+    "confidence": "inferred",
+    "category": "inventory",
+    "stack_effect": "slot-record --"
+  },
+  "786c": {
+    "nfa": "7867",
+    "name": "DRAW-INVENTORY-ITEM",
+    "evidence": "Inferred descriptive name, not recovered original: Switches to inventory resource lookup, resolves the item's image resource, expands it into INVENTORY-PICTURE-BUFFER and draws it, then restores scene lookup.",
+    "confidence": "inferred",
+    "category": "inventory",
+    "stack_effect": "item --"
+  },
+  "7887": {
+    "nfa": "7880",
+    "name": "DRAW-INVENTORY",
+    "evidence": "Inferred descriptive name, not recovered original: Clears text, selects RCM=2 and iterates four slot records, clearing each slot and drawing its nonzero item ID, then restores RCM=0.",
+    "confidence": "inferred",
+    "category": "inventory",
+    "stack_effect": "--"
+  },
+  "78c6": {
+    "nfa": "78be",
+    "name": "RELOAD-CURRENT-ROOM",
+    "evidence": "Inferred descriptive name, not recovered original: Disables the same-floor redraw shortcut, sets UI mode zero, and re-enters CURRENT-ROOM through $6E1F.",
+    "confidence": "inferred",
+    "category": "navigation",
+    "stack_effect": "--"
+  },
+  "78e1": {
+    "nfa": "78dc",
+    "name": "RESTORE-INITIAL-STATE",
+    "evidence": "Inferred descriptive name, not recovered original: Clears text, brackets disk operations with display suppression, requires disk side one, loads the initial inventory and state groups, and restores the display.",
+    "confidence": "inferred",
+    "category": "state",
+    "stack_effect": "--"
+  },
+  "78fd": {
+    "nfa": "78f7",
+    "name": "CANCEL-GAME-MENU",
+    "evidence": "Inferred descriptive name, not recovered original: When UI mode is one, restores initial state and reloads the current room; otherwise only resets the cursor context to the scene. It is entry three in the menu dispatch vector.",
+    "confidence": "inferred",
+    "category": "ui",
+    "stack_effect": "--"
+  },
+  "7923": {
+    "nfa": "791b",
+    "name": "START-NEW-GAME",
+    "evidence": "Inferred descriptive name, not recovered original: Restores initial state, reloads CURRENT-ROOM and redraws all four inventory slots; entry zero in the game-menu dispatch vector.",
+    "confidence": "inferred",
+    "category": "state",
+    "stack_effect": "--"
+  },
   "7934": {
     "nfa": "792d",
     "name": "HANDLE-GAME-INPUT",
     "evidence": "Inferred descriptive name, not recovered original: Waits for trigger release, clears text, invokes input polling, dispatches object actions and repeats until INPUT-STATE is set.",
     "confidence": "inferred"
+  },
+  "7993": {
+    "nfa": "798c",
+    "name": "LOAD-SAVED-GAME",
+    "evidence": "Inferred descriptive name, not recovered original: Loads saved inventory cache and state group 20 with display suppressed, then reloads the current room and draws inventory; entry two in the menu dispatch vector.",
+    "confidence": "inferred",
+    "category": "state",
+    "stack_effect": "--"
+  },
+  "79ae": {
+    "nfa": "79a7",
+    "name": "SAVE-CURRENT-GAME",
+    "evidence": "Inferred descriptive name, not recovered original: If UI mode is one first restores initial state, then stores the current inventory block/cache, writes state group 20, restores display and reloads CURRENT-ROOM; entry one in the menu dispatch vector.",
+    "confidence": "inferred",
+    "category": "state",
+    "stack_effect": "--"
+  },
+  "79d6": {
+    "nfa": "79d0",
+    "name": "GAME-MENU-DISPATCH",
+    "evidence": "Inferred descriptive name, not recovered original: Four-entry threaded switch created by CASE: dispatches menu rows to new game, save, load, or cancel handlers at $7923/$79AE/$7993/$78FD.",
+    "confidence": "inferred",
+    "category": "ui",
+    "stack_effect": "choice --"
   },
   "79e9": {
     "nfa": "79e4",
@@ -2705,11 +4708,938 @@
     "evidence": "Inferred descriptive name, not recovered original: Initializes the game display and VBI, then runs menu/input handling; INPUT-STATE eight restarts initialization.",
     "confidence": "inferred"
   },
+  "7b54": {
+    "nfa": "7b4f",
+    "name": "ACTION-BYTE-ADDR",
+    "evidence": "Inferred descriptive name, not recovered original: Adds the supplied byte offset and 2 to SELECTED-ACTION-RECORD ($7594); the first two bytes are the record length. Used by inline action text and parameter accessors.",
+    "confidence": "inferred",
+    "category": "game-helper",
+    "stack_effect": "offset -- addr"
+  },
+  "7b66": {
+    "nfa": "7b60",
+    "name": "ACTION-BYTE@",
+    "evidence": "Inferred descriptive name, not recovered original: Calls $7B54 then C@; offsets 1 through 6 are wrapped by the six argument words below.",
+    "confidence": "inferred",
+    "category": "game-helper",
+    "stack_effect": "offset -- byte"
+  },
+  "7b73": {
+    "nfa": "7b6e",
+    "name": "DISK-GATE-LATCH",
+    "evidence": "Inferred descriptive name, not recovered original: Compared with the constant $0021 in $7CF6, and set to $0021 after the two-sector check succeeds. Its saved initial cell $7CC7 is not a room number.",
+    "confidence": "inferred",
+    "category": "game-state",
+    "stack_effect": "-- addr"
+  },
+  "7b7c": {
+    "nfa": "7b77",
+    "name": "DISK-GATE-TAG",
+    "evidence": "Inferred descriptive name, not recovered original: Constant $0021, compared with the latch $7B73 and appended to the result by $7CF6; $7F76 checks the returned tag.",
+    "confidence": "inferred",
+    "category": "constant",
+    "stack_effect": "-- tag"
+  },
+  "7b87": {
+    "nfa": "7b80",
+    "name": "FIND-INVENTORY-SLOT",
+    "evidence": "Inferred descriptive name, not recovered original: Scans four three-byte inventory records via $773C, comparing each first byte with the supplied item ID. Returns the matching slot address or zero; callers search ID zero for an empty slot.",
+    "confidence": "inferred",
+    "category": "game-helper",
+    "stack_effect": "item -- slot-or-zero"
+  },
+  "7bbb": {
+    "nfa": "7bb5",
+    "name": "MSG-CANNOT-CARRY",
+    "evidence": "Inferred descriptive name, not recovered original: The bounded message at $7BBD contains NIE UNIESIESZ. $7FCD displays it when no empty inventory slot exists.",
+    "confidence": "inferred",
+    "category": "message",
+    "stack_effect": "-- addr"
+  },
+  "7bd6": {
+    "nfa": "7bcf",
+    "name": "OPEN-ROOM-EXIT",
+    "evidence": "Inferred descriptive name, not recovered original: For direction <4, ORs 1<<direction into the byte returned by ROOM-EXIT-MASKS ($4678) for the supplied room.",
+    "confidence": "inferred",
+    "category": "game-helper",
+    "stack_effect": "direction room --"
+  },
+  "7c04": {
+    "nfa": "7bfc",
+    "name": "CLOSE-ROOM-EXIT",
+    "evidence": "Inferred descriptive name, not recovered original: For direction <4, ANDs the room exit mask with the complement of 1<<direction. This is the inverse of $7BD6.",
+    "confidence": "inferred",
+    "category": "game-helper",
+    "stack_effect": "direction room --"
+  },
   "7c35": {
     "nfa": "7c2f",
     "name": "READ-BOOT-TAIL",
     "evidence": "Inferred descriptive name, not recovered original: Reads the extra saved memory pages using HE/SP&/BDISK, then restores patched ABORT and SAVE cells.",
     "confidence": "inferred"
+  },
+  "7c70": {
+    "nfa": "7c6a",
+    "name": "CHECK-DISK-GATE-SECTORS",
+    "evidence": "Inferred descriptive name, not recovered original: Reads into resource zero using sector offsets $0196/$0197 plus base $01F5, i.e. sectors 907 and 908 on drive 1. GAME-LOOP patches $76A7 to -DISK 0= ;S. The first normalized result is inverted and added to the second; the expected gate result is 2.",
+    "confidence": "inferred",
+    "category": "game-helper",
+    "stack_effect": "-- result"
+  },
+  "7ca3": {
+    "nfa": "7c9e",
+    "name": "ACTION-ARG1@",
+    "evidence": "Inferred descriptive name, not recovered original: Passes byte offset 1 to ACTION-BYTE@ ($7B66); these bytes follow the action opcode in the selected u16-length record.",
+    "confidence": "inferred",
+    "category": "game-helper",
+    "stack_effect": "-- byte"
+  },
+  "7cb0": {
+    "nfa": "7cab",
+    "name": "ACTION-ARG2@",
+    "evidence": "Inferred descriptive name, not recovered original: Passes byte offset 2 to ACTION-BYTE@ ($7B66); these bytes follow the action opcode in the selected u16-length record.",
+    "confidence": "inferred",
+    "category": "game-helper",
+    "stack_effect": "-- byte"
+  },
+  "7cbd": {
+    "nfa": "7cb8",
+    "name": "ACTION-ARG3@",
+    "evidence": "Inferred descriptive name, not recovered original: Passes byte offset 3 to ACTION-BYTE@ ($7B66); these bytes follow the action opcode in the selected u16-length record.",
+    "confidence": "inferred",
+    "category": "game-helper",
+    "stack_effect": "-- byte"
+  },
+  "7cca": {
+    "nfa": "7cc5",
+    "name": "ACTION-ARG4@",
+    "evidence": "Inferred descriptive name, not recovered original: Passes byte offset 4 to ACTION-BYTE@ ($7B66); these bytes follow the action opcode in the selected u16-length record.",
+    "confidence": "inferred",
+    "category": "game-helper",
+    "stack_effect": "-- byte"
+  },
+  "7cd7": {
+    "nfa": "7cd2",
+    "name": "ACTION-ARG5@",
+    "evidence": "Inferred descriptive name, not recovered original: Passes byte offset 5 to ACTION-BYTE@ ($7B66); these bytes follow the action opcode in the selected u16-length record.",
+    "confidence": "inferred",
+    "category": "game-helper",
+    "stack_effect": "-- byte"
+  },
+  "7ce6": {
+    "nfa": "7ce1",
+    "name": "ACTION-ARG6@",
+    "evidence": "Inferred descriptive name, not recovered original: Passes byte offset 6 to ACTION-BYTE@ ($7B66); these bytes follow the action opcode in the selected u16-length record.",
+    "confidence": "inferred",
+    "category": "game-helper",
+    "stack_effect": "-- byte"
+  },
+  "7cf6": {
+    "nfa": "7cf0",
+    "name": "CHECK-DISK-GATED-ROOM",
+    "evidence": "Inferred descriptive name, not recovered original: Only for destination room $0E while REQUIRED-DISK-SIDE ($4A6F) is 2: checks the $0021 latch and expects $7C70 to return 2. Success latches $0021; failure replaces the destination with $24 and clears $715A. Appends the tag $0021.",
+    "confidence": "inferred",
+    "category": "game-helper",
+    "stack_effect": "room -- checked-room tag"
+  },
+  "7d4a": {
+    "nfa": "7d44",
+    "name": "PRESERVE-MESSAGE-TEXT",
+    "evidence": "Inferred descriptive name, not recovered original: Stores zero in TEXT-CLEAR-ENABLED ($47A4); used after action error or explanatory messages so subsequent redraw does not immediately erase them.",
+    "confidence": "inferred",
+    "category": "game-helper",
+    "stack_effect": "--"
+  },
+  "7d59": {
+    "nfa": "7d54",
+    "name": "ACT-CANCEL",
+    "evidence": "Inferred descriptive name, not recovered original: Action dispatch table $75BA maps $00 NIC to this CFA. Restores the pointer through $5390, refreshes through $59C3 and returns 1.",
+    "confidence": "inferred",
+    "category": "action-handler"
+  },
+  "7d68": {
+    "nfa": "7d63",
+    "name": "ACT-BACK",
+    "evidence": "Inferred descriptive name, not recovered original: Action dispatch table $75BA maps $01 WROC to this CFA. Restores the pointer, sends sound command 1 and calls LEAVE-VIEW ($59A3) to pop the view stack, draw the previous view and restore its cursor, then returns 1.",
+    "confidence": "inferred",
+    "category": "action-handler"
+  },
+  "7d7b": {
+    "nfa": "7d76",
+    "name": "ACT-SHOW-CLOSEUP",
+    "evidence": "Inferred descriptive name, not recovered original: Action dispatch table $75BA maps $02 ZBLIZENIE, $12 OTWORZ, $13 ODEGNIJ to this CFA. Sends sound command 2 and passes argument 1 to ENTER-VIEW ($598D), which pushes and draws that view and centers its cursor, then returns 1. Shared by closeup and two open/bend actions.",
+    "confidence": "inferred",
+    "category": "action-handler"
+  },
+  "7d8e": {
+    "nfa": "7d89",
+    "name": "ACT-LIFT-ENERGY-GATED",
+    "evidence": "Inferred descriptive name, not recovered original: Action dispatch table $75BA maps $04 PODNIES to this CFA. Only shows the argument-1 view when argument 2 is strictly less than ENERGY ($4377). Otherwise sends failure sound $13, shows text starting at argument byte 3, and returns 0.",
+    "confidence": "inferred",
+    "category": "action-handler"
+  },
+  "7dc1": {
+    "nfa": "7dbc",
+    "name": "ACT-GOTO-ROOM",
+    "evidence": "Inferred descriptive name, not recovered original: Action dispatch table $75BA maps $06 IDZ to this CFA. Passes argument 1 to ENTER-ROOM ($6E1F), then returns 1.",
+    "confidence": "inferred",
+    "category": "action-handler"
+  },
+  "7dd0": {
+    "nfa": "7dcb",
+    "name": "ACT-EXAMINE",
+    "evidence": "Inferred descriptive name, not recovered original: Action dispatch table $75BA maps $07 ZBADAJ to this CFA. Sends sound command 7, displays the counted-line message beginning at argument byte 1 through $6D82, and returns 0.",
+    "confidence": "inferred",
+    "category": "action-handler"
+  },
+  "7de7": {
+    "nfa": "7de1",
+    "name": "MAX-ENERGY",
+    "evidence": "Inferred descriptive name, not recovered original: Constant $00A0 (160), used by $7E0F to cap ENERGY after eating or drinking.",
+    "confidence": "inferred",
+    "category": "constant",
+    "stack_effect": "-- maximum"
+  },
+  "7df0": {
+    "nfa": "7deb",
+    "name": "MSG-GLUTTONY",
+    "evidence": "Inferred descriptive name, not recovered original: Bounded message OBZARSTWO TO GRZECH, displayed by $7E0F when consumption reaches or exceeds MAX-ENERGY.",
+    "confidence": "inferred",
+    "category": "message",
+    "stack_effect": "-- addr"
+  },
+  "7e0f": {
+    "nfa": "7e0a",
+    "name": "SHOW-CONSUMPTION-RESULT",
+    "evidence": "Inferred descriptive name, not recovered original: Clears the text area. If ENERGY is below $A0, displays the supplied message; otherwise discards it, displays MSG-GLUTTONY and clamps ENERGY to $A0.",
+    "confidence": "inferred",
+    "category": "game-helper",
+    "stack_effect": "message --"
+  },
+  "7e3a": {
+    "nfa": "7e35",
+    "name": "ACT-EAT",
+    "evidence": "Inferred descriptive name, not recovered original: Action dispatch table $75BA maps $08 ZJEDZ to this CFA. Removes current-scene object argument 1, adds argument 2 to ENERGY, sends sound 8, and displays the message beginning at byte 3 through $7E0F.",
+    "confidence": "inferred",
+    "category": "action-handler"
+  },
+  "7e60": {
+    "nfa": "7e5a",
+    "name": "VALIDATE-EXIT-DESTINATION",
+    "evidence": "Inferred descriptive name, not recovered original: A one-call wrapper around CHECK-DISK-GATED-ROOM ($7CF6), used by the relative-exit handler $7F76.",
+    "confidence": "inferred",
+    "category": "game-helper",
+    "stack_effect": "room -- checked-room tag"
+  },
+  "7e6b": {
+    "nfa": "7e66",
+    "name": "ACT-DRINK",
+    "evidence": "Inferred descriptive name, not recovered original: Action dispatch table $75BA maps $09 WYPIJ to this CFA. Removes current-scene object argument 1, adds argument 2 to ENERGY, sends sound 8, and displays the message beginning at byte 4 through $7E0F.",
+    "confidence": "inferred",
+    "category": "action-handler"
+  },
+  "7e91": {
+    "nfa": "7e8b",
+    "name": "ACT-BREAK-REVEAL",
+    "evidence": "Inferred descriptive name, not recovered original: Action dispatch table $75BA maps $0A ROZBIJ to this CFA. Sends sound $0A, adds current-scene object argument 1 using $7134 and redraws; returns 1.",
+    "confidence": "inferred",
+    "category": "action-handler"
+  },
+  "7ea8": {
+    "nfa": "7ea2",
+    "name": "MSG-WITH-WHAT",
+    "evidence": "Inferred descriptive name, not recovered original: The bounded message is CZYM?; used for inventory-item selection in open, cut and apply-item handlers.",
+    "confidence": "inferred",
+    "category": "message",
+    "stack_effect": "-- addr"
+  },
+  "7ebd": {
+    "nfa": "7eb4",
+    "name": "ASK-INVENTORY-ITEM",
+    "evidence": "Inferred descriptive name, not recovered original: Displays the supplied u16-length message after 2+, selects cursor context 2, waits for trigger release and input, then converts the returned 2-D slot selection with 2*+ and INVENTORY-SLOT-ADDR ($773C).",
+    "confidence": "inferred",
+    "category": "game-helper",
+    "stack_effect": "message -- slot"
+  },
+  "7eeb": {
+    "nfa": "7ee6",
+    "name": "OPEN-OBJECT-MODE",
+    "evidence": "Inferred descriptive name, not recovered original: Boolean mode used by $7EF5 to choose ADD-CURRENT-OBJECT or REMOVE-CURRENT-OBJECT. $7F45 writes 1 and $8928 writes 0.",
+    "confidence": "inferred",
+    "category": "game-state",
+    "stack_effect": "-- addr"
+  },
+  "7ef5": {
+    "nfa": "7eef",
+    "name": "OPEN-WITH-SELECTED-ITEM",
+    "evidence": "Inferred descriptive name, not recovered original: Asks CZYM? and compares the selected inventory ID with argument 2. Success adds/removes object argument 1 according to $7EEB and opens exit argument 3 in the current room; failure shows the message at byte 4.",
+    "confidence": "inferred",
+    "category": "game-helper"
+  },
+  "7f45": {
+    "nfa": "7f3f",
+    "name": "ACT-OPEN-WITH-ITEM",
+    "evidence": "Inferred descriptive name, not recovered original: Action dispatch table $75BA maps $0B OTWORZ to this CFA. Sets OPEN-OBJECT-MODE to 1 then calls $7EF5: matching inventory item reveals the argument-1 object and opens an exit.",
+    "confidence": "inferred",
+    "category": "action-handler"
+  },
+  "7f57": {
+    "nfa": "7f51",
+    "name": "ACT-CLOSE-EXIT",
+    "evidence": "Inferred descriptive name, not recovered original: Action dispatch table $75BA maps $0C ZAMKNIJ to this CFA. Removes current-scene object argument 1, plays sound $0C and clears current-room exit bit argument 2; returns 1.",
+    "confidence": "inferred",
+    "category": "action-handler"
+  },
+  "7f76": {
+    "nfa": "7f70",
+    "name": "ENTER-RELATIVE-EXIT",
+    "evidence": "Inferred descriptive name, not recovered original: Computes the destination with RELATIVE-EXIT-ROOM ($6EE6), checks it through $7E60, verifies the returned $0021 tag, and enters the checked destination or room $24.",
+    "confidence": "inferred",
+    "category": "game-helper",
+    "stack_effect": "relative-direction -- done?"
+  },
+  "7fa1": {
+    "nfa": "7f9b",
+    "name": "ACT-USE-RELATIVE-EXIT",
+    "evidence": "Inferred descriptive name, not recovered original: Action dispatch table $75BA maps $0D IDZ to this CFA. Passes action argument 1 to ENTER-RELATIVE-EXIT ($7F76).",
+    "confidence": "inferred",
+    "category": "action-handler"
+  },
+  "7fb0": {
+    "nfa": "7fa9",
+    "name": "SELECTED-INVENTORY-ID",
+    "evidence": "Inferred descriptive name, not recovered original: Computes 4*CURRENT-INVENTORY-BLOCK ($554E) + SELECTED-OBJECT ($7243) + $64. $7FCD stores this ID in the first byte of an inventory slot.",
+    "confidence": "inferred",
+    "category": "game-helper",
+    "stack_effect": "-- item"
+  },
+  "7fcd": {
+    "nfa": "7fc7",
+    "name": "ACT-TAKE-ITEM",
+    "evidence": "Inferred descriptive name, not recovered original: Action dispatch table $75BA maps $0E WEZ, $2F UBIERZ to this CFA. Searches for an empty inventory slot, stores the ID from $7FB0, removes the selected scene object, copies/positions its picture and redraws the slot. If full, displays MSG-CANNOT-CARRY. Also handles UBIERZ.",
+    "confidence": "inferred",
+    "category": "action-handler"
+  },
+  "8037": {
+    "nfa": "8031",
+    "name": "MSG-SMOKING-HARMFUL",
+    "evidence": "Inferred descriptive name, not recovered original: The bounded message is PALENIE SZKODZI, displayed after the smoking handler $8053.",
+    "confidence": "inferred",
+    "category": "message",
+    "stack_effect": "-- addr"
+  },
+  "8053": {
+    "nfa": "804d",
+    "name": "ACT-SMOKE",
+    "evidence": "Inferred descriptive name, not recovered original: Action dispatch table $75BA maps $0F ZAPAL to this CFA. Action ZAPAL: in room zero it updates scene objects and an exit, then subtracts 30 from ENERGY, clamps it to at least 1, and displays PALENIE SZKODZI.",
+    "confidence": "inferred",
+    "category": "action-handler"
+  },
+  "80b0": {
+    "nfa": "80a9",
+    "name": "DROP-HIT-CELL-OK?",
+    "evidence": "Inferred descriptive name, not recovered original: Calls hit-map lookup $5147 for a duplicated coordinate pair and returns true only if the hit value is neither $64 nor $65. Used as the scan predicate in $80D0.",
+    "confidence": "inferred",
+    "category": "game-helper",
+    "stack_effect": "x y -- x y flag"
+  },
+  "80d0": {
+    "nfa": "80ca",
+    "name": "FIND-DROP-PICTURE-XY",
+    "evidence": "Inferred descriptive name, not recovered original: Starts from CURSOR-GRID-POS ($4D92), scans using $80B0, then translates the chosen grid coordinate by the FIRST picture origin and a vertical factor of 6. Used to position dropped inventory graphics.",
+    "confidence": "inferred",
+    "category": "game-helper",
+    "stack_effect": "-- x y"
+  },
+  "811c": {
+    "nfa": "8116",
+    "name": "REMOVE-INVENTORY-SLOT",
+    "evidence": "Inferred descriptive name, not recovered original: Writes zero to the slot first byte and calls CLEAR-INVENTORY-SLOT ($7840) to redraw its empty background.",
+    "confidence": "inferred",
+    "category": "game-helper",
+    "stack_effect": "slot --"
+  },
+  "8130": {
+    "nfa": "812a",
+    "name": "ACT-DROP-INVENTORY-ITEM",
+    "evidence": "Inferred descriptive name, not recovered original: Action dispatch table $75BA maps $10 ZOSTAW RZECZ to this CFA. Prompts with the message at action byte 1, selects one of four inventory slots, and if occupied removes its current-scene entry, finds a drop position, repositions its resource picture and clears the inventory slot.",
+    "confidence": "inferred",
+    "category": "action-handler"
+  },
+  "8198": {
+    "nfa": "8192",
+    "name": "ACT-OPEN-EXIT",
+    "evidence": "Inferred descriptive name, not recovered original: Action dispatch table $75BA maps $11 OTWORZ to this CFA. Adds object argument 1, plays sound $0B and opens current-room exit bit argument 2.",
+    "confidence": "inferred",
+    "category": "action-handler"
+  },
+  "81b7": {
+    "nfa": "81b1",
+    "name": "ACT-REVEAL-OBJECT",
+    "evidence": "Inferred descriptive name, not recovered original: Action dispatch table $75BA maps $14 OTWORZ, $32 ZAMKNIJ, $3E ZDEJMIJ to this CFA. Adds current-scene object argument 1 and plays sound $0B. Shared by open, close and remove-labelled actions; it does not itself change exit bits.",
+    "confidence": "inferred",
+    "category": "action-handler"
+  },
+  "81ce": {
+    "nfa": "81c8",
+    "name": "ACT-HIDE-OBJECT",
+    "evidence": "Inferred descriptive name, not recovered original: Action dispatch table $75BA maps $15 ZAMKNIJ, $3F POWIES to this CFA. Removes current-scene object argument 1 and plays sound $0C. Shared by close and hang-labelled actions.",
+    "confidence": "inferred",
+    "category": "action-handler"
+  },
+  "81e5": {
+    "nfa": "81df",
+    "name": "ACT-OFF-REMOVE-REMOTE",
+    "evidence": "Inferred descriptive name, not recovered original: Action dispatch table $75BA maps $16 WYLACZ to this CFA. Adds local object argument 1, removes object argument 3 from room argument 2, view zero, and opens exit bit argument 4 for that room.",
+    "confidence": "inferred",
+    "category": "action-handler"
+  },
+  "820a": {
+    "nfa": "8204",
+    "name": "ACT-ON-ADD-REMOTE",
+    "evidence": "Inferred descriptive name, not recovered original: Action dispatch table $75BA maps $17 WLACZ to this CFA. Removes local object argument 1, adds object argument 3 to room argument 2, view zero, and closes exit bit argument 4 for that room.",
+    "confidence": "inferred",
+    "category": "action-handler"
+  },
+  "8230": {
+    "nfa": "8229",
+    "name": "PUZZLE-STATE@",
+    "evidence": "Inferred descriptive name, not recovered original: Indexes the cell array at $4642 then fetches the cell. Used for puzzle flags and counters throughout the game.",
+    "confidence": "inferred",
+    "category": "game-helper",
+    "stack_effect": "index -- value"
+  },
+  "823f": {
+    "nfa": "8238",
+    "name": "PUZZLE-STATE!",
+    "evidence": "Inferred descriptive name, not recovered original: Indexes the cell array at $4642 then stores the supplied value.",
+    "confidence": "inferred",
+    "category": "game-helper",
+    "stack_effect": "value index --"
+  },
+  "824d": {
+    "nfa": "8247",
+    "name": "ACT-ENABLE-IF-CLEAR",
+    "evidence": "Inferred descriptive name, not recovered original: Action dispatch table $75BA maps $18 WLACZ to this CFA. Requires state argument 3 to be zero, clears the current-room/view list selected by argument 2, sets state argument 4 to 1, and reveals object argument 1. Otherwise shows the byte-5 message.",
+    "confidence": "inferred",
+    "category": "action-handler"
+  },
+  "8293": {
+    "nfa": "828d",
+    "name": "ACT-DISABLE-FLAG",
+    "evidence": "Inferred descriptive name, not recovered original: Action dispatch table $75BA maps $19 WYLACZ to this CFA. Stores zero in puzzle-state cell argument 2, removes object argument 1, plays sound $16 and redraws.",
+    "confidence": "inferred",
+    "category": "action-handler"
+  },
+  "82b0": {
+    "nfa": "82aa",
+    "name": "ACT-OPEN-IF-COUNTER-CLEAR",
+    "evidence": "Inferred descriptive name, not recovered original: Action dispatch table $75BA maps $1A OTWORZ to this CFA. Requires puzzle-state argument 2 to be zero; increments cell argument 3 and reveals object argument 1. On failure displays the message at byte 4.",
+    "confidence": "inferred",
+    "category": "action-handler"
+  },
+  "82ea": {
+    "nfa": "82e4",
+    "name": "ACT-CLOSE-DECREMENT",
+    "evidence": "Inferred descriptive name, not recovered original: Action dispatch table $75BA maps $1B ZAMKNIJ to this CFA. Decrements puzzle-state cell argument 2, removes object argument 1 and plays closing sound $0C.",
+    "confidence": "inferred",
+    "category": "action-handler"
+  },
+  "8309": {
+    "nfa": "8303",
+    "name": "ACT-MOVE-REVEAL",
+    "evidence": "Inferred descriptive name, not recovered original: Action dispatch table $75BA maps $1C PRZESUN, $2B ODSLON to this CFA. Reveals current-scene object argument 1 and sends sound $1C. Shared by move and uncover action labels.",
+    "confidence": "inferred",
+    "category": "action-handler"
+  },
+  "8320": {
+    "nfa": "831a",
+    "name": "ACT-MOVE-HIDE",
+    "evidence": "Inferred descriptive name, not recovered original: Action dispatch table $75BA maps $1D PRZESUN, $2C ZASLON to this CFA. Hides current-scene object argument 1 and sends sound $1C. Shared by move and cover action labels.",
+    "confidence": "inferred",
+    "category": "action-handler"
+  },
+  "8336": {
+    "nfa": "8331",
+    "name": "STRING-MATCH-COUNT",
+    "evidence": "Inferred descriptive name, not recovered original: Scratch cell zeroed by $8340 and incremented for each equal compared byte, including the counted-string length byte.",
+    "confidence": "inferred",
+    "category": "scratch-state",
+    "stack_effect": "-- addr"
+  },
+  "8340": {
+    "nfa": "833a",
+    "name": "COUNTED-STRINGS=",
+    "evidence": "Inferred descriptive name, not recovered original: Compares both counted strings byte by byte for the second string length plus one, including their length bytes; returns whether the match count equals that total.",
+    "confidence": "inferred",
+    "category": "game-helper",
+    "stack_effect": "addr1 addr2 -- flag"
+  },
+  "8389": {
+    "nfa": "8382",
+    "name": "READ-CHECKED-ANSWER",
+    "evidence": "Inferred descriptive name, not recovered original: Draws a three-row box of the supplied width and =?= prompt, sets cursor/key-repeat controls, reads a nonempty counted answer at HERE+$10 through READ-COUNTED-INPUT ($57EE), and compares the answer with the expected counted string through $8340.",
+    "confidence": "inferred",
+    "category": "game-helper",
+    "stack_effect": "expected width -- flag"
+  },
+  "83d0": {
+    "nfa": "83c9",
+    "name": "READ-SHORT-ANSWER",
+    "evidence": "Inferred descriptive name, not recovered original: Calls $8389 with box width $0C; the input limit is width minus 6 in that routine.",
+    "confidence": "inferred",
+    "category": "game-helper",
+    "stack_effect": "expected -- flag"
+  },
+  "83e0": {
+    "nfa": "83da",
+    "name": "CHECK-COUNTER-PUZZLE",
+    "evidence": "Inferred descriptive name, not recovered original: When state argument 3 equals argument 4, changes overlay objects, reads the expected answer at byte 8, sets state argument 7 after a match, then clears the current scene object list and resets state argument 3.",
+    "confidence": "inferred",
+    "category": "game-helper"
+  },
+  "8453": {
+    "nfa": "844d",
+    "name": "ACT-PRESS-ADD-COUNTER",
+    "evidence": "Inferred descriptive name, not recovered original: Action dispatch table $75BA maps $1E WCISNIJ to this CFA. Reveals object argument 1, adds argument 2 to puzzle cell argument 3, then calls CHECK-COUNTER-PUZZLE ($83E0).",
+    "confidence": "inferred",
+    "category": "action-handler"
+  },
+  "8470": {
+    "nfa": "846a",
+    "name": "ACT-RELEASE-SUB-COUNTER",
+    "evidence": "Inferred descriptive name, not recovered original: Action dispatch table $75BA maps $1F WYCISNIJ to this CFA. Hides object argument 1, subtracts argument 2 from puzzle cell argument 3, then calls CHECK-COUNTER-PUZZLE ($83E0).",
+    "confidence": "inferred",
+    "category": "action-handler"
+  },
+  "848f": {
+    "nfa": "8489",
+    "name": "ACT-PRESS-IF-STATE-SET",
+    "evidence": "Inferred descriptive name, not recovered original: Action dispatch table $75BA maps $20 WCISNIJ to this CFA. Requires puzzle-state argument 3 to be nonzero; reveals object argument 1 and opens current-room exit argument 2. Otherwise shows the byte-4 message and returns 0.",
+    "confidence": "inferred",
+    "category": "action-handler"
+  },
+  "84d2": {
+    "nfa": "84cc",
+    "name": "ACT-THROW-RELOCATE-ROOM",
+    "evidence": "Inferred descriptive name, not recovered original: Action dispatch table $75BA maps $21 RZUC to this CFA. Asks CZYM?; on the argument-2 inventory ID, copies ROOM-MAP-DESCRIPTORS from room argument 1 to room argument 3, clears the source descriptor, sets puzzle state argument 4 and displays byte-5 text. The selected inventory slot is consumed unconditionally after the match test, including a wrong-item attempt.",
+    "confidence": "inferred",
+    "category": "action-handler"
+  },
+  "852d": {
+    "nfa": "8526",
+    "name": "SKIP-MESSAGE-GROUPS",
+    "evidence": "Inferred descriptive name, not recovered original: Skips the requested number of consecutive groups encoded as a line-count byte followed by byte-counted strings; nested COUNT/+ loops retain the address following each group.",
+    "confidence": "inferred",
+    "category": "game-helper",
+    "stack_effect": "addr count -- next-addr"
+  },
+  "8555": {
+    "nfa": "854d",
+    "name": "SHOW-SECOND-MESSAGE",
+    "evidence": "Inferred descriptive name, not recovered original: Skips one counted-line group through $852D and displays the next group through SHOW-MESSAGE ($6D82).",
+    "confidence": "inferred",
+    "category": "game-helper",
+    "stack_effect": "addr --"
+  },
+  "8565": {
+    "nfa": "855f",
+    "name": "ACT-EXAMINE-FLAG",
+    "evidence": "Inferred descriptive name, not recovered original: Action dispatch table $75BA maps $22 ZBADAJ to this CFA. Selects the first or second inline message at byte 2 according to whether puzzle-state cell argument 1 is nonzero; sends examination sound 7 and returns 0.",
+    "confidence": "inferred",
+    "category": "action-handler"
+  },
+  "858d": {
+    "nfa": "8588",
+    "name": "ANIMATION-CONTROL",
+    "evidence": "Inferred descriptive name, not recovered original: Two control bytes: low byte is the per-frame PAUSE used by $8598; high byte chooses reverse ($85CD) instead of forward ($85AC) traversal in $85F1.",
+    "confidence": "inferred",
+    "category": "game-state",
+    "stack_effect": "-- addr"
+  },
+  "8598": {
+    "nfa": "8591",
+    "name": "DRAW-ANIMATION-FRAME",
+    "evidence": "Inferred descriptive name, not recovered original: Fetches a resource with RESOURCE-ADDR, draws it through ?PCOBJ, and waits the low byte of ANIMATION-CONTROL.",
+    "confidence": "inferred",
+    "category": "game-helper",
+    "stack_effect": "resource --"
+  },
+  "85ac": {
+    "nfa": "85a6",
+    "name": "ANIMATE-FORWARD",
+    "evidence": "Inferred descriptive name, not recovered original: Maps the starting object through $56A7, then draws consecutive resource IDs from the base through base+count-1.",
+    "confidence": "inferred",
+    "category": "game-helper",
+    "stack_effect": "object count --"
+  },
+  "85cd": {
+    "nfa": "85c6",
+    "name": "ANIMATE-REVERSE",
+    "evidence": "Inferred descriptive name, not recovered original: Maps the starting object through $56A7 and traverses the same number of resources in descending order with -1 +LOOP.",
+    "confidence": "inferred",
+    "category": "game-helper",
+    "stack_effect": "object count --"
+  },
+  "85f1": {
+    "nfa": "85eb",
+    "name": "REPEAT-ANIMATION",
+    "evidence": "Inferred descriptive name, not recovered original: Repeats forward or reverse frame traversal according to ANIMATION-CONTROL high byte; retains the object and frame count for its callers.",
+    "confidence": "inferred",
+    "category": "game-helper",
+    "stack_effect": "object frames repeats -- object frames"
+  },
+  "8619": {
+    "nfa": "8611",
+    "name": "ANIMATE-RESTORE-FIRST",
+    "evidence": "Inferred descriptive name, not recovered original: Calls $85F1, drops the frame count, and redraws the initial object resource through $56A7/$8598.",
+    "confidence": "inferred",
+    "category": "game-helper",
+    "stack_effect": "object frames repeats --"
+  },
+  "862d": {
+    "nfa": "8625",
+    "name": "PLAY-ANIMATION",
+    "evidence": "Inferred descriptive name, not recovered original: Calls $85F1 and drops the retained object/frame-count pair.",
+    "confidence": "inferred",
+    "category": "game-helper",
+    "stack_effect": "object frames repeats --"
+  },
+  "863b": {
+    "nfa": "8635",
+    "name": "ACT-SELECT-FLOOR",
+    "evidence": "Inferred descriptive name, not recovered original: Action dispatch table $75BA maps $23 NACISNIJ to this CFA. Compares current map floor $466D with argument 1 to select animation direction, swaps floor indicator objects, closes the room exit if needed, animates 25 frames abs(old-new) times, stores the new floor and redraws map components.",
+    "confidence": "inferred",
+    "category": "action-handler"
+  },
+  "86d7": {
+    "nfa": "86d1",
+    "name": "MSG-WHAT",
+    "evidence": "Inferred descriptive name, not recovered original: The bounded message is CO?; used when choosing an inventory item or typing an action answer.",
+    "confidence": "inferred",
+    "category": "message",
+    "stack_effect": "-- addr"
+  },
+  "86e6": {
+    "nfa": "86e1",
+    "name": "SHOW-QUESTION-SPACING",
+    "evidence": "Inferred descriptive name, not recovered original: Preserves the value above the supplied message on the return stack, sends sound $15, displays message+2 and emits four line advances through $5D36.",
+    "confidence": "inferred",
+    "category": "game-helper",
+    "stack_effect": "message value -- value"
+  },
+  "8706": {
+    "nfa": "86ff",
+    "name": "ASK-SHORT-QUESTION",
+    "evidence": "Inferred descriptive name, not recovered original: Displays/spaces the supplied question through $86E6 then checks the typed short answer through $83D0.",
+    "confidence": "inferred",
+    "category": "game-helper",
+    "stack_effect": "message expected -- flag"
+  },
+  "8714": {
+    "nfa": "870e",
+    "name": "ASK-ACTION-ANSWER",
+    "evidence": "Inferred descriptive name, not recovered original: Clears text, asks CO? against the counted string at action byte 3, adds argument 2 to the comparison result, and advances the text line.",
+    "confidence": "inferred",
+    "category": "game-helper",
+    "stack_effect": "-- result"
+  },
+  "872e": {
+    "nfa": "8728",
+    "name": "ACT-SHOUT-ANSWER",
+    "evidence": "Inferred descriptive name, not recovered original: Action dispatch table $75BA maps $24 KRZYKNIJ to this CFA. Calls ASK-ACTION-ANSWER; if the result is nonzero, reveals object argument 1 and sends sound $1C; redraws and returns 1.",
+    "confidence": "inferred",
+    "category": "action-handler"
+  },
+  "874c": {
+    "nfa": "8745",
+    "name": "SHOW-ACTION-FAILURE",
+    "evidence": "Inferred descriptive name, not recovered original: Clears text, sends failure sound $13, displays the supplied multiline message, disables immediate text clearing, redraws and returns 1.",
+    "confidence": "inferred",
+    "category": "game-helper",
+    "stack_effect": "message -- done?"
+  },
+  "8768": {
+    "nfa": "8763",
+    "name": "ANIMATE-ACTION-OBJECT",
+    "evidence": "Inferred descriptive name, not recovered original: When argument 3 is nonzero, sets four-tick frame delay and plays one sequence beginning at argument1+1 for argument3 frames; otherwise only plays sound $0B. Direction is already set by callers.",
+    "confidence": "inferred",
+    "category": "game-helper",
+    "stack_effect": "--"
+  },
+  "87a4": {
+    "nfa": "879f",
+    "name": "REQUIRE-ITEM-THEN-OPEN",
+    "evidence": "Inferred descriptive name, not recovered original: Asks for an inventory item using the supplied prompt. Matching argument 4 plays the forward action animation, reveals object argument 1 and opens exit argument 2; failure displays byte-5 text.",
+    "confidence": "inferred",
+    "category": "game-helper",
+    "stack_effect": "message -- done?"
+  },
+  "87e0": {
+    "nfa": "87da",
+    "name": "ACT-SHOW-ITEM-OPEN",
+    "evidence": "Inferred descriptive name, not recovered original: Action dispatch table $75BA maps $25 POKAZ to this CFA. Calls REQUIRE-ITEM-THEN-OPEN ($87A4) using CO? as the prompt.",
+    "confidence": "inferred",
+    "category": "action-handler"
+  },
+  "87ee": {
+    "nfa": "87e8",
+    "name": "ACT-ANIMATE-OPEN",
+    "evidence": "Inferred descriptive name, not recovered original: Action dispatch table $75BA maps $26 NACISNIJ to this CFA. Sets forward animation direction, runs $8768, reveals object argument 1 and opens current-room exit bit argument 2.",
+    "confidence": "inferred",
+    "category": "action-handler"
+  },
+  "8812": {
+    "nfa": "880c",
+    "name": "ACT-ANIMATE-CLOSE",
+    "evidence": "Inferred descriptive name, not recovered original: Action dispatch table $75BA maps $27 NACISNIJ, $49 ZASUN to this CFA. Sets reverse animation direction, runs $8768, hides object argument 1 and closes current-room exit bit argument 2. Also handles ZASUN.",
+    "confidence": "inferred",
+    "category": "action-handler"
+  },
+  "8836": {
+    "nfa": "8830",
+    "name": "MSG-ARE-YOU-ADULT",
+    "evidence": "Inferred descriptive name, not recovered original: The bounded message is JESTES DOROSLY?; $8861 requires the expected answer before entering a closeup.",
+    "confidence": "inferred",
+    "category": "message",
+    "stack_effect": "-- addr"
+  },
+  "8851": {
+    "nfa": "884c",
+    "name": "SHOW-AFTER-COUNTED-ANSWER",
+    "evidence": "Inferred descriptive name, not recovered original: Advances past one byte-counted string using COUNT + and passes the following multiline message to SHOW-ACTION-FAILURE ($874C).",
+    "confidence": "inferred",
+    "category": "game-helper",
+    "stack_effect": "counted-answer -- done?"
+  },
+  "8861": {
+    "nfa": "885b",
+    "name": "ACT-ADULT-GATED-CLOSEUP",
+    "evidence": "Inferred descriptive name, not recovered original: Action dispatch table $75BA maps $28 ZBLIZENIE to this CFA. Asks JESTES DOROSLY? against the counted answer at byte 2. Match calls ACT-SHOW-CLOSEUP; mismatch displays the message after the expected answer.",
+    "confidence": "inferred",
+    "category": "action-handler"
+  },
+  "8885": {
+    "nfa": "887f",
+    "name": "ACT-REFUSE-CLOSEUP",
+    "evidence": "Inferred descriptive name, not recovered original: Action dispatch table $75BA maps $29 ZBLIZENIE to this CFA. Restores/redraws the pointer and displays the byte-1 message through SHOW-ACTION-FAILURE, without changing scene.",
+    "confidence": "inferred",
+    "category": "action-handler"
+  },
+  "8899": {
+    "nfa": "8893",
+    "name": "ACT-REFUSE-WITH-OVERLAY",
+    "evidence": "Inferred descriptive name, not recovered original: Action dispatch table $75BA maps $2A WEZ, $36 UBIERZ, $37 CALUJ to this CFA. Shared refusal handler for take, wear and kiss actions: sends failure sound, reveals object argument 1 only when below $C8, pauses and displays byte-2 text.",
+    "confidence": "inferred",
+    "category": "action-handler"
+  },
+  "88c4": {
+    "nfa": "88be",
+    "name": "ACT-SWIM-REQUIRE-ITEM",
+    "evidence": "Inferred descriptive name, not recovered original: Action dispatch table $75BA maps $2D PODPLYN to this CFA. Looks for inventory ID argument 2 through $7B87. If found, calls ACT-SHOW-CLOSEUP; otherwise shows the byte-3 message with failure sound.",
+    "confidence": "inferred",
+    "category": "action-handler"
+  },
+  "88ef": {
+    "nfa": "88e9",
+    "name": "ACT-TAKE-PARAMETER-OBJECT",
+    "evidence": "Inferred descriptive name, not recovered original: Action dispatch table $75BA maps $2E WEZ to this CFA. If a free inventory slot exists, reveals object argument 1. Replaces SELECTED-OBJECT with argument 2, normalizes inventory IDs through $7684, then calls ACT-TAKE-ITEM.",
+    "confidence": "inferred",
+    "category": "action-handler"
+  },
+  "890f": {
+    "nfa": "8909",
+    "name": "ACT-DISCARD-OBJECT",
+    "evidence": "Inferred descriptive name, not recovered original: Action dispatch table $75BA maps $30 WYRZUC to this CFA. Removes current-scene object argument 1, restores the pointer, sends sound $21 and redraws.",
+    "confidence": "inferred",
+    "category": "action-handler"
+  },
+  "8928": {
+    "nfa": "8922",
+    "name": "ACT-OPEN-REMOVE-WITH-ITEM",
+    "evidence": "Inferred descriptive name, not recovered original: Action dispatch table $75BA maps $31 OTWORZ to this CFA. Sets OPEN-OBJECT-MODE to zero, then calls $7EF5: a matching inventory item removes object argument 1 and opens an exit.",
+    "confidence": "inferred",
+    "category": "action-handler"
+  },
+  "893a": {
+    "nfa": "8934",
+    "name": "ACT-PRESS-IF-FLAG-SET",
+    "evidence": "Inferred descriptive name, not recovered original: Action dispatch table $75BA maps $33 NACISNIJ to this CFA. Requires puzzle-state argument 4 to be nonzero before calling the animated-open handler; otherwise displays byte-5 failure text.",
+    "confidence": "inferred",
+    "category": "action-handler"
+  },
+  "8967": {
+    "nfa": "8961",
+    "name": "MSG-ALL-RIGHT",
+    "evidence": "Inferred descriptive name, not recovered original: The bounded message is W PORZADKU; shown when $897E accepts the selected inventory item.",
+    "confidence": "inferred",
+    "category": "message",
+    "stack_effect": "-- addr"
+  },
+  "897e": {
+    "nfa": "8978",
+    "name": "ACT-SHOW-ITEM-SET-FLAG",
+    "evidence": "Inferred descriptive name, not recovered original: Action dispatch table $75BA maps $34 POKAZ to this CFA. Asks CO? for an inventory selection. Item argument 2 sets state argument 4 to 1 and displays W PORZADKU; argument 3 selects an alternative failure message. Afterwards hides object argument 1 and redraws.",
+    "confidence": "inferred",
+    "category": "action-handler"
+  },
+  "89e5": {
+    "nfa": "89df",
+    "name": "ACT-SHOUT-REVEAL-IF-CLEAR",
+    "evidence": "Inferred descriptive name, not recovered original: Action dispatch table $75BA maps $35 KRZYKNIJ to this CFA. Collects an action answer but discards its result; reveals object argument 1 only while puzzle-state argument 4 is zero, then redraws.",
+    "confidence": "inferred",
+    "category": "action-handler"
+  },
+  "8a0a": {
+    "nfa": "8a04",
+    "name": "MSG-ENTER-PASSWORD",
+    "evidence": "Inferred descriptive name, not recovered original: The bounded message is PODAJ HASLO; used by $8A38 before an animated opening action.",
+    "confidence": "inferred",
+    "category": "message",
+    "stack_effect": "-- addr"
+  },
+  "8a26": {
+    "nfa": "8a1e",
+    "name": "ASK-CHECKED-QUESTION",
+    "evidence": "Inferred descriptive name, not recovered original: Preserves the requested box width, displays/spaces the supplied question via $86E6 and calls READ-CHECKED-ANSWER ($8389).",
+    "confidence": "inferred",
+    "category": "game-helper",
+    "stack_effect": "message expected width -- flag"
+  },
+  "8a38": {
+    "nfa": "8a32",
+    "name": "ACT-PASSWORD-PRESS",
+    "evidence": "Inferred descriptive name, not recovered original: Action dispatch table $75BA maps $38 NACISNIJ to this CFA. Asks PODAJ HASLO with box width $14 and the counted answer at byte 4. Match calls ACT-ANIMATE-OPEN; failure displays the message after that counted answer.",
+    "confidence": "inferred",
+    "category": "action-handler"
+  },
+  "8a60": {
+    "nfa": "8a5a",
+    "name": "ACT-CUT-WITH-ITEM",
+    "evidence": "Inferred descriptive name, not recovered original: Action dispatch table $75BA maps $39 PRZETNIJ to this CFA. Calls REQUIRE-ITEM-THEN-OPEN ($87A4) using CZYM? as the prompt.",
+    "confidence": "inferred",
+    "category": "action-handler"
+  },
+  "8a6e": {
+    "nfa": "8a68",
+    "name": "ACT-INACTIVE-BUTTON",
+    "evidence": "Inferred descriptive name, not recovered original: Action dispatch table $75BA maps $3A NACISNIJ to this CFA. Only sends sound $15, pauses $32 ticks and returns 0, keeping action selection active.",
+    "confidence": "inferred",
+    "category": "action-handler"
+  },
+  "8a83": {
+    "nfa": "8a7d",
+    "name": "ACT-TURN-SET-FLAG",
+    "evidence": "Inferred descriptive name, not recovered original: Action dispatch table $75BA maps $3B PRZEKREC to this CFA. Sets puzzle-state argument 4 to 1 and calls ACT-ANIMATE-OPEN.",
+    "confidence": "inferred",
+    "category": "action-handler"
+  },
+  "8a95": {
+    "nfa": "8a8f",
+    "name": "ACT-TURN-CLEAR-FLAG",
+    "evidence": "Inferred descriptive name, not recovered original: Action dispatch table $75BA maps $3C PRZEKREC to this CFA. Clears puzzle-state argument 4 and calls ACT-ANIMATE-CLOSE.",
+    "confidence": "inferred",
+    "category": "action-handler"
+  },
+  "8aa7": {
+    "nfa": "8aa1",
+    "name": "ACT-OPEN-IF-PUZZLE-SET",
+    "evidence": "Inferred descriptive name, not recovered original: Action dispatch table $75BA maps $3D OTWORZ to this CFA. Requires puzzle-state argument 3 to be nonzero, then calls ACT-OPEN-EXIT ($8198); otherwise displays byte-4 failure text.",
+    "confidence": "inferred",
+    "category": "action-handler"
+  },
+  "8ac7": {
+    "nfa": "8abf",
+    "name": "PUZZLE-STATE+!",
+    "evidence": "Inferred descriptive name, not recovered original: Fetches indexed state through $8230, adds the supplied delta, then stores through $823F.",
+    "confidence": "inferred",
+    "category": "game-helper",
+    "stack_effect": "delta index --"
+  },
+  "8add": {
+    "nfa": "8ad7",
+    "name": "ACT-SCREW-IN-ITEM",
+    "evidence": "Inferred descriptive name, not recovered original: Action dispatch table $75BA maps $40 WKREC to this CFA. Asks CO? and requires inventory ID argument 2. Success removes object argument 1, adds the low bit of puzzle-state argument 3 to state argument 4, consumes the chosen inventory slot and redraws.",
+    "confidence": "inferred",
+    "category": "action-handler"
+  },
+  "8b25": {
+    "nfa": "8b1f",
+    "name": "ACT-EXAMINE-COUNTER",
+    "evidence": "Inferred descriptive name, not recovered original: Action dispatch table $75BA maps $41 ZBADAJ to this CFA. Reads puzzle-state argument 1, maps value 3 to message index 2, skips that many groups from the byte-2 text and displays the selected message; returns 0.",
+    "confidence": "inferred",
+    "category": "action-handler"
+  },
+  "8b4c": {
+    "nfa": "8b46",
+    "name": "ACT-UNSCREW-ITEM",
+    "evidence": "Inferred descriptive name, not recovered original: Action dispatch table $75BA maps $42 WYKREC to this CFA. With a free slot, subtracts the low bit of state argument 3 from state argument 4 and removes object 3 from room $1C, view zero; then calls ACT-TAKE-PARAMETER-OBJECT.",
+    "confidence": "inferred",
+    "category": "action-handler"
+  },
+  "8b78": {
+    "nfa": "8b72",
+    "name": "ACT-PRESS-IF-STATE-TWO",
+    "evidence": "Inferred descriptive name, not recovered original: Action dispatch table $75BA maps $43 NACISNIJ to this CFA. Requires puzzle-state argument 4 to equal 2 before ACT-ANIMATE-OPEN; otherwise displays the byte-6 message.",
+    "confidence": "inferred",
+    "category": "action-handler"
+  },
+  "8b9c": {
+    "nfa": "8b96",
+    "name": "ACT-PRESS-FLASH-ADVANCE",
+    "evidence": "Inferred descriptive name, not recovered original: Action dispatch table $75BA maps $44 NACISNIJ to this CFA. Requires state argument 4 equal to 2; removes object 3, animates opening, flashes the first palette byte, sets state argument 5, decrements state argument 4, clears state cell $0A and displays the second byte-6 message.",
+    "confidence": "inferred",
+    "category": "action-handler"
+  },
+  "8bfa": {
+    "nfa": "8bf4",
+    "name": "ACT-APPLY-ITEM-SET-THREE",
+    "evidence": "Inferred descriptive name, not recovered original: Action dispatch table $75BA maps $46 PODWATUJ to this CFA. Asks CZYM? and requires inventory ID argument 1. When state argument 2 is clear, stores 3 there and consumes the selected slot. Other cases select alternate messages following byte 3.",
+    "confidence": "inferred",
+    "category": "action-handler"
+  },
+  "8c60": {
+    "nfa": "8c5a",
+    "name": "ACT-ON-INCREMENT",
+    "evidence": "Inferred descriptive name, not recovered original: Action dispatch table $75BA maps $47 WLACZ to this CFA. Reveals object argument 1 and increments puzzle-state cell argument 2, with sound $16 and redraw.",
+    "confidence": "inferred",
+    "category": "action-handler"
+  },
+  "8c7d": {
+    "nfa": "8c77",
+    "name": "ACT-OFF-DECREMENT",
+    "evidence": "Inferred descriptive name, not recovered original: Action dispatch table $75BA maps $48 WYLACZ to this CFA. Hides object argument 1, decrements puzzle-state cell argument 2, and removes object 3 from room $1C, view zero.",
+    "confidence": "inferred",
+    "category": "action-handler"
+  },
+  "8ca4": {
+    "nfa": "8c9e",
+    "name": "ACT-PRESS-TWO-AND-FLAG",
+    "evidence": "Inferred descriptive name, not recovered original: Action dispatch table $75BA maps $45 NACISNIJ to this CFA. Requires puzzle-state argument 4 equal to 2 and puzzle-state argument 5 nonzero before redrawing and ACT-ANIMATE-OPEN. The two failure cases select first/second messages at byte 6.",
+    "confidence": "inferred",
+    "category": "action-handler"
+  },
+  "8ce6": {
+    "nfa": "8ce0",
+    "name": "ACT-INSERT-EITHER-ITEM",
+    "evidence": "Inferred descriptive name, not recovered original: Action dispatch table $75BA maps $4B WLOZ to this CFA. Asks CO? and accepts either inventory ID argument 4 or argument 5. Hides object argument 6, consumes the slot, performs animated opening, waits, then animated closing; failure displays byte-7 text.",
+    "confidence": "inferred",
+    "category": "action-handler"
+  },
+  "8d37": {
+    "nfa": "8d31",
+    "name": "MSG-WHICH",
+    "evidence": "Inferred descriptive name, not recovered original: The bounded message is JAKIE; used by the final chromosome action to request a typed answer.",
+    "confidence": "inferred",
+    "category": "message",
+    "stack_effect": "-- addr"
+  },
+  "8d4a": {
+    "nfa": "8d44",
+    "name": "ACT-CHROMOSOME-ENDING",
+    "evidence": "Inferred descriptive name, not recovered original: Action dispatch table $75BA maps $4A WPROWADZ CHROMOSOMY to this CFA. Asks JAKIE against the counted answer at byte 1. Match selects disk side 2, loads resource group $16 (22), displays its ending bitmap/text, sends title tune command $50 and runs its animation until a key, then reloads initial state. Failure displays the message after the expected answer.",
+    "confidence": "inferred",
+    "category": "action-handler"
   },
   "8e00": {
     "nfa": "8dfa",

@@ -300,7 +300,7 @@
     },
     {
       "cfa": 18871,
-      "symbol": "w49B7",
+      "symbol": "t.PROMPT-DISK-READ-ERROR",
       "description": "Inline strings",
       "records": [
         {
@@ -333,7 +333,7 @@
     },
     {
       "cfa": 18964,
-      "symbol": "w4A14",
+      "symbol": "t.PROMPT-FLIP-DISK",
       "description": "Inline strings",
       "records": [
         {
@@ -366,7 +366,7 @@
     },
     {
       "cfa": 21449,
-      "symbol": "w53C9",
+      "symbol": "t.PATCH-VBI-CALL",
       "description": "Inline strings",
       "records": [
         {
@@ -386,7 +386,7 @@
     },
     {
       "cfa": 22394,
-      "symbol": "w577A",
+      "symbol": "t.EDIT-BACKSPACE",
       "description": "Inline strings",
       "records": [
         {
@@ -406,7 +406,7 @@
     },
     {
       "cfa": 27914,
-      "symbol": "w6D0A",
+      "symbol": "t.HUNGER-MESSAGES",
       "description": "Hunger messages",
       "records": [
         {
@@ -474,7 +474,7 @@
     },
     {
       "cfa": 28034,
-      "symbol": "w6D82",
+      "symbol": "t.SHOW-MESSAGE",
       "description": "Inline strings",
       "records": [
         {
@@ -494,7 +494,7 @@
     },
     {
       "cfa": 28615,
-      "symbol": "w6FC7",
+      "symbol": "t.RELATIVE-DIRECTION-LABELS",
       "description": "Direction labels",
       "records": [
         {
@@ -587,7 +587,7 @@
     },
     {
       "cfa": 28723,
-      "symbol": "w7033",
+      "symbol": "t.DRAW-EXIT-MENU",
       "description": "Inline strings",
       "records": [
         {
@@ -607,7 +607,7 @@
     },
     {
       "cfa": 29410,
-      "symbol": "w72E2",
+      "symbol": "t.ACTION-LABELS",
       "description": "Action labels",
       "records": [
         {
@@ -2176,7 +2176,7 @@
     },
     {
       "cfa": 31675,
-      "symbol": "w7BBB",
+      "symbol": "t.MSG-CANNOT-CARRY",
       "description": "Message lines",
       "records": [
         {
@@ -2200,7 +2200,7 @@
     },
     {
       "cfa": 32240,
-      "symbol": "w7DF0",
+      "symbol": "t.MSG-GLUTTONY",
       "description": "Message lines",
       "records": [
         {
@@ -2224,7 +2224,7 @@
     },
     {
       "cfa": 32424,
-      "symbol": "w7EA8",
+      "symbol": "t.MSG-WITH-WHAT",
       "description": "Message lines",
       "records": [
         {
@@ -2248,7 +2248,7 @@
     },
     {
       "cfa": 32823,
-      "symbol": "w8037",
+      "symbol": "t.MSG-SMOKING-HARMFUL",
       "description": "Message lines",
       "records": [
         {
@@ -2272,7 +2272,7 @@
     },
     {
       "cfa": 33673,
-      "symbol": "w8389",
+      "symbol": "t.READ-CHECKED-ANSWER",
       "description": "Inline strings",
       "records": [
         {
@@ -2292,7 +2292,7 @@
     },
     {
       "cfa": 34519,
-      "symbol": "w86D7",
+      "symbol": "t.MSG-WHAT",
       "description": "Message lines",
       "records": [
         {
@@ -2316,7 +2316,7 @@
     },
     {
       "cfa": 34870,
-      "symbol": "w8836",
+      "symbol": "t.MSG-ARE-YOU-ADULT",
       "description": "Message lines",
       "records": [
         {
@@ -2340,7 +2340,7 @@
     },
     {
       "cfa": 35175,
-      "symbol": "w8967",
+      "symbol": "t.MSG-ALL-RIGHT",
       "description": "Message lines",
       "records": [
         {
@@ -2364,7 +2364,7 @@
     },
     {
       "cfa": 35338,
-      "symbol": "w8A0A",
+      "symbol": "t.MSG-ENTER-PASSWORD",
       "description": "Message lines",
       "records": [
         {
@@ -2388,7 +2388,7 @@
     },
     {
       "cfa": 36151,
-      "symbol": "w8D37",
+      "symbol": "t.MSG-WHICH",
       "description": "Message lines",
       "records": [
         {

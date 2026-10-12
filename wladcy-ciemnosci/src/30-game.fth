@@ -2,6 +2,8 @@
 ( Hexadecimal. BYTES emits bytes; CELL emits 16-bit cells. )
 ( LIT8/LIT16 compile literals; branches retain signed )
 ( offsets. )
+( 6502 mnemonics use 06-assembler.fth; operands follow )
+( words. )
 
 ( w6015 | NFA 6010 CFA 6015 )
 ( Unknown erased name; CFA identifier )
@@ -711,7 +713,7 @@ AT 69BF
 ( Header: flags, saved name and link )
 BYTES 830000B09669
 DOCOL
-( Trailing native code/data at 69C7; retained exactly )
+( Trailing code/data at 69C7; retained exactly )
 BYTES 01000101000701000800007712
 AT 69D4
 
@@ -721,7 +723,7 @@ AT 69D4
 ( Header: flags, saved name and link )
 BYTES 830000B1BF69
 DOCOL
-( Trailing native code/data at 69DC; retained exactly )
+( Trailing code/data at 69DC; retained exactly )
 BYTES 01000101000900007712
 AT 69E6
 
@@ -756,22 +758,22 @@ AT 6A20
 ( Header: flags, saved name and link )
 BYTES 830000D2166A
 CELL 6A28 ( native entry point )
-BYTES 86D1 ( 6A28: STX $d1 )
-BYTES A000 ( 6A2A: LDY #$00 )
-BYTES 8C1E6A ( 6A2C: STY $6a1e )
-BYTES A208 ( 6A2F: LDX #$08 )
-BYTES B9E257 ( 6A31: LDA $57e2,Y )
-BYTES 18 ( 6A34: CLC )
-BYTES 4A ( 6A35: LSR A )
-BYTES 9003 ( 6A36: BCC $6a3b )
-BYTES EE1E6A ( 6A38: INC $6a1e )
-BYTES CA ( 6A3B: DEX )
-BYTES D0F6 ( 6A3C: BNE $6a34 )
-BYTES C8 ( 6A3E: INY )
-BYTES C019 ( 6A3F: CPY #$19 )
-BYTES D0EC ( 6A41: BNE $6a2f )
-BYTES A6D1 ( 6A43: LDX $d1 )
-BYTES 4C470F ( 6A45: JMP $0f47 )
+STX.ZP D1            ( 6A28 )
+LDY.# 00             ( 6A2A )
+STY.ABS 6A1E         ( 6A2C )
+LDX.# 08             ( 6A2F )
+LDA.ABSY 57E2        ( 6A31 )
+CLC                  ( 6A34 )
+LSR.A                ( 6A35 )
+BCC 6A3B             ( 6A36 )
+INC.ABS 6A1E         ( 6A38 )
+DEX                  ( 6A3B )
+BNE 6A34             ( 6A3C )
+INY                  ( 6A3E )
+CPY.# 19             ( 6A3F )
+BNE 6A2F             ( 6A41 )
+LDX.ZP D1            ( 6A43 )
+JMP.ABS 0F47         ( 6A45 )
 AT 6A48
 
 ( w6A4E | NFA 6A48 CFA 6A4E )

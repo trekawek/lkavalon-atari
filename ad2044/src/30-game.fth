@@ -3,6 +3,8 @@
 ( cell. )
 ( LIT8/LIT16 compile literals; branch cells are signed )
 ( offsets. )
+( 6502 mnemonics use 06-assembler.fth; operands follow )
+( words. )
 
 ( w7B54 | NFA 7B4F CFA 7B54 )
 ( Unknown erased name; CFA identifier )

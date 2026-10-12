@@ -28,6 +28,7 @@ Structural candidates are not independently verified semantic identifications.
 | [src/metacompiler.fth](src/metacompiler.fth) | Portable APX compiler and streaming disk writer |
 | [src/00-target-words.fth](src/00-target-words.fth) | Target code-field symbols |
 | [src/05-emission.fth](src/05-emission.fth) | Fast literal, cell, and byte emitters |
+| [src/06-assembler.fth](src/06-assembler.fth) | Forth target assembler for all 151 official NMOS 6502 opcodes |
 | [src/10-kernel.fth](src/10-kernel.fth) | Boot code and modified fig-Forth kernel |
 | [src/20-framework.fth](src/20-framework.fth) | Assembler, graphics, text, input, audio and disk support |
 | [src/30-game.fth](src/30-game.fth) | Game definitions and startup |
@@ -36,11 +37,24 @@ Structural candidates are not independently verified semantic identifications.
 Every `.fth` file is ASCII, with LF newlines and lines at most 64 characters
 wide. `DOCOL` emits a target colon definition, a `t.` name emits a target call,
 `LIT8`/`LIT16` emit literals, and `AT` checks the target address. Branch cells
-retain signed offsets and have destination comments. `BYTES` emits headers,
-native 6502 instructions, and data; native instructions have disassembly
-comments. Embedded tables can make linear disassembly comments misleading.
-The 602 undecoded trailing bytes reported by the generator are tails of colon
-definitions, not a count of all native code or data.
+retain signed offsets and have destination comments. Native 6502 bodies and
+verified machine-code tails use executable assembler mnemonics. `BYTES` emits
+headers, tables and unclassified mixed regions.
+The generator's trailing-byte count describes tails after threaded decoding,
+including native runtimes, rather than all machine code or data in the game.
+
+The assembler loads after `05-emission.fth`. Hexadecimal prefix operands look
+like `LDA.# 03`, `STA.ZP D1`, `LDA.ABS 0000`, and `JSR.ABS E456`.
+`BNE 2A01` names an absolute destination and calculates the signed relative
+displacement; `RTS` has no operand and `ASL.A` selects the accumulator.
+Explicit modes preserve absolute addressing below `$0100`. Byte operands and
+branch displacements are range-checked.
+
+The stock APX interpreter has no assembler, so the target assembler is written
+in ordinary Forth. The game's original postfix GAM assembler is reconstructed
+separately in its saved dictionary. Conventional `CODE` would allocate new headers
+and addresses; emitting saved headers and assembled instructions directly
+keeps the original target layout.
 
 [strings.txt](strings.txt) lists decoded dictionary messages and menu labels
 as ASCII text. [strings.json](strings.json) preserves their addresses, raw
@@ -106,7 +120,7 @@ RAM, and support for large 128-byte-sector source ATRs.
 
 The command changes this exact APX version's host `R/W` sector divisor from
 720 to 4096 and selects D2 source blocks. It does not modify game code.
-The source disk contains 166 screens and uses the stock `-->` continuation.
+The source disk contains 167 screens and uses the stock `-->` continuation.
 Each physical screen line reserves a trailing space; Forth does not insert
 newlines between its 64-character rows. Expected `Isn't unique` notices come
 from the deliberate emitter redefinitions in `05-emission.fth`. Turbo mode

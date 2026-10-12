@@ -62,16 +62,12 @@ base.decode = decode
 
 
 def main():
-    from py65.devices.mpu6502 import MPU
-    from py65.disassembler import Disassembler
-
     m = memory()
     words, main_count = dictionary(m)
     names = json.loads((ROOT / "tools/names.json").read_text())
     base.identifiers(words, names)
     by_cfa = {w["cfa"]: w for w in words}
     catalog = base.text_records.Catalog("wladcy-ciemnosci", m, words, decode)
-    dis = Disassembler(MPU(memory=m))
     source = ROOT / "src"
     source.mkdir(exist_ok=True)
     out = Listing()
@@ -95,11 +91,12 @@ def main():
         out.comment(f"Wladcy Ciemnosci v1 {filename}: target {start:04X}..{end-1:04X}")
         out.comment("Hexadecimal. BYTES emits bytes; CELL emits 16-bit cells.")
         out.comment("LIT8/LIT16 compile literals; branches retain signed offsets.")
+        out.comment("6502 mnemonics use 06-assembler.fth; operands follow words.")
         if i == 0:
             out.line("3 T-DISK")
             out.line(f"{ORIGIN:04X} T-ORG")
             out.comment("Boot loader, copy-protection bypass and cold-start settings")
-            out.raw(m[ORIGIN : words[0]["nfa"]])
+            base.emit_region(out, m, ORIGIN, words[0]["nfa"])
         for w in words:
             if not start <= w["nfa"] < end:
                 continue
@@ -130,7 +127,7 @@ def main():
                     out.raw(m[w["pfa"] : w["end"]])
             else:
                 out.line(f"CELL {w['code']:04X} ( native entry point )")
-                base.native(out, m, w["pfa"], w["end"], dis)
+                base.native(out, m, w["pfa"], w["end"])
             out.line(f"AT {w['end']:04X}")
         if i == len(groups) - 1:
             out.comment("Final saved boot-sector padding: retired N>N / SAVE-RUN")

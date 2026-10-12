@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Recover the saved indirect-threaded dictionary, not an executable wrapper.
 
-Regeneration requires py65 only for disassembly comments. Building the checked-in
+Regeneration requires py65 to decode native instructions. Building the checked-in
 Forth sources does not run this decompiler or read the reference game disks.
 """
 import argparse
@@ -19,6 +19,24 @@ ORIGIN, END, LAST = 0x0E80, 0x9247, 0x91F4
 RUNTIMES = {0x1441: 'DOCOL', 0x147D: 'DOCON', 0x1499: 'DOVAR',
             0x14B2: 'DOUSER', 0x18D8: 'DODOES'}
 BRANCHES = {0x0FA2, 0x0FC1, 0x0FE2, 0x1012}
+# Verified machine-code islands outside direct native dictionary bodies. These
+# addresses are shared by the three saved GAM FORTH kernels. DOES> tails are
+# threaded Forth, so stopping the thread decoder alone is not evidence of code.
+NATIVE_ISLANDS = ((0x0E86, 0x0EA2), (0x1441, 0x1456),
+                  (0x147D, 0x1488), (0x1499, 0x14A5),
+                  (0x14B2, 0x14C1), (0x18D8, 0x18F6),
+                  (0x22BE, 0x2303), (0x2306, 0x2386))
+NATIVE_DATA = {
+    0x2A00: 'SAVE sector counter; mutable data',
+    0x2A75: 'Cassette filename: ASCII C',
+}
+ASM_MODES = {
+    'imp': ('', 1), 'acc': ('.A', 1), 'imm': ('.#', 2),
+    'zpg': ('.ZP', 2), 'zpx': ('.ZPX', 2), 'zpy': ('.ZPY', 2),
+    'abs': ('.ABS', 3), 'abx': ('.ABSX', 3), 'aby': ('.ABSY', 3),
+    'ind': ('.IND', 3), 'inx': ('.INDX', 2), 'iny': ('.INDY', 2),
+    'rel': ('', 2),
+}
 
 
 def cell(data, at):
@@ -116,6 +134,8 @@ class Listing:
 
     def comment(self, text):
         # Parentheses in names and disassembler output must not end a comment.
+        text = ''.join(c if 32 <= ord(c) < 127 else f'\\x{ord(c):02X}'
+                       for c in text)
         text = text.replace('(', '[').replace(')', ']')
         while text:
             n = min(58, len(text))
@@ -170,7 +190,8 @@ def decode(data, start, end, by_cfa):
                         end=at + 3 + data[at + 2])
         result.append(insn)
         at = insn['end']
-        # These words replace the code field with the following machine code.
+        # (;CODE) introduces native code; DOES> has a separate threaded tail.
+        # Stop here and classify that tail independently before emitting it.
         if cfa in (0x188E, 0x18CC):
             break
     return result, at
@@ -205,20 +226,56 @@ def emit_thread(out, data, word, by_cfa):
             out.token(by_cfa[cfa]['id'])
     out.flush()
     if stop != word['end']:
-        out.comment(f'Trailing native code/data at {stop:04X}; retained exactly')
-        out.raw(data[stop:word['end']])
+        out.comment(f'Trailing code/data at {stop:04X}; retained exactly')
+        emit_region(out, data, stop, word['end'])
     return len(instructions), word['end'] - stop
 
 
-def native(out, data, start, end, disassembler):
+def native(out, data, start, end):
+    """Emit actual Forth assembler words, preserving operand widths and data."""
+    from py65.devices.mpu6502 import MPU
+
     at = start
     while at < end:
-        n, text = disassembler.instruction_at(at)
-        n = min(n, end - at)
-        text = text.replace('(', '[').replace(')', ']')
-        out.line('BYTES ' + bytes(data[at:at+n]).hex().upper() +
-                 f' ( {at:04X}: {text} )')
+        if at in NATIVE_DATA:
+            out.comment(f'{at:04X}: {NATIVE_DATA[at]}')
+            out.raw(data[at:at+1])
+            at += 1
+            continue
+        mnemonic, mode = MPU.disassemble[data[at]]
+        suffix, n = ASM_MODES.get(mode, ('', 1))
+        boundary = min([end] + [a for a in NATIVE_DATA if a > at])
+        if mnemonic == '???' or mode not in ASM_MODES or at + n > boundary:
+            # Without a complete legal instruction there is no defensible
+            # synchronization point. Keep the remainder raw up to known data.
+            out.comment(f'Undecoded native bytes at {at:04X}')
+            out.raw(data[at:boundary])
+            at = boundary
+            continue
+        text = mnemonic + suffix
+        if mode == 'rel':
+            offset = data[at+1]
+            if offset >= 128:
+                offset -= 256
+            text += f' {(at + 2 + offset) & 0xFFFF:04X}'
+        elif n == 2:
+            text += f' {data[at+1]:02X}'
+        elif n == 3:
+            text += f' {cell(data, at+1):04X}'
+        out.line(f'{text:<20} ( {at:04X} )')
         at += n
+
+
+def emit_region(out, data, start, end):
+    """Split mixed data only at independently identified executable islands."""
+    at = start
+    for lo, hi in NATIVE_ISLANDS:
+        if start <= lo < hi <= end:
+            out.raw(data[at:lo])
+            out.comment(f'6502 code at {lo:04X}..{hi-1:04X}')
+            native(out, data, lo, hi)
+            at = hi
+    out.raw(data[at:end])
 
 
 def main():
@@ -226,8 +283,6 @@ def main():
     parser.add_argument('--reference', type=Path,
                         default=ROOT / 'reference/ad2044-side1.atr')
     args = parser.parse_args()
-    from py65.devices.mpu6502 import MPU
-    from py65.disassembler import Disassembler
     disk = args.reference.read_bytes()
     data = memory(disk)
     words = dictionary(data)
@@ -235,7 +290,6 @@ def main():
     identifiers(words, names)
     by_cfa = {w['cfa']: w for w in words}
     catalog = text_records.Catalog('ad2044', data, words, decode)
-    disassembler = Disassembler(MPU(memory=data))
     source = ROOT / 'src'
     source.mkdir(exist_ok=True)
     out = Listing()
@@ -262,12 +316,13 @@ def main():
         out.comment(f'AD 2044 {filename}: target {start:04X}..{end-1:04X}')
         out.comment('Hexadecimal. BYTES emits hex bytes; CELL emits a 16-bit cell.')
         out.comment('LIT8/LIT16 compile literals; branch cells are signed offsets.')
+        out.comment('6502 mnemonics use 06-assembler.fth; operands follow words.')
         if index == 0:
             out.line('3 T-DISK')
             out.line(f'{ORIGIN:04X} T-ORG')
             out.line('GAME-MODE')
             out.comment('Boot loader, cold-start parameters, initial user area')
-            out.raw(data[ORIGIN:words[0]['nfa']])
+            emit_region(out, data, ORIGIN, words[0]['nfa'])
         for word in words:
             if not start <= word['nfa'] < end:
                 continue
@@ -296,7 +351,7 @@ def main():
                         out.raw(data[word['pfa']:word['end']])
             else:
                 out.line(f"CELL {word['code']:04X} ( native entry point )")
-                native(out, data, word['pfa'], word['end'], disassembler)
+                native(out, data, word['pfa'], word['end'])
             out.line(f"AT {word['end']:04X}")
         if index == len(groups) - 1:
             out.line('T-FINISH')

@@ -78,6 +78,7 @@ Compilation is substantially faster with emulator turbo mode enabled.
 | `src/metacompiler.fth` | Target byte/cell emitters and disk writer |
 | `src/00-target-words.fth` | Target CFA symbols |
 | `src/05-emission.fth` | Faster source-reading emitters |
+| `src/06-assembler.fth` | Forth target assembler for all 151 official NMOS 6502 opcodes |
 | `src/10-kernel.fth` | Boot loader, release-specific bypass and APX kernel |
 | `src/20-framework.fth` | Assembler, graphics, input, sound and engine words |
 | `src/30-game.fth` | Game actions, main loop and scrolling introduction |
@@ -87,8 +88,21 @@ All `.fth` files are ASCII with LF newlines and lines at most 64 characters.
 `DOCOL` emits a colon-definition code field; target symbols emit calls;
 `LIT8` and `LIT16` emit literals. Branch offsets retain destination comments.
 ATASCII strings retain their exact bytes and have readable comments. Native
-6502 instructions have disassembly comments; linear disassembly may also
-cover embedded data tables.
+6502 bodies and verified machine-code tails use executable assembler
+mnemonics. `BYTES` retains headers, tables and unclassified mixed regions.
+
+The assembler loads after `05-emission.fth`. Its hexadecimal prefix syntax
+includes `LDA.# 03`, `STA.ZP D1`, `LDA.ABS 0000`, and `JSR.ABS E456`.
+`BNE 2A01` specifies an absolute destination and computes the relative branch;
+`RTS` is implied and `ASL.A` selects the accumulator. Explicit addressing modes
+preserve absolute instructions even below `$0100`. Byte operands and branch
+displacements are range-checked.
+
+The stock APX host has no assembler, so this target assembler is written in
+ordinary Forth. It is separate from the original postfix assembler retained
+inside the game's GAM dictionary. Conventional `CODE` would allocate fresh headers
+and addresses; emitting the saved headers and assembled instructions directly
+preserves the original target layout.
 
 [strings.txt](strings.txt) is a readable ASCII catalog of dictionary messages
 and menu labels. [strings.json](strings.json) includes addresses, raw bytes,

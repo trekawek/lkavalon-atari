@@ -24,14 +24,15 @@ do not change the compiled bytes.
 | [src/metacompiler.fth](src/metacompiler.fth) | Portable APX compiler, disk writer, target literals and data emission |
 | [src/00-target-words.fth](src/00-target-words.fth) | Symbolic target code-field addresses |
 | [src/05-emission.fth](src/05-emission.fth) | Fast emitters used while reading the reconstructed sources |
+| [src/06-assembler.fth](src/06-assembler.fth) | Forth target assembler for all 151 official NMOS 6502 opcodes |
 | [src/10-kernel.fth](src/10-kernel.fth) | Boot code and modified APX fig-Forth kernel |
 | [src/20-framework.fth](src/20-framework.fth) | Assembler, disk I/O, graphics, text, input, and game framework |
 | [src/30-game.fth](src/30-game.fth) | Game definitions, startup, and turnkey saving |
 
 All `.fth` files are ASCII with LF newlines and lines no longer than 64
 characters. ATASCII strings retain their exact bytes, with readable comments.
-Native 6502 code has disassembly comments alongside hex emission. Some native
-regions contain embedded tables, so linear disassembly there is only an aid.
+Native 6502 bodies and verified machine-code tails use executable assembler
+mnemonics. Embedded data and unclassified mixed regions retain `BYTES`.
 
 [strings.txt](strings.txt) lists decoded messages and menu labels with their
 target addresses. [strings.json](strings.json) additionally records original
@@ -53,9 +54,22 @@ compiler. Here, `DOCOL` emits a target colon definition; `t.DUP` emits its
 target `DUP` call; `LIT16 1234` compiles a 16-bit literal; and `AT 1234` checks
 the target address. `t.0BRANCH CELL xxxx` and loop branches keep the original
 signed offsets, with destination labels in comments. `BYTES` is used for
-headers, native instructions, and data. The `t.` names and `wXXXX` identifiers
+headers and raw data. The `t.` names and `wXXXX` identifiers
 belong to the build interpreter; the saved game's headers retain their
 original bytes.
+
+The assembler loads after `05-emission.fth` and uses hexadecimal prefix
+operands: `LDA.# 03`, `STA.ZP D1`, `LDA.ABS 0000`, and `JSR.ABS E456`.
+`BNE 2A01` names an absolute destination and computes the signed relative
+displacement; `RTS` has no operand and `ASL.A` selects the accumulator.
+Addressing modes are explicit, so an absolute address below `$0100` stays
+absolute. Byte operands and branch displacements are range-checked.
+
+This target assembler is implemented in ordinary Forth because the stock APX
+host has no assembler. The saved GAM dictionary's original postfix assembler
+is still reconstructed separately. Conventional `CODE` definitions would allocate new
+headers and addresses; these sources instead emit the saved headers and
+machine instructions at their original target locations.
 
 This is readable, low-level threaded Forth, **not a portable, relocatable
 rewrite**. Editing definition sizes requires updating absolute addresses and

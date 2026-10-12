@@ -47,6 +47,15 @@ make test
 
 Heartlight builds a standalone XEX from its original objects and the caves embedded in its BASIC loader. Automat Perkusyjny builds the original disk and cassette XEX files byte for byte. Watson assembles two source revisions, but its archive has no matching executable for a binary comparison. See each directory's README for details.
 
+The three reconstructed Forth games assemble native 6502 routines through
+`src/06-assembler.fth`, a target assembler written in Forth and loaded by the
+stock APX interpreter. Instructions use explicit addressing modes, such as
+`LDA.# 03`, `STA.ZP D1`, and `JSR.ABS E456`; branches name their hexadecimal
+destination address. Headers, tables, strings and unclassified mixed regions
+remain byte data. This keeps the saved dictionary's original addresses while
+making verified machine code editable as mnemonics. See each game's source
+notes for the syntax and remaining reconstruction limits.
+
 ## Extracted music
 
 * [Klątwa music](klatwa/music): original title and gameplay CMC modules, six subsongs.

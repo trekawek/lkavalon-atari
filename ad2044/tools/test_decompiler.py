@@ -148,12 +148,56 @@ class ThreadTests(unittest.TestCase):
                 self.assertEqual(instructions, [])
                 self.assertEqual(stop, 0)
 
-    def test_does_and_semicolon_code_stop_before_machine_code(self):
+    def test_runtime_definers_stop_before_unclassified_tail(self):
         for cfa in (0x188e, 0x18cc):
             body = cfa.to_bytes(2, "little") + bytes.fromhex("670f00")
             instructions, stop = d.decode(body, 0, len(body), {cfa: {}, 0x0f67: {}})
             self.assertEqual(len(instructions), 1)
             self.assertEqual(stop, 2)
+
+
+class NativeListingTests(unittest.TestCase):
+    def listing(self, body, start):
+        data = bytearray(65536)
+        data[start:start + len(body)] = body
+        out = d.Listing()
+        d.native(out, data, start, start + len(body))
+        return comments_removed_tokens('\n'.join(out.lines))
+
+    def test_mnemonics_preserve_width_and_signed_branch_destination(self):
+        self.assertEqual(
+            self.listing(bytes.fromhex('ad0000a500d0f960'), 0x4000),
+            ['LDA.ABS', '0000', 'LDA.ZP', '00', 'BNE', '4000', 'RTS'])
+
+    def test_save_counter_is_data_and_error_entry_is_resynchronized(self):
+        self.assertEqual(
+            self.listing(bytes.fromhex('4c5910c64cf31e'), 0x29fd),
+            ['JMP.ABS', '1059', 'BYTES', 'C6', 'JMP.ABS', '1EF3'])
+
+    def test_cassette_filename_is_data(self):
+        self.assertEqual(self.listing(b'C', 0x2a75), ['BYTES', '43'])
+
+    def test_unknown_or_truncated_code_is_retained_without_guessing(self):
+        for raw in (bytes.fromhex('ad00'), bytes.fromhex('0260')):
+            with self.subTest(raw=raw.hex()):
+                self.assertEqual(self.listing(raw, 0x4000),
+                                 ['BYTES', raw.hex().upper()])
+
+    def test_does_thread_is_not_assumed_to_be_native_code(self):
+        data = bytearray(65536)
+        data[0x4000:0x4004] = bytes.fromhex('cc18670f')
+        out = d.Listing()
+        d.emit_thread(out, data, {'pfa': 0x4000, 'end': 0x4004},
+                      {0x18cc: {'id': 't.DOES>'}})
+        self.assertEqual(comments_removed_tokens('\n'.join(out.lines)),
+                         ['t.DOES>', 'BYTES', '670F'])
+
+    def test_io_device_names_between_code_islands_stay_data(self):
+        data = d.memory((ROOT / 'reference/ad2044-side1.atr').read_bytes())
+        out = d.Listing()
+        d.emit_region(out, data, 0x22be, 0x2386)
+        raw = [line for line in out.lines if line.startswith('BYTES ')]
+        self.assertEqual(raw, ['BYTES 4B4550'])  # KEP device names
 
 
 class PackingTests(unittest.TestCase):

@@ -1,0 +1,10 @@
+{
+  "sources": [
+    "src/metacompiler.fth",
+    "src/00-target-words.fth",
+    "src/05-emission.fth",
+    "src/10-kernel.fth",
+    "src/20-framework.fth",
+    "src/30-game.fth"
+  ]
+}

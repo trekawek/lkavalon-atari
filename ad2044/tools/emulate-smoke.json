@@ -1,0 +1,12 @@
+[
+  {"wait": 5},
+  {"key": "F4", "hold": 8},
+  {"wait": 2},
+  {"screenshot": "main-menu.png"},
+  {"key": "Control_R", "hold": 2},
+  {"wait": 2},
+  {"screenshot": "first-room.png"},
+  {"key": "KP_6", "hold": 0.2},
+  {"wait": 1},
+  {"screenshot": "joystick-right.png"}
+]

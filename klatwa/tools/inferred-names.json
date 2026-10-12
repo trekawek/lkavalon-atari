@@ -1,0 +1,188 @@
+{
+  "429b": {
+    "nfa": "4293",
+    "name": "PAUSE",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name, not recovered original: Waits for the RTCLOK low byte $14 to change once per requested tick."
+  },
+  "503d": {
+    "nfa": "5035",
+    "name": "TRIGGER@",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name, not recovered original: Reads GTIA trigger register $D010 plus controller index and masks bit zero."
+  },
+  "3f58": {
+    "nfa": "3f51",
+    "name": "WORD-COUNT",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name, not recovered original: Returns address+2 and the 16-bit length stored at address."
+  },
+  "47cd": {
+    "nfa": "47c7",
+    "name": "RESOURCE-BASE",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name, not recovered original: Startup selects $A050 for introduction resources and $A3E0 for gameplay resources."
+  },
+  "5eb2": {
+    "nfa": "5eac",
+    "name": "DISABLE-DISPLAY-DMA",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name, not recovered original: Saves SDMCTL ($022F) and writes zero there."
+  },
+  "5ece": {
+    "nfa": "5ec8",
+    "name": "RESTORE-DISPLAY-DMA",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name, not recovered original: Restores SDMCTL ($022F) from the saved variable."
+  },
+  "5f26": {
+    "nfa": "5f1f",
+    "name": "PLAY-MUSIC",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name, not recovered original: Stores selected tune then calls native sound-player entry $3003 with A=0 and X=tune."
+  },
+  "5f3a": {
+    "nfa": "5f30",
+    "name": "STOP-MUSIC",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name, not recovered original: Calls native sound-player entry $3003 with command A=$40."
+  },
+  "6acb": {
+    "nfa": "6ac5",
+    "name": "GET-GAME-INPUT",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name, not recovered original: Sets an input-mode flag, invokes input/pointer polling, normalizes the result, clears the flag and returns it."
+  },
+  "6b74": {
+    "nfa": "6b6e",
+    "name": "EXECUTE-GAME-ACTION",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name, not recovered original: Selects an action PFA from a variable, converts to CFA and executes it."
+  },
+  "74db": {
+    "nfa": "74d5",
+    "name": "GAME-LOOP",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name, not recovered original: Initializes interface and action state, then repeatedly obtains input and executes game actions until the exit flag is set."
+  },
+  "8432": {
+    "nfa": "842d",
+    "name": "DICTIONARY-MARK",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name, not recovered original: Two saved cells contain HERE and LATEST for dictionary restoration."
+  },
+  "843d": {
+    "nfa": "8438",
+    "name": "SAVE-DICTIONARY-MARK",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name, not recovered original: Stores HERE and LATEST in the two cells at CFA8432."
+  },
+  "8454": {
+    "nfa": "844f",
+    "name": "RESTORE-DICTIONARY",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name, not recovered original: Restores DP and the cold-start DP/FENCE/latest cells from the dictionary mark."
+  },
+  "84e2": {
+    "nfa": "84dc",
+    "name": "TITLE-SKIP-FLAG",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name, not recovered original: Boolean flag set after controller-zero trigger is pressed."
+  },
+  "84ec": {
+    "nfa": "84e6",
+    "name": "POLL-TITLE-SKIP",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name, not recovered original: Tests trigger zero and sets title-skip flag on first press; stops the music."
+  },
+  "8517": {
+    "nfa": "8511",
+    "name": "WAIT-TITLE",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name, not recovered original: Waits a specified number of frame ticks while polling trigger zero; exits early on title-skip flag."
+  },
+  "853a": {
+    "nfa": "8533",
+    "name": "INIT-TITLE-DISPLAY",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name, not recovered original: Disables DMA, loads/installs intro display and character resources, initializes music and VBI; prints ERROR on failed load."
+  },
+  "8637": {
+    "nfa": "8631",
+    "name": "PRINT-CENTERED-TEXT",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name, not recovered original: Centers a word-counted string in a 40-column line and calls STYPE."
+  },
+  "865d": {
+    "nfa": "8657",
+    "name": "SCREEN-ROW-ADDR",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name, not recovered original: Multiplies row by 40 and adds the OS screen pointer at $58."
+  },
+  "8675": {
+    "nfa": "866f",
+    "name": "COPY-TEXT-ROW",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name, not recovered original: Copies 40 bytes from the temporary line buffer into the requested screen row."
+  },
+  "868b": {
+    "nfa": "8685",
+    "name": "CLEAR-TEXT-ROW",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name, not recovered original: Erases 40 bytes at the requested screen row."
+  },
+  "869e": {
+    "nfa": "8697",
+    "name": "RENDER-CENTERED-ROW",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name, not recovered original: Temporarily switches the OS screen pointer to a 40-byte buffer, renders centered text, then restores it."
+  },
+  "86cd": {
+    "nfa": "86c8",
+    "name": "SCROLL-EIGHT-PIXELS",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name, not recovered original: Writes 0,2,4,6 into ANTIC VSCROL ($D405), pausing one tick between values."
+  },
+  "86ef": {
+    "nfa": "86e9",
+    "name": "SCROLL-TITLE-ROW",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name, not recovered original: Moves the prepared row through screen lines with vertical fine scrolling, polling for the skip trigger."
+  },
+  "8763": {
+    "nfa": "875d",
+    "name": "SCROLL-TITLE-TEXT",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name, not recovered original: Looks up consecutive packed lines, centers them in the temporary buffer and scrolls each into the title area."
+  },
+  "8783": {
+    "nfa": "877d",
+    "name": "SHOW-TITLE-PAGE",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name, not recovered original: Scrolls the lines of one packed title page and waits 150 frame ticks."
+  },
+  "87a0": {
+    "nfa": "879a",
+    "name": "SHOW-TITLE-SEQUENCE",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name, not recovered original: Loops over eight intro text pages until trigger zero is pressed, then changes music and presents the final page."
+  },
+  "87e7": {
+    "nfa": "87df",
+    "name": "BOOT-INTRO",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name, not recovered original: Selects intro resources, initializes the title, restores dictionary state, shows intro pages, selects gameplay resources and enters GAME-LOOP."
+  },
+  "3e60": {
+    "nfa": "3e56",
+    "name": "RUN-VBI1",
+    "confidence": "source-match",
+    "evidence": "Matches GAM FORTH deferred-VBI native routine: SETVBV with X/Y selecting vector $3E18."
+  },
+  "3e7d": {
+    "nfa": "3e72",
+    "name": "STOP-VBI1",
+    "confidence": "source-match",
+    "evidence": "Matches GAM FORTH deferred-VBI native routine: SETVBV with X/Y selecting vector $E462."
+  }
+}

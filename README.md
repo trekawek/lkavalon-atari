@@ -2,18 +2,21 @@
 
 Repository contains sources of LK Avalon games and programs for 8-bit Atari.
 
-Sources were downloaded from [Atari XL/XE Source Archive](http://sources.pigwa.net/), transformed from ATASCII to ASCII with [convert-atascii.go](util/convert-atascii.go) and manually cleaned up. The assembly sources can be compiled with [MADS](https://mads.atari8.info/).
+Most original sources were downloaded from [Atari XL/XE Source Archive](http://sources.pigwa.net/), transformed from ATASCII to ASCII with [convert-atascii.go](util/convert-atascii.go) and manually cleaned up. The assembly sources can be compiled with [MADS](https://mads.atari8.info/). The Forth games listed below were reconstructed from their released disk images and rebuild through the original APX fig-Forth compiler.
 
 ## Available sources
 
+* [A.D. 2044: Sexmisja](ad2044) - reconstructed ASCII fig-Forth sources
 * [Automat Perkusyjny](automat-perkusyjny)
 * [Digi Duck](digi-duck)
 * [Fred](fred)
 * [Hans Kloss](hans-kloss)
 * [Heartlight](heartlight)
+* [Klątwa](klatwa) - reconstructed ASCII fig-Forth sources
 * [Misja](misja)
 * [Robbo](robbo)
 * [Watson](watson)
+* [Władcy Ciemności](wladcy-ciemnosci) - reconstructed ASCII fig-Forth sources
 
 ## Requirements
 
@@ -21,6 +24,7 @@ Sources were downloaded from [Atari XL/XE Source Archive](http://sources.pigwa.n
 * GNU make
 * golang - optionally, for running extra tools
 * Python 3 - for Heartlight's cave data and Watson's packed source tools
+* Python 3 with py65 - for the original fig-Forth compiler used by A.D. 2044, Klątwa, and Władcy Ciemności
 
 ## Compilation
 
@@ -30,7 +34,7 @@ The older game directories can be compiled with:
 mads main.asm -o:game.xex
 ```
 
-All directories can be built with make:
+Directories can be built with make (see each Forth game's README for its setup):
 
 ```bash
 make

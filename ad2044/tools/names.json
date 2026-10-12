@@ -1,0 +1,2870 @@
+{
+  "0f2d": {
+    "nfa": "0f27",
+    "name": "LIT",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "0f67": {
+    "nfa": "0f60",
+    "name": "CLIT",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "0f8a": {
+    "nfa": "0f80",
+    "name": "EXECUTE",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "0fa2": {
+    "nfa": "0f99",
+    "name": "BRANCH",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "0fc1": {
+    "nfa": "0fb7",
+    "name": "0BRANCH",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "0fe2": {
+    "nfa": "0fd9",
+    "name": "(LOOP)",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1012": {
+    "nfa": "1008",
+    "name": "(+LOOP)",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1049": {
+    "nfa": "1042",
+    "name": "(DO)",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1062": {
+    "nfa": "105e",
+    "name": "I",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "106c": {
+    "nfa": "1064",
+    "name": "DIGIT",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "109d": {
+    "nfa": "1094",
+    "name": "(FIND)",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1103": {
+    "nfa": "10f9",
+    "name": "ENCLOSE",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1142": {
+    "nfa": "113b",
+    "name": "EMIT",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "114a": {
+    "nfa": "1144",
+    "name": "KEY",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1158": {
+    "nfa": "114c",
+    "name": "?TERMINAL",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "115f": {
+    "nfa": "115a",
+    "name": "CR",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1169": {
+    "nfa": "1161",
+    "name": "CMOVE",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "118e": {
+    "nfa": "1189",
+    "name": "U*",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "11c6": {
+    "nfa": "11c1",
+    "name": "U/",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1203": {
+    "nfa": "11fd",
+    "name": "AND",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1218": {
+    "nfa": "1213",
+    "name": "OR",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "122e": {
+    "nfa": "1228",
+    "name": "XOR",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1244": {
+    "nfa": "123e",
+    "name": "SP@",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1253": {
+    "nfa": "124d",
+    "name": "SP!",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1263": {
+    "nfa": "125d",
+    "name": "RP!",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1277": {
+    "nfa": "1272",
+    "name": ";S",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "128a": {
+    "nfa": "1282",
+    "name": "LEAVE",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "12a5": {
+    "nfa": "12a0",
+    "name": ">R",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "12b7": {
+    "nfa": "12b2",
+    "name": "R>",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "12c8": {
+    "nfa": "12c4",
+    "name": "R",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "12de": {
+    "nfa": "12d9",
+    "name": "0=",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "12f3": {
+    "nfa": "12ee",
+    "name": "0<",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1304": {
+    "nfa": "1300",
+    "name": "+",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "131d": {
+    "nfa": "1318",
+    "name": "D+",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1343": {
+    "nfa": "133b",
+    "name": "MINUS",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "135c": {
+    "nfa": "1353",
+    "name": "DMINUS",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1373": {
+    "nfa": "136c",
+    "name": "OVER",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1384": {
+    "nfa": "137d",
+    "name": "DROP",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "138d": {
+    "nfa": "1386",
+    "name": "SWAP",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "13a5": {
+    "nfa": "139f",
+    "name": "DUP",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "13b4": {
+    "nfa": "13af",
+    "name": "+!",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "13d5": {
+    "nfa": "13cc",
+    "name": "TOGGLE",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "13e4": {
+    "nfa": "13e0",
+    "name": "@",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "13f9": {
+    "nfa": "13f4",
+    "name": "C@",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1408": {
+    "nfa": "1404",
+    "name": "!",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1420": {
+    "nfa": "141b",
+    "name": "C!",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "142d": {
+    "nfa": "1429",
+    "name": ":",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "145a": {
+    "nfa": "1456",
+    "name": ";",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1473": {
+    "nfa": "1468",
+    "name": "CONSTANT",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1493": {
+    "nfa": "1488",
+    "name": "VARIABLE",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "14ac": {
+    "nfa": "14a5",
+    "name": "USER",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "14c5": {
+    "nfa": "14c1",
+    "name": "0",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "14cd": {
+    "nfa": "14c9",
+    "name": "1",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "14d5": {
+    "nfa": "14d1",
+    "name": "2",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "14dd": {
+    "nfa": "14d9",
+    "name": "3",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "14e6": {
+    "nfa": "14e1",
+    "name": "BL",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "14f0": {
+    "nfa": "14ea",
+    "name": "C/L",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "14fc": {
+    "nfa": "14f4",
+    "name": "FIRST",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1508": {
+    "nfa": "1500",
+    "name": "LIMIT",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1514": {
+    "nfa": "150c",
+    "name": "B/BUF",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1520": {
+    "nfa": "1518",
+    "name": "B/SCR",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "152e": {
+    "nfa": "1524",
+    "name": "+ORIGIN",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "153e": {
+    "nfa": "1538",
+    "name": "TIB",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1549": {
+    "nfa": "1541",
+    "name": "WIDTH",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1556": {
+    "nfa": "154c",
+    "name": "WARNING",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1561": {
+    "nfa": "1559",
+    "name": "FENCE",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1569": {
+    "nfa": "1564",
+    "name": "DP",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1577": {
+    "nfa": "156c",
+    "name": "VOC-LINK",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1580": {
+    "nfa": "157a",
+    "name": "BLK",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1588": {
+    "nfa": "1583",
+    "name": "IN",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1591": {
+    "nfa": "158b",
+    "name": "OUT",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "159a": {
+    "nfa": "1594",
+    "name": "SCR",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "15a6": {
+    "nfa": "159d",
+    "name": "OFFSET",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "15b3": {
+    "nfa": "15a9",
+    "name": "CONTEXT",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "15c0": {
+    "nfa": "15b6",
+    "name": "CURRENT",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "15cb": {
+    "nfa": "15c3",
+    "name": "STATE",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "15d5": {
+    "nfa": "15ce",
+    "name": "BASE",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "15de": {
+    "nfa": "15d8",
+    "name": "DPL",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "15e7": {
+    "nfa": "15e1",
+    "name": "FLD",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "15f0": {
+    "nfa": "15ea",
+    "name": "CSP",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "15f8": {
+    "nfa": "15f3",
+    "name": "R#",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1601": {
+    "nfa": "15fb",
+    "name": "HLD",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1609": {
+    "nfa": "1604",
+    "name": "1+",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1616": {
+    "nfa": "1611",
+    "name": "2+",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1625": {
+    "nfa": "161e",
+    "name": "HERE",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1635": {
+    "nfa": "162d",
+    "name": "ALLOT",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1641": {
+    "nfa": "163d",
+    "name": ",",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1652": {
+    "nfa": "164d",
+    "name": "C,",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1662": {
+    "nfa": "165e",
+    "name": "-",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "166e": {
+    "nfa": "166a",
+    "name": "=",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "167b": {
+    "nfa": "1676",
+    "name": "U<",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "169b": {
+    "nfa": "1697",
+    "name": "<",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "16b8": {
+    "nfa": "16b4",
+    "name": ">",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "16c6": {
+    "nfa": "16c0",
+    "name": "ROT",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "16da": {
+    "nfa": "16d2",
+    "name": "SPACE",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "16e9": {
+    "nfa": "16e2",
+    "name": "-DUP",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1700": {
+    "nfa": "16f5",
+    "name": "TRAVERSE",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1724": {
+    "nfa": "171b",
+    "name": "LATEST",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1734": {
+    "nfa": "172e",
+    "name": "LFA",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1743": {
+    "nfa": "173d",
+    "name": "CFA",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1751": {
+    "nfa": "174b",
+    "name": "NFA",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1766": {
+    "nfa": "1760",
+    "name": "PFA",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "177a": {
+    "nfa": "1773",
+    "name": "!CSP",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "178d": {
+    "nfa": "1784",
+    "name": "?ERROR",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "17a7": {
+    "nfa": "179f",
+    "name": "?COMP",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "17be": {
+    "nfa": "17b6",
+    "name": "?EXEC",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "17d4": {
+    "nfa": "17cb",
+    "name": "?PAIRS",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "17e6": {
+    "nfa": "17df",
+    "name": "?CSP",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1802": {
+    "nfa": "17f7",
+    "name": "?LOADING",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "181b": {
+    "nfa": "1811",
+    "name": "COMPILE",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1831": {
+    "nfa": "182d",
+    "name": "[",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "183f": {
+    "nfa": "183b",
+    "name": "]",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1853": {
+    "nfa": "184a",
+    "name": "SMUDGE",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1864": {
+    "nfa": "185e",
+    "name": "HEX",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1879": {
+    "nfa": "186f",
+    "name": "DECIMAL",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "188e": {
+    "nfa": "1884",
+    "name": "(;CODE)",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "18a4": {
+    "nfa": "189c",
+    "name": ";CODE",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "18bc": {
+    "nfa": "18b2",
+    "name": "<BUILDS",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "18cc": {
+    "nfa": "18c4",
+    "name": "DOES>",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "18fe": {
+    "nfa": "18f6",
+    "name": "COUNT",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1911": {
+    "nfa": "190a",
+    "name": "TYPE",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1944": {
+    "nfa": "1938",
+    "name": "-TRAILING",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1977": {
+    "nfa": "1970",
+    "name": "(.\")",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1990": {
+    "nfa": "198b",
+    "name": ".\"",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "19c1": {
+    "nfa": "19b9",
+    "name": "QUERY",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "19d8": {
+    "nfa": "19d4",
+    "name": "\u0000",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1a17": {
+    "nfa": "1a10",
+    "name": "FILL",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1a37": {
+    "nfa": "1a2f",
+    "name": "ERASE",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1a48": {
+    "nfa": "1a3f",
+    "name": "BLANKS",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1a57": {
+    "nfa": "1a50",
+    "name": "HOLD",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1a6f": {
+    "nfa": "1a69",
+    "name": "PAD",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1a81": {
+    "nfa": "1a7a",
+    "name": "NEXT",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1a8c": {
+    "nfa": "1a85",
+    "name": "PUSH",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1a96": {
+    "nfa": "1a90",
+    "name": "PUT",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1aa3": {
+    "nfa": "1a9a",
+    "name": "PUSH0A",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1aad": {
+    "nfa": "1aa7",
+    "name": "POP",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1aba": {
+    "nfa": "1ab1",
+    "name": "POPTWO",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1ac7": {
+    "nfa": "1abe",
+    "name": "BINARY",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1ad0": {
+    "nfa": "1acb",
+    "name": "IP",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1ad8": {
+    "nfa": "1ad4",
+    "name": "W",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1ae0": {
+    "nfa": "1adc",
+    "name": "N",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1aec": {
+    "nfa": "1ae4",
+    "name": "XSAVE",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1af5": {
+    "nfa": "1af0",
+    "name": "UP",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1b01": {
+    "nfa": "1af9",
+    "name": "SETUP",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1b0d": {
+    "nfa": "1b05",
+    "name": "PFLAG",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1b19": {
+    "nfa": "1b11",
+    "name": "GFLAG",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1b24": {
+    "nfa": "1b1d",
+    "name": "WORD",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1b74": {
+    "nfa": "1b69",
+    "name": "(NUMBER)",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1bbf": {
+    "nfa": "1bb6",
+    "name": "NUMBER",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1c15": {
+    "nfa": "1c0d",
+    "name": "-FIND",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1c41": {
+    "nfa": "1c37",
+    "name": "(ABORT)",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1c4f": {
+    "nfa": "1c47",
+    "name": "ERROR",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1c84": {
+    "nfa": "1c7e",
+    "name": "ID.",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1cb8": {
+    "nfa": "1caf",
+    "name": "CREATE",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1d2b": {
+    "nfa": "1d1f",
+    "name": "[COMPILE]",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1d47": {
+    "nfa": "1d3d",
+    "name": "LITERAL",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1d64": {
+    "nfa": "1d59",
+    "name": "DLITERAL",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1d7f": {
+    "nfa": "1d76",
+    "name": "?STACK",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1da8": {
+    "nfa": "1d9c",
+    "name": "INTERPRET",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1df8": {
+    "nfa": "1dec",
+    "name": "IMMEDIATE",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1e10": {
+    "nfa": "1e03",
+    "name": "VOCABULARY",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1e40": {
+    "nfa": "1e38",
+    "name": "FORTH",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1e58": {
+    "nfa": "1e4a",
+    "name": "DEFINITIONS",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1e6d": {
+    "nfa": "1e64",
+    "name": "PROMPT",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1e88": {
+    "nfa": "1e84",
+    "name": "(",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1e98": {
+    "nfa": "1e91",
+    "name": "QUIT",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1ec4": {
+    "nfa": "1ebc",
+    "name": "ABORT",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1ef3": {
+    "nfa": "1eec",
+    "name": "COLD",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1f4d": {
+    "nfa": "1f46",
+    "name": "S->D",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1f5c": {
+    "nfa": "1f57",
+    "name": "+-",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1f6e": {
+    "nfa": "1f68",
+    "name": "D+-",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1f80": {
+    "nfa": "1f7a",
+    "name": "ABS",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1f8f": {
+    "nfa": "1f88",
+    "name": "DABS",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1f9d": {
+    "nfa": "1f97",
+    "name": "MIN",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1fb5": {
+    "nfa": "1faf",
+    "name": "MAX",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1fcc": {
+    "nfa": "1fc7",
+    "name": "M*",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "1fe9": {
+    "nfa": "1fe4",
+    "name": "M/",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "200f": {
+    "nfa": "200b",
+    "name": "*",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "201e": {
+    "nfa": "2017",
+    "name": "/MOD",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "202e": {
+    "nfa": "202a",
+    "name": "/",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "203e": {
+    "nfa": "2038",
+    "name": "MOD",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "204e": {
+    "nfa": "2046",
+    "name": "*/MOD",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "205f": {
+    "nfa": "205a",
+    "name": "*/",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "2071": {
+    "nfa": "2069",
+    "name": "M/MOD",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "208d": {
+    "nfa": "2087",
+    "name": "USE",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "2098": {
+    "nfa": "2091",
+    "name": "PREV",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "20a3": {
+    "nfa": "209c",
+    "name": "+BUF",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "20cc": {
+    "nfa": "20c3",
+    "name": "UPDATE",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "20ea": {
+    "nfa": "20e2",
+    "name": "FLUSH",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "211f": {
+    "nfa": "210f",
+    "name": "EMPTY-BUFFERS",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "2133": {
+    "nfa": "212d",
+    "name": "DR0",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "2143": {
+    "nfa": "213d",
+    "name": "DR1",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "2158": {
+    "nfa": "214f",
+    "name": "BUFFER",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "21a0": {
+    "nfa": "2198",
+    "name": "BLOCK",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "2201": {
+    "nfa": "21f8",
+    "name": "(LINE)",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "2223": {
+    "nfa": "221b",
+    "name": ".LINE",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "2237": {
+    "nfa": "222d",
+    "name": "MESSAGE",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "2270": {
+    "nfa": "2269",
+    "name": "LOAD",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "22a2": {
+    "nfa": "229c",
+    "name": "-->",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "238f": {
+    "nfa": "2386",
+    "name": "EXPECT",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "2416": {
+    "nfa": "240e",
+    "name": "-DISK",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "245b": {
+    "nfa": "2455",
+    "name": "R/W",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "248c": {
+    "nfa": "2488",
+    "name": "'",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "24a5": {
+    "nfa": "249c",
+    "name": "FORGET",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "2510": {
+    "nfa": "2509",
+    "name": "BACK",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "2522": {
+    "nfa": "251a",
+    "name": "BEGIN",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "2534": {
+    "nfa": "252c",
+    "name": "ENDIF",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "254f": {
+    "nfa": "2548",
+    "name": "THEN",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "255a": {
+    "nfa": "2555",
+    "name": "DO",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "256d": {
+    "nfa": "2566",
+    "name": "LOOP",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "2583": {
+    "nfa": "257b",
+    "name": "+LOOP",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "2599": {
+    "nfa": "2591",
+    "name": "UNTIL",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "25ad": {
+    "nfa": "25a7",
+    "name": "END",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "25bb": {
+    "nfa": "25b3",
+    "name": "AGAIN",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "25d2": {
+    "nfa": "25c9",
+    "name": "REPEAT",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "25eb": {
+    "nfa": "25e6",
+    "name": "IF",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "2602": {
+    "nfa": "25fb",
+    "name": "ELSE",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "2624": {
+    "nfa": "261c",
+    "name": "WHILE",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "2635": {
+    "nfa": "262c",
+    "name": "SPACES",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "2652": {
+    "nfa": "264d",
+    "name": "<#",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "2661": {
+    "nfa": "265c",
+    "name": "#>",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "267a": {
+    "nfa": "2673",
+    "name": "SIGN",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "268f": {
+    "nfa": "268b",
+    "name": "#",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "26b7": {
+    "nfa": "26b2",
+    "name": "#S",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "26cf": {
+    "nfa": "26c9",
+    "name": "D.R",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "26f2": {
+    "nfa": "26ed",
+    "name": "D.",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "2701": {
+    "nfa": "26fc",
+    "name": ".R",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "2711": {
+    "nfa": "270d",
+    "name": ".",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "271d": {
+    "nfa": "2719",
+    "name": "?",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "272a": {
+    "nfa": "2725",
+    "name": "U.",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "2737": {
+    "nfa": "2732",
+    "name": "C?",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "2744": {
+    "nfa": "273f",
+    "name": "D@",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "2759": {
+    "nfa": "2754",
+    "name": "D!",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "2770": {
+    "nfa": "2769",
+    "name": "2DUP",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "2780": {
+    "nfa": "2778",
+    "name": "2DROP",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "2790": {
+    "nfa": "2788",
+    "name": "2SWAP",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "27a4": {
+    "nfa": "279c",
+    "name": "2OVER",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "27bb": {
+    "nfa": "27b6",
+    "name": "ok",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "27d1": {
+    "nfa": "27cc",
+    "name": "U?",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "27e0": {
+    "nfa": "27d9",
+    "name": "LIST",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "2820": {
+    "nfa": "2818",
+    "name": "MATCH",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "287a": {
+    "nfa": "2872",
+    "name": "INDEX",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "28aa": {
+    "nfa": "28a2",
+    "name": "TRIAD",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "28db": {
+    "nfa": "28d3",
+    "name": "VLIST",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "2923": {
+    "nfa": "291c",
+    "name": "BOOT",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "2935": {
+    "nfa": "292d",
+    "name": "(FMT)",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "2958": {
+    "nfa": "294f",
+    "name": "(SAVE)",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "29a6": {
+    "nfa": "299f",
+    "name": "SAVE",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "29ae": {
+    "nfa": "29ae",
+    "name": "SAVE-DISK-PRIMITIVE",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name: headerless native CFA called by stock fig-FORTH SAVE."
+  },
+  "2a0c": {
+    "nfa": "2a04",
+    "name": "CSAVE",
+    "evidence": "APX fig-FORTH dictionary, same NFA/CFA and link in game"
+  },
+  "2a1b": {
+    "nfa": "2a1b",
+    "name": "SAVE-CASSETTE-PRIMITIVE",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name: headerless native CFA called by stock fig-FORTH CSAVE."
+  },
+  "2a82": {
+    "nfa": "2a76",
+    "name": "ASSEMBLER",
+    "evidence": "GAM FORTH 09_A_Forth.ATR CFA $2A82, corresponding word in contiguous 252-definition sequence matching name length/suffix, flags, word kind, and body length",
+    "confidence": "sequence-match"
+  },
+  "2a94": {
+    "nfa": "2a8c",
+    "name": "INDEX",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "2abd": {
+    "nfa": "2ab6",
+    "name": "MODE",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "2ac6": {
+    "nfa": "2ac1",
+    "name": ".A",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "2ad4": {
+    "nfa": "2ad0",
+    "name": "#",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "2ae4": {
+    "nfa": "2ade",
+    "name": "MEM",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "2af3": {
+    "nfa": "2aee",
+    "name": ",X",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "2b02": {
+    "nfa": "2afd",
+    "name": ",Y",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "2b13": {
+    "nfa": "2b0e",
+    "name": "X)",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "2b24": {
+    "nfa": "2b1f",
+    "name": ")Y",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "2b34": {
+    "nfa": "2b30",
+    "name": ")",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "2b46": {
+    "nfa": "2b40",
+    "name": "BOT",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "2b54": {
+    "nfa": "2b4e",
+    "name": "SEC",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "2b62": {
+    "nfa": "2b5c",
+    "name": "RP)",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "2b75": {
+    "nfa": "2b6c",
+    "name": "UPMODE",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "2bc3": {
+    "nfa": "2bbd",
+    "name": "CPU",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "2bda": {
+    "nfa": "2bd3",
+    "name": "BRK,",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "2be6": {
+    "nfa": "2bdf",
+    "name": "CLC,",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "2bf2": {
+    "nfa": "2beb",
+    "name": "CLD,",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "2bfe": {
+    "nfa": "2bf7",
+    "name": "CLI,",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "2c0a": {
+    "nfa": "2c03",
+    "name": "CLV,",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "2c16": {
+    "nfa": "2c0f",
+    "name": "DEX,",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "2c22": {
+    "nfa": "2c1b",
+    "name": "DEY,",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "2c2e": {
+    "nfa": "2c27",
+    "name": "INX,",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "2c3a": {
+    "nfa": "2c33",
+    "name": "INY,",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "2c46": {
+    "nfa": "2c3f",
+    "name": "NOP,",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "2c52": {
+    "nfa": "2c4b",
+    "name": "PHA,",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "2c5e": {
+    "nfa": "2c57",
+    "name": "PHP,",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "2c6a": {
+    "nfa": "2c63",
+    "name": "PLA,",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "2c76": {
+    "nfa": "2c6f",
+    "name": "PLP,",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "2c82": {
+    "nfa": "2c7b",
+    "name": "RTI,",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "2c8e": {
+    "nfa": "2c87",
+    "name": "RTS,",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "2c9a": {
+    "nfa": "2c93",
+    "name": "SEC,",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "2ca6": {
+    "nfa": "2c9f",
+    "name": "SED,",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "2cb2": {
+    "nfa": "2cab",
+    "name": "SEI,",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "2cbe": {
+    "nfa": "2cb7",
+    "name": "TAX,",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "2cca": {
+    "nfa": "2cc3",
+    "name": "TAY,",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "2cd6": {
+    "nfa": "2ccf",
+    "name": "TSX,",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "2ce2": {
+    "nfa": "2cdb",
+    "name": "TXA,",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "2cee": {
+    "nfa": "2ce7",
+    "name": "TXS,",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "2cfa": {
+    "nfa": "2cf3",
+    "name": "TYA,",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "2d05": {
+    "nfa": "2cff",
+    "name": "MCP",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "2d88": {
+    "nfa": "2d81",
+    "name": "ADC,",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "2d96": {
+    "nfa": "2d8f",
+    "name": "AND,",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "2da4": {
+    "nfa": "2d9d",
+    "name": "CMP,",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "2db2": {
+    "nfa": "2dab",
+    "name": "EOR,",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "2dc0": {
+    "nfa": "2db9",
+    "name": "LDA,",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "2dce": {
+    "nfa": "2dc7",
+    "name": "ORA,",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "2ddc": {
+    "nfa": "2dd5",
+    "name": "SBC,",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "2dea": {
+    "nfa": "2de3",
+    "name": "STA,",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "2df8": {
+    "nfa": "2df1",
+    "name": "ASL,",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "2e06": {
+    "nfa": "2dff",
+    "name": "DEC,",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "2e14": {
+    "nfa": "2e0d",
+    "name": "INC,",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "2e22": {
+    "nfa": "2e1b",
+    "name": "LSR,",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "2e30": {
+    "nfa": "2e29",
+    "name": "ROL,",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "2e3e": {
+    "nfa": "2e37",
+    "name": "ROR,",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "2e4c": {
+    "nfa": "2e45",
+    "name": "STX,",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "2e5a": {
+    "nfa": "2e53",
+    "name": "CPX,",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "2e68": {
+    "nfa": "2e61",
+    "name": "CPY,",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "2e76": {
+    "nfa": "2e6f",
+    "name": "LDX,",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "2e84": {
+    "nfa": "2e7d",
+    "name": "LDY,",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "2e92": {
+    "nfa": "2e8b",
+    "name": "STY,",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "2ea0": {
+    "nfa": "2e99",
+    "name": "JSR,",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "2eae": {
+    "nfa": "2ea7",
+    "name": "JMP,",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "2ebc": {
+    "nfa": "2eb5",
+    "name": "BIT,",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "2ecc": {
+    "nfa": "2ec3",
+    "name": "BEGIN,",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "2edd": {
+    "nfa": "2ed4",
+    "name": "UNTIL,",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "2efb": {
+    "nfa": "2ef5",
+    "name": "IF,",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "2f11": {
+    "nfa": "2f09",
+    "name": "THEN,",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "2f3f": {
+    "nfa": "2f37",
+    "name": "ELSE,",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "2f65": {
+    "nfa": "2f5f",
+    "name": "NOT",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "2f74": {
+    "nfa": "2f6f",
+    "name": "CS",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "2f7d": {
+    "nfa": "2f78",
+    "name": "0=",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "2f86": {
+    "nfa": "2f81",
+    "name": "0<",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "2f8f": {
+    "nfa": "2f8a",
+    "name": ">=",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "2f98": {
+    "nfa": "2f93",
+    "name": "C;",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "2fb5": {
+    "nfa": "2faa",
+    "name": "END-CODE",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "2fc2": {
+    "nfa": "2fbb",
+    "name": "CODE",
+    "evidence": "GAM FORTH 09_A_Forth.ATR CFA $2FC2, identical body after known address relocation; surviving name length and suffix match"
+  },
+  "2fd6": {
+    "nfa": "2fd0",
+    "name": "MAC",
+    "evidence": "GAM FORTH 09_A_Forth.ATR CFA $2FD6, identical body after known address relocation; surviving name length and suffix match"
+  },
+  "2ff3": {
+    "nfa": "2fec",
+    "name": "FREE",
+    "evidence": "GAM FORTH 09_A_Forth.ATR CFA $30A9, identical body after known address relocation; surviving name length and suffix match"
+  },
+  "3014": {
+    "nfa": "300d",
+    "name": "BEEP",
+    "evidence": "GAM FORTH 09_A_Forth.ATR CFA $3014, identical body after known address relocation; surviving name length and suffix match"
+  },
+  "3057": {
+    "nfa": "3050",
+    "name": "#GGE",
+    "evidence": "GAM FORTH 09_A_Forth.ATR CFA $3444, corresponding word in contiguous 33-definition sequence matching name length/suffix, flags, word kind, and body length",
+    "confidence": "sequence-match"
+  },
+  "3061": {
+    "nfa": "305b",
+    "name": "GGE",
+    "evidence": "GAM FORTH 09_A_Forth.ATR CFA $344E, identical body after known address relocation; surviving name length and suffix match"
+  },
+  "3071": {
+    "nfa": "3069",
+    "name": "INSTR",
+    "evidence": "GAM FORTH 09_A_Forth.ATR CFA $345E, corresponding word in contiguous 33-definition sequence matching name length/suffix, flags, word kind, and body length",
+    "confidence": "sequence-match"
+  },
+  "30aa": {
+    "nfa": "30a1",
+    "name": "SELECT",
+    "evidence": "GAM FORTH 09_A_Forth.ATR CFA $3497, identical body after known address relocation; surviving name length and suffix match"
+  },
+  "30c9": {
+    "nfa": "30c2",
+    "name": "BNAG",
+    "evidence": "GAM FORTH 09_A_Forth.ATR CFA $34B6, identical body after known address relocation; surviving name length and suffix match"
+  },
+  "30d1": {
+    "nfa": "30cd",
+    "name": "4",
+    "evidence": "GAM FORTH 09_A_Forth.ATR CFA $34BE, identical body after known address relocation; surviving name length and suffix match"
+  },
+  "30d9": {
+    "nfa": "30d5",
+    "name": "8",
+    "evidence": "GAM FORTH 09_A_Forth.ATR CFA $34C6, identical body after known address relocation; surviving name length and suffix match"
+  },
+  "30e2": {
+    "nfa": "30dd",
+    "name": "16",
+    "evidence": "GAM FORTH 09_A_Forth.ATR CFA $34CF, identical body after known address relocation; surviving name length and suffix match"
+  },
+  "30eb": {
+    "nfa": "30e6",
+    "name": "32",
+    "evidence": "GAM FORTH 09_A_Forth.ATR CFA $34D8, identical body after known address relocation; surviving name length and suffix match"
+  },
+  "30f4": {
+    "nfa": "30ef",
+    "name": "64",
+    "evidence": "GAM FORTH 09_A_Forth.ATR CFA $34E1, identical body after known address relocation; surviving name length and suffix match"
+  },
+  "30fe": {
+    "nfa": "30f8",
+    "name": "128",
+    "evidence": "GAM FORTH 09_A_Forth.ATR CFA $34EB, identical body after known address relocation; surviving name length and suffix match"
+  },
+  "3108": {
+    "nfa": "3102",
+    "name": "#FP",
+    "evidence": "GAM FORTH 09_A_Forth.ATR CFA $34F5, corresponding word in contiguous 33-definition sequence matching name length/suffix, flags, word kind, and body length",
+    "confidence": "sequence-match"
+  },
+  "3111": {
+    "nfa": "310c",
+    "name": "#F",
+    "evidence": "GAM FORTH 09_A_Forth.ATR CFA $34FE, corresponding word in contiguous 33-definition sequence matching name length/suffix, flags, word kind, and body length",
+    "confidence": "sequence-match"
+  },
+  "311c": {
+    "nfa": "3115",
+    "name": "FP2@",
+    "evidence": "GAM FORTH 09_A_Forth.ATR CFA $3509, corresponding word in contiguous 33-definition sequence matching name length/suffix, flags, word kind, and body length",
+    "confidence": "sequence-match"
+  },
+  "3135": {
+    "nfa": "312e",
+    "name": "FP2!",
+    "evidence": "GAM FORTH 09_A_Forth.ATR CFA $3522, corresponding word in contiguous 33-definition sequence matching name length/suffix, flags, word kind, and body length",
+    "confidence": "sequence-match"
+  },
+  "315b": {
+    "nfa": "3155",
+    "name": "C2^",
+    "evidence": "GAM FORTH 09_A_Forth.ATR CFA $3548, corresponding word in contiguous 33-definition sequence matching name length/suffix, flags, word kind, and body length",
+    "confidence": "sequence-match"
+  },
+  "317b": {
+    "nfa": "3171",
+    "name": "POZ-NAG",
+    "evidence": "GAM FORTH 09_A_Forth.ATR CFA $3568, corresponding word in contiguous 33-definition sequence matching name length/suffix, flags, word kind, and body length",
+    "confidence": "sequence-match"
+  },
+  "3193": {
+    "nfa": "318d",
+    "name": "NAG",
+    "evidence": "GAM FORTH 09_A_Forth.ATR CFA $3580, corresponding word in contiguous 33-definition sequence matching name length/suffix, flags, word kind, and body length",
+    "confidence": "sequence-match"
+  },
+  "31ad": {
+    "nfa": "31a3",
+    "name": "SAV-NAG",
+    "evidence": "GAM FORTH 09_A_Forth.ATR CFA $359A, corresponding word in contiguous 33-definition sequence matching name length/suffix, flags, word kind, and body length",
+    "confidence": "sequence-match"
+  },
+  "31cd": {
+    "nfa": "31c7",
+    "name": "$=$",
+    "evidence": "GAM FORTH 09_A_Forth.ATR CFA $35BA, identical body after known address relocation; surviving name length and suffix match"
+  },
+  "3207": {
+    "nfa": "31ff",
+    "name": "SP$=$",
+    "evidence": "GAM FORTH 09_A_Forth.ATR CFA $35F4, identical body after known address relocation; surviving name length and suffix match"
+  },
+  "3228": {
+    "nfa": "3223",
+    "name": "D$",
+    "evidence": "GAM FORTH 09_A_Forth.ATR CFA $3615, corresponding word in contiguous 33-definition sequence matching name length/suffix, flags, word kind, and body length",
+    "confidence": "sequence-match"
+  },
+  "3235": {
+    "nfa": "322c",
+    "name": "INSTR$",
+    "evidence": "GAM FORTH 09_A_Forth.ATR CFA $3622, corresponding word in contiguous 33-definition sequence matching name length/suffix, flags, word kind, and body length",
+    "confidence": "sequence-match"
+  },
+  "32a7": {
+    "nfa": "329d",
+    "name": "INSTR$$",
+    "evidence": "GAM FORTH 09_A_Forth.ATR CFA $3694, corresponding word in contiguous 33-definition sequence matching name length/suffix, flags, word kind, and body length",
+    "confidence": "sequence-match"
+  },
+  "32b5": {
+    "nfa": "32af",
+    "name": "OSF",
+    "evidence": "GAM FORTH 09_A_Forth.ATR CFA $36A2, corresponding word in contiguous 33-definition sequence matching name length/suffix, flags, word kind, and body length",
+    "confidence": "sequence-match"
+  },
+  "32c8": {
+    "nfa": "32bf",
+    "name": "POPRAW",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "3317": {
+    "nfa": "3310",
+    "name": "LIN0",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "332f": {
+    "nfa": "3327",
+    "name": "Y-SLO",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "3348": {
+    "nfa": "333d",
+    "name": "SZUK-SLO",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "3379": {
+    "nfa": "3374",
+    "name": "PH",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "3399": {
+    "nfa": "3393",
+    "name": "F0!",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "33ce": {
+    "nfa": "33c6",
+    "name": "?KOMU",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "3476": {
+    "nfa": "346e",
+    "name": "LOAD\"",
+    "evidence": "GAM FORTH 09_A_Forth.ATR CFA $3863, corresponding word in contiguous 33-definition sequence matching name length/suffix, flags, word kind, and body length",
+    "confidence": "sequence-match"
+  },
+  "34f2": {
+    "nfa": "34ec",
+    "name": "<=<",
+    "evidence": "GAM FORTH 09_A_Forth.ATR CFA $38DF, identical body after known address relocation; surviving name length and suffix match"
+  },
+  "3506": {
+    "nfa": "3502",
+    "name": "%",
+    "evidence": "GAM FORTH 09_A_Forth.ATR CFA $38F3, identical body after known address relocation; surviving name length and suffix match"
+  },
+  "3545": {
+    "nfa": "353e",
+    "name": "DIRB",
+    "evidence": "GAM FORTH 09_A_Forth.ATR CFA $3932, identical body after known address relocation; surviving name length and suffix match"
+  },
+  "354f": {
+    "nfa": "3549",
+    "name": "S-L",
+    "evidence": "GAM FORTH 09_A_Forth.ATR CFA $393C, corresponding word in contiguous 33-definition sequence matching name length/suffix, flags, word kind, and body length",
+    "confidence": "sequence-match"
+  },
+  "355b": {
+    "nfa": "3553",
+    "name": "BDISK",
+    "evidence": "GAM FORTH 09_A_Forth.ATR CFA $3948, identical body after known address relocation; surviving name length and suffix match"
+  },
+  "35b4": {
+    "nfa": "35af",
+    "name": "HE",
+    "evidence": "GAM FORTH 09_A_Forth.ATR CFA $39A1, identical body after known address relocation; surviving name length and suffix match"
+  },
+  "35be": {
+    "nfa": "35b8",
+    "name": "SP&",
+    "evidence": "GAM FORTH 09_A_Forth.ATR CFA $39AB, corresponding word in contiguous 33-definition sequence matching name length/suffix, flags, word kind, and body length",
+    "confidence": "sequence-match"
+  },
+  "35cd": {
+    "nfa": "35c2",
+    "name": "ASC-PEEK",
+    "evidence": "GAM FORTH 11_A_Graf.ATR CFA $3303, corresponding word in contiguous 10-definition sequence matching name length/suffix, flags, word kind, and body length",
+    "confidence": "sequence-match"
+  },
+  "362f": {
+    "nfa": "3624",
+    "name": "PEEK-ASC",
+    "evidence": "GAM FORTH 11_A_Graf.ATR CFA $3365, corresponding word in contiguous 10-definition sequence matching name length/suffix, flags, word kind, and body length",
+    "confidence": "sequence-match"
+  },
+  "364a": {
+    "nfa": "3645",
+    "name": "X!",
+    "evidence": "GAM FORTH 09_A_Forth.ATR CFA $3B7E, identical body after known address relocation; surviving name length and suffix match"
+  },
+  "3658": {
+    "nfa": "3653",
+    "name": "Y!",
+    "evidence": "GAM FORTH 09_A_Forth.ATR CFA $3B8C, identical body after known address relocation; surviving name length and suffix match"
+  },
+  "3666": {
+    "nfa": "3661",
+    "name": "X@",
+    "evidence": "GAM FORTH 09_A_Forth.ATR CFA $3B9A, identical body after known address relocation; surviving name length and suffix match"
+  },
+  "3674": {
+    "nfa": "366f",
+    "name": "Y@",
+    "evidence": "GAM FORTH 09_A_Forth.ATR CFA $3BA8, identical body after known address relocation; surviving name length and suffix match"
+  },
+  "3683": {
+    "nfa": "367d",
+    "name": "POS",
+    "evidence": "GAM FORTH 09_A_Forth.ATR CFA $3BB7, identical body after known address relocation; surviving name length and suffix match"
+  },
+  "3693": {
+    "nfa": "368b",
+    "name": "STYPE",
+    "evidence": "GAM FORTH 11_A_Graf.ATR CFA $33C9, corresponding word in contiguous 10-definition sequence matching name length/suffix, flags, word kind, and body length",
+    "confidence": "sequence-match"
+  },
+  "36e5": {
+    "nfa": "36de",
+    "name": "(S\")",
+    "evidence": "GAM FORTH 11_A_Graf.ATR CFA $341B, corresponding word in contiguous 10-definition sequence matching name length/suffix, flags, word kind, and body length",
+    "confidence": "sequence-match"
+  },
+  "36fe": {
+    "nfa": "36f9",
+    "name": "S\"",
+    "evidence": "GAM FORTH 11_A_Graf.ATR CFA $3434, corresponding word in contiguous 10-definition sequence matching name length/suffix, flags, word kind, and body length",
+    "confidence": "sequence-match"
+  },
+  "372f": {
+    "nfa": "3728",
+    "name": "ADIR",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "3739": {
+    "nfa": "3733",
+    "name": "SEP",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "3744": {
+    "nfa": "373d",
+    "name": "LDIR",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "37e6": {
+    "nfa": "37df",
+    "name": "DIRS",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "380e": {
+    "nfa": "3807",
+    "name": "DIRL",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "382a": {
+    "nfa": "3824",
+    "name": "-SE",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "3834": {
+    "nfa": "382e",
+    "name": "DSL",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "3876": {
+    "nfa": "386e",
+    "name": "BLOAD",
+    "evidence": "GAM FORTH 11_A_Graf.ATR CFA $365C, matching dependency at corresponding token in recovered DLOAD (game CFA $3A29); complete parent token streams agree after name relocation"
+  },
+  "38da": {
+    "nfa": "38d3",
+    "name": "+DOD",
+    "evidence": "GAM FORTH 11_A_Graf.ATR CFA $37FB, corresponding word in contiguous 14-definition sequence matching name length/suffix, flags, word kind, and body length",
+    "confidence": "sequence-match"
+  },
+  "38e4": {
+    "nfa": "38de",
+    "name": "LIC",
+    "evidence": "GAM FORTH 11_A_Graf.ATR CFA $3805, corresponding word in contiguous 14-definition sequence matching name length/suffix, flags, word kind, and body length",
+    "confidence": "sequence-match"
+  },
+  "38ed": {
+    "nfa": "38e8",
+    "name": "ZK",
+    "evidence": "GAM FORTH 11_A_Graf.ATR CFA $380E, identical body after known address relocation; surviving name length and suffix match"
+  },
+  "38f6": {
+    "nfa": "38f1",
+    "name": "DK",
+    "evidence": "GAM FORTH 11_A_Graf.ATR CFA $3817, identical body after known address relocation; surviving name length and suffix match"
+  },
+  "3900": {
+    "nfa": "38fa",
+    "name": "L-",
+    "evidence": "GAM FORTH 11_A_Graf.ATR CFA $3820, corresponding word in contiguous 14-definition sequence matching name length/suffix, flags, word kind, and body length",
+    "confidence": "sequence-match"
+  },
+  "391e": {
+    "nfa": "3918",
+    "name": "ZK+",
+    "evidence": "GAM FORTH 11_A_Graf.ATR CFA $383E, corresponding word in contiguous 14-definition sequence matching name length/suffix, flags, word kind, and body length",
+    "confidence": "sequence-match"
+  },
+  "3938": {
+    "nfa": "3932",
+    "name": "DK+",
+    "evidence": "GAM FORTH 11_A_Graf.ATR CFA $3858, corresponding word in contiguous 14-definition sequence matching name length/suffix, flags, word kind, and body length",
+    "confidence": "sequence-match"
+  },
+  "3951": {
+    "nfa": "394c",
+    "name": "WD",
+    "evidence": "GAM FORTH 11_A_Graf.ATR CFA $3871, corresponding word in contiguous 14-definition sequence matching name length/suffix, flags, word kind, and body length",
+    "confidence": "sequence-match"
+  },
+  "3974": {
+    "nfa": "396e",
+    "name": "DYC",
+    "evidence": "GAM FORTH 11_A_Graf.ATR CFA $3894, corresponding word in contiguous 14-definition sequence matching name length/suffix, flags, word kind, and body length",
+    "confidence": "sequence-match"
+  },
+  "39b5": {
+    "nfa": "39ab",
+    "name": "DYNAMIC",
+    "evidence": "GAM FORTH 11_A_Graf.ATR CFA $38D5, corresponding word in contiguous 14-definition sequence matching name length/suffix, flags, word kind, and body length",
+    "confidence": "sequence-match"
+  },
+  "39d2": {
+    "nfa": "39cb",
+    "name": "OUNT",
+    "evidence": "GAM FORTH 11_A_Graf.ATR CFA $38F2, identical body after known address relocation; surviving name length and suffix match"
+  },
+  "39e8": {
+    "nfa": "39e0",
+    "name": "<=TXT",
+    "evidence": "GAM FORTH 11_A_Graf.ATR CFA $3908, identical body after known address relocation; surviving name length and suffix match"
+  },
+  "3a0f": {
+    "nfa": "3a08",
+    "name": "DDLU",
+    "evidence": "GAM FORTH 11_A_Graf.ATR CFA $392F, corresponding word in contiguous 14-definition sequence matching name length/suffix, flags, word kind, and body length",
+    "confidence": "sequence-match"
+  },
+  "3a29": {
+    "nfa": "3a21",
+    "name": "DLOAD",
+    "evidence": "GAM FORTH 11_A_Graf.ATR CFA $3949, corresponding word in contiguous 14-definition sequence matching name length/suffix, flags, word kind, and body length",
+    "confidence": "sequence-match"
+  },
+  "3a45": {
+    "nfa": "3a3f",
+    "name": "0DL",
+    "evidence": "GAM FORTH 42_A_GrafDos.ATR CFA $41BA, corresponding word in contiguous 8-definition sequence matching name length/suffix, flags, word kind, and body length",
+    "confidence": "sequence-match"
+  },
+  "3a65": {
+    "nfa": "3a5d",
+    "name": "TYTDL",
+    "evidence": "GAM FORTH 42_A_GrafDos.ATR CFA $41DA, corresponding word in contiguous 8-definition sequence matching name length/suffix, flags, word kind, and body length",
+    "confidence": "sequence-match"
+  },
+  "3a8f": {
+    "nfa": "3a89",
+    "name": "PEN",
+    "evidence": "GAM FORTH 42_A_GrafDos.ATR CFA $4204, corresponding word in contiguous 8-definition sequence matching name length/suffix, flags, word kind, and body length",
+    "confidence": "sequence-match"
+  },
+  "3ad8": {
+    "nfa": "3ad3",
+    "name": "<M",
+    "evidence": "GAM FORTH 42_A_GrafDos.ATR CFA $424D, corresponding word in contiguous 8-definition sequence matching name length/suffix, flags, word kind, and body length",
+    "confidence": "sequence-match"
+  },
+  "3b18": {
+    "nfa": "3b11",
+    "name": "(<M)",
+    "evidence": "GAM FORTH 42_A_GrafDos.ATR CFA $428D, corresponding word in contiguous 8-definition sequence matching name length/suffix, flags, word kind, and body length",
+    "confidence": "sequence-match"
+  },
+  "3b2a": {
+    "nfa": "3b22",
+    "name": "<MOVE",
+    "evidence": "GAM FORTH 42_A_GrafDos.ATR CFA $429F, corresponding word in contiguous 8-definition sequence matching name length/suffix, flags, word kind, and body length",
+    "confidence": "sequence-match"
+  },
+  "3b3f": {
+    "nfa": "3b38",
+    "name": "ADGR",
+    "evidence": "GAM FORTH 42_A_GrafDos.ATR CFA $42B4, corresponding word in contiguous 8-definition sequence matching name length/suffix, flags, word kind, and body length",
+    "confidence": "sequence-match"
+  },
+  "3b49": {
+    "nfa": "3b43",
+    "name": "?DL",
+    "evidence": "GAM FORTH 42_A_GrafDos.ATR CFA $42BE, corresponding word in contiguous 8-definition sequence matching name length/suffix, flags, word kind, and body length",
+    "confidence": "sequence-match"
+  },
+  "3bdf": {
+    "nfa": "3bd9",
+    "name": "RCM",
+    "evidence": "GAM FORTH 11_A_Graf.ATR CFA $49B1, identical body after known address relocation; surviving name length and suffix match"
+  },
+  "3beb": {
+    "nfa": "3be3",
+    "name": "P-CCM",
+    "evidence": "GAM FORTH 11_A_Graf.ATR CFA $49BD, corresponding word in contiguous 8-definition sequence matching name length/suffix, flags, word kind, and body length",
+    "confidence": "sequence-match"
+  },
+  "3bfb": {
+    "nfa": "3bf5",
+    "name": "CC#",
+    "evidence": "GAM FORTH 11_A_Graf.ATR CFA $49CD, corresponding word in contiguous 8-definition sequence matching name length/suffix, flags, word kind, and body length",
+    "confidence": "sequence-match"
+  },
+  "3c0a": {
+    "nfa": "3c05",
+    "name": "PK",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "3c13": {
+    "nfa": "3c0e",
+    "name": "NK",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "3c1d": {
+    "nfa": "3c17",
+    "name": "CHW",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "3c28": {
+    "nfa": "3c21",
+    "name": "MAS1",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "3c33": {
+    "nfa": "3c2c",
+    "name": "(SP)",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "3c52": {
+    "nfa": "3c4b",
+    "name": "(SL)",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "3c72": {
+    "nfa": "3c6a",
+    "name": "(MVS)",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "3cb5": {
+    "nfa": "3cae",
+    "name": "MVPL",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "3cd7": {
+    "nfa": "3cce",
+    "name": "(MVS1)",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "3cf7": {
+    "nfa": "3cf0",
+    "name": "(CM)",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "3d52": {
+    "nfa": "3d4c",
+    "name": "CIL",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "3d5e": {
+    "nfa": "3d56",
+    "name": "(CCM)",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "3dab": {
+    "nfa": "3da5",
+    "name": "C-V",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "3dbb": {
+    "nfa": "3db3",
+    "name": "CCMOV",
+    "evidence": "GAM FORTH 11_A_Graf.ATR CFA $4B8D, corresponding word in contiguous 8-definition sequence matching name length/suffix, flags, word kind, and body length",
+    "confidence": "sequence-match"
+  },
+  "3dcb": {
+    "nfa": "3dc1",
+    "name": "ZD-CCM!",
+    "evidence": "GAM FORTH 11_A_Graf.ATR CFA $4B9D, identical body after known address relocation; surviving name length and suffix match"
+  },
+  "3de3": {
+    "nfa": "3dd9",
+    "name": "XY-CCM!",
+    "evidence": "GAM FORTH 11_A_Graf.ATR CFA $4BB5, identical body after known address relocation; surviving name length and suffix match"
+  },
+  "3e02": {
+    "nfa": "3df9",
+    "name": "POSOBJ",
+    "evidence": "GAM FORTH 11_A_Graf.ATR CFA $4BD4, corresponding word in contiguous 8-definition sequence matching name length/suffix, flags, word kind, and body length",
+    "confidence": "sequence-match"
+  },
+  "3e27": {
+    "nfa": "3e20",
+    "name": "?OBJ",
+    "evidence": "GAM FORTH 11_A_Graf.ATR CFA $4BF9, corresponding word in contiguous 8-definition sequence matching name length/suffix, flags, word kind, and body length",
+    "confidence": "sequence-match"
+  },
+  "3e45": {
+    "nfa": "3e3f",
+    "name": "OXY",
+    "evidence": "GAM FORTH 11_A_Graf.ATR CFA $41E3, identical body after known address relocation; surviving name length and suffix match"
+  },
+  "3e5b": {
+    "nfa": "3e53",
+    "name": "?POBJ",
+    "evidence": "GAM FORTH 11_A_Graf.ATR CFA $4C19, corresponding word in contiguous 4-definition sequence matching name length/suffix, flags, word kind, and body length",
+    "confidence": "sequence-match"
+  },
+  "3e6f": {
+    "nfa": "3e69",
+    "name": "ADC",
+    "evidence": "GAM FORTH 11_A_Graf.ATR CFA $4C2D, corresponding word in contiguous 4-definition sequence matching name length/suffix, flags, word kind, and body length",
+    "confidence": "sequence-match"
+  },
+  "3e79": {
+    "nfa": "3e73",
+    "name": "ILC",
+    "evidence": "GAM FORTH 11_A_Graf.ATR CFA $4C37, corresponding word in contiguous 4-definition sequence matching name length/suffix, flags, word kind, and body length",
+    "confidence": "sequence-match"
+  },
+  "3e86": {
+    "nfa": "3e7d",
+    "name": "?PCOBJ",
+    "evidence": "GAM FORTH 11_A_Graf.ATR CFA $4C44, corresponding word in contiguous 4-definition sequence matching name length/suffix, flags, word kind, and body length",
+    "confidence": "sequence-match"
+  },
+  "3ed9": {
+    "nfa": "3ed3",
+    "name": "RESOURCE-BASE",
+    "evidence": "Inferred descriptive name, not recovered original: Variable read by CFA3EE3; startup selects $96C8 for intro, then $9150 for gameplay.",
+    "confidence": "inferred"
+  },
+  "3ee3": {
+    "nfa": "3edd",
+    "name": "RESOURCE-BASE@",
+    "evidence": "Inferred descriptive name, not recovered original: Fetches the resource-base variable CFA3ED9.",
+    "confidence": "inferred"
+  },
+  "3f09": {
+    "nfa": "3f02",
+    "name": "RESOURCE-ADDR",
+    "evidence": "Inferred descriptive name, not recovered original: Uses resource-base, DYC record lookup, and fetches ZK.",
+    "confidence": "inferred"
+  },
+  "3f41": {
+    "nfa": "3f3b",
+    "name": "INSTALL-SCENE-ASSETS",
+    "evidence": "Inferred descriptive name, not recovered original: Initializes display, moves resource zero into ADGR, copies resource one and sets CHBAS.",
+    "confidence": "inferred"
+  },
+  "3f6c": {
+    "nfa": "3f66",
+    "name": "LOAD-ASSET-GROUP",
+    "evidence": "Inferred descriptive name, not recovered original: Loads the requested group with BLOAD, retries on error, prints inverse ERROR.",
+    "confidence": "inferred"
+  },
+  "3fa1": {
+    "nfa": "3f9b",
+    "name": "LOAD-GAME-ASSETS",
+    "evidence": "Inferred descriptive name, not recovered original: Calls LOAD-ASSET-GROUP with group 4.",
+    "confidence": "inferred"
+  },
+  "3fb1": {
+    "nfa": "3fa9",
+    "name": "PAUSE",
+    "evidence": "GAM FORTH 11_A_Graf.ATR CFA $4F82, identical body after known address relocation; surviving name length and suffix match"
+  },
+  "4138": {
+    "nfa": "4130",
+    "name": "ARRAY",
+    "evidence": "GAM FORTH 11_A_Graf.ATR CFA $3C7B, identical body after known address relocation; surviving name length and suffix match"
+  },
+  "4774": {
+    "nfa": "476d",
+    "name": "ILEL",
+    "evidence": "GAM FORTH 11_A_Graf.ATR CFA $9AAD, identical body after known address relocation; surviving name length and suffix match"
+  },
+  "47ad": {
+    "nfa": "47a8",
+    "name": "CLEAR-TEXT-AREA",
+    "evidence": "Inferred descriptive name, not recovered original: When text-dirty flag is set, positions at 0,0 and erases $208 bytes at the screen address.",
+    "confidence": "inferred"
+  },
+  "47f5": {
+    "nfa": "47ef",
+    "name": "SAVED-DMACTL",
+    "evidence": "Inferred descriptive name, not recovered original: Stores prior value of Atari SDMCTL ($022F).",
+    "confidence": "inferred"
+  },
+  "4800": {
+    "nfa": "47f9",
+    "name": "DISABLE-DISPLAY-DMA",
+    "evidence": "Inferred descriptive name, not recovered original: Saves SDMCTL ($022F), then stores zero there.",
+    "confidence": "inferred"
+  },
+  "481e": {
+    "nfa": "4816",
+    "name": "RESTORE-DISPLAY-DMA",
+    "evidence": "Inferred descriptive name, not recovered original: Restores SDMCTL ($022F) from CFA47F5.",
+    "confidence": "inferred"
+  },
+  "4834": {
+    "nfa": "482c",
+    "name": "INIT-GAME-DISPLAY",
+    "evidence": "Inferred descriptive name, not recovered original: Loads group 4, disables DMA, installs assets/display state and restores DMA.",
+    "confidence": "inferred"
+  },
+  "4857": {
+    "nfa": "4851",
+    "name": "#RT",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "4863": {
+    "nfa": "485c",
+    "name": "#RTC",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "4876": {
+    "nfa": "4870",
+    "name": "EKP",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "487f": {
+    "nfa": "487a",
+    "name": "#L",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "4889": {
+    "nfa": "4883",
+    "name": "40+",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "489f": {
+    "nfa": "4899",
+    "name": "G#D",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "48c2": {
+    "nfa": "48bd",
+    "name": "G#",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "48d6": {
+    "nfa": "48d1",
+    "name": "D#",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "48e7": {
+    "nfa": "48e2",
+    "name": "S#",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "490c": {
+    "nfa": "4904",
+    "name": "(RAM)",
+    "evidence": "Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44.",
+    "confidence": "intact-original"
+  },
+  "4bb2": {
+    "nfa": "4bac",
+    "name": "CPM",
+    "evidence": "GAM FORTH 42_A_GrafDos.ATR CFA $8BB5, corresponding word in contiguous 9-definition sequence matching name length/suffix, flags, word kind",
+    "confidence": "sequence-match"
+  },
+  "4bc2": {
+    "nfa": "4bba",
+    "name": "=>COL",
+    "evidence": "GAM FORTH 42_A_GrafDos.ATR CFA $8BC5, corresponding word in contiguous 9-definition sequence matching name length/suffix, flags, word kind",
+    "confidence": "sequence-match"
+  },
+  "4bd6": {
+    "nfa": "4bcc",
+    "name": "?COL-PM",
+    "evidence": "GAM FORTH 42_A_GrafDos.ATR CFA $8BD9, corresponding word in contiguous 9-definition sequence matching name length/suffix, flags, word kind",
+    "confidence": "sequence-match"
+  },
+  "4beb": {
+    "nfa": "4be4",
+    "name": "PMA#",
+    "evidence": "GAM FORTH 42_A_GrafDos.ATR CFA $8BF0, corresponding word in contiguous 5-definition sequence matching name length/suffix, flags, word kind, and body length",
+    "confidence": "sequence-match"
+  },
+  "4bf9": {
+    "nfa": "4bef",
+    "name": "PMBASE@",
+    "evidence": "GAM FORTH 42_A_GrafDos.ATR CFA $8BFE, identical body after known address relocation; surviving name length and suffix match"
+  },
+  "4c11": {
+    "nfa": "4c07",
+    "name": "PMBASE!",
+    "evidence": "GAM FORTH 42_A_GrafDos.ATR CFA $8C16, identical body after known address relocation; surviving name length and suffix match"
+  },
+  "4c2e": {
+    "nfa": "4c27",
+    "name": "C-PM",
+    "evidence": "GAM FORTH 42_A_GrafDos.ATR CFA $8C33, identical body after known address relocation; surviving name length and suffix match"
+  },
+  "4c42": {
+    "nfa": "4c3a",
+    "name": "ON-PM",
+    "evidence": "GAM FORTH 11_A_Graf.ATR CFA $9305, identical body after known address relocation; surviving name length and suffix match"
+  },
+  "4c57": {
+    "nfa": "4c4e",
+    "name": "OFF-PM",
+    "evidence": "GAM FORTH 42_A_GrafDos.ATR CFA $8C5C, corresponding word in contiguous 9-definition sequence matching name length/suffix, flags, word kind",
+    "confidence": "sequence-match"
+  },
+  "4c71": {
+    "nfa": "4c6b",
+    "name": "XR#",
+    "evidence": "GAM FORTH 42_A_GrafDos.ATR CFA $8CA2, corresponding word in contiguous 5-definition sequence matching name length/suffix, flags, word kind",
+    "confidence": "sequence-match"
+  },
+  "4c7f": {
+    "nfa": "4c78",
+    "name": "XPM!",
+    "evidence": "GAM FORTH 42_A_GrafDos.ATR CFA $8CB0, corresponding word in contiguous 5-definition sequence matching name length/suffix, flags, word kind",
+    "confidence": "sequence-match"
+  },
+  "4c9f": {
+    "nfa": "4c99",
+    "name": "ST#",
+    "evidence": "GAM FORTH 11_A_Graf.ATR CFA $935E, identical body after known address relocation; surviving name length and suffix match"
+  },
+  "4cd1": {
+    "nfa": "4cca",
+    "name": "ILPM",
+    "evidence": "GAM FORTH 42_A_GrafDos.ATR CFA $8CFE, corresponding word in contiguous 5-definition sequence matching name length/suffix, flags, word kind",
+    "confidence": "sequence-match"
+  },
+  "4cde": {
+    "nfa": "4cd5",
+    "name": "ZD-PM!",
+    "evidence": "GAM FORTH 11_A_Graf.ATR CFA $939D, identical body after known address relocation; surviving name length and suffix match"
+  },
+  "4d52": {
+    "nfa": "4d49",
+    "name": "VARRAY",
+    "evidence": "GAM FORTH 11_A_Graf.ATR CFA $940D, identical body after known address relocation; surviving name length and suffix match"
+  },
+  "4f0c": {
+    "nfa": "4f06",
+    "name": "TG0",
+    "evidence": "GAM FORTH 11_A_Graf.ATR CFA $95D7, identical body after known address relocation; surviving name length and suffix match"
+  },
+  "4f16": {
+    "nfa": "4f10",
+    "name": "JS0",
+    "evidence": "GAM FORTH 11_A_Graf.ATR CFA $95E1, identical body after known address relocation; surviving name length and suffix match"
+  },
+  "4f22": {
+    "nfa": "4f1a",
+    "name": "TRIGGER@",
+    "evidence": "Inferred descriptive name, not recovered original: Reads byte TG0+controller-index and masks bit zero.",
+    "confidence": "inferred"
+  },
+  "4f38": {
+    "nfa": "4f30",
+    "name": "JOYSTICK@",
+    "evidence": "Inferred descriptive name, not recovered original: Reads byte JS0+controller-index.",
+    "confidence": "inferred"
+  },
+  "4f47": {
+    "nfa": "4f42",
+    "name": "-1",
+    "evidence": "GAM FORTH 11_A_Graf.ATR CFA $9612, identical body after known address relocation; surviving name length and suffix match"
+  },
+  "5177": {
+    "nfa": "5172",
+    "name": "XR",
+    "evidence": "GAM FORTH 42_A_GrafDos.ATR CFA $91A9, identical body after known address relocation; surviving name length and suffix match"
+  },
+  "5180": {
+    "nfa": "517b",
+    "name": "YR",
+    "evidence": "GAM FORTH 42_A_GrafDos.ATR CFA $91B2, identical body after known address relocation; surviving name length and suffix match"
+  },
+  "5457": {
+    "nfa": "544d",
+    "name": "RUN-VBI1",
+    "evidence": "GAM FORTH 09_A_Forth.TXT SCR 27 native implementation: SETVBV deferred-VBI vector $540F, matching the $VBI1 handler",
+    "confidence": "source-match"
+  },
+  "5474": {
+    "nfa": "5469",
+    "name": "STOP-VBI1",
+    "evidence": "GAM FORTH 09_A_Forth.TXT SCR 27 native implementation: SETVBV deferred-VBI vector $E462 (OS default)",
+    "confidence": "source-match"
+  },
+  "5495": {
+    "nfa": "5490",
+    "name": "Z%",
+    "evidence": "GAM FORTH 42_A_GrafDos.ATR CFA $9A8A, identical body after known address relocation; surviving name length and suffix match"
+  },
+  "6c41": {
+    "nfa": "6c39",
+    "name": "SOUND-COMMAND!",
+    "evidence": "Inferred descriptive name, not recovered original: Stores its argument at $5E27 inside the music/sound routine.",
+    "confidence": "inferred"
+  },
+  "6c7f": {
+    "nfa": "6c73",
+    "name": "STOP-SOUND",
+    "evidence": "Inferred descriptive name, not recovered original: Stores 1 at sound flag $5E1E, then copies eight saved register bytes to POKEY $D200.",
+    "confidence": "inferred"
+  },
+  "7146": {
+    "nfa": "7140",
+    "name": "NIC",
+    "evidence": "GAM FORTH 42_A_GrafDos.ATR CFA $A4BE, identical body after known address relocation; surviving name length and suffix match"
+  },
+  "7150": {
+    "nfa": "714a",
+    "name": "INPUT-STATE",
+    "evidence": "Inferred descriptive name, not recovered original: Written by input polling; zero selects ordinary handling and value eight makes the main loop reinitialize.",
+    "confidence": "inferred"
+  },
+  "7169": {
+    "nfa": "715e",
+    "name": "WAIT-GAME-INPUT",
+    "evidence": "Inferred descriptive name, not recovered original: Clears CH ($02FC), polls joystick and trigger, updates pointer, tests key code $21 and returns on input-state or trigger.",
+    "confidence": "inferred"
+  },
+  "71f3": {
+    "nfa": "71ee",
+    "name": "WAIT-TRIGGER-RELEASE",
+    "evidence": "Inferred descriptive name, not recovered original: Calls pointer setup then polls controller-zero trigger with five-tick pauses until released.",
+    "confidence": "inferred"
+  },
+  "77a8": {
+    "nfa": "77a1",
+    "name": "DRAW-GAME-MENU",
+    "evidence": "Inferred descriptive name, not recovered original: Prints POCZaTEK, ZAPIS, ODCZYT, GRA and mission percentage.",
+    "confidence": "inferred"
+  },
+  "7934": {
+    "nfa": "792d",
+    "name": "HANDLE-GAME-INPUT",
+    "evidence": "Inferred descriptive name, not recovered original: Waits for trigger release, clears text, invokes input polling, dispatches object actions and repeats until INPUT-STATE is set.",
+    "confidence": "inferred"
+  },
+  "79e9": {
+    "nfa": "79e4",
+    "name": "PRINT-DISK-ERROR",
+    "evidence": "Inferred descriptive name, not recovered original: Prints BlAD DYSKOWY (disk error) and an optional marker.",
+    "confidence": "inferred"
+  },
+  "7a1e": {
+    "nfa": "7a19",
+    "name": "PRINT-PRESS-KEY",
+    "evidence": "Inferred descriptive name, not recovered original: Prints NACISNIJ KLAWISZ (press a key) and an optional marker.",
+    "confidence": "inferred"
+  },
+  "7a5a": {
+    "nfa": "7a55",
+    "name": "PRINT-FLIP-DISK",
+    "evidence": "Inferred descriptive name, not recovered original: Prints ODWROC DYSK (turn the disk over).",
+    "confidence": "inferred"
+  },
+  "7a92": {
+    "nfa": "7a8b",
+    "name": "WAIT-FOR-GAME-DISK",
+    "evidence": "Inferred descriptive name, not recovered original: Repeatedly checks disk marker, prints disk-error or flip-disk prompts and waits for a key until valid.",
+    "confidence": "inferred"
+  },
+  "7ad4": {
+    "nfa": "7acd",
+    "name": "HANDLE-GAME-MENU",
+    "evidence": "Inferred descriptive name, not recovered original: Draws the game menu, waits for trigger release, polls input and dispatches a selection.",
+    "confidence": "inferred"
+  },
+  "7af0": {
+    "nfa": "7aea",
+    "name": "GAME-LOOP",
+    "evidence": "Inferred descriptive name, not recovered original: Initializes the game display and VBI, then runs menu/input handling; INPUT-STATE eight restarts initialization.",
+    "confidence": "inferred"
+  },
+  "7c35": {
+    "nfa": "7c2f",
+    "name": "READ-BOOT-TAIL",
+    "evidence": "Inferred descriptive name, not recovered original: Reads the extra saved memory pages using HE/SP&/BDISK, then restores patched ABORT and SAVE cells.",
+    "confidence": "inferred"
+  },
+  "8e00": {
+    "nfa": "8dfa",
+    "name": "DICTIONARY-MARK",
+    "evidence": "Inferred descriptive name, not recovered original: Two saved cells hold HERE and LATEST, consumed by dictionary restore.",
+    "confidence": "inferred"
+  },
+  "8e0b": {
+    "nfa": "8e06",
+    "name": "SAVE-DICTIONARY-MARK",
+    "evidence": "Inferred descriptive name, not recovered original: Saves HERE and LATEST into CFA8E00.",
+    "confidence": "inferred"
+  },
+  "8e22": {
+    "nfa": "8e1d",
+    "name": "RESTORE-DICTIONARY",
+    "evidence": "Inferred descriptive name, not recovered original: Restores DP, cold-start DP/FENCE cells and latest dictionary link from saved mark.",
+    "confidence": "inferred"
+  },
+  "8e5b": {
+    "nfa": "8e52",
+    "name": "TITLE-DISPLAY-DATA",
+    "evidence": "Inferred descriptive name, not recovered original: Data selected as the active display/palette structure by CFA8EA1.",
+    "confidence": "inferred"
+  },
+  "8e92": {
+    "nfa": "8e8c",
+    "name": "LOAD-TITLE-ASSETS",
+    "evidence": "Inferred descriptive name, not recovered original: Calls LOAD-ASSET-GROUP with group 3.",
+    "confidence": "inferred"
+  },
+  "8ea1": {
+    "nfa": "8e9a",
+    "name": "INSTALL-TITLE-DISPLAY",
+    "evidence": "Inferred descriptive name, not recovered original: Selects title display data, installs thirteen repeated display regions and a DLI vector.",
+    "confidence": "inferred"
+  },
+  "8eea": {
+    "nfa": "8ee1",
+    "name": "INIT-TITLE-DISPLAY",
+    "evidence": "Inferred descriptive name, not recovered original: Loads title assets, installs scene and title display state, then restores DMA.",
+    "confidence": "inferred"
+  },
+  "8efb": {
+    "nfa": "8ef6",
+    "name": "TITLE-COLORS",
+    "evidence": "Inferred descriptive name, not recovered original: Returns the address 42 bytes into TITLE-DISPLAY-DATA, used as three mutable color registers.",
+    "confidence": "inferred"
+  },
+  "8f0c": {
+    "nfa": "8f07",
+    "name": "TITLE-HUES",
+    "evidence": "Inferred descriptive name, not recovered original: Three-byte table $80,$D0,$80 used as color bases during title transitions.",
+    "confidence": "inferred"
+  },
+  "8f18": {
+    "nfa": "8f13",
+    "name": "TITLE-LEVELS",
+    "evidence": "Inferred descriptive name, not recovered original: Three-byte table 6,12,8 used as brightness limits during title transitions.",
+    "confidence": "inferred"
+  },
+  "8f25": {
+    "nfa": "8f1f",
+    "name": "TITLE-FADE-IN-STEP",
+    "evidence": "Inferred descriptive name, not recovered original: Sets each color base at its threshold, then increments brightness by two below that threshold.",
+    "confidence": "inferred"
+  },
+  "8f70": {
+    "nfa": "8f69",
+    "name": "TITLE-FADE-IN",
+    "evidence": "Inferred descriptive name, not recovered original: Runs fade-in steps from 12 down to zero, pausing three ticks after each.",
+    "confidence": "inferred"
+  },
+  "8f94": {
+    "nfa": "8f8e",
+    "name": "TITLE-FADE-OUT-STEP",
+    "evidence": "Inferred descriptive name, not recovered original: Clears each color at its base, otherwise subtracts two below its brightness threshold.",
+    "confidence": "inferred"
+  },
+  "8fe3": {
+    "nfa": "8fdc",
+    "name": "TITLE-FADE-OUT",
+    "evidence": "Inferred descriptive name, not recovered original: Runs fade-out steps for levels zero through twelve, pausing three ticks after each.",
+    "confidence": "inferred"
+  },
+  "9006": {
+    "nfa": "8ffd",
+    "name": "PRINT-TEXT-LINES",
+    "evidence": "Inferred descriptive name, not recovered original: Traverses a count-prefixed collection of counted strings, STYPEs each and emits CR.",
+    "confidence": "inferred"
+  },
+  "902f": {
+    "nfa": "9026",
+    "name": "PRINT-CENTERED-LINES",
+    "evidence": "Inferred descriptive name, not recovered original: Traverses count-prefixed strings, centers each at column 19 minus half length and outputs successive rows.",
+    "confidence": "inferred"
+  },
+  "9066": {
+    "nfa": "905f",
+    "name": "TITLE-SKIP-FLAG",
+    "evidence": "Inferred descriptive name, not recovered original: Set by polling START or controller-zero trigger.",
+    "confidence": "inferred"
+  },
+  "9071": {
+    "nfa": "906a",
+    "name": "POLL-TITLE-SKIP",
+    "evidence": "Inferred descriptive name, not recovered original: Reads CONSOL ($D01F), compares to six (START), combines controller-zero trigger, stores CFA9066.",
+    "confidence": "inferred"
+  },
+  "9096": {
+    "nfa": "908d",
+    "name": "TITLE-SKIP?",
+    "evidence": "Inferred descriptive name, not recovered original: Fetches the title-skip flag.",
+    "confidence": "inferred"
+  },
+  "90a4": {
+    "nfa": "909e",
+    "name": "WAIT-TITLE-PAGE",
+    "evidence": "Inferred descriptive name, not recovered original: Fades in, polls START/trigger for up to 23 ten-tick waits, then fades out.",
+    "confidence": "inferred"
+  },
+  "90ce": {
+    "nfa": "90c8",
+    "name": "TITLE-PAGE-ADDR",
+    "evidence": "Inferred descriptive name, not recovered original: Looks up a packed text page in resource two at offset four.",
+    "confidence": "inferred"
+  },
+  "90e4": {
+    "nfa": "90dc",
+    "name": "SHOW-TITLE-PAGES",
+    "evidence": "Inferred descriptive name, not recovered original: Loops over packed title text pages, prints centered lines, waits/fades, exits when START or trigger is pressed.",
+    "confidence": "inferred"
+  },
+  "912d": {
+    "nfa": "9126",
+    "name": "SAVE-EXTENDED-IMAGE",
+    "evidence": "Inferred descriptive name, not recovered original: Uses ordinary SAVE below HE, otherwise patches startup and SAVE, writes extra pages through BDISK and restores hooks.",
+    "confidence": "inferred"
+  },
+  "919f": {
+    "nfa": "9197",
+    "name": "BOOT-INTRO",
+    "evidence": "Inferred descriptive name, not recovered original: Selects intro resource base, initializes title display, shows title pages, restores dictionary, selects gameplay resources and enters GAME-LOOP.",
+    "confidence": "inferred"
+  },
+  "91ea": {
+    "nfa": "91e4",
+    "name": "PREVIOUS-NFA",
+    "evidence": "Inferred descriptive name, not recovered original: Computes PFA LFA @ to obtain the prior dictionary header.",
+    "confidence": "inferred"
+  },
+  "9200": {
+    "nfa": "91f4",
+    "name": "STRIP-NAMES-AND-SAVE",
+    "evidence": "Inferred descriptive name, not recovered original: Patches ABORT to the intro; traverses dictionary links and erases every name except its final byte; saves the extended image.",
+    "confidence": "inferred"
+  }
+}

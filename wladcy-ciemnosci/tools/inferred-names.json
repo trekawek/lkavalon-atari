@@ -1,0 +1,152 @@
+{
+  "42a2": {
+    "name": "WAIT-FRAMES",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name, not recovered original: Loops until Atari RTCLOK low byte $14 changes, once per requested frame."
+  },
+  "504c": {
+    "name": "JOYSTICK-TRIGGER",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name, not recovered original: Reads Atari hardware trigger $D010 plus the joystick number and masks bit zero; zero means pressed."
+  },
+  "50b2": {
+    "name": "JOYSTICK-DELTA",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name, not recovered original: Reads STICK0 at $0278 plus joystick index, subtracts five, and maps through two direction tables."
+  },
+  "48f0": {
+    "name": "INSTALL-DISPLAY",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name, not recovered original: Installs text screen address at SAVMSC $0058, stores the graphics base, and writes SDLSTL $0230."
+  },
+  "488a": {
+    "name": "GRAPHICS-BASE",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name, not recovered original: Receives the graphics address from INSTALL-DISPLAY and is used by graphics memory operations."
+  },
+  "5e44": {
+    "name": "SAVED-DMA-CONTROL",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name, not recovered original: Receives the previous Atari SDMCTL $022F value before display DMA is disabled."
+  },
+  "5e4e": {
+    "name": "DISPLAY-OFF",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name, not recovered original: Saves SDMCTL $022F and writes zero to disable display DMA."
+  },
+  "5e6a": {
+    "name": "RESTORE-DISPLAY",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name, not recovered original: Restores the saved value of SDMCTL $022F."
+  },
+  "6dc9": {
+    "name": "WAIT-KEY-OR-FIRE",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name, not recovered original: Clears CH $02FC to $FF and waits until a keycode appears or joystick trigger zero is pressed."
+  },
+  "6e80": {
+    "name": "FLASH-BACKGROUND",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name, not recovered original: Saves COLOR4 $02C8, writes color $0E for three frames, then restores the previous value."
+  },
+  "8500": {
+    "name": "PRINT-CENTERED-TITLE-TEXT",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name, not recovered original: Centers a counted text object around column 20, sets cursor position, and prints it with STYPE."
+  },
+  "8612": {
+    "name": "SETUP-TITLE-TEXT",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name, not recovered original: Sets SAVMSC relative to title-text storage, resets the title row offset, and prints cursor controls."
+  },
+  "82f0": {
+    "name": "SAVED-DICTIONARY-STATE",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name, not recovered original: Two cells hold the dictionary end and latest header restored by RESTORE-DICTIONARY-LIMITS."
+  },
+  "8312": {
+    "name": "RESTORE-DICTIONARY-LIMITS",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name, not recovered original: Restores DP and cold-start origin fields 28, 30 and 12 from SAVED-DICTIONARY-STATE."
+  },
+  "8382": {
+    "name": "TITLE-SKIP-FLAG",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name, not recovered original: Initially zero; title input sets it on trigger press and title animation loops test it to exit."
+  },
+  "838c": {
+    "name": "POLL-TITLE-FIRE",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name, not recovered original: Clears attract mode at $4D, checks joystick fire, sets the title skip flag, and stops audio."
+  },
+  "83b7": {
+    "name": "WAIT-TITLE-FRAMES",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name, not recovered original: Waits frame-by-frame while polling title fire and exits early when TITLE-SKIP-FLAG is set."
+  },
+  "86ee": {
+    "name": "RUN-TITLE-PAGES",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name, not recovered original: Cycles seven animated title text pages until TITLE-SKIP-FLAG is set."
+  },
+  "871d": {
+    "name": "BOOT-TITLE-AND-GAME",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name, not recovered original: Boot entry loads title resources, runs title pages, restores dictionary limits and enters GAME-MAIN-LOOP."
+  },
+  "8460": {
+    "name": "LOAD-TITLE-ASSETS",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name, not recovered original: Performs title disk loading with an error branch, installs picture resources, and selects the title font."
+  },
+  "5fd1": {
+    "name": "INITIALIZE-GAME-DISPLAY",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name, not recovered original: Disables the display, installs game display resources and font at $BC00, initializes audio, then restores DMA."
+  },
+  "6cbd": {
+    "name": "GAME-MAIN-LOOP",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name, not recovered original: Initializes the game display and enters the persistent input, update and action loops called after the title."
+  },
+  "3e66": {
+    "name": "INSTALL-GAME-VBI",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name, not recovered original: Native SETVBV call at $E45C installs the game interrupt entry $3E2D with selector six."
+  },
+  "3e83": {
+    "name": "RESTORE-OS-VBI",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name, not recovered original: Native SETVBV call restores the operating system VBI entry $E45F with selector six."
+  },
+  "5e81": {
+    "name": "INITIALIZE-AUDIO",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name, not recovered original: Native routine passes the audio data address and initialization selector to the embedded player entry $3003."
+  },
+  "5ed6": {
+    "name": "STOP-AUDIO",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name, not recovered original: Native call to embedded player $3003 with selector $40; called when the title is skipped."
+  },
+  "5ec2": {
+    "name": "SELECT-AUDIO-SEQUENCE",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name, not recovered original: Stores the requested audio sequence then invokes the embedded player via the adjacent native helper."
+  },
+  "421c": {
+    "name": "LAST-DISK-STATUS",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name, not recovered original: Receives the result of the DIRL/DSL disk operation and is checked by title and game loading paths."
+  },
+  "858c": {
+    "name": "TITLE-ROW-OFFSET",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name, not recovered original: Row offset added while laying out title text lines; initialized and adjusted by title page animation."
+  },
+  "8596": {
+    "name": "TITLE-PAGE-LINE-COUNT",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name, not recovered original: Receives the current title page text count and controls the forward and reverse line-animation loops."
+  }
+}

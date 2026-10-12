@@ -1,0 +1,2366 @@
+{
+  "0f2d": {
+    "name": "LIT",
+    "nfa": "0f27",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "0f67": {
+    "name": "CLIT",
+    "nfa": "0f60",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "0f8a": {
+    "name": "EXECUTE",
+    "nfa": "0f80",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "0fa2": {
+    "name": "BRANCH",
+    "nfa": "0f99",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "0fc1": {
+    "name": "0BRANCH",
+    "nfa": "0fb7",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "0fe2": {
+    "name": "(LOOP)",
+    "nfa": "0fd9",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1012": {
+    "name": "(+LOOP)",
+    "nfa": "1008",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1049": {
+    "name": "(DO)",
+    "nfa": "1042",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1062": {
+    "name": "I",
+    "nfa": "105e",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "106c": {
+    "name": "DIGIT",
+    "nfa": "1064",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "109d": {
+    "name": "(FIND)",
+    "nfa": "1094",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1103": {
+    "name": "ENCLOSE",
+    "nfa": "10f9",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1142": {
+    "name": "EMIT",
+    "nfa": "113b",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "114a": {
+    "name": "KEY",
+    "nfa": "1144",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1158": {
+    "name": "?TERMINAL",
+    "nfa": "114c",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "115f": {
+    "name": "CR",
+    "nfa": "115a",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1169": {
+    "name": "CMOVE",
+    "nfa": "1161",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "118e": {
+    "name": "U*",
+    "nfa": "1189",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "11c6": {
+    "name": "U/",
+    "nfa": "11c1",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1203": {
+    "name": "AND",
+    "nfa": "11fd",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1218": {
+    "name": "OR",
+    "nfa": "1213",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "122e": {
+    "name": "XOR",
+    "nfa": "1228",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1244": {
+    "name": "SP@",
+    "nfa": "123e",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1253": {
+    "name": "SP!",
+    "nfa": "124d",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1263": {
+    "name": "RP!",
+    "nfa": "125d",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1277": {
+    "name": ";S",
+    "nfa": "1272",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "128a": {
+    "name": "LEAVE",
+    "nfa": "1282",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "12a5": {
+    "name": ">R",
+    "nfa": "12a0",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "12b7": {
+    "name": "R>",
+    "nfa": "12b2",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "12c8": {
+    "name": "R",
+    "nfa": "12c4",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "12de": {
+    "name": "0=",
+    "nfa": "12d9",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "12f3": {
+    "name": "0<",
+    "nfa": "12ee",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1304": {
+    "name": "+",
+    "nfa": "1300",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "131d": {
+    "name": "D+",
+    "nfa": "1318",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1343": {
+    "name": "MINUS",
+    "nfa": "133b",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "135c": {
+    "name": "DMINUS",
+    "nfa": "1353",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1373": {
+    "name": "OVER",
+    "nfa": "136c",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1384": {
+    "name": "DROP",
+    "nfa": "137d",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "138d": {
+    "name": "SWAP",
+    "nfa": "1386",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "13a5": {
+    "name": "DUP",
+    "nfa": "139f",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "13b4": {
+    "name": "+!",
+    "nfa": "13af",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "13d5": {
+    "name": "TOGGLE",
+    "nfa": "13cc",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "13e4": {
+    "name": "@",
+    "nfa": "13e0",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "13f9": {
+    "name": "C@",
+    "nfa": "13f4",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1408": {
+    "name": "!",
+    "nfa": "1404",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "1420": {
+    "name": "C!",
+    "nfa": "141b",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "142d": {
+    "name": ":",
+    "nfa": "1429",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "145a": {
+    "name": ";",
+    "nfa": "1456",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "1473": {
+    "name": "CONSTANT",
+    "nfa": "1468",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1493": {
+    "name": "VARIABLE",
+    "nfa": "1488",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "14ac": {
+    "name": "USER",
+    "nfa": "14a5",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "14c5": {
+    "name": "0",
+    "nfa": "14c1",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "14cd": {
+    "name": "1",
+    "nfa": "14c9",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "14d5": {
+    "name": "2",
+    "nfa": "14d1",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "14dd": {
+    "name": "3",
+    "nfa": "14d9",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "14e6": {
+    "name": "BL",
+    "nfa": "14e1",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "14f0": {
+    "name": "C/L",
+    "nfa": "14ea",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "14fc": {
+    "name": "FIRST",
+    "nfa": "14f4",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1508": {
+    "name": "LIMIT",
+    "nfa": "1500",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1514": {
+    "name": "B/BUF",
+    "nfa": "150c",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1520": {
+    "name": "B/SCR",
+    "nfa": "1518",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "152e": {
+    "name": "+ORIGIN",
+    "nfa": "1524",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "153e": {
+    "name": "TIB",
+    "nfa": "1538",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1549": {
+    "name": "WIDTH",
+    "nfa": "1541",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1556": {
+    "name": "WARNING",
+    "nfa": "154c",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1561": {
+    "name": "FENCE",
+    "nfa": "1559",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1569": {
+    "name": "DP",
+    "nfa": "1564",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1577": {
+    "name": "VOC-LINK",
+    "nfa": "156c",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1580": {
+    "name": "BLK",
+    "nfa": "157a",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1588": {
+    "name": "IN",
+    "nfa": "1583",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1591": {
+    "name": "OUT",
+    "nfa": "158b",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "159a": {
+    "name": "SCR",
+    "nfa": "1594",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "15a6": {
+    "name": "OFFSET",
+    "nfa": "159d",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "15b3": {
+    "name": "CONTEXT",
+    "nfa": "15a9",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "15c0": {
+    "name": "CURRENT",
+    "nfa": "15b6",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "15cb": {
+    "name": "STATE",
+    "nfa": "15c3",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "15d5": {
+    "name": "BASE",
+    "nfa": "15ce",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "15de": {
+    "name": "DPL",
+    "nfa": "15d8",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "15e7": {
+    "name": "FLD",
+    "nfa": "15e1",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "15f0": {
+    "name": "CSP",
+    "nfa": "15ea",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "15f8": {
+    "name": "R#",
+    "nfa": "15f3",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1601": {
+    "name": "HLD",
+    "nfa": "15fb",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1609": {
+    "name": "1+",
+    "nfa": "1604",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1616": {
+    "name": "2+",
+    "nfa": "1611",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1625": {
+    "name": "HERE",
+    "nfa": "161e",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1635": {
+    "name": "ALLOT",
+    "nfa": "162d",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1641": {
+    "name": ",",
+    "nfa": "163d",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "1652": {
+    "name": "C,",
+    "nfa": "164d",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1662": {
+    "name": "-",
+    "nfa": "165e",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "166e": {
+    "name": "=",
+    "nfa": "166a",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "167b": {
+    "name": "U<",
+    "nfa": "1676",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "169b": {
+    "name": "<",
+    "nfa": "1697",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "16b8": {
+    "name": ">",
+    "nfa": "16b4",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "16c6": {
+    "name": "ROT",
+    "nfa": "16c0",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "16da": {
+    "name": "SPACE",
+    "nfa": "16d2",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "16e9": {
+    "name": "-DUP",
+    "nfa": "16e2",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1700": {
+    "name": "TRAVERSE",
+    "nfa": "16f5",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1724": {
+    "name": "LATEST",
+    "nfa": "171b",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1734": {
+    "name": "LFA",
+    "nfa": "172e",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1743": {
+    "name": "CFA",
+    "nfa": "173d",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1751": {
+    "name": "NFA",
+    "nfa": "174b",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1766": {
+    "name": "PFA",
+    "nfa": "1760",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "177a": {
+    "name": "!CSP",
+    "nfa": "1773",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "178d": {
+    "name": "?ERROR",
+    "nfa": "1784",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "17a7": {
+    "name": "?COMP",
+    "nfa": "179f",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "17be": {
+    "name": "?EXEC",
+    "nfa": "17b6",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "17d4": {
+    "name": "?PAIRS",
+    "nfa": "17cb",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "17e6": {
+    "name": "?CSP",
+    "nfa": "17df",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1802": {
+    "name": "?LOADING",
+    "nfa": "17f7",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "181b": {
+    "name": "COMPILE",
+    "nfa": "1811",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1831": {
+    "name": "[",
+    "nfa": "182d",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "183f": {
+    "name": "]",
+    "nfa": "183b",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "1853": {
+    "name": "SMUDGE",
+    "nfa": "184a",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1864": {
+    "name": "HEX",
+    "nfa": "185e",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1879": {
+    "name": "DECIMAL",
+    "nfa": "186f",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "188e": {
+    "name": "(;CODE)",
+    "nfa": "1884",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "18a4": {
+    "name": ";CODE",
+    "nfa": "189c",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "18bc": {
+    "name": "<BUILDS",
+    "nfa": "18b2",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "18cc": {
+    "name": "DOES>",
+    "nfa": "18c4",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "18fe": {
+    "name": "COUNT",
+    "nfa": "18f6",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1911": {
+    "name": "TYPE",
+    "nfa": "190a",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1944": {
+    "name": "-TRAILING",
+    "nfa": "1938",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1977": {
+    "name": "(.\")",
+    "nfa": "1970",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1990": {
+    "name": ".\"",
+    "nfa": "198b",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "19c1": {
+    "name": "QUERY",
+    "nfa": "19b9",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "19d8": {
+    "name": "\u0000",
+    "nfa": "19d4",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1a17": {
+    "name": "FILL",
+    "nfa": "1a10",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1a37": {
+    "name": "ERASE",
+    "nfa": "1a2f",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1a48": {
+    "name": "BLANKS",
+    "nfa": "1a3f",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1a57": {
+    "name": "HOLD",
+    "nfa": "1a50",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1a6f": {
+    "name": "PAD",
+    "nfa": "1a69",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1a81": {
+    "name": "NEXT",
+    "nfa": "1a7a",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1a8c": {
+    "name": "PUSH",
+    "nfa": "1a85",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1a96": {
+    "name": "PUT",
+    "nfa": "1a90",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1aa3": {
+    "name": "PUSH0A",
+    "nfa": "1a9a",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1aad": {
+    "name": "POP",
+    "nfa": "1aa7",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1aba": {
+    "name": "POPTWO",
+    "nfa": "1ab1",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1ac7": {
+    "name": "BINARY",
+    "nfa": "1abe",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1ad0": {
+    "name": "IP",
+    "nfa": "1acb",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1ad8": {
+    "name": "W",
+    "nfa": "1ad4",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "1ae0": {
+    "name": "N",
+    "nfa": "1adc",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "1aec": {
+    "name": "XSAVE",
+    "nfa": "1ae4",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1af5": {
+    "name": "UP",
+    "nfa": "1af0",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1b01": {
+    "name": "SETUP",
+    "nfa": "1af9",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1b0d": {
+    "name": "PFLAG",
+    "nfa": "1b05",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1b19": {
+    "name": "GFLAG",
+    "nfa": "1b11",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1b24": {
+    "name": "WORD",
+    "nfa": "1b1d",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1b74": {
+    "name": "(NUMBER)",
+    "nfa": "1b69",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1bbf": {
+    "name": "NUMBER",
+    "nfa": "1bb6",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1c15": {
+    "name": "-FIND",
+    "nfa": "1c0d",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1c41": {
+    "name": "(ABORT)",
+    "nfa": "1c37",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1c4f": {
+    "name": "ERROR",
+    "nfa": "1c47",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1c84": {
+    "name": "ID.",
+    "nfa": "1c7e",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1cb8": {
+    "name": "CREATE",
+    "nfa": "1caf",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1d2b": {
+    "name": "[COMPILE]",
+    "nfa": "1d1f",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1d47": {
+    "name": "LITERAL",
+    "nfa": "1d3d",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1d64": {
+    "name": "DLITERAL",
+    "nfa": "1d59",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1d7f": {
+    "name": "?STACK",
+    "nfa": "1d76",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1da8": {
+    "name": "INTERPRET",
+    "nfa": "1d9c",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1df8": {
+    "name": "IMMEDIATE",
+    "nfa": "1dec",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1e10": {
+    "name": "VOCABULARY",
+    "nfa": "1e03",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1e40": {
+    "name": "FORTH",
+    "nfa": "1e38",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1e58": {
+    "name": "DEFINITIONS",
+    "nfa": "1e4a",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1e6d": {
+    "name": "PROMPT",
+    "nfa": "1e64",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1e88": {
+    "name": "(",
+    "nfa": "1e84",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "1e98": {
+    "name": "QUIT",
+    "nfa": "1e91",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1ec4": {
+    "name": "ABORT",
+    "nfa": "1ebc",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1ef3": {
+    "name": "COLD",
+    "nfa": "1eec",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1f4d": {
+    "name": "S->D",
+    "nfa": "1f46",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1f5c": {
+    "name": "+-",
+    "nfa": "1f57",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1f6e": {
+    "name": "D+-",
+    "nfa": "1f68",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1f80": {
+    "name": "ABS",
+    "nfa": "1f7a",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1f8f": {
+    "name": "DABS",
+    "nfa": "1f88",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1f9d": {
+    "name": "MIN",
+    "nfa": "1f97",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1fb5": {
+    "name": "MAX",
+    "nfa": "1faf",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1fcc": {
+    "name": "M*",
+    "nfa": "1fc7",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "1fe9": {
+    "name": "M/",
+    "nfa": "1fe4",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "200f": {
+    "name": "*",
+    "nfa": "200b",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "201e": {
+    "name": "/MOD",
+    "nfa": "2017",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "202e": {
+    "name": "/",
+    "nfa": "202a",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "203e": {
+    "name": "MOD",
+    "nfa": "2038",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "204e": {
+    "name": "*/MOD",
+    "nfa": "2046",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "205f": {
+    "name": "*/",
+    "nfa": "205a",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "2071": {
+    "name": "M/MOD",
+    "nfa": "2069",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "208d": {
+    "name": "USE",
+    "nfa": "2087",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "2098": {
+    "name": "PREV",
+    "nfa": "2091",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "20a3": {
+    "name": "+BUF",
+    "nfa": "209c",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "20cc": {
+    "name": "UPDATE",
+    "nfa": "20c3",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "20ea": {
+    "name": "FLUSH",
+    "nfa": "20e2",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "211f": {
+    "name": "EMPTY-BUFFERS",
+    "nfa": "210f",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "2133": {
+    "name": "DR0",
+    "nfa": "212d",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "2143": {
+    "name": "DR1",
+    "nfa": "213d",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "2158": {
+    "name": "BUFFER",
+    "nfa": "214f",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "21a0": {
+    "name": "BLOCK",
+    "nfa": "2198",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "2201": {
+    "name": "(LINE)",
+    "nfa": "21f8",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "2223": {
+    "name": ".LINE",
+    "nfa": "221b",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "2237": {
+    "name": "MESSAGE",
+    "nfa": "222d",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "2270": {
+    "name": "LOAD",
+    "nfa": "2269",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "22a2": {
+    "name": "-->",
+    "nfa": "229c",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "238f": {
+    "name": "EXPECT",
+    "nfa": "2386",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "2416": {
+    "name": "-DISK",
+    "nfa": "240e",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "245b": {
+    "name": "R/W",
+    "nfa": "2455",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "248c": {
+    "name": "'",
+    "nfa": "2488",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "24a5": {
+    "name": "FORGET",
+    "nfa": "249c",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "2510": {
+    "name": "BACK",
+    "nfa": "2509",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "2522": {
+    "name": "BEGIN",
+    "nfa": "251a",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "2534": {
+    "name": "ENDIF",
+    "nfa": "252c",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "254f": {
+    "name": "THEN",
+    "nfa": "2548",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "255a": {
+    "name": "DO",
+    "nfa": "2555",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "256d": {
+    "name": "LOOP",
+    "nfa": "2566",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "2583": {
+    "name": "+LOOP",
+    "nfa": "257b",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "2599": {
+    "name": "UNTIL",
+    "nfa": "2591",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "25ad": {
+    "name": "END",
+    "nfa": "25a7",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "25bb": {
+    "name": "AGAIN",
+    "nfa": "25b3",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "25d2": {
+    "name": "REPEAT",
+    "nfa": "25c9",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "25eb": {
+    "name": "IF",
+    "nfa": "25e6",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "2602": {
+    "name": "ELSE",
+    "nfa": "25fb",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "2624": {
+    "name": "WHILE",
+    "nfa": "261c",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "2635": {
+    "name": "SPACES",
+    "nfa": "262c",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "2652": {
+    "name": "<#",
+    "nfa": "264d",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "2661": {
+    "name": "#>",
+    "nfa": "265c",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "267a": {
+    "name": "SIGN",
+    "nfa": "2673",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "268f": {
+    "name": "#",
+    "nfa": "268b",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "26b7": {
+    "name": "#S",
+    "nfa": "26b2",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "26cf": {
+    "name": "D.R",
+    "nfa": "26c9",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "26f2": {
+    "name": "D.",
+    "nfa": "26ed",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "2701": {
+    "name": ".R",
+    "nfa": "26fc",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "2711": {
+    "name": ".",
+    "nfa": "270d",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "271d": {
+    "name": "?",
+    "nfa": "2719",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "272a": {
+    "name": "U.",
+    "nfa": "2725",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "2737": {
+    "name": "C?",
+    "nfa": "2732",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "2744": {
+    "name": "D@",
+    "nfa": "273f",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "2759": {
+    "name": "D!",
+    "nfa": "2754",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "2770": {
+    "name": "2DUP",
+    "nfa": "2769",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "2780": {
+    "name": "2DROP",
+    "nfa": "2778",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "2790": {
+    "name": "2SWAP",
+    "nfa": "2788",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "27a4": {
+    "name": "2OVER",
+    "nfa": "279c",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "27bb": {
+    "name": "ok",
+    "nfa": "27b6",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "27d1": {
+    "name": "U?",
+    "nfa": "27cc",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "27e0": {
+    "name": "LIST",
+    "nfa": "27d9",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "2820": {
+    "name": "MATCH",
+    "nfa": "2818",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "287a": {
+    "name": "INDEX",
+    "nfa": "2872",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "28aa": {
+    "name": "TRIAD",
+    "nfa": "28a2",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "28db": {
+    "name": "VLIST",
+    "nfa": "28d3",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "2923": {
+    "name": "BOOT",
+    "nfa": "291c",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "2935": {
+    "name": "(FMT)",
+    "nfa": "292d",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "2958": {
+    "name": "(SAVE)",
+    "nfa": "294f",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "29a6": {
+    "name": "SAVE",
+    "nfa": "299f",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "29ae": {
+    "nfa": "29ae",
+    "name": "SAVE-DISK-PRIMITIVE",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name: headerless native CFA called by stock fig-FORTH SAVE."
+  },
+  "2a0c": {
+    "name": "CSAVE",
+    "nfa": "2a04",
+    "confidence": "core-match",
+    "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction."
+  },
+  "2a1b": {
+    "nfa": "2a1b",
+    "name": "SAVE-CASSETTE-PRIMITIVE",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name: headerless native CFA called by stock fig-FORTH CSAVE."
+  },
+  "2a82": {
+    "name": "ASSEMBLER",
+    "nfa": "2a76",
+    "confidence": "sequence-candidate",
+    "evidence": "Candidate name; structural sequence match, not an independently verified semantic match. Corresponding AD2044 CFA $2A82 (ASSEMBLER) in contiguous 330-definition sequence matching header flags, name suffix, word kind and body size. GAM FORTH 09_A_Forth.ATR CFA $2A82, corresponding word in contiguous 252-definition sequence matching name length/suffix, flags, word kind, and body length"
+  },
+  "2a94": {
+    "name": "INDEX",
+    "nfa": "2a8c",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "2abd": {
+    "name": "MODE",
+    "nfa": "2ab6",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "2ac6": {
+    "name": ".A",
+    "nfa": "2ac1",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "2ad4": {
+    "name": "#",
+    "nfa": "2ad0",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "2ae4": {
+    "name": "MEM",
+    "nfa": "2ade",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "2af3": {
+    "name": ",X",
+    "nfa": "2aee",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "2b02": {
+    "name": ",Y",
+    "nfa": "2afd",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "2b13": {
+    "name": "X)",
+    "nfa": "2b0e",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "2b24": {
+    "name": ")Y",
+    "nfa": "2b1f",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "2b34": {
+    "name": ")",
+    "nfa": "2b30",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "2b46": {
+    "name": "BOT",
+    "nfa": "2b40",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "2b54": {
+    "name": "SEC",
+    "nfa": "2b4e",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "2b62": {
+    "name": "RP)",
+    "nfa": "2b5c",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "2b75": {
+    "name": "UPMODE",
+    "nfa": "2b6c",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "2bc3": {
+    "name": "CPU",
+    "nfa": "2bbd",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "2bda": {
+    "name": "BRK,",
+    "nfa": "2bd3",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "2be6": {
+    "name": "CLC,",
+    "nfa": "2bdf",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "2bf2": {
+    "name": "CLD,",
+    "nfa": "2beb",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "2bfe": {
+    "name": "CLI,",
+    "nfa": "2bf7",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "2c0a": {
+    "name": "CLV,",
+    "nfa": "2c03",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "2c16": {
+    "name": "DEX,",
+    "nfa": "2c0f",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "2c22": {
+    "name": "DEY,",
+    "nfa": "2c1b",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "2c2e": {
+    "name": "INX,",
+    "nfa": "2c27",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "2c3a": {
+    "name": "INY,",
+    "nfa": "2c33",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "2c46": {
+    "name": "NOP,",
+    "nfa": "2c3f",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "2c52": {
+    "name": "PHA,",
+    "nfa": "2c4b",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "2c5e": {
+    "name": "PHP,",
+    "nfa": "2c57",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "2c6a": {
+    "name": "PLA,",
+    "nfa": "2c63",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "2c76": {
+    "name": "PLP,",
+    "nfa": "2c6f",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "2c82": {
+    "name": "RTI,",
+    "nfa": "2c7b",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "2c8e": {
+    "name": "RTS,",
+    "nfa": "2c87",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "2c9a": {
+    "name": "SEC,",
+    "nfa": "2c93",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "2ca6": {
+    "name": "SED,",
+    "nfa": "2c9f",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "2cb2": {
+    "name": "SEI,",
+    "nfa": "2cab",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "2cbe": {
+    "name": "TAX,",
+    "nfa": "2cb7",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "2cca": {
+    "name": "TAY,",
+    "nfa": "2cc3",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "2cd6": {
+    "name": "TSX,",
+    "nfa": "2ccf",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "2ce2": {
+    "name": "TXA,",
+    "nfa": "2cdb",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "2cee": {
+    "name": "TXS,",
+    "nfa": "2ce7",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "2cfa": {
+    "name": "TYA,",
+    "nfa": "2cf3",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "2d05": {
+    "name": "MCP",
+    "nfa": "2cff",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "2d88": {
+    "name": "ADC,",
+    "nfa": "2d81",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "2d96": {
+    "name": "AND,",
+    "nfa": "2d8f",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "2da4": {
+    "name": "CMP,",
+    "nfa": "2d9d",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "2db2": {
+    "name": "EOR,",
+    "nfa": "2dab",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "2dc0": {
+    "name": "LDA,",
+    "nfa": "2db9",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "2dce": {
+    "name": "ORA,",
+    "nfa": "2dc7",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "2ddc": {
+    "name": "SBC,",
+    "nfa": "2dd5",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "2dea": {
+    "name": "STA,",
+    "nfa": "2de3",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "2df8": {
+    "name": "ASL,",
+    "nfa": "2df1",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "2e06": {
+    "name": "DEC,",
+    "nfa": "2dff",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "2e14": {
+    "name": "INC,",
+    "nfa": "2e0d",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "2e22": {
+    "name": "LSR,",
+    "nfa": "2e1b",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "2e30": {
+    "name": "ROL,",
+    "nfa": "2e29",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "2e3e": {
+    "name": "ROR,",
+    "nfa": "2e37",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "2e4c": {
+    "name": "STX,",
+    "nfa": "2e45",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "2e5a": {
+    "name": "CPX,",
+    "nfa": "2e53",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "2e68": {
+    "name": "CPY,",
+    "nfa": "2e61",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "2e76": {
+    "name": "LDX,",
+    "nfa": "2e6f",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "2e84": {
+    "name": "LDY,",
+    "nfa": "2e7d",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "2e92": {
+    "name": "STY,",
+    "nfa": "2e8b",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "2ea0": {
+    "name": "JSR,",
+    "nfa": "2e99",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "2eae": {
+    "name": "JMP,",
+    "nfa": "2ea7",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "2ebc": {
+    "name": "BIT,",
+    "nfa": "2eb5",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "2ecc": {
+    "name": "BEGIN,",
+    "nfa": "2ec3",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "2edd": {
+    "name": "UNTIL,",
+    "nfa": "2ed4",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "2efb": {
+    "name": "IF,",
+    "nfa": "2ef5",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "2f11": {
+    "name": "THEN,",
+    "nfa": "2f09",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "2f3f": {
+    "name": "ELSE,",
+    "nfa": "2f37",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "2f65": {
+    "name": "NOT",
+    "nfa": "2f5f",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "2f74": {
+    "name": "CS",
+    "nfa": "2f6f",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "2f7d": {
+    "name": "0=",
+    "nfa": "2f78",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "2f86": {
+    "name": "0<",
+    "nfa": "2f81",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "2f8f": {
+    "name": ">=",
+    "nfa": "2f8a",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "2f98": {
+    "name": "C;",
+    "nfa": "2f93",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "2fb5": {
+    "name": "END-CODE",
+    "nfa": "2faa",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "2fc2": {
+    "name": "CODE",
+    "nfa": "2fbb",
+    "confidence": "sequence-candidate",
+    "evidence": "Candidate name; structural sequence match, not an independently verified semantic match. Corresponding AD2044 CFA $2FC2 (CODE) in contiguous 330-definition sequence matching header flags, name suffix, word kind and body size. GAM FORTH 09_A_Forth.ATR CFA $2FC2, identical body after known address relocation; surviving name length and suffix match"
+  },
+  "2fd6": {
+    "name": "MAC",
+    "nfa": "2fd0",
+    "confidence": "sequence-candidate",
+    "evidence": "Candidate name; structural sequence match, not an independently verified semantic match. Corresponding AD2044 CFA $2FD6 (MAC) in contiguous 330-definition sequence matching header flags, name suffix, word kind and body size. GAM FORTH 09_A_Forth.ATR CFA $2FD6, identical body after known address relocation; surviving name length and suffix match"
+  },
+  "38f4": {
+    "name": "<=<",
+    "nfa": "38ee",
+    "confidence": "sequence-candidate",
+    "evidence": "Candidate name; structural sequence match, not an independently verified semantic match. Corresponding AD2044 CFA $34F2 (<=<) in contiguous 4-definition sequence matching header flags, name suffix, word kind and body size. GAM FORTH 09_A_Forth.ATR CFA $38DF, identical body after known address relocation; surviving name length and suffix match"
+  },
+  "3908": {
+    "name": "%",
+    "nfa": "3904",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "3947": {
+    "name": "DIRB",
+    "nfa": "3940",
+    "confidence": "sequence-candidate",
+    "evidence": "Candidate name; structural sequence match, not an independently verified semantic match. Corresponding AD2044 CFA $3545 (DIRB) in contiguous 4-definition sequence matching header flags, name suffix, word kind and body size. GAM FORTH 09_A_Forth.ATR CFA $3932, identical body after known address relocation; surviving name length and suffix match"
+  },
+  "3951": {
+    "name": "S-L",
+    "nfa": "394b",
+    "confidence": "sequence-candidate",
+    "evidence": "Candidate name; structural sequence match, not an independently verified semantic match. Corresponding AD2044 CFA $354F (S-L) in contiguous 4-definition sequence matching header flags, name suffix, word kind and body size. GAM FORTH 09_A_Forth.ATR CFA $393C, corresponding word in contiguous 33-definition sequence matching name length/suffix, flags, word kind, and body length"
+  },
+  "395a": {
+    "name": "HE",
+    "nfa": "3955",
+    "confidence": "sequence-candidate",
+    "evidence": "Candidate name; structural sequence match, not an independently verified semantic match. Corresponding AD2044 CFA $35B4 (HE) in contiguous 12-definition sequence matching header flags, name suffix, word kind and body size. GAM FORTH 09_A_Forth.ATR CFA $39A1, identical body after known address relocation; surviving name length and suffix match"
+  },
+  "3964": {
+    "name": "SP&",
+    "nfa": "395e",
+    "confidence": "sequence-candidate",
+    "evidence": "Candidate name; structural sequence match, not an independently verified semantic match. Corresponding AD2044 CFA $35BE (SP&) in contiguous 12-definition sequence matching header flags, name suffix, word kind and body size. GAM FORTH 09_A_Forth.ATR CFA $39AB, corresponding word in contiguous 33-definition sequence matching name length/suffix, flags, word kind, and body length"
+  },
+  "3973": {
+    "name": "ASC-PEEK",
+    "nfa": "3968",
+    "confidence": "sequence-candidate",
+    "evidence": "Candidate name; structural sequence match, not an independently verified semantic match. Corresponding AD2044 CFA $35CD (ASC-PEEK) in contiguous 12-definition sequence matching header flags, name suffix, word kind and body size. GAM FORTH 11_A_Graf.ATR CFA $3303, corresponding word in contiguous 10-definition sequence matching name length/suffix, flags, word kind, and body length"
+  },
+  "39d5": {
+    "name": "PEEK-ASC",
+    "nfa": "39ca",
+    "confidence": "sequence-candidate",
+    "evidence": "Candidate name; structural sequence match, not an independently verified semantic match. Corresponding AD2044 CFA $362F (PEEK-ASC) in contiguous 12-definition sequence matching header flags, name suffix, word kind and body size. GAM FORTH 11_A_Graf.ATR CFA $3365, corresponding word in contiguous 10-definition sequence matching name length/suffix, flags, word kind, and body length"
+  },
+  "39f0": {
+    "name": "X!",
+    "nfa": "39eb",
+    "confidence": "sequence-candidate",
+    "evidence": "Candidate name; structural sequence match, not an independently verified semantic match. Corresponding AD2044 CFA $364A (X!) in contiguous 12-definition sequence matching header flags, name suffix, word kind and body size. GAM FORTH 09_A_Forth.ATR CFA $3B7E, identical body after known address relocation; surviving name length and suffix match"
+  },
+  "39fe": {
+    "name": "Y!",
+    "nfa": "39f9",
+    "confidence": "sequence-candidate",
+    "evidence": "Candidate name; structural sequence match, not an independently verified semantic match. Corresponding AD2044 CFA $3658 (Y!) in contiguous 12-definition sequence matching header flags, name suffix, word kind and body size. GAM FORTH 09_A_Forth.ATR CFA $3B8C, identical body after known address relocation; surviving name length and suffix match"
+  },
+  "3a0c": {
+    "name": "X@",
+    "nfa": "3a07",
+    "confidence": "sequence-candidate",
+    "evidence": "Candidate name; structural sequence match, not an independently verified semantic match. Corresponding AD2044 CFA $3666 (X@) in contiguous 12-definition sequence matching header flags, name suffix, word kind and body size. GAM FORTH 09_A_Forth.ATR CFA $3B9A, identical body after known address relocation; surviving name length and suffix match"
+  },
+  "3a1a": {
+    "name": "Y@",
+    "nfa": "3a15",
+    "confidence": "sequence-candidate",
+    "evidence": "Candidate name; structural sequence match, not an independently verified semantic match. Corresponding AD2044 CFA $3674 (Y@) in contiguous 12-definition sequence matching header flags, name suffix, word kind and body size. GAM FORTH 09_A_Forth.ATR CFA $3BA8, identical body after known address relocation; surviving name length and suffix match"
+  },
+  "3a29": {
+    "name": "POS",
+    "nfa": "3a23",
+    "confidence": "sequence-candidate",
+    "evidence": "Candidate name; structural sequence match, not an independently verified semantic match. Corresponding AD2044 CFA $3683 (POS) in contiguous 12-definition sequence matching header flags, name suffix, word kind and body size. GAM FORTH 09_A_Forth.ATR CFA $3BB7, identical body after known address relocation; surviving name length and suffix match"
+  },
+  "3a39": {
+    "name": "STYPE",
+    "nfa": "3a31",
+    "confidence": "sequence-candidate",
+    "evidence": "Candidate name; structural sequence match, not an independently verified semantic match. Corresponding AD2044 CFA $3693 (STYPE) in contiguous 12-definition sequence matching header flags, name suffix, word kind and body size. GAM FORTH 11_A_Graf.ATR CFA $33C9, corresponding word in contiguous 10-definition sequence matching name length/suffix, flags, word kind, and body length"
+  },
+  "3a8b": {
+    "name": "(S\")",
+    "nfa": "3a84",
+    "confidence": "sequence-candidate",
+    "evidence": "Candidate name; structural sequence match, not an independently verified semantic match. Corresponding AD2044 CFA $36E5 ((S\")) in contiguous 12-definition sequence matching header flags, name suffix, word kind and body size. GAM FORTH 11_A_Graf.ATR CFA $341B, corresponding word in contiguous 10-definition sequence matching name length/suffix, flags, word kind, and body length"
+  },
+  "3aa4": {
+    "name": "S\"",
+    "nfa": "3a9f",
+    "confidence": "sequence-candidate",
+    "evidence": "Candidate name; structural sequence match, not an independently verified semantic match. Corresponding AD2044 CFA $36FE (S\") in contiguous 12-definition sequence matching header flags, name suffix, word kind and body size. GAM FORTH 11_A_Graf.ATR CFA $3434, corresponding word in contiguous 10-definition sequence matching name length/suffix, flags, word kind, and body length"
+  },
+  "3e60": {
+    "nfa": "3e56",
+    "name": "RUN-VBI1",
+    "confidence": "source-match",
+    "evidence": "Matches GAM FORTH deferred-VBI native routine: SETVBV with X/Y selecting vector $3E18."
+  },
+  "3e7d": {
+    "nfa": "3e72",
+    "name": "STOP-VBI1",
+    "confidence": "source-match",
+    "evidence": "Matches GAM FORTH deferred-VBI native routine: SETVBV with X/Y selecting vector $E462."
+  },
+  "3f58": {
+    "nfa": "3f51",
+    "name": "WORD-COUNT",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name, not recovered original: Returns address+2 and the 16-bit length stored at address."
+  },
+  "4139": {
+    "name": "DIRS",
+    "nfa": "4132",
+    "confidence": "sequence-candidate",
+    "evidence": "Candidate name; structural sequence match, not an independently verified semantic match. Corresponding AD2044 CFA $37E6 (DIRS) in contiguous 4-definition sequence matching header flags, name suffix, word kind and body size. Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44."
+  },
+  "4161": {
+    "name": "DIRL",
+    "nfa": "415a",
+    "confidence": "sequence-candidate",
+    "evidence": "Candidate name; structural sequence match, not an independently verified semantic match. Corresponding AD2044 CFA $380E (DIRL) in contiguous 4-definition sequence matching header flags, name suffix, word kind and body size. Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44."
+  },
+  "417d": {
+    "name": "-SE",
+    "nfa": "4177",
+    "confidence": "sequence-candidate",
+    "evidence": "Candidate name; structural sequence match, not an independently verified semantic match. Corresponding AD2044 CFA $382A (-SE) in contiguous 4-definition sequence matching header flags, name suffix, word kind and body size. Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44."
+  },
+  "4187": {
+    "name": "DSL",
+    "nfa": "4181",
+    "confidence": "sequence-candidate",
+    "evidence": "Candidate name; structural sequence match, not an independently verified semantic match. Corresponding AD2044 CFA $3834 (DSL) in contiguous 4-definition sequence matching header flags, name suffix, word kind and body size. Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44."
+  },
+  "429b": {
+    "nfa": "4293",
+    "name": "PAUSE",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name, not recovered original: Waits for the RTCLOK low byte $14 to change once per requested tick."
+  },
+  "43b6": {
+    "name": "#RT",
+    "nfa": "43b0",
+    "confidence": "sequence-candidate",
+    "evidence": "Candidate name; structural sequence match, not an independently verified semantic match. Corresponding AD2044 CFA $4857 (#RT) in contiguous 10-definition sequence matching header flags, name suffix, word kind and body size. Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44."
+  },
+  "43c2": {
+    "name": "#RTC",
+    "nfa": "43bb",
+    "confidence": "sequence-candidate",
+    "evidence": "Candidate name; structural sequence match, not an independently verified semantic match. Corresponding AD2044 CFA $4863 (#RTC) in contiguous 10-definition sequence matching header flags, name suffix, word kind and body size. Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44."
+  },
+  "43d5": {
+    "name": "EKP",
+    "nfa": "43cf",
+    "confidence": "sequence-candidate",
+    "evidence": "Candidate name; structural sequence match, not an independently verified semantic match. Corresponding AD2044 CFA $4876 (EKP) in contiguous 10-definition sequence matching header flags, name suffix, word kind and body size. Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44."
+  },
+  "43de": {
+    "name": "#L",
+    "nfa": "43d9",
+    "confidence": "sequence-candidate",
+    "evidence": "Candidate name; structural sequence match, not an independently verified semantic match. Corresponding AD2044 CFA $487F (#L) in contiguous 10-definition sequence matching header flags, name suffix, word kind and body size. Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44."
+  },
+  "43e8": {
+    "name": "40+",
+    "nfa": "43e2",
+    "confidence": "sequence-candidate",
+    "evidence": "Candidate name; structural sequence match, not an independently verified semantic match. Corresponding AD2044 CFA $4889 (40+) in contiguous 10-definition sequence matching header flags, name suffix, word kind and body size. Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44."
+  },
+  "43fe": {
+    "name": "G#D",
+    "nfa": "43f8",
+    "confidence": "sequence-candidate",
+    "evidence": "Candidate name; structural sequence match, not an independently verified semantic match. Corresponding AD2044 CFA $489F (G#D) in contiguous 10-definition sequence matching header flags, name suffix, word kind and body size. Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44."
+  },
+  "4421": {
+    "name": "G#",
+    "nfa": "441c",
+    "confidence": "sequence-candidate",
+    "evidence": "Candidate name; structural sequence match, not an independently verified semantic match. Corresponding AD2044 CFA $48C2 (G#) in contiguous 10-definition sequence matching header flags, name suffix, word kind and body size. Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44."
+  },
+  "4435": {
+    "name": "D#",
+    "nfa": "4430",
+    "confidence": "sequence-candidate",
+    "evidence": "Candidate name; structural sequence match, not an independently verified semantic match. Corresponding AD2044 CFA $48D6 (D#) in contiguous 10-definition sequence matching header flags, name suffix, word kind and body size. Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44."
+  },
+  "4446": {
+    "name": "S#",
+    "nfa": "4441",
+    "confidence": "sequence-candidate",
+    "evidence": "Candidate name; structural sequence match, not an independently verified semantic match. Corresponding AD2044 CFA $48E7 (S#) in contiguous 10-definition sequence matching header flags, name suffix, word kind and body size. Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44."
+  },
+  "446b": {
+    "name": "(RAM)",
+    "nfa": "4463",
+    "confidence": "sequence-candidate",
+    "evidence": "Candidate name; structural sequence match, not an independently verified semantic match. Corresponding AD2044 CFA $490C ((RAM)) in contiguous 10-definition sequence matching header flags, name suffix, word kind and body size. Original intact name in the supplied game image; private vocabulary chain terminates at FORTH dummy header $1E44."
+  },
+  "47cd": {
+    "nfa": "47c7",
+    "name": "RESOURCE-BASE",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name, not recovered original: Startup selects $A050 for introduction resources and $A3E0 for gameplay resources."
+  },
+  "503d": {
+    "nfa": "5035",
+    "name": "TRIGGER@",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name, not recovered original: Reads GTIA trigger register $D010 plus controller index and masks bit zero."
+  },
+  "5052": {
+    "name": "-1",
+    "nfa": "504d",
+    "confidence": "sequence-candidate",
+    "evidence": "Candidate name; structural sequence match, not an independently verified semantic match. Corresponding AD2044 CFA $4F47 (-1) in contiguous 3-definition sequence matching header flags, name suffix, word kind and body size. GAM FORTH 11_A_Graf.ATR CFA $9612, identical body after known address relocation; surviving name length and suffix match"
+  },
+  "5188": {
+    "name": "P",
+    "nfa": "5184",
+    "confidence": "intact-original",
+    "evidence": "Intact dictionary name in supplied Klatwa v1 image."
+  },
+  "5d47": {
+    "name": "NIC",
+    "nfa": "5d41",
+    "confidence": "sequence-candidate",
+    "evidence": "Candidate name; structural sequence match, not an independently verified semantic match. Corresponding AD2044 CFA $7146 (NIC) in contiguous 3-definition sequence matching header flags, name suffix, word kind and body size. GAM FORTH 42_A_GrafDos.ATR CFA $A4BE, identical body after known address relocation; surviving name length and suffix match"
+  },
+  "5eb2": {
+    "nfa": "5eac",
+    "name": "DISABLE-DISPLAY-DMA",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name, not recovered original: Saves SDMCTL ($022F) and writes zero there."
+  },
+  "5ece": {
+    "nfa": "5ec8",
+    "name": "RESTORE-DISPLAY-DMA",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name, not recovered original: Restores SDMCTL ($022F) from the saved variable."
+  },
+  "5f26": {
+    "nfa": "5f1f",
+    "name": "PLAY-MUSIC",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name, not recovered original: Stores selected tune then calls native sound-player entry $3003 with A=0 and X=tune."
+  },
+  "5f3a": {
+    "nfa": "5f30",
+    "name": "STOP-MUSIC",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name, not recovered original: Calls native sound-player entry $3003 with command A=$40."
+  },
+  "6acb": {
+    "nfa": "6ac5",
+    "name": "GET-GAME-INPUT",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name, not recovered original: Sets an input-mode flag, invokes input/pointer polling, normalizes the result, clears the flag and returns it."
+  },
+  "6b74": {
+    "nfa": "6b6e",
+    "name": "EXECUTE-GAME-ACTION",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name, not recovered original: Selects an action PFA from a variable, converts to CFA and executes it."
+  },
+  "74db": {
+    "nfa": "74d5",
+    "name": "GAME-LOOP",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name, not recovered original: Initializes interface and action state, then repeatedly obtains input and executes game actions until the exit flag is set."
+  },
+  "8432": {
+    "nfa": "842d",
+    "name": "DICTIONARY-MARK",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name, not recovered original: Two saved cells contain HERE and LATEST for dictionary restoration."
+  },
+  "843d": {
+    "nfa": "8438",
+    "name": "SAVE-DICTIONARY-MARK",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name, not recovered original: Stores HERE and LATEST in the two cells at CFA8432."
+  },
+  "8454": {
+    "nfa": "844f",
+    "name": "RESTORE-DICTIONARY",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name, not recovered original: Restores DP and the cold-start DP/FENCE/latest cells from the dictionary mark."
+  },
+  "84e2": {
+    "nfa": "84dc",
+    "name": "TITLE-SKIP-FLAG",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name, not recovered original: Boolean flag set after controller-zero trigger is pressed."
+  },
+  "84ec": {
+    "nfa": "84e6",
+    "name": "POLL-TITLE-SKIP",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name, not recovered original: Tests trigger zero and sets title-skip flag on first press; stops the music."
+  },
+  "8517": {
+    "nfa": "8511",
+    "name": "WAIT-TITLE",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name, not recovered original: Waits a specified number of frame ticks while polling trigger zero; exits early on title-skip flag."
+  },
+  "853a": {
+    "nfa": "8533",
+    "name": "INIT-TITLE-DISPLAY",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name, not recovered original: Disables DMA, loads/installs intro display and character resources, initializes music and VBI; prints ERROR on failed load."
+  },
+  "8637": {
+    "nfa": "8631",
+    "name": "PRINT-CENTERED-TEXT",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name, not recovered original: Centers a word-counted string in a 40-column line and calls STYPE."
+  },
+  "865d": {
+    "nfa": "8657",
+    "name": "SCREEN-ROW-ADDR",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name, not recovered original: Multiplies row by 40 and adds the OS screen pointer at $58."
+  },
+  "8675": {
+    "nfa": "866f",
+    "name": "COPY-TEXT-ROW",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name, not recovered original: Copies 40 bytes from the temporary line buffer into the requested screen row."
+  },
+  "868b": {
+    "nfa": "8685",
+    "name": "CLEAR-TEXT-ROW",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name, not recovered original: Erases 40 bytes at the requested screen row."
+  },
+  "869e": {
+    "nfa": "8697",
+    "name": "RENDER-CENTERED-ROW",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name, not recovered original: Temporarily switches the OS screen pointer to a 40-byte buffer, renders centered text, then restores it."
+  },
+  "86cd": {
+    "nfa": "86c8",
+    "name": "SCROLL-EIGHT-PIXELS",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name, not recovered original: Writes 0,2,4,6 into ANTIC VSCROL ($D405), pausing one tick between values."
+  },
+  "86ef": {
+    "nfa": "86e9",
+    "name": "SCROLL-TITLE-ROW",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name, not recovered original: Moves the prepared row through screen lines with vertical fine scrolling, polling for the skip trigger."
+  },
+  "8763": {
+    "nfa": "875d",
+    "name": "SCROLL-TITLE-TEXT",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name, not recovered original: Looks up consecutive packed lines, centers them in the temporary buffer and scrolls each into the title area."
+  },
+  "8783": {
+    "nfa": "877d",
+    "name": "SHOW-TITLE-PAGE",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name, not recovered original: Scrolls the lines of one packed title page and waits 150 frame ticks."
+  },
+  "87a0": {
+    "nfa": "879a",
+    "name": "SHOW-TITLE-SEQUENCE",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name, not recovered original: Loops over eight intro text pages until trigger zero is pressed, then changes music and presents the final page."
+  },
+  "87e7": {
+    "nfa": "87df",
+    "name": "BOOT-INTRO",
+    "confidence": "inferred",
+    "evidence": "Inferred descriptive name, not recovered original: Selects intro resources, initializes the title, restores dictionary state, shows intro pages, selects gameplay resources and enters GAME-LOOP."
+  }
+}

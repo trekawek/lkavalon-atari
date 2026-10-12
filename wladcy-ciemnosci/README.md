@@ -15,11 +15,24 @@ recovered with certainty.
 The dictionary contains 906 entries: 828 in the main chain, 76 in the private
 assembler vocabulary, and two native entry points without headers. There are
 539 colon definitions and 6,569 decoded threaded instructions. Of the entries,
-106 have intact names, 221 match APX kernel headers, 34 have candidate names
-from structural comparisons, 32 have inferred descriptive names, and 513
-retain their code-field address as an identifier. Per-entry evidence is in
+106 have intact names, 221 match APX kernel headers, six have source matches,
+28 have candidate names from structural comparisons, 535 have inferred
+descriptive names, and ten retain their code-field address as an identifier.
+Per-entry evidence is in
 [dictionary.json](dictionary.json) and [tools/names.json](tools/names.json).
 Structural candidates are not independently verified semantic identifications.
+
+The semantic pass added 503 names. [symbols.txt](symbols.txt) supplies behavior
+evidence, stack effects and decoded callers; [research-notes.txt](research-notes.txt)
+records tutorial comparisons, runtime probes and unresolved entries. The eight
+text slots at `$5517` form the power list, while the inventory occupies five
+positions in the mutable room/view object table. Retained Klątwa routines are
+identified separately where active use in this game has not been established.
+
+Manual evidence belongs in [tools/inferred-names.json](tools/inferred-names.json).
+`make decompile` regenerates the Forth, symbol catalog and decoded strings from
+that evidence and recovered names. Native subroutines and embedded data have
+explicit calling-convention notes; descriptive aliases preserve saved headers.
 
 ## Source layout
 
@@ -227,6 +240,13 @@ and joystick movement screenshots matched the original. This is a smoke test,
 not a full playthrough. Use [tools/emulate-smoke.json](tools/emulate-smoke.json)
 with the sibling [Atari800 harness](../ad2044/tools/emulate.py) for an optional
 repeat; it requires Atari800, Xvfb, and Python Xlib.
+
+The renamed sources passed a fresh original fig-Forth `LOAD` build from a
+blank target. All 209 source screens compiled and reproduced the complete ATR
+byte for byte. Host `HERE` reached `$896E`, leaving 5,522 bytes below `$9F00`.
+Local evidence is in `build/runtime-validation/semantic-load-report.json`.
+[tools/test_semantics.py](tools/test_semantics.py) executes original game
+routines to check the inferred behavior and stack effects.
 
 ## References
 

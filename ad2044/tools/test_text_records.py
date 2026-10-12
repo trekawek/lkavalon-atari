@@ -402,7 +402,7 @@ class OtherGameProfilesTests(unittest.TestCase):
                         game, data, fixture["words"], lambda *args: ([], 0)
                     )
 
-    def test_inventory_slots_exclude_three_state_bytes(self):
+    def test_spell_and_power_slots_exclude_three_state_bytes(self):
         for game, cfa, count in [
             ("klatwa", 0x5577, 10),
             ("wladcy-ciemnosci", 0x5517, 8),

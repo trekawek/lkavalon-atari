@@ -103,6 +103,10 @@ def main():
             out.line()
             out.comment(f"{w['name']} | NFA {w['nfa']:04X} CFA {w['cfa']:04X}")
             out.comment(w["evidence"])
+            if w.get("stack_effect"):
+                out.comment("Stack: " + w["stack_effect"])
+            if w.get("calling_convention"):
+                out.comment(w["calling_convention"])
             catalog.annotate(out, w)
             out.line(f"AT {w['nfa']:04X}")
             out.comment(
@@ -157,6 +161,7 @@ def main():
     raw = (ROOT / "reference/klatwa-v1.atr").read_bytes()
     write_if_changed(ROOT / "assets/disk-tail.bin", raw[0x7D10:])
     catalog.save(ROOT)
+    base.save_symbol_notes(ROOT, m, words)
     print(f"Recovered {len(words)} entries, {len(names)} names, {dict(stats)}")
 
 

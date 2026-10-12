@@ -133,7 +133,7 @@
     },
     {
       "cfa": 15847,
-      "symbol": "w3DE7",
+      "symbol": "t.PATCH-VBI-SLOT",
       "description": "Inline strings",
       "records": [
         {
@@ -153,7 +153,7 @@
     },
     {
       "cfa": 17825,
-      "symbol": "w45A1",
+      "symbol": "t.SHOW-MESSAGE",
       "description": "Inline strings",
       "records": [
         {
@@ -173,7 +173,7 @@
     },
     {
       "cfa": 17874,
-      "symbol": "w45D2",
+      "symbol": "t.DISK-ERROR-MESSAGES",
       "description": "Disk messages",
       "records": [
         {
@@ -283,7 +283,7 @@
     },
     {
       "cfa": 17988,
-      "symbol": "w4644",
+      "symbol": "t.TEXT-PANEL-PATTERN",
       "description": "Screen background glyphs, not prose",
       "records": [
         {
@@ -303,7 +303,7 @@
     },
     {
       "cfa": 18030,
-      "symbol": "w466E",
+      "symbol": "t.CLEAR-TEXT-AREA",
       "description": "Inline strings",
       "records": [
         {
@@ -323,7 +323,7 @@
     },
     {
       "cfa": 19269,
-      "symbol": "w4B45",
+      "symbol": "t.DRAW-TEXT-PANEL-BORDERS",
       "description": "Inline strings",
       "records": [
         {
@@ -408,8 +408,8 @@
     },
     {
       "cfa": 21783,
-      "symbol": "w5517",
-      "description": "Inventory display slots",
+      "symbol": "t.POWER-SLOT-RECORDS",
+      "description": "Power display slots",
       "records": [
         {
           "index": 0,
@@ -560,7 +560,7 @@
     },
     {
       "cfa": 24597,
-      "symbol": "w6015",
+      "symbol": "t.POWER-LIST-SEPARATOR",
       "description": "Inline strings",
       "records": [
         {
@@ -584,7 +584,7 @@
     },
     {
       "cfa": 24636,
-      "symbol": "w603C",
+      "symbol": "t.SHOW-POWER-LIST",
       "description": "Inline strings",
       "records": [
         {
@@ -688,7 +688,7 @@
     },
     {
       "cfa": 24898,
-      "symbol": "w6142",
+      "symbol": "t.POWER-ERROR-MESSAGES",
       "description": "Power messages",
       "records": [
         {
@@ -767,7 +767,7 @@
     },
     {
       "cfa": 25319,
-      "symbol": "w62E7",
+      "symbol": "t.ACTION-LABELS",
       "description": "Action labels",
       "records": [
         {
@@ -1897,7 +1897,7 @@
     },
     {
       "cfa": 26692,
-      "symbol": "w6844",
+      "symbol": "t.MSG-INVENTORY-FULL",
       "description": "Message lines",
       "records": [
         {
@@ -1935,7 +1935,7 @@
     },
     {
       "cfa": 27004,
-      "symbol": "w697C",
+      "symbol": "t.MSG-NO-ITEM-SELECTED",
       "description": "Message lines",
       "records": [
         {
@@ -1973,7 +1973,7 @@
     },
     {
       "cfa": 27251,
-      "symbol": "w6A73",
+      "symbol": "t.MSG-MISSION-PERCENT",
       "description": "Message lines",
       "records": [
         {
@@ -1997,7 +1997,7 @@
     },
     {
       "cfa": 28148,
-      "symbol": "w6DF4",
+      "symbol": "t.MSG-WHAT",
       "description": "Message lines",
       "records": [
         {
@@ -2021,7 +2021,7 @@
     },
     {
       "cfa": 29229,
-      "symbol": "w722D",
+      "symbol": "t.MSG-ENCODED-DISK-GATE",
       "description": "Message lines",
       "records": [
         {
@@ -2050,7 +2050,7 @@
     },
     {
       "cfa": 29969,
-      "symbol": "w7511",
+      "symbol": "t.MSG-POWER-RELEASED",
       "description": "Message lines",
       "records": [
         {
@@ -2074,7 +2074,7 @@
     },
     {
       "cfa": 30080,
-      "symbol": "w7580",
+      "symbol": "t.MSG-WRONG-ITEM",
       "description": "Message lines",
       "records": [
         {
@@ -2112,7 +2112,7 @@
     },
     {
       "cfa": 30109,
-      "symbol": "w759D",
+      "symbol": "t.MSG-WITH-WHAT",
       "description": "Message lines",
       "records": [
         {
@@ -2136,7 +2136,7 @@
     },
     {
       "cfa": 31656,
-      "symbol": "w7BA8",
+      "symbol": "t.MSG-POWER-ALREADY-USED",
       "description": "Message lines",
       "records": [
         {

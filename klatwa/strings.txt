@@ -27,13 +27,13 @@ $27E0 t.LIST - Inline strings
 $3908 t.% - Inline strings
   $392F inline: "Error: % "
 
-$3DD2 w3DD2 - Inline strings
+$3DD2 t.PATCH-VBI-SLOT - Inline strings
   $3E02 inline: "ERROR VBI"
 
-$45A4 w45A4 - Inline strings
+$45A4 t.SHOW-MESSAGE - Inline strings
   $45EB inline: " [1E]"
 
-$45F5 w45F5 - Disk and tape messages
+$45F5 t.DISK-ERROR-MESSAGES - Disk and tape messages
   $45FF item 0 line 1: "PODAJ STAN LICZNIKA"
   $4613 item 0 line 2: "W MAGNETOFONIE"
   $4625 item 1 line 1: "BLAD DYSKOWY"
@@ -45,11 +45,11 @@ $45F5 w45F5 - Disk and tape messages
   $466F item 3 line 1: "NIE TEN DYSK"
   $467C item 3 line 2: "RETURN"
 
-$4B97 w4B97 - Inline strings
+$4B97 t.DRAW-TEXT-PANEL-BORDERS - Inline strings
   $4BB7 inline: "[12][14][10][10][10][10][10][10][10][10][10][10][09][0F][5B][5B][5B][5B][5B][5B][5B][5B][0B][0C][10][10][10][10][10][10][10][10][10][10][19][15]"
   $4BF5 inline: "[06][07][10][10][10][10][10][10][10][10][10][10][10][10][16][02][5D][5D][5D][5D][0E][0D][10][10][10][10][10][10][10][10][10][10][10][10][08][0A]"
 
-$5577 w5577 - Inventory display slots
+$5577 t.SPELLBOOK-RECORDS - Spellbook display slots
   $5582 item 0 display: "[A4]           [23]"
   $5594 item 1 display: "[24]           [A3]"
   $55A6 item 2 display: "[A4]           [23]"
@@ -61,31 +61,31 @@ $5577 w5577 - Inventory display slots
   $5612 item 8 display: "[A4]     [3C][3E]    [23]"
   $5624 item 9 display: "[24]    [3C][3E]     [A3]"
 
-$6035 w6035 - Inline strings
+$6035 t.INIT-GAME-DISPLAY-AUDIO - Inline strings
   $6065 inline: "     "
 
-$608E w608E - Inline strings
+$608E t.PRINT-SPELLBOOK-SEPARATOR - Inline strings
   $6093 inline: "[A4] [2A][2A][2A][2A][2A][2A][2A][2A][2A] [23][24] [2A][2A][2A][2A][2A][2A][2A][2A][2A] [A3]"
 
-$60B5 w60B5 - Inline strings
+$60B5 t.DRAW-SPELLBOOK - Inline strings
   $60C6 inline: "   KSIEGA  [21]"
   $60DA inline: "  CZAROW   [A1]"
   $6149 inline: "[AB][DC][DC][DC][DC][DC][DC][DC][DC][DC][DC][DC][A5][A6][DC][DC][DC][DC][DC][DC][DC][DC][DC][DC][DC][AD]"
 
-$61A0 w61A0 - Spell messages
+$61A0 t.SPELL-ERROR-MESSAGES - Spell messages
   $61AA item 0 line 1: "TEN CZAR NIE"
   $61B7 item 0 line 2: "ZADZIALA"
   $61C1 item 1: "[incomplete message placeholder; retained raw]"
   $61C6 item 2 line 1: "BRAK CI JEDNEGO"
   $61D6 item 2 line 2: "PRZEDMIOTU"
 
-$61EB w61EB - Message lines
+$61EB t.NO-MAGIC-MESSAGE - Message lines
   $61F1 line 1: "NIE MASZ JUZ"
   $61FE line 2: "MAGICZNEJ MOCY,"
   $620E line 3: "JEDEN Z KAMIENI"
   $621E line 4: "JA PRZYWROCI"
 
-$6369 w6369 - Action labels
+$6369 t.ACTION-LABELS - Action labels
   $6371 item 0: "NIC"
   $6376 item 1: "NIE PATRZ"
   $6381 item 2 -> item 94: "[reference outside this table; retained raw]"
@@ -141,48 +141,48 @@ $6369 w6369 - Action labels
   $64A6 item 52 -> item 21: "ZAKLECIE"
   $64A9 item 53 -> item 21: "ZAKLECIE"
 
-$67EA w67EA - Message lines
+$67EA t.INVENTORY-FULL-MESSAGE - Message lines
   $67F0 line 1: "NIE UNIESIESZ"
   $67FE line 2: "TYLE"
 
-$6916 w6916 - Message lines
+$6916 t.NO-ITEM-CHOSEN-MESSAGE - Message lines
   $691C line 1: "NIE POKAZALES"
   $692A line 2: "RZECZY"
 
-$6A0D w6A0D - Message lines
+$6A0D t.MISSION-PERCENT-MESSAGE - Message lines
   $6A13 line 1: "WYKONALES    PROCENT MISJI"
 
-$7619 w7619 - Message lines
+$7619 t.WHICH-ITEM-MESSAGE - Message lines
   $761F line 1: "CO?"
 
-$7845 w7845 - Message lines
+$7845 t.PROTECTION-ERROR-MESSAGE - Message lines
   $784B line 1: "CHCESZ GRAC[2A]KUPUJ ORYGINAL"
 
-$7B66 w7B66 - Message lines
+$7B66 t.SPELL-NAME-MESSAGE - Message lines
   $7B6C line 1: "CZAR "
 
-$7BC2 w7BC2 - Message lines
+$7BC2 t.WRONG-ITEM-MESSAGE - Message lines
   $7BC8 line 1: "TYM NIE"
   $7BD0 line 2: "MOZESZ"
 
-$7BDF w7BDF - Message lines
+$7BDF t.WITH-WHAT-MESSAGE - Message lines
   $7BE5 line 1: "CZYM?"
 
-$7D3A w7D3A - Message lines
+$7D3A t.MAGIC-RESTORED-MESSAGE - Message lines
   $7D40 line 1: "ODZYSKALES"
   $7D4B line 2: "MAGICZNA MOC"
 
-$7F38 w7F38 - Message lines
+$7F38 t.YOU-WON-MESSAGE - Message lines
   $7F3E line 1: "WYGRALES"
 
-$7F4E w7F4E - Message lines
+$7F4E t.NO-MORE-PLAY-MESSAGE - Message lines
   $7F54 line 1: "JUZ NIE GRAM"
 
-$80B7 w80B7 - Message lines
+$80B7 t.ANTIMAGIC-WALL-MESSAGE - Message lines
   $80BD line 1: "PRZESZEDLES SCIANE"
   $80D0 line 2: "Z ANTYMAGIA"
 
-$8363 w8363 - Message lines
+$8363 t.TIME-TRAVEL-ITEMS-MESSAGE - Message lines
   $8369 line 1: "MATERIA NIEOZYWIONA"
   $837D line 2: "CZASU NIE POKONA"
 

@@ -27,13 +27,13 @@ $27E0 t.LIST - Inline strings
 $3908 t.% - Inline strings
   $392F inline: "Error: % "
 
-$3DE7 w3DE7 - Inline strings
+$3DE7 t.PATCH-VBI-SLOT - Inline strings
   $3E17 inline: "ERROR VBI"
 
-$45A1 w45A1 - Inline strings
+$45A1 t.SHOW-MESSAGE - Inline strings
   $45C8 inline: " [1E]"
 
-$45D2 w45D2 - Disk messages
+$45D2 t.DISK-ERROR-MESSAGES - Disk messages
   $45DC item 0 line 1: "A"
   $45E1 item 1 line 1: "BLAD DYSKOWY"
   $45EE item 1 line 2: "WLACZYLES STACJE?"
@@ -42,13 +42,13 @@ $45D2 w45D2 - Disk messages
   $460F item 3 line 1: "NIE TEN DYSK"
   $461C item 3 line 2: "RETURN"
 
-$4644 w4644 - Screen background glyphs, not prose
+$4644 t.TEXT-PANEL-PATTERN - Screen background glyphs, not prose
   $4648 background tiles: "[3B][3D][3B][3D][3B][3D][3B][3D][3B][3D][3B][3D][3B][3D][3B][3D][3B][3D][3B][3D][3B][3D][3B][3D][3B][3D][3B][3D][3B][3D][3B][3D][3B]"
 
-$466E w466E - Inline strings
+$466E t.CLEAR-TEXT-AREA - Inline strings
   $4679 inline: " "
 
-$4B45 w4B45 - Inline strings
+$4B45 t.DRAW-TEXT-PANEL-BORDERS - Inline strings
   $4B6D inline: "[16][02][0E][0D][12][14][2D][2D][2D][2D][2D][2D][2D][2D][2D][2D][06][07][08][0A][0B][0C][7C][7C][7C][7C][7C][7C][7C][7C][7C][7C][19][15][09][0F][10][13]"
   $4BAD inline: "[28][29][3C][3E][2B][2B][2B][2B][2B][2B][2B][2B][2B][2B][2B][2B][23][24][25][26][27][40][2A][2A][2A][2A][2A][2A][2A][2A][2A][2A][2A][2A][71][77][72][74]"
   $4BE4 inline: "[3A][3B]"
@@ -56,7 +56,7 @@ $4B45 w4B45 - Inline strings
   $4C05 inline: "[5C][5E]"
   $4C12 inline: "[64][66]"
 
-$5517 w5517 - Inventory display slots
+$5517 t.POWER-SLOT-RECORDS - Power display slots
   $5522 item 0 display: "[81]           [62]"
   $5534 item 1 display: "[ED]           [84]"
   $5546 item 2 display: "[81]           [62]"
@@ -66,22 +66,22 @@ $5517 w5517 - Inventory display slots
   $558E item 6 display: "[81]           [62]"
   $55A0 item 7 display: "[ED]           [84]"
 
-$6015 w6015 - Inline strings
+$6015 t.POWER-LIST-SEPARATOR - Inline strings
   $601A inline: "[81] [76][76][76][76][76][76][76][76][76] [62][ED] [76][76][76][76][76][76][76][76][76] [84]"
 
-$603C w603C - Inline strings
+$603C t.SHOW-POWER-LIST - Inline strings
   $6048 inline: "[91][97][97][97][97][97][97][97][97][97][97][97][85][91][97][97][97][97][97][97][97][97][97][97][97][85]"
   $606C inline: "[81]    SPIS   [62][ED]   MOCY    [84]"
   $60EB inline: "[9A][98][98][98][98][98][98][98][98][98][98][98][83][9A][98][98][98][98][98][98][98][98][98][98][98][83]"
 
-$6142 w6142 - Power messages
+$6142 t.POWER-ERROR-MESSAGES - Power messages
   $614C item 0 line 1: "TA MOC NIE"
   $6157 item 0 line 2: "ZADZIALA"
   $6161 item 1: "[incomplete message placeholder; retained raw]"
   $6166 item 2 line 1: "BRAK CI JEDNEGO"
   $6176 item 2 line 2: "PRZEDMIOTU"
 
-$62E7 w62E7 - Action labels
+$62E7 t.ACTION-LABELS - Action labels
   $62EF item 0: "NIC"
   $62F4 item 1: "NIE PATRZ"
   $62FF item 2 -> item 94: "[reference outside this table; retained raw]"
@@ -163,34 +163,34 @@ $62E7 w62E7 - Action labels
   $64F8 item 78 -> item 18: "ROZBIJ"
   $64FB item 79: "WLACZ"
 
-$6844 w6844 - Message lines
+$6844 t.MSG-INVENTORY-FULL - Message lines
   $684A line 1: "NIE UNIESIESZ"
   $6858 line 2: "TYLE"
 
-$697C w697C - Message lines
+$697C t.MSG-NO-ITEM-SELECTED - Message lines
   $6982 line 1: "NIE POKAZALES"
   $6990 line 2: "RZECZY"
 
-$6A73 w6A73 - Message lines
+$6A73 t.MSG-MISSION-PERCENT - Message lines
   $6A79 line 1: "WYKONALES    PROCENT MISJI"
 
-$6DF4 w6DF4 - Message lines
+$6DF4 t.MSG-WHAT - Message lines
   $6DFA line 1: "CO?"
 
-$722D w722D - Message lines
+$722D t.MSG-ENCODED-DISK-GATE - Message lines
   $7233 line 1: "CHCESZ GRAC KUPUJ ORYGINAL"
 
-$7511 w7511 - Message lines
+$7511 t.MSG-POWER-RELEASED - Message lines
   $7517 line 1: "UWOLNILES MOC"
 
-$7580 w7580 - Message lines
+$7580 t.MSG-WRONG-ITEM - Message lines
   $7586 line 1: "TYM NIE"
   $758E line 2: "MOZESZ"
 
-$759D w759D - Message lines
+$759D t.MSG-WITH-WHAT - Message lines
   $75A3 line 1: "CZYM?"
 
-$7BA8 w7BA8 - Message lines
+$7BA8 t.MSG-POWER-ALREADY-USED - Message lines
   $7BAE line 1: "JUZ UZYLES"
 
 $8460 t.LOAD-TITLE-ASSETS - Inline strings

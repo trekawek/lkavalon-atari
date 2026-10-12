@@ -1,0 +1,4079 @@
+Inferred descriptive symbols - klatwa
+
+These names describe observed behavior; they are not recovered spellings.
+Hexadecimal CFA = code-field address; NFA = dictionary name address.
+Stack effects use bottom-to-top Forth order: inputs -- outputs.
+Callers list decoded colon calls and COMPILE operands only. Native calls,
+raw DOES> tails and data-driven dispatch can add further references.
+
+29AE t.SAVE-DISK-PRIMITIVE (headerless native entry)
+  Inferred descriptive name: headerless native CFA called by stock fig-FORTH SAVE.
+  Decoded callers: 29A6 t.SAVE
+
+2A1B t.SAVE-CASSETTE-PRIMITIVE (headerless native entry)
+  Inferred descriptive name: headerless native CFA called by stock fig-FORTH CSAVE.
+  Decoded callers: 2A0C t.CSAVE
+
+2FF3 t.CMC-PLAYER-STORAGE (NFA 2FEC)
+  Stack: -- address
+  Group: utility
+  Inferred descriptive name, not recovered original: Allocated buffer contains the CMC player
+  with dispatcher $3003 and frame routine $3006; music commands at $5EE5/$5F0E/$5F3A call those
+  entries.
+  Decoded callers: 37FE t.CMC-ALIGNED-BASE
+
+37FE t.CMC-ALIGNED-BASE (NFA 37F7)
+  Stack: -- address
+  Group: utility
+  Inferred descriptive name, not recovered original: Rounds the player-storage address up to the
+  next $100-byte boundary, yielding $3000. No decoded caller was found.
+  Decoded callers: none
+
+3832 t.THREADED-SELECTOR: (NFA 3829)
+  Group: utility
+  Inferred descriptive name, not recovered original: Defining word compiles a list of CFA cells;
+  its DOES> tail doubles an index, adds it to the parameter address and executes the selected
+  CFA. Used by joystick delta tables $505C/$507E.
+  Decoded callers: none
+
+384F t.SEARCH-ACTIVE (NFA 384A)
+  Stack: -- address
+  Group: utility
+  Inferred descriptive name, not recovered original: Low byte is set, tested and cleared by
+  native $385A while scanning for a matching byte or the endpoint.
+  Decoded callers: none
+
+3858 t.SCAN-BYTE-MATCH (NFA 3853)
+  Group: utility
+  Inferred descriptive name, not recovered original: Native helper compares byte at ($D3) with
+  the third stack cell, advances $D3/$D4 to the first match or end, and clears $3851 when
+  finished. $3896 supplies the endpoints.
+  Decoded callers: 3896 t.FIND-BYTE-FIRST
+
+3896 t.FIND-BYTE-FIRST (NFA 388E)
+  Stack: byte address count -- index-or-zero
+  Group: utility
+  Inferred descriptive name, not recovered original: Initializes the search pointer at XSAVE+2,
+  scans forward with $3858, and returns the one-based first-match index or zero. Used for raw
+  keycodes in $5D92. A zero count is coerced to one, so even that case examines the first byte.
+  Decoded callers: 5D92 t.WAIT-GAME-INPUT, 617B t.FIND-ROOM-VIEW-OBJECT, 64E5
+    t.SELECT-SCENE-OBJECT, 6809 t.ADD-INVENTORY-ITEM, 68CE t.OBJECT-HIT-MAP-XY
+
+38DA t.LOAD-UNLESS-DEFINED (NFA 38D2)
+  Stack: screen --
+  Group: utility
+  Inferred descriptive name, not recovered original: Parses the following name with -FIND; if it
+  exists discards the screen number, otherwise LOADs it.
+  Decoded callers: none
+
+3AC3 t.GRAPHICS-SOURCE-PTR (NFA 3ABE)
+  Stack: -- address
+  Group: graphics
+  Inferred descriptive name, not recovered original: Constant $F0; RLE decoding reads its source
+  pointer and picture composition also uses it as a destination pointer.
+  Decoded callers: 3C2A t.RLE-POINTERS!, 4A40 t.ANIMATE-DISPLAY-LINES, 548F
+    t.DRAW-DECODED-PICTURE, 54AB t.COMPOSE-STAGED-PICTURE, 54F1 t.SAVE-SCENE-BACKGROUND, 5AF1
+    t.PREPARE-ZOOM-FRAME, 6C85 t.COPY-RECT-INTERSECTION, 6D69 t.INSTALL-BLIT-PARAMS, 6EC6
+    t.COMPOSE-PLAYER-FRAME, 7573 t.REFRESH-CHANGED-PICTURE
+
+3ACC t.GRAPHICS-DEST-PTR (NFA 3AC7)
+  Stack: -- address
+  Group: graphics
+  Inferred descriptive name, not recovered original: Constant $F2; RLE decoding writes through
+  this pointer. Bitmap composition reuses it as a source pointer.
+  Decoded callers: 3C2A t.RLE-POINTERS!, 4A40 t.ANIMATE-DISPLAY-LINES, 5468 t.BLIT-PARAMETERS,
+    54F1 t.SAVE-SCENE-BACKGROUND, 5AF1 t.PREPARE-ZOOM-FRAME, 6C85 t.COPY-RECT-INTERSECTION
+
+3AD5 t.GRAPHICS-ZP-F4 (NFA 3AD0)
+  Stack: -- address
+  Group: graphics
+  Inferred descriptive name, not recovered original: Constant $F4, the two-byte saved column
+  origin in the RLE engine. No Forth caller distinguishes this constant from the identical alias
+  at $3ADF.
+  Decoded callers: none
+
+3ADF t.GRAPHICS-ZP-F4-ALIAS (NFA 3AD9)
+  Stack: -- address
+  Group: graphics
+  Inferred descriptive name, not recovered original: Second constant returning $F4. Native
+  composition also reuses its low byte as a two-bit pixel mask; no decoded Forth consumer
+  establishes this alias's original intended role.
+  Decoded callers: none
+
+3AE8 t.GRAPHICS-ROW-STRIDE (NFA 3AE3)
+  Stack: -- address
+  Group: graphics
+  Inferred descriptive name, not recovered original: Constant $F6; RLE destination-row increment
+  and composition source-row increment are stored here.
+  Decoded callers: 3C3D t.RLE-STRIDE!, 5468 t.BLIT-PARAMETERS, 54F1 t.SAVE-SCENE-BACKGROUND,
+    6C85 t.COPY-RECT-INTERSECTION
+
+3AF2 t.GRAPHICS-COLUMN-COUNT (NFA 3AEC)
+  Stack: -- address
+  Group: graphics
+  Inferred descriptive name, not recovered original: Constant $F7; RLE decrements it once per
+  output column, and bitmap composition uses it as bytes per row.
+  Decoded callers: 3C17 t.RLE-SIZE!, 5468 t.BLIT-PARAMETERS, 54F1 t.SAVE-SCENE-BACKGROUND, 6C85
+    t.COPY-RECT-INTERSECTION
+
+3AFC t.GRAPHICS-ROW-COUNT (NFA 3AF6)
+  Stack: -- address
+  Group: graphics
+  Inferred descriptive name, not recovered original: Constant $F8; RLE reloads its per-column
+  row countdown from this byte, while composition decrements it directly.
+  Decoded callers: 3C17 t.RLE-SIZE!, 5468 t.BLIT-PARAMETERS, 54F1 t.SAVE-SCENE-BACKGROUND, 6C85
+    t.COPY-RECT-INTERSECTION
+
+3B05 t.GRAPHICS-ROW-COUNTER (NFA 3B00)
+  Stack: -- address
+  Group: graphics
+  Inferred descriptive name, not recovered original: Constant $F9; RLE decrements its remaining
+  rows; the blitter reuses the byte as destination stride.
+  Decoded callers: 5468 t.BLIT-PARAMETERS, 54F1 t.SAVE-SCENE-BACKGROUND, 6C85
+    t.COPY-RECT-INTERSECTION
+
+3B0F t.GRAPHICS-RLE-GROUP-SIZE (NFA 3B09)
+  Stack: -- address
+  Group: graphics
+  Inferred descriptive name, not recovered original: Constant $FA; the RLE escape decoder stores
+  the repeated group width (one through four) here. Composition reuses it as a pixel byte.
+  Decoded callers: none
+
+3B1A t.GRAPHICS-RLE-REPEATS (NFA 3B13)
+  Stack: -- address
+  Group: graphics
+  Inferred descriptive name, not recovered original: Constant $FB; low six bits of an $8D escape
+  control byte specify the repeat counter. Blitting also reuses it for six-row hit-map
+  progression.
+  Decoded callers: none
+
+3B24 t.GRAPHICS-RLE-GROUP (NFA 3B1E)
+  Stack: -- address
+  Group: graphics
+  Inferred descriptive name, not recovered original: Constant $FC; the RLE escape decoder stores
+  up to four bytes beginning here. The transparency helper reuses its low byte as a run counter.
+  Decoded callers: none
+
+3B2F t.RLE-RESTORE-COLUMN (NFA 3B28)
+  Group: graphics
+  Entry: Assembly subroutine entry; returns with RTS.
+  Inferred descriptive name, not recovered original: Copies saved destination $F4/$F5 to
+  $F2/$F3, then RTS. Native-only helper called by $3BC3 and repeated-row expansion.
+  Decoded callers: none
+  Related source: https://tajemnice.atari8.info/9_92/9_92_forth.html
+  Related source: https://tajemnice.atari8.info/10_92/10_92_forth.html
+
+3B41 t.RLE-SAVE-COLUMN (NFA 3B3A)
+  Group: graphics
+  Entry: Assembly subroutine entry; returns with RTS.
+  Inferred descriptive name, not recovered original: Copies $F2/$F3 to saved origin $F4/$F5,
+  then RTS; used before decoding each column.
+  Decoded callers: none
+  Related source: https://tajemnice.atari8.info/9_92/9_92_forth.html
+  Related source: https://tajemnice.atari8.info/10_92/10_92_forth.html
+
+3B52 t.RLE-NEXT-ROW (NFA 3B4C)
+  Group: graphics
+  Entry: Assembly subroutine entry; returns with RTS.
+  Inferred descriptive name, not recovered original: Adds unsigned stride $F6 to pointer
+  $F2/$F3, then RTS. Called after each output byte.
+  Decoded callers: none
+  Related source: https://tajemnice.atari8.info/9_92/9_92_forth.html
+  Related source: https://tajemnice.atari8.info/10_92/10_92_forth.html
+
+3B67 t.RLE-ADVANCE-SOURCE (NFA 3B61)
+  Group: graphics
+  Entry: Assembly subroutine entry; returns with RTS.
+  Inferred descriptive name, not recovered original: Adds accumulator A to $F0/$F1 with carry,
+  then RTS. Native-only helper.
+  Decoded callers: none
+  Related source: https://tajemnice.atari8.info/9_92/9_92_forth.html
+  Related source: https://tajemnice.atari8.info/10_92/10_92_forth.html
+
+3B7A t.RLE-EXPAND-RUN (NFA 3B74)
+  Group: graphics
+  Entry: Assembly subroutine entry; returns with RTS.
+  Inferred descriptive name, not recovered original: Decodes escape $8D: control top two bits
+  plus one give group size, low six bits initialize the repeat countdown; reads the group and
+  writes strided bytes. A zero countdown wraps to256 repetitions in this native loop. Returns
+  RTS.
+  Decoded callers: none
+  Related source: https://tajemnice.atari8.info/9_92/9_92_forth.html
+  Related source: https://tajemnice.atari8.info/10_92/10_92_forth.html
+
+3BC1 t.RLE-EXPAND-COLUMNS (NFA 3BBB)
+  Group: graphics
+  Entry: Assembly subroutine entry; returns with RTS.
+  Inferred descriptive name, not recovered original: Native decoder consumes literals or $8D
+  runs column by column, using $F7 columns, $F8 rows and $F6 destination stride. Returns with
+  RTS.
+  Decoded callers: none
+  Related source: https://tajemnice.atari8.info/9_92/9_92_forth.html
+  Related source: https://tajemnice.atari8.info/10_92/10_92_forth.html
+
+3C04 t.RLE-EXPAND (NFA 3BFB)
+  Stack: --
+  Group: graphics
+  Inferred descriptive name, not recovered original: Preserves the Forth X stack pointer, calls
+  native column decoder $3BC3, restores X and jumps to NEXT.
+  Decoded callers: 4C9C t.EXPAND-PICTURE-DATA
+
+3C17 t.RLE-SIZE! (NFA 3C10)
+  Stack: columns rows --
+  Group: graphics
+  Inferred descriptive name, not recovered original: Stores rows in $F8 and columns in $F7 for
+  the column decoder.
+  Decoded callers: 4C9C t.EXPAND-PICTURE-DATA, 5AF1 t.PREPARE-ZOOM-FRAME
+
+3C2A t.RLE-POINTERS! (NFA 3C23)
+  Stack: source destination --
+  Group: graphics
+  Inferred descriptive name, not recovered original: Stores destination in $F2/$F3 and source in
+  $F0/$F1.
+  Decoded callers: 4C9C t.EXPAND-PICTURE-DATA
+
+3C3D t.RLE-STRIDE! (NFA 3C36)
+  Stack: stride --
+  Group: graphics
+  Inferred descriptive name, not recovered original: Stores the low byte of its argument in $F6.
+  Decoded callers: 4C9C t.EXPAND-PICTURE-DATA
+
+3C4B t.BANK-COPY-LENGTH (NFA 3C45)
+  Stack: -- address
+  Group: disk-and-memory
+  Inferred descriptive name, not recovered original: 16-bit count read by $3C9C: high byte
+  supplies full 256-byte pages and low byte a final partial page.
+  Decoded callers: 3CCB t.COPY-UNDER-OS
+
+3C54 t.BANK-COPY-SOURCE (NFA 3C4F)
+  Stack: -- address
+  Group: disk-and-memory
+  Inferred descriptive name, not recovered original: Constant $DD, the source pointer used by
+  native $3C83.
+  Decoded callers: 3CCB t.COPY-UNDER-OS
+
+3C5D t.BANK-COPY-DEST (NFA 3C58)
+  Stack: -- address
+  Group: disk-and-memory
+  Inferred descriptive name, not recovered original: Constant $DF, the destination pointer used
+  by native $3C83.
+  Decoded callers: 3CCB t.COPY-UNDER-OS
+
+3C67 t.ENTER-RAM-UNDER-OS (NFA 3C61)
+  Group: disk-and-memory
+  Entry: Assembly subroutine entry; returns with RTS.
+  Inferred descriptive name, not recovered original: Waits for VCOUNT bit7 to transition,
+  synchronizes WSYNC, disables IRQs and decrements PORTB to expose RAM beneath the OS ROM.
+  Native subroutine returns with RTS.
+  Decoded callers: none
+  Related source: https://tajemnice.atari8.info/9_92/9_92_forth.html
+  Related source: https://tajemnice.atari8.info/10_92/10_92_forth.html
+
+3C83 t.COPY-BANK-PAGE (NFA 3C7D)
+  Group: disk-and-memory
+  Entry: Assembly subroutine entry; returns with RTS.
+  Inferred descriptive name, not recovered original: After exposing RAM under the OS, copies Y
+  bytes backward through pointers $DD/$DF, restores PORTB and IRQs, and RTS. Y=0 copies a full
+  256-byte page.
+  Decoded callers: none
+  Related source: https://tajemnice.atari8.info/9_92/9_92_forth.html
+  Related source: https://tajemnice.atari8.info/10_92/10_92_forth.html
+
+3C9C t.COPY-BANK-BYTES (NFA 3C96)
+  Stack: --
+  Group: disk-and-memory
+  Inferred descriptive name, not recovered original: Copies the full pages and remainder
+  specified by $3C4B through native $3C83, preserving the Forth parameter-stack X register.
+  Decoded callers: 3CCB t.COPY-UNDER-OS
+
+3CCB t.COPY-UNDER-OS (NFA 3CC3)
+  Stack: source destination length --
+  Group: disk-and-memory
+  Inferred descriptive name, not recovered original: Stores length and both bank-copy pointers,
+  then executes $3C9C. Tutorial PMOVE has the same parameter roles, but this game uses its own
+  raster-synchronized implementation.
+  Decoded callers: 3D74 t.STORE-BANK-RANGE, 3D97 t.FETCH-BANK-RANGE
+  Related source: https://tajemnice.atari8.info/1-2_93/1-2_93_forth.html
+
+3CE3 t.BANK-FIRST-SPAN (NFA 3CDD)
+  Stack: -- bytes
+  Group: disk-and-memory
+  Inferred descriptive name, not recovered original: Constant $2800 is the size of logical
+  offsets mapped to physical $D800..$FFFF; later offsets map from $C000.
+  Decoded callers: 3CED t.SPLIT-BANK-RANGE
+
+3CED t.SPLIT-BANK-RANGE (NFA 3CE7)
+  Stack: offset count -- address1 count1 address2 count2 count1
+  Group: disk-and-memory
+  Inferred descriptive name, not recovered original: Splits a logical offset/count pair at $2800
+  into physical copy spans, mapping lower offsets from $D800 and higher offsets from $C000.
+  Called by both directions of bank transfer.
+  Decoded callers: 3D74 t.STORE-BANK-RANGE, 3D97 t.FETCH-BANK-RANGE
+
+3D74 t.STORE-BANK-RANGE (NFA 3D6D)
+  Stack: source offset count --
+  Group: disk-and-memory
+  Inferred descriptive name, not recovered original: Uses $3CED to split the logical range, then
+  copies from normal RAM into one or two physical RAM-under-OS spans with $3CCB.
+  Decoded callers: 4006 t.ADVANCE-SECTOR-BUFFER, 54F1 t.SAVE-SCENE-BACKGROUND
+
+3D97 t.FETCH-BANK-RANGE (NFA 3D90)
+  Stack: destination offset count --
+  Group: disk-and-memory
+  Inferred descriptive name, not recovered original: Uses $3CED to split the logical range, then
+  copies one or two RAM-under-OS spans into contiguous normal RAM with $3CCB.
+  Decoded callers: 3FDF t.PREPARE-SECTOR-BUFFER, 4006 t.ADVANCE-SECTOR-BUFFER, 480C
+    t.FETCH-RESOURCE-TO, 481D t.FETCH-NESTED-RESOURCE, 5AF1 t.PREPARE-ZOOM-FRAME, 5BD9
+    t.RESTORE-SCENE-BACKGROUND, 7978 t.LOAD-SAVED-GAME
+
+3DB9 t.SPLIT-UNSIGNED-BYTES (NFA 3DAF)
+  Stack: cell -- low high
+  Group: disk-and-memory
+  Inferred descriptive name, not recovered original: Native code moves the original high byte to
+  a new zero-extended stack cell and clears both high halves.
+  Decoded callers: none
+
+3DD2 t.PATCH-VBI-SLOT (NFA 3DCA)
+  Stack: slot table --
+  Group: disk-and-memory
+  Inferred descriptive name, not recovered original: Parses a Forth name with -FIND, writes JSR
+  opcode $20 at table+1+3*slot and stores the target native entry after it; otherwise prints
+  ERROR VBI.
+  Decoded callers: 3E41 t.VBI-SLOT!
+
+3E15 t.VBI-CALL-TABLE (NFA 3E0D)
+  Stack: -- address
+  Group: disk-and-memory
+  Inferred descriptive name, not recovered original: Mutable slots of three-byte native
+  calls/NOPs, ending in a jump to $3E53. RUN-VBI1 installs execution at table+1 via SETVBV.
+  Decoded callers: 3E41 t.VBI-SLOT!
+
+3E41 t.VBI-SLOT! (NFA 3E3A)
+  Stack: slot --
+  Group: disk-and-memory
+  Inferred descriptive name, not recovered original: Supplies the VBI call table to $3DD2; the
+  parsed name determines the installed JSR target.
+  Decoded callers: none
+
+3E51 t.RETURN-FROM-VBI (NFA 3E49)
+  Group: disk-and-memory
+  Entry: Assembly VBI exit; jumps to OS XITVBV.
+  Inferred descriptive name, not recovered original: Native JMP $E462 invokes the OS XITVBV
+  exit; not a normal Forth NEXT return.
+  Decoded callers: none
+
+3E96 t.RECORD-SPAN (NFA 3E8F)
+  Stack: -- address
+  Group: disk-and-memory
+  Inferred descriptive name, not recovered original: Cell used by resource scanning as the
+  current u16 record length plus two; native PM graphics copies also reuse it as plane byte
+  count.
+  Decoded callers: 4771 t.BANK-RECORD-RANGE, 4ED3 t.PM-COPY-PARAMETERS!, 4F0F t.SET-CURSOR-PM-Y
+
+3EA0 t.RECORD-WRAP-HIGH (NFA 3E9A)
+  Stack: -- address
+  Group: disk-and-memory
+  Inferred descriptive name, not recovered original: Native scan $3ECB compares pointer high
+  byte against this threshold, initially $A7, then sets it to $D8 after wrapping the resource
+  window.
+  Decoded callers: none
+
+3EA9 t.RECORD-POINTER (NFA 3EA4)
+  Stack: -- address
+  Group: disk-and-memory
+  Inferred descriptive name, not recovered original: Constant $D2, the current pointer used by
+  resource scanning and PM-plane copies.
+  Decoded callers: 3F6D t.LENGTH-RECORD-ADDR, 3FA6 t.RECORD-OFFSET, 4771 t.BANK-RECORD-RANGE,
+    47A4 t.NESTED-BANK-RECORD, 4F0F t.SET-CURSOR-PM-Y, 6EC6 t.COMPOSE-PLAYER-FRAME
+
+3EB3 t.ADVANCE-RECORD-POINTER (NFA 3EAD)
+  Group: disk-and-memory
+  Entry: Assembly subroutine entry; returns with RTS.
+  Inferred descriptive name, not recovered original: Adds the 16-bit RECORD-SPAN cell to $D2/$D3
+  and returns with RTS.
+  Decoded callers: none
+  Related source: https://tajemnice.atari8.info/9_92/9_92_forth.html
+  Related source: https://tajemnice.atari8.info/10_92/10_92_forth.html
+
+3ECB t.SCAN-LENGTH-RECORDS (NFA 3EC5)
+  Group: disk-and-memory
+  Inferred descriptive name, not recovered original: Walks the requested number of u16-length
+  records, advancing by length+2 and handling the resource-window wrap. Called by both visible-
+  RAM and banked-resource lookup.
+  Decoded callers: none
+
+3F0E t.SET-RECORD-SCAN-POINTER (NFA 3F08)
+  Group: disk-and-memory
+  Entry: Assembly subroutine entry; returns with RTS.
+  Inferred descriptive name, not recovered original: Copies the top Forth cell into $D2/$D3 and
+  saves X in XSAVE; native helper returns RTS without dropping parameters.
+  Decoded callers: none
+  Related source: https://tajemnice.atari8.info/9_92/9_92_forth.html
+  Related source: https://tajemnice.atari8.info/10_92/10_92_forth.html
+
+3F21 t.SCAN-RAM-RECORD (NFA 3F1B)
+  Stack: index base --
+  Group: disk-and-memory
+  Inferred descriptive name, not recovered original: Sets the wrap threshold to $A7, initializes
+  $D2/$D3, scans records, and drops both arguments; resulting address remains in RECORD-POINTER.
+  Decoded callers: 3F6D t.LENGTH-RECORD-ADDR, 3FA6 t.RECORD-OFFSET
+
+3F3B t.LENGTH-RECORD-TABLE: (NFA 3F31)
+  Group: disk-and-memory
+  Inferred descriptive name, not recovered original: Defining word stores a u16 total length and
+  allocates bytes. Its DOES> tail skips that length and indexes variable-length records through
+  $3F21, returning the record header address.
+  Decoded callers: none
+
+3F58 t.WORD-COUNT (NFA 3F51)
+  Inferred descriptive name, not recovered original: Returns address+2 and the 16-bit length
+  stored at address.
+  Decoded callers: 5949 t.DRAW-PICTURE-AND-MASK, 59E4 t.DRAW-OBJECT-LIST, 5BBA t.COMPOSE-VIEW,
+    5C61 t.ENTER-INVENTORY-VIEW, 617B t.FIND-ROOM-VIEW-OBJECT, 64E5 t.SELECT-SCENE-OBJECT, 6593
+    t.APPEND-ACTION-LABEL, 6809 t.ADD-INVENTORY-ITEM, 7423 t.ENTER-ROOM, 848B
+    t.PRINT-CENTERED-TITLE-LINE, 8637 t.PRINT-CENTERED-TEXT
+
+3F6D t.LENGTH-RECORD-ADDR (NFA 3F66)
+  Stack: index base -- record
+  Group: disk-and-memory
+  Inferred descriptive name, not recovered original: Runs $3F21 and fetches its resulting
+  $D2/$D3 pointer. The result points at the u16 length field.
+  Decoded callers: 47FE t.RESOURCE-ADDR, 5552 t.ITEM-RESOURCE-ADDR, 5A35 t.ROOM-VIEW-OBJECTS,
+    64E5 t.SELECT-SCENE-OBJECT, 6532 t.SELECT-INVENTORY-OBJECT, 65E8 t.DRAW-ACTION-MENU, 669C
+    t.CHOOSE-ACTION-MENU-ROW, 6E0F t.PLAYER-FRAME-ADDR, 7423 t.ENTER-ROOM, 848B
+    t.PRINT-CENTERED-TITLE-LINE, 8763 t.SCROLL-TITLE-TEXT
+
+3F7F t.STORE-QUOTED-RECORD (NFA 3F77)
+  Stack: record --
+  Group: disk-and-memory
+  Inferred descriptive name, not recovered original: Parses text delimited by a double quote,
+  copies the characters after the record's u16 header, then stores the text length in that
+  header.
+  Decoded callers: none
+
+3FA6 t.RECORD-OFFSET (NFA 3F9F)
+  Stack: index base -- offset
+  Group: disk-and-memory
+  Inferred descriptive name, not recovered original: Preserves base, scans indexed record, and
+  subtracts base from the resulting pointer.
+  Decoded callers: none
+
+3FBE t.BANKED-TRANSFER (NFA 3FB8)
+  Stack: -- address
+  Group: disk-and-memory
+  Inferred descriptive name, not recovered original: Nonzero selects sector transfer through PAD
+  and the logical bank-copy helpers; zero transfers directly through normal RAM. Set by $5CED
+  when loading banked scene assets.
+  Decoded callers: 3FDF t.PREPARE-SECTOR-BUFFER, 4006 t.ADVANCE-SECTOR-BUFFER, 5CED
+    t.LOAD-PART-RESOURCES, 790F t.READ-SAVED-STATE-GROUP, 853A t.INIT-TITLE-DISPLAY
+
+3FD5 t.TRANSFER-BANK-OFFSET (NFA 3FCE)
+  Stack: -- address
+  Group: disk-and-memory
+  Inferred descriptive name, not recovered original: Logical bank offset advanced by B/BUF
+  during the PAD-staged disk transfer.
+  Decoded callers: 3FDF t.PREPARE-SECTOR-BUFFER, 4006 t.ADVANCE-SECTOR-BUFFER
+
+3FDF t.PREPARE-SECTOR-BUFFER (NFA 3FD9)
+  Stack: address first count -- buffer first count
+  Group: disk-and-memory
+  Inferred descriptive name, not recovered original: In normal mode leaves all three transfer
+  arguments unchanged. In banked mode replaces the address with PAD after fetching a sector from
+  the supplied logical bank offset; retains first/count.
+  Decoded callers: 40DE t.TRANSFER-GROUP-SECTORS
+
+4006 t.ADVANCE-SECTOR-BUFFER (NFA 4001)
+  Stack: buffer -- next-buffer
+  Group: disk-and-memory
+  Inferred descriptive name, not recovered original: For normal RAM adds B/BUF; in banked mode
+  keeps PAD, updates the logical offset and copies a sector between PAD and banked RAM according
+  to S-L.
+  Decoded callers: 40DE t.TRANSFER-GROUP-SECTORS
+
+404D t.DIRECTORY-BUFFER (NFA 4046)
+  Stack: -- address
+  Group: disk-and-memory
+  Inferred descriptive name, not recovered original: Points at the PAD+B/BUF sector buffer
+  loaded from DIRB by $4062.
+  Decoded callers: 4062 t.FIND-GAM-GROUP, 423B t.SAVE-GAM-GROUP
+
+4057 t.GROUP-END-SECTOR (NFA 4051)
+  Stack: -- address
+  Group: disk-and-memory
+  Inferred descriptive name, not recovered original: Set to start sector plus sector count while
+  $4062 resolves a directory entry.
+  Decoded callers: 4062 t.FIND-GAM-GROUP
+
+4062 t.FIND-GAM-GROUP (NFA 405B)
+  Stack: group -- start count 0 | error
+  Group: disk-and-memory
+  Inferred descriptive name, not recovered original: Reads directory sector DIRB, sums preceding
+  one-byte group lengths, compensates for the directory-sector hole and returns start/count with
+  zero error, or an error result.
+  Decoded callers: 4139 t.DIRS, 4161 t.DIRL
+
+40DE t.TRANSFER-GROUP-SECTORS (NFA 40D6)
+  Stack: address first count -- error
+  Group: disk-and-memory
+  Inferred descriptive name, not recovered original: Transfers consecutive sectors through -DISK
+  using S-L; skips the directory sector when encountered, advances/stages the buffer and returns
+  a zero/nonzero error status.
+  Decoded callers: 4187 t.DSL
+
+41C7 t.EXPECTED-DISK-ID (NFA 41C1)
+  Stack: -- address
+  Group: disk-and-memory
+  Inferred descriptive name, not recovered original: Expected first byte of the GAM directory,
+  initially 3. $41D1 compares this against the disk before a group transfer.
+  Decoded callers: 41D1 t.CHECK-GAM-DISK
+
+41D1 t.CHECK-GAM-DISK (NFA 41CB)
+  Group: disk-and-memory
+  Inferred descriptive name, not recovered original: Reads DIRB into PAD; returns whether its
+  first byte matches EXPECTED-DISK-ID, or disk/error code. Preserves the transfer arguments on
+  success and removes them on failure.
+  Decoded callers: 4221 t.LOAD-GAM-GROUP, 423B t.SAVE-GAM-GROUP
+
+4215 t.GROUP-TRANSFER-ERROR (NFA 420F)
+  Stack: -- address
+  Group: disk-and-memory
+  Inferred descriptive name, not recovered original: Stores the last load/save result; $46C0
+  checks it to display an error and $46FE retries until zero.
+  Decoded callers: 4221 t.LOAD-GAM-GROUP, 423B t.SAVE-GAM-GROUP, 46C0 t.TRY-GROUP-TRANSFER, 46FE
+    t.RETRY-GROUP-TRANSFER, 5CED t.LOAD-PART-RESOURCES, 74DB t.GAME-LOOP, 7978
+    t.LOAD-SAVED-GAME, 853A t.INIT-TITLE-DISPLAY
+
+4221 t.LOAD-GAM-GROUP (NFA 4219)
+  Stack: address count group --
+  Group: disk-and-memory
+  Inferred descriptive name, not recovered original: Checks disk ID, invokes DIRL/DSL and stores
+  the result in GROUP-TRANSFER-ERROR.
+  Decoded callers: 46C0 t.TRY-GROUP-TRANSFER, 853A t.INIT-TITLE-DISPLAY
+
+423B t.SAVE-GAM-GROUP (NFA 4233)
+  Stack: address count group --
+  Group: disk-and-memory
+  Inferred descriptive name, not recovered original: Checks disk ID, invokes DIRS/DSL, updates
+  the cached group length, and writes the directory when a formerly empty group was successfully
+  allocated; stores the result at $4215.
+  Decoded callers: 46C0 t.TRY-GROUP-TRANSFER
+
+429B t.PAUSE (NFA 4293)
+  Inferred descriptive name, not recovered original: Waits for the RTCLOK low byte $14 to change
+  once per requested tick.
+  Decoded callers: 437A t.PAUSE-COLOR-DLI, 5D6D t.WAIT-TRIGGER-RELEASE, 767B t.FLASH-BACKGROUND,
+    7AF0 t.LEARN-OBJECT-SPELL, 7D5F t.FLASH-TWO-IMAGES, 7E7F t.ACTION-SPELL-REMOTE-VIEW, 8174
+    t.PLAY-RESOURCE-SEQUENCE, 81B5 t.ACTION-FINAL-DESTRUCTION, 8279 t.WAIT-ANIMATION-OR-FIRE,
+    83D3 t.ACTION-TRAVEL-THROUGH-TIME, 84BC t.ANIMATE-TITLE-IMAGE, 8517 t.WAIT-TITLE, 86CD
+    t.SCROLL-EIGHT-PIXELS, 87E7 t.BOOT-INTRO
+
+42C3 t.ENABLE-DLI-AT (NFA 42BD)
+  Stack: address --
+  Group: display-and-messages
+  Inferred descriptive name, not recovered original: Sets bit $80 in a display-list instruction
+  byte to request a DLI.
+  Decoded callers: 5E4F t.INSTALL-GAME-COLORS
+
+42DB t.GAME-COLOR-TABLE (NFA 42D5)
+  Stack: -- address
+  Group: display-and-messages
+  Inferred descriptive name, not recovered original: Triplets read by COLOR-TABLE-DLI into
+  COLPF0..2; $5E7E installs the gameplay colors here.
+  Decoded callers: 5E4F t.INSTALL-GAME-COLORS, 5E7E t.RESET-GAME-COLORS, 7423 t.ENTER-ROOM
+
+42F5 t.DLI-COLOR-OFFSET (NFA 42EF)
+  Stack: -- address
+  Group: display-and-messages
+  Inferred descriptive name, not recovered original: Byte index into the color table; native DLI
+  advances by three and resets after VCOUNT reaches $40.
+  Decoded callers: 4349 t.INSTALL-COLOR-DLI
+
+4300 t.DLI-COLOR-POINTER (NFA 42F9)
+  Stack: -- address
+  Group: display-and-messages
+  Inferred descriptive name, not recovered original: Constant $DB, zero-page pointer
+  dereferenced by the color-table DLI.
+  Decoded callers: 437A t.PAUSE-COLOR-DLI, 5E4F t.INSTALL-GAME-COLORS
+
+430A t.NMI-ENABLE-SHADOW (NFA 4304)
+  Stack: -- address
+  Group: display-and-messages
+  Inferred descriptive name, not recovered original: Software shadow for NMIEN; installation ORs
+  in $E0, while $437A selects $60 and copies fixed colors.
+  Decoded callers: 4349 t.INSTALL-COLOR-DLI, 437A t.PAUSE-COLOR-DLI
+
+4315 t.COLOR-TABLE-DLI (NFA 430E)
+  Group: display-and-messages
+  Entry: Interrupt entry; returns with RTI.
+  Inferred descriptive name, not recovered original: Native interrupt handler preserves A/Y,
+  sends successive table triplets to GTIA $D016..$D018 and returns RTI.
+  Decoded callers: none
+
+4349 t.INSTALL-COLOR-DLI (NFA 4342)
+  Stack: --
+  Group: display-and-messages
+  Inferred descriptive name, not recovered original: Stores native $4317 in VDSLST ($0200),
+  clears its table index and enables NMI bits in both the shadow and $D40E.
+  Decoded callers: 46C0 t.TRY-GROUP-TRANSFER, 5E4F t.INSTALL-GAME-COLORS
+
+437A t.PAUSE-COLOR-DLI (NFA 4373)
+  Stack: --
+  Group: display-and-messages
+  Inferred descriptive name, not recovered original: Selects NMI mask $60, waits a frame, and
+  copies the first color triplet to OS shadows $02C4 and live GTIA $D016 before disabling DLI.
+  Decoded callers: 46C0 t.TRY-GROUP-TRANSFER
+
+449C t.DRAW-TEXT-FRAME (NFA 4497)
+  Stack: width height --
+  Group: display-and-messages
+  Inferred descriptive name, not recovered original: Computes screen address from SAVMSC, column
+  and row; invokes (RAM), then advances text coordinates into the frame interior.
+  Decoded callers: 44CD t.DRAW-CENTERED-TEXT-FRAME
+
+44CD t.DRAW-CENTERED-TEXT-FRAME (NFA 44C4)
+  Stack: width height --
+  Group: display-and-messages
+  Inferred descriptive name, not recovered original: Sets column to 20-width/2 and draws the
+  frame at the current row.
+  Decoded callers: 45A4 t.SHOW-MESSAGE
+
+44E8 t.MESSAGE-FIRST-LINE-WIDTH (NFA 44E2)
+  Stack: -- address
+  Group: display-and-messages
+  Inferred descriptive name, not recovered original: $44FB stores the first or second line width
+  plus four here; later UI code can size message choices from this value.
+  Decoded callers: 44FB t.MEASURE-MESSAGE, 669C t.CHOOSE-ACTION-MENU-ROW
+
+44F1 t.MESSAGE-FRAME-WIDTH (NFA 44EC)
+  Stack: -- address
+  Group: display-and-messages
+  Inferred descriptive name, not recovered original: Stores maximum counted-line length plus
+  four, with a seven-column special case for a single-line message.
+  Decoded callers: 44FB t.MEASURE-MESSAGE, 669C t.CHOOSE-ACTION-MENU-ROW
+
+44FB t.MEASURE-MESSAGE (NFA 44F5)
+  Stack: message -- width
+  Group: display-and-messages
+  Inferred descriptive name, not recovered original: Walks a line-count byte followed by counted
+  strings, computes maximum width+4, stores width fields and uses width seven when there is only
+  one line.
+  Decoded callers: 45A4 t.SHOW-MESSAGE
+
+4564 t.NEXT-TEXT-ROW (NFA 455E)
+  Stack: --
+  Group: display-and-messages
+  Inferred descriptive name, not recovered original: Increments the OS text row through Y@ and
+  Y!.
+  Decoded callers: 4574 t.PRINT-CENTERED-LINES, 45A4 t.SHOW-MESSAGE
+
+4574 t.PRINT-CENTERED-LINES (NFA 456E)
+  Stack: message --
+  Group: display-and-messages
+  Inferred descriptive name, not recovered original: Walks the counted-line message, sets each
+  starting column to 20-length/2, prints via STYPE, and advances the row.
+  Decoded callers: 45A4 t.SHOW-MESSAGE
+
+45A4 t.SHOW-MESSAGE (NFA 459D)
+  Stack: message --
+  Group: display-and-messages
+  Inferred descriptive name, not recovered original: For a nonempty counted-line group, clears
+  following text rows, measures and draws its frame, prints centered lines, and restores the
+  original row.
+  Decoded callers: 468C t.SHOW-DISK-ERROR, 6256 t.CHOOSE-REQUIRED-SPELL, 65E8
+    t.DRAW-ACTION-MENU, 6809 t.ADD-INVENTORY-ITEM, 6936 t.CHOOSE-INVENTORY-ITEM, 6A37
+    t.SHOW-MISSION-PERCENT, 7423 t.ENTER-ROOM, 7629 t.SHOW-RESOURCE-MESSAGE, 7783
+    t.ACTION-DROP-ITEM, 780C t.ACTION-DESCRIBE, 7950 t.CHECK-PART-TWO-DISK, 7B82
+    t.ACTION-DESCRIBE-SPELL, 7BFA t.CHOOSE-REQUIRED-ITEM, 7D01 t.REPLACE-WHEN-PUZZLE-SET, 7D8F
+    t.ACTION-TOUCH-MAGIC-STONE, 7DC5 t.ACTION-DESCRIBE-OBJECT, 7DEC t.ACTION-EXAMINE-OBJECT,
+    7E02 t.DISABLE-MAGIC, 7E7F t.ACTION-SPELL-REMOTE-VIEW, 7F69 t.ACTION-PLAY-FOR-PRIZE, 7FE8
+    t.ACTION-PAY-OR-TRIGGER-TRAP, 8045 t.ACTION-CANNOT-TAKE, 80E1 t.ACTION-CROSS-ANTIMAGIC-WALL,
+    80FC t.ACTION-READ-MESSAGE, 8132 t.ACTION-EXAMINE-IF-READY, 81B5 t.ACTION-FINAL-DESTRUCTION,
+    82DD t.ACTION-LISTEN, 8316 t.ACTION-PAY-WARLOCK, 83D3 t.ACTION-TRAVEL-THROUGH-TIME
+
+45F5 t.DISK-ERROR-MESSAGES (NFA 45EF)
+  Stack: index -- record
+  Group: display-and-messages
+  Inferred descriptive name, not recovered original: u16-length vector of Polish tape/disk
+  prompts, including PODAJ STAN LICZNIKA and error/insertion messages; consumed by $468C after
+  transfer failures.
+  Decoded callers: 468C t.SHOW-DISK-ERROR
+
+468C t.SHOW-DISK-ERROR (NFA 4684)
+  Stack: error --
+  Group: display-and-messages
+  Inferred descriptive name, not recovered original: Indexes the disk-error vector, skips its
+  u16 header and displays the multiline message.
+  Decoded callers: 46C0 t.TRY-GROUP-TRANSFER
+
+469B t.CLEAR-TEXT-AREA (NFA 4696)
+  Stack: --
+  Group: display-and-messages
+  Inferred descriptive name, not recovered original: Erases $1B8 bytes from SAVMSC and resets
+  text position to 0,0.
+  Decoded callers: 46C0 t.TRY-GROUP-TRANSFER, 4C29 t.OPEN-GAME-SCREEN, 4C3E t.INIT-GAME-SCREEN,
+    6256 t.CHOOSE-REQUIRED-SPELL, 6936 t.CHOOSE-INVENTORY-ITEM, 7423 t.ENTER-ROOM, 74DB
+    t.GAME-LOOP, 7629 t.SHOW-RESOURCE-MESSAGE, 7783 t.ACTION-DROP-ITEM, 7820 t.START-PART-ONE,
+    7950 t.CHECK-PART-TWO-DISK, 7978 t.LOAD-SAVED-GAME, 79C5 t.SAVE-GAME, 79E3 t.START-PART-TWO,
+    7A33 t.ACTION-SHOW-SPELLBOOK, 7A49 t.ACTION-SHOW-INVENTORY, 7AF0 t.LEARN-OBJECT-SPELL, 7BFA
+    t.CHOOSE-REQUIRED-ITEM, 7C5F t.OPEN-SCENE-IF-TRUE, 7CAA t.REPLACE-SCENE-IF-TRUE, 7D01
+    t.REPLACE-WHEN-PUZZLE-SET, 7E7F t.ACTION-SPELL-REMOTE-VIEW, 7F69 t.ACTION-PLAY-FOR-PRIZE,
+    7FE8 t.ACTION-PAY-OR-TRIGGER-TRAP, 807F t.ACTION-SPELL-REMOVE-OBJECT, 81B5
+    t.ACTION-FINAL-DESTRUCTION, 8279 t.WAIT-ANIMATION-OR-FIRE, 8316 t.ACTION-PAY-WARLOCK, 83D3
+    t.ACTION-TRAVEL-THROUGH-TIME
+
+46B6 t.TRANSFER-IS-LOAD (NFA 46B0)
+  Stack: -- address
+  Group: display-and-messages
+  Inferred descriptive name, not recovered original: Selects $4221 load when nonzero or $423B
+  save when zero in $46C0.
+  Decoded callers: 46C0 t.TRY-GROUP-TRANSFER, 4718 t.READ-RESOURCE-GROUP, 472A
+    t.WRITE-RESOURCE-GROUP, 5CED t.LOAD-PART-RESOURCES, 790F t.READ-SAVED-STATE-GROUP
+
+46C0 t.TRY-GROUP-TRANSFER (NFA 46BA)
+  Stack: address count group -- address count group
+  Group: display-and-messages
+  Inferred descriptive name, not recovered original: Keeps transfer arguments, clears text,
+  pauses the DLI, tries load/save, resumes DLI, and displays/acknowledges an error if needed.
+  Decoded callers: 46FE t.RETRY-GROUP-TRANSFER, 5CED t.LOAD-PART-RESOURCES, 790F
+    t.READ-SAVED-STATE-GROUP
+
+46FE t.RETRY-GROUP-TRANSFER (NFA 46F8)
+  Stack: address count group --
+  Group: display-and-messages
+  Inferred descriptive name, not recovered original: Repeats $46C0 until the stored transfer
+  error is zero, then drops the retained transfer arguments.
+  Decoded callers: 4718 t.READ-RESOURCE-GROUP, 472A t.WRITE-RESOURCE-GROUP
+
+4718 t.READ-RESOURCE-GROUP (NFA 4712)
+  Stack: address count group --
+  Group: display-and-messages
+  Inferred descriptive name, not recovered original: Sets transfer mode to read and invokes the
+  retrying transfer.
+  Decoded callers: none
+
+472A t.WRITE-RESOURCE-GROUP (NFA 4724)
+  Stack: address count group --
+  Group: display-and-messages
+  Inferred descriptive name, not recovered original: Sets transfer mode to write and invokes the
+  retrying transfer.
+  Decoded callers: 79C5 t.SAVE-GAME
+
+473C t.READ-BANK-RECORD-LENGTH (NFA 4736)
+  Group: graphics-and-input
+  Entry: Assembly subroutine entry; returns with RTS.
+  Inferred descriptive name, not recovered original: Native helper reads the u16 at ($D2),Y into
+  RECORD-SPAN; returns RTS. Used while OS ROM is switched out.
+  Decoded callers: none
+  Related source: https://tajemnice.atari8.info/9_92/9_92_forth.html
+  Related source: https://tajemnice.atari8.info/10_92/10_92_forth.html
+
+4751 t.SCAN-BANK-RECORD (NFA 474A)
+  Stack: index base --
+  Group: graphics-and-input
+  Inferred descriptive name, not recovered original: Sets banked scanning threshold, exposes RAM
+  under OS, scans to the indexed record, reads its length, restores PORTB/IRQs and drops both
+  arguments.
+  Decoded callers: 4771 t.BANK-RECORD-RANGE, 47A4 t.NESTED-BANK-RECORD
+
+4771 t.BANK-RECORD-RANGE (NFA 476B)
+  Stack: index base -- offset length
+  Group: graphics-and-input
+  Inferred descriptive name, not recovered original: Scans a banked record, skips its u16
+  header, converts the physical address to a logical offset (subtracting $D800 or $9800), and
+  returns its payload length.
+  Decoded callers: 47A4 t.NESTED-BANK-RECORD, 47BD t.BANK-RESOURCE-RANGE
+
+47A4 t.NESTED-BANK-RECORD (NFA 479D)
+  Stack: index collection -- offset length
+  Group: graphics-and-input
+  Inferred descriptive name, not recovered original: First indexes a collection at banked base
+  $D800, then indexes its nested record and returns the logical payload range.
+  Decoded callers: 481D t.FETCH-NESTED-RESOURCE, 5AF1 t.PREPARE-ZOOM-FRAME
+
+47BD t.BANK-RESOURCE-RANGE (NFA 47B6)
+  Stack: index -- offset length
+  Group: graphics-and-input
+  Inferred descriptive name, not recovered original: Uses banked base $D800 and returns the
+  indexed resource's payload offset and length.
+  Decoded callers: 480C t.FETCH-RESOURCE-TO
+
+47CD t.RESOURCE-BASE (NFA 47C7)
+  Inferred descriptive name, not recovered original: Startup selects $A050 for introduction
+  resources and $A3E0 for gameplay resources.
+  Decoded callers: 47D7 t.RESOURCE-BASE@, 87E7 t.BOOT-INTRO
+
+47D7 t.RESOURCE-BASE@ (NFA 47D1)
+  Stack: -- address
+  Group: graphics-and-input
+  Inferred descriptive name, not recovered original: Fetches the visible resource collection
+  base from RESOURCE-BASE, initially $A3E0.
+  Decoded callers: 47FE t.RESOURCE-ADDR, 4830 t.FETCH-RESOURCE
+
+47E5 t.PICTURE-STAGING-BASE (NFA 47DF)
+  Stack: -- address
+  Group: graphics-and-input
+  Inferred descriptive name, not recovered original: Pointer cell initially $A392; its fetched
+  address receives decoded object pictures before composition.
+  Decoded callers: 47EF t.PICTURE-STAGING@
+
+47EF t.PICTURE-STAGING@ (NFA 47E9)
+  Stack: -- address
+  Group: graphics-and-input
+  Inferred descriptive name, not recovered original: Fetches PICTURE-STAGING-BASE; $58F1 decodes
+  item art here and $54AB composites it into the scene picture.
+  Decoded callers: 54AB t.COMPOSE-STAGED-PICTURE, 58F1 t.COMPOSE-DROPPED-ITEM, 65E8
+    t.DRAW-ACTION-MENU, 669C t.CHOOSE-ACTION-MENU-ROW, 8675 t.COPY-TEXT-ROW, 869E
+    t.RENDER-CENTERED-ROW
+
+47FE t.RESOURCE-ADDR (NFA 47F7)
+  Stack: index -- record
+  Group: graphics-and-input
+  Inferred descriptive name, not recovered original: Indexes a u16-length record at RESOURCE-
+  BASE through $3F6D; returns its length header.
+  Decoded callers: 4D22 t.DRAW-RESOURCE-PICTURE, 4D6D t.DECODE-SCENE-RESOURCE, 4D7F
+    t.OVERLAY-SCENE-RESOURCE, 52DE t.LOAD-BASE-HIT-MAP, 530A t.LOAD-ZOOM-HIT-MAP, 5328
+    t.OVERLAY-HIT-MAP, 5949 t.DRAW-PICTURE-AND-MASK, 5AF1 t.PREPARE-ZOOM-FRAME, 7629
+    t.SHOW-RESOURCE-MESSAGE, 87A0 t.SHOW-TITLE-SEQUENCE
+
+480C t.FETCH-RESOURCE-TO (NFA 4806)
+  Stack: index destination --
+  Group: graphics-and-input
+  Inferred descriptive name, not recovered original: Resolves a banked resource payload and
+  copies it to the supplied normal-RAM destination.
+  Decoded callers: 4830 t.FETCH-RESOURCE, 6035 t.INIT-GAME-DISPLAY-AUDIO, 853A
+    t.INIT-TITLE-DISPLAY
+
+481D t.FETCH-NESTED-RESOURCE (NFA 4816)
+  Stack: index collection destination --
+  Group: graphics-and-input
+  Inferred descriptive name, not recovered original: Resolves a nested banked resource and
+  copies its payload to the supplied destination.
+  Decoded callers: 5A0D t.DRAW-ROOM-BACKGROUND, 64E5 t.SELECT-SCENE-OBJECT
+
+4830 t.FETCH-RESOURCE (NFA 4829)
+  Stack: index --
+  Group: graphics-and-input
+  Inferred descriptive name, not recovered original: Copies the chosen banked resource into the
+  visible RESOURCE-BASE buffer.
+  Decoded callers: 59B1 t.CLASSIFY-OBJECT, 5A0D t.DRAW-ROOM-BACKGROUND, 5AF1
+    t.PREPARE-ZOOM-FRAME, 7629 t.SHOW-RESOURCE-MESSAGE, 8174 t.PLAY-RESOURCE-SEQUENCE, 81B5
+    t.ACTION-FINAL-DESTRUCTION, 82A6 t.ANIMATE-LISTEN-SCENE, 84BC t.ANIMATE-TITLE-IMAGE, 853A
+    t.INIT-TITLE-DISPLAY, 87A0 t.SHOW-TITLE-SEQUENCE, 87E7 t.BOOT-INTRO
+
+483D t.WAIT-RASTER-HALF (NFA 4838)
+  Group: graphics-and-input
+  Entry: Assembly subroutine entry; returns with RTS.
+  Inferred descriptive name, not recovered original: Native loop waits for VCOUNT bit7 to clear
+  and then set; returns RTS. Used to synchronize player positions and graphics work.
+  Decoded callers: none
+  Related source: https://tajemnice.atari8.info/9_92/9_92_forth.html
+  Related source: https://tajemnice.atari8.info/10_92/10_92_forth.html
+
+484F t.WAIT-RASTER (NFA 484A)
+  Stack: --
+  Group: graphics-and-input
+  Inferred descriptive name, not recovered original: Calls the native raster wait at $483F and
+  returns to Forth NEXT.
+  Decoded callers: 4A40 t.ANIMATE-DISPLAY-LINES
+
+485E t.BITMAP-BASE (NFA 4857)
+  Stack: -- address
+  Group: graphics-and-input
+  Inferred descriptive name, not recovered original: Set from the second cell of a screen
+  description at $48C4; drawing computes bitmap byte address as base+x+40*y.
+  Decoded callers: 48C4 t.INSTALL-SCREEN-DESCRIPTOR, 4AF8 t.OPEN-SCENE-TRANSITION, 4B5B
+    t.DRAW-SCENE-FRAME, 4D22 t.DRAW-RESOURCE-PICTURE, 544C t.PICTURE-SCREEN-ADDR, 6D4E
+    t.PLAYER-SCREEN-ADDR
+
+486A t.EXPAND-SCREEN-DESCRIPTOR (NFA 4862)
+  Stack: descriptor --
+  Group: graphics-and-input
+  Inferred descriptive name, not recovered original: Reads the destination cell, then expands
+  width/row-count/pattern records sequentially into destination RAM until a zero pattern
+  terminator. Consumes the descriptor address; runtime test expands width2, rows3, pattern11/22
+  into six bytes.
+  Decoded callers: 48C4 t.INSTALL-SCREEN-DESCRIPTOR
+
+48C4 t.INSTALL-SCREEN-DESCRIPTOR (NFA 48BE)
+  Stack: address --
+  Group: graphics-and-input
+  Inferred descriptive name, not recovered original: Loads SAVMSC and BITMAP-BASE from the first
+  two descriptor cells, expands the display-list patterns beginning at the third cell, then
+  installs that cell's destination address in SDLSTL $0230.
+  Decoded callers: 4C29 t.OPEN-GAME-SCREEN, 4C3E t.INIT-GAME-SCREEN
+
+48EF t.FRAME-PATTERN-DATA (NFA 48EA)
+  Stack: -- address
+  Group: graphics-and-input
+  Inferred descriptive name, not recovered original: Two patterned frame records include
+  alternating $5A bytes and display-line pointers; $4B5B copies their borders into the room
+  bitmap.
+  Decoded callers: 4ABE t.CLOSE-SCENE-TRANSITION, 4B5B t.DRAW-SCENE-FRAME
+
+4949 t.TRANSITION-PATTERN-DATA (NFA 4943)
+  Stack: -- address
+  Group: graphics-and-input
+  Inferred descriptive name, not recovered original: Companion pattern records filled with $05
+  bytes; $4ABE uses them while animating display-list/frame pointers.
+  Decoded callers: 4ABE t.CLOSE-SCENE-TRANSITION
+
+49A5 t.GAME-SCREEN-DESCRIPTOR (NFA 499D)
+  Group: graphics-and-input
+  Entry: Data body referenced by literal address; do not execute its saved DOCOL entry.
+  Inferred descriptive name, not recovered original: Despite its saved DOCOL code field, the
+  body is screen-description data beginning at $49A7. $4C29/$4C3E pass that literal address to
+  $48C4; it is not executed as Forth.
+  Decoded callers: none
+
+49D5 t.DISPLAY-LINE-POINTERS (NFA 49CF)
+  Stack: -- address
+  Group: graphics-and-input
+  Inferred descriptive name, not recovered original: Constant $A706 is the first display-list
+  address field modified by the screen-transition routines.
+  Decoded callers: 4A40 t.ANIMATE-DISPLAY-LINES, 4ABE t.CLOSE-SCENE-TRANSITION
+
+49DF t.TRANSITION-ROW-PAIRS (NFA 49D9)
+  Stack: -- count
+  Group: graphics-and-input
+  Inferred descriptive name, not recovered original: Constant 56 is the transition loop bound; a
+  displayed 112-row room uses paired rows.
+  Decoded callers: 4ABE t.CLOSE-SCENE-TRANSITION, 4AF8 t.OPEN-SCENE-TRANSITION
+
+49E9 t.TRANSITION-POINTERS (NFA 49E3)
+  Stack: -- address
+  Group: graphics-and-input
+  Inferred descriptive name, not recovered original: Two mutable cells hold the value to write
+  and the address to patch; native $4A0B writes the first cell through the second.
+  Decoded callers: 4A40 t.ANIMATE-DISPLAY-LINES, 4AA0 t.TRANSITION-PARAMETERS!, 4ABE
+    t.CLOSE-SCENE-TRANSITION, 4B25 t.DRAW-FRAME-ROW, 4B5B t.DRAW-SCENE-FRAME
+
+49F5 t.TRANSITION-INCREMENTS (NFA 49EF)
+  Stack: -- address
+  Group: graphics-and-input
+  Inferred descriptive name, not recovered original: Pair of increments added to transition
+  value/address after each synchronized update.
+  Decoded callers: 4A40 t.ANIMATE-DISPLAY-LINES, 4AA0 t.TRANSITION-PARAMETERS!
+
+4A01 t.TRANSITION-RASTER-OFFSET (NFA 49FB)
+  Stack: -- address
+  Group: graphics-and-input
+  Inferred descriptive name, not recovered original: Initial value eight is added to a display-
+  list-relative row calculation before comparing it to VCOUNT in $4A0B.
+  Decoded callers: none
+
+4A0B t.PATCH-DISPLAY-LINE (NFA 4A05)
+  Stack: --
+  Group: graphics-and-input
+  Inferred descriptive name, not recovered original: Waits until the beam has passed the
+  relevant four-scanline interval, then writes TRANSITION-POINTERS' value through $F0.
+  Decoded callers: 4A40 t.ANIMATE-DISPLAY-LINES
+
+4A40 t.ANIMATE-DISPLAY-LINES (NFA 4A3A)
+  Group: graphics-and-input
+  Inferred descriptive name, not recovered original: Repeatedly synchronizes raster, patches a
+  display-line pointer, and updates pointer values/increments from $49E9/$49F5; used by two room
+  transition effects.
+  Decoded callers: 4ABE t.CLOSE-SCENE-TRANSITION, 4AF8 t.OPEN-SCENE-TRANSITION
+
+4AA0 t.TRANSITION-PARAMETERS! (NFA 4A9A)
+  Stack: address-step value-step address value --
+  Group: graphics-and-input
+  Inferred descriptive name, not recovered original: Stores value and address in $49E9, then the
+  value/address increments in $49F5.
+  Decoded callers: 4ABE t.CLOSE-SCENE-TRANSITION, 4AF8 t.OPEN-SCENE-TRANSITION
+
+4ABE t.CLOSE-SCENE-TRANSITION (NFA 4AB8)
+  Stack: --
+  Group: graphics-and-input
+  Inferred descriptive name, not recovered original: Runs two display-line pointer sweeps using
+  the $05 and $5A pattern blocks, creating the scene closing transition.
+  Decoded callers: 7423 t.ENTER-ROOM, 83D3 t.ACTION-TRAVEL-THROUGH-TIME
+
+4AF8 t.OPEN-SCENE-TRANSITION (NFA 4AF2)
+  Stack: --
+  Group: graphics-and-input
+  Inferred descriptive name, not recovered original: Initializes pointer increments 4 and 80, a
+  destination near the display-list end, and the bitmap's final row pair; performs the 56-step
+  opening sweep.
+  Decoded callers: 4C29 t.OPEN-GAME-SCREEN, 7423 t.ENTER-ROOM
+
+4B25 t.DRAW-FRAME-ROW (NFA 4B1F)
+  Stack: destination --
+  Group: graphics-and-input
+  Inferred descriptive name, not recovered original: Copies four left border bytes, clears the
+  next 32 bytes, and copies four right border bytes from the current frame pattern.
+  Decoded callers: 4B5B t.DRAW-SCENE-FRAME
+
+4B5B t.DRAW-SCENE-FRAME (NFA 4B55)
+  Stack: --
+  Group: graphics-and-input
+  Inferred descriptive name, not recovered original: Iterates the 112-row bitmap in 80-byte row
+  pairs, drawing the alternating frame-row patterns around a 32-byte interior.
+  Decoded callers: 4C3E t.INIT-GAME-SCREEN
+
+4B97 t.DRAW-TEXT-PANEL-BORDERS (NFA 4B91)
+  Stack: --
+  Group: graphics-and-input
+  Inferred descriptive name, not recovered original: Draws a custom-font border string with
+  SAVMSC=$A800, then another at the original SAVMSC-40, and restores the original SAVMSC by
+  adding40.
+  Decoded callers: 4C3E t.INIT-GAME-SCREEN
+
+4C29 t.OPEN-GAME-SCREEN (NFA 4C23)
+  Stack: --
+  Group: graphics-and-input
+  Inferred descriptive name, not recovered original: Installs the screen descriptor, performs
+  the opening transition, and clears the text area.
+  Decoded callers: 853A t.INIT-TITLE-DISPLAY
+
+4C3E t.INIT-GAME-SCREEN (NFA 4C37)
+  Stack: --
+  Group: graphics-and-input
+  Inferred descriptive name, not recovered original: Installs the screen descriptor, draws text-
+  panel borders and the alternating scene frame, then clears the text area.
+  Decoded callers: 6035 t.INIT-GAME-DISPLAY-AUDIO
+
+4C54 t.BYTE-PAIR@ (NFA 4C4E)
+  Stack: address -- first second
+  Group: graphics-and-input
+  Inferred descriptive name, not recovered original: Reads adjacent bytes at address and
+  address+1 as zero-extended values.
+  Decoded callers: 4C9C t.EXPAND-PICTURE-DATA, 4CD2 t.SET-PICTURE-OFFSETS, 4CF6
+    t.OVERLAY-PACKED-PICTURE, 4D22 t.DRAW-RESOURCE-PICTURE, 522D t.CENTER-VIEW-CURSOR, 5257
+    t.CONFIGURE-VIEW-CURSOR, 52DE t.LOAD-BASE-HIT-MAP, 544C t.PICTURE-SCREEN-ADDR, 5468
+    t.BLIT-PARAMETERS, 54AB t.COMPOSE-STAGED-PICTURE, 54F1 t.SAVE-SCENE-BACKGROUND, 58F1
+    t.COMPOSE-DROPPED-ITEM, 5AF1 t.PREPARE-ZOOM-FRAME, 6000 t.PLAY-SOUND-EFFECT, 68CE
+    t.OBJECT-HIT-MAP-XY, 6D4E t.PLAYER-SCREEN-ADDR, 6DBE t.STEP-PLAYER-BACKGROUND, 6EC6
+    t.COMPOSE-PLAYER-FRAME, 7158 t.NEXT-ROUTE-XY, 71BC t.ROUTE-STEP-APPROACHES, 7302
+    t.ADJUST-ROUTE-TARGET-AXIS, 73B1 t.MOVE-PLAYER-TO-POINT, 7FE8 t.ACTION-PAY-OR-TRIGGER-TRAP,
+    86EF t.SCROLL-TITLE-ROW
+
+4C6A t.BYTE+! (NFA 4C64)
+  Stack: delta address --
+  Group: graphics-and-input
+  Inferred descriptive name, not recovered original: Adds delta to the byte at address, storing
+  only the low eight bits.
+  Decoded callers: 4FC5 t.STEP-CURSOR, 516E t.PUSH-VIEW, 519B t.POP-VIEW, 65E8
+    t.DRAW-ACTION-MENU, 69E8 t.SET-ROOM-ACHIEVEMENT, 7302 t.ADJUST-ROUTE-TARGET-AXIS, 786B
+    t.DECODE-PROTECTION-MESSAGE, 7AF0 t.LEARN-OBJECT-SPELL, 7B82 t.ACTION-DESCRIBE-SPELL
+
+4C81 t.SCENE-PICTURE-BUFFER (NFA 4C7A)
+  Stack: -- address
+  Group: graphics-and-input
+  Inferred descriptive name, not recovered original: Constant $0600 is the decompressed
+  scene/zoom picture buffer, with x,y,width,height followed by pixels.
+  Decoded callers: 4D6D t.DECODE-SCENE-RESOURCE, 4D7F t.OVERLAY-SCENE-RESOURCE, 5257
+    t.CONFIGURE-VIEW-CURSOR, 54AB t.COMPOSE-STAGED-PICTURE, 54F1 t.SAVE-SCENE-BACKGROUND, 5AF1
+    t.PREPARE-ZOOM-FRAME, 5BF2 t.PUSH-AND-DRAW-VIEW, 5C26 t.REDRAW-CURRENT-VIEW, 5C61
+    t.ENTER-INVENTORY-VIEW, 68CE t.OBJECT-HIT-MAP-XY, 749C t.COMPOSE-PLAYER-OVERLAP, 7573
+    t.REFRESH-CHANGED-PICTURE
+
+4C8A t.PICTURE-X-OFFSET (NFA 4C85)
+  Stack: -- address
+  Group: graphics-and-input
+  Inferred descriptive name, not recovered original: Stored by $4CD2 as picture x minus the
+  supplied destination origin; used by $4CB9 for composition placement.
+  Decoded callers: 4CB9 t.PICTURE-OFFSET, 4CD2 t.SET-PICTURE-OFFSETS, 52A4 t.HIT-MAP-OFFSET
+
+4C93 t.PICTURE-Y-OFFSET (NFA 4C8E)
+  Stack: -- address
+  Group: graphics-and-input
+  Inferred descriptive name, not recovered original: Stored by $4CD2 as picture y minus the
+  supplied destination origin; used by $4CB9 and hit-map placement.
+  Decoded callers: 4CB9 t.PICTURE-OFFSET, 4CD2 t.SET-PICTURE-OFFSETS, 52A4 t.HIT-MAP-OFFSET
+
+4C9C t.EXPAND-PICTURE-DATA (NFA 4C97)
+  Stack: stride source destination --
+  Group: graphics-and-input
+  Inferred descriptive name, not recovered original: Reads width/height from the source,
+  advances past its two-byte dimensions, sets RLE parameters and expands into destination with
+  the requested stride.
+  Decoded callers: 4CF6 t.OVERLAY-PACKED-PICTURE, 4D22 t.DRAW-RESOURCE-PICTURE, 52C2
+    t.EXPAND-HIT-MAP
+
+4CB9 t.PICTURE-OFFSET (NFA 4CB2)
+  Stack: base stride -- address
+  Group: graphics-and-input
+  Inferred descriptive name, not recovered original: Adds PICTURE-X-OFFSET and stride*PICTURE-Y-
+  OFFSET to the supplied base.
+  Decoded callers: 4CF6 t.OVERLAY-PACKED-PICTURE, 54AB t.COMPOSE-STAGED-PICTURE
+
+4CD2 t.SET-PICTURE-OFFSETS (NFA 4CCB)
+  Stack: picture x-origin y-origin -- picture
+  Group: graphics-and-input
+  Inferred descriptive name, not recovered original: Reads picture x/y and subtracts supplied
+  origin coordinates, storing relative x/y offsets.
+  Decoded callers: 4CF6 t.OVERLAY-PACKED-PICTURE, 4D22 t.DRAW-RESOURCE-PICTURE, 54AB
+    t.COMPOSE-STAGED-PICTURE, 7573 t.REFRESH-CHANGED-PICTURE
+
+4CF6 t.OVERLAY-PACKED-PICTURE (NFA 4CF0)
+  Stack: source destination --
+  Group: graphics-and-input
+  Inferred descriptive name, not recovered original: Uses both four-byte picture headers to
+  compute relative placement, then expands source RLE bytes into destination at its own row
+  stride.
+  Decoded callers: 4D53 t.DECODE-PICTURE, 4D7F t.OVERLAY-SCENE-RESOURCE
+
+4D22 t.DRAW-RESOURCE-PICTURE (NFA 4D1C)
+  Stack: resource --
+  Group: graphics-and-input
+  Inferred descriptive name, not recovered original: Resolves the picture record, sets origin-
+  relative offsets using x=4/y=0, then decodes the image into BITMAP-BASE at its stored x/y with
+  stride40.
+  Decoded callers: 5937 t.DRAW-BASE-PICTURE, 5949 t.DRAW-PICTURE-AND-MASK, 8174
+    t.PLAY-RESOURCE-SEQUENCE, 81B5 t.ACTION-FINAL-DESTRUCTION, 82A6 t.ANIMATE-LISTEN-SCENE, 84BC
+    t.ANIMATE-TITLE-IMAGE, 853A t.INIT-TITLE-DISPLAY
+
+4D53 t.DECODE-PICTURE (NFA 4D4E)
+  Stack: source destination --
+  Group: graphics-and-input
+  Inferred descriptive name, not recovered original: Copies the source's x/y/width/height header
+  to destination, then expands its packed payload there.
+  Decoded callers: 4D6D t.DECODE-SCENE-RESOURCE, 58F1 t.COMPOSE-DROPPED-ITEM
+
+4D6D t.DECODE-SCENE-RESOURCE (NFA 4D67)
+  Stack: resource --
+  Group: graphics-and-input
+  Inferred descriptive name, not recovered original: Resolves a picture resource and decodes it
+  into the $0600 scene picture buffer.
+  Decoded callers: 596F t.DECODE-ZOOM-PICTURE
+
+4D7F t.OVERLAY-SCENE-RESOURCE (NFA 4D79)
+  Stack: resource --
+  Group: graphics-and-input
+  Inferred descriptive name, not recovered original: Resolves a packed picture and overlays it
+  into the existing $0600 scene picture buffer.
+  Decoded callers: 5981 t.COMPOSE-PICTURE-AND-MASK
+
+4D90 t.HIT-MAP-SELECTOR (NFA 4D8B)
+  Stack: -- address
+  Group: graphics-and-input
+  Inferred descriptive name, not recovered original: Zero chooses the base hit map; nonzero
+  selects the zoom hit map at +$284. Scene/zoom drawing routines set it explicitly.
+  Decoded callers: 4DA3 t.HIT-MAP@, 52DE t.LOAD-BASE-HIT-MAP, 530A t.LOAD-ZOOM-HIT-MAP, 5AF1
+    t.PREPARE-ZOOM-FRAME, 5C39 t.LEAVE-VIEW, 5C9F t.LEAVE-INVENTORY-VIEW, 7573
+    t.REFRESH-CHANGED-PICTURE
+
+4D99 t.HIT-MAP-BASE (NFA 4D94)
+  Stack: -- address
+  Group: graphics-and-input
+  Inferred descriptive name, not recovered original: Constant $A058 addresses the base room hit
+  map, whose first two bytes are width/height.
+  Decoded callers: 4DA3 t.HIT-MAP@
+
+4DA3 t.HIT-MAP@ (NFA 4D9D)
+  Stack: -- address
+  Group: graphics-and-input
+  Inferred descriptive name, not recovered original: Returns $A058, adding $284 when HIT-MAP-
+  SELECTOR is nonzero.
+  Decoded callers: 522D t.CENTER-VIEW-CURSOR, 5257 t.CONFIGURE-VIEW-CURSOR, 5289 t.HIT-MAP-CELL,
+    52C2 t.EXPAND-HIT-MAP, 52DE t.LOAD-BASE-HIT-MAP, 530A t.LOAD-ZOOM-HIT-MAP, 5AF1
+    t.PREPARE-ZOOM-FRAME, 68CE t.OBJECT-HIT-MAP-XY, 6EC6 t.COMPOSE-PLAYER-FRAME, 7573
+    t.REFRESH-CHANGED-PICTURE
+
+4DBD t.PLAYER-COLORS (NFA 4DB7)
+  Stack: -- address
+  Group: graphics-and-input
+  Inferred descriptive name, not recovered original: Bytes copied to OS PCOLR0..3 at $02C0 by
+  $4DCC to color the player/missile cursor.
+  Decoded callers: 4DCC t.SET-PLAYER-COLORS
+
+4DCC t.SET-PLAYER-COLORS (NFA 4DC5)
+  Stack: --
+  Group: graphics-and-input
+  Inferred descriptive name, not recovered original: Copies four bytes from PLAYER-COLORS to OS
+  color shadows $02C0..$02C3.
+  Decoded callers: 50C3 t.INIT-CURSOR-PLAYERS
+
+4DE2 t.PM-BASE (NFA 4DDC)
+  Stack: -- address
+  Group: graphics-and-input
+  Inferred descriptive name, not recovered original: Cell stores the player/missile memory base
+  in bytes; set while writing PMBASE hardware $D407.
+  Decoded callers: 4DED t.PLAYER-DATA-BASE, 4E02 t.PM-BASE!
+
+4DED t.PLAYER-DATA-BASE (NFA 4DE6)
+  Stack: -- address
+  Group: graphics-and-input
+  Inferred descriptive name, not recovered original: Returns PM-BASE+$400, the first player area
+  for the configured single-line PM graphics.
+  Decoded callers: 4E1F t.CLEAR-PLAYERS, 4F0F t.SET-CURSOR-PM-Y
+
+4E02 t.PM-BASE! (NFA 4DFB)
+  Stack: page --
+  Group: graphics-and-input
+  Inferred descriptive name, not recovered original: Writes the page number to ANTIC PMBASE
+  $D407 and stores page*256 in PM-BASE.
+  Decoded callers: 50C3 t.INIT-CURSOR-PLAYERS
+
+4E1F t.CLEAR-PLAYERS (NFA 4E18)
+  Stack: --
+  Group: graphics-and-input
+  Inferred descriptive name, not recovered original: Erases $2FF bytes from PM-BASE+$400,
+  covering the cursor's three player planes.
+  Decoded callers: 50C3 t.INIT-CURSOR-PLAYERS
+
+4E33 t.ENABLE-PLAYERS (NFA 4E2B)
+  Stack: --
+  Group: graphics-and-input
+  Inferred descriptive name, not recovered original: Writes three to GTIA GRACTL $D01D, enabling
+  missile and player DMA display.
+  Decoded callers: 50C3 t.INIT-CURSOR-PLAYERS
+
+4E48 t.DISABLE-PLAYERS (NFA 4E3F)
+  Stack: --
+  Group: graphics-and-input
+  Inferred descriptive name, not recovered original: Clears eight horizontal position registers
+  at $D000 and writes zero to GRACTL.
+  Decoded callers: 5D92 t.WAIT-GAME-INPUT
+
+4E72 t.SET-CURSOR-PM-X (NFA 4E6B)
+  Stack: x --
+  Group: graphics-and-input
+  Inferred descriptive name, not recovered original: Waits for the raster point, then writes the
+  supplied x to HPOSP0, HPOSP1 and HPOSP2 and drops it.
+  Decoded callers: 4FC5 t.STEP-CURSOR, 5D92 t.WAIT-GAME-INPUT
+
+4E8B t.CURSOR-PLAYER-BITMAP (NFA 4E85)
+  Group: graphics-and-input
+  Entry: Data body referenced by literal address; do not execute its saved DOCOL entry.
+  Inferred descriptive name, not recovered original: Body at $4E8D contains three 13-byte cursor
+  planes. $4F0F refers to that literal body address; its saved DOCOL field is not evidence this
+  data is executable Forth.
+  Decoded callers: none
+
+4EBB t.PM-COPY-DEST (NFA 4EB6)
+  Stack: -- address
+  Group: graphics-and-input
+  Inferred descriptive name, not recovered original: Constant $D4, the destination pointer used
+  by the native player-plane copy.
+  Decoded callers: 4F0F t.SET-CURSOR-PM-Y
+
+4EC6 t.PM-COPY-PLANES (NFA 4EBF)
+  Stack: -- address
+  Group: graphics-and-input
+  Inferred descriptive name, not recovered original: Native $4EE5 uses its low byte as plane
+  count and advances destination by256 for each plane.
+  Decoded callers: 4ED3 t.PM-COPY-PARAMETERS!, 4F0F t.SET-CURSOR-PM-Y
+
+4ED3 t.PM-COPY-PARAMETERS! (NFA 4ECA)
+  Stack: bytes-per-plane planes --
+  Group: graphics-and-input
+  Inferred descriptive name, not recovered original: Stores plane count and the per-plane byte
+  count (the shared RECORD-SPAN cell).
+  Decoded callers: none
+
+4EE5 t.COPY-PM-PLANES (NFA 4EDF)
+  Stack: --
+  Group: graphics-and-input
+  Inferred descriptive name, not recovered original: Waits for raster, copies each plane from
+  $D2 to $D4, advances source by plane length and destination by256, preserving Forth X.
+  Decoded callers: 4F0F t.SET-CURSOR-PM-Y
+
+4F0F t.SET-CURSOR-PM-Y (NFA 4F08)
+  Stack: y --
+  Group: graphics-and-input
+  Inferred descriptive name, not recovered original: Copies the fixed three-plane,13-row cursor
+  bitmap to PM-BASE+$400+y using $4EE5.
+  Decoded callers: 4FC5 t.STEP-CURSOR, 5D92 t.WAIT-GAME-INPUT
+
+4F3D t.CONTEXT-BYTE-ARRAY: (NFA 4F34)
+  Group: graphics-and-input
+  Inferred descriptive name, not recovered original: Defining word stores an index-cell address
+  and allocates bytes; DOES> fetches that index and adds it to the payload address.
+  Decoded callers: none
+
+4F59 t.CURSOR-AXIS (NFA 4F53)
+  Stack: -- address
+  Group: graphics-and-input
+  Inferred descriptive name, not recovered original: Zero selects horizontal cursor cells; one
+  selects the adjacent vertical cells in the four context-indexed arrays.
+  Decoded callers: 4FC5 t.STEP-CURSOR, 50ED t.CURSOR-ORIGIN!, 511B t.CURSOR-LIMITS!, 513E
+    t.CURSOR-STEPS!, 51F5 t.RESTORE-VIEW-CURSOR, 5211 t.SAVE-VIEW-CURSOR, 522D
+    t.CENTER-VIEW-CURSOR, 5D92 t.WAIT-GAME-INPUT, 6256 t.CHOOSE-REQUIRED-SPELL
+
+4F64 t.CURSOR-ORIGIN (NFA 4F5D)
+  Stack: -- address
+  Group: graphics-and-input
+  Inferred descriptive name, not recovered original: Axis-indexed byte origins used with grid
+  step and position to compute PM screen coordinates.
+  Decoded callers: 4FAA t.CURSOR-PIXEL, 50ED t.CURSOR-ORIGIN!
+
+4F73 t.CURSOR-GRID-POS (NFA 4F6D)
+  Stack: -- address
+  Group: graphics-and-input
+  Inferred descriptive name, not recovered original: Axis-indexed cursor x/y grid positions;
+  input wait returns both bytes and navigation saves/restores their pair.
+  Decoded callers: 4FAA t.CURSOR-PIXEL, 4FC5 t.STEP-CURSOR, 51F5 t.RESTORE-VIEW-CURSOR, 5211
+    t.SAVE-VIEW-CURSOR, 522D t.CENTER-VIEW-CURSOR, 5D92 t.WAIT-GAME-INPUT, 6256
+    t.CHOOSE-REQUIRED-SPELL, 669C t.CHOOSE-ACTION-MENU-ROW
+
+4F82 t.CURSOR-GRID-STEP (NFA 4F7C)
+  Stack: -- address
+  Group: graphics-and-input
+  Inferred descriptive name, not recovered original: Axis-indexed pixel steps, normally x4 and
+  y6; $4FAA scales the selected grid position by this value.
+  Decoded callers: 4FAA t.CURSOR-PIXEL, 4FC5 t.STEP-CURSOR, 513E t.CURSOR-STEPS!
+
+4F91 t.CURSOR-GRID-LIMIT (NFA 4F8B)
+  Stack: -- address
+  Group: graphics-and-input
+  Inferred descriptive name, not recovered original: Axis-indexed maximum grid coordinates;
+  movement stops at zero or this limit.
+  Decoded callers: 4FC5 t.STEP-CURSOR, 511B t.CURSOR-LIMITS!
+
+4F9F t.CURSOR-MOVE-DELTA (NFA 4F9A)
+  Stack: -- address
+  Group: graphics-and-input
+  Inferred descriptive name, not recovered original: Stores the signed one-step input delta
+  during animated cursor movement.
+  Decoded callers: 4FC5 t.STEP-CURSOR
+
+4FAA t.CURSOR-PIXEL (NFA 4FA3)
+  Stack: -- pixel
+  Group: graphics-and-input
+  Inferred descriptive name, not recovered original: Computes selected-axis origin + grid-
+  position*grid-step.
+  Decoded callers: 4FC5 t.STEP-CURSOR, 5D92 t.WAIT-GAME-INPUT
+
+4FC5 t.STEP-CURSOR (NFA 4FBE)
+  Stack: delta --
+  Group: graphics-and-input
+  Inferred descriptive name, not recovered original: For nonzero signed movement, checks the
+  selected-axis limit, animates PM position across one grid step and adjusts its stored grid
+  byte. Intended deltas are -1,0,+1.
+  Decoded callers: 5D92 t.WAIT-GAME-INPUT
+
+503D t.TRIGGER@ (NFA 5035)
+  Inferred descriptive name, not recovered original: Reads GTIA trigger register $D010 plus
+  controller index and masks bit zero.
+  Decoded callers: 5D6D t.WAIT-TRIGGER-RELEASE, 5D92 t.WAIT-GAME-INPUT, 75EE t.WAIT-KEY-OR-FIRE,
+    8279 t.WAIT-ANIMATION-OR-FIRE, 84EC t.POLL-TITLE-SKIP
+
+505C t.STICK-X-DELTA-TABLE (NFA 5056)
+  Stack: index -- dx
+  Group: game-framework
+  Inferred descriptive name, not recovered original: Threaded selector indexed by raw STICK
+  nibble minus five; entries yield +1,-1 or0 for horizontal movement.
+  Decoded callers: 50A3 t.JOYSTICK-DELTA
+
+507E t.STICK-Y-DELTA-TABLE (NFA 5078)
+  Stack: index -- dy
+  Group: game-framework
+  Inferred descriptive name, not recovered original: Companion selector yields vertical -1/0/+1
+  after the raw joystick nibble is reduced by five.
+  Decoded callers: 50A3 t.JOYSTICK-DELTA
+
+50A3 t.JOYSTICK-DELTA (NFA 509A)
+  Stack: controller -- dx dy
+  Group: game-framework
+  Inferred descriptive name, not recovered original: Reads OS STICK0+controller at $0278,
+  subtracts five and applies the X/Y selector tables. Unlike AD2044's raw-nibble helper, this
+  word accepts a controller index.
+  Decoded callers: 5D92 t.WAIT-GAME-INPUT
+
+50C3 t.INIT-CURSOR-PLAYERS (NFA 50BD)
+  Stack: --
+  Group: game-framework
+  Inferred descriptive name, not recovered original: Sets SDMCTL=$3E and GPRIOR=1, selects PM
+  base $A000, clears players, installs their colors and enables GRACTL.
+  Decoded callers: 5D92 t.WAIT-GAME-INPUT
+
+50ED t.CURSOR-ORIGIN! (NFA 50E5)
+  Stack: x-byte y --
+  Group: game-framework
+  Inferred descriptive name, not recovered original: Sets vertical origin y+$21 and horizontal
+  origin 4*x+$32 in the axis-indexed cursor array.
+  Decoded callers: 5257 t.CONFIGURE-VIEW-CURSOR, 6256 t.CHOOSE-REQUIRED-SPELL, 669C
+    t.CHOOSE-ACTION-MENU-ROW
+
+511B t.CURSOR-LIMITS! (NFA 5114)
+  Stack: columns rows --
+  Group: game-framework
+  Inferred descriptive name, not recovered original: Stores rows-1 and columns-1 as
+  vertical/horizontal maximum grid positions.
+  Decoded callers: 5257 t.CONFIGURE-VIEW-CURSOR, 6256 t.CHOOSE-REQUIRED-SPELL, 669C
+    t.CHOOSE-ACTION-MENU-ROW
+
+513E t.CURSOR-STEPS! (NFA 5137)
+  Stack: x-step y-step --
+  Group: game-framework
+  Inferred descriptive name, not recovered original: Stores the horizontal and vertical byte
+  steps used to animate cursor movement.
+  Decoded callers: 5257 t.CONFIGURE-VIEW-CURSOR, 6256 t.CHOOSE-REQUIRED-SPELL, 669C
+    t.CHOOSE-ACTION-MENU-ROW
+
+5157 t.VIEW-STACK (NFA 5152)
+  Stack: -- address
+  Group: game-framework
+  Inferred descriptive name, not recovered original: Counted stack of 16-bit view IDs; the first
+  byte counts stored bytes. $516E pushes and $519B pops.
+  Decoded callers: 516E t.PUSH-VIEW, 5188 t.P, 519B t.POP-VIEW, 51F5 t.RESTORE-VIEW-CURSOR, 5211
+    t.SAVE-VIEW-CURSOR, 5257 t.CONFIGURE-VIEW-CURSOR, 5BF2 t.PUSH-AND-DRAW-VIEW, 5C39
+    t.LEAVE-VIEW, 5C61 t.ENTER-INVENTORY-VIEW, 5C9F t.LEAVE-INVENTORY-VIEW, 5D92
+    t.WAIT-GAME-INPUT, 65E8 t.DRAW-ACTION-MENU, 68CE t.OBJECT-HIT-MAP-XY, 6ACB t.GET-GAME-INPUT,
+    74DB t.GAME-LOOP
+
+516E t.PUSH-VIEW (NFA 5169)
+  Stack: view --
+  Group: game-framework
+  Inferred descriptive name, not recovered original: Stores the cell at VIEW-STACK+count+2, then
+  increments the byte count by two. This implementation has no capacity check.
+  Decoded callers: 5BF2 t.PUSH-AND-DRAW-VIEW, 5C61 t.ENTER-INVENTORY-VIEW
+
+519B t.POP-VIEW (NFA 5196)
+  Stack: -- view
+  Group: game-framework
+  Inferred descriptive name, not recovered original: Fetches the cell at VIEW-STACK+count, then
+  decrements a nonzero byte count by two; zero count returns the initial cell.
+  Decoded callers: 5C39 t.LEAVE-VIEW, 5C9F t.LEAVE-INVENTORY-VIEW
+
+51C1 t.CELL-ARRAY: (NFA 51B9)
+  Group: game-framework
+  Inferred descriptive name, not recovered original: Defining word allocates twice the requested
+  count; DOES> doubles the index and adds it to the payload.
+  Decoded callers: none
+
+51DD t.VIEW-CURSOR-POSITIONS (NFA 51D7)
+  Stack: index -- address
+  Group: game-framework
+  Inferred descriptive name, not recovered original: Cell array stores one cursor x/y byte pair
+  for each view-stack byte-count index, as used by $51F5/$5211.
+  Decoded callers: 51F5 t.RESTORE-VIEW-CURSOR, 5211 t.SAVE-VIEW-CURSOR
+
+51F5 t.RESTORE-VIEW-CURSOR (NFA 51EF)
+  Stack: --
+  Group: game-framework
+  Inferred descriptive name, not recovered original: Indexes saved cursor cells by current VIEW-
+  STACK byte count, fetches the packed pair and writes it to the horizontal/vertical cursor
+  bytes.
+  Decoded callers: 5C39 t.LEAVE-VIEW, 5C9F t.LEAVE-INVENTORY-VIEW, 6256 t.CHOOSE-REQUIRED-SPELL,
+    669C t.CHOOSE-ACTION-MENU-ROW
+
+5211 t.SAVE-VIEW-CURSOR (NFA 520B)
+  Stack: --
+  Group: game-framework
+  Inferred descriptive name, not recovered original: Stores the current packed cursor position
+  at the cell-array index given by the current VIEW-STACK byte count.
+  Decoded callers: 5C15 t.ENTER-VIEW, 5C61 t.ENTER-INVENTORY-VIEW, 6256 t.CHOOSE-REQUIRED-SPELL,
+    669C t.CHOOSE-ACTION-MENU-ROW
+
+522D t.CENTER-VIEW-CURSOR (NFA 5227)
+  Stack: --
+  Group: game-framework
+  Inferred descriptive name, not recovered original: Uses active hit-map dimensions: y becomes
+  height/2 and x becomes width/2-1.
+  Decoded callers: 52DE t.LOAD-BASE-HIT-MAP, 5C15 t.ENTER-VIEW, 5C61 t.ENTER-INVENTORY-VIEW
+
+5257 t.CONFIGURE-VIEW-CURSOR (NFA 5251)
+  Stack: --
+  Group: game-framework
+  Inferred descriptive name, not recovered original: Uses picture origin for a zoom view or
+  x4/y0 for the base view, applies active hit-map dimensions as limits and fixes cursor steps
+  to4/6 pixels.
+  Decoded callers: 52DE t.LOAD-BASE-HIT-MAP, 5BF2 t.PUSH-AND-DRAW-VIEW, 5C39 t.LEAVE-VIEW, 5C61
+    t.ENTER-INVENTORY-VIEW, 5C9F t.LEAVE-INVENTORY-VIEW, 6256 t.CHOOSE-REQUIRED-SPELL, 669C
+    t.CHOOSE-ACTION-MENU-ROW
+
+5289 t.HIT-MAP-CELL (NFA 5282)
+  Stack: x y -- object
+  Group: game-framework
+  Inferred descriptive name, not recovered original: Returns the hit-map byte at
+  base+2+x+y*width for the currently selected map.
+  Decoded callers: 6936 t.CHOOSE-INVENTORY-ITEM, 6ACB t.GET-GAME-INPUT, 71E6
+    t.ROUTE-STEP-WALKABLE
+
+52A4 t.HIT-MAP-OFFSET (NFA 529D)
+  Stack: base stride -- address
+  Group: game-framework
+  Inferred descriptive name, not recovered original: Adds horizontal picture offset and
+  stride*(vertical offset/6), matching six bitmap rows per hit-map row.
+  Decoded callers: 52C2 t.EXPAND-HIT-MAP, 7573 t.REFRESH-CHANGED-PICTURE
+
+52C2 t.EXPAND-HIT-MAP (NFA 52BC)
+  Stack: source --
+  Group: game-framework
+  Inferred descriptive name, not recovered original: Decodes a packed width/height hit-map
+  record at its relative picture offset into the active hit-map buffer.
+  Decoded callers: 52DE t.LOAD-BASE-HIT-MAP, 530A t.LOAD-ZOOM-HIT-MAP, 5328 t.OVERLAY-HIT-MAP,
+    58F1 t.COMPOSE-DROPPED-ITEM
+
+52DE t.LOAD-BASE-HIT-MAP (NFA 52D8)
+  Stack: resource --
+  Group: game-framework
+  Inferred descriptive name, not recovered original: Selects the base map, copies its dimensions
+  (doubling width), configures/centers the cursor and expands the packed map.
+  Decoded callers: 5937 t.DRAW-BASE-PICTURE
+
+530A t.LOAD-ZOOM-HIT-MAP (NFA 5304)
+  Stack: resource --
+  Group: game-framework
+  Inferred descriptive name, not recovered original: Selects the zoom map, copies its
+  width/height header and expands its packed payload.
+  Decoded callers: 596F t.DECODE-ZOOM-PICTURE
+
+5328 t.OVERLAY-HIT-MAP (NFA 5322)
+  Stack: resource --
+  Group: game-framework
+  Inferred descriptive name, not recovered original: Resolves a mask resource and expands it
+  into the current hit map using the current picture offsets.
+  Decoded callers: 5949 t.DRAW-PICTURE-AND-MASK, 5981 t.COMPOSE-PICTURE-AND-MASK
+
+5338 t.BLIT-HIT-THRESHOLD (NFA 5332)
+  Stack: -- address
+  Group: game-framework
+  Inferred descriptive name, not recovered original: Native blend compares this byte against the
+  hit-map byte at ($D2),Y when BLIT-IGNORE-HIT is zero.
+  Decoded callers: none
+
+5343 t.BLIT-IGNORE-HIT (NFA 533C)
+  Stack: -- address
+  Group: game-framework
+  Inferred descriptive name, not recovered original: When nonzero, native blend skips the
+  threshold comparison against ($D2),Y; zero enables that test and six-row mask-pointer
+  progression.
+  Decoded callers: 54F1 t.SAVE-SCENE-BACKGROUND, 6EC6 t.COMPOSE-PLAYER-FRAME, 749C
+    t.COMPOSE-PLAYER-OVERLAP
+
+534C t.MASK-PICTURE-BYTE (NFA 5347)
+  Group: game-framework
+  Entry: Assembly subroutine entry; returns with RTS.
+  Inferred descriptive name, not recovered original: Native helper processes four two-bit
+  pixels, combines a source-pixel mask with destination, and tracks runs through $FC. Returns
+  masked byte in $FA with RTS.
+  Decoded callers: none
+  Related source: https://tajemnice.atari8.info/9_92/9_92_forth.html
+  Related source: https://tajemnice.atari8.info/10_92/10_92_forth.html
+
+538A t.BLIT-MASKED (NFA 5385)
+  Stack: -- address
+  Group: game-framework
+  Inferred descriptive name, not recovered original: Zero makes $5393 copy source directly;
+  nonzero enables masked blending with the optional hit/depth comparison.
+  Decoded callers: 58F1 t.COMPOSE-DROPPED-ITEM, 6EC6 t.COMPOSE-PLAYER-FRAME
+
+5393 t.BLEND-PICTURE-BYTE (NFA 538E)
+  Group: game-framework
+  Entry: Assembly subroutine entry; returns with RTS.
+  Inferred descriptive name, not recovered original: Copies or masks a pixel byte from ($F2),Y
+  into ($F0),Y according to $538A/$5343 and the hit-map threshold. Native helper returns RTS.
+  Decoded callers: none
+  Related source: https://tajemnice.atari8.info/9_92/9_92_forth.html
+  Related source: https://tajemnice.atari8.info/10_92/10_92_forth.html
+
+53BE t.BLEND-PICTURE-ROW (NFA 53B8)
+  Group: game-framework
+  Entry: Assembly subroutine entry; returns with RTS.
+  Inferred descriptive name, not recovered original: Calls the byte blending helper for Y=0
+  through width-1, width held in $F7. Native RTS helper.
+  Decoded callers: none
+  Related source: https://tajemnice.atari8.info/9_92/9_92_forth.html
+  Related source: https://tajemnice.atari8.info/10_92/10_92_forth.html
+
+53D1 t.BLIT-ROW-POSITION (NFA 53CB)
+  Stack: -- address
+  Group: game-framework
+  Inferred descriptive name, not recovered original: Row counter incremented by native $53E4
+  when clipping is enabled; output terminates when it passes $70.
+  Decoded callers: none
+
+53DA t.BLIT-NO-ROW-CLIP (NFA 53D5)
+  Stack: -- address
+  Group: game-framework
+  Inferred descriptive name, not recovered original: Nonzero bypasses row counter/clipping in
+  $53E4; zero enables clipping at row112.
+  Decoded callers: none
+
+53E4 t.BLEND-PICTURE-ROWS (NFA 53DE)
+  Group: game-framework
+  Entry: Assembly subroutine entry; returns with RTS.
+  Inferred descriptive name, not recovered original: Processes the rectangle row by row,
+  advances source/destination pointers by independent strides, steps the hit-map pointer every
+  six rows when enabled, and optionally clips at row112. Returns RTS.
+  Decoded callers: none
+  Related source: https://tajemnice.atari8.info/9_92/9_92_forth.html
+  Related source: https://tajemnice.atari8.info/10_92/10_92_forth.html
+
+543B t.BLIT-PICTURE (NFA 5433)
+  Stack: --
+  Group: game-framework
+  Inferred descriptive name, not recovered original: Preserves the Forth stack register while
+  invoking the native rectangle compositor at $53E6.
+  Decoded callers: 5468 t.BLIT-PARAMETERS, 54F1 t.SAVE-SCENE-BACKGROUND, 6C85
+    t.COPY-RECT-INTERSECTION, 6D79 t.SAVE-BG-AT-PLAYER-XY, 6DBE t.STEP-PLAYER-BACKGROUND
+
+544C t.PICTURE-SCREEN-ADDR (NFA 5447)
+  Stack: picture -- address
+  Group: game-framework
+  Inferred descriptive name, not recovered original: Reads picture x/y and returns BITMAP-
+  BASE+x+40*y.
+  Decoded callers: 548F t.DRAW-DECODED-PICTURE, 54F1 t.SAVE-SCENE-BACKGROUND
+
+5468 t.BLIT-PARAMETERS (NFA 5461)
+  Stack: header pixels stride --
+  Group: game-framework
+  Inferred descriptive name, not recovered original: Stores destination stride, source pointer
+  and width/height/source stride, then calls the native blitter. Header begins with
+  width/height.
+  Decoded callers: 548F t.DRAW-DECODED-PICTURE, 54AB t.COMPOSE-STAGED-PICTURE, 6EC6
+    t.COMPOSE-PLAYER-FRAME, 7573 t.REFRESH-CHANGED-PICTURE
+
+548F t.DRAW-DECODED-PICTURE (NFA 5488)
+  Stack: picture --
+  Group: game-framework
+  Inferred descriptive name, not recovered original: Converts the picture's x/y header into its
+  screen address, sets destination pointer and blits width/height pixels with40-byte screen
+  stride.
+  Decoded callers: 5BD9 t.RESTORE-SCENE-BACKGROUND, 5BF2 t.PUSH-AND-DRAW-VIEW, 5C26
+    t.REDRAW-CURRENT-VIEW, 5C61 t.ENTER-INVENTORY-VIEW, 7573 t.REFRESH-CHANGED-PICTURE
+
+54AB t.COMPOSE-STAGED-PICTURE (NFA 54A4)
+  Stack: --
+  Group: game-framework
+  Inferred descriptive name, not recovered original: Uses staged picture and $0600 scene headers
+  to calculate relative offsets, then blits the staged image into the scene buffer using scene
+  width as destination stride.
+  Decoded callers: 58F1 t.COMPOSE-DROPPED-ITEM
+
+54DD t.SCENE-BACKUP-PICTURE (NFA 54D7)
+  Stack: -- address
+  Group: game-framework
+  Inferred descriptive name, not recovered original: Constant $0A00 is a four-byte picture
+  header followed by a saved screen rectangle used when entering/leaving zoom views.
+  Decoded callers: 54F1 t.SAVE-SCENE-BACKGROUND, 5BD9 t.RESTORE-SCENE-BACKGROUND
+
+54E6 t.SCENE-BACKUP-BYTES (NFA 54E1)
+  Stack: -- address
+  Group: game-framework
+  Inferred descriptive name, not recovered original: Constant $0B90 is the normal-RAM staging
+  location for $112 bytes copied to/from logical bank offset $36EA by zoom backup routines.
+  Decoded callers: 54F1 t.SAVE-SCENE-BACKGROUND, 5BD9 t.RESTORE-SCENE-BACKGROUND, 6D4E
+    t.PLAYER-SCREEN-ADDR, 6D79 t.SAVE-BG-AT-PLAYER-XY, 6DA0 t.SAVE-PLAYER-RECT-HEADER, 6DBE
+    t.STEP-PLAYER-BACKGROUND, 6EC6 t.COMPOSE-PLAYER-FRAME, 7073 t.POSITION-PLAYER, 73B1
+    t.MOVE-PLAYER-TO-POINT, 749C t.COMPOSE-PLAYER-OVERLAP
+
+54F1 t.SAVE-SCENE-BACKGROUND (NFA 54EA)
+  Stack: --
+  Group: game-framework
+  Inferred descriptive name, not recovered original: Copies current backup bytes to bank offset
+  $36EA, saves the scene picture header and captures its screen rectangle into the $0A00 backup
+  using the blitter.
+  Decoded callers: 5BF2 t.PUSH-AND-DRAW-VIEW, 5C61 t.ENTER-INVENTORY-VIEW
+
+5548 t.ITEM-RESOURCE-BASE (NFA 5542)
+  Stack: -- address
+  Group: game-framework
+  Inferred descriptive name, not recovered original: Constant $9932 is the normal-RAM base of
+  the item-art u16-length resource collection.
+  Decoded callers: 5552 t.ITEM-RESOURCE-ADDR
+
+5552 t.ITEM-RESOURCE-ADDR (NFA 554C)
+  Stack: index -- record
+  Group: game-framework
+  Inferred descriptive name, not recovered original: Indexes the item-art length-record
+  collection at $9932.
+  Decoded callers: 58F1 t.COMPOSE-DROPPED-ITEM, 5CED t.LOAD-PART-RESOURCES, 6532
+    t.SELECT-INVENTORY-OBJECT
+
+5560 t.SAVED-STATE-BASE (NFA 555A)
+  Stack: -- address
+  Group: game-framework
+  Inferred descriptive name, not recovered original: Start of the saved game-state span copied
+  by $78E8/$7978/$79C5; contains initial cells2 and10 before CURRENT-ROOM and the spellbook
+  records. No more specific direct reader was found.
+  Decoded callers: 78E8 t.SAVED-STATE-BYTES, 7978 t.LOAD-SAVED-GAME, 79C5 t.SAVE-GAME
+
+556D t.CURRENT-ROOM (NFA 5566)
+  Stack: -- address
+  Group: game-framework
+  Inferred descriptive name, not recovered original: Room cell set by $5A49 and read by
+  room/view list selection, achievements and high-level game actions.
+  Decoded callers: 5A49 t.DRAW-ROOM, 5BBA t.COMPOSE-VIEW, 67AE t.ADD-CURRENT-VIEW-OBJECT, 67D9
+    t.REMOVE-CURRENT-VIEW-OBJECT, 69E8 t.SET-ROOM-ACHIEVEMENT, 7423 t.ENTER-ROOM, 76DB
+    t.CHECK-FOUR-ITEM-PUZZLE, 7978 t.LOAD-SAVED-GAME, 7E7F t.ACTION-SPELL-REMOTE-VIEW, 7F69
+    t.ACTION-PLAY-FOR-PRIZE
+
+5577 t.SPELLBOOK-RECORDS (NFA 5571)
+  Stack: index -- record
+  Group: game-framework
+  Inferred descriptive name, not recovered original: u16-length vector holding spellbook
+  entries; $60B5 renders KSIEGA CZAROW and $6256 interprets spell/ingredient fields.
+  Decoded callers: 60B5 t.DRAW-SPELLBOOK, 6256 t.CHOOSE-REQUIRED-SPELL, 6316
+    t.PREPARE-LEARNED-SPELL
+
+5638 t.ITEM-POSITIONS (NFA 5631)
+  Stack: item-index -- address
+  Group: game-framework
+  Inferred descriptive name, not recovered original: Cell array of x/y byte pairs. $58F1 indexes
+  by objectID-$CA and installs the coordinates before drawing a dropped item.
+  Decoded callers: 58F1 t.COMPOSE-DROPPED-ITEM, 6809 t.ADD-INVENTORY-ITEM, 7783
+    t.ACTION-DROP-ITEM, 79E3 t.START-PART-TWO
+
+566E t.PART2-ITEM-POSITIONS (NFA 5668)
+  Stack: item-index -- address
+  Group: game-framework
+  Inferred descriptive name, not recovered original: Initial x/y coordinate table copied into
+  ITEM-POSITIONS during the part-two setup at $79E3.
+  Decoded callers: 79E3 t.START-PART-TWO
+
+5691 t.CURRENT-PART-GROUP (NFA 568A)
+  Stack: -- address
+  Group: game-framework
+  Inferred descriptive name, not recovered original: Selects the game-part resource group.
+  Start/load paths set2 or4; saved-game loading derives group4 or6 by adding two.
+  Decoded callers: 7820 t.START-PART-ONE, 7978 t.LOAD-SAVED-GAME, 79E3 t.START-PART-TWO
+
+56AE t.ROOM-OBJECT-STATE (NFA 56A8)
+  Stack: -- address
+  Group: game-framework
+  Inferred descriptive name, not recovered original: Mutable nested u16-length records indexed
+  by room and view in $5A35; entries are the object IDs composed when drawing each scene/view.
+  Decoded callers: 5A35 t.ROOM-VIEW-OBJECTS
+
+587C t.ROOM-ACHIEVEMENT-BITS (NFA 5876)
+  Stack: -- address
+  Group: game-framework
+  Inferred descriptive name, not recovered original:31-byte room-indexed achievement bitmap.
+  $69E8 ORs a mask into the current room byte and $69C0 counts set bits toward a65-achievement
+  score.
+  Decoded callers: 69E8 t.SET-ROOM-ACHIEVEMENT
+
+58A4 t.PUZZLE-STATE-CELLS (NFA 589E)
+  Stack: index -- address
+  Group: game-framework
+  Inferred descriptive name, not recovered original: Cell array used by spell/puzzle actions:
+  flags include magic disabled, gates, ending and multi-item puzzles. Its values are part of the
+  saved state.
+  Decoded callers: 6256 t.CHOOSE-REQUIRED-SPELL, 76CC t.FOUR-ITEM-PUZZLE-FLAG, 7CCF
+    t.REPLACE-AND-SET-PUZZLE, 7D01 t.REPLACE-WHEN-PUZZLE-SET, 7D8F t.ACTION-TOUCH-MAGIC-STONE,
+    7E02 t.DISABLE-MAGIC, 7E21 t.ACTION-OPEN-MAGIC-TRAP, 7EE3 t.ACTION-TAKE-REWARD, 7F11
+    t.ACTION-CLOSE-PUZZLE-VIEW, 7F69 t.ACTION-PLAY-FOR-PRIZE, 8121 t.WARLOCK-REWARD-READY, 81B5
+    t.ACTION-FINAL-DESTRUCTION, 8316 t.ACTION-PAY-WARLOCK
+
+58CF t.LAST-DIRECTION (NFA 58C8)
+  Stack: -- address
+  Group: game-framework
+  Inferred descriptive name, not recovered original: Updated by movement at $7423 and preserved
+  in the saved state by $78E8/$7978; records the previous movement direction.
+  Decoded callers: 7423 t.ENTER-ROOM, 78E8 t.SAVED-STATE-BYTES, 7978 t.LOAD-SAVED-GAME
+
+58D9 t.ITEM-PICTURE-INDEX (NFA 58D3)
+  Stack: object -- resource
+  Group: game-framework
+  Inferred descriptive name, not recovered original: Maps an inventory/drop object ID to its
+  picture resource: 2*(object-$CA)+2, followed by its paired mask resource.
+  Decoded callers: 58F1 t.COMPOSE-DROPPED-ITEM
+
+58F1 t.COMPOSE-DROPPED-ITEM (NFA 58EA)
+  Stack: object --
+  Group: game-framework
+  Inferred descriptive name, not recovered original: Enables masked blending, decodes item art,
+  applies the saved ITEM-POSITIONS coordinates, composes it into the scene and expands its
+  paired hit map, then disables masked blending.
+  Decoded callers: 5B89 t.COMPOSE-OBJECT-LIST
+
+5937 t.DRAW-BASE-PICTURE (NFA 5930)
+  Stack: resource --
+  Group: game-framework
+  Inferred descriptive name, not recovered original: Draws the selected picture directly to
+  screen and loads the next resource as its base hit map.
+  Decoded callers: 5A0D t.DRAW-ROOM-BACKGROUND
+
+5949 t.DRAW-PICTURE-AND-MASK (NFA 5943)
+  Stack: resource --
+  Group: game-framework
+  Inferred descriptive name, not recovered original: Draws the picture; only if the word after
+  its length-bounded payload is nonzero does it expand the next resource as a hit-map overlay.
+  Decoded callers: 59E4 t.DRAW-OBJECT-LIST, 7D5F t.FLASH-TWO-IMAGES, 81B5
+    t.ACTION-FINAL-DESTRUCTION
+
+596F t.DECODE-ZOOM-PICTURE (NFA 5969)
+  Stack: resource --
+  Group: game-framework
+  Inferred descriptive name, not recovered original: Decodes a picture into the scene buffer and
+  loads the following resource as the zoom hit map.
+  Decoded callers: 5C61 t.ENTER-INVENTORY-VIEW, 75AA t.COMPOSE-TWO-IMAGES
+
+5981 t.COMPOSE-PICTURE-AND-MASK (NFA 597B)
+  Stack: resource --
+  Group: game-framework
+  Inferred descriptive name, not recovered original: Overlays a picture in the scene buffer,
+  then expands its following mask resource into the selected hit map.
+  Decoded callers: 5B89 t.COMPOSE-OBJECT-LIST, 75AA t.COMPOSE-TWO-IMAGES, 75D4
+    t.DRAW-THREE-IMAGES
+
+5993 t.ROOM-RECORD-BUFFER (NFA 598D)
+  Stack: -- address
+  Group: game-framework
+  Inferred descriptive name, not recovered original: Constant $9752 receives a room's nested
+  descriptor record before its background and object resources are selected.
+  Decoded callers: 5A0D t.DRAW-ROOM-BACKGROUND, 64E5 t.SELECT-SCENE-OBJECT, 7423 t.ENTER-ROOM
+
+599C t.SPLIT-OBJECT-ID (NFA 5997)
+  Stack: object -- collection local-index
+  Group: game-framework
+  Inferred descriptive name, not recovered original: Divides by100, doubles the quotient for the
+  resource collection number and retains the remainder as the local object index.
+  Decoded callers: 59B1 t.CLASSIFY-OBJECT, 5AF1 t.PREPARE-ZOOM-FRAME
+
+59B1 t.CLASSIFY-OBJECT (NFA 59AB)
+  Group: game-framework
+  Inferred descriptive name, not recovered original: IDs0/1 produce only0; IDs above200 retain
+  the original ID and return1 (item art); IDs2..200 load the collection selected by ID/100 and
+  return local index followed by class2 (scene art). Stack arity therefore differs for ignored
+  IDs.
+  Decoded callers: 59E4 t.DRAW-OBJECT-LIST, 5B89 t.COMPOSE-OBJECT-LIST, 5C61
+    t.ENTER-INVENTORY-VIEW, 75AA t.COMPOSE-TWO-IMAGES, 75D4 t.DRAW-THREE-IMAGES, 7D5F
+    t.FLASH-TWO-IMAGES
+
+59E4 t.DRAW-OBJECT-LIST (NFA 59DE)
+  Stack: record start --
+  Group: game-framework
+  Inferred descriptive name, not recovered original: Walks object bytes in a u16-length record
+  beginning at start; classifies each ID and draws its picture/mask when nonzero.
+  Decoded callers: 5A0D t.DRAW-ROOM-BACKGROUND, 5A49 t.DRAW-ROOM
+
+5A0D t.DRAW-ROOM-BACKGROUND (NFA 5A06)
+  Stack: room --
+  Group: game-framework
+  Inferred descriptive name, not recovered original: Fetches room-1 from nested collection1 into
+  ROOM-RECORD-BUFFER, loads its specified resource group, draws base picture0 and remaining
+  static object entries.
+  Decoded callers: 5A49 t.DRAW-ROOM
+
+5A35 t.ROOM-VIEW-OBJECTS (NFA 5A2F)
+  Stack: room view -- record
+  Group: game-framework
+  Inferred descriptive name, not recovered original: Indexes outer ROOM-OBJECT-STATE by room,
+  skips its u16 header, then indexes the selected view's u16-length object list.
+  Decoded callers: 5A49 t.DRAW-ROOM, 5BBA t.COMPOSE-VIEW, 5C61 t.ENTER-INVENTORY-VIEW, 617B
+    t.FIND-ROOM-VIEW-OBJECT, 6809 t.ADD-INVENTORY-ITEM, 7E7F t.ACTION-SPELL-REMOTE-VIEW, 8393
+    t.TIME-TRAVEL-INVENTORY-OK
+
+5A49 t.DRAW-ROOM (NFA 5A43)
+  Stack: room --
+  Group: game-framework
+  Inferred descriptive name, not recovered original: Stores CURRENT-ROOM, draws its static
+  background, then draws the mutable object list for base view0.
+  Decoded callers: 7423 t.ENTER-ROOM
+
+5A65 t.EXPAND-THREE-BYTE-ROW (NFA 5A5F)
+  Group: game-framework
+  Entry: Assembly subroutine entry; returns with RTS.
+  Inferred descriptive name, not recovered original: Native helper expands a three-byte template
+  across a wider destination row: first and last bytes are borders, middle byte repeats. Returns
+  RTS.
+  Decoded callers: none
+  Related source: https://tajemnice.atari8.info/9_92/9_92_forth.html
+  Related source: https://tajemnice.atari8.info/10_92/10_92_forth.html
+
+5A92 t.ADVANCE-EXPANDED-ROW (NFA 5A8C)
+  Group: game-framework
+  Entry: Assembly subroutine entry; returns with RTS.
+  Inferred descriptive name, not recovered original: Adds destination width $F7 to $F0/$F1
+  through the RLE source-pointer increment helper; native RTS.
+  Decoded callers: none
+  Related source: https://tajemnice.atari8.info/9_92/9_92_forth.html
+  Related source: https://tajemnice.atari8.info/10_92/10_92_forth.html
+
+5AA0 t.ADVANCE-ROW-TEMPLATE (NFA 5A9A)
+  Group: game-framework
+  Entry: Assembly subroutine entry; returns with RTS.
+  Inferred descriptive name, not recovered original: Adds three to template pointer $F2/$F3;
+  native RTS.
+  Decoded callers: none
+  Related source: https://tajemnice.atari8.info/9_92/9_92_forth.html
+  Related source: https://tajemnice.atari8.info/10_92/10_92_forth.html
+
+5AB4 t.EXPAND-SIX-ROWS (NFA 5AAE)
+  Group: game-framework
+  Entry: Assembly subroutine entry; returns with RTS.
+  Inferred descriptive name, not recovered original: Repeats the three-byte row expansion six
+  times, decrementing remaining height and advancing both pointers; native RTS.
+  Decoded callers: none
+  Related source: https://tajemnice.atari8.info/9_92/9_92_forth.html
+  Related source: https://tajemnice.atari8.info/10_92/10_92_forth.html
+
+5ACD t.EXPAND-PICTURE-FRAME (NFA 5AC7)
+  Stack: --
+  Group: game-framework
+  Inferred descriptive name, not recovered original: Expands the first six template rows,
+  repeats the middle six-row strip, then adds a final strip; used to frame zoom pictures.
+  Decoded callers: 5AF1 t.PREPARE-ZOOM-FRAME
+
+5AF1 t.PREPARE-ZOOM-FRAME (NFA 5AEB)
+  Stack: object --
+  Group: game-framework
+  Inferred descriptive name, not recovered original: Fetches an object's four-byte geometry,
+  enlarges it by two columns and12 rows, clears/configures the zoom hit map, then expands a
+  repeated border around the scene picture.
+  Decoded callers: 5BBA t.COMPOSE-VIEW
+
+5B89 t.COMPOSE-OBJECT-LIST (NFA 5B83)
+  Stack: address end start --
+  Group: game-framework
+  Inferred descriptive name, not recovered original: Walks the byte list range; item-class IDs
+  use dropped-item composition and scene-class IDs use picture/mask composition.
+  Decoded callers: 5BBA t.COMPOSE-VIEW, 5C61 t.ENTER-INVENTORY-VIEW
+
+5BBA t.COMPOSE-VIEW (NFA 5BB5)
+  Stack: view --
+  Group: game-framework
+  Inferred descriptive name, not recovered original: Gets the current room's view list, prepares
+  its first object's zoom frame, then composes every listed object into it.
+  Decoded callers: 5BF2 t.PUSH-AND-DRAW-VIEW, 5C26 t.REDRAW-CURRENT-VIEW
+
+5BD9 t.RESTORE-SCENE-BACKGROUND (NFA 5BD4)
+  Stack: --
+  Group: game-framework
+  Inferred descriptive name, not recovered original: Draws the saved $0A00 background picture
+  and fetches $112 saved bytes from logical bank offset $36EA back to $0B90.
+  Decoded callers: 5C39 t.LEAVE-VIEW, 5C61 t.ENTER-INVENTORY-VIEW, 5C9F t.LEAVE-INVENTORY-VIEW
+
+5BF2 t.PUSH-AND-DRAW-VIEW (NFA 5BED)
+  Stack: view --
+  Group: game-framework
+  Inferred descriptive name, not recovered original: Composes the view, saves the base
+  background when entering the first zoom, pushes its ID, draws its picture and configures its
+  cursor.
+  Decoded callers: 5C15 t.ENTER-VIEW, 5C9F t.LEAVE-INVENTORY-VIEW
+
+5C15 t.ENTER-VIEW (NFA 5C0E)
+  Stack: view --
+  Group: game-framework
+  Inferred descriptive name, not recovered original: Saves current cursor position, invokes
+  $5BF2 and centers the new view cursor.
+  Decoded callers: 77FA t.ACTION-ENTER-VIEW, 7F69 t.ACTION-PLAY-FOR-PRIZE
+
+5C26 t.REDRAW-CURRENT-VIEW (NFA 5C1F)
+  Stack: --
+  Group: game-framework
+  Inferred descriptive name, not recovered original: Fetches top view ID through P, recomposes
+  it and draws the scene picture.
+  Decoded callers: 5C39 t.LEAVE-VIEW, 7783 t.ACTION-DROP-ITEM, 77D0 t.ACTION-TAKE-ITEM, 7B55
+    t.ACTION-COPY-SPELL, 7E56 t.ACTION-ADD-SCENE-OBJECT, 7E6D t.ACTION-REMOVE-SCENE-OBJECT, 807F
+    t.ACTION-SPELL-REMOVE-OBJECT, 8414 t.ACTION-SPELL-ADD-OBJECT
+
+5C39 t.LEAVE-VIEW (NFA 5C32)
+  Stack: --
+  Group: game-framework
+  Inferred descriptive name, not recovered original: Pops/discards the current view; redraws the
+  preceding zoom or restores the base background, then reconfigures/restores its cursor.
+  Decoded callers: 764A t.ACTION-LEAVE-VIEW, 76DB t.CHECK-FOUR-ITEM-PUZZLE
+
+5C61 t.ENTER-INVENTORY-VIEW (NFA 5C5B)
+  Stack: --
+  Group: game-framework
+  Inferred descriptive name, not recovered original: Saves any active zoom background/cursor,
+  pushes view1 and composes its special room0/view1 object list before drawing and configuring
+  the cursor.
+  Decoded callers: 6936 t.CHOOSE-INVENTORY-ITEM, 7A49 t.ACTION-SHOW-INVENTORY
+
+5C9F t.LEAVE-INVENTORY-VIEW (NFA 5C99)
+  Stack: --
+  Group: game-framework
+  Inferred descriptive name, not recovered original: Pops inventory view, restores base
+  background, then rebuilds the preceding nested views and restores saved cursor coordinates.
+  Decoded callers: 6936 t.CHOOSE-INVENTORY-ITEM, 7A49 t.ACTION-SHOW-INVENTORY
+
+5CE1 t.LOAD-ITEM-ART-ENABLED (NFA 5CDB)
+  Stack: -- address
+  Group: game-framework
+  Inferred descriptive name, not recovered original: When nonzero, $5CED loads the following
+  resource group into ITEM-RESOURCE-BASE after the main banked group succeeds.
+  Decoded callers: 5CED t.LOAD-PART-RESOURCES, 65E8 t.DRAW-ACTION-MENU, 6986
+    t.SELECT-SYSTEM-MENU, 6A37 t.SHOW-MISSION-PERCENT, 74DB t.GAME-LOOP, 7820 t.START-PART-ONE,
+    7978 t.LOAD-SAVED-GAME, 79E3 t.START-PART-TWO, 853A t.INIT-TITLE-DISPLAY
+
+5CED t.LOAD-PART-RESOURCES (NFA 5CE5)
+  Stack: group --
+  Group: game-framework
+  Inferred descriptive name, not recovered original: Loads up to120 sectors into logical bank
+  offset0; if LOAD-ITEM-ART-ENABLED is nonzero, also loads24 sectors of the next group into
+  item-art RAM. Retries the sequence on disk failure.
+  Decoded callers: 7820 t.START-PART-ONE, 7978 t.LOAD-SAVED-GAME, 79E3 t.START-PART-TWO
+
+5D51 t.KEYBOARD-SELECTION (NFA 5D4B)
+  Stack: -- address
+  Group: game-framework
+  Inferred descriptive name, not recovered original: Input wait stores the one-based key-list
+  match here. A nonzero value also ends the wait even if the trigger is not pressed.
+  Decoded callers: 5D92 t.WAIT-GAME-INPUT, 6986 t.SELECT-SYSTEM-MENU, 6A79
+    t.RESOLVE-INPUT-ACTION, 74DB t.GAME-LOOP
+
+5D5B t.KEYBOARD-SHORTCUTS-ENABLED (NFA 5D55)
+  Stack: -- address
+  Group: game-framework
+  Inferred descriptive name, not recovered original: Multiplier applied to the raw key-list
+  match in input wait; zero suppresses keyboard selection.
+  Decoded callers: 5D92 t.WAIT-GAME-INPUT
+
+5D64 t.BASE-VIEW-KEYS-ENABLED (NFA 5D5F)
+  Stack: -- address
+  Group: game-framework
+  Inferred descriptive name, not recovered original: Together with an empty view stack, gates
+  whether input wait interprets the shortcut key list; high-level modal screens change this
+  flag.
+  Decoded callers: 5D92 t.WAIT-GAME-INPUT, 6A79 t.RESOLVE-INPUT-ACTION, 6ACB t.GET-GAME-INPUT
+
+5D6D t.WAIT-TRIGGER-RELEASE (NFA 5D68)
+  Stack: --
+  Group: game-framework
+  Inferred descriptive name, not recovered original: Repeatedly samples active-low controller0
+  trigger with five-frame pauses until released.
+  Decoded callers: 5D92 t.WAIT-GAME-INPUT, 82A6 t.ANIMATE-LISTEN-SCENE
+
+5D84 t.SHORTCUT-KEYCODES (NFA 5D7E)
+  Group: game-framework
+  Entry: Data body referenced by literal address; do not execute its saved DOCOL entry.
+  Inferred descriptive name, not recovered original: Three bytes at body address $5D86 are raw
+  CH keycodes21,05,28; input wait searches them directly. The saved DOCOL field is not executed.
+  Decoded callers: none
+
+5D92 t.WAIT-GAME-INPUT (NFA 5D8B)
+  Stack: -- x y
+  Group: game-framework
+  Inferred descriptive name, not recovered original: Clears CH, initializes cursor players,
+  waits for trigger release, applies controller0 movements and shortcut keys until trigger/key
+  selection, then returns the grid x/y bytes and disables players.
+  Decoded callers: 6256 t.CHOOSE-REQUIRED-SPELL, 669C t.CHOOSE-ACTION-MENU-ROW, 6936
+    t.CHOOSE-INVENTORY-ITEM, 6ACB t.GET-GAME-INPUT
+
+5E3E t.DEFAULT-GAME-COLORS (NFA 5E38)
+  Stack: -- address
+  Group: game-framework
+  Inferred descriptive name, not recovered original: Initial color bytes copied into GAME-COLOR-
+  TABLE by $5E7E, with the seventh byte used for COLPF3 shadow.
+  Decoded callers: 5E7E t.RESET-GAME-COLORS
+
+5E4F t.INSTALL-GAME-COLORS (NFA 5E49)
+  Stack: --
+  Group: game-framework
+  Inferred descriptive name, not recovered original: Points the DLI at GAME-COLOR-TABLE, enables
+  two display-list interrupt bits, installs the handler and writes COLPF3 shadow.
+  Decoded callers: 5E7E t.RESET-GAME-COLORS, 853A t.INIT-TITLE-DISPLAY
+
+5E7E t.RESET-GAME-COLORS (NFA 5E77)
+  Stack: --
+  Group: game-framework
+  Inferred descriptive name, not recovered original: Copies seven default color bytes to the
+  live table and installs the game's color DLI.
+  Decoded callers: 6035 t.INIT-GAME-DISPLAY-AUDIO
+
+5E93 t.TITLE-MUSIC-OR-SPRITES (NFA 5E8E)
+  Stack: -- address
+  Group: game-framework
+  Inferred descriptive name, not recovered original: Constant $8D52 is shared overlay storage:
+  title CMC module base during the introduction, and player-sprite records during gameplay.
+  $6035 loads resource 10 there and $6E0F indexes its sprite frames. $601F subtracts $069A to
+  derive the gameplay CMC base $86B8.
+  Decoded callers: 601F t.SET-GAME-MUSIC-BASE, 6035 t.INIT-GAME-DISPLAY-AUDIO, 6E0F
+    t.PLAYER-FRAME-ADDR, 853A t.INIT-TITLE-DISPLAY
+
+5E9E t.CMC-MODULE-ADDRESS (NFA 5E97)
+  Stack: -- address
+  Group: game-framework
+  Inferred descriptive name, not recovered original: Cell supplied as X/Y to CMC command $70 by
+  $5EE5; stores the module load address.
+  Decoded callers: 601F t.SET-GAME-MUSIC-BASE, 6035 t.INIT-GAME-DISPLAY-AUDIO, 853A
+    t.INIT-TITLE-DISPLAY
+
+5EA8 t.SAVED-DMA-CONTROL (NFA 5EA2)
+  Stack: -- address
+  Group: game-framework
+  Inferred descriptive name, not recovered original: DISABLE-DISPLAY-DMA saves SDMCTL here,
+  clears it, and RESTORE-DISPLAY-DMA restores the saved byte.
+  Decoded callers: 5EB2 t.DISABLE-DISPLAY-DMA, 5ECE t.RESTORE-DISPLAY-DMA
+
+5EB2 t.DISABLE-DISPLAY-DMA (NFA 5EAC)
+  Inferred descriptive name, not recovered original: Saves SDMCTL ($022F) and writes zero there.
+  Decoded callers: 6035 t.INIT-GAME-DISPLAY-AUDIO, 853A t.INIT-TITLE-DISPLAY
+
+5ECE t.RESTORE-DISPLAY-DMA (NFA 5EC8)
+  Inferred descriptive name, not recovered original: Restores SDMCTL ($022F) from the saved
+  variable.
+  Decoded callers: 6035 t.INIT-GAME-DISPLAY-AUDIO, 853A t.INIT-TITLE-DISPLAY
+
+5EE5 t.INIT-CMC-MODULE (NFA 5EDC)
+  Stack: --
+  Group: game-framework
+  Inferred descriptive name, not recovered original: Preserves X, passes module address to
+  dispatcher $3003 with A=$70, then starts song0 with A=0/X=0 and returns NEXT.
+  Decoded callers: 6035 t.INIT-GAME-DISPLAY-AUDIO, 853A t.INIT-TITLE-DISPLAY
+
+5F04 t.CMC-SONG-NUMBER (NFA 5EFF)
+  Stack: -- address
+  Group: game-framework
+  Inferred descriptive name, not recovered original: Low byte is supplied in X to CMC command0
+  by $5F0E; PLAY-MUSIC stores its requested song here.
+  Decoded callers: 5F26 t.PLAY-MUSIC
+
+5F0E t.START-CMC-SONG (NFA 5F08)
+  Stack: --
+  Group: game-framework
+  Inferred descriptive name, not recovered original: Preserves Forth X, invokes dispatcher $3003
+  with A=0 and song number in X, restores X and returns NEXT.
+  Decoded callers: 5F26 t.PLAY-MUSIC
+
+5F26 t.PLAY-MUSIC (NFA 5F1F)
+  Inferred descriptive name, not recovered original: Stores selected tune then calls native
+  sound-player entry $3003 with A=0 and X=tune.
+  Decoded callers: 6035 t.INIT-GAME-DISPLAY-AUDIO, 7820 t.START-PART-ONE, 7938
+    t.RESUME-GAME-MUSIC, 81B5 t.ACTION-FINAL-DESTRUCTION, 853A t.INIT-TITLE-DISPLAY, 87A0
+    t.SHOW-TITLE-SEQUENCE, 87E7 t.BOOT-INTRO
+
+5F3A t.STOP-MUSIC (NFA 5F30)
+  Inferred descriptive name, not recovered original: Calls native sound-player entry $3003 with
+  command A=$40.
+  Decoded callers: 7978 t.LOAD-SAVED-GAME, 79C5 t.SAVE-GAME, 79E3 t.START-PART-TWO, 84EC
+    t.POLL-TITLE-SKIP, 87E7 t.BOOT-INTRO
+
+5F4E t.MUSIC-PAUSED (NFA 5F48)
+  Stack: -- address
+  Group: game-framework
+  Inferred descriptive name, not recovered original: Console-key music handler toggles this byte
+  when pausing/resuming CMC playback.
+  Decoded callers: 6000 t.PLAY-SOUND-EFFECT, 7938 t.RESUME-GAME-MUSIC, 7978 t.LOAD-SAVED-GAME
+
+5F59 t.UPDATE-CMC-MUSIC (NFA 5F52)
+  Group: game-framework
+  Entry: Assembly subroutine entry; returns with RTS.
+  Inferred descriptive name, not recovered original: VBI-callable native routine checks CONSOL:
+  value3 sends stop command$40 and sets pause flag; value5 sends resume$60 and clears it. Always
+  calls player frame routine$3006 before RTS.
+  Decoded callers: none
+  Related source: https://tajemnice.atari8.info/9_92/9_92_forth.html
+  Related source: https://tajemnice.atari8.info/10_92/10_92_forth.html
+
+5F8A t.CMC-EFFECT-PARAMETERS (NFA 5F85)
+  Stack: -- address
+  Group: game-framework
+  Inferred descriptive name, not recovered original: Two bytes passed as X/Y to CMC command$21
+  by $5F94.
+  Decoded callers: 5FAE t.CMC-EFFECT!
+
+5F94 t.PLAY-CMC-EFFECT (NFA 5F8E)
+  Stack: --
+  Group: game-framework
+  Inferred descriptive name, not recovered original: Preserves Forth X, calls CMC dispatcher
+  with A=$21 and parameter bytes X/Y from $5F8A, then returns NEXT.
+  Decoded callers: 5FAE t.CMC-EFFECT!
+
+5FAE t.CMC-EFFECT! (NFA 5FA8)
+  Stack: x-parameter y-parameter --
+  Group: game-framework
+  Inferred descriptive name, not recovered original: Stores the two bytes in CMC-EFFECT-
+  PARAMETERS then invokes PLAY-CMC-EFFECT.
+  Decoded callers: 6000 t.PLAY-SOUND-EFFECT
+
+5FC4 t.SOUND-EFFECT-TABLE (NFA 5FBE)
+  Stack: index -- address
+  Group: game-framework
+  Inferred descriptive name, not recovered original: Paired-byte sound-effect parameters read by
+  $6000 PLAY-SOUND-EFFECT, which passes both bytes to $5FAE and the CMC dispatcher.
+  Decoded callers: 6000 t.PLAY-SOUND-EFFECT
+
+6000 t.PLAY-SOUND-EFFECT (NFA 5FFA)
+  Stack: effect --
+  Group: sound
+  Inferred descriptive name, not recovered original: When the audio-state flag $5F4E is nonzero,
+  indexes the two-byte effect table $5FC4 and passes its bytes to $5FAE/CMC; otherwise drops the
+  effect index.
+  Decoded callers: 616C t.PLAY-FAILURE-SOUND, 6256 t.CHOOSE-REQUIRED-SPELL, 6936
+    t.CHOOSE-INVENTORY-ITEM, 6FE7 t.ANIMATE-PLAYER-STEP, 764A t.ACTION-LEAVE-VIEW, 76DB
+    t.CHECK-FOUR-ITEM-PUZZLE, 7783 t.ACTION-DROP-ITEM, 77D0 t.ACTION-TAKE-ITEM, 77FA
+    t.ACTION-ENTER-VIEW, 780C t.ACTION-DESCRIBE, 7A24 t.PLAY-SUCCESS-SOUND, 7A33
+    t.ACTION-SHOW-SPELLBOOK, 7A49 t.ACTION-SHOW-INVENTORY, 7AF0 t.LEARN-OBJECT-SPELL, 7B82
+    t.ACTION-DESCRIBE-SPELL, 7CCF t.REPLACE-AND-SET-PUZZLE, 7D8F t.ACTION-TOUCH-MAGIC-STONE,
+    7DC5 t.ACTION-DESCRIBE-OBJECT, 7DEC t.ACTION-EXAMINE-OBJECT, 7E21 t.ACTION-OPEN-MAGIC-TRAP,
+    7E7F t.ACTION-SPELL-REMOTE-VIEW, 7EE3 t.ACTION-TAKE-REWARD, 7F69 t.ACTION-PLAY-FOR-PRIZE,
+    7FE8 t.ACTION-PAY-OR-TRIGGER-TRAP, 807F t.ACTION-SPELL-REMOVE-OBJECT, 80E1
+    t.ACTION-CROSS-ANTIMAGIC-WALL, 80FC t.ACTION-READ-MESSAGE, 8132 t.ACTION-EXAMINE-IF-READY,
+    81B5 t.ACTION-FINAL-DESTRUCTION, 82A6 t.ANIMATE-LISTEN-SCENE, 8316 t.ACTION-PAY-WARLOCK,
+    83D3 t.ACTION-TRAVEL-THROUGH-TIME
+
+601F t.SET-GAME-MUSIC-BASE (NFA 6018)
+  Stack: --
+  Group: sound
+  Inferred descriptive name, not recovered original: Stores $5E93-$069A in music-load pointer
+  $5E9E; $6035 then loads gameplay resource12 there.
+  Decoded callers: 6035 t.INIT-GAME-DISPLAY-AUDIO
+
+6035 t.INIT-GAME-DISPLAY-AUDIO (NFA 602F)
+  Stack: --
+  Group: sound
+  Inferred descriptive name, not recovered original: Disables DMA, loads resource12 music,
+  initializes CMC/song0, installs gameplay display and font resource7 at $BC00, loads player
+  frames resource10 at $8D52, then restores DMA.
+  Decoded callers: 74DB t.GAME-LOOP
+
+608E t.PRINT-SPELLBOOK-SEPARATOR (NFA 6089)
+  Stack: --
+  Group: spellbook
+  Inferred descriptive name, not recovered original: Prints the inline decorative separator
+  reused for the upper and lower spellbook rules.
+  Decoded callers: 60B5 t.DRAW-SPELLBOOK
+
+60B5 t.DRAW-SPELLBOOK (NFA 60AF)
+  Stack: --
+  Group: spellbook
+  Inferred descriptive name, not recovered original: Prints KSIEGA CZAROW, then five rows of two
+  13-character entries from $5577 and their decorative frame.
+  Decoded callers: 6256 t.CHOOSE-REQUIRED-SPELL, 7A33 t.ACTION-SHOW-SPELLBOOK, 7AF0
+    t.LEARN-OBJECT-SPELL
+
+616C t.PLAY-FAILURE-SOUND (NFA 6165)
+  Stack: --
+  Group: spellbook
+  Inferred descriptive name, not recovered original: Plays effect19 via $6000; spell/item
+  failure paths call this helper.
+  Decoded callers: 6256 t.CHOOSE-REQUIRED-SPELL, 6809 t.ADD-INVENTORY-ITEM, 6936
+    t.CHOOSE-INVENTORY-ITEM, 77D0 t.ACTION-TAKE-ITEM, 7950 t.CHECK-PART-TWO-DISK, 7BFA
+    t.CHOOSE-REQUIRED-ITEM, 7D01 t.REPLACE-WHEN-PUZZLE-SET, 7E7F t.ACTION-SPELL-REMOTE-VIEW,
+    7F69 t.ACTION-PLAY-FOR-PRIZE, 8045 t.ACTION-CANNOT-TAKE, 8111 t.SHOW-WARLOCK-REFUSAL, 83D3
+    t.ACTION-TRAVEL-THROUGH-TIME
+
+617B t.FIND-ROOM-VIEW-OBJECT (NFA 6175)
+  Stack: object room view -- address 1 | 0
+  Group: spellbook
+  Inferred descriptive name, not recovered original: Uses room/view lookup $5A35 and INSTR over
+  the counted byte list. Returns the matching mutable byte address and1, or0 when absent.
+  Decoded callers: 6233 t.HAVE-SPELL-INGREDIENT, 6774 t.ADD-ROOM-VIEW-OBJECT, 67C2
+    t.REMOVE-ROOM-VIEW-OBJECT, 769B t.COUNT-PLACED-PUZZLE-ITEMS
+
+61A0 t.SPELL-ERROR-MESSAGES (NFA 619B)
+  Stack: index -- record
+  Group: spellbook
+  Inferred descriptive name, not recovered original: Counted message vector used by $6256 for
+  the wrong spell and missing ingredient outcomes.
+  Decoded callers: 6256 t.CHOOSE-REQUIRED-SPELL
+
+61EB t.NO-MAGIC-MESSAGE (NFA 61E6)
+  Stack: -- record
+  Group: spellbook
+  Inferred descriptive name, not recovered original: Multiline message states that magical power
+  is absent and one of the stones will restore it; displayed by $6256 and $7E02.
+  Decoded callers: 6256 t.CHOOSE-REQUIRED-SPELL, 7E02 t.DISABLE-MAGIC
+
+6233 t.HAVE-SPELL-INGREDIENT (NFA 622D)
+  Stack: address -- flag
+  Group: spellbook
+  Inferred descriptive name, not recovered original: Fetches an ingredient ID at the supplied
+  address, accepts zero as no requirement, otherwise checks object membership in room0/view1
+  (inventory).
+  Decoded callers: 6256 t.CHOOSE-REQUIRED-SPELL
+
+6256 t.CHOOSE-REQUIRED-SPELL (NFA 624F)
+  Stack: spell -- flag
+  Group: spellbook
+  Inferred descriptive name, not recovered original: Rejects when puzzle-state cell2 disables
+  magic. Otherwise displays the 2x5 spellbook, compares chosen spell ID to the argument and
+  verifies its two ingredient IDs; returns success/failure.
+  Decoded callers: 7C95 t.ACTION-OPEN-WITH-SPELL, 7E42 t.ACTION-REPLACE-WITH-SPELL, 7E7F
+    t.ACTION-SPELL-REMOTE-VIEW, 8057 t.ACTION-SPELL-REPLACEMENT, 807F
+    t.ACTION-SPELL-REMOVE-OBJECT, 83D3 t.ACTION-TRAVEL-THROUGH-TIME, 8414
+    t.ACTION-SPELL-ADD-OBJECT
+
+630A t.SPELL-LEARNING-POINTERS (NFA 6305)
+  Stack: -- address
+  Group: spellbook
+  Inferred descriptive name, not recovered original: Two cells assigned by $6316 to the source
+  counted spell name and destination spellbook characters; $7AF0 reveals the text using these
+  pointers.
+  Decoded callers: 6316 t.PREPARE-LEARNED-SPELL, 7AF0 t.LEARN-OBJECT-SPELL
+
+6316 t.PREPARE-LEARNED-SPELL (NFA 6310)
+  Stack: spell-record --
+  Group: spellbook
+  Inferred descriptive name, not recovered original: Searches ten spellbook entries for the same
+  spell ID or an empty slot, copies three metadata bytes, then initializes source/destination
+  pointers at $630A.
+  Decoded callers: 7AF0 t.LEARN-OBJECT-SPELL
+
+6369 t.ACTION-LABELS (NFA 6362)
+  Stack: index -- record
+  Group: actions-and-inventory
+  Inferred descriptive name, not recovered original: Counted action-label vector used by $6593:
+  NIC, ZOSTAW, WEZ, ZOBACZ and spell/puzzle verbs. One-byte entries reference another zero-based
+  entry.
+  Decoded callers: 6593 t.APPEND-ACTION-LABEL
+
+64BE t.OBJECT-ACTION-BUFFER (NFA 64B9)
+  Stack: -- address
+  Group: actions-and-inventory
+  Inferred descriptive name, not recovered original: Constant $97CA, destination of the selected
+  scene-object action-record load at $64E5.
+  Decoded callers: 64E5 t.SELECT-SCENE-OBJECT
+
+64C8 t.SCENE-OBJECT-DATA-PTR (NFA 64C2)
+  Stack: -- address
+  Group: actions-and-inventory
+  Inferred descriptive name, not recovered original: Set by $64E5 to the metadata following a
+  matched scene-object selector; accessed by $673C and descriptor-byte helpers.
+  Decoded callers: 64E5 t.SELECT-SCENE-OBJECT, 673C t.SCENE-OBJECT-DATA
+
+64D2 t.OBJECT-ACTIONS-PTR (NFA 64CC)
+  Stack: -- address
+  Group: actions-and-inventory
+  Inferred descriptive name, not recovered original: Points at the currently selected object
+  action-list record, assigned by scene/inventory selection and consumed by the action menu.
+  Decoded callers: 64E5 t.SELECT-SCENE-OBJECT, 6532 t.SELECT-INVENTORY-OBJECT, 65E8
+    t.DRAW-ACTION-MENU, 669C t.CHOOSE-ACTION-MENU-ROW, 6986 t.SELECT-SYSTEM-MENU, 7387
+    t.POSITION-PLAYER-AT-ENTRY, 74DB t.GAME-LOOP
+
+64DB t.SELECTED-OBJECT (NFA 64D6)
+  Stack: -- address
+  Group: actions-and-inventory
+  Inferred descriptive name, not recovered original: Assigned by $656F and read by the action-
+  menu builder and take-object action.
+  Decoded callers: 656F t.SELECT-OBJECT-ACTIONS, 65E8 t.DRAW-ACTION-MENU, 6986
+    t.SELECT-SYSTEM-MENU, 77D0 t.ACTION-TAKE-ITEM
+
+64E5 t.SELECT-SCENE-OBJECT (NFA 64DF)
+  Stack: object --
+  Group: actions-and-inventory
+  Inferred descriptive name, not recovered original: Looks for objectID+200 in the current room
+  descriptor; saves its following metadata pointer, selects the referenced resource record, and
+  loads its action list at $97CA.
+  Decoded callers: 656F t.SELECT-OBJECT-ACTIONS
+
+6532 t.SELECT-INVENTORY-OBJECT (NFA 652C)
+  Stack: object --
+  Group: actions-and-inventory
+  Inferred descriptive name, not recovered original: For a nonzero inventory ID, scans
+  records1..99 in resource1 of the inventory group for the matching ID byte and installs the
+  record pointer at $64D2.
+  Decoded callers: 656F t.SELECT-OBJECT-ACTIONS
+
+656F t.SELECT-OBJECT-ACTIONS (NFA 6569)
+  Stack: object --
+  Group: actions-and-inventory
+  Inferred descriptive name, not recovered original: Stores SELECTED-OBJECT, dispatching IDs
+  above200 to inventory-record search and other IDs to current scene metadata.
+  Decoded callers: 6A79 t.RESOLVE-INPUT-ACTION, 7387 t.POSITION-PLAYER-AT-ENTRY
+
+6593 t.APPEND-ACTION-LABEL (NFA 658C)
+  Stack: destination action -- next-destination
+  Group: actions-and-inventory
+  Inferred descriptive name, not recovered original: Resolves a one-byte action-label alias
+  once, converts the word-counted label to a byte-counted string in the destination, and returns
+  the next output address.
+  Decoded callers: 65E8 t.DRAW-ACTION-MENU
+
+65CA t.MENU-ACTION-IDS (NFA 65C5)
+  Stack: row -- address
+  Group: actions-and-inventory
+  Inferred descriptive name, not recovered original: Cell array populated by $65E8 with the
+  action ID represented by each visible menu row; $669C indexes it after selection.
+  Decoded callers: 65E8 t.DRAW-ACTION-MENU, 669C t.CHOOSE-ACTION-MENU-ROW
+
+65E8 t.DRAW-ACTION-MENU (NFA 65E2)
+  Stack: --
+  Group: actions-and-inventory
+  Inferred descriptive name, not recovered original: Builds counted label strings in the picture
+  staging buffer, records menu-row action IDs, optionally adds NIC/return-from-view, and
+  displays the message list.
+  Decoded callers: 6710 t.CHOOSE-OBJECT-ACTION, 6A79 t.RESOLVE-INPUT-ACTION
+
+6692 t.SELECTED-ACTION-PTR (NFA 668C)
+  Stack: -- address
+  Group: actions-and-inventory
+  Inferred descriptive name, not recovered original: Current counted action record, assigned by
+  $669C; all action parameters are fetched relative to this pointer.
+  Decoded callers: 669C t.CHOOSE-ACTION-MENU-ROW, 671D t.ACTION-PARAM-ADDR, 7387
+    t.POSITION-PLAYER-AT-ENTRY, 74DB t.GAME-LOOP
+
+669C t.CHOOSE-ACTION-MENU-ROW (NFA 6696)
+  Stack: -- action
+  Group: actions-and-inventory
+  Inferred descriptive name, not recovered original: Saves cursor position, sizes/positions the
+  menu cursor, waits for selection, stores the selected action-record pointer and returns the
+  corresponding action ID.
+  Decoded callers: 6710 t.CHOOSE-OBJECT-ACTION, 6A79 t.RESOLVE-INPUT-ACTION
+
+6710 t.CHOOSE-OBJECT-ACTION (NFA 6708)
+  Stack: -- action
+  Group: actions-and-inventory
+  Inferred descriptive name, not recovered original: Draws the action menu with $65E8 and
+  returns the selection from $669C.
+  Decoded callers: 6A79 t.RESOLVE-INPUT-ACTION
+
+671D t.ACTION-PARAM-ADDR (NFA 6718)
+  Stack: offset -- address
+  Group: actions-and-inventory
+  Inferred descriptive name, not recovered original: Adds the given offset and two-byte count
+  prefix to the record pointer held at $6692.
+  Decoded callers: 672F t.ACTION-PARAM-BYTE, 780C t.ACTION-DESCRIBE, 7E7F
+    t.ACTION-SPELL-REMOTE-VIEW, 7F69 t.ACTION-PLAY-FOR-PRIZE, 7FE8 t.ACTION-PAY-OR-TRIGGER-TRAP,
+    8045 t.ACTION-CANNOT-TAKE, 80FC t.ACTION-READ-MESSAGE, 8132 t.ACTION-EXAMINE-IF-READY, 81B5
+    t.ACTION-FINAL-DESTRUCTION, 82DD t.ACTION-LISTEN, 8316 t.ACTION-PAY-WARLOCK
+
+672F t.ACTION-PARAM-BYTE (NFA 6729)
+  Stack: offset -- byte
+  Group: actions-and-inventory
+  Inferred descriptive name, not recovered original: Fetches the byte at ACTION-PARAM-ADDR.
+  Decoded callers: 6878 t.ACTION-PARAM-1, 6885 t.ACTION-PARAM-2, 6892 t.ACTION-PARAM-3, 689F
+    t.ACTION-PARAM-4, 68AE t.ACTION-PARAM-5, 68BD t.ACTION-PARAM-6, 7423 t.ENTER-ROOM, 74DB
+    t.GAME-LOOP
+
+673C t.SCENE-OBJECT-DATA (NFA 6737)
+  Stack: -- address
+  Group: actions-and-inventory
+  Inferred descriptive name, not recovered original: Fetches the current object metadata pointer
+  held at $64C8.
+  Decoded callers: 6749 t.OBJECT-DATA-0, 6756 t.OBJECT-DATA-1, 6765 t.OBJECT-DATA-2, 7AF0
+    t.LEARN-OBJECT-SPELL, 7B82 t.ACTION-DESCRIBE-SPELL, 7D01 t.REPLACE-WHEN-PUZZLE-SET, 7DC5
+    t.ACTION-DESCRIBE-OBJECT, 7DEC t.ACTION-EXAMINE-OBJECT, 7FE8 t.ACTION-PAY-OR-TRIGGER-TRAP
+
+6749 t.OBJECT-DATA-0 (NFA 6744)
+  Stack: -- byte
+  Group: actions-and-inventory
+  Inferred descriptive name, not recovered original: Fetches byte0 of the metadata pointer
+  returned by $673C; the interpretation varies by action handler.
+  Decoded callers: 7A60 t.ACTION-OPEN-PAIR, 7A82 t.ACTION-CLOSE-PAIR, 7AA4 t.ACTION-ENTER-ROOM,
+    7AB2 t.ACTION-OPEN-REPLACEMENT, 7AD0 t.ACTION-CLOSE-REPLACEMENT, 7B55 t.ACTION-COPY-SPELL,
+    7C95 t.ACTION-OPEN-WITH-SPELL, 7D8F t.ACTION-TOUCH-MAGIC-STONE, 7E21
+    t.ACTION-OPEN-MAGIC-TRAP, 7E42 t.ACTION-REPLACE-WITH-SPELL, 8057 t.ACTION-SPELL-REPLACEMENT,
+    80A2 t.ACTION-COPY-HIDDEN-SPELL, 8316 t.ACTION-PAY-WARLOCK, 8414 t.ACTION-SPELL-ADD-OBJECT
+
+6756 t.OBJECT-DATA-1 (NFA 6751)
+  Stack: -- byte
+  Group: actions-and-inventory
+  Inferred descriptive name, not recovered original: Fetches byte1 of the metadata pointer
+  returned by $673C; the interpretation varies by action handler.
+  Decoded callers: 77FA t.ACTION-ENTER-VIEW, 7C81 t.ACTION-OPEN-WITH-ITEM, 7CED
+    t.ACTION-DESTROY-WITH-ITEM, 7D01 t.REPLACE-WHEN-PUZZLE-SET, 7D8F t.ACTION-TOUCH-MAGIC-STONE,
+    7E21 t.ACTION-OPEN-MAGIC-TRAP, 7F69 t.ACTION-PLAY-FOR-PRIZE, 7FE8
+    t.ACTION-PAY-OR-TRIGGER-TRAP, 8057 t.ACTION-SPELL-REPLACEMENT, 80E1
+    t.ACTION-CROSS-ANTIMAGIC-WALL, 8316 t.ACTION-PAY-WARLOCK
+
+6765 t.OBJECT-DATA-2 (NFA 6760)
+  Stack: -- byte
+  Group: actions-and-inventory
+  Inferred descriptive name, not recovered original: Fetches byte2 of the metadata pointer
+  returned by $673C; the interpretation varies by action handler.
+  Decoded callers: 7CCF t.REPLACE-AND-SET-PUZZLE, 7D8F t.ACTION-TOUCH-MAGIC-STONE, 7FE8
+    t.ACTION-PAY-OR-TRIGGER-TRAP
+
+6774 t.ADD-ROOM-VIEW-OBJECT (NFA 676F)
+  Stack: object room view -- flag
+  Group: actions-and-inventory
+  Inferred descriptive name, not recovered original: Returns success if the object is already in
+  the mutable room/view list; otherwise replaces its first zero slot. Returns0 if no empty slot
+  exists.
+  Decoded callers: 67AE t.ADD-CURRENT-VIEW-OBJECT, 6809 t.ADD-INVENTORY-ITEM, 76DB
+    t.CHECK-FOUR-ITEM-PUZZLE, 7E7F t.ACTION-SPELL-REMOTE-VIEW, 7F69 t.ACTION-PLAY-FOR-PRIZE
+
+67AE t.ADD-CURRENT-VIEW-OBJECT (NFA 67A8)
+  Stack: object --
+  Group: actions-and-inventory
+  Inferred descriptive name, not recovered original: Adds the object to CURRENT-ROOM and current
+  view P through $6774, discarding the capacity result.
+  Decoded callers: 7783 t.ACTION-DROP-ITEM, 77D0 t.ACTION-TAKE-ITEM, 7A60 t.ACTION-OPEN-PAIR,
+    7A82 t.ACTION-CLOSE-PAIR, 7AB2 t.ACTION-OPEN-REPLACEMENT, 7AD0 t.ACTION-CLOSE-REPLACEMENT,
+    7C5F t.OPEN-SCENE-IF-TRUE, 7CAA t.REPLACE-SCENE-IF-TRUE, 7E56 t.ACTION-ADD-SCENE-OBJECT,
+    7F11 t.ACTION-CLOSE-PUZZLE-VIEW, 8414 t.ACTION-SPELL-ADD-OBJECT
+
+67C2 t.REMOVE-ROOM-VIEW-OBJECT (NFA 67BC)
+  Stack: object room view --
+  Group: actions-and-inventory
+  Inferred descriptive name, not recovered original: Finds the object in the specified mutable
+  room/view list and replaces its byte with zero; does nothing if absent.
+  Decoded callers: 67D9 t.REMOVE-CURRENT-VIEW-OBJECT, 6869 t.REMOVE-INVENTORY-ITEM, 7E7F
+    t.ACTION-SPELL-REMOTE-VIEW
+
+67D9 t.REMOVE-CURRENT-VIEW-OBJECT (NFA 67D2)
+  Stack: object --
+  Group: actions-and-inventory
+  Inferred descriptive name, not recovered original: Removes the object from CURRENT-ROOM and
+  current view P.
+  Decoded callers: 7783 t.ACTION-DROP-ITEM, 77D0 t.ACTION-TAKE-ITEM, 7A60 t.ACTION-OPEN-PAIR,
+    7A82 t.ACTION-CLOSE-PAIR, 7AB2 t.ACTION-OPEN-REPLACEMENT, 7AD0 t.ACTION-CLOSE-REPLACEMENT,
+    7B55 t.ACTION-COPY-SPELL, 7CAA t.REPLACE-SCENE-IF-TRUE, 7E6D t.ACTION-REMOVE-SCENE-OBJECT,
+    7EE3 t.ACTION-TAKE-REWARD, 7F11 t.ACTION-CLOSE-PUZZLE-VIEW, 807F
+    t.ACTION-SPELL-REMOVE-OBJECT, 80A2 t.ACTION-COPY-HIDDEN-SPELL
+
+67EA t.INVENTORY-FULL-MESSAGE (NFA 67E5)
+  Stack: -- record
+  Group: actions-and-inventory
+  Inferred descriptive name, not recovered original: Counted message NIE UNIESIESZ TYLE,
+  displayed when $6809 cannot add an inventory item.
+  Decoded callers: 6809 t.ADD-INVENTORY-ITEM
+
+6809 t.ADD-INVENTORY-ITEM (NFA 6803)
+  Stack: item -- flag
+  Group: actions-and-inventory
+  Inferred descriptive name, not recovered original: Adds an item to room0/view1. On success
+  computes its displayed inventory coordinates from slot number, writes $5638[item-202], and
+  returns1; otherwise displays capacity error and returns0.
+  Decoded callers: 77D0 t.ACTION-TAKE-ITEM, 7EE3 t.ACTION-TAKE-REWARD
+
+6869 t.REMOVE-INVENTORY-ITEM (NFA 6862)
+  Stack: item --
+  Group: actions-and-inventory
+  Inferred descriptive name, not recovered original: Removes an item from the inventory object
+  list at room0/view1.
+  Decoded callers: 7783 t.ACTION-DROP-ITEM, 7FE8 t.ACTION-PAY-OR-TRIGGER-TRAP, 8316
+    t.ACTION-PAY-WARLOCK
+
+6878 t.ACTION-PARAM-1 (NFA 6873)
+  Stack: -- byte
+  Group: actions-and-inventory
+  Inferred descriptive name, not recovered original: Fetches selected action payload byte1
+  through $672F.
+  Decoded callers: 7423 t.ENTER-ROOM, 74DB t.GAME-LOOP, 7A60 t.ACTION-OPEN-PAIR, 7A82
+    t.ACTION-CLOSE-PAIR, 7AB2 t.ACTION-OPEN-REPLACEMENT, 7AD0 t.ACTION-CLOSE-REPLACEMENT, 7C5F
+    t.OPEN-SCENE-IF-TRUE, 7CAA t.REPLACE-SCENE-IF-TRUE, 7E56 t.ACTION-ADD-SCENE-OBJECT, 7E6D
+    t.ACTION-REMOVE-SCENE-OBJECT, 7E7F t.ACTION-SPELL-REMOTE-VIEW, 7EE3 t.ACTION-TAKE-REWARD,
+    7F11 t.ACTION-CLOSE-PUZZLE-VIEW, 7F69 t.ACTION-PLAY-FOR-PRIZE, 807F
+    t.ACTION-SPELL-REMOVE-OBJECT, 80A2 t.ACTION-COPY-HIDDEN-SPELL, 8414
+    t.ACTION-SPELL-ADD-OBJECT
+
+6885 t.ACTION-PARAM-2 (NFA 6880)
+  Stack: -- byte
+  Group: actions-and-inventory
+  Inferred descriptive name, not recovered original: Fetches selected action payload byte2
+  through $672F.
+  Decoded callers: 7387 t.POSITION-PLAYER-AT-ENTRY, 74DB t.GAME-LOOP, 7A82 t.ACTION-CLOSE-PAIR,
+    7AB2 t.ACTION-OPEN-REPLACEMENT, 7AD0 t.ACTION-CLOSE-REPLACEMENT, 7CAA
+    t.REPLACE-SCENE-IF-TRUE, 7E7F t.ACTION-SPELL-REMOTE-VIEW, 7EE3 t.ACTION-TAKE-REWARD, 7F11
+    t.ACTION-CLOSE-PUZZLE-VIEW, 7F69 t.ACTION-PLAY-FOR-PRIZE, 807F t.ACTION-SPELL-REMOVE-OBJECT
+
+6892 t.ACTION-PARAM-3 (NFA 688D)
+  Stack: -- byte
+  Group: actions-and-inventory
+  Inferred descriptive name, not recovered original: Fetches selected action payload byte3
+  through $672F.
+  Decoded callers: 7387 t.POSITION-PLAYER-AT-ENTRY, 74DB t.GAME-LOOP, 7A60 t.ACTION-OPEN-PAIR,
+    7A82 t.ACTION-CLOSE-PAIR, 7AB2 t.ACTION-OPEN-REPLACEMENT, 7AD0 t.ACTION-CLOSE-REPLACEMENT,
+    7DDC t.ACTION-OPEN-IF-READY, 7E7F t.ACTION-SPELL-REMOTE-VIEW, 7EE3 t.ACTION-TAKE-REWARD,
+    7F11 t.ACTION-CLOSE-PUZZLE-VIEW, 7F69 t.ACTION-PLAY-FOR-PRIZE
+
+689F t.ACTION-PARAM-4 (NFA 689A)
+  Stack: -- byte
+  Group: actions-and-inventory
+  Inferred descriptive name, not recovered original: Fetches selected action payload byte4
+  through $672F.
+  Decoded callers: 74DB t.GAME-LOOP, 7A60 t.ACTION-OPEN-PAIR, 7E7F t.ACTION-SPELL-REMOTE-VIEW,
+    7EE3 t.ACTION-TAKE-REWARD, 7F11 t.ACTION-CLOSE-PUZZLE-VIEW, 7F69 t.ACTION-PLAY-FOR-PRIZE
+
+68AE t.ACTION-PARAM-5 (NFA 68A9)
+  Stack: -- byte
+  Group: actions-and-inventory
+  Inferred descriptive name, not recovered original: Fetches selected action payload byte5
+  through $672F.
+  Decoded callers: 7423 t.ENTER-ROOM, 806B t.ACTION-CATCH-WITH-ITEM
+
+68BD t.ACTION-PARAM-6 (NFA 68B8)
+  Stack: -- byte
+  Group: actions-and-inventory
+  Inferred descriptive name, not recovered original: Fetches selected action payload byte6
+  through $672F.
+  Decoded callers: none
+
+68CE t.OBJECT-HIT-MAP-XY (NFA 68C7)
+  Stack: object -- x y
+  Group: actions-and-inventory
+  Inferred descriptive name, not recovered original: Searches the hit-map byte grid for an
+  object ID, converts its linear index into x and 6-row y units, then adds the current view
+  origin. Caller $7783 uses it to place dropped items.
+  Decoded callers: 7783 t.ACTION-DROP-ITEM
+
+6916 t.NO-ITEM-CHOSEN-MESSAGE (NFA 6911)
+  Stack: -- record
+  Group: actions-and-inventory
+  Inferred descriptive name, not recovered original: Counted message NIE POKAZALES RZECZY, used
+  when inventory selection returns object zero.
+  Decoded callers: 6936 t.CHOOSE-INVENTORY-ITEM
+
+6936 t.CHOOSE-INVENTORY-ITEM (NFA 6930)
+  Stack: -- item
+  Group: actions-and-inventory
+  Inferred descriptive name, not recovered original: Opens inventory, waits for cursor
+  selection, reads its hit-map object ID, displays an error for zero, restores the prior view,
+  and returns the item ID.
+  Decoded callers: 7783 t.ACTION-DROP-ITEM, 7BFA t.CHOOSE-REQUIRED-ITEM
+
+695F t.START-MENU-RECORDS (NFA 6959)
+  Group: data
+  Inferred descriptive name, not recovered original: Data carried under DOCOL, not executed as
+  threaded code: counted records for actions7 and8 (new game/load). $6986 assigns this PFA
+  directly when gameplay is inactive.
+  Decoded callers: none
+
+6974 t.GAME-MENU-RECORDS (NFA 696E)
+  Group: data
+  Inferred descriptive name, not recovered original: Data carried under DOCOL, not executed as
+  threaded code: counted record for action9 (save). $6986 uses this PFA while gameplay is
+  active.
+  Decoded callers: none
+
+6986 t.SELECT-SYSTEM-MENU (NFA 6980)
+  Stack: object --
+  Group: actions-and-inventory
+  Inferred descriptive name, not recovered original: Drops the prior object ID, picks
+  startup/in-game menu-record data according to $5CE1, sets selected object1, and clears the
+  keyboard selection code.
+  Decoded callers: 6A79 t.RESOLVE-INPUT-ACTION
+
+69B6 t.ACHIEVEMENT-BIT-COUNT (NFA 69B0)
+  Stack: -- address
+  Group: actions-and-inventory
+  Inferred descriptive name, not recovered original: Cell whose low byte is written by native
+  $69C0 with the population count of all31 room-achievement bytes.
+  Decoded callers: 6A37 t.SHOW-MISSION-PERCENT
+
+69C0 t.COUNT-ACHIEVEMENT-BITS (NFA 69BA)
+  Stack: --
+  Group: actions-and-inventory
+  Inferred descriptive name, not recovered original: 6502 loops over31 bytes at $587E and shifts
+  each eight times, incrementing byte $69B8 for each set bit.
+  Decoded callers: 6A37 t.SHOW-MISSION-PERCENT
+
+69E8 t.SET-ROOM-ACHIEVEMENT (NFA 69E2)
+  Stack: mask --
+  Group: actions-and-inventory
+  Inferred descriptive name, not recovered original: Indexes byte array $587C by CURRENT-ROOM;
+  adds the supplied mask only when its AND with the existing byte is zero. Callers supply
+  single-bit masks.
+  Decoded callers: 7423 t.ENTER-ROOM, 76DB t.CHECK-FOUR-ITEM-PUZZLE, 7AF0 t.LEARN-OBJECT-SPELL,
+    7C5F t.OPEN-SCENE-IF-TRUE, 7CAA t.REPLACE-SCENE-IF-TRUE, 7E56 t.ACTION-ADD-SCENE-OBJECT,
+    7E7F t.ACTION-SPELL-REMOTE-VIEW, 7EE3 t.ACTION-TAKE-REWARD, 7F69 t.ACTION-PLAY-FOR-PRIZE,
+    7FE8 t.ACTION-PAY-OR-TRIGGER-TRAP, 807F t.ACTION-SPELL-REMOVE-OBJECT, 8316
+    t.ACTION-PAY-WARLOCK, 83D3 t.ACTION-TRAVEL-THROUGH-TIME, 8414 t.ACTION-SPELL-ADD-OBJECT
+
+6A0D t.MISSION-PERCENT-MESSAGE (NFA 6A08)
+  Stack: -- record
+  Group: actions-and-inventory
+  Inferred descriptive name, not recovered original: Counted WYKONALES ... PROCENT MISJI message
+  buffer; $6A37 replaces two characters with the computed percentage.
+  Decoded callers: 6A37 t.SHOW-MISSION-PERCENT
+
+6A37 t.SHOW-MISSION-PERCENT (NFA 6A30)
+  Stack: --
+  Group: actions-and-inventory
+  Inferred descriptive name, not recovered original: While gameplay is active, counts
+  achievement bits and formats count*100/65 as two decimal digits in $6A0D before displaying it.
+  Decoded callers: 6A79 t.RESOLVE-INPUT-ACTION
+
+6A79 t.RESOLVE-INPUT-ACTION (NFA 6A73)
+  Stack: object -- action
+  Group: actions-and-inventory
+  Inferred descriptive name, not recovered original: Interprets keyboard selection code0 as the
+  selected object menu,1 as system menu plus mission progress, and values above1 as direct
+  action codes+8; clears the code.
+  Decoded callers: 74DB t.GAME-LOOP
+
+6ACB t.GET-GAME-INPUT (NFA 6AC5)
+  Inferred descriptive name, not recovered original: Sets an input-mode flag, invokes
+  input/pointer polling, normalizes the result, clears the flag and returns it.
+  Decoded callers: 74DB t.GAME-LOOP
+
+6AFE t.ACTION-HANDLERS (NFA 6AF9)
+  Stack: action -- address
+  Group: actions-and-inventory
+  Inferred descriptive name, not recovered original: Cell table of handler PFAs indexed by
+  action ID; EXECUTE-GAME-ACTION fetches one, falls back to entry0 when zero, converts PFA to
+  CFA and executes it.
+  Decoded callers: 6B74 t.EXECUTE-GAME-ACTION
+
+6B74 t.EXECUTE-GAME-ACTION (NFA 6B6E)
+  Inferred descriptive name, not recovered original: Selects an action PFA from a variable,
+  converts to CFA and executes it.
+  Decoded callers: 74DB t.GAME-LOOP
+
+6B94 t.SAVE-PLAYER-BG-PARAMS (NFA 6B8E)
+  Stack: -- address
+  Group: player-animation-and-pathfinding
+  Inferred descriptive name, not recovered original: Ten-byte native blit parameter block
+  patched by $6D79 to copy the screen rectangle into player background storage.
+  Decoded callers: 6D79 t.SAVE-BG-AT-PLAYER-XY
+
+6BA6 t.DRAW-PLAYER-PARAMS (NFA 6BA0)
+  Stack: -- address
+  Group: player-animation-and-pathfinding
+  Inferred descriptive name, not recovered original: Ten-byte native blit parameter block whose
+  destination follows the player; $6F5F installs it for the deferred VBI draw.
+  Decoded callers: 6D79 t.SAVE-BG-AT-PLAYER-XY, 6F5F t.QUEUE-PLAYER-BLIT
+
+6BB7 t.PLAYER-OVERLAP-PARAMS (NFA 6BB2)
+  Stack: -- address
+  Group: player-animation-and-pathfinding
+  Inferred descriptive name, not recovered original: Ten-byte rectangle-intersection blit block
+  cached by $6C85 and reused for subsequent movement in the same direction by $6DBE.
+  Decoded callers: 6C85 t.COPY-RECT-INTERSECTION, 6DBE t.STEP-PLAYER-BACKGROUND
+
+6BC8 t.PLAYER-BLIT-PENDING (NFA 6BC3)
+  Stack: -- address
+  Group: player-animation-and-pathfinding
+  Inferred descriptive name, not recovered original: Deferred sprite draw flag: $6F5F writes2,
+  native VBI routine $6F2F performs the blit then clears it, and $6BD2 waits for zero.
+  Decoded callers: 6F5F t.QUEUE-PLAYER-BLIT
+
+6BD2 t.WAIT-PLAYER-BLIT (NFA 6BCC)
+  Stack: --
+  Group: player-animation-and-pathfinding
+  Inferred descriptive name, not recovered original: Native loop waits for byte $6BCA to become
+  zero before returning through NEXT.
+  Decoded callers: 6DBE t.STEP-PLAYER-BACKGROUND, 6EC6 t.COMPOSE-PLAYER-FRAME, 7028
+    t.WALK-PLAYER-STEPS, 7073 t.POSITION-PLAYER
+
+6BE1 t.OVERLAP-RECT-PTRS (NFA 6BDC)
+  Stack: index -- address
+  Group: player-animation-and-pathfinding
+  Inferred descriptive name, not recovered original: Two-cell scratch array containing the
+  rectangle pointers used by intersection/copy helpers $6BEE..$6C85.
+  Decoded callers: 6BEE t.RECTANGLE-BYTE-PAIR, 6C55 t.RECT-INTERSECTION-ADDR, 6C85
+    t.COPY-RECT-INTERSECTION
+
+6BEE t.RECTANGLE-BYTE-PAIR (NFA 6BE9)
+  Stack: offset -- first-byte second-byte
+  Group: player-animation-and-pathfinding
+  Inferred descriptive name, not recovered original: Fetches the same header offset from each
+  rectangle referenced by the two $6BE1 cells.
+  Decoded callers: 6C10 t.POSITIVE-RECT-OFFSET, 6C26 t.RECT-INTERSECTION-EXTENT
+
+6C10 t.POSITIVE-RECT-OFFSET (NFA 6C0A)
+  Stack: offset -- nonnegative-difference
+  Group: player-animation-and-pathfinding
+  Inferred descriptive name, not recovered original: Subtracts the two rectangle header bytes
+  selected by offset and clamps a negative result to zero.
+  Decoded callers: 6C55 t.RECT-INTERSECTION-ADDR
+
+6C26 t.RECT-INTERSECTION-EXTENT (NFA 6C20)
+  Stack: axis -- extent positive
+  Group: player-animation-and-pathfinding
+  Inferred descriptive name, not recovered original: For axis offset0/1 computes
+  min(start0+size0,start1+size1)-max(start0,start1), returning the signed extent and whether it
+  is positive.
+  Decoded callers: 6C85 t.COPY-RECT-INTERSECTION
+
+6C55 t.RECT-INTERSECTION-ADDR (NFA 6C50)
+  Stack: -- stride address
+  Group: player-animation-and-pathfinding
+  Inferred descriptive name, not recovered original: Uses rectangle1 width and nonnegative x/y
+  origin differences to return its row stride and first overlapping pixel address.
+  Decoded callers: 6C85 t.COPY-RECT-INTERSECTION
+
+6C85 t.COPY-RECT-INTERSECTION (NFA 6C7F)
+  Stack: source destination -- flag
+  Group: player-animation-and-pathfinding
+  Inferred descriptive name, not recovered original: Stores the two rectangle pointers, requires
+  positive x/y overlap, computes source/destination pixel addresses/strides and invokes the
+  native blitter; caches the ten-byte parameters and returns success. Original 6502 execution
+  with two overlapping 2x1 rectangles copied the source bytes into the destination and
+  returned1.
+  Decoded callers: 6DBE t.STEP-PLAYER-BACKGROUND, 749C t.COMPOSE-PLAYER-OVERLAP
+
+6CED t.OLD-PLAYER-RECT (NFA 6CE8)
+  Stack: -- address
+  Group: player-animation-and-pathfinding
+  Inferred descriptive name, not recovered original: Constant $0A00, snapshot of the prior
+  player rectangle and its pixels used by movement and overlap restoration.
+  Decoded callers: 6DA0 t.SAVE-PLAYER-RECT-HEADER, 6DBE t.STEP-PLAYER-BACKGROUND, 6EC6
+    t.COMPOSE-PLAYER-FRAME, 749C t.COMPOSE-PLAYER-OVERLAP
+
+6CF6 t.PLAYER-DIRECTION (NFA 6CF1)
+  Stack: -- address
+  Group: player-animation-and-pathfinding
+  Inferred descriptive name, not recovered original: Direction cell used for sprite frame
+  lookup, movement deltas and pathfinding; values0..3 select cardinal directions.
+  Decoded callers: 6D29 t.PLAYER-DX, 6D3C t.PLAYER-DY, 6DBE t.STEP-PLAYER-BACKGROUND, 6FE7
+    t.ANIMATE-PLAYER-STEP, 7073 t.POSITION-PLAYER, 7168 t.ROTATE-DIRECTION-CW, 7182
+    t.ROTATE-DIRECTION-CCW, 7228 t.SCORE-ROUTE-CANDIDATE, 7244 t.APPEND-ROUTE-RUN, 732B
+    t.PLAN-PLAYER-ROUTE, 7387 t.POSITION-PLAYER-AT-ENTRY, 73B1 t.MOVE-PLAYER-TO-POINT, 749C
+    t.COMPOSE-PLAYER-OVERLAP, 7978 t.LOAD-SAVED-GAME, 79E3 t.START-PART-TWO
+
+6D00 t.PLAYER-X-STEPS (NFA 6CFA)
+  Stack: direction -- address
+  Group: player-animation-and-pathfinding
+  Inferred descriptive name, not recovered original: Cell table [0,1,0,-1,0], indexed by current
+  player direction in $6D29.
+  Decoded callers: 6D29 t.PLAYER-DX
+
+6D14 t.PLAYER-Y-STEPS (NFA 6D0E)
+  Stack: direction -- address
+  Group: player-animation-and-pathfinding
+  Inferred descriptive name, not recovered original: Cell table [-6,0,6,0,0], indexed by current
+  player direction in $6D3C.
+  Decoded callers: 6D3C t.PLAYER-DY
+
+6D29 t.PLAYER-DX (NFA 6D22)
+  Stack: -- dx
+  Group: player-animation-and-pathfinding
+  Inferred descriptive name, not recovered original: Fetches horizontal step from $6D00 at the
+  current player direction.
+  Decoded callers: 6DBE t.STEP-PLAYER-BACKGROUND
+
+6D3C t.PLAYER-DY (NFA 6D35)
+  Stack: -- dy
+  Group: player-animation-and-pathfinding
+  Inferred descriptive name, not recovered original: Fetches vertical pixel-row step from $6D14
+  at the current player direction.
+  Decoded callers: 6DBE t.STEP-PLAYER-BACKGROUND
+
+6D4E t.PLAYER-SCREEN-ADDR (NFA 6D48)
+  Stack: -- address
+  Group: player-animation-and-pathfinding
+  Inferred descriptive name, not recovered original: Reads player rectangle x/y, computes
+  bitmapbase+x+y*40, and returns that packed-screen byte address.
+  Decoded callers: 6D79 t.SAVE-BG-AT-PLAYER-XY
+
+6D69 t.INSTALL-BLIT-PARAMS (NFA 6D63)
+  Stack: address --
+  Group: player-animation-and-pathfinding
+  Inferred descriptive name, not recovered original: Copies ten bytes from the given parameter
+  block into native blitter parameters at $3AC3.
+  Decoded callers: 6D79 t.SAVE-BG-AT-PLAYER-XY, 6DBE t.STEP-PLAYER-BACKGROUND, 6F5F
+    t.QUEUE-PLAYER-BLIT
+
+6D79 t.SAVE-BG-AT-PLAYER-XY (NFA 6D74)
+  Stack: x y --
+  Group: player-animation-and-pathfinding
+  Inferred descriptive name, not recovered original: Stores player rectangle x/y, patches
+  save/draw screen addresses, installs background-save parameters and performs the native copy.
+  Decoded callers: 6DBE t.STEP-PLAYER-BACKGROUND, 7073 t.POSITION-PLAYER
+
+6DA0 t.SAVE-PLAYER-RECT-HEADER (NFA 6D9B)
+  Stack: --
+  Group: player-animation-and-pathfinding
+  Inferred descriptive name, not recovered original: Copies four bytes of the current player
+  rectangle to the old-rectangle buffer $0A00.
+  Decoded callers: 6DBE t.STEP-PLAYER-BACKGROUND, 7073 t.POSITION-PLAYER
+
+6DB4 t.PREVIOUS-PLAYER-DIRECTION (NFA 6DAE)
+  Stack: -- address
+  Group: player-animation-and-pathfinding
+  Inferred descriptive name, not recovered original: Compared with PLAYER-DIRECTION during
+  movement to reuse cached overlap parameters; updated after the step and invalidated with4 by
+  $73B1.
+  Decoded callers: 6DBE t.STEP-PLAYER-BACKGROUND, 73B1 t.MOVE-PLAYER-TO-POINT
+
+6DBE t.STEP-PLAYER-BACKGROUND (NFA 6DB8)
+  Stack: --
+  Group: player-animation-and-pathfinding
+  Inferred descriptive name, not recovered original: Waits for pending draw, saves the old
+  rectangle, advances player x/y by direction deltas and saves the new background, restores
+  overlapping pixels using cached/new intersection parameters.
+  Decoded callers: 6FE7 t.ANIMATE-PLAYER-STEP
+
+6E0F t.PLAYER-FRAME-ADDR (NFA 6E0A)
+  Stack: frame direction -- address
+  Group: player-animation-and-pathfinding
+  Inferred descriptive name, not recovered original: Performs two nested counted-record lookups
+  in the sprite bank at $8D52 and skips each length field, selecting a direction group then its
+  frame payload.
+  Decoded callers: 6F72 t.DRAW-PLAYER-FRAME
+
+6E22 t.PLAYER-HIT-MAP-XY (NFA 6E1D)
+  Stack: -- address
+  Group: player-animation-and-pathfinding
+  Inferred descriptive name, not recovered original: Two byte grid-coordinate scratch fields
+  filled by native $6E62 and used by $6EC6 to locate the player hit-map row.
+  Decoded callers: 6EC6 t.COMPOSE-PLAYER-FRAME
+
+6E2D t.PLAYER-OFFSET-XY (NFA 6E27)
+  Stack: -- address
+  Group: player-animation-and-pathfinding
+  Inferred descriptive name, not recovered original: Two byte sprite-frame offsets written by
+  $6EC6; also reused as next-candidate x/y scratch by the pathfinding native helper $712C.
+  Decoded callers: 6EC6 t.COMPOSE-PLAYER-FRAME, 7158 t.NEXT-ROUTE-XY
+
+6E36 t.SPLIT-PLAYER-ROW-SUB (NFA 6E31)
+  Group: native-subroutine
+  Inferred descriptive name, not recovered original: 6502 RTS subroutine transforms the y byte
+  at $6E24 into a six-row quotient/remainder pair at $6E25/$6E24 for $6E62; it is not
+  independently Forth-callable.
+  Decoded callers: none
+
+6E62 t.PREPARE-PLAYER-HIT-MAP (NFA 6E5C)
+  Stack: --
+  Group: player-animation-and-pathfinding
+  Inferred descriptive name, not recovered original: 6502 computes depth-mask/clipping state and
+  six-row hit-map coordinates from old-player rectangle $0A00 and frame offsets $6E2D.
+  Decoded callers: 6EC6 t.COMPOSE-PLAYER-FRAME
+
+6EB0 t.ENABLE-PLAYER-MASK-BLIT (NFA 6EAA)
+  Stack: --
+  Group: player-animation-and-pathfinding
+  Inferred descriptive name, not recovered original: Sets native masked-copy flag $538C to1 and
+  copies depth-bypass mode from $5346 into $5345 before player-frame compositing.
+  Decoded callers: 6EC6 t.COMPOSE-PLAYER-FRAME
+
+6EC6 t.COMPOSE-PLAYER-FRAME (NFA 6EC0)
+  Stack: frame-address --
+  Group: player-animation-and-pathfinding
+  Inferred descriptive name, not recovered original: Waits for the previous blit, snapshots the
+  player background, reads frame offsets, prepares hit/depth coordinates and native blitter
+  pointers, then composites frame pixels and restores mask flags.
+  Decoded callers: 6F72 t.DRAW-PLAYER-FRAME
+
+6F2F t.PLAYER-BLIT-VBI-SUB (NFA 6F29)
+  Group: native-subroutine
+  Inferred descriptive name, not recovered original: 6502 RTS VBI subroutine: if pending flag
+  equals2, disables row clipping, invokes the blitter at $53E6, restores clipping and clears
+  pending flag.
+  Decoded callers: none
+
+6F4E t.PLAYER-IDLE-Y-OFFSETS (NFA 6F49)
+  Stack: direction -- address
+  Group: player-animation-and-pathfinding
+  Inferred descriptive name, not recovered original: Direction-indexed byte values7,10,6,3 used
+  to temporarily alter sprite-frame y offsets for idle frame5 in $6F72.
+  Decoded callers: 6F72 t.DRAW-PLAYER-FRAME
+
+6F5F t.QUEUE-PLAYER-BLIT (NFA 6F5A)
+  Stack: --
+  Group: player-animation-and-pathfinding
+  Inferred descriptive name, not recovered original: Installs $6BA6 draw parameters and sets
+  PLAYER-BLIT-PENDING to2 for the VBI routine.
+  Decoded callers: 6FCF t.DRAW-AND-QUEUE-PLAYER
+
+6F72 t.DRAW-PLAYER-FRAME (NFA 6F6D)
+  Stack: direction frame --
+  Group: player-animation-and-pathfinding
+  Inferred descriptive name, not recovered original: Draws the indexed frame for the supplied
+  direction. Special frame5 reuses frame2 and adjusts vertical offsets for even directions
+  before restoring the sprite data.
+  Decoded callers: 6FCF t.DRAW-AND-QUEUE-PLAYER, 749C t.COMPOSE-PLAYER-OVERLAP
+
+6FCF t.DRAW-AND-QUEUE-PLAYER (NFA 6FC9)
+  Stack: direction frame --
+  Group: player-animation-and-pathfinding
+  Inferred descriptive name, not recovered original: Calls $6F72 to compose the selected frame
+  and $6F5F to schedule its screen copy.
+  Decoded callers: 6FE7 t.ANIMATE-PLAYER-STEP, 7073 t.POSITION-PLAYER, 73B1
+    t.MOVE-PLAYER-TO-POINT
+
+6FDD t.PLAYER-FOOT-Y-OFFSET (NFA 6FD7)
+  Stack: -- pixels
+  Group: player-animation-and-pathfinding
+  Inferred descriptive name, not recovered original: Constant43 subtracted from gridY*6 when
+  positioning the player and added back when recovering the player foot-grid coordinate.
+  Decoded callers: 7073 t.POSITION-PLAYER, 73B1 t.MOVE-PLAYER-TO-POINT
+
+6FE7 t.ANIMATE-PLAYER-STEP (NFA 6FE1)
+  Stack: direction end-frame start-frame --
+  Group: player-animation-and-pathfinding
+  Inferred descriptive name, not recovered original: Sets movement direction, advances
+  background one step, animates the supplied frame interval and plays footstep effect3 at
+  frames0/3, then draws the boundary frame.
+  Decoded callers: 7028 t.WALK-PLAYER-STEPS
+
+7028 t.WALK-PLAYER-STEPS (NFA 7021)
+  Stack: direction steps --
+  Group: player-animation-and-pathfinding
+  Inferred descriptive name, not recovered original: For each requested grid step chooses the
+  direction-dependent alternating frame cycle, invokes $6FE7 and waits for the final VBI draw.
+  Decoded callers: 70DA t.WALK-PLANNED-ROUTE
+
+7073 t.POSITION-PLAYER (NFA 706D)
+  Stack: grid-x grid-y --
+  Group: player-animation-and-pathfinding
+  Inferred descriptive name, not recovered original: Converts grid coordinates to rectangle
+  x+2,y*6-43, sets dimensions5x54, saves background, enables VBI and renders idle frame5.
+  Decoded callers: 7387 t.POSITION-PLAYER-AT-ENTRY
+
+70B1 t.PLAYER-ROUTE-COUNT (NFA 70AB)
+  Stack: -- address
+  Group: player-animation-and-pathfinding
+  Inferred descriptive name, not recovered original: Number of stored route segments;
+  $7244/$732B append segments and $70DA consumes them in reverse order.
+  Decoded callers: 70DA t.WALK-PLANNED-ROUTE, 7244 t.APPEND-ROUTE-RUN, 732B t.PLAN-PLAYER-ROUTE,
+    7423 t.ENTER-ROOM
+
+70BB t.PLAYER-ROUTE-SEGMENTS (NFA 70B5)
+  Stack: index -- address
+  Group: player-animation-and-pathfinding
+  Inferred descriptive name, not recovered original: Cell array of byte pairs (direction,step
+  count), populated by route planning and consumed by $70DA.
+  Decoded callers: 70DA t.WALK-PLANNED-ROUTE, 7244 t.APPEND-ROUTE-RUN, 732B t.PLAN-PLAYER-ROUTE,
+    7423 t.ENTER-ROOM
+
+70DA t.WALK-PLANNED-ROUTE (NFA 70D3)
+  Stack: --
+  Group: player-animation-and-pathfinding
+  Inferred descriptive name, not recovered original: Decrements the segment count, reads its
+  direction/count pair and walks that segment until the count reaches zero.
+  Decoded callers: 73B1 t.MOVE-PLAYER-TO-POINT, 7423 t.ENTER-ROOM
+
+7106 t.ROUTE-SEARCH-XY (NFA 7100)
+  Stack: -- address
+  Group: player-animation-and-pathfinding
+  Inferred descriptive name, not recovered original: Search point initialized from the requested
+  destination by $73B1 and advanced by the reverse route builder $7244.
+  Decoded callers: 71BC t.ROUTE-STEP-APPROACHES, 7244 t.APPEND-ROUTE-RUN, 732B
+    t.PLAN-PLAYER-ROUTE, 73B1 t.MOVE-PLAYER-TO-POINT
+
+7110 t.ROUTE-TARGET-XY (NFA 710A)
+  Stack: -- address
+  Group: player-animation-and-pathfinding
+  Inferred descriptive name, not recovered original: Reverse-search target initialized from the
+  current player foot-grid position by $73B1; $7302 adjusts it for a staged terminal segment.
+  Decoded callers: 71BC t.ROUTE-STEP-APPROACHES, 7244 t.APPEND-ROUTE-RUN, 7302
+    t.ADJUST-ROUTE-TARGET-AXIS, 732B t.PLAN-PLAYER-ROUTE, 73B1 t.MOVE-PLAYER-TO-POINT
+
+711A t.ROUTE-DIRECTION-VECTORS (NFA 7114)
+  Stack: direction -- address
+  Group: player-animation-and-pathfinding
+  Inferred descriptive name, not recovered original: Packed byte-pair table
+  [(1,0),(2,1),(1,2),(0,1)]; path helpers subtract1 from each component to obtain cardinal unit
+  steps.
+  Decoded callers: 7302 t.ADJUST-ROUTE-TARGET-AXIS
+
+712C t.SET-NEXT-ROUTE-XY (NFA 7126)
+  Stack: --
+  Group: player-animation-and-pathfinding
+  Inferred descriptive name, not recovered original: 6502 adds the selected cardinal vector
+  minus1 to ROUTE-SEARCH-XY and writes candidate x/y bytes at $6E2F/$6E30.
+  Decoded callers: 7158 t.NEXT-ROUTE-XY
+
+7158 t.NEXT-ROUTE-XY (NFA 7151)
+  Stack: -- x y
+  Group: player-animation-and-pathfinding
+  Inferred descriptive name, not recovered original: Computes candidate x/y through $712C and
+  returns its two unsigned bytes. Original 6502 execution from coordinate10,10 produced
+  (10,9),(11,10),(10,11),(9,10) for directions0..3.
+  Decoded callers: 71BC t.ROUTE-STEP-APPROACHES, 71E6 t.ROUTE-STEP-WALKABLE, 7244
+    t.APPEND-ROUTE-RUN
+
+7168 t.ROTATE-DIRECTION-CW (NFA 7162)
+  Stack: --
+  Group: player-animation-and-pathfinding
+  Inferred descriptive name, not recovered original: Increments PLAYER-DIRECTION modulo4.
+  Decoded callers: 7244 t.APPEND-ROUTE-RUN
+
+7182 t.ROTATE-DIRECTION-CCW (NFA 717C)
+  Stack: --
+  Group: player-animation-and-pathfinding
+  Inferred descriptive name, not recovered original: Decrements PLAYER-DIRECTION, adding4 if the
+  result is negative.
+  Decoded callers: 7244 t.APPEND-ROUTE-RUN
+
+71A4 t.ABS-XY-DIFFERENCE (NFA 719E)
+  Stack: x1 y1 x2 y2 -- abs-dx abs-dy
+  Group: player-animation-and-pathfinding
+  Inferred descriptive name, not recovered original: Computes absolute differences of two
+  coordinate pairs, with x difference below y difference. Original 6502 execution on
+  arguments10,30,3,40 returned7,10.
+  Decoded callers: 71BC t.ROUTE-STEP-APPROACHES
+
+71BC t.ROUTE-STEP-APPROACHES (NFA 71B6)
+  Stack: -- flag
+  Group: player-animation-and-pathfinding
+  Inferred descriptive name, not recovered original: Compares each axis distance from
+  candidate/search coordinates to ROUTE-TARGET-XY; true only when neither candidate distance
+  increases.
+  Decoded callers: 7228 t.SCORE-ROUTE-CANDIDATE, 7244 t.APPEND-ROUTE-RUN
+
+71E6 t.ROUTE-STEP-WALKABLE (NFA 71E0)
+  Stack: -- flag
+  Group: player-animation-and-pathfinding
+  Inferred descriptive name, not recovered original: Reads the candidate hit-map byte and
+  accepts it when its low five bits do not equal blocking marker5.
+  Decoded callers: 7228 t.SCORE-ROUTE-CANDIDATE, 7244 t.APPEND-ROUTE-RUN
+
+7200 t.OPPOSITE-DIRECTION (NFA 71FA)
+  Stack: direction -- opposite
+  Group: player-animation-and-pathfinding
+  Inferred descriptive name, not recovered original: Maps directions0,1 to2,3 by adding2 and
+  directions2,3 to0,1 by subtracting2.
+  Decoded callers: 7244 t.APPEND-ROUTE-RUN, 732B t.PLAN-PLAYER-ROUTE, 7387
+    t.POSITION-PLAYER-AT-ENTRY, 7423 t.ENTER-ROOM
+
+721E t.SAVED-ROUTE-DIRECTION (NFA 7218)
+  Stack: -- address
+  Group: player-animation-and-pathfinding
+  Inferred descriptive name, not recovered original: Stores the current search direction before
+  evaluating neighboring routes; restored by $7228.
+  Decoded callers: 7228 t.SCORE-ROUTE-CANDIDATE, 7244 t.APPEND-ROUTE-RUN
+
+7228 t.SCORE-ROUTE-CANDIDATE (NFA 7222)
+  Stack: -- score
+  Group: player-animation-and-pathfinding
+  Inferred descriptive name, not recovered original: Returns 2*walkable+approaches-target for
+  the candidate direction, then restores the saved search direction.
+  Decoded callers: 7244 t.APPEND-ROUTE-RUN
+
+7244 t.APPEND-ROUTE-RUN (NFA 723E)
+  Group: player-animation-and-pathfinding
+  Inferred descriptive name, not recovered original: Walks the reverse-search point toward its
+  target, evaluates left/right detours at obstacles and direction changes, and appends the
+  reversed direction/count pair to the route table.
+  Decoded callers: 732B t.PLAN-PLAYER-ROUTE
+
+72F9 t.DEFERRED-ROUTE-SEGMENT (NFA 72F4)
+  Stack: -- address
+  Group: player-animation-and-pathfinding
+  Inferred descriptive name, not recovered original: Packed direction/count pair used by $732B
+  to reserve and later append a final route segment.
+  Decoded callers: 7302 t.ADJUST-ROUTE-TARGET-AXIS, 732B t.PLAN-PLAYER-ROUTE, 7387
+    t.POSITION-PLAYER-AT-ENTRY
+
+7302 t.ADJUST-ROUTE-TARGET-AXIS (NFA 72FD)
+  Stack: axis --
+  Group: player-animation-and-pathfinding
+  Inferred descriptive name, not recovered original: Uses the deferred direction/count vector to
+  adjust one byte coordinate of ROUTE-TARGET-XY.
+  Decoded callers: 732B t.PLAN-PLAYER-ROUTE
+
+732B t.PLAN-PLAYER-ROUTE (NFA 7324)
+  Group: player-animation-and-pathfinding
+  Inferred descriptive name, not recovered original: Builds the reverse route between search and
+  target points using $7244, preserving and appending a deferred terminal segment.
+  Decoded callers: 73B1 t.MOVE-PLAYER-TO-POINT
+
+7387 t.POSITION-PLAYER-AT-ENTRY (NFA 7381)
+  Stack: --
+  Group: player-animation-and-pathfinding
+  Inferred descriptive name, not recovered original: Selects the room exit opposite the facing
+  direction, installs its action record, clears deferred route state and positions the player
+  using its action bytes2/3.
+  Decoded callers: 7423 t.ENTER-ROOM
+
+73B1 t.MOVE-PLAYER-TO-POINT (NFA 73A9)
+  Group: player-animation-and-pathfinding
+  Inferred descriptive name, not recovered original: Records player foot-grid position and
+  requested destination, builds and walks the route when positions differ, optionally turns to a
+  final direction below4, then invalidates overlap-direction cache.
+  Decoded callers: 74DB t.GAME-LOOP, 81B5 t.ACTION-FINAL-DESTRUCTION
+
+7423 t.ENTER-ROOM (NFA 741C)
+  Stack: room --
+  Group: player-animation-and-pathfinding
+  Inferred descriptive name, not recovered original: Loads/draws the room and mutable objects,
+  installs palette/message, positions the player at the entry, restores display and runs the
+  entry walk; stores entry facing and awards the room-visited bit outside room1.
+  Decoded callers: 7820 t.START-PART-ONE, 7978 t.LOAD-SAVED-GAME, 79E3 t.START-PART-TWO, 7AA4
+    t.ACTION-ENTER-ROOM
+
+749C t.COMPOSE-PLAYER-OVERLAP (NFA 7497)
+  Stack: --
+  Group: player-animation-and-pathfinding
+  Inferred descriptive name, not recovered original: When the picture rectangle intersects the
+  player, composites the idle player frame into the overlap and restores the intersection, using
+  the depth-mask bypass byte.
+  Decoded callers: 7573 t.REFRESH-CHANGED-PICTURE
+
+74D1 t.GAME-EXIT-FLAG (NFA 74CB)
+  Stack: -- address
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Set by action2 at $765A and tested at the
+  end of GAME-LOOP.
+  Decoded callers: 74DB t.GAME-LOOP, 765A t.ACTION-EXIT-GAME
+
+74DB t.GAME-LOOP (NFA 74D5)
+  Inferred descriptive name, not recovered original: Initializes interface and action state,
+  then repeatedly obtains input and executes game actions until the exit flag is set.
+  Decoded callers: 87E7 t.BOOT-INTRO
+
+7573 t.REFRESH-CHANGED-PICTURE (NFA 756D)
+  Stack: --
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Recomposites overlapping player pixels,
+  updates the main hit map from the changed picture and copies the resulting rectangle to the
+  screen.
+  Decoded callers: 75C5 t.DRAW-TWO-IMAGES, 75D4 t.DRAW-THREE-IMAGES
+
+75AA t.COMPOSE-TWO-IMAGES (NFA 75A5)
+  Stack: image1 image2 --
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Resolves two encoded image IDs, draws the
+  first with its hit mask and then overlays the second when valid.
+  Decoded callers: 75C5 t.DRAW-TWO-IMAGES, 75D4 t.DRAW-THREE-IMAGES
+
+75C5 t.DRAW-TWO-IMAGES (NFA 75BE)
+  Stack: image1 image2 --
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Composes two encoded images then refreshes
+  player overlap, hit-map and screen state.
+  Decoded callers: 76DB t.CHECK-FOUR-ITEM-PUZZLE, 7A60 t.ACTION-OPEN-PAIR, 7A82
+    t.ACTION-CLOSE-PAIR, 7AB2 t.ACTION-OPEN-REPLACEMENT, 7C5F t.OPEN-SCENE-IF-TRUE, 7CAA
+    t.REPLACE-SCENE-IF-TRUE, 7EE3 t.ACTION-TAKE-REWARD, 80A2 t.ACTION-COPY-HIDDEN-SPELL, 81B5
+    t.ACTION-FINAL-DESTRUCTION, 82DD t.ACTION-LISTEN
+
+75D4 t.DRAW-THREE-IMAGES (NFA 75CD)
+  Stack: image1 image2 image3 --
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Composes two encoded images, overlays a
+  valid third image, then refreshes player/hit-map/screen state.
+  Decoded callers: 7AD0 t.ACTION-CLOSE-REPLACEMENT, 7F11 t.ACTION-CLOSE-PUZZLE-VIEW, 81B5
+    t.ACTION-FINAL-DESTRUCTION
+
+75EE t.WAIT-KEY-OR-FIRE (NFA 75E8)
+  Stack: --
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Writes the 16-bit value $00FF at $02FC
+  (CH=$FF, adjacent $02FD=0), then waits for a new keycode or joystick trigger zero. Consumes
+  the resulting key/trigger indication.
+  Decoded callers: 7A33 t.ACTION-SHOW-SPELLBOOK, 7A49 t.ACTION-SHOW-INVENTORY, 7AF0
+    t.LEARN-OBJECT-SPELL
+
+7619 t.WHICH-ITEM-MESSAGE (NFA 7614)
+  Stack: -- record
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Counted CO? prompt displayed before the
+  drop-item action asks for an inventory item.
+  Decoded callers: 7783 t.ACTION-DROP-ITEM
+
+7629 t.SHOW-RESOURCE-MESSAGE (NFA 7622)
+  Stack: resource --
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Selects the requested resource, clears text
+  and displays its child0 message payload after the nested count fields.
+  Decoded callers: 76DB t.CHECK-FOUR-ITEM-PUZZLE, 8111 t.SHOW-WARLOCK-REFUSAL, 82DD
+    t.ACTION-LISTEN, 83D3 t.ACTION-TRAVEL-THROUGH-TIME
+
+7641 t.ACTION-NOTHING (NFA 763C)
+  Stack: --
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Empty handler, action0 NIC and the fallback
+  for missing handler table entries.
+  Decoded callers: none
+
+764A t.ACTION-LEAVE-VIEW (NFA 7645)
+  Stack: --
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Action1 NIE PATRZ plays effect9 and leaves
+  the current nested view.
+  Decoded callers: none
+
+765A t.ACTION-EXIT-GAME (NFA 7655)
+  Stack: --
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Action2 sets GAME-EXIT-FLAG to1.
+  Decoded callers: none
+
+7669 t.FOUR-ITEM-REWARD-OBJECTS (NFA 7664)
+  Stack: -- address
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Five byte pairs (object,room) appended to
+  base-view object lists when $76DB detects the completed four-item placement puzzle.
+  Decoded callers: 76DB t.CHECK-FOUR-ITEM-PUZZLE
+
+767B t.FLASH-BACKGROUND (NFA 7675)
+  Stack: --
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Temporarily sets the COLOR4 shadow at $02C8
+  to14 for three frames, then restores its original byte.
+  Decoded callers: 76DB t.CHECK-FOUR-ITEM-PUZZLE, 7E7F t.ACTION-SPELL-REMOTE-VIEW, 81B5
+    t.ACTION-FINAL-DESTRUCTION, 83D3 t.ACTION-TRAVEL-THROUGH-TIME
+
+769B t.COUNT-PLACED-PUZZLE-ITEMS (NFA 7696)
+  Stack: -- count
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Counts items202..205 present respectively
+  in rooms25..28/view1.
+  Decoded callers: 76DB t.CHECK-FOUR-ITEM-PUZZLE
+
+76CC t.FOUR-ITEM-PUZZLE-FLAG (NFA 76C7)
+  Stack: -- address
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Returns the address of puzzle-state cell13,
+  tested/set by the four-item completion routine.
+  Decoded callers: 76DB t.CHECK-FOUR-ITEM-PUZZLE
+
+76DB t.CHECK-FOUR-ITEM-PUZZLE (NFA 76D5)
+  Stack: --
+  Group: game-actions
+  Inferred descriptive name, not recovered original: In rooms25..28, if flag13 is clear and all
+  four items are correctly placed, adds the five reward objects, flashes/plays effects, awards
+  bits8/16, updates pictures/message49 and sets flag13. Group6/resource49 says the circle of the
+  snake is broken and the player is free.
+  Decoded callers: 7783 t.ACTION-DROP-ITEM
+
+7783 t.ACTION-DROP-ITEM (NFA 777E)
+  Stack: --
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Action3 ZOSTAW chooses an inventory item,
+  derives its scene position from hit-map object201, removes it from inventory, adds it to the
+  current view and checks the four-item puzzle.
+  Decoded callers: none
+
+77D0 t.ACTION-TAKE-ITEM (NFA 77CB)
+  Stack: --
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Action4 WEZ adds SELECTED-OBJECT to
+  inventory; on success removes its scene entry, adds placeholder1 and redraws, otherwise plays
+  failure effect.
+  Decoded callers: none
+
+77FA t.ACTION-ENTER-VIEW (NFA 77F5)
+  Stack: --
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Action5 ZOBACZ enters the view specified by
+  object metadata byte1 and plays effect9.
+  Decoded callers: 8153 t.ACTION-VIEW-IF-READY
+
+780C t.ACTION-DESCRIBE (NFA 7807)
+  Stack: --
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Action6 CO TO displays the counted message
+  at selected action payload+1 with effect22.
+  Decoded callers: none
+
+7820 t.START-PART-ONE (NFA 781B)
+  Stack: --
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Action7 POCZATEK enables gameplay, stores
+  part selector2, loads group4, starts music0 and enters room1.
+  Decoded callers: none
+
+7845 t.PROTECTION-ERROR-MESSAGE (NFA 7840)
+  Stack: -- record
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Encoded message decoded by adding$26 to25
+  bytes at $786B and displayed when the part-two disk protection check fails.
+  Decoded callers: 786B t.DECODE-PROTECTION-MESSAGE, 7950 t.CHECK-PART-TWO-DISK
+
+786B t.DECODE-PROTECTION-MESSAGE (NFA 7865)
+  Stack: --
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Adds$26 to each of25 bytes beginning at
+  protection message+4. This is a destructive one-time transform before the infinite failure
+  loop.
+  Decoded callers: 7950 t.CHECK-PART-TWO-DISK
+
+7891 t.PROTECTION-SECTOR-ARGS (NFA 788C)
+  Stack: -- buffer sector
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Returns FIRST buffer and
+  sector$01F5+$0196=$038B (907), the arguments used by $78B0 for two disk-status probes.
+  Decoded callers: 78B0 t.DISK-PROTECTION-FAILS
+
+78A6 t.PROTECTION-CHECK-CELL (NFA 78A1)
+  Stack: -- address
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Cell initialized$02D1; $78B0 includes a
+  comparison with$21 in its protection-failure expression. No independent writer was found.
+  Decoded callers: 78B0 t.DISK-PROTECTION-FAILS
+
+78B0 t.DISK-PROTECTION-FAILS (NFA 78AA)
+  Stack: -- flag
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Reads sectors907/908 through -DISK and
+  compares the zero/nonzero status pattern, combined with the protection-check cell not
+  equaling$21. Used only when entering/loading group6.
+  Decoded callers: 7950 t.CHECK-PART-TWO-DISK
+
+78E8 t.SAVED-STATE-BYTES (NFA 78E1)
+  Stack: -- bytes
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Computes the state span from the PFA of
+  $5560 through the end of the direction cell at $58CF.
+  Decoded callers: 78FA t.SAVED-STATE-SECTORS, 7978 t.LOAD-SAVED-GAME
+
+78FA t.SAVED-STATE-SECTORS (NFA 78F4)
+  Stack: -- sectors
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Returns SAVED-STATE-BYTES/128+1 for writing
+  state to resource group8.
+  Decoded callers: 79C5 t.SAVE-GAME
+
+790F t.READ-SAVED-STATE-GROUP (NFA 7908)
+  Stack: --
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Selects read/banked mode and reads group8
+  with $46C0 into staging offset0; clears the bank mode afterward.
+  Decoded callers: 7978 t.LOAD-SAVED-GAME
+
+7938 t.RESUME-GAME-MUSIC (NFA 7933)
+  Stack: --
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Starts song0 only when the audio-state byte
+  at $5F4E is zero.
+  Decoded callers: 7978 t.LOAD-SAVED-GAME, 79C5 t.SAVE-GAME, 79E3 t.START-PART-TWO
+
+7950 t.CHECK-PART-TWO-DISK (NFA 794A)
+  Stack: group --
+  Group: game-actions
+  Inferred descriptive name, not recovered original: For group6 only, evaluates protection
+  status; on failure decodes/displays the protection message and loops forever.
+  Decoded callers: 7978 t.LOAD-SAVED-GAME, 79E3 t.START-PART-TWO
+
+7978 t.LOAD-SAVED-GAME (NFA 7973)
+  Stack: --
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Action8 ODCZYT reads group8, copies the
+  saved state into $5560, reloads the saved part resource group, checks protection, restores
+  music/facing and enters the saved room.
+  Decoded callers: none
+
+79C5 t.SAVE-GAME (NFA 79C0)
+  Stack: --
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Action9 ZAPIS stops music/VBI, writes the
+  mutable state span to group8, then restarts VBI/music.
+  Decoded callers: none
+
+79E3 t.START-PART-TWO (NFA 79DC)
+  Stack: --
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Sets part selector4, loads group6 and
+  checks protection, copies22 bytes of initial dropped-item positions to $5638, resets direction
+  and enters room23.
+  Decoded callers: 83D3 t.ACTION-TRAVEL-THROUGH-TIME
+
+7A24 t.PLAY-SUCCESS-SOUND (NFA 7A1D)
+  Stack: --
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Plays effect14 through $6000; reused by
+  successful object/puzzle actions.
+  Decoded callers: 7A60 t.ACTION-OPEN-PAIR, 7A82 t.ACTION-CLOSE-PAIR, 7AB2
+    t.ACTION-OPEN-REPLACEMENT, 7AD0 t.ACTION-CLOSE-REPLACEMENT, 7C5F t.OPEN-SCENE-IF-TRUE, 7D01
+    t.REPLACE-WHEN-PUZZLE-SET, 7E56 t.ACTION-ADD-SCENE-OBJECT, 7E6D
+    t.ACTION-REMOVE-SCENE-OBJECT, 7F11 t.ACTION-CLOSE-PUZZLE-VIEW, 81B5
+    t.ACTION-FINAL-DESTRUCTION, 8414 t.ACTION-SPELL-ADD-OBJECT
+
+7A33 t.ACTION-SHOW-SPELLBOOK (NFA 7A2D)
+  Stack: --
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Action10 draws the spellbook and waits for
+  key/fire dismissal, with effect1.
+  Decoded callers: none
+
+7A49 t.ACTION-SHOW-INVENTORY (NFA 7A43)
+  Stack: --
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Action11 opens inventory, plays effect16,
+  waits for key/fire dismissal and restores the previous view.
+  Decoded callers: none
+
+7A60 t.ACTION-OPEN-PAIR (NFA 7A5A)
+  Stack: --
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Action13 OTWORZ removes action byte1 and
+  object byte0, adds action bytes3/4 and draws their replacement pair.
+  Decoded callers: none
+
+7A82 t.ACTION-CLOSE-PAIR (NFA 7A7C)
+  Stack: --
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Action14 ZAMKNIJ removes action bytes1/2,
+  adds action byte3 and object byte0, then draws that replacement pair.
+  Decoded callers: none
+
+7AA4 t.ACTION-ENTER-ROOM (NFA 7A9E)
+  Stack: --
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Action15 IDZ enters the room named by
+  object metadata byte0.
+  Decoded callers: 80E1 t.ACTION-CROSS-ANTIMAGIC-WALL
+
+7AB2 t.ACTION-OPEN-REPLACEMENT (NFA 7AAC)
+  Stack: --
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Actions16 OTWORZ and45 NACISNIJ remove
+  object byte0 and action byte2, add action byte3, draw action bytes1/3 and play success effect.
+  Decoded callers: 7FE8 t.ACTION-PAY-OR-TRIGGER-TRAP
+
+7AD0 t.ACTION-CLOSE-REPLACEMENT (NFA 7ACA)
+  Stack: --
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Action17 ZAMKNIJ removes action byte2, adds
+  action byte3 and object byte0, then draws the action1/action3/object0 triple.
+  Decoded callers: none
+
+7AF0 t.LEARN-OBJECT-SPELL (NFA 7AEA)
+  Stack: --
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Finds/initializes a spellbook entry from
+  object metadata+1, adjusts its ingredient IDs by200, reveals its text character by character
+  with effect18, and awards achievement bit64.
+  Decoded callers: 7B55 t.ACTION-COPY-SPELL, 80A2 t.ACTION-COPY-HIDDEN-SPELL
+
+7B55 t.ACTION-COPY-SPELL (NFA 7B4F)
+  Stack: --
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Action18 PRZEPISZ removes object metadata
+  byte0 from the scene, redraws and learns the object spell.
+  Decoded callers: none
+
+7B66 t.SPELL-NAME-MESSAGE (NFA 7B61)
+  Stack: -- record
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Mutable counted message beginning CZAR
+  followed by space for the spell name; filled/displayed by $7B82.
+  Decoded callers: 7B82 t.ACTION-DESCRIBE-SPELL
+
+7B82 t.ACTION-DESCRIBE-SPELL (NFA 7B7C)
+  Stack: --
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Action19 CO TO builds CZAR plus the counted
+  spell name at object metadata+4 and displays it with effect22.
+  Decoded callers: none
+
+7BC2 t.WRONG-ITEM-MESSAGE (NFA 7BBD)
+  Stack: -- record
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Counted TYM NIE MOZESZ message shown by
+  $7BFA for a selected but incorrect item.
+  Decoded callers: 7BFA t.CHOOSE-REQUIRED-ITEM
+
+7BDF t.WITH-WHAT-MESSAGE (NFA 7BDA)
+  Stack: -- record
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Counted CZYM? prompt displayed before
+  choosing an inventory item for an action.
+  Decoded callers: 7BFA t.CHOOSE-REQUIRED-ITEM
+
+7BF0 t.LAST-CHOSEN-ITEM (NFA 7BEB)
+  Stack: -- address
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Set by $7BFA to the most recently chosen
+  inventory item, including an incorrect selection; several handlers test alternate item IDs.
+  Decoded callers: 7BFA t.CHOOSE-REQUIRED-ITEM, 7F69 t.ACTION-PLAY-FOR-PRIZE, 7FE8
+    t.ACTION-PAY-OR-TRIGGER-TRAP, 8316 t.ACTION-PAY-WARLOCK
+
+7BFA t.CHOOSE-REQUIRED-ITEM (NFA 7BF4)
+  Stack: local-item -- flag
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Adds200 to the required local ID, prompts
+  for inventory selection, saves it at $7BF0 and compares it; if requiredID+200 wraps to zero it
+  accepts without prompting.
+  Decoded callers: 7C81 t.ACTION-OPEN-WITH-ITEM, 7CED t.ACTION-DESTROY-WITH-ITEM, 7F69
+    t.ACTION-PLAY-FOR-PRIZE, 7FE8 t.ACTION-PAY-OR-TRIGGER-TRAP, 806B t.ACTION-CATCH-WITH-ITEM,
+    8316 t.ACTION-PAY-WARLOCK
+
+7C47 t.ACTION-REPLACEMENT-IMAGE (NFA 7C41)
+  Stack: -- address
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Optional replacement image/object value set
+  by $7C51 and consumed by conditional scene changes at $7C5F/$7CAA.
+  Decoded callers: 7C51 t.SET-REPLACEMENT-IMAGE, 7C5F t.OPEN-SCENE-IF-TRUE, 7CAA
+    t.REPLACE-SCENE-IF-TRUE
+
+7C51 t.SET-REPLACEMENT-IMAGE (NFA 7C4B)
+  Stack: image --
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Stores the value in $7C47.
+  Decoded callers: 7C81 t.ACTION-OPEN-WITH-ITEM, 7C95 t.ACTION-OPEN-WITH-SPELL, 7CED
+    t.ACTION-DESTROY-WITH-ITEM, 7D2B t.ACTION-LIFT-IF-READY, 7DDC t.ACTION-OPEN-IF-READY, 7E42
+    t.ACTION-REPLACE-WITH-SPELL, 8057 t.ACTION-SPELL-REPLACEMENT
+
+7C5F t.OPEN-SCENE-IF-TRUE (NFA 7C59)
+  Stack: flag --
+  Group: game-actions
+  Inferred descriptive name, not recovered original: On a true argument adds action byte1 to the
+  current view, draws it with the optional replacement image, awards bit2 and plays success.
+  Decoded callers: 7C81 t.ACTION-OPEN-WITH-ITEM, 7C95 t.ACTION-OPEN-WITH-SPELL
+
+7C81 t.ACTION-OPEN-WITH-ITEM (NFA 7C7B)
+  Stack: --
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Action20 OTWORZ sets replacement image0,
+  requires the item named by object byte1 and applies $7C5F.
+  Decoded callers: none
+
+7C95 t.ACTION-OPEN-WITH-SPELL (NFA 7C8F)
+  Stack: --
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Action21 ZAKLECIE sets replacement image0,
+  requires the spell named by object byte0 and applies $7C5F.
+  Decoded callers: none
+
+7CAA t.REPLACE-SCENE-IF-TRUE (NFA 7CA3)
+  Stack: flag --
+  Group: game-actions
+  Inferred descriptive name, not recovered original: On a true argument draws action byte1 plus
+  the replacement object, adds that object, removes action byte2 and awards achievement bit4.
+  Decoded callers: 7CCF t.REPLACE-AND-SET-PUZZLE, 7D01 t.REPLACE-WHEN-PUZZLE-SET
+
+7CCF t.REPLACE-AND-SET-PUZZLE (NFA 7CC9)
+  Stack: flag --
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Applies the conditional replacement and, on
+  success, sets the puzzle-state cell indexed by object byte2 to1 and plays effect2.
+  Decoded callers: 7CED t.ACTION-DESTROY-WITH-ITEM, 7E42 t.ACTION-REPLACE-WITH-SPELL, 8057
+    t.ACTION-SPELL-REPLACEMENT
+
+7CED t.ACTION-DESTROY-WITH-ITEM (NFA 7CE7)
+  Stack: --
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Action22 ZNISZCZ uses replacement0,
+  requires the item named by object byte1, then replaces the scene and sets its puzzle-state
+  cell.
+  Decoded callers: 81B5 t.ACTION-FINAL-DESTRUCTION
+
+7D01 t.REPLACE-WHEN-PUZZLE-SET (NFA 7CFB)
+  Stack: --
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Tests puzzle cell indexed by object byte1
+  and applies conditional replacement; displays the object message at+2 if false, otherwise
+  plays success.
+  Decoded callers: 7D2B t.ACTION-LIFT-IF-READY, 7DDC t.ACTION-OPEN-IF-READY
+
+7D2B t.ACTION-LIFT-IF-READY (NFA 7D25)
+  Stack: --
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Action23 PODNIES sets replacement0 and
+  calls $7D01 to require its puzzle-state condition.
+  Decoded callers: none
+
+7D3A t.MAGIC-RESTORED-MESSAGE (NFA 7D35)
+  Stack: -- record
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Counted ODZYSKALES MAGICZNA MOC text
+  displayed by the matching magic-restoring stone action.
+  Decoded callers: 7D8F t.ACTION-TOUCH-MAGIC-STONE
+
+7D5F t.FLASH-TWO-IMAGES (NFA 7D58)
+  Stack: image1 image2 --
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Alternates the two encoded image IDs eight
+  times with delays of3 and6 frames.
+  Decoded callers: 7D8F t.ACTION-TOUCH-MAGIC-STONE, 7FE8 t.ACTION-PAY-OR-TRIGGER-TRAP
+
+7D8F t.ACTION-TOUCH-MAGIC-STONE (NFA 7D89)
+  Stack: --
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Action24 DOTKNIJ flashes object metadata
+  images0/1; if magic-disabled cell2 equals object byte2, displays restoration text and clears
+  the disabled state.
+  Decoded callers: none
+
+7DC5 t.ACTION-DESCRIBE-OBJECT (NFA 7DBF)
+  Stack: --
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Action25 CO TO displays a message at object
+  metadata+3 with effect22.
+  Decoded callers: none
+
+7DDC t.ACTION-OPEN-IF-READY (NFA 7DD6)
+  Stack: --
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Action26 OTWORZ sets replacement to action
+  byte3 then performs the puzzle-flag-gated replacement at $7D01.
+  Decoded callers: 7E21 t.ACTION-OPEN-MAGIC-TRAP
+
+7DEC t.ACTION-EXAMINE-OBJECT (NFA 7DE6)
+  Stack: --
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Action27 ZBADAJ displays the message at
+  object metadata+2 with effect22.
+  Decoded callers: none
+
+7E02 t.DISABLE-MAGIC (NFA 7DFB)
+  Stack: state --
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Stores the supplied state in puzzle cell2,
+  moves the text cursor down four rows and displays the no-magic message.
+  Decoded callers: 7E21 t.ACTION-OPEN-MAGIC-TRAP, 7FE8 t.ACTION-PAY-OR-TRIGGER-TRAP, 80E1
+    t.ACTION-CROSS-ANTIMAGIC-WALL
+
+7E21 t.ACTION-OPEN-MAGIC-TRAP (NFA 7E1B)
+  Stack: --
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Action28 OTWORZ attempts $7DDC; when its
+  puzzle flag remains clear, plays effect15 and disables magic using object byte0.
+  Decoded callers: none
+
+7E42 t.ACTION-REPLACE-WITH-SPELL (NFA 7E3C)
+  Stack: --
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Action29 ZAKLECIE requires the spell in
+  object byte0 then replaces the scene and sets its puzzle flag, with replacement0.
+  Decoded callers: none
+
+7E56 t.ACTION-ADD-SCENE-OBJECT (NFA 7E50)
+  Stack: --
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Action30 OTWORZ adds action byte1, redraws
+  and awards achievement bit32 with success sound.
+  Decoded callers: none
+
+7E6D t.ACTION-REMOVE-SCENE-OBJECT (NFA 7E67)
+  Stack: --
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Action31 ZAMKNIJ removes action byte1,
+  redraws and plays success sound.
+  Decoded callers: none
+
+7E7F t.ACTION-SPELL-REMOTE-VIEW (NFA 7E79)
+  Stack: --
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Action32 ZAKLECIE requires action-byte2
+  spell, checks byte1 of the current-room view-list payload equals action-byte3 object, then
+  replaces that object with byte4 in the selected view; otherwise displays the action+5 error.
+  Decoded callers: none
+
+7EE3 t.ACTION-TAKE-REWARD (NFA 7EDD)
+  Stack: --
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Action33 WEZ adds action-byte3 item to
+  inventory; on success removes action-byte2 scene object, updates the picture, awards bit32 and
+  clears puzzle cell indexed by action byte4.
+  Decoded callers: 806B t.ACTION-CATCH-WITH-ITEM
+
+7F11 t.ACTION-CLOSE-PUZZLE-VIEW (NFA 7F0B)
+  Stack: --
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Action35 ZAMKNIJ removes action byte2 and
+  restores action byte3 plus the object ID stored in the puzzle cell indexed by action byte4,
+  drawing all three layers.
+  Decoded callers: none
+
+7F38 t.YOU-WON-MESSAGE (NFA 7F33)
+  Stack: -- record
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Counted WYGRALES (you won) text shown when
+  $7F69 accepts the game item.
+  Decoded callers: 7F69 t.ACTION-PLAY-FOR-PRIZE
+
+7F4E t.NO-MORE-PLAY-MESSAGE (NFA 7F49)
+  Stack: -- record
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Counted JUZ NIE GRAM text shown when the
+  one-time play action has already succeeded.
+  Decoded callers: 7F69 t.ACTION-PLAY-FOR-PRIZE
+
+7F69 t.ACTION-PLAY-FOR-PRIZE (NFA 7F63)
+  Stack: --
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Action34 ZAGRAJ requires an inventory item,
+  inserts a prize object into a view, opens that view and sets its one-time puzzle flag;
+  alternate/wrong selections display separate messages.
+  Decoded callers: none
+
+7FE8 t.ACTION-PAY-OR-TRIGGER-TRAP (NFA 7FE2)
+  Stack: --
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Action36 ZAPLAC accepts object-byte1 item,
+  consumes it and opens the replacement; selecting the alternate object-byte2 item instead
+  flashes images, displays a message and disables magic.
+  Decoded callers: none
+
+8045 t.ACTION-CANNOT-TAKE (NFA 803F)
+  Stack: --
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Actions37 ZDEJMIJ and41 PODNIES play
+  failure sound and display the message at action payload+1.
+  Decoded callers: none
+
+8057 t.ACTION-SPELL-REPLACEMENT (NFA 8051)
+  Stack: --
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Action38 ZAKLECIE uses object byte1 as
+  replacement image, requires the spell in byte0, and applies replacement plus puzzle-state
+  update.
+  Decoded callers: none
+
+806B t.ACTION-CATCH-WITH-ITEM (NFA 8065)
+  Stack: --
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Action39 ZLAP requires the local item in
+  action byte5 before performing the reward-take action at $7EE3.
+  Decoded callers: none
+
+807F t.ACTION-SPELL-REMOVE-OBJECT (NFA 8079)
+  Stack: --
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Action40 ZAKLECIE requires action-byte2
+  spell, removes action-byte1 object, redraws, awards bit8 and plays effect1.
+  Decoded callers: none
+
+80A2 t.ACTION-COPY-HIDDEN-SPELL (NFA 809C)
+  Stack: --
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Action42 PRZEPISZ changes the image,
+  removes object metadata byte0 and learns the object spell.
+  Decoded callers: none
+
+80B7 t.ANTIMAGIC-WALL-MESSAGE (NFA 80B2)
+  Stack: -- record
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Counted message states that the player
+  crossed a wall with anti-magic; used by action43.
+  Decoded callers: 80E1 t.ACTION-CROSS-ANTIMAGIC-WALL
+
+80E1 t.ACTION-CROSS-ANTIMAGIC-WALL (NFA 80DB)
+  Stack: --
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Action43 IDZ preserves object metadata
+  byte1, enters the destination room from byte0, displays the anti-magic-wall message and
+  disables magic with the preserved state.
+  Decoded callers: none
+
+80FC t.ACTION-READ-MESSAGE (NFA 80F6)
+  Stack: --
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Action44 PRZECZYTAJ plays effect21 and
+  displays the message at action payload+1.
+  Decoded callers: none
+
+8111 t.SHOW-WARLOCK-REFUSAL (NFA 810B)
+  Stack: --
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Plays failure sound and displays
+  group6/resource46: NIC NIE MOZESZ ZROBIC. CZARNOKSIEZNIK NIE POZWALA. Reused when puzzle-state
+  cell9 is false.
+  Decoded callers: 8132 t.ACTION-EXAMINE-IF-READY, 8153 t.ACTION-VIEW-IF-READY, 81B5
+    t.ACTION-FINAL-DESTRUCTION
+
+8121 t.WARLOCK-REWARD-READY (NFA 811C)
+  Stack: -- flag
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Fetches puzzle-state cell9, set by
+  successful payment $8316. False paths show the warlock-refusal text in resource46; true $82DD
+  shows resource47 thanking the player for the hourglass and offering a jewel from the chest.
+  Decoded callers: 8132 t.ACTION-EXAMINE-IF-READY, 8153 t.ACTION-VIEW-IF-READY, 81B5
+    t.ACTION-FINAL-DESTRUCTION, 82DD t.ACTION-LISTEN
+
+8132 t.ACTION-EXAMINE-IF-READY (NFA 812C)
+  Stack: --
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Actions46 ZBADAJ and49 OTWORZ display their
+  action message only if puzzle cell9 is true; otherwise show resource46 failure.
+  Decoded callers: none
+
+8153 t.ACTION-VIEW-IF-READY (NFA 814D)
+  Stack: --
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Action47 ZOBACZ enters the object view only
+  if puzzle cell9 is true; otherwise shows resource46 failure.
+  Decoded callers: none
+
+816A t.ANIMATION-FRAME-DELAY (NFA 8165)
+  Stack: -- address
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Delay cell assigned by $8174 and used
+  between resource-frame draws.
+  Decoded callers: 8174 t.PLAY-RESOURCE-SEQUENCE
+
+8174 t.PLAY-RESOURCE-SEQUENCE (NFA 816E)
+  Stack: address count delay --
+  Group: game-actions
+  Inferred descriptive name, not recovered original: For each byte in the given sequence,
+  selects that resource, draws child0 and waits the supplied frame delay.
+  Decoded callers: 81B5 t.ACTION-FINAL-DESTRUCTION
+
+819F t.ENDING-OPENING-FRAMES (NFA 819A)
+  Stack: -- address
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Three resource IDs41,42,43 played once by
+  the successful final destruction action.
+  Decoded callers: 81B5 t.ACTION-FINAL-DESTRUCTION
+
+81A9 t.ENDING-LOOP-FRAMES (NFA 81A4)
+  Stack: -- address
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Four resource IDs34,36,35,37 played
+  repeatedly after the final scene and music transition.
+  Decoded callers: 81B5 t.ACTION-FINAL-DESTRUCTION
+
+81B5 t.ACTION-FINAL-DESTRUCTION (NFA 81AF)
+  Stack: --
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Action48 ZNISZCZ requires gate flag9 and
+  the item-mediated destruction action; if flag10 is set, performs the ending image/player
+  sequence, starts song1, displays its message and loops the ending frames forever.
+  Decoded callers: none
+
+8270 t.ANIMATION-STOP-FLAG (NFA 826B)
+  Stack: -- address
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Set when $8279 sees trigger0; $82A6 repeats
+  its two-image sequence until this flag becomes nonzero.
+  Decoded callers: 8279 t.WAIT-ANIMATION-OR-FIRE, 82A6 t.ANIMATE-LISTEN-SCENE
+
+8279 t.WAIT-ANIMATION-OR-FIRE (NFA 8274)
+  Stack: --
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Waits up to nine single-frame delays,
+  setting the animation stop flag and clearing text if trigger0 is pressed.
+  Decoded callers: 82A6 t.ANIMATE-LISTEN-SCENE
+
+82A6 t.ANIMATE-LISTEN-SCENE (NFA 82A0)
+  Stack: --
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Alternates resource26 child0 and resource33
+  child2 with nine-frame polling waits until joystick fire, playing effect7.
+  Decoded callers: 82DD t.ACTION-LISTEN
+
+82DD t.ACTION-LISTEN (NFA 82D7)
+  Stack: --
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Action50 SLUCHAJ chooses message/picture
+  setup based on gate flag9, runs the fire-dismissed two-image animation, then restores the
+  scene.
+  Decoded callers: 8316 t.ACTION-PAY-WARLOCK
+
+8316 t.ACTION-PAY-WARLOCK (NFA 8310)
+  Stack: --
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Action51 ZAPLAC accepts object-byte0 item,
+  sets puzzle flag9, awards bit16, runs $82DD and consumes the item. The resulting
+  group6/resource47 message identifies the payment as an hourglass and offers a jewel reward. An
+  alternate byte1 item displays a different message.
+  Decoded callers: none
+
+8363 t.TIME-TRAVEL-ITEMS-MESSAGE (NFA 835E)
+  Stack: -- record
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Counted message says inanimate matter
+  cannot overcome time; displayed when carried items prevent the part-two transition.
+  Decoded callers: 83D3 t.ACTION-TRAVEL-THROUGH-TIME
+
+8393 t.TIME-TRAVEL-INVENTORY-OK (NFA 838E)
+  Stack: -- flag
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Scans the five inventory slots after the
+  first list byte; returns true only when every inspected slot is zero or item216.
+  Decoded callers: 83D3 t.ACTION-TRAVEL-THROUGH-TIME
+
+83D3 t.ACTION-TRAVEL-THROUGH-TIME (NFA 83CD)
+  Stack: --
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Action52 ZAKLECIE requires spell9 and the
+  restricted inventory check. On success flashes, awards bit16, starts part2 and displays
+  resource48; otherwise explains the inanimate-item restriction. Group6/resource48 explicitly
+  identifies the destination as the reign of the Lord of Darkness.
+  Decoded callers: none
+
+8414 t.ACTION-SPELL-ADD-OBJECT (NFA 840E)
+  Stack: --
+  Group: game-actions
+  Inferred descriptive name, not recovered original: Action53 ZAKLECIE requires the spell in
+  object byte0, then adds action byte1, redraws, awards bit16 and plays success.
+  Decoded callers: none
+
+8432 t.DICTIONARY-MARK (NFA 842D)
+  Inferred descriptive name, not recovered original: Two saved cells contain HERE and LATEST for
+  dictionary restoration.
+  Decoded callers: 843D t.SAVE-DICTIONARY-MARK, 8454 t.RESTORE-DICTIONARY, 87E7 t.BOOT-INTRO
+
+843D t.SAVE-DICTIONARY-MARK (NFA 8438)
+  Inferred descriptive name, not recovered original: Stores HERE and LATEST in the two cells at
+  CFA8432.
+  Decoded callers: none
+
+8454 t.RESTORE-DICTIONARY (NFA 844F)
+  Inferred descriptive name, not recovered original: Restores DP and the cold-start
+  DP/FENCE/latest cells from the dictionary mark.
+  Decoded callers: 87E7 t.BOOT-INTRO
+
+848B t.PRINT-CENTERED-TITLE-LINE (NFA 8484)
+  Stack: records index -- records
+  Group: title-display
+  Inferred descriptive name, not recovered original: Centers a selected word-counted text record
+  in a40-column line and prints it at row index+1.
+  Decoded callers: none
+
+84BC t.ANIMATE-TITLE-IMAGE (NFA 84B5)
+  Stack: --
+  Group: title-display
+  Inferred descriptive name, not recovered original: Selects resource6 and draws its twelve
+  child pictures in order, waiting four frames between frames.
+  Decoded callers: 87E7 t.BOOT-INTRO
+
+84E2 t.TITLE-SKIP-FLAG (NFA 84DC)
+  Inferred descriptive name, not recovered original: Boolean flag set after controller-zero
+  trigger is pressed.
+  Decoded callers: 84EC t.POLL-TITLE-SKIP, 8517 t.WAIT-TITLE, 87A0 t.SHOW-TITLE-SEQUENCE
+
+84EC t.POLL-TITLE-SKIP (NFA 84E6)
+  Inferred descriptive name, not recovered original: Tests trigger zero and sets title-skip flag
+  on first press; stops the music.
+  Decoded callers: 8517 t.WAIT-TITLE, 86EF t.SCROLL-TITLE-ROW
+
+8517 t.WAIT-TITLE (NFA 8511)
+  Inferred descriptive name, not recovered original: Waits a specified number of frame ticks
+  while polling trigger zero; exits early on title-skip flag.
+  Decoded callers: 8783 t.SHOW-TITLE-PAGE
+
+853A t.INIT-TITLE-DISPLAY (NFA 8533)
+  Inferred descriptive name, not recovered original: Disables DMA, loads/installs intro display
+  and character resources, initializes music and VBI; prints ERROR on failed load.
+  Decoded callers: 87E7 t.BOOT-INTRO
+
+85E9 t.TITLE-SCROLL-ROWS (NFA 85E3)
+  Stack: -- address
+  Group: title-display
+  Inferred descriptive name, not recovered original: Packed start/end row bytes initialized1,9,
+  read and updated by the vertical title-row scrolling code.
+  Decoded callers: 86EF t.SCROLL-TITLE-ROW, 8783 t.SHOW-TITLE-PAGE
+
+85F3 t.ENABLE-ROW-VSCROLL (NFA 85ED)
+  Stack: display-list-address --
+  Group: title-display
+  Inferred descriptive name, not recovered original: Sets bit$20 in the ANTIC display-list
+  instruction at the supplied address.
+  Decoded callers: 86EF t.SCROLL-TITLE-ROW
+
+860C t.DISABLE-ROW-VSCROLL (NFA 8605)
+  Stack: display-list-address --
+  Group: title-display
+  Inferred descriptive name, not recovered original: Clears bit$20 in the ANTIC display-list
+  instruction at the supplied address.
+  Decoded callers: 86EF t.SCROLL-TITLE-ROW
+
+8624 t.TITLE-DISPLAY-LIST (NFA 861E)
+  Stack: -- address
+  Group: title-display
+  Inferred descriptive name, not recovered original: Constant $A7E8 used as the title display-
+  list base when enabling/disabling vertical scroll on specific rows.
+  Decoded callers: 86EF t.SCROLL-TITLE-ROW
+
+862D t.ANTIC-VSCROL (NFA 8628)
+  Stack: -- address
+  Group: title-display
+  Inferred descriptive name, not recovered original: Constant $D405, ANTIC vertical fine-scroll
+  register, written by title scroll routines.
+  Decoded callers: 86CD t.SCROLL-EIGHT-PIXELS, 86EF t.SCROLL-TITLE-ROW
+
+8637 t.PRINT-CENTERED-TEXT (NFA 8631)
+  Inferred descriptive name, not recovered original: Centers a word-counted string in a
+  40-column line and calls STYPE.
+  Decoded callers: 869E t.RENDER-CENTERED-ROW
+
+865D t.SCREEN-ROW-ADDR (NFA 8657)
+  Inferred descriptive name, not recovered original: Multiplies row by 40 and adds the OS screen
+  pointer at $58.
+  Decoded callers: 8675 t.COPY-TEXT-ROW, 868B t.CLEAR-TEXT-ROW
+
+8675 t.COPY-TEXT-ROW (NFA 866F)
+  Inferred descriptive name, not recovered original: Copies 40 bytes from the temporary line
+  buffer into the requested screen row.
+  Decoded callers: 86EF t.SCROLL-TITLE-ROW
+
+868B t.CLEAR-TEXT-ROW (NFA 8685)
+  Inferred descriptive name, not recovered original: Erases 40 bytes at the requested screen
+  row.
+  Decoded callers: 86EF t.SCROLL-TITLE-ROW
+
+869E t.RENDER-CENTERED-ROW (NFA 8697)
+  Inferred descriptive name, not recovered original: Temporarily switches the OS screen pointer
+  to a 40-byte buffer, renders centered text, then restores it.
+  Decoded callers: 8763 t.SCROLL-TITLE-TEXT
+
+86CD t.SCROLL-EIGHT-PIXELS (NFA 86C8)
+  Inferred descriptive name, not recovered original: Writes 0,2,4,6 into ANTIC VSCROL ($D405),
+  pausing one tick between values.
+  Decoded callers: 86EF t.SCROLL-TITLE-ROW
+
+86EF t.SCROLL-TITLE-ROW (NFA 86E9)
+  Inferred descriptive name, not recovered original: Moves the prepared row through screen lines
+  with vertical fine scrolling, polling for the skip trigger.
+  Decoded callers: 8763 t.SCROLL-TITLE-TEXT
+
+8763 t.SCROLL-TITLE-TEXT (NFA 875D)
+  Inferred descriptive name, not recovered original: Looks up consecutive packed lines, centers
+  them in the temporary buffer and scrolls each into the title area.
+  Decoded callers: 8783 t.SHOW-TITLE-PAGE
+
+8783 t.SHOW-TITLE-PAGE (NFA 877D)
+  Inferred descriptive name, not recovered original: Scrolls the lines of one packed title page
+  and waits 150 frame ticks.
+  Decoded callers: 87A0 t.SHOW-TITLE-SEQUENCE
+
+87A0 t.SHOW-TITLE-SEQUENCE (NFA 879A)
+  Inferred descriptive name, not recovered original: Loops over eight intro text pages until
+  trigger zero is pressed, then changes music and presents the final page.
+  Decoded callers: 87E7 t.BOOT-INTRO
+
+87E7 t.BOOT-INTRO (NFA 87DF)
+  Inferred descriptive name, not recovered original: Selects intro resources, initializes the
+  title, restores dictionary state, shows intro pages, selects gameplay resources and enters
+  GAME-LOOP.
+  Decoded callers: 1EC4 t.ABORT
+

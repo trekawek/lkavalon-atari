@@ -22,6 +22,7 @@ decompile:
 	$(PYTHON) tools/decompile.py
 test: all test-graphics
 	$(PYTHON) tools/test_reconstruction.py
+	$(PYTHON) tools/test_semantics.py
 	$(PYTHON) ../ad2044/tools/test_text_records.py
 	$(PYTHON) ../util/extract_music.py --game klatwa --check
 	$(PYTHON) tools/verify.py

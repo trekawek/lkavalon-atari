@@ -32,6 +32,7 @@ decompile:
 
 test: all test-graphics
 	$(PYTHON) tools/test_pipeline.py
+	$(PYTHON) tools/test_semantics.py
 	$(PYTHON) ../ad2044/tools/test_text_records.py
 	$(PYTHON) ../util/extract_music.py --game wladcy-ciemnosci --check
 	$(PYTHON) ../util/test_cmc_playback.py

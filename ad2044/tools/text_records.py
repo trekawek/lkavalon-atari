@@ -51,7 +51,7 @@ PROFILES = {
         "placeholders": {(0x61A0, 1): b"\x01"},
         "vectors": {
             0x45F5: ("messages", 4, "Disk and tape messages"),
-            0x5577: ("slots", 10, "Inventory display slots"),
+            0x5577: ("slots", 10, "Spellbook display slots"),
             0x61A0: ("messages", 3, "Spell messages"),
             0x6369: ("actions", 54, "Action labels"),
         },
@@ -74,7 +74,7 @@ PROFILES = {
         "screens": (0x4644,),
         "vectors": {
             0x45D2: ("messages", 4, "Disk messages"),
-            0x5517: ("slots", 8, "Inventory display slots"),
+            0x5517: ("slots", 8, "Power display slots"),
             0x6142: ("messages", 3, "Power messages"),
             0x62E7: ("actions", 80, "Action labels"),
         },

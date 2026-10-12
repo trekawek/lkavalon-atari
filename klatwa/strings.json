@@ -133,7 +133,7 @@
     },
     {
       "cfa": 15826,
-      "symbol": "w3DD2",
+      "symbol": "t.PATCH-VBI-SLOT",
       "description": "Inline strings",
       "records": [
         {
@@ -153,7 +153,7 @@
     },
     {
       "cfa": 17828,
-      "symbol": "w45A4",
+      "symbol": "t.SHOW-MESSAGE",
       "description": "Inline strings",
       "records": [
         {
@@ -173,7 +173,7 @@
     },
     {
       "cfa": 17909,
-      "symbol": "w45F5",
+      "symbol": "t.DISK-ERROR-MESSAGES",
       "description": "Disk and tape messages",
       "records": [
         {
@@ -325,7 +325,7 @@
     },
     {
       "cfa": 19351,
-      "symbol": "w4B97",
+      "symbol": "t.DRAW-TEXT-PANEL-BORDERS",
       "description": "Inline strings",
       "records": [
         {
@@ -358,8 +358,8 @@
     },
     {
       "cfa": 21879,
-      "symbol": "w5577",
-      "description": "Inventory display slots",
+      "symbol": "t.SPELLBOOK-RECORDS",
+      "description": "Spellbook display slots",
       "records": [
         {
           "index": 0,
@@ -540,7 +540,7 @@
     },
     {
       "cfa": 24629,
-      "symbol": "w6035",
+      "symbol": "t.INIT-GAME-DISPLAY-AUDIO",
       "description": "Inline strings",
       "records": [
         {
@@ -560,7 +560,7 @@
     },
     {
       "cfa": 24718,
-      "symbol": "w608E",
+      "symbol": "t.PRINT-SPELLBOOK-SEPARATOR",
       "description": "Inline strings",
       "records": [
         {
@@ -583,7 +583,7 @@
     },
     {
       "cfa": 24757,
-      "symbol": "w60B5",
+      "symbol": "t.DRAW-SPELLBOOK",
       "description": "Inline strings",
       "records": [
         {
@@ -658,7 +658,7 @@
     },
     {
       "cfa": 24992,
-      "symbol": "w61A0",
+      "symbol": "t.SPELL-ERROR-MESSAGES",
       "description": "Spell messages",
       "records": [
         {
@@ -737,7 +737,7 @@
     },
     {
       "cfa": 25067,
-      "symbol": "w61EB",
+      "symbol": "t.NO-MAGIC-MESSAGE",
       "description": "Message lines",
       "records": [
         {
@@ -803,7 +803,7 @@
     },
     {
       "cfa": 25449,
-      "symbol": "w6369",
+      "symbol": "t.ACTION-LABELS",
       "description": "Action labels",
       "records": [
         {
@@ -1567,7 +1567,7 @@
     },
     {
       "cfa": 26602,
-      "symbol": "w67EA",
+      "symbol": "t.INVENTORY-FULL-MESSAGE",
       "description": "Message lines",
       "records": [
         {
@@ -1605,7 +1605,7 @@
     },
     {
       "cfa": 26902,
-      "symbol": "w6916",
+      "symbol": "t.NO-ITEM-CHOSEN-MESSAGE",
       "description": "Message lines",
       "records": [
         {
@@ -1643,7 +1643,7 @@
     },
     {
       "cfa": 27149,
-      "symbol": "w6A0D",
+      "symbol": "t.MISSION-PERCENT-MESSAGE",
       "description": "Message lines",
       "records": [
         {
@@ -1667,7 +1667,7 @@
     },
     {
       "cfa": 30233,
-      "symbol": "w7619",
+      "symbol": "t.WHICH-ITEM-MESSAGE",
       "description": "Message lines",
       "records": [
         {
@@ -1691,7 +1691,7 @@
     },
     {
       "cfa": 30789,
-      "symbol": "w7845",
+      "symbol": "t.PROTECTION-ERROR-MESSAGE",
       "description": "Message lines",
       "records": [
         {
@@ -1720,7 +1720,7 @@
     },
     {
       "cfa": 31590,
-      "symbol": "w7B66",
+      "symbol": "t.SPELL-NAME-MESSAGE",
       "description": "Message lines",
       "records": [
         {
@@ -1744,7 +1744,7 @@
     },
     {
       "cfa": 31682,
-      "symbol": "w7BC2",
+      "symbol": "t.WRONG-ITEM-MESSAGE",
       "description": "Message lines",
       "records": [
         {
@@ -1782,7 +1782,7 @@
     },
     {
       "cfa": 31711,
-      "symbol": "w7BDF",
+      "symbol": "t.WITH-WHAT-MESSAGE",
       "description": "Message lines",
       "records": [
         {
@@ -1806,7 +1806,7 @@
     },
     {
       "cfa": 32058,
-      "symbol": "w7D3A",
+      "symbol": "t.MAGIC-RESTORED-MESSAGE",
       "description": "Message lines",
       "records": [
         {
@@ -1844,7 +1844,7 @@
     },
     {
       "cfa": 32568,
-      "symbol": "w7F38",
+      "symbol": "t.YOU-WON-MESSAGE",
       "description": "Message lines",
       "records": [
         {
@@ -1868,7 +1868,7 @@
     },
     {
       "cfa": 32590,
-      "symbol": "w7F4E",
+      "symbol": "t.NO-MORE-PLAY-MESSAGE",
       "description": "Message lines",
       "records": [
         {
@@ -1892,7 +1892,7 @@
     },
     {
       "cfa": 32951,
-      "symbol": "w80B7",
+      "symbol": "t.ANTIMAGIC-WALL-MESSAGE",
       "description": "Message lines",
       "records": [
         {
@@ -1930,7 +1930,7 @@
     },
     {
       "cfa": 33635,
-      "symbol": "w8363",
+      "symbol": "t.TIME-TRAVEL-ITEMS-MESSAGE",
       "description": "Message lines",
       "records": [
         {

@@ -12,13 +12,25 @@ Start with [src/30-game.fth](src/30-game.fth). There are 902 dictionary entries:
 entry points. Of these, 519 are colon definitions.
 [dictionary.json](dictionary.json) records addresses and naming evidence.
 
-The current name map has 394 entries: 106 intact original names, 223
-verified core/source matches, 34 structural candidates and 31 descriptive
-inferences. The other 508 entries keep address labels. Original names, APX/GAM matches,
+The current name map has 896 entries: 106 intact original names, 229
+verified core/source matches, 28 structural candidates and 533 descriptive
+inferences. Six entries keep address labels. Original names, APX/GAM matches,
 structural sequence candidates, and descriptive inferred names are identified
 separately in [tools/names.json](tools/names.json). Structural candidates are
 not independently verified original identifiers. Erased names without useful
-evidence retain address labels such as `w74D1`.
+evidence retain address labels such as `w3817`.
+
+[symbols.txt](symbols.txt) records the inferred names, stack effects and decoded
+callers. The semantic pass added 502 names by tracing actual behavior, action
+labels, game data and Atari memory accesses. [research-notes.txt](research-notes.txt)
+documents the author's tutorial comparisons, runtime probes and unresolved words.
+The ten text slots at `$5577` are spellbook entries; inventory uses a separate
+mutable object list. Native subroutines and data with saved `DOCOL` fields
+carry explicit calling-convention notes.
+
+Manual evidence belongs in [tools/inferred-names.json](tools/inferred-names.json).
+`make decompile` merges it into the name map and regenerates the Forth, symbol
+catalog and decoded strings. Inferred aliases do not change saved game headers.
 
 ## Build
 
@@ -142,6 +154,14 @@ for pixel; the first-room comparison differed only in 202 pixels within the
 animated player sprite, with identical static scenery. Local evidence is in
 `build/runtime-validation/report.json`. This is a smoke test, not a complete
 playthrough.
+
+The renamed sources also passed a fresh original fig-Forth `LOAD` build from
+a blank target: all 210 source screens compiled, and the entire ATR matched
+the release byte for byte. Host `HERE` reached `$89E5`, leaving 5,403 bytes
+below the writer's `$9F00` limit. Local evidence is in
+`build/runtime-validation/semantic-load-report.json`.
+[tools/test_semantics.py](tools/test_semantics.py) executes original game
+routines to check the inferred behavior and stack effects.
 
 ## Graphics
 

@@ -52,7 +52,9 @@ the retained game kernel. The X!, Y! and POS examples agree with $364A, $3658
 and $3683: a column cell at $55, a row byte at $54 and the combined setter.
 
 Issue 6-7/92 independently confirms <=< at $34F2 through its full threaded
-body and surviving name length/final character. Its INPUT$ example does not
+body and surviving name length/final character. The test is strict on both
+bounds: lower < value < upper. Runtime checks cover negative values and both
+endpoints in all three games. Its INPUT$ example does not
 match AD2044's bounded custom input editor, so that editor keeps the inferred
 READ-COUNTED-INPUT name.
 
@@ -108,3 +110,9 @@ the original APX compiler in Atari800. Every disk payload byte matches the
 release; only the writable ATR header flag differs. Host HERE is $8435, leaving
 6,859 bytes below the streaming writer's $9F00 limit. See the local report at
 build/runtime-validation/semantic-load-report.json and tools/test_semantics.py.
+
+The corresponding Klatwa and Wladcy Ciemnosci analyses are recorded in their
+own symbols.txt and research-notes.txt files. Shared conventions do not imply
+identical game structures or stack contracts: their joystick converters take
+a controller number, whereas AD2044's takes a raw joystick nibble. All three
+use the same original-runtime test harness in tools/semantic_runtime.py.

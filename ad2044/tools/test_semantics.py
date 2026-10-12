@@ -9,7 +9,7 @@ import importlib.util
 from pathlib import Path
 import unittest
 
-from py65.devices.mpu6502 import MPU
+from semantic_runtime import OriginalForth
 
 SPEC = importlib.util.spec_from_file_location(
     'semantic_decompiler', Path(__file__).with_name('decompile.py'))
@@ -17,43 +17,10 @@ d = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(d)
 
 
-class OriginalForth:
-    def __init__(self):
-        self.memory = d.memory((d.ROOT / 'reference/ad2044-side1.atr').read_bytes())
-        self.cpu = MPU(memory=self.memory)
-        # Cold-start normally installs the indirect JMP used by NEXT at $CC.
-        self.memory[0xCC] = 0x6C
-        self.put(0xCF, 0xBC00)
-        self.put(0x0604, 0x0606)  # Sentinel CFA -> stop address.
-
-    def put(self, address, value):
-        self.memory[address:address + 2] = (value & 0xFFFF).to_bytes(2, 'little')
-
-    def get(self, address):
-        return int.from_bytes(self.memory[address:address + 2], 'little')
-
-    def call(self, cfa, *arguments):
-        self.cpu.x = 0x80
-        self.cpu.sp = 0xFF
-        for value in arguments:
-            self.cpu.x -= 2
-            self.put(self.cpu.x, value)
-        self.put(0x0600, cfa)
-        self.put(0x0602, 0x0604)
-        self.put(0xCA, 0x0600)  # Thread pointer; NEXT fetches the first CFA.
-        self.cpu.pc = 0x0F47
-        for _ in range(100_000):
-            self.cpu.step()
-            if self.cpu.pc == 0x0606:
-                if self.cpu.sp != 0xFF or not 0x20 <= self.cpu.x <= 0x80:
-                    raise AssertionError('Unbalanced original Forth stacks')
-                return [self.get(a) for a in range(0x7E, self.cpu.x - 1, -2)]
-        raise AssertionError(f'Word ${cfa:04X} did not return: PC=${self.cpu.pc:04X}')
-
-
 class SemanticTests(unittest.TestCase):
     def setUp(self):
-        self.forth = OriginalForth()
+        memory = d.memory((d.ROOT / 'reference/ad2044-side1.atr').read_bytes())
+        self.forth = OriginalForth(memory)
 
     def test_current_room_exit_returns_mask_bit_not_normalized_boolean(self):
         f = self.forth
@@ -152,6 +119,11 @@ class SemanticTests(unittest.TestCase):
         self.assertEqual(f.memory[0x54:0x57], bytes((0x56, 0x34, 0x12)))
         self.assertEqual(f.call(0x3666), [0x1234])
         self.assertEqual(f.call(0x3674), [0x56])
+
+    def test_tutorial_range_word_uses_strict_signed_bounds(self):
+        for value in (-6, -5, -4, 0, 4, 5, 6):
+            self.assertEqual(self.forth.call(0x34F2, -5, value, 5),
+                             [int(-5 < value < 5)])
 
 
 if __name__ == '__main__':

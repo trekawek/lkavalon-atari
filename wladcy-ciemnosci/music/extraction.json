@@ -1,0 +1,61 @@
+{
+  "game": "wladcy-ciemnosci",
+  "source": "reference/wladcy-ciemnosci.atr",
+  "source_sha256": "2e609a1514a05993f2b3daa6bf72273cb39a40afdaac49e917b09197eddd84c5",
+  "offset_convention": "Zero-based file offsets include the 16-byte ATR header",
+  "files": [
+    {
+      "file": "gameplay.cmc",
+      "format": "CMC",
+      "atr_offset": 54275,
+      "resource_length_offset": 54273,
+      "resource_size": 1899,
+      "copied_bytes": 1899,
+      "excluded_resource_tail_bytes": 0,
+      "original_header_hex": "FFFF4D85B78C",
+      "load_address": 34125,
+      "end_address_inclusive": 36023,
+      "songs": 2,
+      "subsong_indices": [
+        0,
+        1
+      ],
+      "restoration": [
+        {
+          "output_offset": 1899,
+          "ram_start": 36018,
+          "hex": "00FFFFB98CA8",
+          "provenance": "First byte is zero in both title and gameplay RAM captures; next five are the retained title header from ATR offset $DB70. Original player reads $8CB2=$00 and $8CB3=$FF in song 1."
+        }
+      ],
+      "size": 1905,
+      "sha256": "54ef0530856897f3399668c6b85191f303ca944d026dc8b964dfafa24c56e250"
+    },
+    {
+      "file": "title.cmc",
+      "format": "CMC",
+      "atr_offset": 56176,
+      "resource_length_offset": 56174,
+      "resource_size": 1690,
+      "copied_bytes": 1526,
+      "excluded_resource_tail_bytes": 164,
+      "original_header_hex": "FFFFB98CA892",
+      "load_address": 36025,
+      "end_address_inclusive": 37544,
+      "songs": 1,
+      "subsong_indices": [
+        0
+      ],
+      "restoration": [],
+      "size": 1526,
+      "sha256": "9d58259554a1de24cc6fa006602b6a9b4e84b3ec8a0710eac45ed205da6093b0"
+    }
+  ],
+  "details": {
+    "player_command_entry": 12291,
+    "player_frame_entry": 12294,
+    "timing": "PAL, one call per video frame",
+    "initialization": "A=$70, X/Y=data address; then A=$00, X=subsong index",
+    "note": "Subsong counts independently verified with ASAP 8.0.0"
+  }
+}

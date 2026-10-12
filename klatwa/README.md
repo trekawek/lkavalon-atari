@@ -128,6 +128,32 @@ animated player sprite, with identical static scenery. Local evidence is in
 `build/runtime-validation/report.json`. This is a smoke test, not a complete
 playthrough.
 
+## Music
+
+[music/title.cmc](music/title.cmc) contains four subsongs; the first is the
+main title music and the others are short cues. [music/gameplay.cmc](music/gameplay.cmc)
+contains two subsongs and the instruments also used by gameplay sound effects.
+Both files preserve the original six-byte Atari segment headers and all their
+music data unchanged. They are native Chaos Music Composer modules.
+
+| File | Size | ATR offset | Loaded music data | Subsongs |
+| --- | ---: | --- | --- | ---: |
+| `gameplay.cmc` | 1,675 bytes | `$D98A` | `$86B8..$8D3C` | 2 |
+| `title.cmc` | 1,784 bytes | `$E01C` | `$8D52..$9443` | 4 |
+
+Offsets include the ATR header. The enclosing GAM records contain five and
+six extra bytes respectively, which are excluded from the CMC files. The
+complete extracted payloads match the corresponding music in running-game
+RAM. ASAP 8.0.0 independently identifies all six subsongs and renders them
+through a full loop; all referenced patterns terminate inside the files.
+
+Run `make music` to regenerate the exports with Python 3. This optional step
+does not change the Forth build or game disks. [music/extraction.json](music/extraction.json)
+records source offsets, load addresses, checksums and playback entry points.
+Use an [ASAP-compatible player](https://asap.sourceforge.net/) to choose
+subsongs, or render one with `asapconv -s 0 -o title.wav music/title.cmc`.
+Subsong indices start at zero.
+
 ## Provenance
 
 * [Klatwa catalog on AtariOnline](https://atarionline.pl/v01/index.php?ct=kazip&sub=K&title=+Klatwa)

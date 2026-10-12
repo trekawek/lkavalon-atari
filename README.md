@@ -46,3 +46,34 @@ make test
 ```
 
 Heartlight builds a standalone XEX from its original objects and the caves embedded in its BASIC loader. Automat Perkusyjny builds the original disk and cassette XEX files byte for byte. Watson assembles two source revisions, but its archive has no matching executable for a binary comparison. See each directory's README for details.
+
+## Extracted music
+
+* [Klątwa music](klatwa/music): original title and gameplay CMC modules, six subsongs.
+* [Władcy Ciemności music](wladcy-ciemnosci/music): title and gameplay CMC modules, three subsongs. The gameplay module restores six bytes used from adjacent runtime memory; see its [extraction notes](wladcy-ciemnosci/README.md#music).
+* [A.D. 2044 music](ad2044/music): title/ending, game-over cue and sound effects in SAP format, plus the unchanged raw sound bank. This release uses a custom player rather than CMC.
+
+Each music directory contains `extraction.json` with source offsets, original
+load addresses, hashes and any restoration or player adaptations. Regenerate
+all exports with Python 3, independently of the Forth build:
+
+```sh
+python3 util/extract_music.py
+python3 util/extract_music.py --check
+python3 util/test_extract_music.py
+```
+
+[ASAP](https://asap.sourceforge.net/) can play the CMC and SAP files. Optional
+independent validation loads and renders every subsong into temporary WAV files:
+
+```sh
+python3 util/extract_music.py --check --asapconv /path/to/asapconv
+```
+
+All 31 exported subsongs (including 20 AD 2044 effects) were rendered with
+ASAP 8.0.0. The original-player regression checks additionally use `py65`:
+
+```sh
+python3 ad2044/tools/test_music_sap.py
+python3 util/test_cmc_playback.py
+```

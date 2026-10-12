@@ -1,0 +1,57 @@
+{
+  "game": "klatwa",
+  "source": "reference/klatwa-v1.atr",
+  "source_sha256": "d28d336e4be5cd48d9bf03fac7d487e7a0cb69cc744e282cfe1eba1a0b6d7a95",
+  "offset_convention": "Zero-based file offsets include the 16-byte ATR header",
+  "files": [
+    {
+      "file": "gameplay.cmc",
+      "format": "CMC",
+      "atr_offset": 55690,
+      "resource_length_offset": 55688,
+      "resource_size": 1680,
+      "copied_bytes": 1675,
+      "excluded_resource_tail_bytes": 5,
+      "original_header_hex": "FFFFB8863C8D",
+      "load_address": 34488,
+      "end_address_inclusive": 36156,
+      "songs": 2,
+      "subsong_indices": [
+        0,
+        1
+      ],
+      "restoration": [],
+      "size": 1675,
+      "sha256": "f883c950f40344a299f8cdf92e1c66acd073764f3daa10897e14986d8f6438e8"
+    },
+    {
+      "file": "title.cmc",
+      "format": "CMC",
+      "atr_offset": 57372,
+      "resource_length_offset": 57370,
+      "resource_size": 1790,
+      "copied_bytes": 1784,
+      "excluded_resource_tail_bytes": 6,
+      "original_header_hex": "FFFF528D4394",
+      "load_address": 36178,
+      "end_address_inclusive": 37955,
+      "songs": 4,
+      "subsong_indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "restoration": [],
+      "size": 1784,
+      "sha256": "f92cb3a69297908c6e34bce707dbfc0390bbf1e5418fdc3be706424de09f40ab"
+    }
+  ],
+  "details": {
+    "player_command_entry": 12291,
+    "player_frame_entry": 12294,
+    "timing": "PAL, one call per video frame",
+    "initialization": "A=$70, X/Y=data address; then A=$00, X=subsong index",
+    "note": "Subsong counts independently verified with ASAP 8.0.0"
+  }
+}

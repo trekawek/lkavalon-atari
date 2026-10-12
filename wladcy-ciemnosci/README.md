@@ -111,6 +111,41 @@ newlines between its 64-character rows. Expected `Isn't unique` notices come
 from the deliberate emitter redefinitions in `05-emission.fth`. Turbo mode
 speeds compilation substantially.
 
+## Music
+
+[music/title.cmc](music/title.cmc) contains one title tune and
+[music/gameplay.cmc](music/gameplay.cmc) contains two gameplay subsongs.
+They are native Chaos Music Composer modules, playable with
+[ASAP](https://asap.sourceforge.net/).
+
+| File | Size | ATR offset | Loaded music data | Subsongs |
+| --- | ---: | --- | --- | ---: |
+| `gameplay.cmc` | 1,905 bytes | `$D403` | `$854D..$8CB7` | 2 |
+| `title.cmc` | 1,526 bytes | `$DB70` | `$8CB9..$92A8` | 1 |
+
+Offsets include the ATR header. The title file is unchanged; 164 bytes after
+its declared end belong to unused resource residue and are excluded.
+
+The gameplay resource on disk is six bytes shorter than its original CMC
+header declares. Its final referenced pattern continues into adjacent RAM:
+`$8CB2` contains zero in both title and gameplay captures, and `$8CB3` starts
+the still-resident title-file header. The export restores `00 FF FF B9 8C A8`
+at `$8CB2..$8CB7` and retains the original header. The zero is observed runtime
+state; the other five bytes come directly from the title header. The original
+player reads the first two restored bytes in subsong 1. Omitting them changes
+the audio, so this file includes an explicitly documented restoration.
+
+ASAP 8.0.0 identifies and renders all three subsongs through their full loops.
+The restored gameplay file also matches the original player's POKEY writes
+in a 1,000-frame test of the second subsong. All referenced patterns now
+terminate inside their exported modules.
+
+Run `make music` to reproduce the files with Python 3. Details and checksums
+are in [music/extraction.json](music/extraction.json). Music extraction is
+independent of the Forth build and does not modify the original game data.
+For example, render the second gameplay subsong with
+`asapconv -s 1 -o gameplay-2.wav music/gameplay.cmc`.
+
 ## Recovery and validation
 
 `make decompile` regenerates sources and the resource split from the reference

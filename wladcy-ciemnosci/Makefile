@@ -1,7 +1,7 @@
 PYTHON ?= python3
 SOURCES = $(wildcard src/*.fth) sources.json
 
-.PHONY: all test decompile clean sources
+.PHONY: all test decompile clean sources music
 all: build/wladcy-ciemnosci.atr build/sources.atr
 
 build/assets.atr: assets/disk-tail.bin tools/prepare.py
@@ -15,6 +15,9 @@ build/sources.atr: $(SOURCES) tools/pack_sources.py
 
 sources: build/sources.atr
 
+music:
+	$(PYTHON) ../util/extract_music.py --game wladcy-ciemnosci
+
 decompile:
 	$(PYTHON) tools/recover.py
 	$(PYTHON) tools/decompile.py
@@ -22,6 +25,8 @@ decompile:
 test: all
 	$(PYTHON) tools/test_pipeline.py
 	$(PYTHON) ../ad2044/tools/test_text_records.py
+	$(PYTHON) ../util/extract_music.py --game wladcy-ciemnosci --check
+	$(PYTHON) ../util/test_cmc_playback.py
 	$(PYTHON) tools/verify.py
 
 clean:

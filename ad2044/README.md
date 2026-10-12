@@ -62,6 +62,36 @@ rewrite**. Editing definition sizes requires updating absolute addresses and
 branch offsets. Graphics, room records, disk-loaded text, and other resources remain
 binary in [assets](assets); their higher-level formats are not reconstructed.
 
+## Music
+
+This release uses its own command-stream sound engine, rather than the CMC
+player in Klątwa and Władcy Ciemności. The extracted files therefore use SAP,
+which includes the game's original 6502 player and works with
+[ASAP](https://asap.sourceforge.net/):
+
+* [music/title.sap](music/title.sap): the looping title and ending music, command `$50`.
+* [music/game-over.sap](music/game-over.sap): the game-over cue, command `$19`.
+* [music/sound-effects.sap](music/sound-effects.sap): the other 20 sound commands as separate subsongs.
+* [music/sound-bank.bin](music/sound-bank.bin): the unchanged 3,631-byte engine, instrument and sequence bank, loaded at `$5E00..$6C2E`.
+
+The bank comes from side-one ATR offsets `$4F90..$5DBE`, inside the saved
+Forth definition at CFA `$5DB3`. SAP wrappers initialize the original command
+dispatcher and call its frame routine at `$5F6F` once per PAL frame. The only
+change to the copied bank replaces the jump to the old Atari OS VBI handler
+at `$62E1` with `RTS`; the raw `.bin` has no modifications. The disk's intro
+credits Leszek Hołda for the music (ASCII `Leszek Holda` in the SAP metadata).
+
+All 22 selections were rendered with ASAP 8.0.0. The wrapper's POKEY writes
+also match the original engine for 11,700 frames across all commands. This
+checks the adaptation independently of whether a music player accepts it.
+
+Run `make music` to reproduce the files using Python 3. Source offsets,
+command-to-subsong mappings and the exact player patch are recorded in
+[music/extraction.json](music/extraction.json); the helper is
+[tools/music_sap.py](tools/music_sap.py). The optional music export does not
+change the game build. For a WAV file, run
+`asapconv -t 01:00 -o title.wav music/title.sap`.
+
 ## Build on the host
 
 Python 3 and `py65` are required:

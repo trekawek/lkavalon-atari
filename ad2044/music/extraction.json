@@ -1,0 +1,202 @@
+{
+  "game": "ad2044",
+  "source": "reference/ad2044-side1.atr",
+  "source_sha256": "0dc417788632b58822eefb25d50557465220870a15c984f2dd54e6a1591b445f",
+  "offset_convention": "Zero-based file offsets include the 16-byte ATR header",
+  "files": [
+    {
+      "file": "title.sap",
+      "format": "SAP",
+      "songs": 1,
+      "size": 3784,
+      "sha256": "7772ce821c78940f8e91a190ce7f687c0643a43293941fe416943d1bb58515d4"
+    },
+    {
+      "file": "game-over.sap",
+      "format": "SAP",
+      "songs": 1,
+      "size": 3777,
+      "sha256": "096d65088dd46c30a76e5df6160c7713ed8926a52aad76608f6b924711827c85"
+    },
+    {
+      "file": "sound-effects.sap",
+      "format": "SAP",
+      "songs": 20,
+      "size": 3810,
+      "sha256": "69dd1c716dcadc50869a27ecf00b2305ef7574795a81163c3a880f5654c497a7"
+    },
+    {
+      "file": "sound-bank.bin",
+      "format": "raw custom sound bank",
+      "size": 3631,
+      "sha256": "0e9c2c1092493f2c08a63d999eb6f30b65573b2f8b657609ef1c572a32eb241f"
+    }
+  ],
+  "details": {
+    "format": "custom command-stream player, not CMC",
+    "source": "reference/ad2044-side1.atr",
+    "file_start": 20368,
+    "file_end_exclusive": 23999,
+    "load_address": 24064,
+    "end_address_exclusive": 27695,
+    "raw_size": 3631,
+    "dictionary_cfa": 23987,
+    "author": "Leszek Holda",
+    "credit_evidence": {
+      "atr_offset": 39740,
+      "raw_ascii": "LESZEK HOlDA",
+      "preceding_music_label_offset": 39693
+    },
+    "year_evidence": {
+      "atr_offset": 39473,
+      "raw_ascii": "1991"
+    },
+    "sap": {
+      "type": "B",
+      "init": 20480,
+      "player": 24431,
+      "timing": "one original deferred VBI tick per PAL frame",
+      "patches": [
+        {
+          "address": 25313,
+          "original_hex": "4C",
+          "replacement_hex": "60",
+          "reason": "Return from frame routine instead of chaining Atari OS VBI"
+        }
+      ],
+      "initializer_hex": "48A9988D3560A9668D3660202F6568AABD20508D275EA9008D1E5E60",
+      "command_table_address": 20512
+    },
+    "music": [
+      {
+        "file": "title.sap",
+        "command": 80,
+        "stream_address": 27084,
+        "usage": "Title intro and ending; selected by Forth CFAs $919F and $8D4A",
+        "looping": true
+      },
+      {
+        "file": "game-over.sap",
+        "command": 25,
+        "stream_address": 26933,
+        "usage": "Game-over cue selected by HANDLE-GAME-INPUT at CFA $7934",
+        "looping": false
+      }
+    ],
+    "sound_effects": {
+      "file": "sound-effects.sap",
+      "subsong_commands": [
+        1,
+        2,
+        7,
+        8,
+        10,
+        11,
+        12,
+        14,
+        15,
+        16,
+        19,
+        20,
+        21,
+        22,
+        28,
+        31,
+        32,
+        33,
+        35,
+        40
+      ]
+    },
+    "dispatch": [
+      {
+        "command": 1,
+        "stream_address": 26391
+      },
+      {
+        "command": 2,
+        "stream_address": 26420
+      },
+      {
+        "command": 7,
+        "stream_address": 26449
+      },
+      {
+        "command": 8,
+        "stream_address": 26475
+      },
+      {
+        "command": 10,
+        "stream_address": 26502
+      },
+      {
+        "command": 11,
+        "stream_address": 26567
+      },
+      {
+        "command": 12,
+        "stream_address": 26534
+      },
+      {
+        "command": 14,
+        "stream_address": 26420
+      },
+      {
+        "command": 15,
+        "stream_address": 26618
+      },
+      {
+        "command": 16,
+        "stream_address": 26391
+      },
+      {
+        "command": 19,
+        "stream_address": 26693
+      },
+      {
+        "command": 20,
+        "stream_address": 26713
+      },
+      {
+        "command": 21,
+        "stream_address": 26738
+      },
+      {
+        "command": 22,
+        "stream_address": 26764
+      },
+      {
+        "command": 25,
+        "stream_address": 26933
+      },
+      {
+        "command": 28,
+        "stream_address": 26784
+      },
+      {
+        "command": 31,
+        "stream_address": 26804
+      },
+      {
+        "command": 32,
+        "stream_address": 26831
+      },
+      {
+        "command": 33,
+        "stream_address": 26858
+      },
+      {
+        "command": 35,
+        "stream_address": 26894
+      },
+      {
+        "command": 40,
+        "stream_address": 26594
+      },
+      {
+        "command": 80,
+        "stream_address": 27084
+      }
+    ]
+  }
+}

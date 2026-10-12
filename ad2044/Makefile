@@ -1,7 +1,7 @@
 PYTHON ?= python3
 SOURCES = $(wildcard src/*.fth) sources.json
 
-.PHONY: all test decompile clean sources
+.PHONY: all test decompile clean sources music
 
 all: build/ad2044-side1.atr build/ad2044-side2.atr build/sources.atr
 
@@ -16,6 +16,9 @@ build/sources.atr: $(SOURCES) tools/pack_sources.py
 
 sources: build/sources.atr
 
+music:
+	$(PYTHON) ../util/extract_music.py --game ad2044
+
 decompile:
 	$(PYTHON) tools/decompile.py
 
@@ -23,6 +26,8 @@ test: all
 	$(PYTHON) tools/test_compiler.py
 	$(PYTHON) tools/test_decompiler.py
 	$(PYTHON) tools/test_text_records.py
+	$(PYTHON) ../util/extract_music.py --game ad2044 --check
+	$(PYTHON) tools/test_music_sap.py
 	$(PYTHON) tools/verify.py
 
 clean:

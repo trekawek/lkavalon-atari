@@ -70,6 +70,7 @@ def main():
     names = json.loads((ROOT / "tools/names.json").read_text())
     base.identifiers(words, names)
     by_cfa = {w["cfa"]: w for w in words}
+    catalog = base.text_records.Catalog("klatwa", m, words, decode)
     dis = Disassembler(MPU(memory=m))
     source = ROOT / "src"
     source.mkdir(exist_ok=True)
@@ -105,6 +106,7 @@ def main():
             out.line()
             out.comment(f"{w['name']} | NFA {w['nfa']:04X} CFA {w['cfa']:04X}")
             out.comment(w["evidence"])
+            catalog.annotate(out, w)
             out.line(f"AT {w['nfa']:04X}")
             out.comment(
                 "Headerless native CFA"
@@ -157,6 +159,7 @@ def main():
     )
     raw = (ROOT / "reference/klatwa-v1.atr").read_bytes()
     write_if_changed(ROOT / "assets/disk-tail.bin", raw[0x7D10:])
+    catalog.save(ROOT)
     print(f"Recovered {len(words)} entries, {len(names)} names, {dict(stats)}")
 
 

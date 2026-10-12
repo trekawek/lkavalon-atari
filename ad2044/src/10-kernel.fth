@@ -2121,6 +2121,8 @@ AT 1EBC
 
 ( ABORT | NFA 1EBC CFA 1EC4 )
 ( APX fig-FORTH dictionary, same NFA/CFA and link in game )
+( Decoded text: Retired startup banner, not executed )
+( retired startup banner $1ED1: fig-FORTH  1.1       )
 AT 1EBC
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 8500000000D4911E

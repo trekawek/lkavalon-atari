@@ -2652,7 +2652,7 @@ t.0BRANCH CELL 0041 ( -> 45ED )
 t.Y@ LIT8 58 t.@ t.Y@ t.1+ LIT8 28 t.* t.+ LIT8 0B t.Y@ t.1+
 t.- LIT8 28 t.* t.ERASE w4564 t.SWAP t.DUP w44FB t.OVER t.C@
 t.2+ w44CD w4574 t.Y! t.0 t.X!
-( ATASCII text:  . )
+( ATASCII text:  [1E] )
 t.(.")
 BYTES 02201E
 ( label 45ED )
@@ -2661,6 +2661,17 @@ AT 45EF
 
 ( w45F5 | NFA 45EF CFA 45F5 )
 ( Unknown erased name; CFA identifier )
+( Decoded text: Disk and tape messages )
+( item 0 line 1 $45FF: PODAJ STAN LICZNIKA )
+( item 0 line 2 $4613: W MAGNETOFONIE )
+( item 1 line 1 $4625: BLAD DYSKOWY )
+( item 1 line 2 $4632: WLACZYLES STACJE? )
+( item 1 line 3 $4644: RETURN )
+( item 2 line 1 $464E: USTAW TASME Z GRA NA )
+( item 2 line 2 $4663:   )
+( item 2 line 3 $4665: RETURN )
+( item 3 line 1 $466F: NIE TEN DYSK )
+( item 3 line 2 $467C: RETURN )
 AT 45EF
 ( Header: flags, saved name and link )
 BYTES 830000D59D45
@@ -3137,12 +3148,18 @@ BYTES 830000D4554B
 DOCOL
 LIT8 58 t.@ LIT16 A800 t.DUP LIT8 28 t.ERASE LIT8 58 t.! t.2
 t.0 t.POS
-( ATASCII text: ..............[[[[[[[[.............. )
+( Game text: )
+( [12][14][10][10][10][10][10][10][10][10][10][10][09][0F][5 )
+( B][5B][5B][5B][5B][5B][5B][5B][0B][0C][10][10][10][10][10] )
+( [10][10][10][10][10][19][15] )
 t.(S")
 BYTES 24121410101010101010101010090F5B5B5B5B5B5B5B5B0B0C101010
 BYTES 101010101010101915
 LIT8 28 t.- t.DUP LIT8 28 t.ERASE LIT8 58 t.! t.2 t.0 t.POS
-( ATASCII text: ................]]]]................ )
+( Game text: )
+( [06][07][10][10][10][10][10][10][10][10][10][10][10][10][1 )
+( 6][02][5D][5D][5D][5D][0E][0D][10][10][10][10][10][10][10] )
+( [10][10][10][10][10][08][0A] )
 t.(S")
 BYTES 24060710101010101010101010101016025D5D5D5D0E0D1010101010
 BYTES 10101010101010080A
@@ -4132,6 +4149,17 @@ AT 5571
 
 ( w5577 | NFA 5571 CFA 5577 )
 ( Unknown erased name; CFA identifier )
+( Decoded text: Inventory display slots )
+( item 0 display $5582: [A4]           [23] )
+( item 1 display $5594: [24]           [A3] )
+( item 2 display $55A6: [A4]           [23] )
+( item 3 display $55B8: [24]           [A3] )
+( item 4 display $55CA: [A4]           [23] )
+( item 5 display $55DC: [24]           [A3] )
+( item 6 display $55EE: [A4]           [23] )
+( item 7 display $5600: [24]           [A3] )
+( item 8 display $5612: [A4]     [3C][3E]    [23] )
+( item 9 display $5624: [24]    [3C][3E]     [A3] )
 AT 5571
 ( Header: flags, saved name and link )
 BYTES 830000C96655

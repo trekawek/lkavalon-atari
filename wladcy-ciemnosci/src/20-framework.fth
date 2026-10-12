@@ -2737,7 +2737,7 @@ t.DUP t.C@
 t.0BRANCH CELL 0021 ( -> 45CA )
 t.Y@ w4561 t.SWAP t.DUP w44F8 t.OVER t.C@ t.2+ w44CA w4571
 t.Y! t.0 t.X!
-( ATASCII text:  . )
+( ATASCII text:  [1E] )
 t.(.")
 BYTES 02201E
 ( label 45CA )
@@ -2746,6 +2746,14 @@ AT 45CC
 
 ( w45D2 | NFA 45CC CFA 45D2 )
 ( Unknown erased name; CFA identifier )
+( Decoded text: Disk messages )
+( item 0 line 1 $45DC: A )
+( item 1 line 1 $45E1: BLAD DYSKOWY )
+( item 1 line 2 $45EE: WLACZYLES STACJE? )
+( item 1 line 3 $4600: RETURN )
+( item 2 line 1 $460A: U )
+( item 3 line 1 $460F: NIE TEN DYSK )
+( item 3 line 2 $461C: RETURN )
 AT 45CC
 ( Header: flags, saved name and link )
 BYTES 830000D59A45
@@ -2776,6 +2784,11 @@ AT 463E
 
 ( w4644 | NFA 463E CFA 4644 )
 ( Unknown erased name; CFA identifier )
+( Decoded text: Screen background glyphs, not prose )
+( background tiles $4648: )
+( [3B][3D][3B][3D][3B][3D][3B][3D][3B][3D][3B][3D][3B][3D][3 )
+( B][3D][3B][3D][3B][3D][3B][3D][3B][3D][3B][3D][3B][3D][3B] )
+( [3D][3B][3D][3B] )
 AT 463E
 ( Header: flags, saved name and link )
 BYTES 830000B03446
@@ -3276,31 +3289,37 @@ BYTES 830000D4034B
 DOCOL
 LIT8 58 t.@ t.DUP LIT16 0190 t.ERASE LIT16 A800 t.DUP LIT8 28
 t.ERASE LIT8 58 t.! t.1 t.0 t.POS
-( ATASCII text: ......----------......||||||||||...... )
+( Game text: )
+( [16][02][0E][0D][12][14][2D][2D][2D][2D][2D][2D][2D][2D][2 )
+( D][2D][06][07][08][0A][0B][0C][7C][7C][7C][7C][7C][7C][7C] )
+( [7C][7C][7C][19][15][09][0F][10][13] )
 t.(S")
 BYTES 2616020E0D12142D2D2D2D2D2D2D2D2D2D0607080A0B0C7C7C7C7C7C
 BYTES 7C7C7C7C7C1915090F1013
 LIT8 28 t.- t.DUP LIT8 28 t.ERASE LIT8 58 t.! t.1 t.0 t.POS
-( ATASCII text: []<>++++++++++++#$%&'@************qwrt )
+( Game text: )
+( [28][29][3C][3E][2B][2B][2B][2B][2B][2B][2B][2B][2B][2B][2 )
+( B][2B][23][24][25][26][27][40][2A][2A][2A][2A][2A][2A][2A] )
+( [2A][2A][2A][2A][2A][71][77][72][74] )
 t.(S")
 BYTES 2628293C3E2B2B2B2B2B2B2B2B2B2B2B2B2324252627402A2A2A2A2A
 BYTES 2A2A2A2A2A2A2A71777274
 LIT8 28 LIT8 58 t.+! t.2 t.0 t.POS
-( ATASCII text: :; )
+( Game text: [3A][3B] )
 t.(S")
 BYTES 023A3B
 LIT16 0023 t.0 t.POS
-( ATASCII text: yui )
+( Game text: [79][75][69] )
 t.(S")
 BYTES 03797569
 LIT16 000A t.1 t.(DO)
 ( label 4BFC )
 t.2 t.I t.POS
-( ATASCII text: \^ )
+( Game text: [5C][5E] )
 t.(S")
 BYTES 025C5E
 LIT16 0024 t.I t.POS
-( ATASCII text: df )
+( Game text: [64][66] )
 t.(S")
 BYTES 026466
 t.(LOOP) CELL FFE6 ( -> 4BFC )
@@ -4233,6 +4252,15 @@ AT 5511
 
 ( w5517 | NFA 5511 CFA 5517 )
 ( Unknown erased name; CFA identifier )
+( Decoded text: Inventory display slots )
+( item 0 display $5522: [81]           [62] )
+( item 1 display $5534: [ED]           [84] )
+( item 2 display $5546: [81]           [62] )
+( item 3 display $5558: [ED]           [84] )
+( item 4 display $556A: [81]           [62] )
+( item 5 display $557C: [ED]           [84] )
+( item 6 display $558E: [81]           [62] )
+( item 7 display $55A0: [ED]           [84] )
 AT 5511
 ( Header: flags, saved name and link )
 BYTES 830000C90655

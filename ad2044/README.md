@@ -33,6 +33,19 @@ characters. ATASCII strings retain their exact bytes, with readable comments.
 Native 6502 code has disassembly comments alongside hex emission. Some native
 regions contain embedded tables, so linear disassembly there is only an aid.
 
+[strings.txt](strings.txt) lists decoded messages and menu labels with their
+target addresses. [strings.json](strings.json) additionally records original
+bytes, lengths, inverse characters, and action-label references. The Forth
+listings have matching `Decoded text:` comments beside the packed records.
+Game-font text is transliterated to ASCII: `=` becomes a space and Polish
+glyphs become their base letters. Unsupported glyphs remain `[XX]` escapes;
+ordinary ATASCII text retains its case and punctuation.
+
+The decoder follows counted records and resolves action aliases once. It
+excludes unused buffer contents and text in the separate binary disk assets.
+`make decompile` regenerates both catalogs and annotations. `BYTES` still
+controls the compiled data; editing a comment or catalog does not change it.
+
 The build deliberately preserves addresses: machine code, variables, tables,
 and disk overlays contain absolute pointers. Ordinary `: name ... ;` compiling
 into the running interpreter would move those pointers and overwrite the
@@ -46,7 +59,7 @@ original bytes.
 
 This is readable, low-level threaded Forth, **not a portable, relocatable
 rewrite**. Editing definition sizes requires updating absolute addresses and
-branch offsets. Graphics, room records, text, and other disk resources remain
+branch offsets. Graphics, room records, disk-loaded text, and other resources remain
 binary in [assets](assets); their higher-level formats are not reconstructed.
 
 ## Build on the host

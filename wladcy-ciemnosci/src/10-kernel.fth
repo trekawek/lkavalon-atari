@@ -2287,6 +2287,8 @@ AT 1EBC
 ( ABORT | NFA 1EBC CFA 1EC4 )
 ( Same NFA/CFA and header shape as the APX fig-FORTH )
 ( kernel, verified against the AD2044 reconstruction. )
+( Decoded text: Retired startup banner, not executed )
+( retired startup banner $1ED1: fig-FORTH  1.1       )
 AT 1EBC
 ( Header: flags, saved name and link )
 BYTES 8500000000D4911E

@@ -42,6 +42,21 @@ comments. Embedded tables can make linear disassembly comments misleading.
 The 602 undecoded trailing bytes reported by the generator are tails of colon
 definitions, not a count of all native code or data.
 
+[strings.txt](strings.txt) lists decoded dictionary messages and menu labels
+as ASCII text. [strings.json](strings.json) preserves their addresses, raw
+bytes, lengths, inverse characters, and action-label references. Matching
+`Decoded text:` comments appear beside the packed `BYTES` records. Game-font
+`=` becomes a space, and Polish glyphs are transliterated to ASCII letters.
+Unsupported glyphs remain `[XX]`; ordinary ATASCII keeps its case and punctuation.
+
+The parser follows counted records and resolves action aliases once. It also
+decodes the obfuscated message with the game's own byte transformation and
+marks incomplete records and unresolved references. Background screen codes
+are identified as glyph data, rather than interpreted as prose. Text in binary
+disk assets and unused buffer data are outside this catalog. `make decompile`
+regenerates the catalogs and annotations. Editing a comment or catalog does
+not change the game; the original `BYTES` values still determine its data.
+
 This is low-level threaded Forth, not a relocatable rewrite. Absolute pointers
 in code and data require preserving the memory layout. Changing definition
 sizes requires corresponding address and branch updates. Game resources in

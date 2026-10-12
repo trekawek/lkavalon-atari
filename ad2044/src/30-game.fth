@@ -58,6 +58,8 @@ AT 7BB5
 
 ( w7BBB | NFA 7BB5 CFA 7BBB )
 ( Unknown erased name; CFA identifier )
+( Decoded text: Message lines )
+( line 1 $7BC1: NIE UNIESIESZ )
 AT 7BB5
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000CD807B
@@ -281,6 +283,8 @@ AT 7DEB
 
 ( w7DF0 | NFA 7DEB CFA 7DF0 )
 ( Unknown erased name; CFA identifier )
+( Decoded text: Message lines )
+( line 1 $7DF6: OBZARSTWO TO GRZECH )
 AT 7DEB
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 8200C5E17D
@@ -344,6 +348,8 @@ AT 7EA2
 
 ( w7EA8 | NFA 7EA2 CFA 7EA8 )
 ( Unknown erased name; CFA identifier )
+( Decoded text: Message lines )
+( line 1 $7EAE: CZYM? )
 AT 7EA2
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000D48B7E
@@ -470,6 +476,8 @@ AT 8031
 
 ( w8037 | NFA 8031 CFA 8037 )
 ( Unknown erased name; CFA identifier )
+( Decoded text: Message lines )
+( line 1 $803D: PALENIE SZKODZI )
 AT 8031
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000D0C77F
@@ -963,6 +971,8 @@ AT 86D1
 
 ( w86D7 | NFA 86D1 CFA 86D7 )
 ( Unknown erased name; CFA identifier )
+( Decoded text: Message lines )
+( line 1 $86DD: CO? )
 AT 86D1
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000CF3586
@@ -1086,6 +1096,8 @@ AT 8830
 
 ( w8836 | NFA 8830 CFA 8836 )
 ( Unknown erased name; CFA identifier )
+( Decoded text: Message lines )
+( line 1 $883C: JESTES DOROSLY? )
 AT 8830
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000CF0C88
@@ -1207,6 +1219,8 @@ AT 8961
 
 ( w8967 | NFA 8961 CFA 8967 )
 ( Unknown erased name; CFA identifier )
+( Decoded text: Message lines )
+( line 1 $896D: W PORZADKU )
 AT 8961
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000D03489
@@ -1251,6 +1265,8 @@ AT 8A04
 
 ( w8A0A | NFA 8A04 CFA 8A0A )
 ( Unknown erased name; CFA identifier )
+( Decoded text: Message lines )
+( line 1 $8A10: PODAJ HASLO )
 AT 8A04
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000D3DF89
@@ -1504,6 +1520,8 @@ AT 8D31
 
 ( w8D37 | NFA 8D31 CFA 8D37 )
 ( Unknown erased name; CFA identifier )
+( Decoded text: Message lines )
+( line 1 $8D3D: JAKIE )
 AT 8D31
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 830000C1E08C

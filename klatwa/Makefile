@@ -14,6 +14,7 @@ decompile:
 	$(PYTHON) tools/decompile.py
 test: all
 	$(PYTHON) tools/test_reconstruction.py
+	$(PYTHON) ../ad2044/tools/test_text_records.py
 	$(PYTHON) tools/verify.py
 clean:
 	rm -rf build

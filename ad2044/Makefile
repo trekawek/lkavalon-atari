@@ -22,6 +22,7 @@ decompile:
 test: all
 	$(PYTHON) tools/test_compiler.py
 	$(PYTHON) tools/test_decompiler.py
+	$(PYTHON) tools/test_text_records.py
 	$(PYTHON) tools/verify.py
 
 clean:

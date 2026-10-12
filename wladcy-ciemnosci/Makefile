@@ -21,6 +21,7 @@ decompile:
 
 test: all
 	$(PYTHON) tools/test_pipeline.py
+	$(PYTHON) ../ad2044/tools/test_text_records.py
 	$(PYTHON) tools/verify.py
 
 clean:

@@ -34,7 +34,8 @@ AT 6089
 ( Header: flags, saved name and link )
 BYTES 8200A32F60
 DOCOL
-( ATASCII text: .=*********=#$=*********=. )
+( Game text: [A4] [2A][2A][2A][2A][2A][2A][2A][2A][2A] )
+( [23][24] [2A][2A][2A][2A][2A][2A][2A][2A][2A] [A3] )
 t.(S")
 BYTES 1AA43D2A2A2A2A2A2A2A2A2A3D23243D2A2A2A2A2A2A2A2A2A3DA3
 t.;S
@@ -47,11 +48,11 @@ AT 60AF
 BYTES 830000D38960
 DOCOL
 LIT8 07 t.1 t.POS LIT8 A2 t.EMIT
-( ATASCII text: ===KSIeGA==! )
+( Game text:    KSIEGA  [21] )
 t.(S")
 BYTES 0C3D3D3D4B53496547413D3D21
 LIT8 22 t.EMIT
-( ATASCII text: ==CZARoW===. )
+( Game text:   CZAROW   [A1] )
 t.(S")
 BYTES 0C3D3D435A41526F573D3D3DA1
 LIT8 07 t.2 t.POS w608E LIT8 05 t.0 t.(DO)
@@ -61,7 +62,9 @@ LIT8 0D t.STYPE LIT8 14 t.X! t.I t.2 t.* t.1+ w5577 LIT16 0005
 t.+ LIT8 0D t.STYPE
 t.(LOOP) CELL FFC4 ( -> 60F6 )
 LIT8 07 LIT8 08 t.POS w608E LIT8 07 LIT8 09 t.POS
-( ATASCII text: .......................... )
+( Game text: )
+( [AB][DC][DC][DC][DC][DC][DC][DC][DC][DC][DC][DC][A5][A6][D )
+( C][DC][DC][DC][DC][DC][DC][DC][DC][DC][DC][AD] )
 t.(S")
 BYTES 1AABDCDCDCDCDCDCDCDCDCDCDCA5A6DCDCDCDCDCDCDCDCDCDCDCAD
 t.;S
@@ -91,6 +94,13 @@ AT 619B
 
 ( w61A0 | NFA 619B CFA 61A0 )
 ( Unknown erased name; CFA identifier )
+( Decoded text: Spell messages )
+( item 0 line 1 $61AA: TEN CZAR NIE )
+( item 0 line 2 $61B7: ZADZIALA )
+( item 1 $61C1: [incomplete message placeholder; retained )
+( raw] )
+( item 2 line 1 $61C6: BRAK CI JEDNEGO )
+( item 2 line 2 $61D6: PRZEDMIOTU )
 AT 619B
 ( Header: flags, saved name and link )
 BYTES 8200C37561
@@ -103,6 +113,11 @@ AT 61E6
 
 ( w61EB | NFA 61E6 CFA 61EB )
 ( Unknown erased name; CFA identifier )
+( Decoded text: Message lines )
+( line 1 $61F1: NIE MASZ JUZ )
+( line 2 $61FE: MAGICZNEJ MOCY, )
+( line 3 $620E: JEDEN Z KAMIENI )
+( line 4 $621E: JA PRZYWROCI )
 AT 61E6
 ( Header: flags, saved name and link )
 BYTES 8200C39B61
@@ -188,6 +203,65 @@ AT 6362
 
 ( w6369 | NFA 6362 CFA 6369 )
 ( Unknown erased name; CFA identifier )
+( Decoded text: Action labels )
+( item 0 $6371: NIC )
+( item 1 $6376: NIE PATRZ )
+( item 2 $6381 -> item 94: [reference outside this table; )
+( retained raw] )
+( item 3 $6384: ZOSTAW )
+( item 4 $638C: WEZ )
+( item 5 $6391: ZOBACZ )
+( item 6 $6399: CO TO )
+( item 7 $63A0: POCZATEK )
+( item 8 $63AA: ODCZYT )
+( item 9 $63B2: ZAPIS )
+( item 10 $63B9 -> item 80: [reference outside this table; )
+( retained raw] )
+( item 11 $63BC -> item 75: [reference outside this table; )
+( retained raw] )
+( item 12 $63BF -> item 82: [reference outside this table; )
+( retained raw] )
+( item 13 $63C2: OTWORZ )
+( item 14 $63CA: ZAMKNIJ )
+( item 15 $63D3: IDZ )
+( item 16 $63D8 -> item 13: OTWORZ )
+( item 17 $63DB -> item 14: ZAMKNIJ )
+( item 18 $63DE: PRZEPISZ )
+( item 19 $63E8 -> item 6: CO TO )
+( item 20 $63EB: OTWORZ )
+( item 21 $63F3: ZAKLECIE )
+( item 22 $63FD: ZNISZCZ )
+( item 23 $6406: PODNIES )
+( item 24 $640F: DOTKNIJ )
+( item 25 $6418 -> item 6: CO TO )
+( item 26 $641B -> item 13: OTWORZ )
+( item 27 $641E: ZBADAJ )
+( item 28 $6426 -> item 13: OTWORZ )
+( item 29 $6429 -> item 21: ZAKLECIE )
+( item 30 $642C -> item 13: OTWORZ )
+( item 31 $642F -> item 14: ZAMKNIJ )
+( item 32 $6432 -> item 21: ZAKLECIE )
+( item 33 $6435: WEZ )
+( item 34 $643A: ZAGRAJ )
+( item 35 $6442 -> item 14: ZAMKNIJ )
+( item 36 $6445: ZAPLAC )
+( item 37 $644D: ZDEJMIJ )
+( item 38 $6456 -> item 21: ZAKLECIE )
+( item 39 $6459: ZLAP )
+( item 40 $645F -> item 21: ZAKLECIE )
+( item 41 $6462: PODNIES )
+( item 42 $646B -> item 18: PRZEPISZ )
+( item 43 $646E: IDZ )
+( item 44 $6473: PRZECZYTAJ )
+( item 45 $647F: NACISNIJ )
+( item 46 $6489: ZBADAJ )
+( item 47 $6491 -> item 5: ZOBACZ )
+( item 48 $6494 -> item 22: ZNISZCZ )
+( item 49 $6497 -> item 13: OTWORZ )
+( item 50 $649A: SLUCHAJ )
+( item 51 $64A3 -> item 36: ZAPLAC )
+( item 52 $64A6 -> item 21: ZAKLECIE )
+( item 53 $64A9 -> item 21: ZAKLECIE )
 AT 6362
 ( Header: flags, saved name and link )
 BYTES 84000000C21063
@@ -493,6 +567,9 @@ AT 67E5
 
 ( w67EA | NFA 67E5 CFA 67EA )
 ( Unknown erased name; CFA identifier )
+( Decoded text: Message lines )
+( line 1 $67F0: NIE UNIESIESZ )
+( line 2 $67FE: TYLE )
 AT 67E5
 ( Header: flags, saved name and link )
 BYTES 8200D2D267
@@ -600,6 +677,9 @@ AT 6911
 
 ( w6916 | NFA 6911 CFA 6916 )
 ( Unknown erased name; CFA identifier )
+( Decoded text: Message lines )
+( line 1 $691C: NIE POKAZALES )
+( line 2 $692A: RZECZY )
 AT 6911
 ( Header: flags, saved name and link )
 BYTES 8200D2C768
@@ -707,6 +787,8 @@ AT 6A08
 
 ( w6A0D | NFA 6A08 CFA 6A0D )
 ( Unknown erased name; CFA identifier )
+( Decoded text: Message lines )
+( line 1 $6A13: WYKONALES    PROCENT MISJI )
 AT 6A08
 ( Header: flags, saved name and link )
 BYTES 8200C4E269
@@ -1695,6 +1777,8 @@ AT 7614
 
 ( w7619 | NFA 7614 CFA 7619 )
 ( Unknown erased name; CFA identifier )
+( Decoded text: Message lines )
+( line 1 $761F: CO? )
 AT 7614
 ( Header: flags, saved name and link )
 BYTES 8200D4E875
@@ -1871,6 +1955,9 @@ AT 7840
 
 ( w7845 | NFA 7840 CFA 7845 )
 ( Unknown erased name; CFA identifier )
+( Decoded text: Message lines )
+( Decoded by adding $26 to first 25 bytes )
+( line 1 $784B: CHCESZ GRAC[2A]KUPUJ ORYGINAL )
 AT 7840
 ( Header: flags, saved name and link )
 BYTES 8200A31B78
@@ -2117,6 +2204,8 @@ AT 7B61
 
 ( w7B66 | NFA 7B61 CFA 7B66 )
 ( Unknown erased name; CFA identifier )
+( Decoded text: Message lines )
+( line 1 $7B6C: CZAR  )
 AT 7B61
 ( Header: flags, saved name and link )
 BYTES 8200C34F7B
@@ -2137,6 +2226,9 @@ AT 7BBD
 
 ( w7BC2 | NFA 7BBD CFA 7BC2 )
 ( Unknown erased name; CFA identifier )
+( Decoded text: Message lines )
+( line 1 $7BC8: TYM NIE )
+( line 2 $7BD0: MOZESZ )
 AT 7BBD
 ( Header: flags, saved name and link )
 BYTES 8200CE7C7B
@@ -2146,6 +2238,8 @@ AT 7BDA
 
 ( w7BDF | NFA 7BDA CFA 7BDF )
 ( Unknown erased name; CFA identifier )
+( Decoded text: Message lines )
+( line 1 $7BE5: CZYM? )
 AT 7BDA
 ( Header: flags, saved name and link )
 BYTES 8200D9BD7B
@@ -2293,6 +2387,9 @@ AT 7D35
 
 ( w7D3A | NFA 7D35 CFA 7D3A )
 ( Unknown erased name; CFA identifier )
+( Decoded text: Message lines )
+( line 1 $7D40: ODZYSKALES )
+( line 2 $7D4B: MAGICZNA MOC )
 AT 7D35
 ( Header: flags, saved name and link )
 BYTES 8200CD257D
@@ -2449,6 +2546,8 @@ AT 7F33
 
 ( w7F38 | NFA 7F33 CFA 7F38 )
 ( Unknown erased name; CFA identifier )
+( Decoded text: Message lines )
+( line 1 $7F3E: WYGRALES )
 AT 7F33
 ( Header: flags, saved name and link )
 BYTES 8200C70B7F
@@ -2458,6 +2557,8 @@ AT 7F49
 
 ( w7F4E | NFA 7F49 CFA 7F4E )
 ( Unknown erased name; CFA identifier )
+( Decoded text: Message lines )
+( line 1 $7F54: JUZ NIE GRAM )
 AT 7F49
 ( Header: flags, saved name and link )
 BYTES 8200C7337F
@@ -2564,6 +2665,9 @@ AT 80B2
 
 ( w80B7 | NFA 80B2 CFA 80B7 )
 ( Unknown erased name; CFA identifier )
+( Decoded text: Message lines )
+( line 1 $80BD: PRZESZEDLES SCIANE )
+( line 2 $80D0: Z ANTYMAGIA )
 AT 80B2
 ( Header: flags, saved name and link )
 BYTES 8200CD9C80
@@ -2784,6 +2888,9 @@ AT 835E
 
 ( w8363 | NFA 835E CFA 8363 )
 ( Unknown erased name; CFA identifier )
+( Decoded text: Message lines )
+( line 1 $8369: MATERIA NIEOZYWIONA )
+( line 2 $837D: CZASU NIE POKONA )
 AT 835E
 ( Header: flags, saved name and link )
 BYTES 8200CE1083

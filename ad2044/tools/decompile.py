@@ -5,11 +5,16 @@ Regeneration requires py65 only for disassembly comments. Building the checked-i
 Forth sources does not run this decompiler or read the reference game disks.
 """
 import argparse
+import importlib.util
 import json
 from collections import Counter
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+_text_spec = importlib.util.spec_from_file_location(
+    "apx_text_records", ROOT / "tools/text_records.py")
+text_records = importlib.util.module_from_spec(_text_spec)
+_text_spec.loader.exec_module(text_records)
 ORIGIN, END, LAST = 0x0E80, 0x9247, 0x91F4
 RUNTIMES = {0x1441: 'DOCOL', 0x147D: 'DOCON', 0x1499: 'DOVAR',
             0x14B2: 'DOUSER', 0x18D8: 'DODOES'}
@@ -186,9 +191,11 @@ def emit_thread(out, data, word, by_cfa):
             out.line(f"{by_cfa[cfa]['id']} CELL {insn['value']:04X}"
                      f" ( -> {insn['target']:04X} )")
         elif 'string' in insn:
-            text = ''.join(chr(b) if 32 <= b < 127 else '.'
-                           for b in insn['string'])
-            out.comment('ATASCII text: ' + text)
+            encoding = text_records.inline_encoding(
+                getattr(out, 'text_game', None), cfa, at + 3)
+            text = text_records.display_text(insn['string'], encoding)
+            out.comment(('ATASCII text: ' if encoding == 'atascii'
+                         else 'Game text: ') + text)
             out.token(by_cfa[cfa]['id'])
             out.raw(bytes([len(insn['string'])]) + insn['string'])
         elif 'compiled_cfa' in insn:
@@ -227,6 +234,7 @@ def main():
     names = json.loads((ROOT / 'tools/names.json').read_text())
     identifiers(words, names)
     by_cfa = {w['cfa']: w for w in words}
+    catalog = text_records.Catalog('ad2044', data, words, decode)
     disassembler = Disassembler(MPU(memory=data))
     source = ROOT / 'src'
     source.mkdir(exist_ok=True)
@@ -266,6 +274,7 @@ def main():
             out.line()
             out.comment(f"{word['name']} | NFA {word['nfa']:04X} CFA {word['cfa']:04X}")
             out.comment(word['evidence'])
+            catalog.annotate(out, word)
             out.line(f"AT {word['nfa']:04X}")
             out.comment('Saved dictionary header: flags, name bytes, link' if not word.get('headerless')
                         else 'Headerless internal native entry point')
@@ -301,6 +310,7 @@ def main():
     (assets / 'side1-tail.bin').write_bytes(disk[0x84B7:])
     side2 = ROOT / 'reference/ad2044-side2.atr'
     (assets / 'side2-data.bin').write_bytes(side2.read_bytes()[16:])
+    catalog.save(ROOT)
     print(f"Recovered {len(words)} words ({len(names)} names), {dict(stats)}")
 
 

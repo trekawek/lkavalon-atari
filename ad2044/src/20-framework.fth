@@ -2770,7 +2770,7 @@ t.>R w3F1D
 t.0 t.RESOURCE-ADDR LIT8 50 t.R t.BLOAD t.DUP
 t.0BRANCH CELL 000E ( -> 3F8F )
 w3B84
-( ATASCII text: ....... )
+( Game text:  ERROR  )
 t.(S")
 BYTES 07A0C5D2D2CFD2A0
 ( label 3F8F )
@@ -3197,7 +3197,7 @@ DOCOL
 w47A4 t.@
 t.0BRANCH CELL 0019 ( -> 47CE )
 t.0 t.0 t.POS
-( ATASCII text:  . )
+( ATASCII text:  [1E] )
 t.(.")
 BYTES 02201E
 LIT16 0058 t.@ LIT16 0208 t.ERASE
@@ -3468,11 +3468,11 @@ AT 49B1
 BYTES 830000D29E49
 DOCOL
 t.CLEAR-TEXT-AREA w47E9 t.CR LIT16 001C t.4 w4973 t.X@
-( ATASCII text: ===BlaD=ODCZYTU=Z=DYSKU )
+( Game text:    BLAD ODCZYTU Z DYSKU )
 t.(S")
 BYTES 173D3D3D426C61443D4F44435A5954553D5A3D4459534B55
 w49A3
-( ATASCII text: =NACIsNIJ=DOWOLNY=KLAWISZ )
+( Game text:  NACISNIJ DOWOLNY KLAWISZ )
 t.(S")
 BYTES 193D4E414349734E494A3D444F574F4C4E593D4B4C415749535A
 t.BEEP t.KEY t.2DROP t.CLEAR-TEXT-AREA w47DC t.;S
@@ -3485,11 +3485,11 @@ AT 4A0D
 BYTES 84000000D2B149
 DOCOL
 t.CLEAR-TEXT-AREA w47E9 t.CR LIT16 001E t.4 w4973 t.X@
-( ATASCII text: ======ODWRoc=DYSKIETKe )
+( Game text:       ODWROC DYSKIETKE )
 t.(S")
 BYTES 163D3D3D3D3D3D4F4457526F633D4459534B4945544B65
 w49A3
-( ATASCII text: =I=NACISNIJ=DOWOLNY=KLAWISZ )
+( Game text:  I NACISNIJ DOWOLNY KLAWISZ )
 t.(S")
 BYTES 1B3D493D4E414349534E494A3D444F574F4C4E593D4B4C415749535A
 t.KEY t.2DROP t.CLEAR-TEXT-AREA w47DC t.;S
@@ -4781,7 +4781,7 @@ BYTES 830000D96A57
 DOCOL
 t.OVER t.C@ t.0 t.> t.OVER LIT8 7E t.= t.*
 t.0BRANCH CELL 0010 ( -> 579F )
-( ATASCII text: .=. )
+( ATASCII text: [1E]=[1E] )
 t.(.")
 BYTES 031E3D1E
 t.OVER t.-1 t.SWAP w4732
@@ -5552,6 +5552,11 @@ AT 6D03
 
 ( w6D0A | NFA 6D03 CFA 6D0A )
 ( Unknown erased name; CFA identifier )
+( Decoded text: Hunger messages )
+( item 0 line 1 $6D14: ZEMDLALES Z GLODU )
+( item 1 line 1 $6D29: JESTES BARDZO GLODNY )
+( item 2 line 1 $6D41: CZUJESZ GLOD )
+( item 3 line 1 $6D51: CZUJESZ SSANIE W ZOLADKU )
 AT 6D03
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 84000000C5E96C
@@ -5582,7 +5587,7 @@ DOCOL
 t.DUP t.C@
 t.0BRANCH CELL 0041 ( -> 6DCB )
 t.0 t.X!
-( ATASCII text:  . )
+( ATASCII text:  [1E] )
 t.(.")
 BYTES 02201E
 t.Y@ LIT8 58 t.@ t.Y@ t.1+ LIT8 28 t.* t.+ LIT8 0D t.Y@ t.1+
@@ -5737,6 +5742,11 @@ AT 6FC2
 
 ( w6FC7 | NFA 6FC2 CFA 6FC7 )
 ( Unknown erased name; CFA identifier )
+( Decoded text: Direction labels )
+( item 0 $6FCF: PROSTO )
+( item 1 $6FD7: W PRAWO )
+( item 2 $6FE0: W TYL )
+( item 3 $6FE7: W LEWO )
 AT 6FC2
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 8200D79C6F
@@ -5771,7 +5781,7 @@ t.BRANCH CELL 0004 ( -> 704C )
 t.8
 ( label 704C )
 w6F5F t.C@ t.3 t.+ w4973 w6F5F t.C@ w6FF4 t.X@ t.2+ t.X! t.X@
-( ATASCII text: NIC )
+( Game text: NIC )
 t.(S")
 BYTES 034E4943
 t.X! w5D36 w6F5F t.C@
@@ -6003,6 +6013,83 @@ AT 72DB
 
 ( w72E2 | NFA 72DB CFA 72E2 )
 ( Unknown erased name; CFA identifier )
+( Decoded text: Action labels )
+( item 0 $72EA: NIC )
+( item 1 $72EF: WROC )
+( item 2 $72F5: ZBLIZENIE )
+( item 3 $7300: POWIEKSZENIE )
+( item 4 $730E: PODNIES )
+( item 5 $7317: ZAJRZYJ )
+( item 6 $7320: IDZ )
+( item 7 $7325: ZBADAJ )
+( item 8 $732D: ZJEDZ )
+( item 9 $7334: WYPIJ )
+( item 10 $733B: ROZBIJ )
+( item 11 $7343: OTWORZ )
+( item 12 $734B: ZAMKNIJ )
+( item 13 $7354 -> item 6: IDZ )
+( item 14 $7357: WEZ )
+( item 15 $735C: ZAPAL )
+( item 16 $7363: ZOSTAW RZECZ )
+( item 17 $7371 -> item 11: OTWORZ )
+( item 18 $7374 -> item 11: OTWORZ )
+( item 19 $7377: ODEGNIJ )
+( item 20 $7380 -> item 11: OTWORZ )
+( item 21 $7383 -> item 12: ZAMKNIJ )
+( item 22 $7386: WYLACZ )
+( item 23 $738E: WLACZ )
+( item 24 $7395 -> item 23: WLACZ )
+( item 25 $7398 -> item 22: WYLACZ )
+( item 26 $739B -> item 11: OTWORZ )
+( item 27 $739E -> item 12: ZAMKNIJ )
+( item 28 $73A1: PRZESUN )
+( item 29 $73AA -> item 28: PRZESUN )
+( item 30 $73AD: WCISNIJ )
+( item 31 $73B6: WYCISNIJ )
+( item 32 $73C0 -> item 30: WCISNIJ )
+( item 33 $73C3: RZUC )
+( item 34 $73C9 -> item 7: ZBADAJ )
+( item 35 $73CC: NACISNIJ )
+( item 36 $73D6: KRZYKNIJ )
+( item 37 $73E0: POKAZ )
+( item 38 $73E7 -> item 35: NACISNIJ )
+( item 39 $73EA -> item 35: NACISNIJ )
+( item 40 $73ED -> item 2: ZBLIZENIE )
+( item 41 $73F0 -> item 2: ZBLIZENIE )
+( item 42 $73F3 -> item 14: WEZ )
+( item 43 $73F6: ODSLON )
+( item 44 $73FE: ZASLON )
+( item 45 $7406: PODPLYN )
+( item 46 $740F -> item 14: WEZ )
+( item 47 $7412: UBIERZ )
+( item 48 $741A: WYRZUC )
+( item 49 $7422 -> item 11: OTWORZ )
+( item 50 $7425 -> item 12: ZAMKNIJ )
+( item 51 $7428 -> item 35: NACISNIJ )
+( item 52 $742B -> item 37: POKAZ )
+( item 53 $742E -> item 36: KRZYKNIJ )
+( item 54 $7431 -> item 47: UBIERZ )
+( item 55 $7434: CALUJ )
+( item 56 $743B -> item 35: NACISNIJ )
+( item 57 $743E: PRZETNIJ )
+( item 58 $7448 -> item 35: NACISNIJ )
+( item 59 $744B: PRZEKREC )
+( item 60 $7455 -> item 59: PRZEKREC )
+( item 61 $7458 -> item 11: OTWORZ )
+( item 62 $745B: ZDEJMIJ )
+( item 63 $7464: POWIES )
+( item 64 $746C: WKREC )
+( item 65 $7473 -> item 7: ZBADAJ )
+( item 66 $7476: WYKREC )
+( item 67 $747E -> item 35: NACISNIJ )
+( item 68 $7481 -> item 35: NACISNIJ )
+( item 69 $7484 -> item 35: NACISNIJ )
+( item 70 $7487: PODWATUJ )
+( item 71 $7491 -> item 23: WLACZ )
+( item 72 $7494 -> item 22: WYLACZ )
+( item 73 $7497: ZASUN )
+( item 74 $749E: WPROWADZ CHROMOSOMY )
+( item 75 $74B3: WLOZ )
 AT 72DB
 ( Saved dictionary header: flags, name bytes, link )
 BYTES 84000000C29572
@@ -6241,29 +6328,29 @@ BYTES 84000000D77577
 DOCOL
 t.CLEAR-TEXT-AREA t.CR LIT8 0D LIT16 0006 w4973 t.3 w6FF4 t.X@
 t.2+ t.X! t.X@
-( ATASCII text: POCZaTEK )
+( Game text: POCZATEK )
 t.(S")
 BYTES 08504F435A6154454B
 t.X! w5D36 t.X@
-( ATASCII text: ZAPIS )
+( Game text: ZAPIS )
 t.(S")
 BYTES 055A41504953
 t.X! w5D36 t.X@
-( ATASCII text: ODCZYT )
+( Game text: ODCZYT )
 t.(S")
 BYTES 064F44435A5954
 t.X! w5D36 t.FORTH
-( ATASCII text: GRA )
+( Game text: GRA )
 t.(S")
 BYTES 03475241
 t.CR t.CR w777A w59DF t.@ t.0=_12DE
 t.0BRANCH CELL 0032 ( -> 7837 )
 LIT8 1E t.3 w4973 t.X@ t.1+ t.X!
-( ATASCII text: WYKONAlEs= )
+( Game text: WYKONALES  )
 t.(S")
 BYTES 0A57594B4F4E416C45733D
 w7759 t.?
-( ATASCII text: .=PROCENT=MISJI )
+( Game text: [1E] PROCENT MISJI )
 t.(.")
 BYTES 0F1E3D50524F43454E543D4D49534A49
 ( label 7837 )
@@ -6431,13 +6518,13 @@ AT 79E4
 BYTES 8200BFD079
 DOCOL
 LIT8 0E t.2 t.POS
-( ATASCII text: BlAD DYSKOWY )
+( Game text: BLAD DYSKOWY )
 t.(S")
 BYTES 0C426C4144204459534B4F5759
 w59DF t.@ t.3 t.=
 t.0BRANCH CELL 000C ( -> 7A17 )
 t.16 t.3 t.POS
-( ATASCII text: : )
+( Game text: [3A] )
 t.(S")
 BYTES 013A
 ( label 7A17 )
@@ -6454,12 +6541,12 @@ DOCOL
 w59DF t.@ t.3 t.=
 t.0BRANCH CELL 000D ( -> 7A37 )
 LIT8 10 t.4 t.POS
-( ATASCII text: ; )
+( Game text: [3B] )
 t.(S")
 BYTES 013B
 ( label 7A37 )
 LIT8 0C LIT16 0005 t.POS
-( ATASCII text: NACISNIJ KLAWISZ )
+( Game text: NACISNIJ KLAWISZ )
 t.(S")
 BYTES 104E414349534E494A204B4C415749535A
 t.;S
@@ -6475,7 +6562,7 @@ DOCOL
 w59DF t.@ t.3 t.=
 t.0BRANCH CELL 000E ( -> 7A74 )
 LIT8 12 t.1 t.POS
-( ATASCII text: ;; )
+( Game text: [3B][3B] )
 t.(S")
 BYTES 023B3B
 ( label 7A74 )

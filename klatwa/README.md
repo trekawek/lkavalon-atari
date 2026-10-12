@@ -89,6 +89,21 @@ ATASCII strings retain their exact bytes and have readable comments. Native
 6502 instructions have disassembly comments; linear disassembly may also
 cover embedded data tables.
 
+[strings.txt](strings.txt) is a readable ASCII catalog of dictionary messages
+and menu labels. [strings.json](strings.json) includes addresses, raw bytes,
+lengths, inverse characters, and action-label references. `Decoded text:`
+comments also appear beside the corresponding `BYTES` records in the Forth.
+The game font uses `=` for spaces and lowercase slots for Polish letters;
+the catalog transliterates those letters to ASCII. Unsupported glyphs are
+shown as `[XX]`. Ordinary ATASCII strings keep their case and punctuation.
+
+The parser follows counted records, resolves action aliases once, and decodes
+the obfuscated message using the game's own byte transformation. Incomplete
+records and unresolved references are marked explicitly. Unused buffer data
+and text in binary disk assets are outside this catalog. `make decompile`
+regenerates the catalogs and comments; editing them does not alter the game,
+because the original `BYTES` data remains authoritative.
+
 The metacompiler deliberately preserves addresses. Native code, packed data
 and game definitions contain absolute pointers, so this is not a relocatable
 rewrite using ordinary host `: ... ;` definitions. Changing definition sizes

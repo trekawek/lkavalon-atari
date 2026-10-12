@@ -1,0 +1,6 @@
+# Raw graphics can consist entirely of byte values that resemble text.
+# Preserve them verbatim, including CR/LF bytes, on every checkout.
+*/graphics/**/*.bin binary
+*/graphics/**/*.fnt binary
+*/graphics/**/*.gam binary
+util/atari800-pal.pal binary

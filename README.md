@@ -77,3 +77,34 @@ ASAP 8.0.0. The original-player regression checks additionally use `py65`:
 python3 ad2044/tools/test_music_sap.py
 python3 util/test_cmc_playback.py
 ```
+
+## Extracted graphics
+
+Graphics are stored in custom GAM FORTH resource records, rather than ordinary
+image files. The exports preserve their packed bytes and decoded bitmap data,
+with PNG previews, fonts, and static room compositions:
+
+* [A.D. 2044 gallery](ad2044/graphics/index.html) and [format notes](ad2044/README.md#graphics).
+* [Klątwa gallery](klatwa/graphics/index.html) and [format notes](klatwa/README.md#graphics).
+* [Władcy Ciemności gallery](wladcy-ciemnosci/graphics/index.html) and [format notes](wladcy-ciemnosci/README.md#graphics).
+
+Open a gallery locally to browse the files. Each directory also has
+`rooms-overview.png`, paginated contact sheets, and `extraction.json` with
+resource IDs, physical disk offsets, dimensions, palette evidence and checksums.
+PNG bitmap previews double the horizontal pixels to match the Atari display
+aspect. Grayscale previews identify assets whose contextual colors are unknown;
+the stored bitmap and original color-register bytes remain unchanged.
+
+Regenerate or check the exports using Python 3, independently of Forth compilation:
+
+```sh
+python3 util/extract_graphics.py
+python3 util/extract_graphics.py --check
+python3 util/test_graphics_common.py
+```
+
+Each game also provides `make graphics` and `make test-graphics`. Install
+`py65` to include comparisons with the original 6502 decompression routines;
+the other extraction checks use only the standard library. These exports do
+not change the game disks or replace the original binary assets used by the
+Forth builds.

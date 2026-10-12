@@ -60,7 +60,8 @@ not change the game; the original `BYTES` values still determine its data.
 This is low-level threaded Forth, not a relocatable rewrite. Absolute pointers
 in code and data require preserving the memory layout. Changing definition
 sizes requires corresponding address and branch updates. Game resources in
-[assets/disk-tail.bin](assets/disk-tail.bin) remain binary.
+[assets/disk-tail.bin](assets/disk-tail.bin) retain their original bytes; the
+graphics are also extracted and decoded separately as described below.
 
 ## Build
 
@@ -110,6 +111,49 @@ Each physical screen line reserves a trailing space; Forth does not insert
 newlines between its 64-character rows. Expected `Isn't unique` notices come
 from the deliberate emitter redefinitions in `05-emission.fth`. Turbo mode
 speeds compilation substantially.
+
+## Graphics
+
+Browse [graphics/index.html](graphics/index.html) locally or view the
+[room overview](graphics/rooms-overview.png). The export includes 264 individual
+pictures, 255 interaction maps, two fonts, 20 stored sprite frames, title art
+and 24 initial room compositions. Three additional retained room-layout
+records are documented separately; one references an image absent from its
+resource group, so they are not presented as complete playable rooms.
+
+The format is the same GAM container and column-oriented `$8D` compression
+used by Klątwa. The directory in physical sector 500 gives each resource
+group's sector count; group data skips that directory sector. Nested records
+have little-endian 16-bit lengths. Pictures store `x-byte, y, width-bytes,
+height`, then compressed column bytes. An `$8D` escape introduces a control
+byte and a one-to-four-byte pattern: high control bits encode pattern length,
+and the low six bits encode repetitions. Decoded image files contain row-major
+2bpp data, four pixels per byte with the leftmost pair first.
+
+Compositions use each room's stored palette and initial object-state layers.
+Room-dependent individual images have grayscale previews where their colors
+are not inherent to the asset. Interaction maps contain byte values for hit
+testing, rather than transparency. The original 1,024-byte fonts are exported
+unchanged, with previews showing all 128 glyphs in stored order.
+
+Original resource payloads and group data are retained alongside the decoded
+files. [graphics/extraction.json](graphics/extraction.json) identifies each
+record and subrecord, physical disk spans, dimensions, placement, palettes,
+room composition and any unconsumed bytes. Generated frame borders, text
+windows, the moving cursor and later gameplay changes are outside the static
+room previews. Runtime use of the stored sprite bank has not been established;
+its frames are preserved without claiming they are active gameplay animation.
+
+All 519 compressed pictures and interaction maps match the original 6502
+decoder. Title and first-room composition tests also execute the original
+blitter. The title bitmap and first-room interior were compared with live
+Atari memory; the previews preserve the same stored pixels and palettes.
+
+Run `make graphics` to regenerate, or
+`python3 ../util/extract_graphics.py --game wladcy-ciemnosci --check` to verify.
+Extraction reuses Klątwa's shared GAM decoder and the repository's dependency-free
+PNG helpers; Python 3 is sufficient. The game build continues to use its
+original resource bytes.
 
 ## Music
 

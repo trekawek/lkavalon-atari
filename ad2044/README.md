@@ -59,8 +59,57 @@ original bytes.
 
 This is readable, low-level threaded Forth, **not a portable, relocatable
 rewrite**. Editing definition sizes requires updating absolute addresses and
-branch offsets. Graphics, room records, disk-loaded text, and other resources remain
-binary in [assets](assets); their higher-level formats are not reconstructed.
+branch offsets. The build retains resource data in [assets](assets). Graphics
+are also decoded separately in [graphics](graphics); room logic and other
+resource records still use the original binary layout.
+
+## Graphics
+
+Browse [graphics/index.html](graphics/index.html) locally or view the
+[scene overview](graphics/rooms-overview.png). The export includes 345 positioned
+bitmaps (rooms, objects, inventory images and animation frames), three full-screen
+bitmaps, two fonts, three cursor player planes, and 36 base-scene compositions.
+Scene IDs follow the game's resource numbering; these include special animation
+backgrounds and a purchase notice, so they are not a count of playable rooms.
+
+The format is a custom GAM resource container. Physical sector 500 holds a
+sector-count directory, and group contents skip that sector. Resources use a
+little-endian 16-bit length followed by their payload. The graphics decoder
+expands `$FE,count,value` byte runs; ordinary bytes remain literal. A zero
+count has unsafe pointer behavior in the original routine and is rejected;
+none of the extracted graphics uses it.
+
+Positioned pictures decode to `x-byte, y, width-bytes, height`, row-major bitmap
+bytes, optionally five color-register bytes, then a flag. Each bitmap byte
+contains four pixels, most significant pair first. Flags greater than one select
+compression; odd flags include colors. The game copies the first three color
+bytes into `COLPF0..2`, retaining a black background. Uncolored overlays inherit
+their room palette when that relationship is established; unknown contextual
+colors use an explicitly marked grayscale preview.
+
+| Directory | Contents |
+| --- | --- |
+| `graphics/packed` | Unchanged length-prefixed graphics records and cursor bytes |
+| `graphics/decoded` | Expanded records, preserving picture headers, colors and flags |
+| `graphics/images` | PNG previews of individual assets and font sheets |
+| `graphics/scenes` | Base room plus interface, before dynamic overlays, text, map markers and cursor |
+
+Full-screen records expand to 4,200 bytes; 4,160 are displayed as 160 by 104
+logical pixels, and the final offscreen row remains in the decoded file. The
+title PNG also reproduces the original display-list color changes. Fonts are
+992 **uncompressed** bytes (124 eight-by-eight glyphs); literal `$FE` bytes
+in these fonts must not pass through the bitmap decoder.
+
+All 348 compressed bitmap records were compared with the game's actual 6502
+decoder. The title preview matches an Atari800 screenshot pixel for pixel;
+the first room's bitmap and both fonts match live memory. Preview RGB values
+come from the existing Atari800 PAL screenshots. Original Atari color codes,
+asset bounds and disk offsets are recorded in
+[graphics/extraction.json](graphics/extraction.json).
+
+Run `make graphics` to regenerate, or
+`python3 ../util/extract_graphics.py --game ad2044 --check` to verify the files.
+The optional exports do not affect Forth compilation or the game disks.
 
 ## Music
 

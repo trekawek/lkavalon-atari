@@ -7,11 +7,14 @@ Forth sources does not run this decompiler or read the reference game disks.
 import argparse
 import importlib.util
 import json
+import sys
 import textwrap
 from collections import Counter
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT.parent / 'util'))
+from forth_assets import ASSETS_BY_GAME, bytes_lines
 _text_spec = importlib.util.spec_from_file_location(
     "apx_text_records", ROOT / "tools/text_records.py")
 text_records = importlib.util.module_from_spec(_text_spec)
@@ -117,9 +120,10 @@ def identifiers(words, names):
 
 
 class Listing:
-    def __init__(self):
+    def __init__(self, game=None):
         self.lines = []
         self.pending = ''
+        self.game = game
 
     def flush(self):
         if self.pending:
@@ -150,8 +154,26 @@ class Listing:
             text = text[n:].lstrip()
 
     def raw(self, data):
-        for start in range(0, len(data), 28):
-            self.line('BYTES ' + bytes(data[start:start+28]).hex().upper())
+        for line in bytes_lines(bytes(data)):
+            self.line(line)
+
+    def raw_region(self, data, start, end):
+        """Keep independently editable assets as includes at their exact extent.
+
+        Regeneration describes the original layout, but never overwrites an
+        artist's native asset with bytes from the forensic reference disk.
+        """
+        at = start
+        for asset in ASSETS_BY_GAME.get(self.game, ()):
+            lo, hi = asset['start'], asset['start'] + asset['size']
+            if hi <= start or lo >= end:
+                continue
+            if not start <= lo < hi <= end:
+                raise ValueError(f"Partial native asset span: {asset['path']}")
+            self.raw(data[at:lo])
+            self.line('INCBIN ' + asset['path'])
+            at = hi
+        self.raw(data[at:end])
 
     def save(self, path):
         self.flush()
@@ -276,11 +298,11 @@ def emit_region(out, data, start, end):
     at = start
     for lo, hi in NATIVE_ISLANDS:
         if start <= lo < hi <= end:
-            out.raw(data[at:lo])
+            out.raw_region(data, at, lo)
             out.comment(f'6502 code at {lo:04X}..{hi-1:04X}')
             native(out, data, lo, hi)
             at = hi
-    out.raw(data[at:end])
+    out.raw_region(data, at, end)
 
 
 def save_symbol_notes(root, data, words):
@@ -344,7 +366,7 @@ def main():
     catalog = text_records.Catalog('ad2044', data, words, decode)
     source = ROOT / 'src'
     source.mkdir(exist_ok=True)
-    out = Listing()
+    out = Listing('ad2044')
     out.comment('AD 2044 target dictionary. Host words emit target CFA cells.')
     out.comment('t. = recovered/inferred name; wXXXX = unknown CFA.')
     out.line('HEX')
@@ -364,7 +386,7 @@ def main():
     stats = Counter()
     for index, (filename, _, _) in enumerate(groups):
         start, end = boundaries[index:index+2]
-        out = Listing()
+        out = Listing('ad2044')
         out.comment(f'AD 2044 {filename}: target {start:04X}..{end-1:04X}')
         out.comment('Hexadecimal. BYTES emits hex bytes; CELL emits a 16-bit cell.')
         out.comment('LIT8/LIT16 compile literals; branch cells are signed offsets.')
@@ -404,7 +426,7 @@ def main():
                     else:
                         if kind == 'DODOES':
                             out.comment(f"DOES> thread at {cell(data, word['pfa']):04X}")
-                        out.raw(data[word['pfa']:word['end']])
+                        out.raw_region(data, word['pfa'], word['end'])
             else:
                 out.line(f"CELL {word['code']:04X} ( native entry point )")
                 native(out, data, word['pfa'], word['end'])
@@ -414,13 +436,6 @@ def main():
         out.save(source / filename)
     report = {'origin': ORIGIN, 'end': END, 'words': words, 'statistics': dict(stats)}
     (ROOT / 'dictionary.json').write_text(json.dumps(report, indent=2, ensure_ascii=True) + '\n')
-    # Assets are independent of the saved dictionary and never contain a
-    # fallback copy of the code being rebuilt.
-    assets = ROOT / 'assets'
-    assets.mkdir(exist_ok=True)
-    (assets / 'side1-tail.bin').write_bytes(disk[0x84B7:])
-    side2 = ROOT / 'reference/ad2044-side2.atr'
-    (assets / 'side2-data.bin').write_bytes(side2.read_bytes()[16:])
     catalog.save(ROOT)
     save_symbol_notes(ROOT, data, words)
     print(f"Recovered {len(words)} words ({len(names)} names), {dict(stats)}")

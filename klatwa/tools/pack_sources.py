@@ -4,18 +4,19 @@
 import json
 import re
 import struct
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT.parent / "util"))
+from forth_assets import source_lines
 
 
 def main():
     manifest = json.loads((ROOT / "sources.json").read_text())
     lines = []
     for filename in manifest["sources"]:
-        for number, line in enumerate(
-            (ROOT / filename).read_text("ascii").splitlines(), 1
-        ):
+        for _, number, line in source_lines(ROOT / filename, ROOT):
             # Generated comments are single-line and use brackets internally.
             # Only a standalone '(' opens a comment; t.(LOOP) is a word.
             line = re.sub(r"(?<!\S)\( .*?\)", "", line).strip()

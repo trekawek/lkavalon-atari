@@ -15,7 +15,7 @@ def main():
     manifest = json.loads((ROOT / "sources.json").read_text())
     machine = core.ForthMachine(
         ROOT / "reference/figforth.atr",
-        core.read_sources([ROOT / p for p in manifest["sources"]]),
+        core.read_sources([ROOT / p for p in manifest["sources"]], game_root=ROOT),
         args.max_steps,
         args.progress,
     )

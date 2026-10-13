@@ -40,6 +40,8 @@ All `.fth` files are ASCII with LF newlines and lines no longer than 64
 characters. ATASCII strings retain their exact bytes, with readable comments.
 Native 6502 bodies and verified machine-code tails use executable assembler
 mnemonics. Embedded data and unclassified mixed regions retain `BYTES`.
+`INCBIN` imports the native sound bank and cursor bitmap; the build expands
+these directives to ASCII `BYTES` before compilation or source-ATR packing.
 
 [strings.txt](strings.txt) lists decoded messages and menu labels with their
 target addresses. [strings.json](strings.json) additionally records original
@@ -85,9 +87,10 @@ machine instructions at their original target locations.
 
 This is readable, low-level threaded Forth, **not a portable, relocatable
 rewrite**. Editing definition sizes requires updating absolute addresses and
-branch offsets. The build retains resource data in [assets](assets). Graphics
-are also decoded separately in [graphics](graphics); room logic and other
-resource records still use the original binary layout.
+branch offsets. The build packs native [graphics/packed](graphics/packed)
+records, [music/sound-bank.bin](music/sound-bank.bin), and individual room,
+state and padding files in [assets](assets). [assets/layout.json](assets/layout.json)
+defines their disk placement. Decoded graphics and PNGs are previews.
 
 ## Graphics
 
@@ -135,7 +138,9 @@ asset bounds and disk offsets are recorded in
 
 Run `make graphics` to regenerate, or
 `python3 ../util/extract_graphics.py --game ad2044 --check` to verify the files.
-The optional exports do not affect Forth compilation or the game disks.
+The native `graphics/packed` files are build inputs. Regeneration restores
+them from the reference disks and can overwrite edits; normal `make` does
+not run it. Decoded files and PNGs remain previews.
 
 ## Music
 
@@ -163,8 +168,9 @@ checks the adaptation independently of whether a music player accepts it.
 Run `make music` to reproduce the files using Python 3. Source offsets,
 command-to-subsong mappings and the exact player patch are recorded in
 [music/extraction.json](music/extraction.json); the helper is
-[tools/music_sap.py](tools/music_sap.py). The optional music export does not
-change the game build. For a WAV file, run
+[tools/music_sap.py](tools/music_sap.py). The raw sound bank feeds the Forth
+build; SAP files are playback exports. Regeneration restores the original
+bank, so it can overwrite edits. For a WAV file, run
 `asapconv -t 01:00 -o title.wav music/title.sap`.
 
 ## Build on the host
@@ -193,7 +199,13 @@ are supplied by Python. Forth parses the sources and executes the
 metacompiler; Python does not translate Forth or insert saved program bytes.
 The original game ATRs are used by regeneration and verification, **not by
 the build**. `tools/prepare.py` makes the target from independent non-code
-assets and leaves all 33,959 program bytes zero.
+assets listed in [assets/layout.json](assets/layout.json) and leaves all
+33,959 program bytes zero. No prebuilt game disk or disk-tail blob is copied.
+Changes to native assets trigger rebuilding through the Makefile. Run
+`make assets` to pack only the resource disks, or `make sources` to pack the
+Forth sources including embedded assets. Asset sizes remain fixed; changing
+sizes requires updating the layout and any dependent game addresses.
+See the [shared asset-build notes](../README.md#building-the-forth-games-from-assets).
 
 The verifier requires every sector of both rebuilt disks to match the supplied
 release. ATR header byte 15 is cleared to make the outputs writable; it is not
@@ -230,7 +242,7 @@ Turbo mode considerably speeds compilation in an emulator.
 
 ## Recovery and verification
 
-`make decompile` regenerates the checked-in Forth files and asset split from
+`make decompile` regenerates the checked-in Forth files from
 the two reference disks, using [tools/names.json](tools/names.json) and
 [tools/extra-headers.json](tools/extra-headers.json). Normal builds do not run
 this command, so source edits are preserved.

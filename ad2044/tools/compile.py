@@ -4,6 +4,8 @@
 Only Atari OS CIO and SIO calls are emulated. The original Forth dictionary
 parses every ASCII line and executes the metacompiler from src/. No host
 Forth parser, target assembler, or binary-copy shortcut is used.
+Standalone INCBIN directives first expand to ASCII BYTES source; APX then
+parses and emits each native asset byte through the same metacompiler.
 """
 from __future__ import annotations
 
@@ -21,6 +23,8 @@ except ImportError as exc:
     raise SystemExit("py65 is required: python3 -m pip install py65") from exc
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT.parent / "util"))
+from forth_assets import AssetError, source_lines
 
 
 class CompileError(RuntimeError):
@@ -238,15 +242,15 @@ class ForthMachine:
                 "output_bytes": {str(k): len(v) for k, v in self.output_disks.items()}}
 
 
-def read_sources(paths: list[Path]) -> list[tuple[str, int, str]]:
+def read_sources(paths: list[Path], game_root: Path | None = None) -> list[tuple[str, int, str]]:
     lines = []
+    game_root = ROOT if game_root is None else game_root
     for path in paths:
-        text = path.read_bytes().decode("ascii")
-        for no, line in enumerate(text.splitlines(), 1):
+        for filename, no, line in source_lines(path, game_root):
             if len(line) > 79:
                 raise CompileError(f"{path}:{no}: line longer than 79 characters")
             if line.strip():
-                lines.append((str(path), no, line))
+                lines.append((filename, no, line))
     return lines
 
 
@@ -269,7 +273,8 @@ def main() -> None:
     if not paths:
         parser.error("provide ASCII Forth source paths or --manifest")
     try:
-        machine = ForthMachine(args.reference, read_sources(paths), args.max_steps, args.progress)
+        lines = read_sources(paths, args.manifest.parent if args.manifest else ROOT)
+        machine = ForthMachine(args.reference, lines, args.max_steps, args.progress)
         if args.disk3_template:
             machine.mount_disk(3, args.disk3_template)
         report = machine.run()
@@ -279,7 +284,7 @@ def main() -> None:
             path.write_bytes(atr(bytes(payload), machine.disk_headers.get(drive)))
         (args.output_dir / "compile-report.json").write_text(json.dumps(report, indent=2) + "\n")
         print(json.dumps(report, indent=2))
-    except (CompileError, UnicodeError) as exc:
+    except (CompileError, AssetError, UnicodeError) as exc:
         raise SystemExit(str(exc)) from exc
 
 

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Regenerate ASCII low-level Forth and asset split from Wladcy Ciemnosci v1."""
+"""Regenerate ASCII low-level Forth with native asset includes from Wladcy Ciemnosci v1."""
 
 from pathlib import Path
 from collections import Counter
@@ -70,7 +70,7 @@ def main():
     catalog = base.text_records.Catalog("wladcy-ciemnosci", m, words, decode)
     source = ROOT / "src"
     source.mkdir(exist_ok=True)
-    out = Listing()
+    out = Listing('wladcy-ciemnosci')
     out.comment("Wladcy Ciemnosci v1 target dictionary. Recovered and inferred names.")
     out.line("HEX")
     usage = Counter(cell(m, a) for a in range(ORIGIN, END - 1))
@@ -87,7 +87,7 @@ def main():
     ]
     stats = Counter()
     for i, (filename, start, end) in enumerate(groups):
-        out = Listing()
+        out = Listing('wladcy-ciemnosci')
         out.comment(f"Wladcy Ciemnosci v1 {filename}: target {start:04X}..{end-1:04X}")
         out.comment("Hexadecimal. BYTES emits bytes; CELL emits 16-bit cells.")
         out.comment("LIT8/LIT16 compile literals; branches retain signed offsets.")
@@ -128,7 +128,7 @@ def main():
                 else:
                     if kind == "DODOES":
                         out.comment(f"DOES> thread at {cell(m,w['pfa']):04X}")
-                    out.raw(m[w["pfa"] : w["end"]])
+                    out.raw_region(m, w["pfa"], w["end"])
             else:
                 out.line(f"CELL {w['code']:04X} ( native entry point )")
                 base.native(out, m, w["pfa"], w["end"])
@@ -138,7 +138,7 @@ def main():
             out.raw(m[END:BOOT_END])
             out.line(f"AT {BOOT_END:04X}")
         out.save(source / filename)
-    out = Listing()
+    out = Listing('wladcy-ciemnosci')
     out.comment("Retired Forth definitions and save-command residue on disk.")
     out.comment("Outside the 242-sector boot image; retained for exact media.")
     out.line(f"AT {BOOT_END:04X}")
@@ -158,8 +158,6 @@ def main():
     write_if_changed(
         ROOT / "dictionary.json", (json.dumps(report, indent=2) + "\n").encode("ascii")
     )
-    raw = (ROOT / "reference/wladcy-ciemnosci.atr").read_bytes()
-    write_if_changed(ROOT / "assets/disk-tail.bin", raw[0x7D10:])
     catalog.save(ROOT)
     base.save_symbol_notes(ROOT, m, words)
     print(f"Recovered {len(words)} entries, {len(names)} names, {dict(stats)}")

@@ -7,6 +7,7 @@ from pathlib import Path
 from unittest.mock import patch
 import recover
 import decompile
+from forth_assets import source_lines
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -54,7 +55,7 @@ class PipelineTests(unittest.TestCase):
         manifest = json.loads((ROOT / "sources.json").read_text())
         expected = []
         for filename in manifest["sources"]:
-            for line in (ROOT / filename).read_text("ascii").splitlines():
+            for _, _, line in source_lines(ROOT / filename, ROOT):
                 self.assertLessEqual(len(line), 64)
                 inside = False
                 for token in line.split():

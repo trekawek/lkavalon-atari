@@ -15,6 +15,7 @@ import recover
 from shared import ROOT, load
 
 compiler = load("compile")
+from forth_assets import dependencies, source_lines
 
 
 def uncommented_tokens(text):
@@ -128,12 +129,17 @@ class PackingTests(unittest.TestCase):
         with tempfile.TemporaryDirectory(prefix="klatwa-screens-") as dirname:
             temp = Path(dirname)
             (temp / "sources.json").write_text(json.dumps(manifest))
+            for name in dependencies('klatwa'):
+                path = temp / name
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_bytes((ROOT / name).read_bytes())
             for filename in manifest["sources"]:
                 text = (ROOT / filename).read_text("ascii")
                 path = temp / filename
                 path.parent.mkdir(parents=True, exist_ok=True)
                 path.write_text(text, encoding="ascii")
-                expected += uncommented_tokens(text)
+                expanded = '\n'.join(line for _, _, line in source_lines(path, temp))
+                expected += uncommented_tokens(expanded)
             with (
                 patch.object(pack_sources, "ROOT", temp),
                 contextlib.redirect_stdout(io.StringIO()),

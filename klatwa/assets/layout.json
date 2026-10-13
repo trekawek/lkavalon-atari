@@ -1,0 +1,3286 @@
+{
+  "version": 1,
+  "notes": [
+    "All unspecified bytes are zero, including blank compiler output, unused sectors and zero allocation tails.",
+    "GAM record payloads are native compressed graphics, masks, action data and text. Counts and directory are regenerated.",
+    "Font and sprite pixel files and CMC files replace their duplicate extraction records as authoritative build inputs.",
+    "Image dimensions and compressed/native record sizes remain fixed; edits must preserve each declared input size."
+  ],
+  "disks": [
+    {
+      "output": "build/assets.atr",
+      "sector_size": 128,
+      "sector_count": 1040,
+      "compiled_prefix_bytes": 32000,
+      "disk_id": 3,
+      "group_sector_counts": [
+        255,
+        105,
+        103,
+        110,
+        15,
+        102,
+        10,
+        7
+      ],
+      "writes": [
+        {
+          "label": "GAM group3 resource0",
+          "spans": [
+            {
+              "offset": 46096,
+              "length": 9
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g03-r000.bin",
+              "size": 7
+            }
+          ]
+        },
+        {
+          "label": "GAM group3 resource1",
+          "spans": [
+            {
+              "offset": 46105,
+              "length": 9
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g03-r001.bin",
+              "size": 7
+            }
+          ]
+        },
+        {
+          "label": "GAM group3 resource2",
+          "spans": [
+            {
+              "offset": 46114,
+              "length": 446
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g03-r002.bin",
+              "size": 444
+            }
+          ]
+        },
+        {
+          "label": "GAM group3 resource3",
+          "spans": [
+            {
+              "offset": 46560,
+              "length": 813
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g03-r003.bin",
+              "size": 811
+            }
+          ]
+        },
+        {
+          "label": "GAM group3 resource4",
+          "spans": [
+            {
+              "offset": 47373,
+              "length": 734
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g03-r004.bin",
+              "size": 732
+            }
+          ]
+        },
+        {
+          "label": "GAM group3 resource5",
+          "spans": [
+            {
+              "offset": 48107,
+              "length": 443
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g03-r005.bin",
+              "size": 441
+            }
+          ]
+        },
+        {
+          "label": "GAM group3 resource6",
+          "spans": [
+            {
+              "offset": 48550,
+              "length": 1606
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g03-r006.bin",
+              "size": 1604
+            }
+          ]
+        },
+        {
+          "label": "GAM group3 resource7 font",
+          "spans": [
+            {
+              "offset": 50156,
+              "length": 1025
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/fonts/gameplay.bin",
+              "size": 1023
+            }
+          ]
+        },
+        {
+          "label": "GAM group3 resource8 font",
+          "spans": [
+            {
+              "offset": 51181,
+              "length": 1025
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/fonts/title.bin",
+              "size": 1023
+            }
+          ]
+        },
+        {
+          "label": "GAM group3 resource9",
+          "spans": [
+            {
+              "offset": 52206,
+              "length": 734
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g03-r009.bin",
+              "size": 732
+            }
+          ]
+        },
+        {
+          "label": "GAM group3 resource10 player sprite bank",
+          "spans": [
+            {
+              "offset": 52940,
+              "length": 2554
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "assets/structure/player-bank-00.bin",
+              "size": 8
+            },
+            {
+              "file": "graphics/sprites/direction-0-frame-0.bin",
+              "size": 123
+            },
+            {
+              "file": "assets/structure/player-bank-01.bin",
+              "size": 7
+            },
+            {
+              "file": "graphics/sprites/direction-0-frame-1.bin",
+              "size": 120
+            },
+            {
+              "file": "assets/structure/player-bank-02.bin",
+              "size": 7
+            },
+            {
+              "file": "graphics/sprites/direction-0-frame-2.bin",
+              "size": 120
+            },
+            {
+              "file": "assets/structure/player-bank-03.bin",
+              "size": 7
+            },
+            {
+              "file": "graphics/sprites/direction-0-frame-3.bin",
+              "size": 123
+            },
+            {
+              "file": "assets/structure/player-bank-04.bin",
+              "size": 7
+            },
+            {
+              "file": "graphics/sprites/direction-0-frame-4.bin",
+              "size": 120
+            },
+            {
+              "file": "assets/structure/player-bank-05.bin",
+              "size": 11
+            },
+            {
+              "file": "graphics/sprites/direction-1-frame-0.bin",
+              "size": 120
+            },
+            {
+              "file": "assets/structure/player-bank-06.bin",
+              "size": 7
+            },
+            {
+              "file": "graphics/sprites/direction-1-frame-1.bin",
+              "size": 117
+            },
+            {
+              "file": "assets/structure/player-bank-07.bin",
+              "size": 7
+            },
+            {
+              "file": "graphics/sprites/direction-1-frame-2.bin",
+              "size": 120
+            },
+            {
+              "file": "assets/structure/player-bank-08.bin",
+              "size": 7
+            },
+            {
+              "file": "graphics/sprites/direction-1-frame-3.bin",
+              "size": 120
+            },
+            {
+              "file": "assets/structure/player-bank-09.bin",
+              "size": 7
+            },
+            {
+              "file": "graphics/sprites/direction-1-frame-4.bin",
+              "size": 117
+            },
+            {
+              "file": "assets/structure/player-bank-10.bin",
+              "size": 11
+            },
+            {
+              "file": "graphics/sprites/direction-2-frame-0.bin",
+              "size": 117
+            },
+            {
+              "file": "assets/structure/player-bank-11.bin",
+              "size": 7
+            },
+            {
+              "file": "graphics/sprites/direction-2-frame-1.bin",
+              "size": 123
+            },
+            {
+              "file": "assets/structure/player-bank-12.bin",
+              "size": 7
+            },
+            {
+              "file": "graphics/sprites/direction-2-frame-2.bin",
+              "size": 120
+            },
+            {
+              "file": "assets/structure/player-bank-13.bin",
+              "size": 7
+            },
+            {
+              "file": "graphics/sprites/direction-2-frame-3.bin",
+              "size": 117
+            },
+            {
+              "file": "assets/structure/player-bank-14.bin",
+              "size": 7
+            },
+            {
+              "file": "graphics/sprites/direction-2-frame-4.bin",
+              "size": 123
+            },
+            {
+              "file": "assets/structure/player-bank-15.bin",
+              "size": 11
+            },
+            {
+              "file": "graphics/sprites/direction-3-frame-0.bin",
+              "size": 120
+            },
+            {
+              "file": "assets/structure/player-bank-16.bin",
+              "size": 7
+            },
+            {
+              "file": "graphics/sprites/direction-3-frame-1.bin",
+              "size": 117
+            },
+            {
+              "file": "assets/structure/player-bank-17.bin",
+              "size": 7
+            },
+            {
+              "file": "graphics/sprites/direction-3-frame-2.bin",
+              "size": 120
+            },
+            {
+              "file": "assets/structure/player-bank-18.bin",
+              "size": 7
+            },
+            {
+              "file": "graphics/sprites/direction-3-frame-3.bin",
+              "size": 120
+            },
+            {
+              "file": "assets/structure/player-bank-19.bin",
+              "size": 7
+            },
+            {
+              "file": "graphics/sprites/direction-3-frame-4.bin",
+              "size": 117
+            },
+            {
+              "file": "assets/structure/player-bank-tail.bin",
+              "size": 5
+            }
+          ]
+        },
+        {
+          "label": "GAM group3 resource11",
+          "spans": [
+            {
+              "offset": 55494,
+              "length": 194
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g03-r011.bin",
+              "size": 192
+            }
+          ]
+        },
+        {
+          "label": "GAM group3 resource12 CMC music",
+          "spans": [
+            {
+              "offset": 55688,
+              "length": 1682
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "music/gameplay.cmc",
+              "size": 1675,
+              "header_hex": "FFFFB8863C8D"
+            },
+            {
+              "zeros": 5
+            }
+          ]
+        },
+        {
+          "label": "GAM group3 resource13 CMC music",
+          "spans": [
+            {
+              "offset": 57370,
+              "length": 1792
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "music/title.cmc",
+              "size": 1784,
+              "header_hex": "FFFF528D4394"
+            },
+            {
+              "file": "assets/padding/title-cmc-tail.bin",
+              "size": 6
+            }
+          ]
+        },
+        {
+          "label": "GAM group3 allocation tail",
+          "spans": [
+            {
+              "offset": 59162,
+              "length": 118
+            }
+          ],
+          "parts": [
+            {
+              "file": "assets/padding/group-03-tail.bin",
+              "size": 118
+            }
+          ]
+        },
+        {
+          "label": "GAM group4 resource0",
+          "spans": [
+            {
+              "offset": 59280,
+              "length": 1638
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g04-r000.bin",
+              "size": 1636
+            }
+          ]
+        },
+        {
+          "label": "GAM group4 resource1",
+          "spans": [
+            {
+              "offset": 60918,
+              "length": 1459
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g04-r001.bin",
+              "size": 1457
+            }
+          ]
+        },
+        {
+          "label": "GAM group4 resource2",
+          "spans": [
+            {
+              "offset": 62377,
+              "length": 61
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g04-r002.bin",
+              "size": 59
+            }
+          ]
+        },
+        {
+          "label": "GAM group4 resource3",
+          "spans": [
+            {
+              "offset": 62438,
+              "length": 654
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g04-r003.bin",
+              "size": 652
+            }
+          ]
+        },
+        {
+          "label": "GAM group4 resource4",
+          "spans": [
+            {
+              "offset": 63092,
+              "length": 649
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g04-r004.bin",
+              "size": 647
+            }
+          ]
+        },
+        {
+          "label": "GAM group4 resource5",
+          "spans": [
+            {
+              "offset": 63741,
+              "length": 147
+            },
+            {
+              "offset": 64016,
+              "length": 501
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g04-r005.bin",
+              "size": 646
+            }
+          ]
+        },
+        {
+          "label": "GAM group4 resource6",
+          "spans": [
+            {
+              "offset": 64517,
+              "length": 647
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g04-r006.bin",
+              "size": 645
+            }
+          ]
+        },
+        {
+          "label": "GAM group4 resource7",
+          "spans": [
+            {
+              "offset": 65164,
+              "length": 345
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g04-r007.bin",
+              "size": 343
+            }
+          ]
+        },
+        {
+          "label": "GAM group4 resource8",
+          "spans": [
+            {
+              "offset": 65509,
+              "length": 362
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g04-r008.bin",
+              "size": 360
+            }
+          ]
+        },
+        {
+          "label": "GAM group4 resource9",
+          "spans": [
+            {
+              "offset": 65871,
+              "length": 146
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g04-r009.bin",
+              "size": 144
+            }
+          ]
+        },
+        {
+          "label": "GAM group4 resource10",
+          "spans": [
+            {
+              "offset": 66017,
+              "length": 196
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g04-r010.bin",
+              "size": 194
+            }
+          ]
+        },
+        {
+          "label": "GAM group4 resource11",
+          "spans": [
+            {
+              "offset": 66213,
+              "length": 302
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g04-r011.bin",
+              "size": 300
+            }
+          ]
+        },
+        {
+          "label": "GAM group4 resource12",
+          "spans": [
+            {
+              "offset": 66515,
+              "length": 360
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g04-r012.bin",
+              "size": 358
+            }
+          ]
+        },
+        {
+          "label": "GAM group4 resource13",
+          "spans": [
+            {
+              "offset": 66875,
+              "length": 177
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g04-r013.bin",
+              "size": 175
+            }
+          ]
+        },
+        {
+          "label": "GAM group4 resource14",
+          "spans": [
+            {
+              "offset": 67052,
+              "length": 249
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g04-r014.bin",
+              "size": 247
+            }
+          ]
+        },
+        {
+          "label": "GAM group4 resource15",
+          "spans": [
+            {
+              "offset": 67301,
+              "length": 234
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g04-r015.bin",
+              "size": 232
+            }
+          ]
+        },
+        {
+          "label": "GAM group4 resource16",
+          "spans": [
+            {
+              "offset": 67535,
+              "length": 239
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g04-r016.bin",
+              "size": 237
+            }
+          ]
+        },
+        {
+          "label": "GAM group4 resource17",
+          "spans": [
+            {
+              "offset": 67774,
+              "length": 271
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g04-r017.bin",
+              "size": 269
+            }
+          ]
+        },
+        {
+          "label": "GAM group4 resource18",
+          "spans": [
+            {
+              "offset": 68045,
+              "length": 308
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g04-r018.bin",
+              "size": 306
+            }
+          ]
+        },
+        {
+          "label": "GAM group4 resource19",
+          "spans": [
+            {
+              "offset": 68353,
+              "length": 222
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g04-r019.bin",
+              "size": 220
+            }
+          ]
+        },
+        {
+          "label": "GAM group4 resource20",
+          "spans": [
+            {
+              "offset": 68575,
+              "length": 363
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g04-r020.bin",
+              "size": 361
+            }
+          ]
+        },
+        {
+          "label": "GAM group4 resource21",
+          "spans": [
+            {
+              "offset": 68938,
+              "length": 167
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g04-r021.bin",
+              "size": 165
+            }
+          ]
+        },
+        {
+          "label": "GAM group4 resource22",
+          "spans": [
+            {
+              "offset": 69105,
+              "length": 240
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g04-r022.bin",
+              "size": 238
+            }
+          ]
+        },
+        {
+          "label": "GAM group4 resource23",
+          "spans": [
+            {
+              "offset": 69345,
+              "length": 224
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g04-r023.bin",
+              "size": 222
+            }
+          ]
+        },
+        {
+          "label": "GAM group4 resource24",
+          "spans": [
+            {
+              "offset": 69569,
+              "length": 3
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g04-r024.bin",
+              "size": 1
+            }
+          ]
+        },
+        {
+          "label": "GAM group4 resource25",
+          "spans": [
+            {
+              "offset": 69572,
+              "length": 180
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g04-r025.bin",
+              "size": 178
+            }
+          ]
+        },
+        {
+          "label": "GAM group4 resource26",
+          "spans": [
+            {
+              "offset": 69752,
+              "length": 233
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g04-r026.bin",
+              "size": 231
+            }
+          ]
+        },
+        {
+          "label": "GAM group4 resource27",
+          "spans": [
+            {
+              "offset": 69985,
+              "length": 199
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g04-r027.bin",
+              "size": 197
+            }
+          ]
+        },
+        {
+          "label": "GAM group4 resource28",
+          "spans": [
+            {
+              "offset": 70184,
+              "length": 37
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g04-r028.bin",
+              "size": 35
+            }
+          ]
+        },
+        {
+          "label": "GAM group4 resource29",
+          "spans": [
+            {
+              "offset": 70221,
+              "length": 151
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g04-r029.bin",
+              "size": 149
+            }
+          ]
+        },
+        {
+          "label": "GAM group4 resource30",
+          "spans": [
+            {
+              "offset": 70372,
+              "length": 187
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g04-r030.bin",
+              "size": 185
+            }
+          ]
+        },
+        {
+          "label": "GAM group4 resource31",
+          "spans": [
+            {
+              "offset": 70559,
+              "length": 292
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g04-r031.bin",
+              "size": 290
+            }
+          ]
+        },
+        {
+          "label": "GAM group4 resource32",
+          "spans": [
+            {
+              "offset": 70851,
+              "length": 106
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g04-r032.bin",
+              "size": 104
+            }
+          ]
+        },
+        {
+          "label": "GAM group4 resource33",
+          "spans": [
+            {
+              "offset": 70957,
+              "length": 169
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g04-r033.bin",
+              "size": 167
+            }
+          ]
+        },
+        {
+          "label": "GAM group4 resource34",
+          "spans": [
+            {
+              "offset": 71126,
+              "length": 123
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g04-r034.bin",
+              "size": 121
+            }
+          ]
+        },
+        {
+          "label": "GAM group4 resource35",
+          "spans": [
+            {
+              "offset": 71249,
+              "length": 123
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g04-r035.bin",
+              "size": 121
+            }
+          ]
+        },
+        {
+          "label": "GAM group4 resource36",
+          "spans": [
+            {
+              "offset": 71372,
+              "length": 219
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g04-r036.bin",
+              "size": 217
+            }
+          ]
+        },
+        {
+          "label": "GAM group4 resource37",
+          "spans": [
+            {
+              "offset": 71591,
+              "length": 143
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g04-r037.bin",
+              "size": 141
+            }
+          ]
+        },
+        {
+          "label": "GAM group4 resource38",
+          "spans": [
+            {
+              "offset": 71734,
+              "length": 92
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g04-r038.bin",
+              "size": 90
+            }
+          ]
+        },
+        {
+          "label": "GAM group4 resource39",
+          "spans": [
+            {
+              "offset": 71826,
+              "length": 139
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g04-r039.bin",
+              "size": 137
+            }
+          ]
+        },
+        {
+          "label": "GAM group4 resource40",
+          "spans": [
+            {
+              "offset": 71965,
+              "length": 183
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g04-r040.bin",
+              "size": 181
+            }
+          ]
+        },
+        {
+          "label": "GAM group4 resource41",
+          "spans": [
+            {
+              "offset": 72148,
+              "length": 67
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g04-r041.bin",
+              "size": 65
+            }
+          ]
+        },
+        {
+          "label": "GAM group4 resource42",
+          "spans": [
+            {
+              "offset": 72215,
+              "length": 55
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g04-r042.bin",
+              "size": 53
+            }
+          ]
+        },
+        {
+          "label": "GAM group4 resource43",
+          "spans": [
+            {
+              "offset": 72270,
+              "length": 147
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g04-r043.bin",
+              "size": 145
+            }
+          ]
+        },
+        {
+          "label": "GAM group4 resource44",
+          "spans": [
+            {
+              "offset": 72417,
+              "length": 229
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g04-r044.bin",
+              "size": 227
+            }
+          ]
+        },
+        {
+          "label": "GAM group4 resource45",
+          "spans": [
+            {
+              "offset": 72646,
+              "length": 30
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g04-r045.bin",
+              "size": 28
+            }
+          ]
+        },
+        {
+          "label": "GAM group4 resource46",
+          "spans": [
+            {
+              "offset": 72676,
+              "length": 88
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g04-r046.bin",
+              "size": 86
+            }
+          ]
+        },
+        {
+          "label": "GAM group4 resource47",
+          "spans": [
+            {
+              "offset": 72764,
+              "length": 54
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g04-r047.bin",
+              "size": 52
+            }
+          ]
+        },
+        {
+          "label": "GAM group4 resource48",
+          "spans": [
+            {
+              "offset": 72818,
+              "length": 140
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g04-r048.bin",
+              "size": 138
+            }
+          ]
+        },
+        {
+          "label": "GAM group4 resource49",
+          "spans": [
+            {
+              "offset": 72958,
+              "length": 78
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g04-r049.bin",
+              "size": 76
+            }
+          ]
+        },
+        {
+          "label": "GAM group4 resource50",
+          "spans": [
+            {
+              "offset": 73036,
+              "length": 48
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g04-r050.bin",
+              "size": 46
+            }
+          ]
+        },
+        {
+          "label": "GAM group4 resource51",
+          "spans": [
+            {
+              "offset": 73084,
+              "length": 41
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g04-r051.bin",
+              "size": 39
+            }
+          ]
+        },
+        {
+          "label": "GAM group4 resource52",
+          "spans": [
+            {
+              "offset": 73125,
+              "length": 145
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g04-r052.bin",
+              "size": 143
+            }
+          ]
+        },
+        {
+          "label": "GAM group4 resource53",
+          "spans": [
+            {
+              "offset": 73270,
+              "length": 129
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g04-r053.bin",
+              "size": 127
+            }
+          ]
+        },
+        {
+          "label": "GAM group5 resource0",
+          "spans": [
+            {
+              "offset": 73488,
+              "length": 9
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g05-r000.bin",
+              "size": 7
+            }
+          ]
+        },
+        {
+          "label": "GAM group5 resource1",
+          "spans": [
+            {
+              "offset": 73497,
+              "length": 469
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g05-r001.bin",
+              "size": 467
+            }
+          ]
+        },
+        {
+          "label": "GAM group5 resource2",
+          "spans": [
+            {
+              "offset": 73966,
+              "length": 59
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g05-r002.bin",
+              "size": 57
+            }
+          ]
+        },
+        {
+          "label": "GAM group5 resource3",
+          "spans": [
+            {
+              "offset": 74025,
+              "length": 15
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g05-r003.bin",
+              "size": 13
+            }
+          ]
+        },
+        {
+          "label": "GAM group5 resource4",
+          "spans": [
+            {
+              "offset": 74040,
+              "length": 77
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g05-r004.bin",
+              "size": 75
+            }
+          ]
+        },
+        {
+          "label": "GAM group5 resource5",
+          "spans": [
+            {
+              "offset": 74117,
+              "length": 15
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g05-r005.bin",
+              "size": 13
+            }
+          ]
+        },
+        {
+          "label": "GAM group5 resource6",
+          "spans": [
+            {
+              "offset": 74132,
+              "length": 67
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g05-r006.bin",
+              "size": 65
+            }
+          ]
+        },
+        {
+          "label": "GAM group5 resource7",
+          "spans": [
+            {
+              "offset": 74199,
+              "length": 16
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g05-r007.bin",
+              "size": 14
+            }
+          ]
+        },
+        {
+          "label": "GAM group5 resource8",
+          "spans": [
+            {
+              "offset": 74215,
+              "length": 59
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g05-r008.bin",
+              "size": 57
+            }
+          ]
+        },
+        {
+          "label": "GAM group5 resource9",
+          "spans": [
+            {
+              "offset": 74274,
+              "length": 14
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g05-r009.bin",
+              "size": 12
+            }
+          ]
+        },
+        {
+          "label": "GAM group5 resource10",
+          "spans": [
+            {
+              "offset": 74288,
+              "length": 24
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g05-r010.bin",
+              "size": 22
+            }
+          ]
+        },
+        {
+          "label": "GAM group5 resource11",
+          "spans": [
+            {
+              "offset": 74312,
+              "length": 14
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g05-r011.bin",
+              "size": 12
+            }
+          ]
+        },
+        {
+          "label": "GAM group5 resource12",
+          "spans": [
+            {
+              "offset": 74326,
+              "length": 68
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g05-r012.bin",
+              "size": 66
+            }
+          ]
+        },
+        {
+          "label": "GAM group5 resource13",
+          "spans": [
+            {
+              "offset": 74394,
+              "length": 15
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g05-r013.bin",
+              "size": 13
+            }
+          ]
+        },
+        {
+          "label": "GAM group5 resource14",
+          "spans": [
+            {
+              "offset": 74409,
+              "length": 49
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g05-r014.bin",
+              "size": 47
+            }
+          ]
+        },
+        {
+          "label": "GAM group5 resource15",
+          "spans": [
+            {
+              "offset": 74458,
+              "length": 16
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g05-r015.bin",
+              "size": 14
+            }
+          ]
+        },
+        {
+          "label": "GAM group5 resource16",
+          "spans": [
+            {
+              "offset": 74474,
+              "length": 67
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g05-r016.bin",
+              "size": 65
+            }
+          ]
+        },
+        {
+          "label": "GAM group5 resource17",
+          "spans": [
+            {
+              "offset": 74541,
+              "length": 14
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g05-r017.bin",
+              "size": 12
+            }
+          ]
+        },
+        {
+          "label": "GAM group5 resource18",
+          "spans": [
+            {
+              "offset": 74555,
+              "length": 61
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g05-r018.bin",
+              "size": 59
+            }
+          ]
+        },
+        {
+          "label": "GAM group5 resource19",
+          "spans": [
+            {
+              "offset": 74616,
+              "length": 16
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g05-r019.bin",
+              "size": 14
+            }
+          ]
+        },
+        {
+          "label": "GAM group5 resource20",
+          "spans": [
+            {
+              "offset": 74632,
+              "length": 72
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g05-r020.bin",
+              "size": 70
+            }
+          ]
+        },
+        {
+          "label": "GAM group5 resource21",
+          "spans": [
+            {
+              "offset": 74704,
+              "length": 15
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g05-r021.bin",
+              "size": 13
+            }
+          ]
+        },
+        {
+          "label": "GAM group5 resource22",
+          "spans": [
+            {
+              "offset": 74719,
+              "length": 71
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g05-r022.bin",
+              "size": 69
+            }
+          ]
+        },
+        {
+          "label": "GAM group5 resource23",
+          "spans": [
+            {
+              "offset": 74790,
+              "length": 16
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g05-r023.bin",
+              "size": 14
+            }
+          ]
+        },
+        {
+          "label": "GAM group5 resource24",
+          "spans": [
+            {
+              "offset": 74806,
+              "length": 65
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g05-r024.bin",
+              "size": 63
+            }
+          ]
+        },
+        {
+          "label": "GAM group5 resource25",
+          "spans": [
+            {
+              "offset": 74871,
+              "length": 16
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g05-r025.bin",
+              "size": 14
+            }
+          ]
+        },
+        {
+          "label": "GAM group5 resource26",
+          "spans": [
+            {
+              "offset": 74887,
+              "length": 70
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g05-r026.bin",
+              "size": 68
+            }
+          ]
+        },
+        {
+          "label": "GAM group5 resource27",
+          "spans": [
+            {
+              "offset": 74957,
+              "length": 14
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g05-r027.bin",
+              "size": 12
+            }
+          ]
+        },
+        {
+          "label": "GAM group5 resource28",
+          "spans": [
+            {
+              "offset": 74971,
+              "length": 39
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g05-r028.bin",
+              "size": 37
+            }
+          ]
+        },
+        {
+          "label": "GAM group5 resource29",
+          "spans": [
+            {
+              "offset": 75010,
+              "length": 14
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g05-r029.bin",
+              "size": 12
+            }
+          ]
+        },
+        {
+          "label": "GAM group5 resource30",
+          "spans": [
+            {
+              "offset": 75024,
+              "length": 62
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g05-r030.bin",
+              "size": 60
+            }
+          ]
+        },
+        {
+          "label": "GAM group5 resource31",
+          "spans": [
+            {
+              "offset": 75086,
+              "length": 14
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g05-r031.bin",
+              "size": 12
+            }
+          ]
+        },
+        {
+          "label": "GAM group5 resource32",
+          "spans": [
+            {
+              "offset": 75100,
+              "length": 36
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g05-r032.bin",
+              "size": 34
+            }
+          ]
+        },
+        {
+          "label": "GAM group5 resource33",
+          "spans": [
+            {
+              "offset": 75136,
+              "length": 15
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g05-r033.bin",
+              "size": 13
+            }
+          ]
+        },
+        {
+          "label": "GAM group5 resource34",
+          "spans": [
+            {
+              "offset": 75151,
+              "length": 66
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g05-r034.bin",
+              "size": 64
+            }
+          ]
+        },
+        {
+          "label": "GAM group5 resource35",
+          "spans": [
+            {
+              "offset": 75217,
+              "length": 16
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g05-r035.bin",
+              "size": 14
+            }
+          ]
+        },
+        {
+          "label": "GAM group5 resource36",
+          "spans": [
+            {
+              "offset": 75233,
+              "length": 66
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g05-r036.bin",
+              "size": 64
+            }
+          ]
+        },
+        {
+          "label": "GAM group5 resource37",
+          "spans": [
+            {
+              "offset": 75299,
+              "length": 16
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g05-r037.bin",
+              "size": 14
+            }
+          ]
+        },
+        {
+          "label": "GAM group6 resource0",
+          "spans": [
+            {
+              "offset": 75408,
+              "length": 1561
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g06-r000.bin",
+              "size": 1559
+            }
+          ]
+        },
+        {
+          "label": "GAM group6 resource1",
+          "spans": [
+            {
+              "offset": 76969,
+              "length": 525
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g06-r001.bin",
+              "size": 523
+            }
+          ]
+        },
+        {
+          "label": "GAM group6 resource2",
+          "spans": [
+            {
+              "offset": 77494,
+              "length": 61
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g06-r002.bin",
+              "size": 59
+            }
+          ]
+        },
+        {
+          "label": "GAM group6 resource3",
+          "spans": [
+            {
+              "offset": 77555,
+              "length": 728
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g06-r003.bin",
+              "size": 726
+            }
+          ]
+        },
+        {
+          "label": "GAM group6 resource4",
+          "spans": [
+            {
+              "offset": 78283,
+              "length": 734
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g06-r004.bin",
+              "size": 732
+            }
+          ]
+        },
+        {
+          "label": "GAM group6 resource5",
+          "spans": [
+            {
+              "offset": 79017,
+              "length": 672
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g06-r005.bin",
+              "size": 670
+            }
+          ]
+        },
+        {
+          "label": "GAM group6 resource6",
+          "spans": [
+            {
+              "offset": 79689,
+              "length": 693
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g06-r006.bin",
+              "size": 691
+            }
+          ]
+        },
+        {
+          "label": "GAM group6 resource7",
+          "spans": [
+            {
+              "offset": 80382,
+              "length": 254
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g06-r007.bin",
+              "size": 252
+            }
+          ]
+        },
+        {
+          "label": "GAM group6 resource8",
+          "spans": [
+            {
+              "offset": 80636,
+              "length": 153
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g06-r008.bin",
+              "size": 151
+            }
+          ]
+        },
+        {
+          "label": "GAM group6 resource9",
+          "spans": [
+            {
+              "offset": 80789,
+              "length": 323
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g06-r009.bin",
+              "size": 321
+            }
+          ]
+        },
+        {
+          "label": "GAM group6 resource10",
+          "spans": [
+            {
+              "offset": 81112,
+              "length": 138
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g06-r010.bin",
+              "size": 136
+            }
+          ]
+        },
+        {
+          "label": "GAM group6 resource11",
+          "spans": [
+            {
+              "offset": 81250,
+              "length": 304
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g06-r011.bin",
+              "size": 302
+            }
+          ]
+        },
+        {
+          "label": "GAM group6 resource12",
+          "spans": [
+            {
+              "offset": 81554,
+              "length": 360
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g06-r012.bin",
+              "size": 358
+            }
+          ]
+        },
+        {
+          "label": "GAM group6 resource13",
+          "spans": [
+            {
+              "offset": 81914,
+              "length": 334
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g06-r013.bin",
+              "size": 332
+            }
+          ]
+        },
+        {
+          "label": "GAM group6 resource14",
+          "spans": [
+            {
+              "offset": 82248,
+              "length": 120
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g06-r014.bin",
+              "size": 118
+            }
+          ]
+        },
+        {
+          "label": "GAM group6 resource15",
+          "spans": [
+            {
+              "offset": 82368,
+              "length": 129
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g06-r015.bin",
+              "size": 127
+            }
+          ]
+        },
+        {
+          "label": "GAM group6 resource16",
+          "spans": [
+            {
+              "offset": 82497,
+              "length": 186
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g06-r016.bin",
+              "size": 184
+            }
+          ]
+        },
+        {
+          "label": "GAM group6 resource17",
+          "spans": [
+            {
+              "offset": 82683,
+              "length": 177
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g06-r017.bin",
+              "size": 175
+            }
+          ]
+        },
+        {
+          "label": "GAM group6 resource18",
+          "spans": [
+            {
+              "offset": 82860,
+              "length": 198
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g06-r018.bin",
+              "size": 196
+            }
+          ]
+        },
+        {
+          "label": "GAM group6 resource19",
+          "spans": [
+            {
+              "offset": 83058,
+              "length": 133
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g06-r019.bin",
+              "size": 131
+            }
+          ]
+        },
+        {
+          "label": "GAM group6 resource20",
+          "spans": [
+            {
+              "offset": 83191,
+              "length": 169
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g06-r020.bin",
+              "size": 167
+            }
+          ]
+        },
+        {
+          "label": "GAM group6 resource21",
+          "spans": [
+            {
+              "offset": 83360,
+              "length": 296
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g06-r021.bin",
+              "size": 294
+            }
+          ]
+        },
+        {
+          "label": "GAM group6 resource22",
+          "spans": [
+            {
+              "offset": 83656,
+              "length": 214
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g06-r022.bin",
+              "size": 212
+            }
+          ]
+        },
+        {
+          "label": "GAM group6 resource23",
+          "spans": [
+            {
+              "offset": 83870,
+              "length": 504
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g06-r023.bin",
+              "size": 502
+            }
+          ]
+        },
+        {
+          "label": "GAM group6 resource24",
+          "spans": [
+            {
+              "offset": 84374,
+              "length": 361
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g06-r024.bin",
+              "size": 359
+            }
+          ]
+        },
+        {
+          "label": "GAM group6 resource25",
+          "spans": [
+            {
+              "offset": 84735,
+              "length": 337
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g06-r025.bin",
+              "size": 335
+            }
+          ]
+        },
+        {
+          "label": "GAM group6 resource26",
+          "spans": [
+            {
+              "offset": 85072,
+              "length": 135
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g06-r026.bin",
+              "size": 133
+            }
+          ]
+        },
+        {
+          "label": "GAM group6 resource27",
+          "spans": [
+            {
+              "offset": 85207,
+              "length": 119
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g06-r027.bin",
+              "size": 117
+            }
+          ]
+        },
+        {
+          "label": "GAM group6 resource28",
+          "spans": [
+            {
+              "offset": 85326,
+              "length": 87
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g06-r028.bin",
+              "size": 85
+            }
+          ]
+        },
+        {
+          "label": "GAM group6 resource29",
+          "spans": [
+            {
+              "offset": 85413,
+              "length": 395
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g06-r029.bin",
+              "size": 393
+            }
+          ]
+        },
+        {
+          "label": "GAM group6 resource30",
+          "spans": [
+            {
+              "offset": 85808,
+              "length": 123
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g06-r030.bin",
+              "size": 121
+            }
+          ]
+        },
+        {
+          "label": "GAM group6 resource31",
+          "spans": [
+            {
+              "offset": 85931,
+              "length": 152
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g06-r031.bin",
+              "size": 150
+            }
+          ]
+        },
+        {
+          "label": "GAM group6 resource32",
+          "spans": [
+            {
+              "offset": 86083,
+              "length": 231
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g06-r032.bin",
+              "size": 229
+            }
+          ]
+        },
+        {
+          "label": "GAM group6 resource33",
+          "spans": [
+            {
+              "offset": 86314,
+              "length": 230
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g06-r033.bin",
+              "size": 228
+            }
+          ]
+        },
+        {
+          "label": "GAM group6 resource34",
+          "spans": [
+            {
+              "offset": 86544,
+              "length": 223
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g06-r034.bin",
+              "size": 221
+            }
+          ]
+        },
+        {
+          "label": "GAM group6 resource35",
+          "spans": [
+            {
+              "offset": 86767,
+              "length": 226
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g06-r035.bin",
+              "size": 224
+            }
+          ]
+        },
+        {
+          "label": "GAM group6 resource36",
+          "spans": [
+            {
+              "offset": 86993,
+              "length": 212
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g06-r036.bin",
+              "size": 210
+            }
+          ]
+        },
+        {
+          "label": "GAM group6 resource37",
+          "spans": [
+            {
+              "offset": 87205,
+              "length": 216
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g06-r037.bin",
+              "size": 214
+            }
+          ]
+        },
+        {
+          "label": "GAM group6 resource38",
+          "spans": [
+            {
+              "offset": 87421,
+              "length": 168
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g06-r038.bin",
+              "size": 166
+            }
+          ]
+        },
+        {
+          "label": "GAM group6 resource39",
+          "spans": [
+            {
+              "offset": 87589,
+              "length": 110
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g06-r039.bin",
+              "size": 108
+            }
+          ]
+        },
+        {
+          "label": "GAM group6 resource40",
+          "spans": [
+            {
+              "offset": 87699,
+              "length": 171
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g06-r040.bin",
+              "size": 169
+            }
+          ]
+        },
+        {
+          "label": "GAM group6 resource41",
+          "spans": [
+            {
+              "offset": 87870,
+              "length": 43
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g06-r041.bin",
+              "size": 41
+            }
+          ]
+        },
+        {
+          "label": "GAM group6 resource42",
+          "spans": [
+            {
+              "offset": 87913,
+              "length": 43
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g06-r042.bin",
+              "size": 41
+            }
+          ]
+        },
+        {
+          "label": "GAM group6 resource43",
+          "spans": [
+            {
+              "offset": 87956,
+              "length": 43
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g06-r043.bin",
+              "size": 41
+            }
+          ]
+        },
+        {
+          "label": "GAM group6 resource44",
+          "spans": [
+            {
+              "offset": 87999,
+              "length": 119
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g06-r044.bin",
+              "size": 117
+            }
+          ]
+        },
+        {
+          "label": "GAM group6 resource45",
+          "spans": [
+            {
+              "offset": 88118,
+              "length": 63
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g06-r045.bin",
+              "size": 61
+            }
+          ]
+        },
+        {
+          "label": "GAM group6 resource46",
+          "spans": [
+            {
+              "offset": 88181,
+              "length": 60
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g06-r046.bin",
+              "size": 58
+            }
+          ]
+        },
+        {
+          "label": "GAM group6 resource47",
+          "spans": [
+            {
+              "offset": 88241,
+              "length": 63
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g06-r047.bin",
+              "size": 61
+            }
+          ]
+        },
+        {
+          "label": "GAM group6 resource48",
+          "spans": [
+            {
+              "offset": 88304,
+              "length": 53
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g06-r048.bin",
+              "size": 51
+            }
+          ]
+        },
+        {
+          "label": "GAM group6 resource49",
+          "spans": [
+            {
+              "offset": 88357,
+              "length": 45
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g06-r049.bin",
+              "size": 43
+            }
+          ]
+        },
+        {
+          "label": "GAM group6 allocation tail",
+          "spans": [
+            {
+              "offset": 88402,
+              "length": 62
+            }
+          ],
+          "parts": [
+            {
+              "file": "assets/padding/group-06-tail.bin",
+              "size": 62
+            }
+          ]
+        },
+        {
+          "label": "GAM group7 resource0",
+          "spans": [
+            {
+              "offset": 88464,
+              "length": 9
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g07-r000.bin",
+              "size": 7
+            }
+          ]
+        },
+        {
+          "label": "GAM group7 resource1",
+          "spans": [
+            {
+              "offset": 88473,
+              "length": 444
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g07-r001.bin",
+              "size": 442
+            }
+          ]
+        },
+        {
+          "label": "GAM group7 resource2",
+          "spans": [
+            {
+              "offset": 88917,
+              "length": 64
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g07-r002.bin",
+              "size": 62
+            }
+          ]
+        },
+        {
+          "label": "GAM group7 resource3",
+          "spans": [
+            {
+              "offset": 88981,
+              "length": 15
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g07-r003.bin",
+              "size": 13
+            }
+          ]
+        },
+        {
+          "label": "GAM group7 resource4",
+          "spans": [
+            {
+              "offset": 88996,
+              "length": 63
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g07-r004.bin",
+              "size": 61
+            }
+          ]
+        },
+        {
+          "label": "GAM group7 resource5",
+          "spans": [
+            {
+              "offset": 89059,
+              "length": 15
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g07-r005.bin",
+              "size": 13
+            }
+          ]
+        },
+        {
+          "label": "GAM group7 resource6",
+          "spans": [
+            {
+              "offset": 89074,
+              "length": 60
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g07-r006.bin",
+              "size": 58
+            }
+          ]
+        },
+        {
+          "label": "GAM group7 resource7",
+          "spans": [
+            {
+              "offset": 89134,
+              "length": 15
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g07-r007.bin",
+              "size": 13
+            }
+          ]
+        },
+        {
+          "label": "GAM group7 resource8",
+          "spans": [
+            {
+              "offset": 89149,
+              "length": 65
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g07-r008.bin",
+              "size": 63
+            }
+          ]
+        },
+        {
+          "label": "GAM group7 resource9",
+          "spans": [
+            {
+              "offset": 89214,
+              "length": 15
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g07-r009.bin",
+              "size": 13
+            }
+          ]
+        },
+        {
+          "label": "GAM group7 resource10",
+          "spans": [
+            {
+              "offset": 89229,
+              "length": 70
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g07-r010.bin",
+              "size": 68
+            }
+          ]
+        },
+        {
+          "label": "GAM group7 resource11",
+          "spans": [
+            {
+              "offset": 89299,
+              "length": 13
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g07-r011.bin",
+              "size": 11
+            }
+          ]
+        },
+        {
+          "label": "GAM group7 resource12",
+          "spans": [
+            {
+              "offset": 89312,
+              "length": 53
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g07-r012.bin",
+              "size": 51
+            }
+          ]
+        },
+        {
+          "label": "GAM group7 resource13",
+          "spans": [
+            {
+              "offset": 89365,
+              "length": 15
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g07-r013.bin",
+              "size": 13
+            }
+          ]
+        },
+        {
+          "label": "GAM group7 resource14",
+          "spans": [
+            {
+              "offset": 89380,
+              "length": 37
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g07-r014.bin",
+              "size": 35
+            }
+          ]
+        },
+        {
+          "label": "GAM group7 resource15",
+          "spans": [
+            {
+              "offset": 89417,
+              "length": 15
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g07-r015.bin",
+              "size": 13
+            }
+          ]
+        },
+        {
+          "label": "GAM group7 resource16",
+          "spans": [
+            {
+              "offset": 89432,
+              "length": 38
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g07-r016.bin",
+              "size": 36
+            }
+          ]
+        },
+        {
+          "label": "GAM group7 resource17",
+          "spans": [
+            {
+              "offset": 89470,
+              "length": 13
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g07-r017.bin",
+              "size": 11
+            }
+          ]
+        },
+        {
+          "label": "GAM group7 resource18",
+          "spans": [
+            {
+              "offset": 89483,
+              "length": 3
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g07-r018.bin",
+              "size": 1
+            }
+          ]
+        },
+        {
+          "label": "GAM group7 resource19",
+          "spans": [
+            {
+              "offset": 89486,
+              "length": 3
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g07-r019.bin",
+              "size": 1
+            }
+          ]
+        },
+        {
+          "label": "GAM group7 resource20",
+          "spans": [
+            {
+              "offset": 89489,
+              "length": 3
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g07-r020.bin",
+              "size": 1
+            }
+          ]
+        },
+        {
+          "label": "GAM group7 resource21",
+          "spans": [
+            {
+              "offset": 89492,
+              "length": 3
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g07-r021.bin",
+              "size": 1
+            }
+          ]
+        },
+        {
+          "label": "GAM group7 resource22",
+          "spans": [
+            {
+              "offset": 89495,
+              "length": 61
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g07-r022.bin",
+              "size": 59
+            }
+          ]
+        },
+        {
+          "label": "GAM group7 resource23",
+          "spans": [
+            {
+              "offset": 89556,
+              "length": 14
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g07-r023.bin",
+              "size": 12
+            }
+          ]
+        },
+        {
+          "label": "GAM group7 resource24",
+          "spans": [
+            {
+              "offset": 89570,
+              "length": 3
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g07-r024.bin",
+              "size": 1
+            }
+          ]
+        },
+        {
+          "label": "GAM group7 resource25",
+          "spans": [
+            {
+              "offset": 89573,
+              "length": 3
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g07-r025.bin",
+              "size": 1
+            }
+          ]
+        },
+        {
+          "label": "GAM group7 resource26",
+          "spans": [
+            {
+              "offset": 89576,
+              "length": 3
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g07-r026.bin",
+              "size": 1
+            }
+          ]
+        },
+        {
+          "label": "GAM group7 resource27",
+          "spans": [
+            {
+              "offset": 89579,
+              "length": 3
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g07-r027.bin",
+              "size": 1
+            }
+          ]
+        },
+        {
+          "label": "GAM group7 resource28",
+          "spans": [
+            {
+              "offset": 89582,
+              "length": 3
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g07-r028.bin",
+              "size": 1
+            }
+          ]
+        },
+        {
+          "label": "GAM group7 resource29",
+          "spans": [
+            {
+              "offset": 89585,
+              "length": 3
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g07-r029.bin",
+              "size": 1
+            }
+          ]
+        },
+        {
+          "label": "GAM group7 resource30",
+          "spans": [
+            {
+              "offset": 89588,
+              "length": 62
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g07-r030.bin",
+              "size": 60
+            }
+          ]
+        },
+        {
+          "label": "GAM group7 resource31",
+          "spans": [
+            {
+              "offset": 89650,
+              "length": 14
+            }
+          ],
+          "record16": true,
+          "parts": [
+            {
+              "file": "graphics/records/g07-r031.bin",
+              "size": 12
+            }
+          ]
+        },
+        {
+          "label": "DOS sector allocation map",
+          "spans": [
+            {
+              "offset": 45968,
+              "length": 128
+            }
+          ],
+          "parts": [
+            {
+              "file": "assets/filesystem/vtoc.bin",
+              "size": 128
+            }
+          ]
+        },
+        {
+          "label": "Original saved game state",
+          "spans": [
+            {
+              "offset": 89744,
+              "length": 896
+            }
+          ],
+          "parts": [
+            {
+              "file": "assets/state/saved-game.bin",
+              "size": 896
+            }
+          ]
+        },
+        {
+          "label": "Unused sector709 residue",
+          "spans": [
+            {
+              "offset": 90640,
+              "length": 128
+            }
+          ],
+          "parts": [
+            {
+              "file": "assets/padding/unused-sector-709.bin",
+              "size": 128
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

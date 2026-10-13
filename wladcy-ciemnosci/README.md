@@ -53,6 +53,8 @@ wide. `DOCOL` emits a target colon definition, a `t.` name emits a target call,
 retain signed offsets and have destination comments. Native 6502 bodies and
 verified machine-code tails use executable assembler mnemonics. `BYTES` emits
 headers, tables and unclassified mixed regions.
+`INCBIN` imports the native cursor bitmap. Both build paths expand it into
+ordinary ASCII `BYTES`; the source ATR is directly compilable in Atari Forth.
 The generator's trailing-byte count describes tails after threaded decoding,
 including native runtimes, rather than all machine code or data in the game.
 
@@ -86,9 +88,9 @@ not change the game; the original `BYTES` values still determine its data.
 
 This is low-level threaded Forth, not a relocatable rewrite. Absolute pointers
 in code and data require preserving the memory layout. Changing definition
-sizes requires corresponding address and branch updates. Game resources in
-[assets/disk-tail.bin](assets/disk-tail.bin) retain their original bytes; the
-graphics are also extracted and decoded separately as described below.
+sizes requires corresponding address and branch updates. Game resources are
+individual native graphics and music files, placed according to
+[assets/layout.json](assets/layout.json). Decoded pictures and PNGs are previews.
 
 ## Build
 
@@ -109,10 +111,20 @@ Atari OS input/output services. It does not translate Forth or insert a saved
 copy of the program. Host compilation takes several minutes.
 
 The target starts with all 32,000 program and residual-code bytes zero.
-Forth writes every byte of the first 250 sectors. Only the independent resource
-tail is retained. Normal builds do not read the reference game ATR or run the
+Forth writes every byte of the first 250 sectors. The resource disk is freshly
+packed from native `graphics/records`, fonts in `graphics/fonts`, sprite frames
+in `graphics/sprites`, both `music/*.cmc` files, and state/padding in `assets/`.
+The embedded cursor comes from `graphics/cursors/player-planes.bin`. No
+prebuilt game ATR or disk-tail blob is used. Changes to these inputs trigger
+rebuilding through the Makefile. Normal builds do not read the reference game ATR or run the
 decompiler. Verification compares the entire resulting ATR, including its
 header and all 1,040 sectors, with the original release.
+
+`make assets` packs only the resource disk; `make sources` packs the Forth
+source ATR including embedded assets. Asset sizes and CMC load addresses
+remain fixed by the reconstructed layout. See the
+[shared asset-build notes](../README.md#building-the-forth-games-from-assets)
+for exact inputs and editing constraints.
 
 ## Compile the source ATR with Atari fig-Forth
 
@@ -133,7 +145,8 @@ RAM, and support for large 128-byte-sector source ATRs.
 
 The command changes this exact APX version's host `R/W` sector divisor from
 720 to 4096 and selects D2 source blocks. It does not modify game code.
-The source disk contains 167 screens and uses the stock `-->` continuation.
+The source disk uses the stock `-->` continuation; its screen count is
+reported by `make sources`.
 Each physical screen line reserves a trailing space; Forth does not insert
 newlines between its 64-character rows. Expected `Isn't unique` notices come
 from the deliberate emitter redefinitions in `05-emission.fth`. Turbo mode
@@ -179,8 +192,9 @@ Atari memory; the previews preserve the same stored pixels and palettes.
 Run `make graphics` to regenerate, or
 `python3 ../util/extract_graphics.py --game wladcy-ciemnosci --check` to verify.
 Extraction reuses Klątwa's shared GAM decoder and the repository's dependency-free
-PNG helpers; Python 3 is sufficient. The game build continues to use its
-original resource bytes.
+PNG helpers; Python 3 is sufficient. Native records, fonts and sprite frames
+selected by `assets/layout.json` feed the build. Regeneration restores the
+original files and can overwrite edits; normal `make` does not run it.
 
 ## Music
 
@@ -213,13 +227,16 @@ terminate inside their exported modules.
 
 Run `make music` to reproduce the files with Python 3. Details and checksums
 are in [music/extraction.json](music/extraction.json). Music extraction is
-independent of the Forth build and does not modify the original game data.
+an explicit recovery step and can overwrite edits to these build inputs.
+Packing validates the six restored gameplay bytes and writes only the 1,899
+bytes present in its original disk record. The title module's 164 residue
+bytes are preserved separately under `assets/`.
 For example, render the second gameplay subsong with
 `asapconv -s 1 -o gameplay-2.wav music/gameplay.cmc`.
 
 ## Recovery and validation
 
-`make decompile` regenerates sources and the resource split from the reference
+`make decompile` regenerates sources from the reference
 image. Regeneration and the parser tests reuse the AD 2044 listing helpers and
 naming evidence through [tools/shared.py](tools/shared.py), so keep the sibling
 [ad2044](../ad2044) directory when doing that work. Building the checked-in

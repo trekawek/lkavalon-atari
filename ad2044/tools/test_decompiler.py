@@ -22,6 +22,7 @@ def module(name, filename):
 d = module("ad2044_decompile", "decompile.py")
 c = module("ad2044_compiler", "compile.py")
 p = module("ad2044_pack", "pack_sources.py")
+from forth_assets import dependencies, source_lines
 ROOT = d.ROOT
 
 
@@ -206,13 +207,18 @@ class PackingTests(unittest.TestCase):
         with tempfile.TemporaryDirectory(prefix="ad2044-screens-") as dirname:
             temp = Path(dirname)
             (temp / "sources.json").write_text(json.dumps(manifest))
+            for name in dependencies('ad2044'):
+                path = temp / name
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_bytes((ROOT / name).read_bytes())
             expected = []
             for filename in manifest["sources"]:
                 text = (ROOT / filename).read_text("ascii")
                 path = temp / filename
                 path.parent.mkdir(parents=True, exist_ok=True)
                 path.write_text(text, encoding="ascii")
-                expected.extend(comments_removed_tokens(text))
+                expanded = '\n'.join(line for _, _, line in source_lines(path, temp))
+                expected.extend(comments_removed_tokens(expanded))
             with patch.object(p, "ROOT", temp), contextlib.redirect_stdout(io.StringIO()):
                 p.main()
             disk = (temp / "build/sources.atr").read_bytes()

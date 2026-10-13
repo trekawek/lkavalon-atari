@@ -1,0 +1,16 @@
+{
+  "format": "ad2044.residue",
+  "version": 1,
+  "fields": [
+    {
+      "type": "u8-array",
+      "values": [8],
+      "note": "Unused post-program Forth editor text; outside the saved dictionary"
+    },
+    {
+      "type": "text",
+      "text": "SAVE-RUN                          kasujac nazwy oraz wlancza  (   samouruchomienie od sl",
+      "note": "Unused post-program Forth editor text; outside the saved dictionary"
+    }
+  ]
+}

@@ -1,0 +1,640 @@
+{
+  "format": "ad2044.object-actions",
+  "version": 1,
+  "consumer": "SELECTED-OBJECT-RECORD $7281 and action handlers via $7664",
+  "objects": [
+    {
+      "object_id": 0,
+      "actions": [
+        {
+          "opcode": 1,
+          "handler": "ACT-BACK",
+          "fields": []
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 1,
+      "actions": [
+        {
+          "opcode": 1,
+          "handler": "ACT-BACK",
+          "fields": []
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 2,
+      "actions": [
+        {
+          "opcode": 7,
+          "handler": "ACT-EXAMINE",
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "DRZWI=DO=WC",
+                "^^^^^^^^^^^",
+                "KTOs=JEST=ZA=DRZWIAMI"
+              ],
+              "name": "message_1"
+            }
+          ]
+        },
+        {
+          "opcode": 11,
+          "handler": "ACT-OPEN-WITH-ITEM",
+          "fields": [
+            {
+              "type": "u8",
+              "name": "object_id",
+              "value": 1
+            },
+            {
+              "type": "u8",
+              "name": "required_inventory_id",
+              "value": 255
+            },
+            {
+              "type": "u8",
+              "name": "exit_direction",
+              "value": 0
+            },
+            {
+              "type": "message",
+              "lines": [
+                "TYM=NIE=OTWORZYSZ.",
+                "DRZWI=Sa=ZAMKNIeTE=OD=sRODKA."
+              ],
+              "name": "message_1"
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 3,
+      "actions": [
+        {
+          "opcode": 7,
+          "handler": "ACT-EXAMINE",
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "MONITORY=OBSERWACYJNE"
+              ],
+              "name": "message_1"
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 4,
+      "actions": [
+        {
+          "opcode": 7,
+          "handler": "ACT-EXAMINE",
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "KALENDARZ"
+              ],
+              "name": "message_1"
+            }
+          ]
+        },
+        {
+          "opcode": 2,
+          "handler": "ACT-SHOW-CLOSEUP",
+          "fields": [
+            {
+              "type": "u8",
+              "name": "view_id",
+              "value": 1
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 5,
+      "actions": [
+        {
+          "opcode": 7,
+          "handler": "ACT-EXAMINE",
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "FISZKI"
+              ],
+              "name": "message_1"
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 6,
+      "actions": [
+        {
+          "opcode": 7,
+          "handler": "ACT-EXAMINE",
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "ERGONOMICZNE=KRZESlO"
+              ],
+              "name": "message_1"
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 7,
+      "actions": [
+        {
+          "opcode": 2,
+          "handler": "ACT-SHOW-CLOSEUP",
+          "fields": [
+            {
+              "type": "u8",
+              "name": "view_id",
+              "value": 3
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 8,
+      "actions": [
+        {
+          "opcode": 7,
+          "handler": "ACT-EXAMINE",
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "JAKIEs=DRZWICZKI"
+              ],
+              "name": "message_1"
+            }
+          ]
+        },
+        {
+          "opcode": 20,
+          "handler": "ACT-REVEAL-OBJECT",
+          "fields": [
+            {
+              "type": "u8",
+              "name": "revealed_object_id",
+              "value": 7
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 9,
+      "actions": [
+        {
+          "opcode": 7,
+          "handler": "ACT-EXAMINE",
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "DzWIeKOCHlONNA=sCIANA"
+              ],
+              "name": "message_1"
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 10,
+      "actions": [
+        {
+          "opcode": 7,
+          "handler": "ACT-EXAMINE",
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "AKTUALNY=ROK"
+              ],
+              "name": "message_1"
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 11,
+      "actions": [
+        {
+          "opcode": 7,
+          "handler": "ACT-EXAMINE",
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "ZAGIeTY=RoG"
+              ],
+              "name": "message_1"
+            }
+          ]
+        },
+        {
+          "opcode": 19,
+          "handler": "ACT-SHOW-CLOSEUP",
+          "fields": [
+            {
+              "type": "u8",
+              "name": "view_id",
+              "value": 2
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 12,
+      "actions": [
+        {
+          "opcode": 7,
+          "handler": "ACT-EXAMINE",
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "KOT=JAKI=JEST,",
+                "KAzDY=WIDZI."
+              ],
+              "name": "message_1"
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 13,
+      "actions": [
+        {
+          "opcode": 7,
+          "handler": "ACT-EXAMINE",
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "LITERA=A."
+              ],
+              "name": "message_1"
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 14,
+      "actions": [
+        {
+          "opcode": 7,
+          "handler": "ACT-EXAMINE",
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "LITERA=S."
+              ],
+              "name": "message_1"
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 15,
+      "actions": [
+        {
+          "opcode": 7,
+          "handler": "ACT-EXAMINE",
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "I=JAK=IDIOTA"
+              ],
+              "name": "message_1"
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 16,
+      "actions": [
+        {
+          "opcode": 7,
+          "handler": "ACT-EXAMINE",
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "BLAT=BIURKA"
+              ],
+              "name": "message_1"
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 17,
+      "actions": [
+        {
+          "opcode": 7,
+          "handler": "ACT-EXAMINE",
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "PUZDERKO"
+              ],
+              "name": "message_1"
+            }
+          ]
+        },
+        {
+          "opcode": 20,
+          "handler": "ACT-REVEAL-OBJECT",
+          "fields": [
+            {
+              "type": "u8",
+              "name": "revealed_object_id",
+              "value": 5
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 18,
+      "actions": [
+        {
+          "opcode": 7,
+          "handler": "ACT-EXAMINE",
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "OTWARTE=PUZDERKO"
+              ],
+              "name": "message_1"
+            }
+          ]
+        },
+        {
+          "opcode": 21,
+          "handler": "ACT-HIDE-OBJECT",
+          "fields": [
+            {
+              "type": "u8",
+              "name": "hidden_object_id",
+              "value": 5
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 19,
+      "actions": [
+        {
+          "opcode": 7,
+          "handler": "ACT-EXAMINE",
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "PUDERNICZKA"
+              ],
+              "name": "message_1"
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 20,
+      "actions": [
+        {
+          "opcode": 7,
+          "handler": "ACT-EXAMINE",
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "KOSMETYKI"
+              ],
+              "name": "message_1"
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 21,
+      "actions": [
+        {
+          "opcode": 7,
+          "handler": "ACT-EXAMINE",
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "WYlaCZNIK"
+              ],
+              "name": "message_1"
+            }
+          ]
+        },
+        {
+          "opcode": 22,
+          "handler": "ACT-OFF-REMOVE-REMOTE",
+          "fields": [
+            {
+              "type": "u8",
+              "name": "revealed_object_id",
+              "value": 6
+            },
+            {
+              "type": "u8",
+              "name": "remote_room_id",
+              "value": 10
+            },
+            {
+              "type": "u8",
+              "name": "remote_object_id",
+              "value": 1
+            },
+            {
+              "type": "u8",
+              "name": "remote_exit_direction",
+              "value": 0
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 22,
+      "actions": [
+        {
+          "opcode": 7,
+          "handler": "ACT-EXAMINE",
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "WYlaCZNIK=POLA",
+                "SIlOWEGO"
+              ],
+              "name": "message_1"
+            }
+          ]
+        },
+        {
+          "opcode": 23,
+          "handler": "ACT-ON-ADD-REMOTE",
+          "fields": [
+            {
+              "type": "u8",
+              "name": "hidden_object_id",
+              "value": 6
+            },
+            {
+              "type": "u8",
+              "name": "remote_room_id",
+              "value": 10
+            },
+            {
+              "type": "u8",
+              "name": "remote_object_id",
+              "value": 1
+            },
+            {
+              "type": "u8",
+              "name": "remote_exit_direction",
+              "value": 0
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 23,
+      "actions": [
+        {
+          "opcode": 2,
+          "handler": "ACT-SHOW-CLOSEUP",
+          "fields": [
+            {
+              "type": "u8",
+              "name": "view_id",
+              "value": 4
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 24,
+      "actions": [
+        {
+          "opcode": 7,
+          "handler": "ACT-EXAMINE",
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "OTWARTE=DRZWICZKI"
+              ],
+              "name": "message_1"
+            }
+          ]
+        },
+        {
+          "opcode": 21,
+          "handler": "ACT-HIDE-OBJECT",
+          "fields": [
+            {
+              "type": "u8",
+              "name": "hidden_object_id",
+              "value": 7
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    }
+  ],
+  "terminator_cells": 0,
+  "unused": []
+}

@@ -3,6 +3,9 @@
 
 import json
 from pathlib import Path
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "util"))
+from reference_media import read_reference
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -13,7 +16,7 @@ def main():
         raw = (ROOT / filename).read_bytes()
         raw.decode("ascii")
         assert all(len(line) <= 64 for line in raw.splitlines()), filename
-    original = (ROOT / "reference/klatwa-v1.atr").read_bytes()
+    original = read_reference(ROOT / "reference/klatwa-v1.atr")
     rebuilt = (ROOT / "build/klatwa.atr").read_bytes()
     assert len(original) == len(rebuilt) == 133136
     assert original[:16] == rebuilt[:16]

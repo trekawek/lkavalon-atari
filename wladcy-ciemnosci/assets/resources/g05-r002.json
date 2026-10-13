@@ -1,0 +1,702 @@
+{
+  "version": 1,
+  "format": "gam.message-banks",
+  "group": 5,
+  "resource": 2,
+  "data": {
+    "kind": "records",
+    "records": [
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "message",
+            "lines": [
+              "KARCZMA=POD",
+              "sWInSKIM=RYJEM"
+            ],
+            "encoding": "game-font-byte-glyphs"
+          },
+          {
+            "kind": "message",
+            "lines": [
+              "BRAMA=DO=NIEBA"
+            ],
+            "encoding": "game-font-byte-glyphs"
+          },
+          {
+            "kind": "message",
+            "lines": [
+              "TU=MIESZKA=SaSIAD",
+              "CARGUL"
+            ],
+            "encoding": "game-font-byte-glyphs"
+          },
+          {
+            "kind": "message",
+            "lines": [
+              "A=TU=MIESZKA",
+              "SaSIAD=PAWLACK"
+            ],
+            "encoding": "game-font-byte-glyphs"
+          },
+          {
+            "kind": "message",
+            "lines": [
+              "NIESTETY,=NIE=WlADASZ",
+              "TUBYLCZYM=JeZYKIEM"
+            ],
+            "encoding": "game-font-byte-glyphs"
+          },
+          {
+            "kind": "message",
+            "lines": [
+              "SZYLD"
+            ],
+            "encoding": "game-font-byte-glyphs"
+          },
+          {
+            "kind": "message",
+            "lines": [
+              "DRZWIvWYKIDAJlO"
+            ],
+            "encoding": "game-font-byte-glyphs"
+          },
+          {
+            "kind": "message",
+            "lines": [
+              "WYKIDAJlO=NIE=WPUSZCZA",
+              "zEBRAKoW",
+              "vvvv",
+              "TWOJE=ZNISZCZONE=UBRANIE",
+              "NIE=BUDZI=ZAUFANIA"
+            ],
+            "encoding": "game-font-byte-glyphs"
+          },
+          {
+            "kind": "message",
+            "lines": [
+              "FURTKA=NIE=BYlA",
+              "UzYWANA=OD=LAT"
+            ],
+            "encoding": "game-font-byte-glyphs"
+          },
+          {
+            "kind": "message",
+            "lines": [
+              "TRZYMA=JESZCZE",
+              "NIENAWIsc=LUDZKA"
+            ],
+            "encoding": "game-font-byte-glyphs"
+          },
+          {
+            "kind": "message",
+            "lines": [
+              "SaSIEDZI=NIE",
+              "ZAWARLI=POKOJU"
+            ],
+            "encoding": "game-font-byte-glyphs"
+          },
+          {
+            "kind": "message",
+            "lines": [
+              "NIESTETY,=NIE=MOGlEs=NAUCZYc",
+              "SIe=TEJ=SZTUKI.",
+              "MISTRZ=W=TEJ",
+              "DYSCYPLINIE=URODZI=SIe",
+              "ZNACZNIE=PozNIEJ."
+            ],
+            "encoding": "game-font-byte-glyphs"
+          },
+          {
+            "kind": "message",
+            "lines": [
+              "FURTKA"
+            ],
+            "encoding": "game-font-byte-glyphs"
+          },
+          {
+            "kind": "message",
+            "lines": [
+              "PlOT"
+            ],
+            "encoding": "game-font-byte-glyphs"
+          },
+          {
+            "kind": "message",
+            "lines": [
+              "NAWET=KAMIENNA=TWARZ",
+              "ZMIENI=SWoJ=WYGLaD,=GDY",
+              "USlYSZY=PRAWDe",
+              "O=PARLAMENTARNYCH=RZaDACH",
+              "W=TWOIM=KRAJU"
+            ],
+            "encoding": "game-font-byte-glyphs"
+          },
+          {
+            "kind": "message",
+            "lines": [
+              "BAJKA=KAMIENIA",
+              "NIE=WZRUSZY"
+            ],
+            "encoding": "game-font-byte-glyphs"
+          },
+          {
+            "kind": "message",
+            "lines": [
+              "GlOWA=TUBYLCA",
+              "vvv",
+              "KAMIENNA=PlASKORZEzBA",
+              "BOHATERA=LUB",
+              "POSZUKIWANEGO=KRYMINALISTY"
+            ],
+            "encoding": "game-font-byte-glyphs"
+          },
+          {
+            "kind": "message",
+            "lines": [
+              "UCHO=BEZ=zYCIA",
+              "SloW=NIE=PRZYJMUJE"
+            ],
+            "encoding": "game-font-byte-glyphs"
+          },
+          {
+            "kind": "message",
+            "lines": [
+              "ZNAK"
+            ],
+            "encoding": "game-font-byte-glyphs"
+          },
+          {
+            "kind": "message",
+            "lines": [
+              "OzYWIlEs=UCHO"
+            ],
+            "encoding": "game-font-byte-glyphs"
+          },
+          {
+            "kind": "message",
+            "lines": [
+              "JUz=POWIEDZIAlEs"
+            ],
+            "encoding": "game-font-byte-glyphs"
+          },
+          {
+            "kind": "message",
+            "lines": [
+              "UCHO"
+            ],
+            "encoding": "game-font-byte-glyphs"
+          },
+          {
+            "kind": "message",
+            "lines": [
+              "BURSZTYNOWA=PolKA"
+            ],
+            "encoding": "game-font-byte-glyphs"
+          },
+          {
+            "kind": "message",
+            "lines": [
+              "DZIUPLA"
+            ],
+            "encoding": "game-font-byte-glyphs"
+          },
+          {
+            "kind": "message",
+            "lines": [
+              "SCHOWEK"
+            ],
+            "encoding": "game-font-byte-glyphs"
+          },
+          {
+            "kind": "message",
+            "lines": [
+              "GLINIANA",
+              "sCIANKA"
+            ],
+            "encoding": "game-font-byte-glyphs"
+          },
+          {
+            "kind": "message",
+            "lines": [
+              "PIENIEK"
+            ],
+            "encoding": "game-font-byte-glyphs"
+          },
+          {
+            "kind": "message",
+            "lines": [
+              "PARAPET"
+            ],
+            "encoding": "game-font-byte-glyphs"
+          },
+          {
+            "kind": "message",
+            "lines": [
+              "JeZYK"
+            ],
+            "encoding": "game-font-byte-glyphs"
+          }
+        ],
+        "terminated": true,
+        "tail": []
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "message",
+            "lines": [
+              "MUSIAlEM=WYJECHAc.",
+              "DOBYTEK=SCHOWAlEM",
+              "I=OZNACZYlEM",
+              "vvv",
+              "BANITA"
+            ],
+            "encoding": "game-font-byte-glyphs"
+          },
+          {
+            "kind": "message",
+            "lines": [
+              "KUFEREK"
+            ],
+            "encoding": "game-font-byte-glyphs"
+          },
+          {
+            "kind": "message",
+            "lines": [
+              "OLIWA=MaDROsCI",
+              "vvvv",
+              "PRASTARA=ODzYWKA=KLASY",
+              "RZaDZaCEJ,=CAlKOWICIE",
+              "ZANIECHANA=W=XX=WIEKU"
+            ],
+            "encoding": "game-font-byte-glyphs"
+          },
+          {
+            "kind": "message",
+            "lines": [
+              "WYGLaDASZ",
+              "JAK=CZlOWIEK"
+            ],
+            "encoding": "game-font-byte-glyphs"
+          },
+          {
+            "kind": "message",
+            "lines": [
+              "COs=STUKNelO"
+            ],
+            "encoding": "game-font-byte-glyphs"
+          },
+          {
+            "kind": "message",
+            "lines": [
+              "JUz=POSMAROWAlEs"
+            ],
+            "encoding": "game-font-byte-glyphs"
+          },
+          {
+            "kind": "message",
+            "lines": [
+              "ZARDZEWIAlE=ZAWIASY"
+            ],
+            "encoding": "game-font-byte-glyphs"
+          },
+          {
+            "kind": "message",
+            "lines": [
+              "UBRANIE"
+            ],
+            "encoding": "game-font-byte-glyphs"
+          },
+          {
+            "kind": "message",
+            "lines": [
+              "PAS=ZIEMI",
+              "NICZYJEJ"
+            ],
+            "encoding": "game-font-byte-glyphs"
+          },
+          {
+            "kind": "message",
+            "lines": [
+              "CARGUL=NIE=CHCE",
+              "NIKOGO=WIDZIEc"
+            ],
+            "encoding": "game-font-byte-glyphs"
+          },
+          {
+            "kind": "message",
+            "lines": [
+              "TOPoR=WOJENNY"
+            ],
+            "encoding": "game-font-byte-glyphs"
+          },
+          {
+            "kind": "message",
+            "lines": [
+              "TEGO=CI=NIE=DAM"
+            ],
+            "encoding": "game-font-byte-glyphs"
+          },
+          {
+            "kind": "message",
+            "lines": [
+              "W=DZIUPLI=SIEDZa",
+              "TRZY=PSYvSTRAzNICY"
+            ],
+            "encoding": "game-font-byte-glyphs"
+          },
+          {
+            "kind": "message",
+            "lines": [
+              "USlYSZAlEs=lOMOT,",
+              "TO=PSY=ZAGRYZlY",
+              "SIe=NAWZAJEM"
+            ],
+            "encoding": "game-font-byte-glyphs"
+          },
+          {
+            "kind": "message",
+            "lines": [
+              "CARGUL=ZNALAZl=CIe",
+              "NIEPRZYTOMNEGO=NA=PUSTYNI"
+            ],
+            "encoding": "game-font-byte-glyphs"
+          },
+          {
+            "kind": "message",
+            "lines": [
+              "PUSTYNIA=NIEBO"
+            ],
+            "encoding": "game-font-byte-glyphs"
+          },
+          {
+            "kind": "message",
+            "lines": [
+              "ZEMDLAlEs=Z=UPAlU"
+            ],
+            "encoding": "game-font-byte-glyphs"
+          },
+          {
+            "kind": "message",
+            "lines": [
+              "KORZENIE"
+            ],
+            "encoding": "game-font-byte-glyphs"
+          },
+          {
+            "kind": "message",
+            "lines": [
+              "BLAT"
+            ],
+            "encoding": "game-font-byte-glyphs"
+          },
+          {
+            "kind": "message",
+            "lines": [
+              "PALENISKO"
+            ],
+            "encoding": "game-font-byte-glyphs"
+          },
+          {
+            "kind": "message",
+            "lines": [
+              "TABLICA"
+            ],
+            "encoding": "game-font-byte-glyphs"
+          },
+          {
+            "kind": "message",
+            "lines": [
+              "PolKA"
+            ],
+            "encoding": "game-font-byte-glyphs"
+          },
+          {
+            "kind": "message",
+            "lines": [
+              "WNeKA"
+            ],
+            "encoding": "game-font-byte-glyphs"
+          },
+          {
+            "kind": "message",
+            "lines": [
+              "ZAMIERAJaCE",
+              "DRZEWO=CZAPKOWE"
+            ],
+            "encoding": "game-font-byte-glyphs"
+          },
+          {
+            "kind": "message",
+            "lines": [
+              "CZAPKA"
+            ],
+            "encoding": "game-font-byte-glyphs"
+          },
+          {
+            "kind": "message",
+            "lines": [
+              "NIESTETY,=DRZEWO",
+              "RODZI=TYLKO=RAZ"
+            ],
+            "encoding": "game-font-byte-glyphs"
+          },
+          {
+            "kind": "message",
+            "lines": [
+              "KUFER"
+            ],
+            "encoding": "game-font-byte-glyphs"
+          },
+          {
+            "kind": "message",
+            "lines": [
+              "WNeTRZE"
+            ],
+            "encoding": "game-font-byte-glyphs"
+          }
+        ],
+        "terminated": true,
+        "tail": []
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "message",
+            "lines": [
+              "SPIzARKA"
+            ],
+            "encoding": "game-font-byte-glyphs"
+          },
+          {
+            "kind": "message",
+            "lines": [
+              "OBCYM=WSTeP",
+              "WZBRONIONY"
+            ],
+            "encoding": "game-font-byte-glyphs"
+          },
+          {
+            "kind": "message",
+            "lines": [
+              "CZEGO=TU=SZUKASZ"
+            ],
+            "encoding": "game-font-byte-glyphs"
+          },
+          {
+            "kind": "message",
+            "lines": [
+              "NIC=NIE=ROZUMIESZ"
+            ],
+            "encoding": "game-font-byte-glyphs"
+          },
+          {
+            "kind": "message",
+            "lines": [
+              "COs=PODAc?"
+            ],
+            "encoding": "game-font-byte-glyphs"
+          },
+          {
+            "kind": "message",
+            "lines": [
+              "ZA=MIEDZIAKA",
+              "KUP=SOBIE=LIZAKA"
+            ],
+            "encoding": "game-font-byte-glyphs"
+          },
+          {
+            "kind": "message",
+            "lines": [
+              "zONA=CARGULA=ZAMUROWAlA",
+              "PRZEJsCIE=DO=KARCZMY.",
+              "NA=LEWO=OD=PIEnKA",
+              "JEST=SlABY=PUNKT",
+              "TEJ=sCIANKI."
+            ],
+            "encoding": "game-font-byte-glyphs"
+          },
+          {
+            "kind": "message",
+            "lines": [
+              "ROZBIlEs=sCIANKe"
+            ],
+            "encoding": "game-font-byte-glyphs"
+          },
+          {
+            "kind": "message",
+            "lines": [
+              "BUTELKA",
+              "Z=TRUNKIEM"
+            ],
+            "encoding": "game-font-byte-glyphs"
+          },
+          {
+            "kind": "message",
+            "lines": [
+              "ZBYT=MAlA=BUTELKA",
+              "Z=TRUNKIEM"
+            ],
+            "encoding": "game-font-byte-glyphs"
+          },
+          {
+            "kind": "message",
+            "lines": [
+              "PAWLACK"
+            ],
+            "encoding": "game-font-byte-glyphs"
+          },
+          {
+            "kind": "message",
+            "lines": [
+              "KARCZMARZOWA"
+            ],
+            "encoding": "game-font-byte-glyphs"
+          },
+          {
+            "kind": "message",
+            "lines": [
+              "TU=NIE=MA=OKNA"
+            ],
+            "encoding": "game-font-byte-glyphs"
+          },
+          {
+            "kind": "message",
+            "lines": [
+              "ZAKOPAlEs"
+            ],
+            "encoding": "game-font-byte-glyphs"
+          },
+          {
+            "kind": "message",
+            "lines": [
+              "TU=NIE=MOzESZ"
+            ],
+            "encoding": "game-font-byte-glyphs"
+          },
+          {
+            "kind": "message",
+            "lines": [
+              "CARGUL"
+            ],
+            "encoding": "game-font-byte-glyphs"
+          },
+          {
+            "kind": "message",
+            "lines": [
+              "CZUJ=SIe=JAK",
+              "U=SIEBIE=W=DOMU"
+            ],
+            "encoding": "game-font-byte-glyphs"
+          },
+          {
+            "kind": "message",
+            "lines": [
+              "CHCESZ=MNIE",
+              "OTRUc?"
+            ],
+            "encoding": "game-font-byte-glyphs"
+          },
+          {
+            "kind": "message",
+            "lines": [
+              "lAWA"
+            ],
+            "encoding": "game-font-byte-glyphs"
+          },
+          {
+            "kind": "message",
+            "lines": [
+              "NAPElNIlEs"
+            ],
+            "encoding": "game-font-byte-glyphs"
+          },
+          {
+            "kind": "message",
+            "lines": [
+              "KAGANEK=JEST",
+              "PUSTY"
+            ],
+            "encoding": "game-font-byte-glyphs"
+          },
+          {
+            "kind": "message",
+            "lines": [
+              "OSTROzNIE",
+              "Z=OGNIEM"
+            ],
+            "encoding": "game-font-byte-glyphs"
+          },
+          {
+            "kind": "message",
+            "lines": [
+              "SZUKAJaC=CELU=BeDZIESZ",
+              "PEWNIEJSZY,=GDY=ILOsc",
+              "KROKoW=ZAWSZE=POMNIEJSZYSZ"
+            ],
+            "encoding": "game-font-byte-glyphs"
+          },
+          {
+            "kind": "message",
+            "lines": [
+              "SKAlA"
+            ],
+            "encoding": "game-font-byte-glyphs"
+          },
+          {
+            "kind": "message",
+            "lines": [
+              "FONTANNA"
+            ],
+            "encoding": "game-font-byte-glyphs"
+          },
+          {
+            "kind": "message",
+            "lines": [
+              "MASZ=WODe"
+            ],
+            "encoding": "game-font-byte-glyphs"
+          },
+          {
+            "kind": "message",
+            "lines": [
+              "NIE=MASZ=WODY"
+            ],
+            "encoding": "game-font-byte-glyphs"
+          },
+          {
+            "kind": "message",
+            "lines": [
+              "MAPA=SZLAKU",
+              "DO=WlADZY"
+            ],
+            "encoding": "game-font-byte-glyphs"
+          }
+        ],
+        "terminated": true,
+        "tail": []
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "message",
+            "lines": [
+              "BRAK",
+              "ENERGII"
+            ],
+            "encoding": "game-font-byte-glyphs"
+          }
+        ],
+        "terminated": true,
+        "tail": []
+      }
+    ],
+    "terminated": false,
+    "tail": []
+  }
+}

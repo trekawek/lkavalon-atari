@@ -1,0 +1,182 @@
+{
+  "version": 1,
+  "format": "gam.hit-map",
+  "note": "Object hit/depth lookup cells, not visual transparency; rows are the only source of cell values.",
+  "data": {
+    "kind": "hit-map",
+    "width": 6,
+    "height": 11,
+    "rows": [
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        18,
+        18,
+        18,
+        18,
+        18
+      ],
+      [
+        18,
+        18,
+        18,
+        18,
+        18,
+        18
+      ],
+      [
+        18,
+        18,
+        18,
+        18,
+        18,
+        18
+      ],
+      [
+        18,
+        18,
+        18,
+        18,
+        18,
+        18
+      ],
+      [
+        18,
+        18,
+        19,
+        19,
+        18,
+        18
+      ],
+      [
+        18,
+        18,
+        18,
+        19,
+        18,
+        18
+      ],
+      [
+        18,
+        18,
+        18,
+        18,
+        18,
+        18
+      ],
+      [
+        18,
+        18,
+        18,
+        18,
+        18,
+        18
+      ],
+      [
+        18,
+        18,
+        18,
+        18,
+        18,
+        18
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "encoding_columns": [
+      [
+        {
+          "literals": 2
+        },
+        {
+          "pattern_size": 1,
+          "repeat": 8
+        },
+        {
+          "literals": 1
+        }
+      ],
+      [
+        {
+          "literals": 1
+        },
+        {
+          "pattern_size": 1,
+          "repeat": 9
+        },
+        {
+          "literals": 1
+        }
+      ],
+      [
+        {
+          "literals": 1
+        },
+        {
+          "pattern_size": 1,
+          "repeat": 4
+        },
+        {
+          "literals": 1
+        },
+        {
+          "pattern_size": 1,
+          "repeat": 4
+        },
+        {
+          "literals": 1
+        }
+      ],
+      [
+        {
+          "literals": 1
+        },
+        {
+          "pattern_size": 1,
+          "repeat": 4
+        },
+        {
+          "literals": 6
+        }
+      ],
+      [
+        {
+          "literals": 1
+        },
+        {
+          "pattern_size": 1,
+          "repeat": 9
+        },
+        {
+          "literals": 1
+        }
+      ],
+      [
+        {
+          "literals": 1
+        },
+        {
+          "pattern_size": 1,
+          "repeat": 9
+        },
+        {
+          "literals": 1
+        }
+      ]
+    ],
+    "tail": []
+  }
+}

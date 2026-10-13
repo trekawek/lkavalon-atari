@@ -1,0 +1,151 @@
+{
+  "version": 1,
+  "format": "gam.hit-map",
+  "note": "Object hit/depth lookup cells, not visual transparency; rows are the only source of cell values.",
+  "data": {
+    "kind": "hit-map",
+    "width": 4,
+    "height": 16,
+    "rows": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        2,
+        2,
+        0
+      ],
+      [
+        0,
+        2,
+        2,
+        224
+      ],
+      [
+        0,
+        2,
+        2,
+        224
+      ],
+      [
+        0,
+        2,
+        2,
+        224
+      ],
+      [
+        0,
+        2,
+        2,
+        224
+      ],
+      [
+        0,
+        2,
+        2,
+        224
+      ],
+      [
+        0,
+        2,
+        2,
+        224
+      ],
+      [
+        0,
+        2,
+        2,
+        224
+      ],
+      [
+        0,
+        2,
+        2,
+        224
+      ],
+      [
+        0,
+        2,
+        2,
+        224
+      ],
+      [
+        0,
+        2,
+        2,
+        224
+      ],
+      [
+        0,
+        0,
+        2,
+        224
+      ],
+      [
+        0,
+        0,
+        0,
+        224
+      ]
+    ],
+    "encoding_columns": [
+      [
+        {
+          "pattern_size": 1,
+          "repeat": 16
+        }
+      ],
+      [
+        {
+          "literals": 3
+        },
+        {
+          "pattern_size": 1,
+          "repeat": 11
+        },
+        {
+          "literals": 2
+        }
+      ],
+      [
+        {
+          "literals": 3
+        },
+        {
+          "pattern_size": 1,
+          "repeat": 12
+        },
+        {
+          "literals": 1
+        }
+      ],
+      [
+        {
+          "pattern_size": 1,
+          "repeat": 4
+        },
+        {
+          "pattern_size": 1,
+          "repeat": 12
+        }
+      ]
+    ],
+    "tail": []
+  }
+}

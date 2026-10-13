@@ -1,0 +1,16 @@
+( EDITOR )
+: H LINE PAD 1+ C/L DUP PAD C!
+     CMOVE ;
+: E LINE C/L BLANKS UPDATE ;
+: S DUP 1 - 0E DO I LINE I 1+
+    -MOVE -1 +LOOP E ;
+: D DUP H 0F DUP ROT
+    DO I 1+ LINE I -MOVE LOOP E ;
+
+
+   -->
+
+
+
+
+

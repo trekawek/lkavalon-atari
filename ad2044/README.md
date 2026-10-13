@@ -40,8 +40,10 @@ All `.fth` files are ASCII with LF newlines and lines no longer than 64
 characters. ATASCII strings retain their exact bytes, with readable comments.
 Native 6502 bodies and verified machine-code tails use executable assembler
 mnemonics. Embedded data and unclassified mixed regions retain `BYTES`.
-`INCBIN` imports the native sound bank and cursor bitmap; the build expands
-these directives to ASCII `BYTES` before compilation or source-ATR packing.
+`INCBIN` imports the cursor bitmap and encodes the structured sound source; the
+build expands these directives to ASCII `BYTES` before compilation or source-ATR
+packing. The sound source itself contains assembly, envelopes and music commands,
+not a binary bank.
 
 [strings.txt](strings.txt) lists decoded messages and menu labels with their
 target addresses. [strings.json](strings.json) additionally records original
@@ -52,7 +54,10 @@ glyphs become their base letters. Unsupported glyphs remain `[XX]` escapes;
 ordinary ATASCII text retains its case and punctuation.
 
 The decoder follows counted records and resolves action aliases once. It
-excludes unused buffer contents and text in the separate binary disk assets.
+excludes unused buffer contents and separate disk records. Those disk messages
+are now editable strings in [assets/records](assets/records), alongside named
+object/action parameters. See [assets/README.md](assets/README.md) for their
+record formats.
 `make decompile` regenerates both catalogs and annotations. `BYTES` still
 controls the compiled data; editing a comment or catalog does not change it.
 
@@ -88,9 +93,12 @@ machine instructions at their original target locations.
 This is readable, low-level threaded Forth, **not a portable, relocatable
 rewrite**. Editing definition sizes requires updating absolute addresses and
 branch offsets. The build packs native [graphics/packed](graphics/packed)
-records, [music/sound-bank.bin](music/sound-bank.bin), and individual room,
-state and padding files in [assets](assets). [assets/layout.json](assets/layout.json)
-defines their disk placement. Decoded graphics and PNGs are previews.
+records, [music/sound-bank.json](music/sound-bank.json), and structured room,
+state, text and padding documents in [assets](assets).
+[assets/layout.json](assets/layout.json) defines their disk placement. Lengths and
+compression are generated from named fields, messages and object-ID grids.
+Decoded graphics and PNGs are previews. No compiled game image or opaque data-tail
+file is a build input.
 
 ## Graphics
 
@@ -118,7 +126,7 @@ colors use an explicitly marked grayscale preview.
 
 | Directory | Contents |
 | --- | --- |
-| `graphics/packed` | Unchanged length-prefixed graphics records and cursor bytes |
+| `graphics/packed` | Native length-prefixed graphics and cursor bytes; `archive/` preserves 18 retired inventory bitmaps |
 | `graphics/decoded` | Expanded records, preserving picture headers, colors and flags |
 | `graphics/images` | PNG previews of individual assets and font sheets |
 | `graphics/scenes` | Base room plus interface, before dynamic overlays, text, map markers and cursor |
@@ -136,42 +144,43 @@ come from the existing Atari800 PAL screenshots. Original Atari color codes,
 asset bounds and disk offsets are recorded in
 [graphics/extraction.json](graphics/extraction.json).
 
-Run `make graphics` to regenerate, or
+Run `make graphics` to export historical graphics into `build/graphics`, or
 `python3 ../util/extract_graphics.py --game ad2044 --check` to verify the files.
-The native `graphics/packed` files are build inputs. Regeneration restores
-them from the reference disks and can overwrite edits; normal `make` does
-not run it. Decoded files and PNGs remain previews.
+The checked-in native `graphics/packed` files are build inputs. Exporting writes
+only under `build/`; it does not overwrite those inputs. Decoded files and PNGs
+remain previews. Object-ID hit maps are editable row grids in the asset JSON
+documents rather than binary graphics files.
 
 ## Music
 
 This release uses its own command-stream sound engine, rather than the CMC
-player in Klątwa and Władcy Ciemności. The extracted files therefore use SAP,
-which includes the game's original 6502 player and works with
-[ASAP](https://asap.sourceforge.net/):
+player in Klatwa and Wladcy Ciemnosci. The authoritative source is
+[music/sound-bank.json](music/sound-bank.json): 551 actual 6502 instructions,
+named globals and voice state, pitch/control envelopes, and 436 bytecode
+instructions split into dispatcher, song and effect streams. The
+[music format notes](music/README.md) explain edits and uncertain retained data.
+The encoder recreates all 3,631 bytes at `$5E00..$6C2E` inside the Forth definition
+at CFA `$5DB3`; no binary bank is required.
 
-* [music/title.sap](music/title.sap): the looping title and ending music, command `$50`.
-* [music/game-over.sap](music/game-over.sap): the game-over cue, command `$19`.
-* [music/sound-effects.sap](music/sound-effects.sap): the other 20 sound commands as separate subsongs.
-* [music/sound-bank.bin](music/sound-bank.bin): the unchanged 3,631-byte engine, instrument and sequence bank, loaded at `$5E00..$6C2E`.
+Run `make music` to generate playback files from the current structured source:
 
-The bank comes from side-one ATR offsets `$4F90..$5DBE`, inside the saved
-Forth definition at CFA `$5DB3`. SAP wrappers initialize the original command
-dispatcher and call its frame routine at `$5F6F` once per PAL frame. The only
-change to the copied bank replaces the jump to the old Atari OS VBI handler
-at `$62E1` with `RTS`; the raw `.bin` has no modifications. The disk's intro
-credits Leszek Hołda for the music (ASCII `Leszek Holda` in the SAP metadata).
+* `build/music/title.sap`: looping title and ending music, command `$50`.
+* `build/music/game-over.sap`: the game-over cue, command `$19`.
+* `build/music/sound-effects.sap`: the other 20 commands as separate subsongs.
+* `build/music/sound-bank.bin`: the encoded game bank, for inspection.
 
-All 22 selections were rendered with ASAP 8.0.0. The wrapper's POKEY writes
-also match the original engine for 11,700 frames across all commands. This
-checks the adaptation independently of whether a music player accepts it.
+SAP wrappers include the original player for [ASAP](https://asap.sourceforge.net/).
+They initialize its command dispatcher and call `$5F6F` once per PAL frame.
+Their only bank patch changes the old Atari OS VBI-chain jump at `$62E1` to
+`RTS`; the Forth build uses the unpatched bank. The game's introduction credits
+Leszek Holda for the music. Historical offsets, command mappings and the wrapper
+patch remain in [music/extraction.json](music/extraction.json).
 
-Run `make music` to reproduce the files using Python 3. Source offsets,
-command-to-subsong mappings and the exact player patch are recorded in
-[music/extraction.json](music/extraction.json); the helper is
-[tools/music_sap.py](tools/music_sap.py). The raw sound bank feeds the Forth
-build; SAP files are playback exports. Regeneration restores the original
-bank, so it can overwrite edits. For a WAV file, run
-`asapconv -t 01:00 -o title.wav music/title.sap`.
+All 22 selections were rendered with ASAP 8.0.0. Original-6502 trace tests compare
+11,700 frames of ordered POKEY writes across all commands. Structured-source tests
+also check the full bank, note/envelope edits, instruction bounds and addresses.
+For a WAV after `make music`, run
+`asapconv -t 01:00 -o title.wav build/music/title.sap`.
 
 ## Build on the host
 
@@ -193,15 +202,17 @@ Outputs:
 * `build/compile-report.json`: actual compiler instruction and disk-write counts.
 * `build/source-screens.json`: source-file locations for each packed screen.
 
-[tools/compile.py](tools/compile.py) runs the unmodified APX fig-Forth 6502
-interpreter from `reference/figforth.atr`. Only Atari OS input/output services
+[tools/compile.py](tools/compile.py) runs the APX fig-Forth 6502 interpreter from
+`reference/figforth.atr`, which Make generates from the readable compiler sources
+in [../util/figforth](../util/figforth). Only Atari OS input/output services
 are supplied by Python. Forth parses the sources and executes the
 metacompiler; Python does not translate Forth or insert saved program bytes.
-The original game ATRs are used by regeneration and verification, **not by
-the build**. `tools/prepare.py` makes the target from independent non-code
+Original game ATRs are optional forensic fixtures, **not build inputs**.
+Verification accepts an unchanged built image only after checking its historical
+checksum; edited builds require a separate original fixture for comparisons. `tools/prepare.py` makes the target from independent non-code
 assets listed in [assets/layout.json](assets/layout.json) and leaves all
 33,959 program bytes zero. No prebuilt game disk or disk-tail blob is copied.
-Changes to native assets trigger rebuilding through the Makefile. Run
+Changes to native graphics or structured assets trigger rebuilding through Make. Run
 `make assets` to pack only the resource disks, or `make sources` to pack the
 Forth sources including embedded assets. Asset sizes remain fixed; changing
 sizes requires updating the layout and any dependent game addresses.
@@ -217,7 +228,7 @@ Use an Atari XL/XE with BASIC disabled and at least 48 KB of available RAM.
 An emulator supporting 128-byte-sector ATRs larger than 720 sectors is needed
 for the source disk. The target still uses the original 1040-sector format.
 
-1. Boot `reference/figforth.atr` in D1.
+1. Boot the generated `reference/figforth.atr` in D1 (run `make` first).
 2. Mount `build/sources.atr` in D2.
 3. Make a writable copy of `build/assets-side1.atr` and mount it in D3.
 4. At the Forth prompt, enter:
@@ -243,7 +254,8 @@ Turbo mode considerably speeds compilation in an emulator.
 ## Recovery and verification
 
 `make decompile` regenerates the checked-in Forth files from
-the two reference disks, using [tools/names.json](tools/names.json) and
+optional reference disks or checksum-verified unchanged builds, using
+[tools/names.json](tools/names.json) and
 [tools/extra-headers.json](tools/extra-headers.json). Normal builds do not run
 this command, so source edits are preserved.
 

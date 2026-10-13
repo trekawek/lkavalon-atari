@@ -1,0 +1,3735 @@
+{
+  "version": 1,
+  "format": "gam.action-collections",
+  "group": 4,
+  "resource": 0,
+  "data": {
+    "kind": "records",
+    "records": [
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "legacy_approach_control",
+            "value": 2
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 0"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "legacy_approach_control",
+            "value": 255
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 1"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "sequence",
+            "role": "Approach metadata for the side-view engine; Wladcy retains this legacy structure.",
+            "parts": [
+              {
+                "kind": "byte",
+                "name": "facing",
+                "value": 1
+              },
+              {
+                "kind": "byte",
+                "name": "approach_run",
+                "value": 1
+              },
+              {
+                "kind": "byte",
+                "name": "x",
+                "value": 19
+              },
+              {
+                "kind": "byte",
+                "name": "y",
+                "value": 15
+              },
+              {
+                "kind": "byte",
+                "name": "final_facing",
+                "value": 0
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 17,
+            "handler_cfa": "7AD0",
+            "handler": "ACTION-CLOSE-REPLACEMENT",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "redraw_background",
+                "value": 7,
+                "byte_offset": 1
+              },
+              {
+                "kind": "byte",
+                "name": "removed_object",
+                "value": 108,
+                "byte_offset": 2
+              },
+              {
+                "kind": "byte",
+                "name": "replacement_object",
+                "value": 8,
+                "byte_offset": 3
+              }
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 2"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "legacy_approach_control",
+            "value": 1
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 6,
+            "handler_cfa": "780C",
+            "handler": "ACTION-DESCRIBE",
+            "arguments": [
+              {
+                "kind": "message",
+                "lines": [
+                  "TEKOWE=DRZWI"
+                ],
+                "encoding": "game-font-byte-glyphs"
+              }
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 3"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "sequence",
+            "role": "Approach metadata for the side-view engine; Wladcy retains this legacy structure.",
+            "parts": [
+              {
+                "kind": "byte",
+                "name": "legacy_argument_0",
+                "value": 3
+              },
+              {
+                "kind": "byte",
+                "name": "legacy_argument_1",
+                "value": 6
+              },
+              {
+                "kind": "byte",
+                "name": "legacy_argument_2",
+                "value": 4
+              },
+              {
+                "kind": "byte",
+                "name": "legacy_argument_3",
+                "value": 18
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 6,
+            "handler_cfa": "780C",
+            "handler": "ACTION-DESCRIBE",
+            "arguments": [
+              {
+                "kind": "message",
+                "lines": [
+                  "WNeKA=W=sCIANIE"
+                ],
+                "encoding": "game-font-byte-glyphs"
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 2,
+            "dispatch_id": 5,
+            "handler_cfa": "77FA",
+            "handler": "ACTION-ENTER-VIEW",
+            "arguments": []
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 4"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "legacy_approach_control",
+            "value": 1
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 5"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "sequence",
+            "role": "Approach metadata for the side-view engine; Wladcy retains this legacy structure.",
+            "parts": [
+              {
+                "kind": "byte",
+                "name": "facing",
+                "value": 2
+              },
+              {
+                "kind": "byte",
+                "name": "approach_run",
+                "value": 1
+              },
+              {
+                "kind": "byte",
+                "name": "x",
+                "value": 18
+              },
+              {
+                "kind": "byte",
+                "name": "y",
+                "value": 19
+              },
+              {
+                "kind": "byte",
+                "name": "final_facing",
+                "value": 2
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 15,
+            "handler_cfa": "7AA4",
+            "handler": "ACTION-ENTER-ROOM",
+            "arguments": []
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 6"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "sequence",
+            "role": "Approach metadata for the side-view engine; Wladcy retains this legacy structure.",
+            "parts": [
+              {
+                "kind": "byte",
+                "name": "facing",
+                "value": 3
+              },
+              {
+                "kind": "byte",
+                "name": "approach_run",
+                "value": 4
+              },
+              {
+                "kind": "byte",
+                "name": "x",
+                "value": 6
+              },
+              {
+                "kind": "byte",
+                "name": "y",
+                "value": 16
+              },
+              {
+                "kind": "byte",
+                "name": "final_facing",
+                "value": 3
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 15,
+            "handler_cfa": "7AA4",
+            "handler": "ACTION-ENTER-ROOM",
+            "arguments": []
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 7"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "sequence",
+            "role": "Approach metadata for the side-view engine; Wladcy retains this legacy structure.",
+            "parts": [
+              {
+                "kind": "byte",
+                "name": "facing",
+                "value": 0
+              },
+              {
+                "kind": "byte",
+                "name": "approach_run",
+                "value": 1
+              },
+              {
+                "kind": "byte",
+                "name": "x",
+                "value": 18
+              },
+              {
+                "kind": "byte",
+                "name": "y",
+                "value": 13
+              },
+              {
+                "kind": "byte",
+                "name": "final_facing",
+                "value": 0
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 15,
+            "handler_cfa": "7AA4",
+            "handler": "ACTION-ENTER-ROOM",
+            "arguments": []
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 8"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "sequence",
+            "role": "Approach metadata for the side-view engine; Wladcy retains this legacy structure.",
+            "parts": [
+              {
+                "kind": "byte",
+                "name": "facing",
+                "value": 1
+              },
+              {
+                "kind": "byte",
+                "name": "approach_run",
+                "value": 2
+              },
+              {
+                "kind": "byte",
+                "name": "x",
+                "value": 27
+              },
+              {
+                "kind": "byte",
+                "name": "y",
+                "value": 16
+              },
+              {
+                "kind": "byte",
+                "name": "final_facing",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 15,
+            "handler_cfa": "7AA4",
+            "handler": "ACTION-ENTER-ROOM",
+            "arguments": []
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 9"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "legacy_approach_control",
+            "value": 1
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 6,
+            "handler_cfa": "780C",
+            "handler": "ACTION-DESCRIBE",
+            "arguments": [
+              {
+                "kind": "message",
+                "lines": [
+                  "ZWYKlE=LUSTRO"
+                ],
+                "encoding": "game-font-byte-glyphs"
+              }
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 10"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "legacy_approach_control",
+            "value": 1
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 6,
+            "handler_cfa": "780C",
+            "handler": "ACTION-DESCRIBE",
+            "arguments": [
+              {
+                "kind": "message",
+                "lines": [
+                  "DRZWICZKI"
+                ],
+                "encoding": "game-font-byte-glyphs"
+              }
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 11"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "sequence",
+            "role": "Approach metadata for the side-view engine; Wladcy retains this legacy structure.",
+            "parts": [
+              {
+                "kind": "byte",
+                "name": "facing",
+                "value": 3
+              },
+              {
+                "kind": "byte",
+                "name": "approach_run",
+                "value": 10
+              },
+              {
+                "kind": "byte",
+                "name": "x",
+                "value": 4
+              },
+              {
+                "kind": "byte",
+                "name": "y",
+                "value": 18
+              },
+              {
+                "kind": "byte",
+                "name": "final_facing",
+                "value": 3
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 20,
+            "handler_cfa": "7C81",
+            "handler": "ACTION-OPEN-WITH-ITEM",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "argument_1",
+                "value": 116,
+                "byte_offset": 1
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 2,
+            "dispatch_id": 21,
+            "handler_cfa": "7C95",
+            "handler": "ACTION-OPEN-WITH-SPELL",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "argument_1",
+                "value": 116,
+                "byte_offset": 1
+              }
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 12"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "sequence",
+            "role": "Approach metadata for the side-view engine; Wladcy retains this legacy structure.",
+            "parts": [
+              {
+                "kind": "byte",
+                "name": "legacy_argument_0",
+                "value": 3
+              },
+              {
+                "kind": "byte",
+                "name": "legacy_argument_1",
+                "value": 10
+              },
+              {
+                "kind": "byte",
+                "name": "legacy_argument_2",
+                "value": 4
+              },
+              {
+                "kind": "byte",
+                "name": "legacy_argument_3",
+                "value": 18
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 14,
+            "handler_cfa": "7A82",
+            "handler": "ACTION-CLOSE-PAIR",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "removed_object_1",
+                "value": 116,
+                "byte_offset": 1
+              },
+              {
+                "kind": "byte",
+                "name": "removed_object_2",
+                "value": 0,
+                "byte_offset": 2
+              },
+              {
+                "kind": "byte",
+                "name": "added_object",
+                "value": 16,
+                "byte_offset": 3
+              },
+              {
+                "kind": "byte",
+                "name": "argument_4",
+                "value": 0,
+                "byte_offset": 4
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 2,
+            "dispatch_id": 5,
+            "handler_cfa": "77FA",
+            "handler": "ACTION-ENTER-VIEW",
+            "arguments": []
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 13"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "sequence",
+            "role": "Approach metadata for the side-view engine; Wladcy retains this legacy structure.",
+            "parts": [
+              {
+                "kind": "byte",
+                "name": "facing",
+                "value": 1
+              },
+              {
+                "kind": "byte",
+                "name": "approach_run",
+                "value": 3
+              },
+              {
+                "kind": "byte",
+                "name": "x",
+                "value": 22
+              },
+              {
+                "kind": "byte",
+                "name": "y",
+                "value": 17
+              },
+              {
+                "kind": "byte",
+                "name": "final_facing",
+                "value": 0
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 13,
+            "handler_cfa": "7A60",
+            "handler": "ACTION-OPEN-PAIR",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "removed_object",
+                "value": 14,
+                "byte_offset": 1
+              },
+              {
+                "kind": "byte",
+                "name": "argument_2",
+                "value": 0,
+                "byte_offset": 2
+              },
+              {
+                "kind": "byte",
+                "name": "added_object_1",
+                "value": 114,
+                "byte_offset": 3
+              },
+              {
+                "kind": "byte",
+                "name": "added_object_2",
+                "value": 0,
+                "byte_offset": 4
+              }
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 14"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "sequence",
+            "role": "Approach metadata for the side-view engine; Wladcy retains this legacy structure.",
+            "parts": [
+              {
+                "kind": "byte",
+                "name": "facing",
+                "value": 1
+              },
+              {
+                "kind": "byte",
+                "name": "approach_run",
+                "value": 3
+              },
+              {
+                "kind": "byte",
+                "name": "x",
+                "value": 22
+              },
+              {
+                "kind": "byte",
+                "name": "y",
+                "value": 17
+              },
+              {
+                "kind": "byte",
+                "name": "final_facing",
+                "value": 0
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 14,
+            "handler_cfa": "7A82",
+            "handler": "ACTION-CLOSE-PAIR",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "removed_object_1",
+                "value": 114,
+                "byte_offset": 1
+              },
+              {
+                "kind": "byte",
+                "name": "removed_object_2",
+                "value": 0,
+                "byte_offset": 2
+              },
+              {
+                "kind": "byte",
+                "name": "added_object",
+                "value": 14,
+                "byte_offset": 3
+              },
+              {
+                "kind": "byte",
+                "name": "argument_4",
+                "value": 0,
+                "byte_offset": 4
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 2,
+            "dispatch_id": 5,
+            "handler_cfa": "77FA",
+            "handler": "ACTION-ENTER-VIEW",
+            "arguments": []
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 15"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "sequence",
+            "role": "Approach metadata for the side-view engine; Wladcy retains this legacy structure.",
+            "parts": [
+              {
+                "kind": "byte",
+                "name": "facing",
+                "value": 1
+              },
+              {
+                "kind": "byte",
+                "name": "approach_run",
+                "value": 3
+              },
+              {
+                "kind": "byte",
+                "name": "x",
+                "value": 22
+              },
+              {
+                "kind": "byte",
+                "name": "y",
+                "value": 15
+              },
+              {
+                "kind": "byte",
+                "name": "final_facing",
+                "value": 2
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 5,
+            "handler_cfa": "77FA",
+            "handler": "ACTION-ENTER-VIEW",
+            "arguments": []
+          },
+          {
+            "kind": "action",
+            "record_index": 2,
+            "dispatch_id": 6,
+            "handler_cfa": "780C",
+            "handler": "ACTION-DESCRIBE",
+            "arguments": [
+              {
+                "kind": "message",
+                "lines": [
+                  "MAHONIOWY=BLAT"
+                ],
+                "encoding": "game-font-byte-glyphs"
+              }
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 16"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "sequence",
+            "role": "Approach metadata for the side-view engine; Wladcy retains this legacy structure.",
+            "parts": [
+              {
+                "kind": "byte",
+                "name": "facing",
+                "value": 1
+              },
+              {
+                "kind": "byte",
+                "name": "approach_run",
+                "value": 2
+              },
+              {
+                "kind": "byte",
+                "name": "x",
+                "value": 30
+              },
+              {
+                "kind": "byte",
+                "name": "y",
+                "value": 17
+              },
+              {
+                "kind": "byte",
+                "name": "final_facing",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 15,
+            "handler_cfa": "7AA4",
+            "handler": "ACTION-ENTER-ROOM",
+            "arguments": []
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 17"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "sequence",
+            "role": "Approach metadata for the side-view engine; Wladcy retains this legacy structure.",
+            "parts": [
+              {
+                "kind": "byte",
+                "name": "facing",
+                "value": 3
+              },
+              {
+                "kind": "byte",
+                "name": "approach_run",
+                "value": 2
+              },
+              {
+                "kind": "byte",
+                "name": "x",
+                "value": 1
+              },
+              {
+                "kind": "byte",
+                "name": "y",
+                "value": 17
+              },
+              {
+                "kind": "byte",
+                "name": "final_facing",
+                "value": 3
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 15,
+            "handler_cfa": "7AA4",
+            "handler": "ACTION-ENTER-ROOM",
+            "arguments": []
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 18"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "sequence",
+            "role": "Approach metadata for the side-view engine; Wladcy retains this legacy structure.",
+            "parts": [
+              {
+                "kind": "byte",
+                "name": "facing",
+                "value": 0
+              },
+              {
+                "kind": "byte",
+                "name": "approach_run",
+                "value": 0
+              },
+              {
+                "kind": "byte",
+                "name": "x",
+                "value": 15
+              },
+              {
+                "kind": "byte",
+                "name": "y",
+                "value": 16
+              },
+              {
+                "kind": "byte",
+                "name": "final_facing",
+                "value": 0
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 6,
+            "handler_cfa": "780C",
+            "handler": "ACTION-DESCRIBE",
+            "arguments": [
+              {
+                "kind": "message",
+                "lines": [
+                  "PODEST"
+                ],
+                "encoding": "game-font-byte-glyphs"
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 2,
+            "dispatch_id": 5,
+            "handler_cfa": "77FA",
+            "handler": "ACTION-ENTER-VIEW",
+            "arguments": []
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 19"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "legacy_approach_control",
+            "value": 1
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 6,
+            "handler_cfa": "780C",
+            "handler": "ACTION-DESCRIBE",
+            "arguments": [
+              {
+                "kind": "message",
+                "lines": [
+                  "ZBROJA"
+                ],
+                "encoding": "game-font-byte-glyphs"
+              }
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 20"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "sequence",
+            "role": "Approach metadata for the side-view engine; Wladcy retains this legacy structure.",
+            "parts": [
+              {
+                "kind": "byte",
+                "name": "facing",
+                "value": 3
+              },
+              {
+                "kind": "byte",
+                "name": "approach_run",
+                "value": 1
+              },
+              {
+                "kind": "byte",
+                "name": "x",
+                "value": 17
+              },
+              {
+                "kind": "byte",
+                "name": "y",
+                "value": 14
+              },
+              {
+                "kind": "byte",
+                "name": "final_facing",
+                "value": 0
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 16,
+            "handler_cfa": "7AB2",
+            "handler": "ACTION-OPEN-REPLACEMENT",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "redraw_background",
+                "value": 7,
+                "byte_offset": 1
+              },
+              {
+                "kind": "byte",
+                "name": "removed_object",
+                "value": 8,
+                "byte_offset": 2
+              },
+              {
+                "kind": "byte",
+                "name": "replacement_object",
+                "value": 108,
+                "byte_offset": 3
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 2,
+            "dispatch_id": 6,
+            "handler_cfa": "780C",
+            "handler": "ACTION-DESCRIBE",
+            "arguments": [
+              {
+                "kind": "message",
+                "lines": [
+                  "KLAMKA"
+                ],
+                "encoding": "game-font-byte-glyphs"
+              }
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 21"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "sequence",
+            "role": "Approach metadata for the side-view engine; Wladcy retains this legacy structure.",
+            "parts": [
+              {
+                "kind": "byte",
+                "name": "legacy_argument_0",
+                "value": 2
+              },
+              {
+                "kind": "byte",
+                "name": "legacy_argument_1",
+                "value": 1
+              },
+              {
+                "kind": "byte",
+                "name": "legacy_argument_2",
+                "value": 14
+              },
+              {
+                "kind": "byte",
+                "name": "legacy_argument_3",
+                "value": 19
+              },
+              {
+                "kind": "byte",
+                "name": "legacy_argument_4",
+                "value": 2
+              },
+              {
+                "kind": "byte",
+                "name": "legacy_argument_5",
+                "value": 0
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 15,
+            "handler_cfa": "7AA4",
+            "handler": "ACTION-ENTER-ROOM",
+            "arguments": []
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 22"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "sequence",
+            "role": "Approach metadata for the side-view engine; Wladcy retains this legacy structure.",
+            "parts": [
+              {
+                "kind": "byte",
+                "name": "facing",
+                "value": 0
+              },
+              {
+                "kind": "byte",
+                "name": "approach_run",
+                "value": 1
+              },
+              {
+                "kind": "byte",
+                "name": "x",
+                "value": 16
+              },
+              {
+                "kind": "byte",
+                "name": "y",
+                "value": 14
+              },
+              {
+                "kind": "byte",
+                "name": "final_facing",
+                "value": 0
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 15,
+            "handler_cfa": "7AA4",
+            "handler": "ACTION-ENTER-ROOM",
+            "arguments": []
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 23"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "sequence",
+            "role": "Approach metadata for the side-view engine; Wladcy retains this legacy structure.",
+            "parts": [
+              {
+                "kind": "byte",
+                "name": "facing",
+                "value": 3
+              },
+              {
+                "kind": "byte",
+                "name": "approach_run",
+                "value": 1
+              },
+              {
+                "kind": "byte",
+                "name": "x",
+                "value": 11
+              },
+              {
+                "kind": "byte",
+                "name": "y",
+                "value": 16
+              },
+              {
+                "kind": "byte",
+                "name": "final_facing",
+                "value": 3
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 16,
+            "handler_cfa": "7AB2",
+            "handler": "ACTION-OPEN-REPLACEMENT",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "redraw_background",
+                "value": 110,
+                "byte_offset": 1
+              },
+              {
+                "kind": "byte",
+                "name": "removed_object",
+                "value": 146,
+                "byte_offset": 2
+              },
+              {
+                "kind": "byte",
+                "name": "replacement_object",
+                "value": 46,
+                "byte_offset": 3
+              }
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 24"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "sequence",
+            "role": "Approach metadata for the side-view engine; Wladcy retains this legacy structure.",
+            "parts": [
+              {
+                "kind": "byte",
+                "name": "facing",
+                "value": 0
+              },
+              {
+                "kind": "byte",
+                "name": "approach_run",
+                "value": 1
+              },
+              {
+                "kind": "byte",
+                "name": "x",
+                "value": 18
+              },
+              {
+                "kind": "byte",
+                "name": "y",
+                "value": 14
+              },
+              {
+                "kind": "byte",
+                "name": "final_facing",
+                "value": 0
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 5,
+            "handler_cfa": "77FA",
+            "handler": "ACTION-ENTER-VIEW",
+            "arguments": []
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 25"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "sequence",
+            "role": "Approach metadata for the side-view engine; Wladcy retains this legacy structure.",
+            "parts": [
+              {
+                "kind": "byte",
+                "name": "facing",
+                "value": 3
+              },
+              {
+                "kind": "byte",
+                "name": "approach_run",
+                "value": 1
+              },
+              {
+                "kind": "byte",
+                "name": "x",
+                "value": 11
+              },
+              {
+                "kind": "byte",
+                "name": "y",
+                "value": 16
+              },
+              {
+                "kind": "byte",
+                "name": "final_facing",
+                "value": 3
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 5,
+            "handler_cfa": "77FA",
+            "handler": "ACTION-ENTER-VIEW",
+            "arguments": []
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 26"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "sequence",
+            "role": "Approach metadata for the side-view engine; Wladcy retains this legacy structure.",
+            "parts": [
+              {
+                "kind": "byte",
+                "name": "facing",
+                "value": 0
+              },
+              {
+                "kind": "byte",
+                "name": "approach_run",
+                "value": 0
+              },
+              {
+                "kind": "byte",
+                "name": "x",
+                "value": 20
+              },
+              {
+                "kind": "byte",
+                "name": "y",
+                "value": 18
+              },
+              {
+                "kind": "byte",
+                "name": "final_facing",
+                "value": 0
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 27,
+            "handler_cfa": "7DEC",
+            "handler": "ACTION-EXAMINE-OBJECT",
+            "arguments": []
+          },
+          {
+            "kind": "action",
+            "record_index": 2,
+            "dispatch_id": 20,
+            "handler_cfa": "7C81",
+            "handler": "ACTION-OPEN-WITH-ITEM",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "argument_1",
+                "value": 131,
+                "byte_offset": 1
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 3,
+            "dispatch_id": 21,
+            "handler_cfa": "7C95",
+            "handler": "ACTION-OPEN-WITH-SPELL",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "argument_1",
+                "value": 131,
+                "byte_offset": 1
+              }
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 27"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "sequence",
+            "role": "Approach metadata for the side-view engine; Wladcy retains this legacy structure.",
+            "parts": [
+              {
+                "kind": "byte",
+                "name": "facing",
+                "value": 0
+              },
+              {
+                "kind": "byte",
+                "name": "approach_run",
+                "value": 0
+              },
+              {
+                "kind": "byte",
+                "name": "x",
+                "value": 17
+              },
+              {
+                "kind": "byte",
+                "name": "y",
+                "value": 18
+              },
+              {
+                "kind": "byte",
+                "name": "final_facing",
+                "value": 0
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 5,
+            "handler_cfa": "77FA",
+            "handler": "ACTION-ENTER-VIEW",
+            "arguments": []
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 28"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "legacy_approach_control",
+            "value": 1
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 19,
+            "handler_cfa": "7B82",
+            "handler": "ACTION-DESCRIBE-SPELL",
+            "arguments": []
+          },
+          {
+            "kind": "action",
+            "record_index": 2,
+            "dispatch_id": 18,
+            "handler_cfa": "7B55",
+            "handler": "ACTION-COPY-SPELL",
+            "arguments": []
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 29"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "sequence",
+            "role": "Approach metadata for the side-view engine; Wladcy retains this legacy structure.",
+            "parts": [
+              {
+                "kind": "byte",
+                "name": "facing",
+                "value": 0
+              },
+              {
+                "kind": "byte",
+                "name": "approach_run",
+                "value": 0
+              },
+              {
+                "kind": "byte",
+                "name": "x",
+                "value": 6
+              },
+              {
+                "kind": "byte",
+                "name": "y",
+                "value": 17
+              },
+              {
+                "kind": "byte",
+                "name": "final_facing",
+                "value": 3
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 6,
+            "handler_cfa": "780C",
+            "handler": "ACTION-DESCRIBE",
+            "arguments": [
+              {
+                "kind": "message",
+                "lines": [
+                  "PLATYNOWY=lAnCUCH"
+                ],
+                "encoding": "game-font-byte-glyphs"
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 2,
+            "dispatch_id": 22,
+            "handler_cfa": "7CED",
+            "handler": "ACTION-DESTROY-WITH-ITEM",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "argument_1",
+                "value": 118,
+                "byte_offset": 1
+              },
+              {
+                "kind": "byte",
+                "name": "argument_2",
+                "value": 49,
+                "byte_offset": 2
+              }
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 30"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "sequence",
+            "role": "Approach metadata for the side-view engine; Wladcy retains this legacy structure.",
+            "parts": [
+              {
+                "kind": "byte",
+                "name": "facing",
+                "value": 0
+              },
+              {
+                "kind": "byte",
+                "name": "approach_run",
+                "value": 0
+              },
+              {
+                "kind": "byte",
+                "name": "x",
+                "value": 4
+              },
+              {
+                "kind": "byte",
+                "name": "y",
+                "value": 17
+              },
+              {
+                "kind": "byte",
+                "name": "final_facing",
+                "value": 3
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 23,
+            "handler_cfa": "7D2B",
+            "handler": "ACTION-LIFT-IF-READY",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "argument_1",
+                "value": 18,
+                "byte_offset": 1
+              },
+              {
+                "kind": "byte",
+                "name": "argument_2",
+                "value": 118,
+                "byte_offset": 2
+              },
+              {
+                "kind": "byte",
+                "name": "argument_3",
+                "value": 0,
+                "byte_offset": 3
+              }
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 31"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "legacy_approach_control",
+            "value": 1
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 25,
+            "handler_cfa": "7DC5",
+            "handler": "ACTION-DESCRIBE-OBJECT",
+            "arguments": []
+          },
+          {
+            "kind": "action",
+            "record_index": 2,
+            "dispatch_id": 24,
+            "handler_cfa": "7D8F",
+            "handler": "ACTION-TOUCH-MAGIC-STONE",
+            "arguments": []
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 32"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "sequence",
+            "role": "Approach metadata for the side-view engine; Wladcy retains this legacy structure.",
+            "parts": [
+              {
+                "kind": "byte",
+                "name": "facing",
+                "value": 3
+              },
+              {
+                "kind": "byte",
+                "name": "approach_run",
+                "value": 1
+              },
+              {
+                "kind": "byte",
+                "name": "x",
+                "value": 15
+              },
+              {
+                "kind": "byte",
+                "name": "y",
+                "value": 15
+              },
+              {
+                "kind": "byte",
+                "name": "final_facing",
+                "value": 0
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 6,
+            "handler_cfa": "780C",
+            "handler": "ACTION-DESCRIBE",
+            "arguments": [
+              {
+                "kind": "message",
+                "lines": [
+                  "ZlOTA=SZTABA"
+                ],
+                "encoding": "game-font-byte-glyphs"
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 2,
+            "dispatch_id": 22,
+            "handler_cfa": "7CED",
+            "handler": "ACTION-DESTROY-WITH-ITEM",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "argument_1",
+                "value": 123,
+                "byte_offset": 1
+              },
+              {
+                "kind": "byte",
+                "name": "argument_2",
+                "value": 125,
+                "byte_offset": 2
+              }
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 33"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "sequence",
+            "role": "Approach metadata for the side-view engine; Wladcy retains this legacy structure.",
+            "parts": [
+              {
+                "kind": "byte",
+                "name": "facing",
+                "value": 3
+              },
+              {
+                "kind": "byte",
+                "name": "approach_run",
+                "value": 1
+              },
+              {
+                "kind": "byte",
+                "name": "x",
+                "value": 15
+              },
+              {
+                "kind": "byte",
+                "name": "y",
+                "value": 15
+              },
+              {
+                "kind": "byte",
+                "name": "final_facing",
+                "value": 0
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 26,
+            "handler_cfa": "7DDC",
+            "handler": "ACTION-OPEN-IF-READY",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "argument_1",
+                "value": 22,
+                "byte_offset": 1
+              },
+              {
+                "kind": "byte",
+                "name": "argument_2",
+                "value": 123,
+                "byte_offset": 2
+              },
+              {
+                "kind": "byte",
+                "name": "replacement_object",
+                "value": 25,
+                "byte_offset": 3
+              }
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 34"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "sequence",
+            "role": "Approach metadata for the side-view engine; Wladcy retains this legacy structure.",
+            "parts": [
+              {
+                "kind": "byte",
+                "name": "facing",
+                "value": 1
+              },
+              {
+                "kind": "byte",
+                "name": "approach_run",
+                "value": 1
+              },
+              {
+                "kind": "byte",
+                "name": "x",
+                "value": 17
+              },
+              {
+                "kind": "byte",
+                "name": "y",
+                "value": 16
+              },
+              {
+                "kind": "byte",
+                "name": "final_facing",
+                "value": 0
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 17,
+            "handler_cfa": "7AD0",
+            "handler": "ACTION-CLOSE-REPLACEMENT",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "redraw_background",
+                "value": 22,
+                "byte_offset": 1
+              },
+              {
+                "kind": "byte",
+                "name": "removed_object",
+                "value": 25,
+                "byte_offset": 2
+              },
+              {
+                "kind": "byte",
+                "name": "replacement_object",
+                "value": 123,
+                "byte_offset": 3
+              }
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 35"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "sequence",
+            "role": "Approach metadata for the side-view engine; Wladcy retains this legacy structure.",
+            "parts": [
+              {
+                "kind": "byte",
+                "name": "facing",
+                "value": 1
+              },
+              {
+                "kind": "byte",
+                "name": "approach_run",
+                "value": 2
+              },
+              {
+                "kind": "byte",
+                "name": "x",
+                "value": 27
+              },
+              {
+                "kind": "byte",
+                "name": "y",
+                "value": 17
+              },
+              {
+                "kind": "byte",
+                "name": "final_facing",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 5,
+            "handler_cfa": "77FA",
+            "handler": "ACTION-ENTER-VIEW",
+            "arguments": []
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 36"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "sequence",
+            "role": "Approach metadata for the side-view engine; Wladcy retains this legacy structure.",
+            "parts": [
+              {
+                "kind": "byte",
+                "name": "facing",
+                "value": 0
+              },
+              {
+                "kind": "byte",
+                "name": "approach_run",
+                "value": 0
+              },
+              {
+                "kind": "byte",
+                "name": "x",
+                "value": 17
+              },
+              {
+                "kind": "byte",
+                "name": "y",
+                "value": 16
+              },
+              {
+                "kind": "byte",
+                "name": "final_facing",
+                "value": 0
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 28,
+            "handler_cfa": "7E21",
+            "handler": "ACTION-OPEN-MAGIC-TRAP",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "argument_1",
+                "value": 22,
+                "byte_offset": 1
+              },
+              {
+                "kind": "byte",
+                "name": "argument_2",
+                "value": 123,
+                "byte_offset": 2
+              },
+              {
+                "kind": "byte",
+                "name": "argument_3",
+                "value": 25,
+                "byte_offset": 3
+              }
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 37"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "sequence",
+            "role": "Approach metadata for the side-view engine; Wladcy retains this legacy structure.",
+            "parts": [
+              {
+                "kind": "byte",
+                "name": "facing",
+                "value": 3
+              },
+              {
+                "kind": "byte",
+                "name": "approach_run",
+                "value": 1
+              },
+              {
+                "kind": "byte",
+                "name": "x",
+                "value": 16
+              },
+              {
+                "kind": "byte",
+                "name": "y",
+                "value": 17
+              },
+              {
+                "kind": "byte",
+                "name": "final_facing",
+                "value": 0
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 6,
+            "handler_cfa": "780C",
+            "handler": "ACTION-DESCRIBE",
+            "arguments": [
+              {
+                "kind": "message",
+                "lines": [
+                  "OBlOCZEK"
+                ],
+                "encoding": "game-font-byte-glyphs"
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 2,
+            "dispatch_id": 29,
+            "handler_cfa": "7E42",
+            "handler": "ACTION-REPLACE-WITH-SPELL",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "argument_1",
+                "value": 123,
+                "byte_offset": 1
+              },
+              {
+                "kind": "byte",
+                "name": "argument_2",
+                "value": 53,
+                "byte_offset": 2
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 3,
+            "dispatch_id": 22,
+            "handler_cfa": "7CED",
+            "handler": "ACTION-DESTROY-WITH-ITEM",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "argument_1",
+                "value": 123,
+                "byte_offset": 1
+              },
+              {
+                "kind": "byte",
+                "name": "argument_2",
+                "value": 53,
+                "byte_offset": 2
+              }
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 38"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "sequence",
+            "role": "Approach metadata for the side-view engine; Wladcy retains this legacy structure.",
+            "parts": [
+              {
+                "kind": "byte",
+                "name": "facing",
+                "value": 3
+              },
+              {
+                "kind": "byte",
+                "name": "approach_run",
+                "value": 8
+              },
+              {
+                "kind": "byte",
+                "name": "x",
+                "value": 3
+              },
+              {
+                "kind": "byte",
+                "name": "y",
+                "value": 18
+              },
+              {
+                "kind": "byte",
+                "name": "final_facing",
+                "value": 3
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 5,
+            "handler_cfa": "77FA",
+            "handler": "ACTION-ENTER-VIEW",
+            "arguments": []
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 39"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "sequence",
+            "role": "Approach metadata for the side-view engine; Wladcy retains this legacy structure.",
+            "parts": [
+              {
+                "kind": "byte",
+                "name": "facing",
+                "value": 3
+              },
+              {
+                "kind": "byte",
+                "name": "approach_run",
+                "value": 5
+              },
+              {
+                "kind": "byte",
+                "name": "x",
+                "value": 6
+              },
+              {
+                "kind": "byte",
+                "name": "y",
+                "value": 16
+              },
+              {
+                "kind": "byte",
+                "name": "final_facing",
+                "value": 3
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 5,
+            "handler_cfa": "77FA",
+            "handler": "ACTION-ENTER-VIEW",
+            "arguments": []
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 40"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "sequence",
+            "role": "Approach metadata for the side-view engine; Wladcy retains this legacy structure.",
+            "parts": [
+              {
+                "kind": "byte",
+                "name": "facing",
+                "value": 3
+              },
+              {
+                "kind": "byte",
+                "name": "approach_run",
+                "value": 7
+              },
+              {
+                "kind": "byte",
+                "name": "x",
+                "value": 4
+              },
+              {
+                "kind": "byte",
+                "name": "y",
+                "value": 18
+              },
+              {
+                "kind": "byte",
+                "name": "final_facing",
+                "value": 0
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 5,
+            "handler_cfa": "77FA",
+            "handler": "ACTION-ENTER-VIEW",
+            "arguments": []
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 41"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "sequence",
+            "role": "Approach metadata for the side-view engine; Wladcy retains this legacy structure.",
+            "parts": [
+              {
+                "kind": "byte",
+                "name": "facing",
+                "value": 3
+              },
+              {
+                "kind": "byte",
+                "name": "approach_run",
+                "value": 1
+              },
+              {
+                "kind": "byte",
+                "name": "x",
+                "value": 17
+              },
+              {
+                "kind": "byte",
+                "name": "y",
+                "value": 15
+              },
+              {
+                "kind": "byte",
+                "name": "final_facing",
+                "value": 0
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 6,
+            "handler_cfa": "780C",
+            "handler": "ACTION-DESCRIBE",
+            "arguments": [
+              {
+                "kind": "message",
+                "lines": [
+                  "WNeTRZE=PIECA"
+                ],
+                "encoding": "game-font-byte-glyphs"
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 2,
+            "dispatch_id": 5,
+            "handler_cfa": "77FA",
+            "handler": "ACTION-ENTER-VIEW",
+            "arguments": []
+          },
+          {
+            "kind": "action",
+            "record_index": 3,
+            "dispatch_id": 32,
+            "handler_cfa": "7E7F",
+            "handler": "ACTION-SPELL-REMOTE-VIEW",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "view",
+                "value": 2,
+                "byte_offset": 1
+              },
+              {
+                "kind": "byte",
+                "name": "required_spell",
+                "value": 6,
+                "byte_offset": 2
+              },
+              {
+                "kind": "byte",
+                "name": "expected_object",
+                "value": 218,
+                "byte_offset": 3
+              },
+              {
+                "kind": "byte",
+                "name": "replacement_object",
+                "value": 219,
+                "byte_offset": 4
+              },
+              {
+                "kind": "message",
+                "lines": [
+                  "NIE=MA=W=PIECU",
+                  "ODPOWIEDNIEGO=SUROWCA"
+                ],
+                "encoding": "game-font-byte-glyphs"
+              }
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 42"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "legacy_approach_control",
+            "value": 1
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 6,
+            "handler_cfa": "780C",
+            "handler": "ACTION-DESCRIBE",
+            "arguments": [
+              {
+                "kind": "message",
+                "lines": [
+                  "PIEC",
+                  "ALCHEMICZNY"
+                ],
+                "encoding": "game-font-byte-glyphs"
+              }
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 43"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "legacy_approach_control",
+            "value": 1
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 30,
+            "handler_cfa": "7E56",
+            "handler": "ACTION-ADD-SCENE-OBJECT",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "added_object",
+                "value": 136,
+                "byte_offset": 1
+              }
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 44"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "legacy_approach_control",
+            "value": 1
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 31,
+            "handler_cfa": "7E6D",
+            "handler": "ACTION-REMOVE-SCENE-OBJECT",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "removed_object",
+                "value": 136,
+                "byte_offset": 1
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 2,
+            "dispatch_id": 5,
+            "handler_cfa": "77FA",
+            "handler": "ACTION-ENTER-VIEW",
+            "arguments": []
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 45"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "sequence",
+            "role": "Approach metadata for the side-view engine; Wladcy retains this legacy structure.",
+            "parts": [
+              {
+                "kind": "byte",
+                "name": "facing",
+                "value": 1
+              },
+              {
+                "kind": "byte",
+                "name": "approach_run",
+                "value": 1
+              },
+              {
+                "kind": "byte",
+                "name": "x",
+                "value": 19
+              },
+              {
+                "kind": "byte",
+                "name": "y",
+                "value": 14
+              },
+              {
+                "kind": "byte",
+                "name": "final_facing",
+                "value": 0
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 6,
+            "handler_cfa": "780C",
+            "handler": "ACTION-DESCRIBE",
+            "arguments": [
+              {
+                "kind": "message",
+                "lines": [
+                  "MIECZ"
+                ],
+                "encoding": "game-font-byte-glyphs"
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 2,
+            "dispatch_id": 33,
+            "handler_cfa": "7EE3",
+            "handler": "ACTION-TAKE-REWARD",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "redraw_background",
+                "value": 8,
+                "byte_offset": 1
+              },
+              {
+                "kind": "byte",
+                "name": "removed_object",
+                "value": 143,
+                "byte_offset": 2
+              },
+              {
+                "kind": "byte",
+                "name": "inventory_item",
+                "value": 217,
+                "byte_offset": 3
+              },
+              {
+                "kind": "byte",
+                "name": "puzzle_cell",
+                "value": 7,
+                "byte_offset": 4
+              }
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 46"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "sequence",
+            "role": "Approach metadata for the side-view engine; Wladcy retains this legacy structure.",
+            "parts": [
+              {
+                "kind": "byte",
+                "name": "facing",
+                "value": 1
+              },
+              {
+                "kind": "byte",
+                "name": "approach_run",
+                "value": 3
+              },
+              {
+                "kind": "byte",
+                "name": "x",
+                "value": 22
+              },
+              {
+                "kind": "byte",
+                "name": "y",
+                "value": 17
+              },
+              {
+                "kind": "byte",
+                "name": "final_facing",
+                "value": 0
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 34,
+            "handler_cfa": "7F69",
+            "handler": "ACTION-PLAY-FOR-PRIZE",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "argument_1",
+                "value": 204,
+                "byte_offset": 1
+              },
+              {
+                "kind": "byte",
+                "name": "argument_2",
+                "value": 203,
+                "byte_offset": 2
+              },
+              {
+                "kind": "byte",
+                "name": "argument_3",
+                "value": 218,
+                "byte_offset": 3
+              },
+              {
+                "kind": "byte",
+                "name": "argument_4",
+                "value": 6,
+                "byte_offset": 4
+              },
+              {
+                "kind": "message",
+                "lines": [
+                  "NIE=GRAM=KOsCIa,",
+                  "KToRA=MA=OCZKA"
+                ],
+                "encoding": "game-font-byte-glyphs"
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 2,
+            "dispatch_id": 6,
+            "handler_cfa": "780C",
+            "handler": "ACTION-DESCRIBE",
+            "arguments": [
+              {
+                "kind": "message",
+                "lines": [
+                  "CHIMERYCZNY",
+                  "HAZARDZISTA"
+                ],
+                "encoding": "game-font-byte-glyphs"
+              }
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 47"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "sequence",
+            "role": "Approach metadata for the side-view engine; Wladcy retains this legacy structure.",
+            "parts": [
+              {
+                "kind": "byte",
+                "name": "facing",
+                "value": 1
+              },
+              {
+                "kind": "byte",
+                "name": "approach_run",
+                "value": 3
+              },
+              {
+                "kind": "byte",
+                "name": "x",
+                "value": 22
+              },
+              {
+                "kind": "byte",
+                "name": "y",
+                "value": 17
+              },
+              {
+                "kind": "byte",
+                "name": "final_facing",
+                "value": 0
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 5,
+            "handler_cfa": "77FA",
+            "handler": "ACTION-ENTER-VIEW",
+            "arguments": []
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 48"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "sequence",
+            "role": "Approach metadata for the side-view engine; Wladcy retains this legacy structure.",
+            "parts": [
+              {
+                "kind": "byte",
+                "name": "facing",
+                "value": 1
+              },
+              {
+                "kind": "byte",
+                "name": "approach_run",
+                "value": 1
+              },
+              {
+                "kind": "byte",
+                "name": "x",
+                "value": 19
+              },
+              {
+                "kind": "byte",
+                "name": "y",
+                "value": 15
+              },
+              {
+                "kind": "byte",
+                "name": "final_facing",
+                "value": 0
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 35,
+            "handler_cfa": "7F11",
+            "handler": "ACTION-CLOSE-PUZZLE-VIEW",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "redraw_background",
+                "value": 7,
+                "byte_offset": 1
+              },
+              {
+                "kind": "byte",
+                "name": "removed_object",
+                "value": 108,
+                "byte_offset": 2
+              },
+              {
+                "kind": "byte",
+                "name": "replacement_object",
+                "value": 8,
+                "byte_offset": 3
+              },
+              {
+                "kind": "byte",
+                "name": "puzzle_cell",
+                "value": 7,
+                "byte_offset": 4
+              }
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 49"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "sequence",
+            "role": "Approach metadata for the side-view engine; Wladcy retains this legacy structure.",
+            "parts": [
+              {
+                "kind": "byte",
+                "name": "facing",
+                "value": 3
+              },
+              {
+                "kind": "byte",
+                "name": "approach_run",
+                "value": 1
+              },
+              {
+                "kind": "byte",
+                "name": "x",
+                "value": 17
+              },
+              {
+                "kind": "byte",
+                "name": "y",
+                "value": 14
+              },
+              {
+                "kind": "byte",
+                "name": "final_facing",
+                "value": 0
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 6,
+            "handler_cfa": "780C",
+            "handler": "ACTION-DESCRIBE",
+            "arguments": [
+              {
+                "kind": "message",
+                "lines": [
+                  "TWARZ=SKaPCA.",
+                  "STRAzNIK=DRZWI."
+                ],
+                "encoding": "game-font-byte-glyphs"
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 2,
+            "dispatch_id": 36,
+            "handler_cfa": "7FE8",
+            "handler": "ACTION-PAY-OR-TRIGGER-TRAP",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "argument_1",
+                "value": 7,
+                "byte_offset": 1
+              },
+              {
+                "kind": "byte",
+                "name": "argument_2",
+                "value": 8,
+                "byte_offset": 2
+              },
+              {
+                "kind": "byte",
+                "name": "argument_3",
+                "value": 108,
+                "byte_offset": 3
+              },
+              {
+                "kind": "message",
+                "lines": [
+                  "CHCIAlEs=MNIE",
+                  "OSZUKAc"
+                ],
+                "encoding": "game-font-byte-glyphs"
+              }
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 50"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "sequence",
+            "role": "Approach metadata for the side-view engine; Wladcy retains this legacy structure.",
+            "parts": [
+              {
+                "kind": "byte",
+                "name": "facing",
+                "value": 3
+              },
+              {
+                "kind": "byte",
+                "name": "approach_run",
+                "value": 1
+              },
+              {
+                "kind": "byte",
+                "name": "x",
+                "value": 15
+              },
+              {
+                "kind": "byte",
+                "name": "y",
+                "value": 16
+              },
+              {
+                "kind": "byte",
+                "name": "final_facing",
+                "value": 0
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 37,
+            "handler_cfa": "8045",
+            "handler": "ACTION-CANNOT-TAKE",
+            "arguments": [
+              {
+                "kind": "message",
+                "lines": [
+                  "NIE=MOzESZ,",
+                  "TO=PRODUKT=MAGII"
+                ],
+                "encoding": "game-font-byte-glyphs"
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 2,
+            "dispatch_id": 29,
+            "handler_cfa": "7E42",
+            "handler": "ACTION-REPLACE-WITH-SPELL",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "argument_1",
+                "value": 44,
+                "byte_offset": 1
+              },
+              {
+                "kind": "byte",
+                "name": "argument_2",
+                "value": 144,
+                "byte_offset": 2
+              }
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 51"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "sequence",
+            "role": "Approach metadata for the side-view engine; Wladcy retains this legacy structure.",
+            "parts": [
+              {
+                "kind": "byte",
+                "name": "facing",
+                "value": 0
+              },
+              {
+                "kind": "byte",
+                "name": "approach_run",
+                "value": 0
+              },
+              {
+                "kind": "byte",
+                "name": "x",
+                "value": 15
+              },
+              {
+                "kind": "byte",
+                "name": "y",
+                "value": 16
+              },
+              {
+                "kind": "byte",
+                "name": "final_facing",
+                "value": 0
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 37,
+            "handler_cfa": "8045",
+            "handler": "ACTION-CANNOT-TAKE",
+            "arguments": [
+              {
+                "kind": "message",
+                "lines": [
+                  "NIE=MOzESZ,",
+                  "TO=PRODUKT=MAGII"
+                ],
+                "encoding": "game-font-byte-glyphs"
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 2,
+            "dispatch_id": 38,
+            "handler_cfa": "8057",
+            "handler": "ACTION-SPELL-REPLACEMENT",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "argument_1",
+                "value": 20,
+                "byte_offset": 1
+              },
+              {
+                "kind": "byte",
+                "name": "argument_2",
+                "value": 50,
+                "byte_offset": 2
+              }
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 52"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "sequence",
+            "role": "Approach metadata for the side-view engine; Wladcy retains this legacy structure.",
+            "parts": [
+              {
+                "kind": "byte",
+                "name": "facing",
+                "value": 0
+              },
+              {
+                "kind": "byte",
+                "name": "approach_run",
+                "value": 0
+              },
+              {
+                "kind": "byte",
+                "name": "x",
+                "value": 6
+              },
+              {
+                "kind": "byte",
+                "name": "y",
+                "value": 17
+              },
+              {
+                "kind": "byte",
+                "name": "final_facing",
+                "value": 3
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 6,
+            "handler_cfa": "780C",
+            "handler": "ACTION-DESCRIBE",
+            "arguments": [
+              {
+                "kind": "message",
+                "lines": [
+                  "WeZEl=GORDYJSKI"
+                ],
+                "encoding": "game-font-byte-glyphs"
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 2,
+            "dispatch_id": 22,
+            "handler_cfa": "7CED",
+            "handler": "ACTION-DESTROY-WITH-ITEM",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "argument_1",
+                "value": 118,
+                "byte_offset": 1
+              },
+              {
+                "kind": "byte",
+                "name": "argument_2",
+                "value": 49,
+                "byte_offset": 2
+              }
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 53"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "sequence",
+            "role": "Approach metadata for the side-view engine; Wladcy retains this legacy structure.",
+            "parts": [
+              {
+                "kind": "byte",
+                "name": "facing",
+                "value": 0
+              },
+              {
+                "kind": "byte",
+                "name": "approach_run",
+                "value": 1
+              },
+              {
+                "kind": "byte",
+                "name": "x",
+                "value": 17
+              },
+              {
+                "kind": "byte",
+                "name": "y",
+                "value": 13
+              },
+              {
+                "kind": "byte",
+                "name": "final_facing",
+                "value": 0
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 6,
+            "handler_cfa": "780C",
+            "handler": "ACTION-DESCRIBE",
+            "arguments": [
+              {
+                "kind": "message",
+                "lines": [
+                  "NIEWIDZIALNE=PRZEJsCIE"
+                ],
+                "encoding": "game-font-byte-glyphs"
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 2,
+            "dispatch_id": 15,
+            "handler_cfa": "7AA4",
+            "handler": "ACTION-ENTER-ROOM",
+            "arguments": []
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 54"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "sequence",
+            "role": "Approach metadata for the side-view engine; Wladcy retains this legacy structure.",
+            "parts": [
+              {
+                "kind": "byte",
+                "name": "facing",
+                "value": 3
+              },
+              {
+                "kind": "byte",
+                "name": "approach_run",
+                "value": 2
+              },
+              {
+                "kind": "byte",
+                "name": "x",
+                "value": 1
+              },
+              {
+                "kind": "byte",
+                "name": "y",
+                "value": 17
+              },
+              {
+                "kind": "byte",
+                "name": "final_facing",
+                "value": 3
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 6,
+            "handler_cfa": "780C",
+            "handler": "ACTION-DESCRIBE",
+            "arguments": [
+              {
+                "kind": "message",
+                "lines": [
+                  "TAJNE=PRZEJsCIE"
+                ],
+                "encoding": "game-font-byte-glyphs"
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 2,
+            "dispatch_id": 43,
+            "handler_cfa": "80E1",
+            "handler": "ACTION-CROSS-ANTIMAGIC-WALL",
+            "arguments": []
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 55"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "sequence",
+            "role": "Approach metadata for the side-view engine; Wladcy retains this legacy structure.",
+            "parts": [
+              {
+                "kind": "byte",
+                "name": "facing",
+                "value": 3
+              },
+              {
+                "kind": "byte",
+                "name": "approach_run",
+                "value": 2
+              },
+              {
+                "kind": "byte",
+                "name": "x",
+                "value": 11
+              },
+              {
+                "kind": "byte",
+                "name": "y",
+                "value": 16
+              },
+              {
+                "kind": "byte",
+                "name": "final_facing",
+                "value": 3
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 6,
+            "handler_cfa": "780C",
+            "handler": "ACTION-DESCRIBE",
+            "arguments": [
+              {
+                "kind": "message",
+                "lines": [
+                  "PTAK"
+                ],
+                "encoding": "game-font-byte-glyphs"
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 2,
+            "dispatch_id": 39,
+            "handler_cfa": "806B",
+            "handler": "ACTION-CATCH-WITH-ITEM",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "redraw_background",
+                "value": 110,
+                "byte_offset": 1
+              },
+              {
+                "kind": "byte",
+                "name": "removed_object",
+                "value": 148,
+                "byte_offset": 2
+              },
+              {
+                "kind": "byte",
+                "name": "inventory_item",
+                "value": 209,
+                "byte_offset": 3
+              },
+              {
+                "kind": "byte",
+                "name": "puzzle_cell",
+                "value": 0,
+                "byte_offset": 4
+              },
+              {
+                "kind": "byte",
+                "name": "required_item",
+                "value": 11,
+                "byte_offset": 5
+              }
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 56"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "sequence",
+            "role": "Approach metadata for the side-view engine; Wladcy retains this legacy structure.",
+            "parts": [
+              {
+                "kind": "byte",
+                "name": "facing",
+                "value": 3
+              },
+              {
+                "kind": "byte",
+                "name": "approach_run",
+                "value": 10
+              },
+              {
+                "kind": "byte",
+                "name": "x",
+                "value": 4
+              },
+              {
+                "kind": "byte",
+                "name": "y",
+                "value": 18
+              },
+              {
+                "kind": "byte",
+                "name": "final_facing",
+                "value": 3
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 6,
+            "handler_cfa": "780C",
+            "handler": "ACTION-DESCRIBE",
+            "arguments": [
+              {
+                "kind": "message",
+                "lines": [
+                  "NIC=NIE=WIDZISZ"
+                ],
+                "encoding": "game-font-byte-glyphs"
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 2,
+            "dispatch_id": 40,
+            "handler_cfa": "807F",
+            "handler": "ACTION-SPELL-REMOVE-OBJECT",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "removed_object",
+                "value": 149,
+                "byte_offset": 1
+              },
+              {
+                "kind": "byte",
+                "name": "required_spell",
+                "value": 8,
+                "byte_offset": 2
+              }
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 57"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "sequence",
+            "role": "Approach metadata for the side-view engine; Wladcy retains this legacy structure.",
+            "parts": [
+              {
+                "kind": "byte",
+                "name": "facing",
+                "value": 0
+              },
+              {
+                "kind": "byte",
+                "name": "approach_run",
+                "value": 0
+              },
+              {
+                "kind": "byte",
+                "name": "x",
+                "value": 4
+              },
+              {
+                "kind": "byte",
+                "name": "y",
+                "value": 17
+              },
+              {
+                "kind": "byte",
+                "name": "final_facing",
+                "value": 3
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 6,
+            "handler_cfa": "780C",
+            "handler": "ACTION-DESCRIBE",
+            "arguments": [
+              {
+                "kind": "message",
+                "lines": [
+                  "CIezKA=SPIzOWA",
+                  "KRATA"
+                ],
+                "encoding": "game-font-byte-glyphs"
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 2,
+            "dispatch_id": 41,
+            "handler_cfa": "8045",
+            "handler": "ACTION-CANNOT-TAKE",
+            "arguments": [
+              {
+                "kind": "message",
+                "lines": [
+                  "TO=WYMAGA",
+                  "WIeKSZEJ=SIlY"
+                ],
+                "encoding": "game-font-byte-glyphs"
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 3,
+            "dispatch_id": 29,
+            "handler_cfa": "7E42",
+            "handler": "ACTION-REPLACE-WITH-SPELL",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "argument_1",
+                "value": 18,
+                "byte_offset": 1
+              },
+              {
+                "kind": "byte",
+                "name": "argument_2",
+                "value": 118,
+                "byte_offset": 2
+              }
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 58"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "legacy_approach_control",
+            "value": 1
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 6,
+            "handler_cfa": "780C",
+            "handler": "ACTION-DESCRIBE",
+            "arguments": [
+              {
+                "kind": "message",
+                "lines": [
+                  "ZWYKlY=GOBELIN"
+                ],
+                "encoding": "game-font-byte-glyphs"
+              }
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 59"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "legacy_approach_control",
+            "value": 1
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 6,
+            "handler_cfa": "780C",
+            "handler": "ACTION-DESCRIBE",
+            "arguments": [
+              {
+                "kind": "message",
+                "lines": [
+                  "MAGICZNY=GOBELIN"
+                ],
+                "encoding": "game-font-byte-glyphs"
+              }
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 60"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "sequence",
+            "role": "Approach metadata for the side-view engine; Wladcy retains this legacy structure.",
+            "parts": [
+              {
+                "kind": "byte",
+                "name": "facing",
+                "value": 0
+              },
+              {
+                "kind": "byte",
+                "name": "approach_run",
+                "value": 2
+              },
+              {
+                "kind": "byte",
+                "name": "x",
+                "value": 17
+              },
+              {
+                "kind": "byte",
+                "name": "y",
+                "value": 14
+              },
+              {
+                "kind": "byte",
+                "name": "final_facing",
+                "value": 2
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 6,
+            "handler_cfa": "780C",
+            "handler": "ACTION-DESCRIBE",
+            "arguments": [
+              {
+                "kind": "message",
+                "lines": [
+                  "WNeKA=CZASU"
+                ],
+                "encoding": "game-font-byte-glyphs"
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 2,
+            "dispatch_id": 52,
+            "handler_cfa": "83D3",
+            "handler": "ACTION-TRAVEL-THROUGH-TIME",
+            "arguments": []
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 61"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "sequence",
+            "role": "Approach metadata for the side-view engine; Wladcy retains this legacy structure.",
+            "parts": [
+              {
+                "kind": "byte",
+                "name": "facing",
+                "value": 0
+              },
+              {
+                "kind": "byte",
+                "name": "approach_run",
+                "value": 1
+              },
+              {
+                "kind": "byte",
+                "name": "x",
+                "value": 15
+              },
+              {
+                "kind": "byte",
+                "name": "y",
+                "value": 16
+              },
+              {
+                "kind": "byte",
+                "name": "final_facing",
+                "value": 0
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 19,
+            "handler_cfa": "7B82",
+            "handler": "ACTION-DESCRIBE-SPELL",
+            "arguments": []
+          },
+          {
+            "kind": "action",
+            "record_index": 2,
+            "dispatch_id": 42,
+            "handler_cfa": "80A2",
+            "handler": "ACTION-COPY-HIDDEN-SPELL",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "argument_1",
+                "value": 20,
+                "byte_offset": 1
+              }
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 62"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "sequence",
+            "role": "Approach metadata for the side-view engine; Wladcy retains this legacy structure.",
+            "parts": [
+              {
+                "kind": "byte",
+                "name": "facing",
+                "value": 1
+              },
+              {
+                "kind": "byte",
+                "name": "approach_run",
+                "value": 2
+              },
+              {
+                "kind": "byte",
+                "name": "x",
+                "value": 30
+              },
+              {
+                "kind": "byte",
+                "name": "y",
+                "value": 17
+              },
+              {
+                "kind": "byte",
+                "name": "final_facing",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 43,
+            "handler_cfa": "80E1",
+            "handler": "ACTION-CROSS-ANTIMAGIC-WALL",
+            "arguments": []
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 63"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "sequence",
+            "role": "Approach metadata for the side-view engine; Wladcy retains this legacy structure.",
+            "parts": [
+              {
+                "kind": "byte",
+                "name": "facing",
+                "value": 1
+              },
+              {
+                "kind": "byte",
+                "name": "approach_run",
+                "value": 10
+              },
+              {
+                "kind": "byte",
+                "name": "x",
+                "value": 29
+              },
+              {
+                "kind": "byte",
+                "name": "y",
+                "value": 18
+              },
+              {
+                "kind": "byte",
+                "name": "final_facing",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 6,
+            "handler_cfa": "780C",
+            "handler": "ACTION-DESCRIBE",
+            "arguments": [
+              {
+                "kind": "message",
+                "lines": [
+                  "LUSTRO=Z=NAPISEM"
+                ],
+                "encoding": "game-font-byte-glyphs"
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 2,
+            "dispatch_id": 44,
+            "handler_cfa": "80FC",
+            "handler": "ACTION-READ-MESSAGE",
+            "arguments": [
+              {
+                "kind": "message",
+                "lines": [
+                  "CZAR=SIlY",
+                  "SCHOWAl=ALCHEMIK"
+                ],
+                "encoding": "game-font-byte-glyphs"
+              }
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 64"
+      }
+    ],
+    "terminated": false,
+    "tail": []
+  }
+}

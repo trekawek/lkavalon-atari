@@ -1,0 +1,16 @@
+( ASSEMBLER )
+
+30 IF. IFPL,  ( BPL )
+10 IF. IFMI,  ( BMI )
+70 IF. IFVC,  ( BVC )
+50 IF. IFVS,  ( BVS )
+B0 IF. IFCC,  ( BCC )
+90 IF. IFCS,  ( BCS )
+F0 IF. IFNE,  ( BNE )
+D0 IF. IFEQ,  ( BEQ )
+
+: BEGIN,   HERE ; IMMEDIATE
+: END,   IF D0 ELSE F0 THEN  C,
+         HERE 1+ - DUP
+        -80 < ?ER5 C, ; IMMEDIATE
+: UNTIL,  [COMPILE]  END,  ; IMMEDIATE        -->

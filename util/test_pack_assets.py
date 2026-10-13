@@ -9,6 +9,7 @@ import tempfile
 import unittest
 
 import pack_assets as pack
+from reference_media import read_reference
 
 ROOT = Path(__file__).resolve().parents[1]
 REFERENCES = {
@@ -61,7 +62,7 @@ class ReleaseAssets(unittest.TestCase):
                 actual = pack.build_disks(isolated)
                 self.assertEqual(set(actual), set(outputs))
                 for output, (reference, prefix) in outputs.items():
-                    expected = bytearray((ROOT / game / "reference" / reference).read_bytes())
+                    expected = bytearray(read_reference(ROOT / game / "reference" / reference))
                     expected[15] = 0  # writable ATR metadata
                     expected[16:16 + prefix] = bytes(prefix)
                     self.assertEqual(actual[output], expected, (game, output))
@@ -72,7 +73,7 @@ class ReleaseAssets(unittest.TestCase):
              "build/assets-side1.atr", 35856 + 10),
             ("klatwa", "music/title.cmc", 100,
              "build/assets.atr", 0xE01C + 100),
-            ("klatwa", "graphics/fonts/gameplay.bin", 100,
+            ("klatwa", "graphics/fonts/gameplay.fnt", 100,
              "build/assets.atr", 0xC3EE + 100),
             ("klatwa", "graphics/sprites/direction-0-frame-0.bin", 20,
              "build/assets.atr", 0xCED6 + 20),

@@ -1,0 +1,19 @@
+{
+  "source_url": "https://atarionline.pl/v01/index.php?ct=utils2&sub=4.%20Programowanie&title=+Fig-Forth#kaz_5e1378ca54e4be7921002662b90a091c",
+  "edition": "APX Extended fig-FORTH 1.1 revision 2.0, v1 ATR",
+  "original_size": 92176,
+  "original_sha256": "e47b67da25bb595c14cad943df9bde03f2beeb3148af4662ad35e5d202f490e2",
+  "boot_sector_count": 58,
+  "boot_load_address": "0E80",
+  "boot_end_address": "2B80",
+  "boot_sha256": "dc06ad9a55a976521b54642b8b5a8dd8822b6fd1dfcd99efcefcfc78056766a8",
+  "header_sha256": "18330c03c0bef2a73974f640385cf0baf6ec85810f6f28fd24a77f9508932ce3",
+  "verification": "Original header, all 58 boot sectors, and all 77 retained ASCII screens match the supplied historical ATR. Omitted stale sectors are not an executable dependency.",
+  "disk_description": {
+    "catalog_number": "APX-20029",
+    "name": "fig-FORTH 1.1 Rev. 2.0",
+    "author": "Patrick L. Mullarky",
+    "date": "01/15/82",
+    "source": "Original disk sector362, ATASCII-terminated DISKNAME.DAT description; not executable input"
+  }
+}

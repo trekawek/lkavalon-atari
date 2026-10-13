@@ -1,0 +1,16 @@
+( "STARTING FORTH" CHANGES )
+    BASE @   DECIMAL
+: VARIABLE  0 VARIABLE ;
+: 'S SP@ ;  : S0 18 +ORIGIN @ ;
+: 1- 1 - ;  : 2- 2 - ;  : 2* DUP + ;  : 2/ 2 / ; : NOT 0= ;
+: I' R> R> R ROT ROT >R >R ;
+: J R> R> R> R R# ! >R >R >R R# @ ;
+: PAGE 125 EMIT ;
+: 2VARIABLE VARIABLE 0 , ;  : EXIT R> ;  : H DP ;
+: 2CONSTANT <BUILDS HERE D! 4 ALLOT DOES> D@ ;
+: CREATE VARIABLE -2 ALLOT ; : 2@ D@ ; : 2! D! ;
+: >IN IN ;  : /LOOP [COMPILE] LOOP ; IMMEDIATE
+: ['] [COMPILE] ' ; : WITHIN >R 1- OVER < SWAP R> < AND ;
+: NUMPATCH DROP 58 OVER = SWAP 44 48 WITHIN OR NOT ;
+: NUMFIX ' NUMPATCH CFA ' NUMBER 52 + ! ; NUMFIX
+-->

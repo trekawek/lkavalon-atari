@@ -1,0 +1,13 @@
+{
+  "format": "ad2044.hit-map",
+  "version": 1,
+  "note": "Retired inventory object-ID grid in unallocated sectors",
+  "width": 3,
+  "height": 4,
+  "object_ids": [
+    [112, 112, 0],
+    [0, 112, 0],
+    [0, 112, 0],
+    [0, 0, 0]
+  ]
+}

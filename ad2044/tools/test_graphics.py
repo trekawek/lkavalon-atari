@@ -3,6 +3,9 @@
 
 import importlib.util
 from pathlib import Path
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "util"))
+from reference_media import read_reference
 import unittest
 
 SPEC = importlib.util.spec_from_file_location(
@@ -85,7 +88,7 @@ class OriginalDiskTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.disks = {
-            side: (ROOT / f"reference/ad2044-side{side}.atr").read_bytes()
+            side: read_reference(ROOT / f"reference/ad2044-side{side}.atr")
             for side in (1, 2)
         }
         cls.files, cls.metadata = graphics.extract(cls.disks[1], cls.disks[2])

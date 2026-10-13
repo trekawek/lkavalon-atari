@@ -1,0 +1,102 @@
+{
+  "version": 1,
+  "format": "gam.hit-map",
+  "note": "Object hit/depth lookup cells, not visual transparency; rows are the only source of cell values.",
+  "data": {
+    "kind": "hit-map",
+    "width": 3,
+    "height": 12,
+    "rows": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        10,
+        10
+      ],
+      [
+        10,
+        10,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ]
+    ],
+    "encoding_columns": [
+      [
+        {
+          "pattern_size": 1,
+          "repeat": 9
+        },
+        {
+          "literals": 3
+        }
+      ],
+      [
+        {
+          "pattern_size": 1,
+          "repeat": 8
+        },
+        {
+          "literals": 4
+        }
+      ],
+      [
+        {
+          "pattern_size": 1,
+          "repeat": 8
+        },
+        {
+          "literals": 4
+        }
+      ]
+    ],
+    "tail": []
+  }
+}

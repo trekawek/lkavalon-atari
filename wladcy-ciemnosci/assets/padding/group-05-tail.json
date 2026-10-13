@@ -1,0 +1,191 @@
+{
+  "version": 1,
+  "format": "gam.residue",
+  "note": "Unused saved allocation bytes. No live consumer established; segment offsets and literal values retain provenance honestly.",
+  "data": {
+    "kind": "residue",
+    "segments": [
+      {
+        "offset": 0,
+        "fill": 0,
+        "count": 4,
+        "note": "Unresolved unused allocation residue."
+      },
+      {
+        "offset": 4,
+        "unresolved_bytes": [
+          4,
+          229,
+          0,
+          229,
+          229
+        ],
+        "note": "Unresolved unused allocation residue."
+      },
+      {
+        "offset": 9,
+        "fill": 0,
+        "count": 6,
+        "note": "Unresolved unused allocation residue."
+      },
+      {
+        "offset": 15,
+        "unresolved_bytes": [
+          229,
+          229,
+          229,
+          141,
+          4,
+          229,
+          0,
+          229,
+          229
+        ],
+        "note": "Unresolved unused allocation residue."
+      },
+      {
+        "offset": 24,
+        "fill": 0,
+        "count": 6,
+        "note": "Unresolved unused allocation residue."
+      },
+      {
+        "offset": 30,
+        "unresolved_bytes": [
+          58,
+          233,
+          230,
+          141,
+          4,
+          234,
+          238,
+          235,
+          250,
+          58,
+          62,
+          14,
+          1,
+          169,
+          169,
+          148
+        ],
+        "note": "Unresolved unused allocation residue."
+      },
+      {
+        "offset": 46,
+        "unresolved_bytes": [
+          228,
+          165,
+          169,
+          170,
+          90,
+          166,
+          169,
+          141,
+          4,
+          170,
+          171,
+          174,
+          250,
+          170,
+          170,
+          169
+        ],
+        "note": "Unresolved unused allocation residue."
+      },
+      {
+        "offset": 62,
+        "unresolved_bytes": [
+          85,
+          141,
+          5,
+          0,
+          64,
+          80,
+          80,
+          141,
+          9,
+          148,
+          84,
+          80,
+          80,
+          64,
+          2,
+          13
+        ],
+        "note": "Unresolved unused allocation residue."
+      },
+      {
+        "offset": 78,
+        "unresolved_bytes": [
+          0,
+          3,
+          4,
+          0,
+          229,
+          229,
+          229,
+          141,
+          4,
+          229,
+          0,
+          229,
+          229
+        ],
+        "note": "Unresolved unused allocation residue."
+      },
+      {
+        "offset": 91,
+        "fill": 0,
+        "count": 5,
+        "note": "Unresolved unused allocation residue."
+      },
+      {
+        "offset": 96,
+        "unresolved_bytes": [
+          4,
+          0,
+          229,
+          229,
+          229,
+          141,
+          4,
+          229,
+          0,
+          229,
+          229
+        ],
+        "note": "Unresolved unused allocation residue."
+      },
+      {
+        "offset": 107,
+        "fill": 0,
+        "count": 5,
+        "note": "Unresolved unused allocation residue."
+      },
+      {
+        "offset": 112,
+        "unresolved_bytes": [
+          144,
+          164,
+          228,
+          228,
+          164,
+          148,
+          80,
+          80,
+          64,
+          2,
+          13,
+          0,
+          3,
+          4,
+          0,
+          0
+        ],
+        "note": "Unresolved unused allocation residue."
+      }
+    ],
+    "role": "Unresolved unused allocation residue."
+  }
+}

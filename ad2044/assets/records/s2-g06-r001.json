@@ -1,0 +1,450 @@
+{
+  "format": "ad2044.object-actions",
+  "version": 1,
+  "consumer": "SELECTED-OBJECT-RECORD $7281 and action handlers via $7664",
+  "objects": [
+    {
+      "object_id": 0,
+      "actions": [
+        {
+          "opcode": 1,
+          "handler": "ACT-BACK",
+          "fields": []
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 1,
+      "actions": [
+        {
+          "opcode": 1,
+          "handler": "ACT-BACK",
+          "fields": []
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 2,
+      "actions": [
+        {
+          "opcode": 7,
+          "handler": "ACT-EXAMINE",
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "KOlO=RATUNKOWE."
+              ],
+              "name": "message_1"
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 3,
+      "actions": [
+        {
+          "opcode": 7,
+          "handler": "ACT-EXAMINE",
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "NOWOsc.",
+                "^^^^^^^^",
+                "SPECJALNE=GAsNICE",
+                "DO=GASZENIA=WODY."
+              ],
+              "name": "message_1"
+            }
+          ]
+        },
+        {
+          "opcode": 42,
+          "handler": "ACT-REFUSE-WITH-OVERLAY",
+          "fields": [
+            {
+              "type": "u8",
+              "name": "revealed_object_id_or_255",
+              "value": 255
+            },
+            {
+              "type": "message",
+              "lines": [
+                "PO=CO=CI=TO?"
+              ],
+              "name": "message_1"
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 4,
+      "actions": [
+        {
+          "opcode": 7,
+          "handler": "ACT-EXAMINE",
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "STol."
+              ],
+              "name": "message_1"
+            }
+          ]
+        },
+        {
+          "opcode": 2,
+          "handler": "ACT-SHOW-CLOSEUP",
+          "fields": [
+            {
+              "type": "u8",
+              "name": "view_id",
+              "value": 1
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 5,
+      "actions": [
+        {
+          "opcode": 7,
+          "handler": "ACT-EXAMINE",
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "NOGA=STOlOWA."
+              ],
+              "name": "message_1"
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 6,
+      "actions": [
+        {
+          "opcode": 7,
+          "handler": "ACT-EXAMINE",
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "DRZWICZKI=DO=SZAFKI."
+              ],
+              "name": "message_1"
+            }
+          ]
+        },
+        {
+          "opcode": 11,
+          "handler": "ACT-OPEN-WITH-ITEM",
+          "fields": [
+            {
+              "type": "u8",
+              "name": "object_id",
+              "value": 5
+            },
+            {
+              "type": "u8",
+              "name": "required_inventory_id",
+              "value": 112
+            },
+            {
+              "type": "u8",
+              "name": "exit_direction",
+              "value": 5
+            },
+            {
+              "type": "message",
+              "lines": [
+                "TYM=NIE=OTWORZYSZ,",
+                "ZAMKNIeTE=NA=KLUCZYK."
+              ],
+              "name": "message_1"
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 7,
+      "actions": [
+        {
+          "opcode": 7,
+          "handler": "ACT-EXAMINE",
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "DRZWICZKI=DO=SZAFKI."
+              ],
+              "name": "message_1"
+            }
+          ]
+        },
+        {
+          "opcode": 11,
+          "handler": "ACT-OPEN-WITH-ITEM",
+          "fields": [
+            {
+              "type": "u8",
+              "name": "object_id",
+              "value": 5
+            },
+            {
+              "type": "u8",
+              "name": "required_inventory_id",
+              "value": 255
+            },
+            {
+              "type": "u8",
+              "name": "exit_direction",
+              "value": 5
+            },
+            {
+              "type": "message",
+              "lines": [
+                "TYM=NIE=OTWORZYSZ,",
+                "ZAMKNIeTE=NA=KLUCZYK."
+              ],
+              "name": "message_1"
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 8,
+      "actions": [
+        {
+          "opcode": 7,
+          "handler": "ACT-EXAMINE",
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "FAJANSOWY=WAZONIK."
+              ],
+              "name": "message_1"
+            }
+          ]
+        },
+        {
+          "opcode": 42,
+          "handler": "ACT-REFUSE-WITH-OVERLAY",
+          "fields": [
+            {
+              "type": "u8",
+              "name": "revealed_object_id_or_255",
+              "value": 4
+            },
+            {
+              "type": "message",
+              "lines": [
+                "NIESTETY,=WAZONIK",
+                "WYPADl=CI=Z=ReKI",
+                "I=ROZBIl=SIe=NA",
+                "PODlODZE."
+              ],
+              "name": "message_1"
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 9,
+      "actions": [
+        {
+          "opcode": 7,
+          "handler": "ACT-EXAMINE",
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "NAUKA=PlYWANIA.",
+                "^^^^^^^^^^^^^^^",
+                "PORADNIK=DLA=POCZaTKUJaCYCH",
+                "DZIAlACZEK=SEKRETARIATU."
+              ],
+              "name": "message_1"
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 10,
+      "actions": [
+        {
+          "opcode": 7,
+          "handler": "ACT-EXAMINE",
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "ZEPSUTY=ZEGAREK."
+              ],
+              "name": "message_1"
+            }
+          ]
+        },
+        {
+          "opcode": 42,
+          "handler": "ACT-REFUSE-WITH-OVERLAY",
+          "fields": [
+            {
+              "type": "u8",
+              "name": "revealed_object_id_or_255",
+              "value": 255
+            },
+            {
+              "type": "message",
+              "lines": [
+                "PO=CO=CI=TEN=RUPIEc,",
+                "LEPSZY=KUPISZ=TANIO",
+                "U=RUSKICH."
+              ],
+              "name": "message_1"
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 11,
+      "actions": [
+        {
+          "opcode": 7,
+          "handler": "ACT-EXAMINE",
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "ILUSTRACJA."
+              ],
+              "name": "message_1"
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 12,
+      "actions": [
+        {
+          "opcode": 7,
+          "handler": "ACT-EXAMINE",
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "NAUKA=PlYWANIA.",
+                "^^^^^^^^^^^^^^^",
+                "PORADNIK=DLA=POCZaTKUJaCYCH",
+                "DZIAlACZEK=SEKRETARIATU."
+              ],
+              "name": "message_1"
+            }
+          ]
+        },
+        {
+          "opcode": 18,
+          "handler": "ACT-SHOW-CLOSEUP",
+          "fields": [
+            {
+              "type": "u8",
+              "name": "view_id",
+              "value": 3
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 13,
+      "actions": [
+        {
+          "opcode": 21,
+          "handler": "ACT-HIDE-OBJECT",
+          "fields": [
+            {
+              "type": "u8",
+              "name": "hidden_object_id",
+              "value": 5
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 14,
+      "actions": [
+        {
+          "opcode": 7,
+          "handler": "ACT-EXAMINE",
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "WNeTRZE=SZAFKI."
+              ],
+              "name": "message_1"
+            }
+          ]
+        },
+        {
+          "opcode": 2,
+          "handler": "ACT-SHOW-CLOSEUP",
+          "fields": [
+            {
+              "type": "u8",
+              "name": "view_id",
+              "value": 2
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    }
+  ],
+  "terminator_cells": 0,
+  "unused": []
+}

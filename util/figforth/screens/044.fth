@@ -1,0 +1,16 @@
+( ASSEMBLER )
+
+0D VARIABLE MODE ( ABS. MODE )
+
+: MODE=   MODE @ = ; ( CK MODE )
+: 256<   DUP 100 ( HEX) U< ;
+: MODEFIX  256< IF -08 MODE +!
+           THEN ;
+     ( MODE=MODE-8 IF ADR<256 )
+: CKMODE   MODE= IF MODEFIX
+                 THEN ;
+: M0 <BUILDS C, DOES> SWAP
+     0D CKMODE  1D CKMODE SWAP
+     C@ MODE @ OR C,    256< IF
+     C, ELSE , THEN 0D MODE ! ;
+ DECIMAL  46 LOAD    ;S

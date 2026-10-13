@@ -3,6 +3,9 @@
 
 import hashlib
 from pathlib import Path
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "util"))
+from reference_media import read_reference
 import unittest
 
 import graphics
@@ -16,7 +19,7 @@ except ImportError:
 class GraphicsTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.atr = (graphics.ROOT / "klatwa/reference/klatwa-v1.atr").read_bytes()
+        cls.atr = read_reference(graphics.ROOT / "klatwa/reference/klatwa-v1.atr")
         cls.files, cls.metadata = graphics.extract(cls.atr)
 
     def test_group_crosses_directory_without_copying_it(self):

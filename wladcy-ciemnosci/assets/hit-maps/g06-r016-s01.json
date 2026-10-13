@@ -1,0 +1,231 @@
+{
+  "version": 1,
+  "format": "gam.hit-map",
+  "note": "Object hit/depth lookup cells, not visual transparency; rows are the only source of cell values.",
+  "data": {
+    "kind": "hit-map",
+    "width": 11,
+    "height": 9,
+    "rows": [
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "encoding_columns": [
+      [
+        {
+          "literals": 5
+        },
+        {
+          "pattern_size": 1,
+          "repeat": 4
+        }
+      ],
+      [
+        {
+          "literals": 5
+        },
+        {
+          "pattern_size": 1,
+          "repeat": 4
+        }
+      ],
+      [
+        {
+          "literals": 5
+        },
+        {
+          "pattern_size": 1,
+          "repeat": 4
+        }
+      ],
+      [
+        {
+          "literals": 5
+        },
+        {
+          "pattern_size": 1,
+          "repeat": 4
+        }
+      ],
+      [
+        {
+          "literals": 5
+        },
+        {
+          "pattern_size": 1,
+          "repeat": 4
+        }
+      ],
+      [
+        {
+          "literals": 5
+        },
+        {
+          "pattern_size": 1,
+          "repeat": 4
+        }
+      ],
+      [
+        {
+          "literals": 5
+        },
+        {
+          "pattern_size": 1,
+          "repeat": 4
+        }
+      ],
+      [
+        {
+          "literals": 5
+        },
+        {
+          "pattern_size": 1,
+          "repeat": 4
+        }
+      ],
+      [
+        {
+          "literals": 5
+        },
+        {
+          "pattern_size": 1,
+          "repeat": 4
+        }
+      ],
+      [
+        {
+          "literals": 5
+        },
+        {
+          "pattern_size": 1,
+          "repeat": 4
+        }
+      ],
+      [
+        {
+          "literals": 5
+        },
+        {
+          "pattern_size": 1,
+          "repeat": 4
+        }
+      ]
+    ],
+    "tail": []
+  }
+}

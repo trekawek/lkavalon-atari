@@ -1,0 +1,3130 @@
+{
+  "version": 1,
+  "format": "gam.action-collections",
+  "group": 6,
+  "resource": 0,
+  "data": {
+    "kind": "records",
+    "records": [
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "legacy_approach_control",
+            "value": 4
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 0"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "legacy_approach_control",
+            "value": 255
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 1"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "legacy_approach_control",
+            "value": 1
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 17,
+            "handler_cfa": "748B",
+            "handler": "ACT-CLOSE-SCENE-OBJECT",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "redraw_background",
+                "value": 7,
+                "byte_offset": 1
+              },
+              {
+                "kind": "byte",
+                "name": "removed_object",
+                "value": 108,
+                "byte_offset": 2
+              },
+              {
+                "kind": "byte",
+                "name": "replacement_object",
+                "value": 8,
+                "byte_offset": 3
+              }
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 2"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "legacy_approach_control",
+            "value": 1
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 3"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "sequence",
+            "role": "Approach metadata for the side-view engine; Wladcy retains this legacy structure.",
+            "parts": [
+              {
+                "kind": "byte",
+                "name": "legacy_argument_0",
+                "value": 3
+              },
+              {
+                "kind": "byte",
+                "name": "legacy_argument_1",
+                "value": 6
+              },
+              {
+                "kind": "byte",
+                "name": "legacy_argument_2",
+                "value": 4
+              },
+              {
+                "kind": "byte",
+                "name": "legacy_argument_3",
+                "value": 18
+              }
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 4"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "legacy_approach_control",
+            "value": 1
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 5"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "legacy_approach_control",
+            "value": 1
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 12,
+            "handler_cfa": "745F",
+            "handler": "ACT-ENTER-LINKED-ROOM",
+            "arguments": []
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 6"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "legacy_approach_control",
+            "value": 1
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 13,
+            "handler_cfa": "745F",
+            "handler": "ACT-ENTER-LINKED-ROOM",
+            "arguments": []
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 7"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "legacy_approach_control",
+            "value": 1
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 14,
+            "handler_cfa": "745F",
+            "handler": "ACT-ENTER-LINKED-ROOM",
+            "arguments": []
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 8"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "sequence",
+            "role": "Approach metadata for the side-view engine; Wladcy retains this legacy structure.",
+            "parts": [
+              {
+                "kind": "byte",
+                "name": "facing",
+                "value": 1
+              },
+              {
+                "kind": "byte",
+                "name": "approach_run",
+                "value": 2
+              },
+              {
+                "kind": "byte",
+                "name": "x",
+                "value": 27
+              },
+              {
+                "kind": "byte",
+                "name": "y",
+                "value": 16
+              },
+              {
+                "kind": "byte",
+                "name": "final_facing",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 15,
+            "handler_cfa": "745F",
+            "handler": "ACT-ENTER-LINKED-ROOM",
+            "arguments": []
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 9"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "legacy_approach_control",
+            "value": 1
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 6,
+            "handler_cfa": "71F6",
+            "handler": "ACT-DESCRIBE-ARG",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "argument_1",
+                "value": 11,
+                "byte_offset": 1
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 2,
+            "dispatch_id": 16,
+            "handler_cfa": "746D",
+            "handler": "ACT-OPEN-SCENE-OBJECT",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "redraw_background",
+                "value": 18,
+                "byte_offset": 1
+              },
+              {
+                "kind": "byte",
+                "name": "removed_object",
+                "value": 0,
+                "byte_offset": 2
+              },
+              {
+                "kind": "byte",
+                "name": "replacement_object",
+                "value": 118,
+                "byte_offset": 3
+              }
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 10"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "legacy_approach_control",
+            "value": 1
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 17,
+            "handler_cfa": "748B",
+            "handler": "ACT-CLOSE-SCENE-OBJECT",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "redraw_background",
+                "value": 18,
+                "byte_offset": 1
+              },
+              {
+                "kind": "byte",
+                "name": "removed_object",
+                "value": 118,
+                "byte_offset": 2
+              },
+              {
+                "kind": "byte",
+                "name": "replacement_object",
+                "value": 0,
+                "byte_offset": 3
+              }
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 11"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "legacy_approach_control",
+            "value": 1
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 46,
+            "handler_cfa": "79AA",
+            "handler": "ACT-DESCRIBE-METADATA",
+            "arguments": []
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 12"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "legacy_approach_control",
+            "value": 1
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 6,
+            "handler_cfa": "71F6",
+            "handler": "ACT-DESCRIBE-ARG",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "argument_1",
+                "value": 5,
+                "byte_offset": 1
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 2,
+            "dispatch_id": 47,
+            "handler_cfa": "79DC",
+            "handler": "ACT-READ-METADATA-STATE",
+            "arguments": []
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 13"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "legacy_approach_control",
+            "value": 1
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 47,
+            "handler_cfa": "79DC",
+            "handler": "ACT-READ-METADATA-STATE",
+            "arguments": []
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 14"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "legacy_approach_control",
+            "value": 1
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 6,
+            "handler_cfa": "71F6",
+            "handler": "ACT-DESCRIBE-ARG",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "argument_1",
+                "value": 4,
+                "byte_offset": 1
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 2,
+            "dispatch_id": 69,
+            "handler_cfa": "804B",
+            "handler": "ACT-REVEAL-SET-POWER-STATE",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "revealed_object",
+                "value": 19,
+                "byte_offset": 1
+              },
+              {
+                "kind": "byte",
+                "name": "required_power",
+                "value": 1,
+                "byte_offset": 2
+              },
+              {
+                "kind": "byte",
+                "name": "message",
+                "value": 12,
+                "byte_offset": 3
+              },
+              {
+                "kind": "byte",
+                "name": "state_value",
+                "value": 1,
+                "byte_offset": 4
+              },
+              {
+                "kind": "byte",
+                "name": "state_cell",
+                "value": 19,
+                "byte_offset": 5
+              }
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 15"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "legacy_approach_control",
+            "value": 1
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 6,
+            "handler_cfa": "71F6",
+            "handler": "ACT-DESCRIBE-ARG",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "argument_1",
+                "value": 9,
+                "byte_offset": 1
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 2,
+            "dispatch_id": 67,
+            "handler_cfa": "807B",
+            "handler": "ACT-SWIM-WITH-LIGHT-LOAD",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "error_message",
+                "value": 10,
+                "byte_offset": 1
+              },
+              {
+                "kind": "byte",
+                "name": "argument_2",
+                "value": 19,
+                "byte_offset": 2
+              }
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 16"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "legacy_approach_control",
+            "value": 1
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 6,
+            "handler_cfa": "71F6",
+            "handler": "ACT-DESCRIBE-ARG",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "argument_1",
+                "value": 8,
+                "byte_offset": 1
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 2,
+            "dispatch_id": 66,
+            "handler_cfa": "8069",
+            "handler": "ACT-ENTER-UPDATE-PAIRS",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "state_cell",
+                "value": 19,
+                "byte_offset": 1
+              }
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 17"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "legacy_approach_control",
+            "value": 1
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 6,
+            "handler_cfa": "71F6",
+            "handler": "ACT-DESCRIBE-ARG",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "argument_1",
+                "value": 13,
+                "byte_offset": 1
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 2,
+            "dispatch_id": 66,
+            "handler_cfa": "8069",
+            "handler": "ACT-ENTER-UPDATE-PAIRS",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "state_cell",
+                "value": 19,
+                "byte_offset": 1
+              }
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 18"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "legacy_approach_control",
+            "value": 1
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 46,
+            "handler_cfa": "79AA",
+            "handler": "ACT-DESCRIBE-METADATA",
+            "arguments": []
+          },
+          {
+            "kind": "action",
+            "record_index": 2,
+            "dispatch_id": 5,
+            "handler_cfa": "71E4",
+            "handler": "ACT-LOOK-CLOSER",
+            "arguments": []
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 19"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "legacy_approach_control",
+            "value": 1
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 6,
+            "handler_cfa": "71F6",
+            "handler": "ACT-DESCRIBE-ARG",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "argument_1",
+                "value": 1,
+                "byte_offset": 1
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 2,
+            "dispatch_id": 68,
+            "handler_cfa": "80D3",
+            "handler": "ACT-RESET-PAIRED-ITEMS",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "argument_1",
+                "value": 9,
+                "byte_offset": 1
+              },
+              {
+                "kind": "byte",
+                "name": "message",
+                "value": 14,
+                "byte_offset": 2
+              },
+              {
+                "kind": "byte",
+                "name": "argument_3",
+                "value": 10,
+                "byte_offset": 3
+              },
+              {
+                "kind": "byte",
+                "name": "argument_4",
+                "value": 19,
+                "byte_offset": 4
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 3,
+            "dispatch_id": 20,
+            "handler_cfa": "763F",
+            "handler": "ACT-OPEN-WITH-ITEM",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "argument_1",
+                "value": 108,
+                "byte_offset": 1
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 4,
+            "dispatch_id": 21,
+            "handler_cfa": "7662",
+            "handler": "ACT-OPEN-WITH-POWER",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "argument_1",
+                "value": 108,
+                "byte_offset": 1
+              }
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 20"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "legacy_approach_control",
+            "value": 1
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 6,
+            "handler_cfa": "71F6",
+            "handler": "ACT-DESCRIBE-ARG",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "argument_1",
+                "value": 24,
+                "byte_offset": 1
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 2,
+            "dispatch_id": 44,
+            "handler_cfa": "7A66",
+            "handler": "ACT-LISTEN-STATE-REPLY",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "argument_1",
+                "value": 18,
+                "byte_offset": 1
+              },
+              {
+                "kind": "byte",
+                "name": "argument_2",
+                "value": 25,
+                "byte_offset": 2
+              },
+              {
+                "kind": "byte",
+                "name": "argument_3",
+                "value": 18,
+                "byte_offset": 3
+              },
+              {
+                "kind": "byte",
+                "name": "argument_4",
+                "value": 25,
+                "byte_offset": 4
+              },
+              {
+                "kind": "byte",
+                "name": "argument_5",
+                "value": 23,
+                "byte_offset": 5
+              },
+              {
+                "kind": "byte",
+                "name": "argument_6",
+                "value": 24,
+                "byte_offset": 6
+              },
+              {
+                "kind": "byte",
+                "name": "argument_7",
+                "value": 25,
+                "byte_offset": 7
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 3,
+            "dispatch_id": 70,
+            "handler_cfa": "8131",
+            "handler": "ACT-GIVE-INVENTORY",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "argument_1",
+                "value": 120,
+                "byte_offset": 1
+              },
+              {
+                "kind": "byte",
+                "name": "argument_2",
+                "value": 5,
+                "byte_offset": 2
+              },
+              {
+                "kind": "byte",
+                "name": "argument_3",
+                "value": 22,
+                "byte_offset": 3
+              },
+              {
+                "kind": "byte",
+                "name": "argument_4",
+                "value": 56,
+                "byte_offset": 4
+              },
+              {
+                "kind": "byte",
+                "name": "argument_5",
+                "value": 8,
+                "byte_offset": 5
+              },
+              {
+                "kind": "byte",
+                "name": "argument_6",
+                "value": 77,
+                "byte_offset": 6
+              },
+              {
+                "kind": "byte",
+                "name": "argument_7",
+                "value": 97,
+                "byte_offset": 7
+              },
+              {
+                "kind": "byte",
+                "name": "argument_8",
+                "value": 68,
+                "byte_offset": 8
+              },
+              {
+                "kind": "byte",
+                "name": "argument_9",
+                "value": 82,
+                "byte_offset": 9
+              },
+              {
+                "kind": "byte",
+                "name": "argument_10",
+                "value": 79,
+                "byte_offset": 10
+              },
+              {
+                "kind": "byte",
+                "name": "argument_11",
+                "value": 115,
+                "byte_offset": 11
+              },
+              {
+                "kind": "byte",
+                "name": "argument_12",
+                "value": 67,
+                "byte_offset": 12
+              },
+              {
+                "kind": "byte",
+                "name": "argument_13",
+                "value": 73,
+                "byte_offset": 13
+              }
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 21"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "legacy_approach_control",
+            "value": 1
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 6,
+            "handler_cfa": "71F6",
+            "handler": "ACT-DESCRIBE-ARG",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "argument_1",
+                "value": 19,
+                "byte_offset": 1
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 2,
+            "dispatch_id": 44,
+            "handler_cfa": "7A66",
+            "handler": "ACT-LISTEN-STATE-REPLY",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "argument_1",
+                "value": 20,
+                "byte_offset": 1
+              },
+              {
+                "kind": "byte",
+                "name": "argument_2",
+                "value": 32,
+                "byte_offset": 2
+              },
+              {
+                "kind": "byte",
+                "name": "argument_3",
+                "value": 18,
+                "byte_offset": 3
+              },
+              {
+                "kind": "byte",
+                "name": "argument_4",
+                "value": 32,
+                "byte_offset": 4
+              },
+              {
+                "kind": "byte",
+                "name": "argument_5",
+                "value": 33,
+                "byte_offset": 5
+              },
+              {
+                "kind": "byte",
+                "name": "argument_6",
+                "value": 34,
+                "byte_offset": 6
+              },
+              {
+                "kind": "byte",
+                "name": "argument_7",
+                "value": 34,
+                "byte_offset": 7
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 3,
+            "dispatch_id": 72,
+            "handler_cfa": "81FC",
+            "handler": "ACT-TRAIN-WITH-ITEM",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "required_item",
+                "value": 3,
+                "byte_offset": 1
+              },
+              {
+                "kind": "byte",
+                "name": "state_cell",
+                "value": 20,
+                "byte_offset": 2
+              },
+              {
+                "kind": "byte",
+                "name": "argument_3",
+                "value": 40,
+                "byte_offset": 3
+              },
+              {
+                "kind": "byte",
+                "name": "error_message",
+                "value": 39,
+                "byte_offset": 4
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 4,
+            "dispatch_id": 71,
+            "handler_cfa": "81B5",
+            "handler": "ACT-EMPOWER-TRAINED-STATE",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "required_power",
+                "value": 5,
+                "byte_offset": 1
+              },
+              {
+                "kind": "byte",
+                "name": "state_cell",
+                "value": 20,
+                "byte_offset": 2
+              },
+              {
+                "kind": "byte",
+                "name": "argument_3",
+                "value": 38,
+                "byte_offset": 3
+              },
+              {
+                "kind": "byte",
+                "name": "argument_4",
+                "value": 34,
+                "byte_offset": 4
+              },
+              {
+                "kind": "byte",
+                "name": "argument_5",
+                "value": 33,
+                "byte_offset": 5
+              },
+              {
+                "kind": "byte",
+                "name": "argument_6",
+                "value": 34,
+                "byte_offset": 6
+              },
+              {
+                "kind": "byte",
+                "name": "argument_7",
+                "value": 37,
+                "byte_offset": 7
+              }
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 22"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "legacy_approach_control",
+            "value": 1
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 6,
+            "handler_cfa": "71F6",
+            "handler": "ACT-DESCRIBE-ARG",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "argument_1",
+                "value": 20,
+                "byte_offset": 1
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 2,
+            "dispatch_id": 44,
+            "handler_cfa": "7A66",
+            "handler": "ACT-LISTEN-STATE-REPLY",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "argument_1",
+                "value": 21,
+                "byte_offset": 1
+              },
+              {
+                "kind": "byte",
+                "name": "argument_2",
+                "value": 33,
+                "byte_offset": 2
+              },
+              {
+                "kind": "byte",
+                "name": "argument_3",
+                "value": 18,
+                "byte_offset": 3
+              },
+              {
+                "kind": "byte",
+                "name": "argument_4",
+                "value": 33,
+                "byte_offset": 4
+              },
+              {
+                "kind": "byte",
+                "name": "argument_5",
+                "value": 133,
+                "byte_offset": 5
+              },
+              {
+                "kind": "byte",
+                "name": "argument_6",
+                "value": 134,
+                "byte_offset": 6
+              },
+              {
+                "kind": "byte",
+                "name": "argument_7",
+                "value": 34,
+                "byte_offset": 7
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 3,
+            "dispatch_id": 72,
+            "handler_cfa": "81FC",
+            "handler": "ACT-TRAIN-WITH-ITEM",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "required_item",
+                "value": 3,
+                "byte_offset": 1
+              },
+              {
+                "kind": "byte",
+                "name": "state_cell",
+                "value": 21,
+                "byte_offset": 2
+              },
+              {
+                "kind": "byte",
+                "name": "argument_3",
+                "value": 40,
+                "byte_offset": 3
+              },
+              {
+                "kind": "byte",
+                "name": "error_message",
+                "value": 39,
+                "byte_offset": 4
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 4,
+            "dispatch_id": 71,
+            "handler_cfa": "81B5",
+            "handler": "ACT-EMPOWER-TRAINED-STATE",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "required_power",
+                "value": 5,
+                "byte_offset": 1
+              },
+              {
+                "kind": "byte",
+                "name": "state_cell",
+                "value": 21,
+                "byte_offset": 2
+              },
+              {
+                "kind": "byte",
+                "name": "argument_3",
+                "value": 38,
+                "byte_offset": 3
+              },
+              {
+                "kind": "byte",
+                "name": "argument_4",
+                "value": 34,
+                "byte_offset": 4
+              },
+              {
+                "kind": "byte",
+                "name": "argument_5",
+                "value": 133,
+                "byte_offset": 5
+              },
+              {
+                "kind": "byte",
+                "name": "argument_6",
+                "value": 134,
+                "byte_offset": 6
+              },
+              {
+                "kind": "byte",
+                "name": "argument_7",
+                "value": 37,
+                "byte_offset": 7
+              }
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 23"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "legacy_approach_control",
+            "value": 1
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 16,
+            "handler_cfa": "746D",
+            "handler": "ACT-OPEN-SCENE-OBJECT",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "redraw_background",
+                "value": 21,
+                "byte_offset": 1
+              },
+              {
+                "kind": "byte",
+                "name": "removed_object",
+                "value": 0,
+                "byte_offset": 2
+              },
+              {
+                "kind": "byte",
+                "name": "replacement_object",
+                "value": 122,
+                "byte_offset": 3
+              }
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 24"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "legacy_approach_control",
+            "value": 1
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 17,
+            "handler_cfa": "748B",
+            "handler": "ACT-CLOSE-SCENE-OBJECT",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "redraw_background",
+                "value": 21,
+                "byte_offset": 1
+              },
+              {
+                "kind": "byte",
+                "name": "removed_object",
+                "value": 122,
+                "byte_offset": 2
+              },
+              {
+                "kind": "byte",
+                "name": "replacement_object",
+                "value": 0,
+                "byte_offset": 3
+              }
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 25"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "legacy_approach_control",
+            "value": 1
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 6,
+            "handler_cfa": "71F6",
+            "handler": "ACT-DESCRIBE-ARG",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "argument_1",
+                "value": 35,
+                "byte_offset": 1
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 2,
+            "dispatch_id": 73,
+            "handler_cfa": "822F",
+            "handler": "ACT-ENTER-AFTER-TRAINING",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "error_message",
+                "value": 36,
+                "byte_offset": 1
+              }
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 26"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "legacy_approach_control",
+            "value": 1
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 6,
+            "handler_cfa": "71F6",
+            "handler": "ACT-DESCRIBE-ARG",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "argument_1",
+                "value": 44,
+                "byte_offset": 1
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 2,
+            "dispatch_id": 32,
+            "handler_cfa": "77DF",
+            "handler": "ACT-TAKE-SET-STATE",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "redraw_background",
+                "value": 42,
+                "byte_offset": 1
+              },
+              {
+                "kind": "byte",
+                "name": "removed_object",
+                "value": 140,
+                "byte_offset": 2
+              },
+              {
+                "kind": "byte",
+                "name": "inventory_item",
+                "value": 215,
+                "byte_offset": 3
+              },
+              {
+                "kind": "byte",
+                "name": "state_value",
+                "value": 0,
+                "byte_offset": 4
+              },
+              {
+                "kind": "byte",
+                "name": "state_cell",
+                "value": 2,
+                "byte_offset": 5
+              }
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 27"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "legacy_approach_control",
+            "value": 1
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 6,
+            "handler_cfa": "71F6",
+            "handler": "ACT-DESCRIBE-ARG",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "argument_1",
+                "value": 48,
+                "byte_offset": 1
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 2,
+            "dispatch_id": 48,
+            "handler_cfa": "79F4",
+            "handler": "ACT-READ-ACTION-STATE",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "state_cell",
+                "value": 3,
+                "byte_offset": 1
+              },
+              {
+                "kind": "byte",
+                "name": "argument_2",
+                "value": 50,
+                "byte_offset": 2
+              },
+              {
+                "kind": "byte",
+                "name": "argument_3",
+                "value": 50,
+                "byte_offset": 3
+              },
+              {
+                "kind": "byte",
+                "name": "argument_4",
+                "value": 50,
+                "byte_offset": 4
+              }
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 28"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "legacy_approach_control",
+            "value": 1
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 6,
+            "handler_cfa": "71F6",
+            "handler": "ACT-DESCRIBE-ARG",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "argument_1",
+                "value": 49,
+                "byte_offset": 1
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 2,
+            "dispatch_id": 74,
+            "handler_cfa": "824B",
+            "handler": "ACT-DROP-REQUIRED-ITEM",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "revealed_object",
+                "value": 140,
+                "byte_offset": 1
+              },
+              {
+                "kind": "byte",
+                "name": "exact_inventory_id",
+                "value": 215,
+                "byte_offset": 2
+              },
+              {
+                "kind": "byte",
+                "name": "wrong_item_message",
+                "value": 47,
+                "byte_offset": 3
+              }
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 29"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "legacy_approach_control",
+            "value": 1
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 6,
+            "handler_cfa": "71F6",
+            "handler": "ACT-DESCRIBE-ARG",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "argument_1",
+                "value": 60,
+                "byte_offset": 1
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 2,
+            "dispatch_id": 5,
+            "handler_cfa": "71E4",
+            "handler": "ACT-LOOK-CLOSER",
+            "arguments": []
+          },
+          {
+            "kind": "action",
+            "record_index": 3,
+            "dispatch_id": 76,
+            "handler_cfa": "8288",
+            "handler": "ACT-PATCH-WITH-ITEM",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "argument_1",
+                "value": 48,
+                "byte_offset": 1
+              },
+              {
+                "kind": "byte",
+                "name": "state_value",
+                "value": 4,
+                "byte_offset": 2
+              },
+              {
+                "kind": "byte",
+                "name": "state_cell",
+                "value": 23,
+                "byte_offset": 3
+              }
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 30"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "legacy_approach_control",
+            "value": 1
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 6,
+            "handler_cfa": "71F6",
+            "handler": "ACT-DESCRIBE-ARG",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "argument_1",
+                "value": 62,
+                "byte_offset": 1
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 2,
+            "dispatch_id": 21,
+            "handler_cfa": "7662",
+            "handler": "ACT-OPEN-WITH-POWER",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "argument_1",
+                "value": 146,
+                "byte_offset": 1
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 3,
+            "dispatch_id": 75,
+            "handler_cfa": "763F",
+            "handler": "ACT-OPEN-WITH-ITEM",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "argument_1",
+                "value": 148,
+                "byte_offset": 1
+              }
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 31"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "legacy_approach_control",
+            "value": 1
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 6,
+            "handler_cfa": "71F6",
+            "handler": "ACT-DESCRIBE-ARG",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "argument_1",
+                "value": 64,
+                "byte_offset": 1
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 2,
+            "dispatch_id": 32,
+            "handler_cfa": "77DF",
+            "handler": "ACT-TAKE-SET-STATE",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "redraw_background",
+                "value": 47,
+                "byte_offset": 1
+              },
+              {
+                "kind": "byte",
+                "name": "removed_object",
+                "value": 147,
+                "byte_offset": 2
+              },
+              {
+                "kind": "byte",
+                "name": "inventory_item",
+                "value": 217,
+                "byte_offset": 3
+              },
+              {
+                "kind": "byte",
+                "name": "state_value",
+                "value": 0,
+                "byte_offset": 4
+              },
+              {
+                "kind": "byte",
+                "name": "state_cell",
+                "value": 2,
+                "byte_offset": 5
+              },
+              {
+                "kind": "byte",
+                "name": "argument_6",
+                "value": 0,
+                "byte_offset": 6
+              }
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 32"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "legacy_approach_control",
+            "value": 1
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 23,
+            "handler_cfa": "7701",
+            "handler": "ACT-OPEN-AT-STATE4",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "argument_1",
+                "value": 122,
+                "byte_offset": 1
+              },
+              {
+                "kind": "byte",
+                "name": "argument_2",
+                "value": 21,
+                "byte_offset": 2
+              }
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 33"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "legacy_approach_control",
+            "value": 1
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 6,
+            "handler_cfa": "71F6",
+            "handler": "ACT-DESCRIBE-ARG",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "argument_1",
+                "value": 71,
+                "byte_offset": 1
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 2,
+            "dispatch_id": 78,
+            "handler_cfa": "763F",
+            "handler": "ACT-OPEN-WITH-ITEM",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "argument_1",
+                "value": 152,
+                "byte_offset": 1
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 3,
+            "dispatch_id": 21,
+            "handler_cfa": "7662",
+            "handler": "ACT-OPEN-WITH-POWER",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "argument_1",
+                "value": 152,
+                "byte_offset": 1
+              }
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 34"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "legacy_approach_control",
+            "value": 1
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 6,
+            "handler_cfa": "71F6",
+            "handler": "ACT-DESCRIBE-ARG",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "argument_1",
+                "value": 69,
+                "byte_offset": 1
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 2,
+            "dispatch_id": 15,
+            "handler_cfa": "745F",
+            "handler": "ACT-ENTER-LINKED-ROOM",
+            "arguments": []
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 35"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "legacy_approach_control",
+            "value": 1
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 6,
+            "handler_cfa": "71F6",
+            "handler": "ACT-DESCRIBE-ARG",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "argument_1",
+                "value": 72,
+                "byte_offset": 1
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 2,
+            "dispatch_id": 78,
+            "handler_cfa": "763F",
+            "handler": "ACT-OPEN-WITH-ITEM",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "argument_1",
+                "value": 50,
+                "byte_offset": 1
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 3,
+            "dispatch_id": 21,
+            "handler_cfa": "7662",
+            "handler": "ACT-OPEN-WITH-POWER",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "argument_1",
+                "value": 50,
+                "byte_offset": 1
+              }
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 36"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "legacy_approach_control",
+            "value": 1
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 6,
+            "handler_cfa": "71F6",
+            "handler": "ACT-DESCRIBE-ARG",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "argument_1",
+                "value": 3,
+                "byte_offset": 1
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 2,
+            "dispatch_id": 55,
+            "handler_cfa": "7C60",
+            "handler": "ACT-REFUSE-JUMP",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "error_message",
+                "value": 76,
+                "byte_offset": 1
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 3,
+            "dispatch_id": 21,
+            "handler_cfa": "7662",
+            "handler": "ACT-OPEN-WITH-POWER",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "argument_1",
+                "value": 153,
+                "byte_offset": 1
+              }
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 37"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "legacy_approach_control",
+            "value": 1
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 6,
+            "handler_cfa": "71F6",
+            "handler": "ACT-DESCRIBE-ARG",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "argument_1",
+                "value": 69,
+                "byte_offset": 1
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 2,
+            "dispatch_id": 13,
+            "handler_cfa": "745F",
+            "handler": "ACT-ENTER-LINKED-ROOM",
+            "arguments": []
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 38"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "legacy_approach_control",
+            "value": 1
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 6,
+            "handler_cfa": "71F6",
+            "handler": "ACT-DESCRIBE-ARG",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "argument_1",
+                "value": 25,
+                "byte_offset": 1
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 2,
+            "dispatch_id": 56,
+            "handler_cfa": "763F",
+            "handler": "ACT-OPEN-WITH-ITEM",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "argument_1",
+                "value": 14,
+                "byte_offset": 1
+              }
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 39"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "legacy_approach_control",
+            "value": 1
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 20,
+            "handler_cfa": "763F",
+            "handler": "ACT-OPEN-WITH-ITEM",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "argument_1",
+                "value": 40,
+                "byte_offset": 1
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 2,
+            "dispatch_id": 21,
+            "handler_cfa": "7662",
+            "handler": "ACT-OPEN-WITH-POWER",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "argument_1",
+                "value": 40,
+                "byte_offset": 1
+              }
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 40"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "legacy_approach_control",
+            "value": 1
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 20,
+            "handler_cfa": "763F",
+            "handler": "ACT-OPEN-WITH-ITEM",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "argument_1",
+                "value": 20,
+                "byte_offset": 1
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 2,
+            "dispatch_id": 21,
+            "handler_cfa": "7662",
+            "handler": "ACT-OPEN-WITH-POWER",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "argument_1",
+                "value": 20,
+                "byte_offset": 1
+              }
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 41"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "legacy_approach_control",
+            "value": 1
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 6,
+            "handler_cfa": "71F6",
+            "handler": "ACT-DESCRIBE-ARG",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "argument_1",
+                "value": 60,
+                "byte_offset": 1
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 2,
+            "dispatch_id": 50,
+            "handler_cfa": "7A44",
+            "handler": "ACT-ENTER-AFTER-STATE",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "required_state_cell",
+                "value": 2,
+                "byte_offset": 1
+              },
+              {
+                "kind": "byte",
+                "name": "argument_2",
+                "value": 61,
+                "byte_offset": 2
+              },
+              {
+                "kind": "byte",
+                "name": "argument_3",
+                "value": 9,
+                "byte_offset": 3
+              },
+              {
+                "kind": "byte",
+                "name": "argument_4",
+                "value": 63,
+                "byte_offset": 4
+              },
+              {
+                "kind": "byte",
+                "name": "argument_5",
+                "value": 122,
+                "byte_offset": 5
+              },
+              {
+                "kind": "byte",
+                "name": "argument_6",
+                "value": 151,
+                "byte_offset": 6
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 3,
+            "dispatch_id": 49,
+            "handler_cfa": "7A0A",
+            "handler": "ACT-ENTER-WITH-POWER",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "required_power",
+                "value": 3,
+                "byte_offset": 1
+              }
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 42"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "legacy_approach_control",
+            "value": 1
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 6,
+            "handler_cfa": "71F6",
+            "handler": "ACT-DESCRIBE-ARG",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "argument_1",
+                "value": 68,
+                "byte_offset": 1
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 2,
+            "dispatch_id": 51,
+            "handler_cfa": "7ADE",
+            "handler": "ACT-BUY-WITH-ITEM",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "argument_1",
+                "value": 53,
+                "byte_offset": 1
+              },
+              {
+                "kind": "byte",
+                "name": "argument_2",
+                "value": 65,
+                "byte_offset": 2
+              },
+              {
+                "kind": "byte",
+                "name": "argument_3",
+                "value": 9,
+                "byte_offset": 3
+              },
+              {
+                "kind": "byte",
+                "name": "argument_4",
+                "value": 63,
+                "byte_offset": 4
+              },
+              {
+                "kind": "byte",
+                "name": "argument_5",
+                "value": 122,
+                "byte_offset": 5
+              },
+              {
+                "kind": "byte",
+                "name": "argument_6",
+                "value": 151,
+                "byte_offset": 6
+              }
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 43"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "legacy_approach_control",
+            "value": 1
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 6,
+            "handler_cfa": "71F6",
+            "handler": "ACT-DESCRIBE-ARG",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "argument_1",
+                "value": 71,
+                "byte_offset": 1
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 2,
+            "dispatch_id": 44,
+            "handler_cfa": "7A66",
+            "handler": "ACT-LISTEN-STATE-REPLY",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "argument_1",
+                "value": 13,
+                "byte_offset": 1
+              },
+              {
+                "kind": "byte",
+                "name": "argument_2",
+                "value": 64,
+                "byte_offset": 2
+              },
+              {
+                "kind": "byte",
+                "name": "argument_3",
+                "value": 9,
+                "byte_offset": 3
+              },
+              {
+                "kind": "byte",
+                "name": "argument_4",
+                "value": 63,
+                "byte_offset": 4
+              },
+              {
+                "kind": "byte",
+                "name": "argument_5",
+                "value": 122,
+                "byte_offset": 5
+              },
+              {
+                "kind": "byte",
+                "name": "argument_6",
+                "value": 151,
+                "byte_offset": 6
+              },
+              {
+                "kind": "byte",
+                "name": "argument_7",
+                "value": 64,
+                "byte_offset": 7
+              }
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 44"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "legacy_approach_control",
+            "value": 1
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 6,
+            "handler_cfa": "71F6",
+            "handler": "ACT-DESCRIBE-ARG",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "argument_1",
+                "value": 70,
+                "byte_offset": 1
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 2,
+            "dispatch_id": 44,
+            "handler_cfa": "7A66",
+            "handler": "ACT-LISTEN-STATE-REPLY",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "argument_1",
+                "value": 14,
+                "byte_offset": 1
+              },
+              {
+                "kind": "byte",
+                "name": "argument_2",
+                "value": 66,
+                "byte_offset": 2
+              },
+              {
+                "kind": "byte",
+                "name": "argument_3",
+                "value": 9,
+                "byte_offset": 3
+              },
+              {
+                "kind": "byte",
+                "name": "argument_4",
+                "value": 63,
+                "byte_offset": 4
+              },
+              {
+                "kind": "byte",
+                "name": "argument_5",
+                "value": 54,
+                "byte_offset": 5
+              },
+              {
+                "kind": "byte",
+                "name": "argument_6",
+                "value": 152,
+                "byte_offset": 6
+              },
+              {
+                "kind": "byte",
+                "name": "argument_7",
+                "value": 67,
+                "byte_offset": 7
+              }
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 45"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "legacy_approach_control",
+            "value": 1
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 24,
+            "handler_cfa": "7711",
+            "handler": "ACT-CLOSE-AND-DARKEN",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "added_object",
+                "value": 158,
+                "byte_offset": 1
+              },
+              {
+                "kind": "byte",
+                "name": "argument_2",
+                "value": 59,
+                "byte_offset": 2
+              },
+              {
+                "kind": "byte",
+                "name": "light_state_cell",
+                "value": 15,
+                "byte_offset": 3
+              },
+              {
+                "kind": "byte",
+                "name": "dark_overlay",
+                "value": 60,
+                "byte_offset": 4
+              },
+              {
+                "kind": "byte",
+                "name": "darkness_message",
+                "value": 72,
+                "byte_offset": 5
+              },
+              {
+                "kind": "byte",
+                "name": "set_state_cell",
+                "value": 17,
+                "byte_offset": 6
+              }
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 46"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "legacy_approach_control",
+            "value": 1
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 25,
+            "handler_cfa": "7749",
+            "handler": "ACT-OPEN-RESTORE-LIGHT",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "redraw_background",
+                "value": 59,
+                "byte_offset": 1
+              },
+              {
+                "kind": "byte",
+                "name": "removed_object",
+                "value": 158,
+                "byte_offset": 2
+              },
+              {
+                "kind": "byte",
+                "name": "replacement_object",
+                "value": 59,
+                "byte_offset": 3
+              },
+              {
+                "kind": "byte",
+                "name": "cleared_state_cell",
+                "value": 17,
+                "byte_offset": 4
+              }
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 47"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "legacy_approach_control",
+            "value": 1
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 6,
+            "handler_cfa": "71F6",
+            "handler": "ACT-DESCRIBE-ARG",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "argument_1",
+                "value": 75,
+                "byte_offset": 1
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 2,
+            "dispatch_id": 44,
+            "handler_cfa": "7A66",
+            "handler": "ACT-LISTEN-STATE-REPLY",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "argument_1",
+                "value": 12,
+                "byte_offset": 1
+              },
+              {
+                "kind": "byte",
+                "name": "argument_2",
+                "value": 62,
+                "byte_offset": 2
+              },
+              {
+                "kind": "byte",
+                "name": "argument_3",
+                "value": 9,
+                "byte_offset": 3
+              },
+              {
+                "kind": "byte",
+                "name": "argument_4",
+                "value": 63,
+                "byte_offset": 4
+              },
+              {
+                "kind": "byte",
+                "name": "argument_5",
+                "value": 123,
+                "byte_offset": 5
+              },
+              {
+                "kind": "byte",
+                "name": "argument_6",
+                "value": 146,
+                "byte_offset": 6
+              },
+              {
+                "kind": "byte",
+                "name": "argument_7",
+                "value": 76,
+                "byte_offset": 7
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 3,
+            "dispatch_id": 35,
+            "handler_cfa": "7B20",
+            "handler": "ACT-CHEER-WITH-ITEM",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "argument_1",
+                "value": 2,
+                "byte_offset": 1
+              },
+              {
+                "kind": "byte",
+                "name": "argument_2",
+                "value": 77,
+                "byte_offset": 2
+              },
+              {
+                "kind": "byte",
+                "name": "argument_3",
+                "value": 9,
+                "byte_offset": 3
+              },
+              {
+                "kind": "byte",
+                "name": "argument_4",
+                "value": 63,
+                "byte_offset": 4
+              },
+              {
+                "kind": "byte",
+                "name": "argument_5",
+                "value": 123,
+                "byte_offset": 5
+              },
+              {
+                "kind": "byte",
+                "name": "argument_6",
+                "value": 146,
+                "byte_offset": 6
+              },
+              {
+                "kind": "byte",
+                "name": "argument_7",
+                "value": 76,
+                "byte_offset": 7
+              }
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 48"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "legacy_approach_control",
+            "value": 1
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 6,
+            "handler_cfa": "71F6",
+            "handler": "ACT-DESCRIBE-ARG",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "argument_1",
+                "value": 40,
+                "byte_offset": 1
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 2,
+            "dispatch_id": 34,
+            "handler_cfa": "7A82",
+            "handler": "ACT-TAKE-AFTER-STATE",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "required_state_cell",
+                "value": 12,
+                "byte_offset": 1
+              },
+              {
+                "kind": "byte",
+                "name": "argument_2",
+                "value": 41,
+                "byte_offset": 2
+              },
+              {
+                "kind": "byte",
+                "name": "argument_3",
+                "value": 9,
+                "byte_offset": 3
+              },
+              {
+                "kind": "byte",
+                "name": "argument_4",
+                "value": 63,
+                "byte_offset": 4
+              },
+              {
+                "kind": "byte",
+                "name": "argument_5",
+                "value": 123,
+                "byte_offset": 5
+              },
+              {
+                "kind": "byte",
+                "name": "argument_6",
+                "value": 146,
+                "byte_offset": 6
+              },
+              {
+                "kind": "byte",
+                "name": "revealed_object",
+                "value": 51,
+                "byte_offset": 7
+              },
+              {
+                "kind": "byte",
+                "name": "inventory_item",
+                "value": 214,
+                "byte_offset": 8
+              }
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 49"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "legacy_approach_control",
+            "value": 1
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 6,
+            "handler_cfa": "71F6",
+            "handler": "ACT-DESCRIBE-ARG",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "argument_1",
+                "value": 60,
+                "byte_offset": 1
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 2,
+            "dispatch_id": 50,
+            "handler_cfa": "7A44",
+            "handler": "ACT-ENTER-AFTER-STATE",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "required_state_cell",
+                "value": 12,
+                "byte_offset": 1
+              },
+              {
+                "kind": "byte",
+                "name": "argument_2",
+                "value": 62,
+                "byte_offset": 2
+              },
+              {
+                "kind": "byte",
+                "name": "argument_3",
+                "value": 9,
+                "byte_offset": 3
+              },
+              {
+                "kind": "byte",
+                "name": "argument_4",
+                "value": 63,
+                "byte_offset": 4
+              },
+              {
+                "kind": "byte",
+                "name": "argument_5",
+                "value": 123,
+                "byte_offset": 5
+              },
+              {
+                "kind": "byte",
+                "name": "argument_6",
+                "value": 146,
+                "byte_offset": 6
+              }
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 50"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "legacy_approach_control",
+            "value": 1
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 6,
+            "handler_cfa": "71F6",
+            "handler": "ACT-DESCRIBE-ARG",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "argument_1",
+                "value": 45,
+                "byte_offset": 1
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 2,
+            "dispatch_id": 63,
+            "handler_cfa": "7F31",
+            "handler": "ACT-PATH-ENTER-WITH-ITEM",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "required_state_cell",
+                "value": 18,
+                "byte_offset": 1
+              },
+              {
+                "kind": "byte",
+                "name": "error_message",
+                "value": 86,
+                "byte_offset": 2
+              },
+              {
+                "kind": "byte",
+                "name": "required_item",
+                "value": 229,
+                "byte_offset": 3
+              }
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 51"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "legacy_approach_control",
+            "value": 1
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 6,
+            "handler_cfa": "71F6",
+            "handler": "ACT-DESCRIBE-ARG",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "argument_1",
+                "value": 83,
+                "byte_offset": 1
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 2,
+            "dispatch_id": 31,
+            "handler_cfa": "7F65",
+            "handler": "ACT-STRIKE-WITH-ITEM",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "argument_1",
+                "value": 63,
+                "byte_offset": 1
+              }
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 52"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "legacy_approach_control",
+            "value": 1
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 6,
+            "handler_cfa": "71F6",
+            "handler": "ACT-DESCRIBE-ARG",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "argument_1",
+                "value": 84,
+                "byte_offset": 1
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 2,
+            "dispatch_id": 64,
+            "handler_cfa": "7B4B",
+            "handler": "ACT-FILL-WITH-ITEM",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "required_item",
+                "value": 29,
+                "byte_offset": 1
+              },
+              {
+                "kind": "byte",
+                "name": "message",
+                "value": 85,
+                "byte_offset": 2
+              },
+              {
+                "kind": "byte",
+                "name": "state_value",
+                "value": 1,
+                "byte_offset": 3
+              },
+              {
+                "kind": "byte",
+                "name": "state_cell",
+                "value": 18,
+                "byte_offset": 4
+              }
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 53"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "legacy_approach_control",
+            "value": 1
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 57,
+            "handler_cfa": "7C6E",
+            "handler": "ACT-DESCRIBE-INLINE",
+            "arguments": [
+              {
+                "kind": "message",
+                "lines": [
+                  "SIEDZIBA",
+                  "WlADCoW"
+                ],
+                "encoding": "game-font-byte-glyphs"
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 2,
+            "dispatch_id": 65,
+            "handler_cfa": "7F90",
+            "handler": "ACT-ENTER-SECOND-STAGE",
+            "arguments": []
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 54"
+      },
+      {
+        "kind": "records",
+        "records": [],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 55"
+      },
+      {
+        "kind": "records",
+        "records": [],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 56"
+      },
+      {
+        "kind": "records",
+        "records": [],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 57"
+      },
+      {
+        "kind": "records",
+        "records": [],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 58"
+      },
+      {
+        "kind": "records",
+        "records": [],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 59"
+      },
+      {
+        "kind": "records",
+        "records": [],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 60"
+      },
+      {
+        "kind": "records",
+        "records": [],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 61"
+      },
+      {
+        "kind": "records",
+        "records": [],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 62"
+      },
+      {
+        "kind": "records",
+        "records": [],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 63"
+      },
+      {
+        "kind": "records",
+        "records": [],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 64"
+      },
+      {
+        "kind": "records",
+        "records": [],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 65"
+      }
+    ],
+    "terminated": false,
+    "tail": []
+  }
+}

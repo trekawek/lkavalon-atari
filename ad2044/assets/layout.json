@@ -45,7 +45,7 @@
           ],
           "parts": [
             {
-              "file": "assets/archive/post-program-editor.bin",
+              "file": "assets/archive/post-program-editor.json",
               "size": 89
             }
           ]
@@ -92,7 +92,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g03-r002.bin",
+              "file": "assets/records/s1-g03-r002.json",
               "size": 554,
               "format": "counted16"
             }
@@ -108,7 +108,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g03-r003.bin",
+              "file": "assets/records/s1-g03-r003.json",
               "size": 16,
               "format": "counted16"
             }
@@ -156,7 +156,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g05-r000.bin",
+              "file": "assets/records/s1-g05-r000.json",
               "size": 64,
               "format": "counted16"
             }
@@ -172,7 +172,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g05-r001.bin",
+              "file": "assets/records/s1-g05-r001.json",
               "size": 1141,
               "format": "counted16"
             }
@@ -204,7 +204,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g05-r003.bin",
+              "file": "assets/records/s1-g05-r003.json",
               "size": 137,
               "format": "counted16"
             }
@@ -236,7 +236,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g05-r005.bin",
+              "file": "assets/records/s1-g05-r005.json",
               "size": 77,
               "format": "counted16"
             }
@@ -268,7 +268,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g05-r007.bin",
+              "file": "assets/records/s1-g05-r007.json",
               "size": 50,
               "format": "counted16"
             }
@@ -300,7 +300,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g05-r009.bin",
+              "file": "assets/records/s1-g05-r009.json",
               "size": 28,
               "format": "counted16"
             }
@@ -332,7 +332,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g05-r011.bin",
+              "file": "assets/records/s1-g05-r011.json",
               "size": 18,
               "format": "counted16"
             }
@@ -364,7 +364,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g05-r013.bin",
+              "file": "assets/records/s1-g05-r013.json",
               "size": 22,
               "format": "counted16"
             }
@@ -396,7 +396,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g05-r015.bin",
+              "file": "assets/records/s1-g05-r015.json",
               "size": 8,
               "format": "counted16"
             }
@@ -412,7 +412,7 @@
           ],
           "parts": [
             {
-              "file": "assets/padding/s1-g05-tail.bin",
+              "file": "assets/padding/s1-g05-tail.json",
               "size": 15
             }
           ]
@@ -427,7 +427,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g06-r000.bin",
+              "file": "assets/records/s1-g06-r000.json",
               "size": 3,
               "format": "counted16"
             }
@@ -443,7 +443,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g06-r001.bin",
+              "file": "assets/records/s1-g06-r001.json",
               "size": 95,
               "format": "counted16"
             }
@@ -475,7 +475,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g06-r003.bin",
+              "file": "assets/records/s1-g06-r003.json",
               "size": 124,
               "format": "counted16"
             }
@@ -491,7 +491,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g07-r000.bin",
+              "file": "assets/records/s1-g07-r000.json",
               "size": 3,
               "format": "counted16"
             }
@@ -507,7 +507,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g07-r001.bin",
+              "file": "assets/records/s1-g07-r001.json",
               "size": 141,
               "format": "counted16"
             }
@@ -539,7 +539,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g07-r003.bin",
+              "file": "assets/records/s1-g07-r003.json",
               "size": 112,
               "format": "counted16"
             }
@@ -571,7 +571,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g07-r005.bin",
+              "file": "assets/records/s1-g07-r005.json",
               "size": 47,
               "format": "counted16"
             }
@@ -587,7 +587,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g08-r000.bin",
+              "file": "assets/records/s1-g08-r000.json",
               "size": 3,
               "format": "counted16"
             }
@@ -603,7 +603,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g08-r001.bin",
+              "file": "assets/records/s1-g08-r001.json",
               "size": 95,
               "format": "counted16"
             }
@@ -635,7 +635,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g08-r003.bin",
+              "file": "assets/records/s1-g08-r003.json",
               "size": 116,
               "format": "counted16"
             }
@@ -651,7 +651,7 @@
           ],
           "parts": [
             {
-              "file": "assets/padding/s1-g08-tail.bin",
+              "file": "assets/padding/s1-g08-tail.json",
               "size": 7
             }
           ]
@@ -666,7 +666,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g09-r000.bin",
+              "file": "assets/records/s1-g09-r000.json",
               "size": 6,
               "format": "counted16"
             }
@@ -682,7 +682,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g09-r001.bin",
+              "file": "assets/records/s1-g09-r001.json",
               "size": 367,
               "format": "counted16"
             }
@@ -714,7 +714,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g09-r003.bin",
+              "file": "assets/records/s1-g09-r003.json",
               "size": 143,
               "format": "counted16"
             }
@@ -746,7 +746,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g09-r005.bin",
+              "file": "assets/records/s1-g09-r005.json",
               "size": 41,
               "format": "counted16"
             }
@@ -778,7 +778,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g09-r007.bin",
+              "file": "assets/records/s1-g09-r007.json",
               "size": 44,
               "format": "counted16"
             }
@@ -794,7 +794,7 @@
           ],
           "parts": [
             {
-              "file": "assets/padding/s1-g09-tail.bin",
+              "file": "assets/padding/s1-g09-tail.json",
               "size": 45
             }
           ]
@@ -809,7 +809,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g10-r000.bin",
+              "file": "assets/records/s1-g10-r000.json",
               "size": 3,
               "format": "counted16"
             }
@@ -825,7 +825,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g10-r001.bin",
+              "file": "assets/records/s1-g10-r001.json",
               "size": 637,
               "format": "counted16"
             }
@@ -857,7 +857,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g10-r003.bin",
+              "file": "assets/records/s1-g10-r003.json",
               "size": 183,
               "format": "counted16"
             }
@@ -889,7 +889,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g10-r005.bin",
+              "file": "assets/records/s1-g10-r005.json",
               "size": 57,
               "format": "counted16"
             }
@@ -921,7 +921,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g10-r007.bin",
+              "file": "assets/records/s1-g10-r007.json",
               "size": 35,
               "format": "counted16"
             }
@@ -953,7 +953,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g10-r009.bin",
+              "file": "assets/records/s1-g10-r009.json",
               "size": 46,
               "format": "counted16"
             }
@@ -985,7 +985,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g10-r011.bin",
+              "file": "assets/records/s1-g10-r011.json",
               "size": 43,
               "format": "counted16"
             }
@@ -1017,7 +1017,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g10-r013.bin",
+              "file": "assets/records/s1-g10-r013.json",
               "size": 28,
               "format": "counted16"
             }
@@ -1049,7 +1049,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g10-r015.bin",
+              "file": "assets/records/s1-g10-r015.json",
               "size": 15,
               "format": "counted16"
             }
@@ -1081,7 +1081,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g10-r017.bin",
+              "file": "assets/records/s1-g10-r017.json",
               "size": 26,
               "format": "counted16"
             }
@@ -1097,7 +1097,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g11-r000.bin",
+              "file": "assets/records/s1-g11-r000.json",
               "size": 3,
               "format": "counted16"
             }
@@ -1113,7 +1113,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g11-r001.bin",
+              "file": "assets/records/s1-g11-r001.json",
               "size": 165,
               "format": "counted16"
             }
@@ -1145,7 +1145,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g11-r003.bin",
+              "file": "assets/records/s1-g11-r003.json",
               "size": 90,
               "format": "counted16"
             }
@@ -1181,7 +1181,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g11-r005.bin",
+              "file": "assets/records/s1-g11-r005.json",
               "size": 80,
               "format": "counted16"
             }
@@ -1213,7 +1213,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g11-r007.bin",
+              "file": "assets/records/s1-g11-r007.json",
               "size": 33,
               "format": "counted16"
             }
@@ -1229,7 +1229,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g12-r000.bin",
+              "file": "assets/records/s1-g12-r000.json",
               "size": 3,
               "format": "counted16"
             }
@@ -1245,7 +1245,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g12-r001.bin",
+              "file": "assets/records/s1-g12-r001.json",
               "size": 641,
               "format": "counted16"
             }
@@ -1277,7 +1277,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g12-r003.bin",
+              "file": "assets/records/s1-g12-r003.json",
               "size": 123,
               "format": "counted16"
             }
@@ -1309,7 +1309,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g12-r005.bin",
+              "file": "assets/records/s1-g12-r005.json",
               "size": 31,
               "format": "counted16"
             }
@@ -1341,7 +1341,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g12-r007.bin",
+              "file": "assets/records/s1-g12-r007.json",
               "size": 71,
               "format": "counted16"
             }
@@ -1373,7 +1373,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g12-r009.bin",
+              "file": "assets/records/s1-g12-r009.json",
               "size": 31,
               "format": "counted16"
             }
@@ -1405,7 +1405,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g12-r011.bin",
+              "file": "assets/records/s1-g12-r011.json",
               "size": 16,
               "format": "counted16"
             }
@@ -1437,7 +1437,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g12-r013.bin",
+              "file": "assets/records/s1-g12-r013.json",
               "size": 21,
               "format": "counted16"
             }
@@ -1469,7 +1469,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g12-r015.bin",
+              "file": "assets/records/s1-g12-r015.json",
               "size": 21,
               "format": "counted16"
             }
@@ -1501,7 +1501,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g12-r017.bin",
+              "file": "assets/records/s1-g12-r017.json",
               "size": 21,
               "format": "counted16"
             }
@@ -1533,7 +1533,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g12-r019.bin",
+              "file": "assets/records/s1-g12-r019.json",
               "size": 12,
               "format": "counted16"
             }
@@ -1549,7 +1549,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g13-r000.bin",
+              "file": "assets/records/s1-g13-r000.json",
               "size": 6,
               "format": "counted16"
             }
@@ -1565,7 +1565,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g13-r001.bin",
+              "file": "assets/records/s1-g13-r001.json",
               "size": 534,
               "format": "counted16"
             }
@@ -1597,7 +1597,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g13-r003.bin",
+              "file": "assets/records/s1-g13-r003.json",
               "size": 194,
               "format": "counted16"
             }
@@ -1629,7 +1629,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g13-r005.bin",
+              "file": "assets/records/s1-g13-r005.json",
               "size": 40,
               "format": "counted16"
             }
@@ -1661,7 +1661,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g13-r007.bin",
+              "file": "assets/records/s1-g13-r007.json",
               "size": 31,
               "format": "counted16"
             }
@@ -1693,7 +1693,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g13-r009.bin",
+              "file": "assets/records/s1-g13-r009.json",
               "size": 7,
               "format": "counted16"
             }
@@ -1725,7 +1725,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g13-r011.bin",
+              "file": "assets/records/s1-g13-r011.json",
               "size": 7,
               "format": "counted16"
             }
@@ -1757,7 +1757,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g13-r013.bin",
+              "file": "assets/records/s1-g13-r013.json",
               "size": 7,
               "format": "counted16"
             }
@@ -1789,7 +1789,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g13-r015.bin",
+              "file": "assets/records/s1-g13-r015.json",
               "size": 38,
               "format": "counted16"
             }
@@ -1821,7 +1821,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g13-r017.bin",
+              "file": "assets/records/s1-g13-r017.json",
               "size": 8,
               "format": "counted16"
             }
@@ -1853,7 +1853,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g13-r019.bin",
+              "file": "assets/records/s1-g13-r019.json",
               "size": 8,
               "format": "counted16"
             }
@@ -1885,7 +1885,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g13-r021.bin",
+              "file": "assets/records/s1-g13-r021.json",
               "size": 7,
               "format": "counted16"
             }
@@ -1917,7 +1917,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g13-r023.bin",
+              "file": "assets/records/s1-g13-r023.json",
               "size": 7,
               "format": "counted16"
             }
@@ -1949,7 +1949,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g13-r025.bin",
+              "file": "assets/records/s1-g13-r025.json",
               "size": 22,
               "format": "counted16"
             }
@@ -1981,7 +1981,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g13-r027.bin",
+              "file": "assets/records/s1-g13-r027.json",
               "size": 27,
               "format": "counted16"
             }
@@ -1997,7 +1997,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g14-r000.bin",
+              "file": "assets/records/s1-g14-r000.json",
               "size": 27,
               "format": "counted16"
             }
@@ -2013,7 +2013,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g14-r001.bin",
+              "file": "assets/records/s1-g14-r001.json",
               "size": 460,
               "format": "counted16"
             }
@@ -2045,7 +2045,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g14-r003.bin",
+              "file": "assets/records/s1-g14-r003.json",
               "size": 156,
               "format": "counted16"
             }
@@ -2077,7 +2077,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g14-r005.bin",
+              "file": "assets/records/s1-g14-r005.json",
               "size": 27,
               "format": "counted16"
             }
@@ -2109,7 +2109,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g14-r007.bin",
+              "file": "assets/records/s1-g14-r007.json",
               "size": 31,
               "format": "counted16"
             }
@@ -2141,7 +2141,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g14-r009.bin",
+              "file": "assets/records/s1-g14-r009.json",
               "size": 31,
               "format": "counted16"
             }
@@ -2173,7 +2173,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g14-r011.bin",
+              "file": "assets/records/s1-g14-r011.json",
               "size": 31,
               "format": "counted16"
             }
@@ -2205,7 +2205,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g14-r013.bin",
+              "file": "assets/records/s1-g14-r013.json",
               "size": 66,
               "format": "counted16"
             }
@@ -2221,7 +2221,7 @@
           ],
           "parts": [
             {
-              "file": "assets/padding/s1-g14-tail.bin",
+              "file": "assets/padding/s1-g14-tail.json",
               "size": 89
             }
           ]
@@ -2236,7 +2236,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g15-r000.bin",
+              "file": "assets/records/s1-g15-r000.json",
               "size": 6,
               "format": "counted16"
             }
@@ -2252,7 +2252,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g15-r001.bin",
+              "file": "assets/records/s1-g15-r001.json",
               "size": 171,
               "format": "counted16"
             }
@@ -2284,7 +2284,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g15-r003.bin",
+              "file": "assets/records/s1-g15-r003.json",
               "size": 70,
               "format": "counted16"
             }
@@ -2316,7 +2316,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g15-r005.bin",
+              "file": "assets/records/s1-g15-r005.json",
               "size": 31,
               "format": "counted16"
             }
@@ -2332,7 +2332,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g16-r000.bin",
+              "file": "assets/records/s1-g16-r000.json",
               "size": 6,
               "format": "counted16"
             }
@@ -2348,7 +2348,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g16-r001.bin",
+              "file": "assets/records/s1-g16-r001.json",
               "size": 195,
               "format": "counted16"
             }
@@ -2380,7 +2380,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g16-r003.bin",
+              "file": "assets/records/s1-g16-r003.json",
               "size": 89,
               "format": "counted16"
             }
@@ -2396,7 +2396,7 @@
           ],
           "parts": [
             {
-              "file": "assets/padding/s1-g16-tail.bin",
+              "file": "assets/padding/s1-g16-tail.json",
               "size": 9
             }
           ]
@@ -2411,7 +2411,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g17-r000.bin",
+              "file": "assets/records/s1-g17-r000.json",
               "size": 9,
               "format": "counted16"
             }
@@ -2427,7 +2427,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g17-r001.bin",
+              "file": "assets/records/s1-g17-r001.json",
               "size": 337,
               "format": "counted16"
             }
@@ -2459,7 +2459,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g17-r003.bin",
+              "file": "assets/records/s1-g17-r003.json",
               "size": 153,
               "format": "counted16"
             }
@@ -2491,7 +2491,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g17-r005.bin",
+              "file": "assets/records/s1-g17-r005.json",
               "size": 27,
               "format": "counted16"
             }
@@ -2523,7 +2523,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g17-r007.bin",
+              "file": "assets/records/s1-g17-r007.json",
               "size": 61,
               "format": "counted16"
             }
@@ -2555,7 +2555,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g17-r009.bin",
+              "file": "assets/records/s1-g17-r009.json",
               "size": 52,
               "format": "counted16"
             }
@@ -2571,7 +2571,7 @@
           ],
           "parts": [
             {
-              "file": "assets/padding/s1-g17-tail.bin",
+              "file": "assets/padding/s1-g17-tail.json",
               "size": 51
             }
           ]
@@ -2586,7 +2586,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g18-r000.bin",
+              "file": "assets/records/s1-g18-r000.json",
               "size": 6,
               "format": "counted16"
             }
@@ -2602,7 +2602,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g18-r001.bin",
+              "file": "assets/records/s1-g18-r001.json",
               "size": 612,
               "format": "counted16"
             }
@@ -2634,7 +2634,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g18-r003.bin",
+              "file": "assets/records/s1-g18-r003.json",
               "size": 188,
               "format": "counted16"
             }
@@ -2666,7 +2666,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g18-r005.bin",
+              "file": "assets/records/s1-g18-r005.json",
               "size": 60,
               "format": "counted16"
             }
@@ -2698,7 +2698,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g18-r007.bin",
+              "file": "assets/records/s1-g18-r007.json",
               "size": 51,
               "format": "counted16"
             }
@@ -2730,7 +2730,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g18-r009.bin",
+              "file": "assets/records/s1-g18-r009.json",
               "size": 31,
               "format": "counted16"
             }
@@ -2762,7 +2762,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g18-r011.bin",
+              "file": "assets/records/s1-g18-r011.json",
               "size": 54,
               "format": "counted16"
             }
@@ -2794,7 +2794,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g18-r013.bin",
+              "file": "assets/records/s1-g18-r013.json",
               "size": 10,
               "format": "counted16"
             }
@@ -2826,7 +2826,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g18-r015.bin",
+              "file": "assets/records/s1-g18-r015.json",
               "size": 10,
               "format": "counted16"
             }
@@ -2858,7 +2858,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g18-r017.bin",
+              "file": "assets/records/s1-g18-r017.json",
               "size": 19,
               "format": "counted16"
             }
@@ -2874,7 +2874,7 @@
           ],
           "parts": [
             {
-              "file": "assets/padding/s1-g18-tail.bin",
+              "file": "assets/padding/s1-g18-tail.json",
               "size": 111
             }
           ]
@@ -2889,7 +2889,7 @@
           ],
           "parts": [
             {
-              "file": "assets/state/initial-state.bin",
+              "file": "assets/state/initial-state.json",
               "size": 896
             }
           ]
@@ -2904,7 +2904,7 @@
           ],
           "parts": [
             {
-              "file": "assets/state/saved-state.bin",
+              "file": "assets/state/saved-state.json",
               "size": 896
             }
           ]
@@ -2919,7 +2919,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g21-slot00-r000.bin",
+              "file": "assets/records/s1-g21-slot00-r000.json",
               "size": 9,
               "format": "counted16"
             }
@@ -2935,7 +2935,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g21-slot00-r001.bin",
+              "file": "assets/records/s1-g21-slot00-r001.json",
               "size": 154,
               "format": "counted16"
             }
@@ -2967,7 +2967,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g21-slot00-r003.bin",
+              "file": "assets/records/s1-g21-slot00-r003.json",
               "size": 18,
               "format": "counted16"
             }
@@ -2999,7 +2999,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g21-slot00-r005.bin",
+              "file": "assets/records/s1-g21-slot00-r005.json",
               "size": 17,
               "format": "counted16"
             }
@@ -3031,7 +3031,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g21-slot00-r007.bin",
+              "file": "assets/records/s1-g21-slot00-r007.json",
               "size": 18,
               "format": "counted16"
             }
@@ -3063,7 +3063,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g21-slot00-r009.bin",
+              "file": "assets/records/s1-g21-slot00-r009.json",
               "size": 17,
               "format": "counted16"
             }
@@ -3079,7 +3079,7 @@
           ],
           "parts": [
             {
-              "file": "assets/padding/s1-g21-slot00-tail.bin",
+              "file": "assets/padding/s1-g21-slot00-tail.json",
               "size": 20
             }
           ]
@@ -3094,7 +3094,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g21-slot01-r000.bin",
+              "file": "assets/records/s1-g21-slot01-r000.json",
               "size": 9,
               "format": "counted16"
             }
@@ -3110,7 +3110,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g21-slot01-r001.bin",
+              "file": "assets/records/s1-g21-slot01-r001.json",
               "size": 150,
               "format": "counted16"
             }
@@ -3142,7 +3142,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g21-slot01-r003.bin",
+              "file": "assets/records/s1-g21-slot01-r003.json",
               "size": 16,
               "format": "counted16"
             }
@@ -3174,7 +3174,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g21-slot01-r005.bin",
+              "file": "assets/records/s1-g21-slot01-r005.json",
               "size": 16,
               "format": "counted16"
             }
@@ -3206,7 +3206,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g21-slot01-r007.bin",
+              "file": "assets/records/s1-g21-slot01-r007.json",
               "size": 18,
               "format": "counted16"
             }
@@ -3238,7 +3238,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g21-slot01-r009.bin",
+              "file": "assets/records/s1-g21-slot01-r009.json",
               "size": 17,
               "format": "counted16"
             }
@@ -3254,7 +3254,7 @@
           ],
           "parts": [
             {
-              "file": "assets/padding/s1-g21-slot01-tail.bin",
+              "file": "assets/padding/s1-g21-slot01-tail.json",
               "size": 30
             }
           ]
@@ -3269,7 +3269,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g21-slot02-r000.bin",
+              "file": "assets/records/s1-g21-slot02-r000.json",
               "size": 9,
               "format": "counted16"
             }
@@ -3285,7 +3285,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g21-slot02-r001.bin",
+              "file": "assets/records/s1-g21-slot02-r001.json",
               "size": 159,
               "format": "counted16"
             }
@@ -3317,7 +3317,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g21-slot02-r003.bin",
+              "file": "assets/records/s1-g21-slot02-r003.json",
               "size": 17,
               "format": "counted16"
             }
@@ -3349,7 +3349,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g21-slot02-r005.bin",
+              "file": "assets/records/s1-g21-slot02-r005.json",
               "size": 20,
               "format": "counted16"
             }
@@ -3381,7 +3381,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g21-slot02-r007.bin",
+              "file": "assets/records/s1-g21-slot02-r007.json",
               "size": 15,
               "format": "counted16"
             }
@@ -3413,7 +3413,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g21-slot02-r009.bin",
+              "file": "assets/records/s1-g21-slot02-r009.json",
               "size": 17,
               "format": "counted16"
             }
@@ -3429,7 +3429,7 @@
           ],
           "parts": [
             {
-              "file": "assets/padding/s1-g21-slot02-tail.bin",
+              "file": "assets/padding/s1-g21-slot02-tail.json",
               "size": 18
             }
           ]
@@ -3444,7 +3444,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g21-slot03-r000.bin",
+              "file": "assets/records/s1-g21-slot03-r000.json",
               "size": 9,
               "format": "counted16"
             }
@@ -3460,7 +3460,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g21-slot03-r001.bin",
+              "file": "assets/records/s1-g21-slot03-r001.json",
               "size": 160,
               "format": "counted16"
             }
@@ -3492,7 +3492,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g21-slot03-r003.bin",
+              "file": "assets/records/s1-g21-slot03-r003.json",
               "size": 18,
               "format": "counted16"
             }
@@ -3524,7 +3524,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g21-slot03-r005.bin",
+              "file": "assets/records/s1-g21-slot03-r005.json",
               "size": 17,
               "format": "counted16"
             }
@@ -3556,7 +3556,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g21-slot03-r007.bin",
+              "file": "assets/records/s1-g21-slot03-r007.json",
               "size": 18,
               "format": "counted16"
             }
@@ -3588,7 +3588,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g21-slot03-r009.bin",
+              "file": "assets/records/s1-g21-slot03-r009.json",
               "size": 18,
               "format": "counted16"
             }
@@ -3604,7 +3604,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g21-slot04-r000.bin",
+              "file": "assets/records/s1-g21-slot04-r000.json",
               "size": 9,
               "format": "counted16"
             }
@@ -3620,7 +3620,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g21-slot04-r001.bin",
+              "file": "assets/records/s1-g21-slot04-r001.json",
               "size": 223,
               "format": "counted16"
             }
@@ -3652,7 +3652,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g21-slot04-r003.bin",
+              "file": "assets/records/s1-g21-slot04-r003.json",
               "size": 18,
               "format": "counted16"
             }
@@ -3684,7 +3684,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g21-slot04-r005.bin",
+              "file": "assets/records/s1-g21-slot04-r005.json",
               "size": 20,
               "format": "counted16"
             }
@@ -3716,7 +3716,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g21-slot04-r007.bin",
+              "file": "assets/records/s1-g21-slot04-r007.json",
               "size": 18,
               "format": "counted16"
             }
@@ -3732,7 +3732,7 @@
           ],
           "parts": [
             {
-              "file": "assets/padding/s1-g21-slot04-tail.bin",
+              "file": "assets/padding/s1-g21-slot04-tail.json",
               "size": 22
             }
           ]
@@ -3747,7 +3747,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g21-slot05-r000.bin",
+              "file": "assets/records/s1-g21-slot05-r000.json",
               "size": 9,
               "format": "counted16"
             }
@@ -3763,7 +3763,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g21-slot05-r001.bin",
+              "file": "assets/records/s1-g21-slot05-r001.json",
               "size": 43,
               "format": "counted16"
             }
@@ -3795,7 +3795,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g21-slot05-r003.bin",
+              "file": "assets/records/s1-g21-slot05-r003.json",
               "size": 20,
               "format": "counted16"
             }
@@ -3811,7 +3811,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g22-r000.bin",
+              "file": "assets/records/s1-g22-r000.json",
               "size": 11,
               "format": "counted16"
             }
@@ -3827,7 +3827,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g22-r001.bin",
+              "file": "assets/records/s1-g22-r001.json",
               "size": 11,
               "format": "counted16"
             }
@@ -3843,7 +3843,7 @@
           ],
           "parts": [
             {
-              "file": "assets/padding/s1-g22-tail.bin",
+              "file": "assets/padding/s1-g22-tail.json",
               "size": 106
             }
           ]
@@ -3858,7 +3858,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g23-slot00-r000.bin",
+              "file": "assets/records/s1-g23-slot00-r000.json",
               "size": 9,
               "format": "counted16"
             }
@@ -3874,7 +3874,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g23-slot00-r001.bin",
+              "file": "assets/records/s1-g23-slot00-r001.json",
               "size": 154,
               "format": "counted16"
             }
@@ -3906,7 +3906,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g23-slot00-r003.bin",
+              "file": "assets/records/s1-g23-slot00-r003.json",
               "size": 18,
               "format": "counted16"
             }
@@ -3938,7 +3938,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g23-slot00-r005.bin",
+              "file": "assets/records/s1-g23-slot00-r005.json",
               "size": 17,
               "format": "counted16"
             }
@@ -3970,7 +3970,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g23-slot00-r007.bin",
+              "file": "assets/records/s1-g23-slot00-r007.json",
               "size": 18,
               "format": "counted16"
             }
@@ -4002,7 +4002,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g23-slot00-r009.bin",
+              "file": "assets/records/s1-g23-slot00-r009.json",
               "size": 17,
               "format": "counted16"
             }
@@ -4018,7 +4018,7 @@
           ],
           "parts": [
             {
-              "file": "assets/padding/s1-g23-slot00-tail.bin",
+              "file": "assets/padding/s1-g23-slot00-tail.json",
               "size": 20
             }
           ]
@@ -4033,7 +4033,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g23-slot01-r000.bin",
+              "file": "assets/records/s1-g23-slot01-r000.json",
               "size": 9,
               "format": "counted16"
             }
@@ -4049,7 +4049,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g23-slot01-r001.bin",
+              "file": "assets/records/s1-g23-slot01-r001.json",
               "size": 150,
               "format": "counted16"
             }
@@ -4081,7 +4081,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g23-slot01-r003.bin",
+              "file": "assets/records/s1-g23-slot01-r003.json",
               "size": 16,
               "format": "counted16"
             }
@@ -4113,7 +4113,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g23-slot01-r005.bin",
+              "file": "assets/records/s1-g23-slot01-r005.json",
               "size": 16,
               "format": "counted16"
             }
@@ -4145,7 +4145,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g23-slot01-r007.bin",
+              "file": "assets/records/s1-g23-slot01-r007.json",
               "size": 18,
               "format": "counted16"
             }
@@ -4177,7 +4177,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g23-slot01-r009.bin",
+              "file": "assets/records/s1-g23-slot01-r009.json",
               "size": 17,
               "format": "counted16"
             }
@@ -4193,7 +4193,7 @@
           ],
           "parts": [
             {
-              "file": "assets/padding/s1-g23-slot01-tail.bin",
+              "file": "assets/padding/s1-g23-slot01-tail.json",
               "size": 30
             }
           ]
@@ -4208,7 +4208,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g23-slot02-r000.bin",
+              "file": "assets/records/s1-g23-slot02-r000.json",
               "size": 9,
               "format": "counted16"
             }
@@ -4224,7 +4224,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g23-slot02-r001.bin",
+              "file": "assets/records/s1-g23-slot02-r001.json",
               "size": 159,
               "format": "counted16"
             }
@@ -4256,7 +4256,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g23-slot02-r003.bin",
+              "file": "assets/records/s1-g23-slot02-r003.json",
               "size": 17,
               "format": "counted16"
             }
@@ -4288,7 +4288,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g23-slot02-r005.bin",
+              "file": "assets/records/s1-g23-slot02-r005.json",
               "size": 20,
               "format": "counted16"
             }
@@ -4320,7 +4320,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g23-slot02-r007.bin",
+              "file": "assets/records/s1-g23-slot02-r007.json",
               "size": 15,
               "format": "counted16"
             }
@@ -4352,7 +4352,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g23-slot02-r009.bin",
+              "file": "assets/records/s1-g23-slot02-r009.json",
               "size": 17,
               "format": "counted16"
             }
@@ -4368,7 +4368,7 @@
           ],
           "parts": [
             {
-              "file": "assets/padding/s1-g23-slot02-tail.bin",
+              "file": "assets/padding/s1-g23-slot02-tail.json",
               "size": 18
             }
           ]
@@ -4383,7 +4383,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g23-slot03-r000.bin",
+              "file": "assets/records/s1-g23-slot03-r000.json",
               "size": 9,
               "format": "counted16"
             }
@@ -4399,7 +4399,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g23-slot03-r001.bin",
+              "file": "assets/records/s1-g23-slot03-r001.json",
               "size": 160,
               "format": "counted16"
             }
@@ -4431,7 +4431,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g23-slot03-r003.bin",
+              "file": "assets/records/s1-g23-slot03-r003.json",
               "size": 18,
               "format": "counted16"
             }
@@ -4463,7 +4463,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g23-slot03-r005.bin",
+              "file": "assets/records/s1-g23-slot03-r005.json",
               "size": 17,
               "format": "counted16"
             }
@@ -4495,7 +4495,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g23-slot03-r007.bin",
+              "file": "assets/records/s1-g23-slot03-r007.json",
               "size": 18,
               "format": "counted16"
             }
@@ -4527,7 +4527,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g23-slot03-r009.bin",
+              "file": "assets/records/s1-g23-slot03-r009.json",
               "size": 18,
               "format": "counted16"
             }
@@ -4543,7 +4543,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g23-slot04-r000.bin",
+              "file": "assets/records/s1-g23-slot04-r000.json",
               "size": 9,
               "format": "counted16"
             }
@@ -4559,7 +4559,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g23-slot04-r001.bin",
+              "file": "assets/records/s1-g23-slot04-r001.json",
               "size": 223,
               "format": "counted16"
             }
@@ -4591,7 +4591,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g23-slot04-r003.bin",
+              "file": "assets/records/s1-g23-slot04-r003.json",
               "size": 18,
               "format": "counted16"
             }
@@ -4623,7 +4623,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g23-slot04-r005.bin",
+              "file": "assets/records/s1-g23-slot04-r005.json",
               "size": 20,
               "format": "counted16"
             }
@@ -4655,7 +4655,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g23-slot04-r007.bin",
+              "file": "assets/records/s1-g23-slot04-r007.json",
               "size": 18,
               "format": "counted16"
             }
@@ -4671,7 +4671,7 @@
           ],
           "parts": [
             {
-              "file": "assets/padding/s1-g23-slot04-tail.bin",
+              "file": "assets/padding/s1-g23-slot04-tail.json",
               "size": 22
             }
           ]
@@ -4686,7 +4686,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g23-slot05-r000.bin",
+              "file": "assets/records/s1-g23-slot05-r000.json",
               "size": 9,
               "format": "counted16"
             }
@@ -4702,7 +4702,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g23-slot05-r001.bin",
+              "file": "assets/records/s1-g23-slot05-r001.json",
               "size": 43,
               "format": "counted16"
             }
@@ -4734,7 +4734,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g23-slot05-r003.bin",
+              "file": "assets/records/s1-g23-slot05-r003.json",
               "size": 20,
               "format": "counted16"
             }
@@ -4750,7 +4750,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g24-r000.bin",
+              "file": "assets/records/s1-g24-r000.json",
               "size": 11,
               "format": "counted16"
             }
@@ -4766,7 +4766,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g24-r001.bin",
+              "file": "assets/records/s1-g24-r001.json",
               "size": 11,
               "format": "counted16"
             }
@@ -4782,7 +4782,7 @@
           ],
           "parts": [
             {
-              "file": "assets/padding/s1-g24-tail.bin",
+              "file": "assets/padding/s1-g24-tail.json",
               "size": 106
             }
           ]
@@ -4797,7 +4797,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s1-g25-r000.bin",
+              "file": "assets/records/s1-g25-r000.json",
               "size": 3406,
               "format": "counted16"
             }
@@ -4813,7 +4813,7 @@
           ],
           "parts": [
             {
-              "file": "assets/padding/s1-g25-tail.bin",
+              "file": "assets/padding/s1-g25-tail.json",
               "size": 50
             }
           ]
@@ -4828,7 +4828,7 @@
           ],
           "parts": [
             {
-              "file": "assets/archive/retired-inventory-slot00-r000.bin",
+              "file": "assets/archive/retired-inventory-slot00-r000.json",
               "size": 9,
               "format": "counted16"
             }
@@ -4844,7 +4844,7 @@
           ],
           "parts": [
             {
-              "file": "assets/archive/retired-inventory-slot00-r001.bin",
+              "file": "assets/archive/retired-inventory-slot00-r001.json",
               "size": 154,
               "format": "counted16"
             }
@@ -4860,7 +4860,7 @@
           ],
           "parts": [
             {
-              "file": "assets/archive/retired-inventory-slot00-r002.bin",
+              "file": "graphics/packed/archive/retired-inventory-slot00-r002.bin",
               "size": 64,
               "format": "counted16"
             }
@@ -4876,7 +4876,7 @@
           ],
           "parts": [
             {
-              "file": "assets/archive/retired-inventory-slot00-r003.bin",
+              "file": "assets/archive/retired-inventory-slot00-r003.json",
               "size": 18,
               "format": "counted16"
             }
@@ -4892,7 +4892,7 @@
           ],
           "parts": [
             {
-              "file": "assets/archive/retired-inventory-slot00-r004.bin",
+              "file": "graphics/packed/archive/retired-inventory-slot00-r004.bin",
               "size": 70,
               "format": "counted16"
             }
@@ -4908,7 +4908,7 @@
           ],
           "parts": [
             {
-              "file": "assets/archive/retired-inventory-slot00-r005.bin",
+              "file": "assets/archive/retired-inventory-slot00-r005.json",
               "size": 17,
               "format": "counted16"
             }
@@ -4924,7 +4924,7 @@
           ],
           "parts": [
             {
-              "file": "assets/archive/retired-inventory-slot00-r006.bin",
+              "file": "graphics/packed/archive/retired-inventory-slot00-r006.bin",
               "size": 68,
               "format": "counted16"
             }
@@ -4940,7 +4940,7 @@
           ],
           "parts": [
             {
-              "file": "assets/archive/retired-inventory-slot00-r007.bin",
+              "file": "assets/archive/retired-inventory-slot00-r007.json",
               "size": 18,
               "format": "counted16"
             }
@@ -4956,7 +4956,7 @@
           ],
           "parts": [
             {
-              "file": "assets/archive/retired-inventory-slot00-r008.bin",
+              "file": "graphics/packed/archive/retired-inventory-slot00-r008.bin",
               "size": 57,
               "format": "counted16"
             }
@@ -4972,7 +4972,7 @@
           ],
           "parts": [
             {
-              "file": "assets/archive/retired-inventory-slot00-r009.bin",
+              "file": "assets/archive/retired-inventory-slot00-r009.json",
               "size": 17,
               "format": "counted16"
             }
@@ -4988,7 +4988,7 @@
           ],
           "parts": [
             {
-              "file": "assets/padding/retired-inventory-slot00-tail.bin",
+              "file": "assets/padding/retired-inventory-slot00-tail.json",
               "size": 20
             }
           ]
@@ -5003,7 +5003,7 @@
           ],
           "parts": [
             {
-              "file": "assets/archive/retired-inventory-slot01-r000.bin",
+              "file": "assets/archive/retired-inventory-slot01-r000.json",
               "size": 9,
               "format": "counted16"
             }
@@ -5019,7 +5019,7 @@
           ],
           "parts": [
             {
-              "file": "assets/archive/retired-inventory-slot01-r001.bin",
+              "file": "assets/archive/retired-inventory-slot01-r001.json",
               "size": 150,
               "format": "counted16"
             }
@@ -5035,7 +5035,7 @@
           ],
           "parts": [
             {
-              "file": "assets/archive/retired-inventory-slot01-r002.bin",
+              "file": "graphics/packed/archive/retired-inventory-slot01-r002.bin",
               "size": 56,
               "format": "counted16"
             }
@@ -5051,7 +5051,7 @@
           ],
           "parts": [
             {
-              "file": "assets/archive/retired-inventory-slot01-r003.bin",
+              "file": "assets/archive/retired-inventory-slot01-r003.json",
               "size": 16,
               "format": "counted16"
             }
@@ -5067,7 +5067,7 @@
           ],
           "parts": [
             {
-              "file": "assets/archive/retired-inventory-slot01-r004.bin",
+              "file": "graphics/packed/archive/retired-inventory-slot01-r004.bin",
               "size": 56,
               "format": "counted16"
             }
@@ -5083,7 +5083,7 @@
           ],
           "parts": [
             {
-              "file": "assets/archive/retired-inventory-slot01-r005.bin",
+              "file": "assets/archive/retired-inventory-slot01-r005.json",
               "size": 16,
               "format": "counted16"
             }
@@ -5099,7 +5099,7 @@
           ],
           "parts": [
             {
-              "file": "assets/archive/retired-inventory-slot01-r006.bin",
+              "file": "graphics/packed/archive/retired-inventory-slot01-r006.bin",
               "size": 64,
               "format": "counted16"
             }
@@ -5115,7 +5115,7 @@
           ],
           "parts": [
             {
-              "file": "assets/archive/retired-inventory-slot01-r007.bin",
+              "file": "assets/archive/retired-inventory-slot01-r007.json",
               "size": 18,
               "format": "counted16"
             }
@@ -5131,7 +5131,7 @@
           ],
           "parts": [
             {
-              "file": "assets/archive/retired-inventory-slot01-r008.bin",
+              "file": "graphics/packed/archive/retired-inventory-slot01-r008.bin",
               "size": 80,
               "format": "counted16"
             }
@@ -5147,7 +5147,7 @@
           ],
           "parts": [
             {
-              "file": "assets/archive/retired-inventory-slot01-r009.bin",
+              "file": "assets/archive/retired-inventory-slot01-r009.json",
               "size": 17,
               "format": "counted16"
             }
@@ -5163,7 +5163,7 @@
           ],
           "parts": [
             {
-              "file": "assets/padding/retired-inventory-slot01-tail.bin",
+              "file": "assets/padding/retired-inventory-slot01-tail.json",
               "size": 30
             }
           ]
@@ -5178,7 +5178,7 @@
           ],
           "parts": [
             {
-              "file": "assets/archive/retired-inventory-slot02-r000.bin",
+              "file": "assets/archive/retired-inventory-slot02-r000.json",
               "size": 9,
               "format": "counted16"
             }
@@ -5194,7 +5194,7 @@
           ],
           "parts": [
             {
-              "file": "assets/archive/retired-inventory-slot02-r001.bin",
+              "file": "assets/archive/retired-inventory-slot02-r001.json",
               "size": 168,
               "format": "counted16"
             }
@@ -5210,7 +5210,7 @@
           ],
           "parts": [
             {
-              "file": "assets/archive/retired-inventory-slot02-r002.bin",
+              "file": "graphics/packed/archive/retired-inventory-slot02-r002.bin",
               "size": 80,
               "format": "counted16"
             }
@@ -5226,7 +5226,7 @@
           ],
           "parts": [
             {
-              "file": "assets/archive/retired-inventory-slot02-r003.bin",
+              "file": "assets/archive/retired-inventory-slot02-r003.json",
               "size": 17,
               "format": "counted16"
             }
@@ -5242,7 +5242,7 @@
           ],
           "parts": [
             {
-              "file": "assets/archive/retired-inventory-slot02-r004.bin",
+              "file": "graphics/packed/archive/retired-inventory-slot02-r004.bin",
               "size": 61,
               "format": "counted16"
             }
@@ -5258,7 +5258,7 @@
           ],
           "parts": [
             {
-              "file": "assets/archive/retired-inventory-slot02-r005.bin",
+              "file": "assets/archive/retired-inventory-slot02-r005.json",
               "size": 17,
               "format": "counted16"
             }
@@ -5274,7 +5274,7 @@
           ],
           "parts": [
             {
-              "file": "assets/archive/retired-inventory-slot02-r006.bin",
+              "file": "graphics/packed/archive/retired-inventory-slot02-r006.bin",
               "size": 45,
               "format": "counted16"
             }
@@ -5290,7 +5290,7 @@
           ],
           "parts": [
             {
-              "file": "assets/archive/retired-inventory-slot02-r007.bin",
+              "file": "assets/archive/retired-inventory-slot02-r007.json",
               "size": 15,
               "format": "counted16"
             }
@@ -5306,7 +5306,7 @@
           ],
           "parts": [
             {
-              "file": "assets/archive/retired-inventory-slot02-r008.bin",
+              "file": "graphics/packed/archive/retired-inventory-slot02-r008.bin",
               "size": 65,
               "format": "counted16"
             }
@@ -5322,7 +5322,7 @@
           ],
           "parts": [
             {
-              "file": "assets/archive/retired-inventory-slot02-r009.bin",
+              "file": "assets/archive/retired-inventory-slot02-r009.json",
               "size": 17,
               "format": "counted16"
             }
@@ -5338,7 +5338,7 @@
           ],
           "parts": [
             {
-              "file": "assets/padding/retired-inventory-slot02-tail.bin",
+              "file": "assets/padding/retired-inventory-slot02-tail.json",
               "size": 18
             }
           ]
@@ -5353,7 +5353,7 @@
           ],
           "parts": [
             {
-              "file": "assets/archive/retired-inventory-slot03-r000.bin",
+              "file": "assets/archive/retired-inventory-slot03-r000.json",
               "size": 9,
               "format": "counted16"
             }
@@ -5369,7 +5369,7 @@
           ],
           "parts": [
             {
-              "file": "assets/archive/retired-inventory-slot03-r001.bin",
+              "file": "assets/archive/retired-inventory-slot03-r001.json",
               "size": 160,
               "format": "counted16"
             }
@@ -5385,7 +5385,7 @@
           ],
           "parts": [
             {
-              "file": "assets/archive/retired-inventory-slot03-r002.bin",
+              "file": "graphics/packed/archive/retired-inventory-slot03-r002.bin",
               "size": 68,
               "format": "counted16"
             }
@@ -5401,7 +5401,7 @@
           ],
           "parts": [
             {
-              "file": "assets/archive/retired-inventory-slot03-r003.bin",
+              "file": "assets/archive/retired-inventory-slot03-r003.json",
               "size": 18,
               "format": "counted16"
             }
@@ -5417,7 +5417,7 @@
           ],
           "parts": [
             {
-              "file": "assets/archive/retired-inventory-slot03-r004.bin",
+              "file": "graphics/packed/archive/retired-inventory-slot03-r004.bin",
               "size": 64,
               "format": "counted16"
             }
@@ -5433,7 +5433,7 @@
           ],
           "parts": [
             {
-              "file": "assets/archive/retired-inventory-slot03-r005.bin",
+              "file": "assets/archive/retired-inventory-slot03-r005.json",
               "size": 17,
               "format": "counted16"
             }
@@ -5449,7 +5449,7 @@
           ],
           "parts": [
             {
-              "file": "assets/archive/retired-inventory-slot03-r006.bin",
+              "file": "graphics/packed/archive/retired-inventory-slot03-r006.bin",
               "size": 64,
               "format": "counted16"
             }
@@ -5465,7 +5465,7 @@
           ],
           "parts": [
             {
-              "file": "assets/archive/retired-inventory-slot03-r007.bin",
+              "file": "assets/archive/retired-inventory-slot03-r007.json",
               "size": 18,
               "format": "counted16"
             }
@@ -5481,7 +5481,7 @@
           ],
           "parts": [
             {
-              "file": "assets/archive/retired-inventory-slot03-r008.bin",
+              "file": "graphics/packed/archive/retired-inventory-slot03-r008.bin",
               "size": 64,
               "format": "counted16"
             }
@@ -5497,7 +5497,7 @@
           ],
           "parts": [
             {
-              "file": "assets/archive/retired-inventory-slot03-r009.bin",
+              "file": "assets/archive/retired-inventory-slot03-r009.json",
               "size": 18,
               "format": "counted16"
             }
@@ -5513,7 +5513,7 @@
           ],
           "parts": [
             {
-              "file": "assets/archive/retired-inventory-slot04-r000.bin",
+              "file": "assets/archive/retired-inventory-slot04-r000.json",
               "size": 9,
               "format": "counted16"
             }
@@ -5529,7 +5529,7 @@
           ],
           "parts": [
             {
-              "file": "assets/archive/retired-inventory-slot04-r001.bin",
+              "file": "assets/archive/retired-inventory-slot04-r001.json",
               "size": 184,
               "format": "counted16"
             }
@@ -5545,7 +5545,7 @@
           ],
           "parts": [
             {
-              "file": "assets/archive/retired-inventory-slot04-r002.bin",
+              "file": "graphics/packed/archive/retired-inventory-slot04-r002.bin",
               "size": 45,
               "format": "counted16"
             }
@@ -5561,7 +5561,7 @@
           ],
           "parts": [
             {
-              "file": "assets/archive/retired-inventory-slot04-r003.bin",
+              "file": "assets/archive/retired-inventory-slot04-r003.json",
               "size": 15,
               "format": "counted16"
             }
@@ -5577,7 +5577,7 @@
           ],
           "parts": [
             {
-              "file": "assets/archive/retired-inventory-slot04-r004.bin",
+              "file": "graphics/packed/archive/retired-inventory-slot04-r004.bin",
               "size": 64,
               "format": "counted16"
             }
@@ -5593,7 +5593,7 @@
           ],
           "parts": [
             {
-              "file": "assets/archive/retired-inventory-slot04-r005.bin",
+              "file": "assets/archive/retired-inventory-slot04-r005.json",
               "size": 20,
               "format": "counted16"
             }
@@ -5609,7 +5609,7 @@
           ],
           "parts": [
             {
-              "file": "assets/archive/retired-introduction.bin",
+              "file": "assets/archive/retired-introduction.json",
               "size": 3404,
               "format": "counted16"
             }
@@ -5625,7 +5625,7 @@
           ],
           "parts": [
             {
-              "file": "assets/padding/retired-introduction-tail.bin",
+              "file": "assets/padding/retired-introduction-tail.json",
               "size": 52
             }
           ]
@@ -5640,7 +5640,7 @@
           ],
           "parts": [
             {
-              "file": "assets/reserved/sector-1024.bin",
+              "file": "assets/reserved/sector-1024.json",
               "size": 128
             }
           ]
@@ -5689,7 +5689,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g01-r000.bin",
+              "file": "assets/records/s2-g01-r000.json",
               "size": 3,
               "format": "counted16"
             }
@@ -5705,7 +5705,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g01-r001.bin",
+              "file": "assets/records/s2-g01-r001.json",
               "size": 270,
               "format": "counted16"
             }
@@ -5737,7 +5737,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g01-r003.bin",
+              "file": "assets/records/s2-g01-r003.json",
               "size": 139,
               "format": "counted16"
             }
@@ -5769,7 +5769,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g01-r005.bin",
+              "file": "assets/records/s2-g01-r005.json",
               "size": 27,
               "format": "counted16"
             }
@@ -5801,7 +5801,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g01-r007.bin",
+              "file": "assets/records/s2-g01-r007.json",
               "size": 31,
               "format": "counted16"
             }
@@ -5833,7 +5833,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g01-r009.bin",
+              "file": "assets/records/s2-g01-r009.json",
               "size": 68,
               "format": "counted16"
             }
@@ -5865,7 +5865,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g01-r011.bin",
+              "file": "assets/records/s2-g01-r011.json",
               "size": 6,
               "format": "counted16"
             }
@@ -5897,7 +5897,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g01-r013.bin",
+              "file": "assets/records/s2-g01-r013.json",
               "size": 6,
               "format": "counted16"
             }
@@ -5929,7 +5929,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g01-r015.bin",
+              "file": "assets/records/s2-g01-r015.json",
               "size": 6,
               "format": "counted16"
             }
@@ -5961,7 +5961,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g01-r017.bin",
+              "file": "assets/records/s2-g01-r017.json",
               "size": 6,
               "format": "counted16"
             }
@@ -5993,7 +5993,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g01-r019.bin",
+              "file": "assets/records/s2-g01-r019.json",
               "size": 6,
               "format": "counted16"
             }
@@ -6025,7 +6025,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g01-r021.bin",
+              "file": "assets/records/s2-g01-r021.json",
               "size": 6,
               "format": "counted16"
             }
@@ -6057,7 +6057,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g01-r023.bin",
+              "file": "assets/records/s2-g01-r023.json",
               "size": 6,
               "format": "counted16"
             }
@@ -6089,7 +6089,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g01-r025.bin",
+              "file": "assets/records/s2-g01-r025.json",
               "size": 6,
               "format": "counted16"
             }
@@ -6505,7 +6505,7 @@
           ],
           "parts": [
             {
-              "file": "assets/padding/s2-g01-tail.bin",
+              "file": "assets/padding/s2-g01-tail.json",
               "size": 64
             }
           ]
@@ -6520,7 +6520,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g02-r000.bin",
+              "file": "assets/records/s2-g02-r000.json",
               "size": 3,
               "format": "counted16"
             }
@@ -6536,7 +6536,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g02-r001.bin",
+              "file": "assets/records/s2-g02-r001.json",
               "size": 268,
               "format": "counted16"
             }
@@ -6568,7 +6568,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g02-r003.bin",
+              "file": "assets/records/s2-g02-r003.json",
               "size": 152,
               "format": "counted16"
             }
@@ -6600,7 +6600,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g02-r005.bin",
+              "file": "assets/records/s2-g02-r005.json",
               "size": 59,
               "format": "counted16"
             }
@@ -6616,7 +6616,7 @@
           ],
           "parts": [
             {
-              "file": "assets/padding/s2-g02-tail.bin",
+              "file": "assets/padding/s2-g02-tail.json",
               "size": 60
             }
           ]
@@ -6631,7 +6631,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g03-r000.bin",
+              "file": "assets/records/s2-g03-r000.json",
               "size": 3,
               "format": "counted16"
             }
@@ -6647,7 +6647,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g03-r001.bin",
+              "file": "assets/records/s2-g03-r001.json",
               "size": 528,
               "format": "counted16"
             }
@@ -6679,7 +6679,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g03-r003.bin",
+              "file": "assets/records/s2-g03-r003.json",
               "size": 169,
               "format": "counted16"
             }
@@ -6711,7 +6711,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g03-r005.bin",
+              "file": "assets/records/s2-g03-r005.json",
               "size": 33,
               "format": "counted16"
             }
@@ -6743,7 +6743,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g03-r007.bin",
+              "file": "assets/records/s2-g03-r007.json",
               "size": 7,
               "format": "counted16"
             }
@@ -6775,7 +6775,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g03-r009.bin",
+              "file": "assets/records/s2-g03-r009.json",
               "size": 10,
               "format": "counted16"
             }
@@ -6807,7 +6807,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g03-r011.bin",
+              "file": "assets/records/s2-g03-r011.json",
               "size": 49,
               "format": "counted16"
             }
@@ -6871,7 +6871,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g04-r000.bin",
+              "file": "assets/records/s2-g04-r000.json",
               "size": 3,
               "format": "counted16"
             }
@@ -6887,7 +6887,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g04-r001.bin",
+              "file": "assets/records/s2-g04-r001.json",
               "size": 425,
               "format": "counted16"
             }
@@ -6919,7 +6919,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g04-r003.bin",
+              "file": "assets/records/s2-g04-r003.json",
               "size": 129,
               "format": "counted16"
             }
@@ -6951,7 +6951,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g04-r005.bin",
+              "file": "assets/records/s2-g04-r005.json",
               "size": 68,
               "format": "counted16"
             }
@@ -6983,7 +6983,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g04-r007.bin",
+              "file": "assets/records/s2-g04-r007.json",
               "size": 37,
               "format": "counted16"
             }
@@ -7015,7 +7015,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g04-r009.bin",
+              "file": "assets/records/s2-g04-r009.json",
               "size": 35,
               "format": "counted16"
             }
@@ -7095,7 +7095,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g05-r000.bin",
+              "file": "assets/records/s2-g05-r000.json",
               "size": 3,
               "format": "counted16"
             }
@@ -7111,7 +7111,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g05-r001.bin",
+              "file": "assets/records/s2-g05-r001.json",
               "size": 275,
               "format": "counted16"
             }
@@ -7143,7 +7143,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g05-r003.bin",
+              "file": "assets/records/s2-g05-r003.json",
               "size": 144,
               "format": "counted16"
             }
@@ -7175,7 +7175,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g05-r005.bin",
+              "file": "assets/records/s2-g05-r005.json",
               "size": 29,
               "format": "counted16"
             }
@@ -7207,7 +7207,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g05-r007.bin",
+              "file": "assets/records/s2-g05-r007.json",
               "size": 44,
               "format": "counted16"
             }
@@ -7223,7 +7223,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g06-r000.bin",
+              "file": "assets/records/s2-g06-r000.json",
               "size": 3,
               "format": "counted16"
             }
@@ -7239,7 +7239,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g06-r001.bin",
+              "file": "assets/records/s2-g06-r001.json",
               "size": 734,
               "format": "counted16"
             }
@@ -7271,7 +7271,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g06-r003.bin",
+              "file": "assets/records/s2-g06-r003.json",
               "size": 104,
               "format": "counted16"
             }
@@ -7303,7 +7303,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g06-r005.bin",
+              "file": "assets/records/s2-g06-r005.json",
               "size": 48,
               "format": "counted16"
             }
@@ -7335,7 +7335,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g06-r007.bin",
+              "file": "assets/records/s2-g06-r007.json",
               "size": 44,
               "format": "counted16"
             }
@@ -7367,7 +7367,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g06-r009.bin",
+              "file": "assets/records/s2-g06-r009.json",
               "size": 37,
               "format": "counted16"
             }
@@ -7399,7 +7399,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g06-r011.bin",
+              "file": "assets/records/s2-g06-r011.json",
               "size": 20,
               "format": "counted16"
             }
@@ -7431,7 +7431,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g06-r013.bin",
+              "file": "assets/records/s2-g06-r013.json",
               "size": 24,
               "format": "counted16"
             }
@@ -7447,7 +7447,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g07-r000.bin",
+              "file": "assets/records/s2-g07-r000.json",
               "size": 3,
               "format": "counted16"
             }
@@ -7463,7 +7463,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g07-r001.bin",
+              "file": "assets/records/s2-g07-r001.json",
               "size": 641,
               "format": "counted16"
             }
@@ -7495,7 +7495,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g07-r003.bin",
+              "file": "assets/records/s2-g07-r003.json",
               "size": 145,
               "format": "counted16"
             }
@@ -7527,7 +7527,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g07-r005.bin",
+              "file": "assets/records/s2-g07-r005.json",
               "size": 88,
               "format": "counted16"
             }
@@ -7559,7 +7559,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g07-r007.bin",
+              "file": "assets/records/s2-g07-r007.json",
               "size": 13,
               "format": "counted16"
             }
@@ -7591,7 +7591,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g07-r009.bin",
+              "file": "assets/records/s2-g07-r009.json",
               "size": 34,
               "format": "counted16"
             }
@@ -7623,7 +7623,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g07-r011.bin",
+              "file": "assets/records/s2-g07-r011.json",
               "size": 20,
               "format": "counted16"
             }
@@ -7655,7 +7655,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g07-r013.bin",
+              "file": "assets/records/s2-g07-r013.json",
               "size": 56,
               "format": "counted16"
             }
@@ -7687,7 +7687,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g07-r015.bin",
+              "file": "assets/records/s2-g07-r015.json",
               "size": 50,
               "format": "counted16"
             }
@@ -7703,7 +7703,7 @@
           ],
           "parts": [
             {
-              "file": "assets/padding/s2-g07-tail.bin",
+              "file": "assets/padding/s2-g07-tail.json",
               "size": 117
             }
           ]
@@ -7718,7 +7718,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g08-r000.bin",
+              "file": "assets/records/s2-g08-r000.json",
               "size": 3,
               "format": "counted16"
             }
@@ -7734,7 +7734,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g08-r001.bin",
+              "file": "assets/records/s2-g08-r001.json",
               "size": 407,
               "format": "counted16"
             }
@@ -7766,7 +7766,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g08-r003.bin",
+              "file": "assets/records/s2-g08-r003.json",
               "size": 83,
               "format": "counted16"
             }
@@ -7798,7 +7798,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g08-r005.bin",
+              "file": "assets/records/s2-g08-r005.json",
               "size": 81,
               "format": "counted16"
             }
@@ -7830,7 +7830,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g08-r007.bin",
+              "file": "assets/records/s2-g08-r007.json",
               "size": 10,
               "format": "counted16"
             }
@@ -7846,7 +7846,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g09-r000.bin",
+              "file": "assets/records/s2-g09-r000.json",
               "size": 3,
               "format": "counted16"
             }
@@ -7862,7 +7862,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g09-r001.bin",
+              "file": "assets/records/s2-g09-r001.json",
               "size": 562,
               "format": "counted16"
             }
@@ -7894,7 +7894,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g09-r003.bin",
+              "file": "assets/records/s2-g09-r003.json",
               "size": 158,
               "format": "counted16"
             }
@@ -7926,7 +7926,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g09-r005.bin",
+              "file": "assets/records/s2-g09-r005.json",
               "size": 59,
               "format": "counted16"
             }
@@ -7958,7 +7958,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g09-r007.bin",
+              "file": "assets/records/s2-g09-r007.json",
               "size": 12,
               "format": "counted16"
             }
@@ -7990,7 +7990,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g09-r009.bin",
+              "file": "assets/records/s2-g09-r009.json",
               "size": 42,
               "format": "counted16"
             }
@@ -8102,7 +8102,7 @@
           ],
           "parts": [
             {
-              "file": "assets/padding/s2-g09-tail.bin",
+              "file": "assets/padding/s2-g09-tail.json",
               "size": 28
             }
           ]
@@ -8117,7 +8117,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g10-r000.bin",
+              "file": "assets/records/s2-g10-r000.json",
               "size": 3,
               "format": "counted16"
             }
@@ -8133,7 +8133,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g10-r001.bin",
+              "file": "assets/records/s2-g10-r001.json",
               "size": 305,
               "format": "counted16"
             }
@@ -8165,7 +8165,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g10-r003.bin",
+              "file": "assets/records/s2-g10-r003.json",
               "size": 112,
               "format": "counted16"
             }
@@ -8197,7 +8197,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g10-r005.bin",
+              "file": "assets/records/s2-g10-r005.json",
               "size": 44,
               "format": "counted16"
             }
@@ -8229,7 +8229,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g10-r007.bin",
+              "file": "assets/records/s2-g10-r007.json",
               "size": 7,
               "format": "counted16"
             }
@@ -8261,7 +8261,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g10-r009.bin",
+              "file": "assets/records/s2-g10-r009.json",
               "size": 7,
               "format": "counted16"
             }
@@ -8293,7 +8293,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g10-r011.bin",
+              "file": "assets/records/s2-g10-r011.json",
               "size": 33,
               "format": "counted16"
             }
@@ -8325,7 +8325,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g10-r013.bin",
+              "file": "assets/records/s2-g10-r013.json",
               "size": 35,
               "format": "counted16"
             }
@@ -8357,7 +8357,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g10-r015.bin",
+              "file": "assets/records/s2-g10-r015.json",
               "size": 42,
               "format": "counted16"
             }
@@ -8469,7 +8469,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g11-r000.bin",
+              "file": "assets/records/s2-g11-r000.json",
               "size": 3,
               "format": "counted16"
             }
@@ -8485,7 +8485,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g11-r001.bin",
+              "file": "assets/records/s2-g11-r001.json",
               "size": 432,
               "format": "counted16"
             }
@@ -8517,7 +8517,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g11-r003.bin",
+              "file": "assets/records/s2-g11-r003.json",
               "size": 137,
               "format": "counted16"
             }
@@ -8549,7 +8549,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g11-r005.bin",
+              "file": "assets/records/s2-g11-r005.json",
               "size": 12,
               "format": "counted16"
             }
@@ -8581,7 +8581,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g11-r007.bin",
+              "file": "assets/records/s2-g11-r007.json",
               "size": 33,
               "format": "counted16"
             }
@@ -8661,7 +8661,7 @@
           ],
           "parts": [
             {
-              "file": "assets/padding/s2-g11-tail.bin",
+              "file": "assets/padding/s2-g11-tail.json",
               "size": 27
             }
           ]
@@ -8676,7 +8676,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g12-r000.bin",
+              "file": "assets/records/s2-g12-r000.json",
               "size": 3,
               "format": "counted16"
             }
@@ -8692,7 +8692,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g12-r001.bin",
+              "file": "assets/records/s2-g12-r001.json",
               "size": 272,
               "format": "counted16"
             }
@@ -8724,7 +8724,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g12-r003.bin",
+              "file": "assets/records/s2-g12-r003.json",
               "size": 69,
               "format": "counted16"
             }
@@ -8756,7 +8756,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g12-r005.bin",
+              "file": "assets/records/s2-g12-r005.json",
               "size": 79,
               "format": "counted16"
             }
@@ -9012,7 +9012,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g13-r000.bin",
+              "file": "assets/records/s2-g13-r000.json",
               "size": 3,
               "format": "counted16"
             }
@@ -9028,7 +9028,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g13-r001.bin",
+              "file": "assets/records/s2-g13-r001.json",
               "size": 436,
               "format": "counted16"
             }
@@ -9060,7 +9060,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g13-r003.bin",
+              "file": "assets/records/s2-g13-r003.json",
               "size": 112,
               "format": "counted16"
             }
@@ -9092,7 +9092,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g13-r005.bin",
+              "file": "assets/records/s2-g13-r005.json",
               "size": 22,
               "format": "counted16"
             }
@@ -9124,7 +9124,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g13-r007.bin",
+              "file": "assets/records/s2-g13-r007.json",
               "size": 42,
               "format": "counted16"
             }
@@ -9156,7 +9156,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g13-r009.bin",
+              "file": "assets/records/s2-g13-r009.json",
               "size": 31,
               "format": "counted16"
             }
@@ -9188,7 +9188,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g13-r011.bin",
+              "file": "assets/records/s2-g13-r011.json",
               "size": 21,
               "format": "counted16"
             }
@@ -9284,7 +9284,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g14-r000.bin",
+              "file": "assets/records/s2-g14-r000.json",
               "size": 3,
               "format": "counted16"
             }
@@ -9300,7 +9300,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g14-r001.bin",
+              "file": "assets/records/s2-g14-r001.json",
               "size": 640,
               "format": "counted16"
             }
@@ -9332,7 +9332,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g14-r003.bin",
+              "file": "assets/records/s2-g14-r003.json",
               "size": 141,
               "format": "counted16"
             }
@@ -9364,7 +9364,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g14-r005.bin",
+              "file": "assets/records/s2-g14-r005.json",
               "size": 21,
               "format": "counted16"
             }
@@ -9396,7 +9396,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g14-r007.bin",
+              "file": "assets/records/s2-g14-r007.json",
               "size": 31,
               "format": "counted16"
             }
@@ -9428,7 +9428,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g14-r009.bin",
+              "file": "assets/records/s2-g14-r009.json",
               "size": 31,
               "format": "counted16"
             }
@@ -9460,7 +9460,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g14-r011.bin",
+              "file": "assets/records/s2-g14-r011.json",
               "size": 19,
               "format": "counted16"
             }
@@ -9492,7 +9492,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g14-r013.bin",
+              "file": "assets/records/s2-g14-r013.json",
               "size": 29,
               "format": "counted16"
             }
@@ -9524,7 +9524,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g14-r015.bin",
+              "file": "assets/records/s2-g14-r015.json",
               "size": 10,
               "format": "counted16"
             }
@@ -9556,7 +9556,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g14-r017.bin",
+              "file": "assets/records/s2-g14-r017.json",
               "size": 10,
               "format": "counted16"
             }
@@ -9588,7 +9588,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g14-r019.bin",
+              "file": "assets/records/s2-g14-r019.json",
               "size": 10,
               "format": "counted16"
             }
@@ -9620,7 +9620,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g14-r021.bin",
+              "file": "assets/records/s2-g14-r021.json",
               "size": 22,
               "format": "counted16"
             }
@@ -9636,7 +9636,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g15-r000.bin",
+              "file": "assets/records/s2-g15-r000.json",
               "size": 3,
               "format": "counted16"
             }
@@ -9652,7 +9652,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g15-r001.bin",
+              "file": "assets/records/s2-g15-r001.json",
               "size": 684,
               "format": "counted16"
             }
@@ -9684,7 +9684,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g15-r003.bin",
+              "file": "assets/records/s2-g15-r003.json",
               "size": 134,
               "format": "counted16"
             }
@@ -9716,7 +9716,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g15-r005.bin",
+              "file": "assets/records/s2-g15-r005.json",
               "size": 39,
               "format": "counted16"
             }
@@ -9748,7 +9748,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g15-r007.bin",
+              "file": "assets/records/s2-g15-r007.json",
               "size": 48,
               "format": "counted16"
             }
@@ -9780,7 +9780,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g15-r009.bin",
+              "file": "assets/records/s2-g15-r009.json",
               "size": 31,
               "format": "counted16"
             }
@@ -9812,7 +9812,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g15-r011.bin",
+              "file": "assets/records/s2-g15-r011.json",
               "size": 12,
               "format": "counted16"
             }
@@ -9844,7 +9844,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g15-r013.bin",
+              "file": "assets/records/s2-g15-r013.json",
               "size": 27,
               "format": "counted16"
             }
@@ -9876,7 +9876,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g15-r015.bin",
+              "file": "assets/records/s2-g15-r015.json",
               "size": 49,
               "format": "counted16"
             }
@@ -9908,7 +9908,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g15-r017.bin",
+              "file": "assets/records/s2-g15-r017.json",
               "size": 44,
               "format": "counted16"
             }
@@ -10004,7 +10004,7 @@
           ],
           "parts": [
             {
-              "file": "assets/padding/s2-g15-tail.bin",
+              "file": "assets/padding/s2-g15-tail.json",
               "size": 17
             }
           ]
@@ -10019,7 +10019,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g16-r000.bin",
+              "file": "assets/records/s2-g16-r000.json",
               "size": 3,
               "format": "counted16"
             }
@@ -10035,7 +10035,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g16-r001.bin",
+              "file": "assets/records/s2-g16-r001.json",
               "size": 403,
               "format": "counted16"
             }
@@ -10067,7 +10067,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g16-r003.bin",
+              "file": "assets/records/s2-g16-r003.json",
               "size": 148,
               "format": "counted16"
             }
@@ -10099,7 +10099,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g16-r005.bin",
+              "file": "assets/records/s2-g16-r005.json",
               "size": 31,
               "format": "counted16"
             }
@@ -10131,7 +10131,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g16-r007.bin",
+              "file": "assets/records/s2-g16-r007.json",
               "size": 9,
               "format": "counted16"
             }
@@ -10163,7 +10163,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g16-r009.bin",
+              "file": "assets/records/s2-g16-r009.json",
               "size": 23,
               "format": "counted16"
             }
@@ -10179,7 +10179,7 @@
           ],
           "parts": [
             {
-              "file": "assets/padding/s2-g16-tail.bin",
+              "file": "assets/padding/s2-g16-tail.json",
               "size": 63
             }
           ]
@@ -10194,7 +10194,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g17-r000.bin",
+              "file": "assets/records/s2-g17-r000.json",
               "size": 3,
               "format": "counted16"
             }
@@ -10210,7 +10210,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g17-r001.bin",
+              "file": "assets/records/s2-g17-r001.json",
               "size": 163,
               "format": "counted16"
             }
@@ -10242,7 +10242,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g17-r003.bin",
+              "file": "assets/records/s2-g17-r003.json",
               "size": 125,
               "format": "counted16"
             }
@@ -10278,7 +10278,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g17-r005.bin",
+              "file": "assets/records/s2-g17-r005.json",
               "size": 25,
               "format": "counted16"
             }
@@ -10310,7 +10310,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g17-r007.bin",
+              "file": "assets/records/s2-g17-r007.json",
               "size": 67,
               "format": "counted16"
             }
@@ -10342,7 +10342,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g17-r009.bin",
+              "file": "assets/records/s2-g17-r009.json",
               "size": 12,
               "format": "counted16"
             }
@@ -10374,7 +10374,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g17-r011.bin",
+              "file": "assets/records/s2-g17-r011.json",
               "size": 10,
               "format": "counted16"
             }
@@ -10406,7 +10406,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g17-r013.bin",
+              "file": "assets/records/s2-g17-r013.json",
               "size": 10,
               "format": "counted16"
             }
@@ -10822,7 +10822,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g18-r000.bin",
+              "file": "assets/records/s2-g18-r000.json",
               "size": 3,
               "format": "counted16"
             }
@@ -10838,7 +10838,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g18-r001.bin",
+              "file": "assets/records/s2-g18-r001.json",
               "size": 283,
               "format": "counted16"
             }
@@ -10870,7 +10870,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g18-r003.bin",
+              "file": "assets/records/s2-g18-r003.json",
               "size": 124,
               "format": "counted16"
             }
@@ -10902,7 +10902,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g18-r005.bin",
+              "file": "assets/records/s2-g18-r005.json",
               "size": 7,
               "format": "counted16"
             }
@@ -10934,7 +10934,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g18-r007.bin",
+              "file": "assets/records/s2-g18-r007.json",
               "size": 48,
               "format": "counted16"
             }
@@ -10966,7 +10966,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g18-r009.bin",
+              "file": "assets/records/s2-g18-r009.json",
               "size": 41,
               "format": "counted16"
             }
@@ -11110,7 +11110,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g19-r000.bin",
+              "file": "assets/records/s2-g19-r000.json",
               "size": 3,
               "format": "counted16"
             }
@@ -11126,7 +11126,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g19-r001.bin",
+              "file": "assets/records/s2-g19-r001.json",
               "size": 406,
               "format": "counted16"
             }
@@ -11158,7 +11158,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g19-r003.bin",
+              "file": "assets/records/s2-g19-r003.json",
               "size": 151,
               "format": "counted16"
             }
@@ -11174,7 +11174,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g19-r004.bin",
+              "file": "assets/records/s2-g19-r004.json",
               "size": 3,
               "format": "counted16"
             }
@@ -11190,7 +11190,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g19-r005.bin",
+              "file": "assets/records/s2-g19-r005.json",
               "size": 3,
               "format": "counted16"
             }
@@ -11222,7 +11222,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g19-r007.bin",
+              "file": "assets/records/s2-g19-r007.json",
               "size": 43,
               "format": "counted16"
             }
@@ -11238,7 +11238,7 @@
           ],
           "parts": [
             {
-              "file": "assets/padding/s2-g19-tail.bin",
+              "file": "assets/padding/s2-g19-tail.json",
               "size": 23
             }
           ]
@@ -11253,7 +11253,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g20-r000.bin",
+              "file": "assets/records/s2-g20-r000.json",
               "size": 3,
               "format": "counted16"
             }
@@ -11269,7 +11269,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g20-r001.bin",
+              "file": "assets/records/s2-g20-r001.json",
               "size": 239,
               "format": "counted16"
             }
@@ -11301,7 +11301,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g20-r003.bin",
+              "file": "assets/records/s2-g20-r003.json",
               "size": 106,
               "format": "counted16"
             }
@@ -11333,7 +11333,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g20-r005.bin",
+              "file": "assets/records/s2-g20-r005.json",
               "size": 7,
               "format": "counted16"
             }
@@ -11365,7 +11365,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g20-r007.bin",
+              "file": "assets/records/s2-g20-r007.json",
               "size": 7,
               "format": "counted16"
             }
@@ -11397,7 +11397,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g20-r009.bin",
+              "file": "assets/records/s2-g20-r009.json",
               "size": 44,
               "format": "counted16"
             }
@@ -11429,7 +11429,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g20-r011.bin",
+              "file": "assets/records/s2-g20-r011.json",
               "size": 46,
               "format": "counted16"
             }
@@ -11445,7 +11445,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g21-r000.bin",
+              "file": "assets/records/s2-g21-r000.json",
               "size": 3,
               "format": "counted16"
             }
@@ -11461,7 +11461,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g21-r001.bin",
+              "file": "assets/records/s2-g21-r001.json",
               "size": 481,
               "format": "counted16"
             }
@@ -11493,7 +11493,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g21-r003.bin",
+              "file": "assets/records/s2-g21-r003.json",
               "size": 143,
               "format": "counted16"
             }
@@ -11525,7 +11525,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g21-r005.bin",
+              "file": "assets/records/s2-g21-r005.json",
               "size": 47,
               "format": "counted16"
             }
@@ -11557,7 +11557,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g21-r007.bin",
+              "file": "assets/records/s2-g21-r007.json",
               "size": 44,
               "format": "counted16"
             }
@@ -11589,7 +11589,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g21-r009.bin",
+              "file": "assets/records/s2-g21-r009.json",
               "size": 17,
               "format": "counted16"
             }
@@ -11621,7 +11621,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g21-r011.bin",
+              "file": "assets/records/s2-g21-r011.json",
               "size": 16,
               "format": "counted16"
             }
@@ -11653,7 +11653,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g21-r013.bin",
+              "file": "assets/records/s2-g21-r013.json",
               "size": 16,
               "format": "counted16"
             }
@@ -11765,7 +11765,7 @@
           ],
           "parts": [
             {
-              "file": "assets/padding/s2-g21-tail.bin",
+              "file": "assets/padding/s2-g21-tail.json",
               "size": 37
             }
           ]
@@ -11796,7 +11796,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g22-r001.bin",
+              "file": "assets/records/s2-g22-r001.json",
               "size": 103,
               "format": "counted16"
             }
@@ -12068,7 +12068,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g23-r000.bin",
+              "file": "assets/records/s2-g23-r000.json",
               "size": 3,
               "format": "counted16"
             }
@@ -12084,7 +12084,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g23-r001.bin",
+              "file": "assets/records/s2-g23-r001.json",
               "size": 3,
               "format": "counted16"
             }
@@ -12116,7 +12116,7 @@
           ],
           "parts": [
             {
-              "file": "assets/records/s2-g23-r003.bin",
+              "file": "assets/records/s2-g23-r003.json",
               "size": 10,
               "format": "counted16"
             }
@@ -12132,7 +12132,7 @@
           ],
           "parts": [
             {
-              "file": "assets/padding/s2-g23-tail.bin",
+              "file": "assets/padding/s2-g23-tail.json",
               "size": 92
             }
           ]
@@ -12147,7 +12147,7 @@
           ],
           "parts": [
             {
-              "file": "assets/reserved/sector-1024.bin",
+              "file": "assets/reserved/sector-1024.json",
               "size": 128
             }
           ]

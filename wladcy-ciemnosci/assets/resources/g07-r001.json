@@ -1,0 +1,1001 @@
+{
+  "version": 1,
+  "format": "gam.action-collections",
+  "group": 7,
+  "resource": 1,
+  "data": {
+    "kind": "records",
+    "records": [
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "global_item_id",
+            "value": 1
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 0"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "global_item_id",
+            "value": 201
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 3,
+            "handler_cfa": "7140",
+            "handler": "ACT-DROP-ITEM",
+            "arguments": []
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 1"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "global_item_id",
+            "value": 202
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 2"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "global_item_id",
+            "value": 203
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 57,
+            "handler_cfa": "7C6E",
+            "handler": "ACT-DESCRIBE-INLINE",
+            "arguments": [
+              {
+                "kind": "message",
+                "lines": [
+                  "KOSTKA=RUBIKA",
+                  "DLA=POLITYKA",
+                  "vvv",
+                  "TRENAzER=SFLACZAlYCH",
+                  "CZesCI=CIAlA"
+                ],
+                "encoding": "game-font-byte-glyphs"
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 2,
+            "dispatch_id": 4,
+            "handler_cfa": "71D7",
+            "handler": "ACT-TAKE-ITEM",
+            "arguments": []
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 3"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "global_item_id",
+            "value": 204
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 57,
+            "handler_cfa": "7C6E",
+            "handler": "ACT-DESCRIBE-INLINE",
+            "arguments": [
+              {
+                "kind": "message",
+                "lines": [
+                  "KAMIENNY=PIES"
+                ],
+                "encoding": "game-font-byte-glyphs"
+              }
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 4"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "global_item_id",
+            "value": 205
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 57,
+            "handler_cfa": "7C6E",
+            "handler": "ACT-DESCRIBE-INLINE",
+            "arguments": [
+              {
+                "kind": "message",
+                "lines": [
+                  "KAMIENNY=KOT"
+                ],
+                "encoding": "game-font-byte-glyphs"
+              }
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 5"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "global_item_id",
+            "value": 206
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 57,
+            "handler_cfa": "7C6E",
+            "handler": "ACT-DESCRIBE-INLINE",
+            "arguments": [
+              {
+                "kind": "message",
+                "lines": [
+                  "KAMIENNA=MYSZ"
+                ],
+                "encoding": "game-font-byte-glyphs"
+              }
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 6"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "global_item_id",
+            "value": 207
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 57,
+            "handler_cfa": "7C6E",
+            "handler": "ACT-DESCRIBE-INLINE",
+            "arguments": [
+              {
+                "kind": "message",
+                "lines": [
+                  "zYWY=PIES"
+                ],
+                "encoding": "game-font-byte-glyphs"
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 2,
+            "dispatch_id": 4,
+            "handler_cfa": "71D7",
+            "handler": "ACT-TAKE-ITEM",
+            "arguments": []
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 7"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "global_item_id",
+            "value": 208
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 57,
+            "handler_cfa": "7C6E",
+            "handler": "ACT-DESCRIBE-INLINE",
+            "arguments": [
+              {
+                "kind": "message",
+                "lines": [
+                  "zYWY=KOT"
+                ],
+                "encoding": "game-font-byte-glyphs"
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 2,
+            "dispatch_id": 4,
+            "handler_cfa": "71D7",
+            "handler": "ACT-TAKE-ITEM",
+            "arguments": []
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 8"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "global_item_id",
+            "value": 209
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 57,
+            "handler_cfa": "7C6E",
+            "handler": "ACT-DESCRIBE-INLINE",
+            "arguments": [
+              {
+                "kind": "message",
+                "lines": [
+                  "zYWA=MYSZ"
+                ],
+                "encoding": "game-font-byte-glyphs"
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 2,
+            "dispatch_id": 4,
+            "handler_cfa": "71D7",
+            "handler": "ACT-TAKE-ITEM",
+            "arguments": []
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 9"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "global_item_id",
+            "value": 210
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 57,
+            "handler_cfa": "7C6E",
+            "handler": "ACT-DESCRIBE-INLINE",
+            "arguments": [
+              {
+                "kind": "message",
+                "lines": [
+                  "SZCZaTKI=KOTA",
+                  "vvv",
+                  "GDY=CIe=NIE=BYlO,",
+                  "PIES=ZAGRYZl=KOTA"
+                ],
+                "encoding": "game-font-byte-glyphs"
+              }
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 10"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "global_item_id",
+            "value": 211
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 57,
+            "handler_cfa": "7C6E",
+            "handler": "ACT-DESCRIBE-INLINE",
+            "arguments": [
+              {
+                "kind": "message",
+                "lines": [
+                  "SZCZaTKI=MYSZY",
+                  "vvv",
+                  "GDY=CIe=NIE=BYlO,",
+                  "KOT=POzARl=MYSZ"
+                ],
+                "encoding": "game-font-byte-glyphs"
+              }
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 11"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "global_item_id",
+            "value": 212
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 57,
+            "handler_cfa": "7C6E",
+            "handler": "ACT-DESCRIBE-INLINE",
+            "arguments": [
+              {
+                "kind": "message",
+                "lines": [
+                  "ZlOTA=MONETA",
+                  "vvvv",
+                  "MAJaTEK=NARODU"
+                ],
+                "encoding": "game-font-byte-glyphs"
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 2,
+            "dispatch_id": 4,
+            "handler_cfa": "71D7",
+            "handler": "ACT-TAKE-ITEM",
+            "arguments": []
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 12"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "global_item_id",
+            "value": 213
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 57,
+            "handler_cfa": "7C6E",
+            "handler": "ACT-DESCRIBE-INLINE",
+            "arguments": [
+              {
+                "kind": "message",
+                "lines": [
+                  "ZlOTA=MONETA",
+                  "vvvv",
+                  "MAJaTEK=NARODU"
+                ],
+                "encoding": "game-font-byte-glyphs"
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 2,
+            "dispatch_id": 4,
+            "handler_cfa": "71D7",
+            "handler": "ACT-TAKE-ITEM",
+            "arguments": []
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 13"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "global_item_id",
+            "value": 214
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 57,
+            "handler_cfa": "7C6E",
+            "handler": "ACT-DESCRIBE-INLINE",
+            "arguments": [
+              {
+                "kind": "message",
+                "lines": [
+                  "ZlOTA=MONETA",
+                  "vvvv",
+                  "MAJaTEK=NARODU"
+                ],
+                "encoding": "game-font-byte-glyphs"
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 2,
+            "dispatch_id": 4,
+            "handler_cfa": "71D7",
+            "handler": "ACT-TAKE-ITEM",
+            "arguments": []
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 14"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "global_item_id",
+            "value": 215
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 57,
+            "handler_cfa": "7C6E",
+            "handler": "ACT-DESCRIBE-INLINE",
+            "arguments": [
+              {
+                "kind": "message",
+                "lines": [
+                  "TYGIEL",
+                  "SYMBOL=SPOlECZEnSTWA"
+                ],
+                "encoding": "game-font-byte-glyphs"
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 2,
+            "dispatch_id": 4,
+            "handler_cfa": "71D7",
+            "handler": "ACT-TAKE-ITEM",
+            "arguments": []
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 15"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "global_item_id",
+            "value": 216
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 57,
+            "handler_cfa": "7C6E",
+            "handler": "ACT-DESCRIBE-INLINE",
+            "arguments": [
+              {
+                "kind": "message",
+                "lines": [
+                  "MAKoWKA"
+                ],
+                "encoding": "game-font-byte-glyphs"
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 2,
+            "dispatch_id": 4,
+            "handler_cfa": "71D7",
+            "handler": "ACT-TAKE-ITEM",
+            "arguments": []
+          },
+          {
+            "kind": "action",
+            "record_index": 3,
+            "dispatch_id": 18,
+            "handler_cfa": "753F",
+            "handler": "ACT-BREAK-RELEASE-POWER",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "argument_1",
+                "value": 0,
+                "byte_offset": 1
+              },
+              {
+                "kind": "byte",
+                "name": "power_id",
+                "value": 6
+              },
+              {
+                "kind": "byte",
+                "name": "requirement_1",
+                "value": 21
+              },
+              {
+                "kind": "byte",
+                "name": "requirement_2",
+                "value": 56
+              },
+              {
+                "kind": "counted-text",
+                "role": "power name",
+                "text": "GlUPOTY"
+              }
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 16"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "global_item_id",
+            "value": 217
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 57,
+            "handler_cfa": "7C6E",
+            "handler": "ACT-DESCRIBE-INLINE",
+            "arguments": [
+              {
+                "kind": "message",
+                "lines": [
+                  "LISTEK",
+                  "FISKUSOWY"
+                ],
+                "encoding": "game-font-byte-glyphs"
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 2,
+            "dispatch_id": 4,
+            "handler_cfa": "71D7",
+            "handler": "ACT-TAKE-ITEM",
+            "arguments": []
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 17"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "global_item_id",
+            "value": 218
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 57,
+            "handler_cfa": "7C6E",
+            "handler": "ACT-DESCRIBE-INLINE",
+            "arguments": [
+              {
+                "kind": "message",
+                "lines": [
+                  "BACIK"
+                ],
+                "encoding": "game-font-byte-glyphs"
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 2,
+            "dispatch_id": 4,
+            "handler_cfa": "71D7",
+            "handler": "ACT-TAKE-ITEM",
+            "arguments": []
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 18"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "global_item_id",
+            "value": 219
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 57,
+            "handler_cfa": "7C6E",
+            "handler": "ACT-DESCRIBE-INLINE",
+            "arguments": [
+              {
+                "kind": "message",
+                "lines": [
+                  "MARCHEWKA"
+                ],
+                "encoding": "game-font-byte-glyphs"
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 2,
+            "dispatch_id": 4,
+            "handler_cfa": "71D7",
+            "handler": "ACT-TAKE-ITEM",
+            "arguments": []
+          },
+          {
+            "kind": "action",
+            "record_index": 3,
+            "dispatch_id": 77,
+            "handler_cfa": "82B1",
+            "handler": "ACT-RELEASE-POWER-IN-VIEW",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "required_room",
+                "value": 0,
+                "byte_offset": 1
+              },
+              {
+                "kind": "byte",
+                "name": "required_view",
+                "value": 5,
+                "byte_offset": 2
+              },
+              {
+                "kind": "byte",
+                "name": "error_message",
+                "value": 75,
+                "byte_offset": 3
+              },
+              {
+                "kind": "byte",
+                "name": "argument_4",
+                "value": 0,
+                "byte_offset": 4
+              },
+              {
+                "kind": "byte",
+                "name": "power_id",
+                "value": 0
+              },
+              {
+                "kind": "byte",
+                "name": "requirement_1",
+                "value": 56
+              },
+              {
+                "kind": "byte",
+                "name": "requirement_2",
+                "value": 56
+              },
+              {
+                "kind": "counted-text",
+                "role": "power name",
+                "text": "AS"
+              }
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 19"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "global_item_id",
+            "value": 220
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 57,
+            "handler_cfa": "7C6E",
+            "handler": "ACT-DESCRIBE-INLINE",
+            "arguments": [
+              {
+                "kind": "message",
+                "lines": [
+                  "CIezKI=MlOT"
+                ],
+                "encoding": "game-font-byte-glyphs"
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 2,
+            "dispatch_id": 4,
+            "handler_cfa": "71D7",
+            "handler": "ACT-TAKE-ITEM",
+            "arguments": []
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 20"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "global_item_id",
+            "value": 221
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 57,
+            "handler_cfa": "7C6E",
+            "handler": "ACT-DESCRIBE-INLINE",
+            "arguments": [
+              {
+                "kind": "message",
+                "lines": [
+                  "FIGURKA",
+                  "OSlA"
+                ],
+                "encoding": "game-font-byte-glyphs"
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 2,
+            "dispatch_id": 4,
+            "handler_cfa": "71D7",
+            "handler": "ACT-TAKE-ITEM",
+            "arguments": []
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 21"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "global_item_id",
+            "value": 222
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 57,
+            "handler_cfa": "7C6E",
+            "handler": "ACT-DESCRIBE-INLINE",
+            "arguments": [
+              {
+                "kind": "message",
+                "lines": [
+                  "KSIeGA",
+                  "vvvv",
+                  "WIEDZA=NARODU"
+                ],
+                "encoding": "game-font-byte-glyphs"
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 2,
+            "dispatch_id": 4,
+            "handler_cfa": "71D7",
+            "handler": "ACT-TAKE-ITEM",
+            "arguments": []
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 22"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "global_item_id",
+            "value": 223
+          },
+          {
+            "kind": "action",
+            "record_index": 1,
+            "dispatch_id": 57,
+            "handler_cfa": "7C6E",
+            "handler": "ACT-DESCRIBE-INLINE",
+            "arguments": [
+              {
+                "kind": "message",
+                "lines": [
+                  "MEDAL"
+                ],
+                "encoding": "game-font-byte-glyphs"
+              }
+            ]
+          },
+          {
+            "kind": "action",
+            "record_index": 2,
+            "dispatch_id": 4,
+            "handler_cfa": "71D7",
+            "handler": "ACT-TAKE-ITEM",
+            "arguments": []
+          },
+          {
+            "kind": "action",
+            "record_index": 3,
+            "dispatch_id": 77,
+            "handler_cfa": "82B1",
+            "handler": "ACT-RELEASE-POWER-IN-VIEW",
+            "arguments": [
+              {
+                "kind": "byte",
+                "name": "required_room",
+                "value": 21,
+                "byte_offset": 1
+              },
+              {
+                "kind": "byte",
+                "name": "required_view",
+                "value": 3,
+                "byte_offset": 2
+              },
+              {
+                "kind": "byte",
+                "name": "error_message",
+                "value": 75,
+                "byte_offset": 3
+              },
+              {
+                "kind": "byte",
+                "name": "argument_4",
+                "value": 0,
+                "byte_offset": 4
+              },
+              {
+                "kind": "byte",
+                "name": "power_id",
+                "value": 7
+              },
+              {
+                "kind": "byte",
+                "name": "requirement_1",
+                "value": 56
+              },
+              {
+                "kind": "byte",
+                "name": "requirement_2",
+                "value": 56
+              },
+              {
+                "kind": "counted-text",
+                "role": "power name",
+                "text": "KRYSZTAlU"
+              }
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 23"
+      },
+      {
+        "kind": "records",
+        "records": [],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 24"
+      },
+      {
+        "kind": "records",
+        "records": [],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 25"
+      },
+      {
+        "kind": "records",
+        "records": [],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 26"
+      },
+      {
+        "kind": "records",
+        "records": [],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 27"
+      },
+      {
+        "kind": "records",
+        "records": [],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 28"
+      },
+      {
+        "kind": "records",
+        "records": [],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 29"
+      }
+    ],
+    "terminated": false,
+    "tail": []
+  }
+}

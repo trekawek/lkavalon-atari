@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "format": "gam.message-banks",
+  "group": 6,
+  "resource": 48,
+  "data": {
+    "kind": "records",
+    "records": [
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "message",
+            "lines": [
+              "JESTEs=W=CZASACH=PANOWANIA",
+              "WlADCY=CIEMNOsCI"
+            ],
+            "encoding": "game-font-byte-glyphs"
+          }
+        ],
+        "terminated": true,
+        "tail": []
+      }
+    ],
+    "terminated": false,
+    "tail": []
+  }
+}

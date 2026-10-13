@@ -1,0 +1,16 @@
+( GRAPHICS I/O )
+
+: GTYPE  -DUP IF OVER + SWAP
+        DO I C@ CPUT LOOP ELSE
+        DROP ENDIF ;
+
+: (G")  R COUNT DUP 1+ R> + >R
+        GTYPE ;
+
+: G"  22 STATE @ IF COMPILE (G")
+      WORD HERE C@ 1+ ALLOT
+     ELSE WORD HERE COUNT GTYPE
+     ENDIF  ; IMMEDIATE
+
+
+-->

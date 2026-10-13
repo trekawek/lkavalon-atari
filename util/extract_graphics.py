@@ -3,7 +3,8 @@
 
 Extraction uses Python's standard library. The per-game helpers document the
 actual resource and compression formats; no emulator or external image tool
-is required to reproduce the exports.
+is required to reproduce the exports. Generated exports go to build/graphics;
+canonical graphics and structured sources are never overwritten.
 """
 
 import argparse
@@ -14,6 +15,9 @@ import json
 from pathlib import Path
 
 import graphics_common
+import pack_assets
+import structured_assets
+from reference_media import read_reference
 
 ROOT = Path(__file__).resolve().parents[1]
 REFERENCES = {
@@ -151,6 +155,41 @@ def extract_game(game, disks):
     return files, manifest
 
 
+def check_exports(game, files, disks):
+    """Check retained views and the structured replacements of old exports.
+
+    Removed raw hit maps and duplicate group containers are checked through
+    their complete re-encoded disk spans. They must be explicitly accounted
+    for in the migration catalog, so a missing genuine graphic still fails.
+    """
+    root = ROOT / game
+    catalog = root / "assets/binary-migration.json"
+    migrations = json.loads(catalog.read_text("ascii"))["files"] if catalog.exists() else {}
+    for filename, data in files.items():
+        relative = "graphics/" + filename
+        target = root / relative
+        if target.is_file():
+            if target.read_bytes() != data:
+                raise ValueError(f"Export differs: {target}")
+            continue
+        entry = migrations.get(relative)
+        if not entry:
+            raise ValueError(f"Export is missing and has no replacement: {target}")
+        source = root / entry["source"]
+        if not source.exists():
+            raise ValueError(f"Migration source is missing: {source}")
+        if entry["disposition"] in ("structured-source", "renamed-font", "duplicate-font"):
+            encoded = structured_assets.encode_file(root, entry["source"])
+            if encoded != data:
+                raise ValueError(f"Structured export differs: {source}")
+    layout = pack_assets.load_manifest(root)
+    templates = pack_assets.build_disks(root, layout)
+    for spec, disk in zip(layout["disks"], disks, strict=True):
+        start = 16 + spec["compiled_prefix_bytes"]
+        if templates[spec["output"]][start:] != disk[start:]:
+            raise ValueError(f"Structured graphics/data differ from release disk: {game}/{spec['output']}")
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
@@ -162,17 +201,16 @@ def main():
     args = parser.parse_args()
     for game in ([args.game] if args.game else REFERENCES):
         disks = [
-            (ROOT / game / "reference" / name).read_bytes()
+            read_reference(ROOT / game / "reference" / name)
             for name, _ in REFERENCES[game]
         ]
         files, _ = extract_game(game, disks)
-        output = ROOT / game / "graphics"
+        output = ROOT / game / "build/graphics"
+        if args.check:
+            check_exports(game, files, disks)
         for filename, data in files.items():
             target = output / filename
-            if args.check:
-                if not target.is_file() or target.read_bytes() != data:
-                    raise SystemExit(f"Export differs or is missing: {target}")
-            else:
+            if not args.check:
                 target.parent.mkdir(parents=True, exist_ok=True)
                 target.write_bytes(data)
         previews = sum(

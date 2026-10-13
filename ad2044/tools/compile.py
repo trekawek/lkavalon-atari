@@ -16,6 +16,8 @@ import struct
 import sys
 import time
 from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "util"))
+from reference_media import read_reference
 
 try:
     from py65.devices.mpu6502 import MPU
@@ -52,7 +54,7 @@ class ForthMachine:
         max_steps: int = 2_000_000_000, progress: bool = False):
         self.cpu = MPU()
         self.mem = self.cpu.memory
-        raw = reference.read_bytes()
+        raw = read_reference(reference)
         if raw[:2] != b"\x96\x02" or raw[4:6] != b"\x80\x00":
             raise CompileError("reference must be a 128-byte-sector ATR")
         payload = raw[16:]

@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "format": "gam.record-list",
+  "group": 6,
+  "resource": 12,
+  "data": {
+    "kind": "records",
+    "records": [
+      {
+        "kind": "file",
+        "file": "graphics/native/g06-r012-s00.pic",
+        "size": 287
+      },
+      {
+        "kind": "file",
+        "file": "assets/hit-maps/g06-r012-s01.json",
+        "size": 65
+      }
+    ],
+    "terminated": true,
+    "tail": []
+  }
+}

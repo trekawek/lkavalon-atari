@@ -1,0 +1,22 @@
+{
+  "format": "ad2044.residue",
+  "version": 1,
+  "fields": [
+    {
+      "type": "fill",
+      "value": 0,
+      "count": 4,
+      "note": "Past collection zero terminator; fragment left by editor, not live game data"
+    },
+    {
+      "type": "u8-array",
+      "values": [255, 80, 169, 170, 64, 170, 170, 64, 170, 169, 0, 20, 0, 0, 2, 16],
+      "note": "Past collection zero terminator; fragment left by editor, not live game data"
+    },
+    {
+      "type": "u8-array",
+      "values": [0, 4, 4, 0, 0, 108, 0, 254, 3, 108],
+      "note": "Past collection zero terminator; fragment left by editor, not live game data"
+    }
+  ]
+}

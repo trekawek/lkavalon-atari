@@ -1,0 +1,16 @@
+( ASSEMBLER )
+
+: 3BY  <BUILDS C, DOES> @ C, , ;
+
+4C 3BY JMP,   6C 3BY JMP(),
+20 3BY JSR,
+
+: ?ER5    5 ?ERROR ;
+
+: IF.  <BUILDS C, DOES> C@ C, 0
+        C, HERE ;
+: THEN,   DUP HERE SWAP - DUP
+        7F > ?ER5 DUP -80 < ?ER5
+  SWAP -1 + C! ;  IMMEDIATE
+: ENDIF, [COMPILE] THEN, ; IMMEDIATE
+-->

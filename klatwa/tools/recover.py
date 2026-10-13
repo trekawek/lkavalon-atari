@@ -2,6 +2,9 @@
 """Inspect the supplied Klatwa v1 boot dictionary and recover naming evidence."""
 
 from pathlib import Path
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "util"))
+from reference_media import read_reference
 import json
 import difflib
 
@@ -26,7 +29,7 @@ def cell(m, a):
 
 def memory(raw=None):
     if raw is None:
-        raw = (ROOT / "reference/klatwa-v1.atr").read_bytes()
+        raw = read_reference(ROOT / "reference/klatwa-v1.atr")
     if (
         len(raw) != 133136
         or raw[:6] != bytes.fromhex("960280208000")
@@ -125,7 +128,7 @@ def main():
     names = {}
     oldnames = json.loads((ROOT.parent / "ad2044/tools/names.json").read_text())
     stock = bytearray(65536)
-    stock_raw = (ROOT / "reference/figforth.atr").read_bytes()
+    stock_raw = read_reference(ROOT / "reference/figforth.atr")
     stock[ORIGIN : ORIGIN + stock_raw[17] * 128] = stock_raw[
         16 : 16 + stock_raw[17] * 128
     ]

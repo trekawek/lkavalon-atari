@@ -1,0 +1,750 @@
+{
+  "format": "ad2044.object-actions",
+  "version": 1,
+  "consumer": "SELECTED-OBJECT-RECORD $7281 and action handlers via $7664",
+  "objects": [
+    {
+      "object_id": 0,
+      "actions": [
+        {
+          "opcode": 1,
+          "handler": "ACT-BACK",
+          "fields": []
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 1,
+      "actions": [
+        {
+          "opcode": 1,
+          "handler": "ACT-BACK",
+          "fields": []
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 2,
+      "actions": [
+        {
+          "opcode": 20,
+          "handler": "ACT-REVEAL-OBJECT",
+          "fields": [
+            {
+              "type": "u8",
+              "name": "revealed_object_id",
+              "value": 7
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 3,
+      "actions": [
+        {
+          "opcode": 20,
+          "handler": "ACT-REVEAL-OBJECT",
+          "fields": [
+            {
+              "type": "u8",
+              "name": "revealed_object_id",
+              "value": 8
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 4,
+      "actions": [
+        {
+          "opcode": 20,
+          "handler": "ACT-REVEAL-OBJECT",
+          "fields": [
+            {
+              "type": "u8",
+              "name": "revealed_object_id",
+              "value": 9
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 5,
+      "actions": [
+        {
+          "opcode": 20,
+          "handler": "ACT-REVEAL-OBJECT",
+          "fields": [
+            {
+              "type": "u8",
+              "name": "revealed_object_id",
+              "value": 10
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 6,
+      "actions": [
+        {
+          "opcode": 7,
+          "handler": "ACT-EXAMINE",
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "SYSTEM=laCZNOsCI",
+                "Z=CENTRALNYM=STEROWNIKIEM",
+                "GloWNEJ=WINDY"
+              ],
+              "name": "message_1"
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 7,
+      "actions": [
+        {
+          "opcode": 7,
+          "handler": "ACT-EXAMINE",
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "PRZEWODY=POlaCZENIOWE"
+              ],
+              "name": "message_1"
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 8,
+      "actions": [
+        {
+          "opcode": 7,
+          "handler": "ACT-EXAMINE",
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "MONITOR"
+              ],
+              "name": "message_1"
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 9,
+      "actions": [
+        {
+          "opcode": 2,
+          "handler": "ACT-SHOW-CLOSEUP",
+          "fields": [
+            {
+              "type": "u8",
+              "name": "view_id",
+              "value": 1
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 10,
+      "actions": [
+        {
+          "opcode": 7,
+          "handler": "ACT-EXAMINE",
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "BIURKO"
+              ],
+              "name": "message_1"
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 11,
+      "actions": [
+        {
+          "opcode": 7,
+          "handler": "ACT-EXAMINE",
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "NIEERGONOMICZNE=KRZESlO"
+              ],
+              "name": "message_1"
+            }
+          ]
+        },
+        {
+          "opcode": 28,
+          "handler": "ACT-MOVE-REVEAL",
+          "fields": [
+            {
+              "type": "u8",
+              "name": "revealed_object_id",
+              "value": 6
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 12,
+      "actions": [
+        {
+          "opcode": 7,
+          "handler": "ACT-EXAMINE",
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "RADIATORY"
+              ],
+              "name": "message_1"
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 13,
+      "actions": [
+        {
+          "opcode": 7,
+          "handler": "ACT-EXAMINE",
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "GlOsNIK"
+              ],
+              "name": "message_1"
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 14,
+      "actions": [
+        {
+          "opcode": 30,
+          "handler": "ACT-PRESS-ADD-COUNTER",
+          "fields": [
+            {
+              "type": "u8",
+              "name": "revealed_object_id",
+              "value": 3
+            },
+            {
+              "type": "u8",
+              "name": "counter_delta",
+              "value": 1
+            },
+            {
+              "type": "u8",
+              "name": "counter_index",
+              "value": 3
+            },
+            {
+              "type": "u8",
+              "name": "target_counter_value",
+              "value": 5
+            },
+            {
+              "type": "u8",
+              "name": "question_object_id",
+              "value": 11
+            },
+            {
+              "type": "u8",
+              "name": "answer_object_id",
+              "value": 12
+            },
+            {
+              "type": "u8",
+              "name": "success_state_index",
+              "value": 4
+            },
+            {
+              "type": "counted-text",
+              "text": "ASIA",
+              "name": "expected_answer"
+            }
+          ]
+        },
+        {
+          "opcode": 7,
+          "handler": "ACT-EXAMINE",
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "WlaCZANIE=SYSTEMU",
+                "laCZNIsCI"
+              ],
+              "name": "message_1"
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 15,
+      "actions": [
+        {
+          "opcode": 30,
+          "handler": "ACT-PRESS-ADD-COUNTER",
+          "fields": [
+            {
+              "type": "u8",
+              "name": "revealed_object_id",
+              "value": 4
+            },
+            {
+              "type": "u8",
+              "name": "counter_delta",
+              "value": 2
+            },
+            {
+              "type": "u8",
+              "name": "counter_index",
+              "value": 3
+            },
+            {
+              "type": "u8",
+              "name": "target_counter_value",
+              "value": 5
+            },
+            {
+              "type": "u8",
+              "name": "question_object_id",
+              "value": 11
+            },
+            {
+              "type": "u8",
+              "name": "answer_object_id",
+              "value": 12
+            },
+            {
+              "type": "u8",
+              "name": "success_state_index",
+              "value": 4
+            },
+            {
+              "type": "counted-text",
+              "text": "ASIA",
+              "name": "expected_answer"
+            }
+          ]
+        },
+        {
+          "opcode": 7,
+          "handler": "ACT-EXAMINE",
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "WlaCZANIE=SYSTEMU",
+                "laCZNOscI"
+              ],
+              "name": "message_1"
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 16,
+      "actions": [
+        {
+          "opcode": 30,
+          "handler": "ACT-PRESS-ADD-COUNTER",
+          "fields": [
+            {
+              "type": "u8",
+              "name": "revealed_object_id",
+              "value": 5
+            },
+            {
+              "type": "u8",
+              "name": "counter_delta",
+              "value": 4
+            },
+            {
+              "type": "u8",
+              "name": "counter_index",
+              "value": 3
+            },
+            {
+              "type": "u8",
+              "name": "target_counter_value",
+              "value": 5
+            },
+            {
+              "type": "u8",
+              "name": "question_object_id",
+              "value": 11
+            },
+            {
+              "type": "u8",
+              "name": "answer_object_id",
+              "value": 12
+            },
+            {
+              "type": "u8",
+              "name": "success_state_index",
+              "value": 4
+            },
+            {
+              "type": "counted-text",
+              "text": "ASIA",
+              "name": "expected_answer"
+            }
+          ]
+        },
+        {
+          "opcode": 7,
+          "handler": "ACT-EXAMINE",
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "WlaCZANIE=SYSTEMU",
+                "laCZNOsCI"
+              ],
+              "name": "message_1"
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 17,
+      "actions": [
+        {
+          "opcode": 31,
+          "handler": "ACT-RELEASE-SUB-COUNTER",
+          "fields": [
+            {
+              "type": "u8",
+              "name": "hidden_object_id",
+              "value": 3
+            },
+            {
+              "type": "u8",
+              "name": "counter_delta",
+              "value": 1
+            },
+            {
+              "type": "u8",
+              "name": "counter_index",
+              "value": 3
+            },
+            {
+              "type": "u8",
+              "name": "target_counter_value",
+              "value": 5
+            },
+            {
+              "type": "u8",
+              "name": "question_object_id",
+              "value": 11
+            },
+            {
+              "type": "u8",
+              "name": "answer_object_id",
+              "value": 12
+            },
+            {
+              "type": "u8",
+              "name": "success_state_index",
+              "value": 4
+            },
+            {
+              "type": "counted-text",
+              "text": "ASIA",
+              "name": "expected_answer"
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 18,
+      "actions": [
+        {
+          "opcode": 31,
+          "handler": "ACT-RELEASE-SUB-COUNTER",
+          "fields": [
+            {
+              "type": "u8",
+              "name": "hidden_object_id",
+              "value": 4
+            },
+            {
+              "type": "u8",
+              "name": "counter_delta",
+              "value": 2
+            },
+            {
+              "type": "u8",
+              "name": "counter_index",
+              "value": 3
+            },
+            {
+              "type": "u8",
+              "name": "target_counter_value",
+              "value": 5
+            },
+            {
+              "type": "u8",
+              "name": "question_object_id",
+              "value": 11
+            },
+            {
+              "type": "u8",
+              "name": "answer_object_id",
+              "value": 12
+            },
+            {
+              "type": "u8",
+              "name": "success_state_index",
+              "value": 4
+            },
+            {
+              "type": "counted-text",
+              "text": "ASIA",
+              "name": "expected_answer"
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 19,
+      "actions": [
+        {
+          "opcode": 31,
+          "handler": "ACT-RELEASE-SUB-COUNTER",
+          "fields": [
+            {
+              "type": "u8",
+              "name": "hidden_object_id",
+              "value": 5
+            },
+            {
+              "type": "u8",
+              "name": "counter_delta",
+              "value": 4
+            },
+            {
+              "type": "u8",
+              "name": "counter_index",
+              "value": 3
+            },
+            {
+              "type": "u8",
+              "name": "target_counter_value",
+              "value": 5
+            },
+            {
+              "type": "u8",
+              "name": "question_object_id",
+              "value": 11
+            },
+            {
+              "type": "u8",
+              "name": "answer_object_id",
+              "value": 12
+            },
+            {
+              "type": "u8",
+              "name": "success_state_index",
+              "value": 4
+            },
+            {
+              "type": "counted-text",
+              "text": "ASIA",
+              "name": "expected_answer"
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 20,
+      "actions": [
+        {
+          "opcode": 7,
+          "handler": "ACT-EXAMINE",
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "NIEERGONOMICZNE=KRZESlO"
+              ],
+              "name": "message_1"
+            }
+          ]
+        },
+        {
+          "opcode": 29,
+          "handler": "ACT-MOVE-HIDE",
+          "fields": [
+            {
+              "type": "u8",
+              "name": "hidden_object_id",
+              "value": 6
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 21,
+      "actions": [
+        {
+          "opcode": 21,
+          "handler": "ACT-HIDE-OBJECT",
+          "fields": [
+            {
+              "type": "u8",
+              "name": "hidden_object_id",
+              "value": 7
+            }
+          ]
+        },
+        {
+          "opcode": 2,
+          "handler": "ACT-SHOW-CLOSEUP",
+          "fields": [
+            {
+              "type": "u8",
+              "name": "view_id",
+              "value": 2
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 22,
+      "actions": [
+        {
+          "opcode": 21,
+          "handler": "ACT-HIDE-OBJECT",
+          "fields": [
+            {
+              "type": "u8",
+              "name": "hidden_object_id",
+              "value": 8
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 23,
+      "actions": [
+        {
+          "opcode": 21,
+          "handler": "ACT-HIDE-OBJECT",
+          "fields": [
+            {
+              "type": "u8",
+              "name": "hidden_object_id",
+              "value": 9
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 24,
+      "actions": [
+        {
+          "opcode": 21,
+          "handler": "ACT-HIDE-OBJECT",
+          "fields": [
+            {
+              "type": "u8",
+              "name": "hidden_object_id",
+              "value": 10
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    }
+  ],
+  "terminator_cells": 0,
+  "unused": []
+}

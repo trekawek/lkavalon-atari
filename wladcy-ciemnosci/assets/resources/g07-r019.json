@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "format": "gam.record-list",
+  "group": 7,
+  "resource": 19,
+  "data": {
+    "kind": "file",
+    "file": "assets/hit-maps/g07-r019.json",
+    "size": 14
+  }
+}

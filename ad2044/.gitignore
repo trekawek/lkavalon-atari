@@ -1,3 +1,4 @@
 /build/
 /tools/__pycache__/
 /.venv/
+/reference/*.atr

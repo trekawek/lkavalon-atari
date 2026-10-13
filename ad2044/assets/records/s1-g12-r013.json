@@ -1,0 +1,14 @@
+{
+  "format": "ad2044.hit-map",
+  "version": 1,
+  "consumer": "COPY-HIT-MAP $5162 / HIT-MAP-CELL@ $5147",
+  "width": 4,
+  "height": 5,
+  "object_ids": [
+    [2, 2, 2, 2],
+    [15, 16, 16, 2],
+    [15, 16, 16, 2],
+    [15, 16, 16, 2],
+    [2, 2, 2, 2]
+  ]
+}

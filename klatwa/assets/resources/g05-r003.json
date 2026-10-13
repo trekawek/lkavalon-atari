@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "format": "gam.record-list",
+  "group": 5,
+  "resource": 3,
+  "data": {
+    "kind": "file",
+    "file": "assets/hit-maps/g05-r003.json",
+    "size": 13
+  }
+}

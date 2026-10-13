@@ -1,0 +1,443 @@
+{
+  "version": 1,
+  "format": "gam.player-bank",
+  "group": 3,
+  "resource": 10,
+  "data": {
+    "kind": "records",
+    "records": [
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "sprite-frame",
+            "direction": 0,
+            "frame": 0,
+            "x_offset": 1,
+            "y_offset": 12,
+            "width_bytes": 3,
+            "height": 41,
+            "pixels": "graphics/sprites/direction-0-frame-0.bin",
+            "tail": [
+              {
+                "offset": 0,
+                "unresolved_bytes": [
+                  0
+                ],
+                "note": "Record terminator / allocation remainder; preserved without interpreting unused bytes."
+              }
+            ]
+          },
+          {
+            "kind": "sprite-frame",
+            "direction": 0,
+            "frame": 1,
+            "x_offset": 1,
+            "y_offset": 12,
+            "width_bytes": 3,
+            "height": 40,
+            "pixels": "graphics/sprites/direction-0-frame-1.bin",
+            "tail": [
+              {
+                "offset": 0,
+                "unresolved_bytes": [
+                  0
+                ],
+                "note": "Record terminator / allocation remainder; preserved without interpreting unused bytes."
+              }
+            ]
+          },
+          {
+            "kind": "sprite-frame",
+            "direction": 0,
+            "frame": 2,
+            "x_offset": 1,
+            "y_offset": 10,
+            "width_bytes": 3,
+            "height": 40,
+            "pixels": "graphics/sprites/direction-0-frame-2.bin",
+            "tail": [
+              {
+                "offset": 0,
+                "unresolved_bytes": [
+                  0
+                ],
+                "note": "Record terminator / allocation remainder; preserved without interpreting unused bytes."
+              }
+            ]
+          },
+          {
+            "kind": "sprite-frame",
+            "direction": 0,
+            "frame": 3,
+            "x_offset": 1,
+            "y_offset": 9,
+            "width_bytes": 3,
+            "height": 41,
+            "pixels": "graphics/sprites/direction-0-frame-3.bin",
+            "tail": [
+              {
+                "offset": 0,
+                "unresolved_bytes": [
+                  0
+                ],
+                "note": "Record terminator / allocation remainder; preserved without interpreting unused bytes."
+              }
+            ]
+          },
+          {
+            "kind": "sprite-frame",
+            "direction": 0,
+            "frame": 4,
+            "x_offset": 1,
+            "y_offset": 9,
+            "width_bytes": 3,
+            "height": 40,
+            "pixels": "graphics/sprites/direction-0-frame-4.bin",
+            "tail": [
+              {
+                "offset": 0,
+                "unresolved_bytes": [
+                  0
+                ],
+                "note": "Record terminator / allocation remainder; preserved without interpreting unused bytes."
+              }
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "direction 0"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "sprite-frame",
+            "direction": 1,
+            "frame": 0,
+            "x_offset": 1,
+            "y_offset": 7,
+            "width_bytes": 3,
+            "height": 40,
+            "pixels": "graphics/sprites/direction-1-frame-0.bin",
+            "tail": [
+              {
+                "offset": 0,
+                "unresolved_bytes": [
+                  0
+                ],
+                "note": "Record terminator / allocation remainder; preserved without interpreting unused bytes."
+              }
+            ]
+          },
+          {
+            "kind": "sprite-frame",
+            "direction": 1,
+            "frame": 1,
+            "x_offset": 1,
+            "y_offset": 8,
+            "width_bytes": 3,
+            "height": 39,
+            "pixels": "graphics/sprites/direction-1-frame-1.bin",
+            "tail": [
+              {
+                "offset": 0,
+                "unresolved_bytes": [
+                  0
+                ],
+                "note": "Record terminator / allocation remainder; preserved without interpreting unused bytes."
+              }
+            ]
+          },
+          {
+            "kind": "sprite-frame",
+            "direction": 1,
+            "frame": 2,
+            "x_offset": 1,
+            "y_offset": 7,
+            "width_bytes": 3,
+            "height": 40,
+            "pixels": "graphics/sprites/direction-1-frame-2.bin",
+            "tail": [
+              {
+                "offset": 0,
+                "unresolved_bytes": [
+                  0
+                ],
+                "note": "Record terminator / allocation remainder; preserved without interpreting unused bytes."
+              }
+            ]
+          },
+          {
+            "kind": "sprite-frame",
+            "direction": 1,
+            "frame": 3,
+            "x_offset": 1,
+            "y_offset": 7,
+            "width_bytes": 3,
+            "height": 40,
+            "pixels": "graphics/sprites/direction-1-frame-3.bin",
+            "tail": [
+              {
+                "offset": 0,
+                "unresolved_bytes": [
+                  0
+                ],
+                "note": "Record terminator / allocation remainder; preserved without interpreting unused bytes."
+              }
+            ]
+          },
+          {
+            "kind": "sprite-frame",
+            "direction": 1,
+            "frame": 4,
+            "x_offset": 1,
+            "y_offset": 8,
+            "width_bytes": 3,
+            "height": 39,
+            "pixels": "graphics/sprites/direction-1-frame-4.bin",
+            "tail": [
+              {
+                "offset": 0,
+                "unresolved_bytes": [
+                  0
+                ],
+                "note": "Record terminator / allocation remainder; preserved without interpreting unused bytes."
+              }
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "direction 1"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "sprite-frame",
+            "direction": 2,
+            "frame": 0,
+            "x_offset": 1,
+            "y_offset": 1,
+            "width_bytes": 3,
+            "height": 39,
+            "pixels": "graphics/sprites/direction-2-frame-0.bin",
+            "tail": [
+              {
+                "offset": 0,
+                "unresolved_bytes": [
+                  0
+                ],
+                "note": "Record terminator / allocation remainder; preserved without interpreting unused bytes."
+              }
+            ]
+          },
+          {
+            "kind": "sprite-frame",
+            "direction": 2,
+            "frame": 1,
+            "x_offset": 1,
+            "y_offset": 2,
+            "width_bytes": 3,
+            "height": 41,
+            "pixels": "graphics/sprites/direction-2-frame-1.bin",
+            "tail": [
+              {
+                "offset": 0,
+                "unresolved_bytes": [
+                  0
+                ],
+                "note": "Record terminator / allocation remainder; preserved without interpreting unused bytes."
+              }
+            ]
+          },
+          {
+            "kind": "sprite-frame",
+            "direction": 2,
+            "frame": 2,
+            "x_offset": 1,
+            "y_offset": 3,
+            "width_bytes": 3,
+            "height": 40,
+            "pixels": "graphics/sprites/direction-2-frame-2.bin",
+            "tail": [
+              {
+                "offset": 0,
+                "unresolved_bytes": [
+                  0
+                ],
+                "note": "Record terminator / allocation remainder; preserved without interpreting unused bytes."
+              }
+            ]
+          },
+          {
+            "kind": "sprite-frame",
+            "direction": 2,
+            "frame": 3,
+            "x_offset": 1,
+            "y_offset": 4,
+            "width_bytes": 3,
+            "height": 39,
+            "pixels": "graphics/sprites/direction-2-frame-3.bin",
+            "tail": [
+              {
+                "offset": 0,
+                "unresolved_bytes": [
+                  0
+                ],
+                "note": "Record terminator / allocation remainder; preserved without interpreting unused bytes."
+              }
+            ]
+          },
+          {
+            "kind": "sprite-frame",
+            "direction": 2,
+            "frame": 4,
+            "x_offset": 1,
+            "y_offset": 5,
+            "width_bytes": 3,
+            "height": 41,
+            "pixels": "graphics/sprites/direction-2-frame-4.bin",
+            "tail": [
+              {
+                "offset": 0,
+                "unresolved_bytes": [
+                  0
+                ],
+                "note": "Record terminator / allocation remainder; preserved without interpreting unused bytes."
+              }
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "direction 2"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "sprite-frame",
+            "direction": 3,
+            "frame": 0,
+            "x_offset": 1,
+            "y_offset": 7,
+            "width_bytes": 3,
+            "height": 40,
+            "pixels": "graphics/sprites/direction-3-frame-0.bin",
+            "tail": [
+              {
+                "offset": 0,
+                "unresolved_bytes": [
+                  0
+                ],
+                "note": "Record terminator / allocation remainder; preserved without interpreting unused bytes."
+              }
+            ]
+          },
+          {
+            "kind": "sprite-frame",
+            "direction": 3,
+            "frame": 1,
+            "x_offset": 1,
+            "y_offset": 8,
+            "width_bytes": 3,
+            "height": 39,
+            "pixels": "graphics/sprites/direction-3-frame-1.bin",
+            "tail": [
+              {
+                "offset": 0,
+                "unresolved_bytes": [
+                  0
+                ],
+                "note": "Record terminator / allocation remainder; preserved without interpreting unused bytes."
+              }
+            ]
+          },
+          {
+            "kind": "sprite-frame",
+            "direction": 3,
+            "frame": 2,
+            "x_offset": 1,
+            "y_offset": 7,
+            "width_bytes": 3,
+            "height": 40,
+            "pixels": "graphics/sprites/direction-3-frame-2.bin",
+            "tail": [
+              {
+                "offset": 0,
+                "unresolved_bytes": [
+                  0
+                ],
+                "note": "Record terminator / allocation remainder; preserved without interpreting unused bytes."
+              }
+            ]
+          },
+          {
+            "kind": "sprite-frame",
+            "direction": 3,
+            "frame": 3,
+            "x_offset": 1,
+            "y_offset": 7,
+            "width_bytes": 3,
+            "height": 40,
+            "pixels": "graphics/sprites/direction-3-frame-3.bin",
+            "tail": [
+              {
+                "offset": 0,
+                "unresolved_bytes": [
+                  0
+                ],
+                "note": "Record terminator / allocation remainder; preserved without interpreting unused bytes."
+              }
+            ]
+          },
+          {
+            "kind": "sprite-frame",
+            "direction": 3,
+            "frame": 4,
+            "x_offset": 1,
+            "y_offset": 8,
+            "width_bytes": 3,
+            "height": 39,
+            "pixels": "graphics/sprites/direction-3-frame-4.bin",
+            "tail": [
+              {
+                "offset": 0,
+                "unresolved_bytes": [
+                  58
+                ],
+                "note": "Record terminator / allocation remainder; preserved without interpreting unused bytes."
+              }
+            ]
+          }
+        ],
+        "terminated": false,
+        "tail": [
+          {
+            "offset": 0,
+            "unresolved_bytes": [
+              131,
+              176
+            ],
+            "note": "Record terminator / allocation remainder; preserved without interpreting unused bytes."
+          }
+        ],
+        "role": "direction 3"
+      }
+    ],
+    "terminated": false,
+    "tail": [
+      {
+        "offset": 0,
+        "unresolved_bytes": [
+          63,
+          195
+        ],
+        "note": "Record terminator / allocation remainder; preserved without interpreting unused bytes."
+      }
+    ]
+  }
+}

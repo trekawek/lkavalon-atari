@@ -17,6 +17,7 @@ overwriting the current native assets.
 from __future__ import annotations
 
 import argparse
+import structured_assets
 from pathlib import Path
 
 
@@ -25,7 +26,7 @@ from pathlib import Path
 ASSETS_BY_GAME = {
     "ad2044": (
         {"path": "graphics/packed/cursor-players.bin", "start": 0x4CA1, "size": 39},
-        {"path": "music/sound-bank.bin", "start": 0x5E00, "size": 0xE2F},
+        {"path": "music/sound-bank.json", "start": 0x5E00, "size": 0xE2F},
     ),
     "klatwa": (
         {"path": "graphics/cursors/player-planes.bin", "start": 0x4E8D, "size": 39},
@@ -66,8 +67,8 @@ def read_asset(game_root: Path, name: str) -> bytes:
     if not path.resolve().is_relative_to(root):
         raise AssetError(f"INCBIN asset escapes game directory: {name}")
     try:
-        data = path.read_bytes()
-    except OSError as exc:
+        data = structured_assets.encode_file(root, name)
+    except (OSError, structured_assets.AssetError) as exc:
         raise AssetError(f"cannot read INCBIN asset {name}: {exc}") from exc
     expected = ASSET_SIZES[name]
     if len(data) != expected:

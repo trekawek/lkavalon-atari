@@ -1,0 +1,317 @@
+{
+  "version": 1,
+  "format": "gam.room",
+  "group": 4,
+  "room_id": 7,
+  "data": {
+    "kind": "records",
+    "records": [
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "room-layers",
+            "layers": [
+              {
+                "resource": 28,
+                "subrecord": 0
+              },
+              {
+                "resource": 4,
+                "subrecord": 0
+              },
+              {
+                "resource": 11,
+                "subrecord": 0
+              },
+              {
+                "resource": 13,
+                "subrecord": 0
+              },
+              {
+                "resource": 13,
+                "subrecord": 2
+              },
+              {
+                "resource": 14,
+                "subrecord": 2
+              },
+              {
+                "resource": 15,
+                "subrecord": 2
+              },
+              {
+                "resource": 25,
+                "subrecord": 2
+              },
+              {
+                "resource": 26,
+                "subrecord": 2
+              },
+              {
+                "resource": 27,
+                "subrecord": 0
+              },
+              {
+                "resource": 29,
+                "subrecord": 0
+              },
+              {
+                "resource": 29,
+                "subrecord": 2
+              },
+              {
+                "resource": 31,
+                "subrecord": 0
+              },
+              {
+                "resource": 32,
+                "subrecord": 2
+              },
+              {
+                "resource": 30,
+                "subrecord": 2
+              },
+              {
+                "resource": 26,
+                "subrecord": 0
+              },
+              {
+                "resource": 45,
+                "subrecord": 0
+              },
+              {
+                "resource": 27,
+                "subrecord": 2
+              }
+            ]
+          },
+          {
+            "kind": "sequence",
+            "role": "COLPF color registers",
+            "parts": [
+              {
+                "kind": "byte",
+                "name": "COLPF0",
+                "value": 20
+              },
+              {
+                "kind": "byte",
+                "name": "COLPF1",
+                "value": 248
+              },
+              {
+                "kind": "byte",
+                "name": "COLPF2",
+                "value": 236
+              }
+            ]
+          },
+          {
+            "kind": "bytes",
+            "name": "layout_flags",
+            "values": [
+              1
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "room section 0"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "object-selectors",
+            "note": "Runtime searches this flat byte stream for selector=object+200; entries have no stored length. Parameter roles depend on the selected action collection.",
+            "objects": [
+              {
+                "object_id": 4,
+                "action_collection": 9,
+                "arguments": [
+                  {
+                    "kind": "byte",
+                    "name": "argument_2",
+                    "value": 8
+                  }
+                ]
+              },
+              {
+                "object_id": 1,
+                "action_collection": 6,
+                "arguments": [
+                  {
+                    "kind": "byte",
+                    "name": "argument_2",
+                    "value": 10
+                  }
+                ]
+              },
+              {
+                "object_id": 2,
+                "action_collection": 7,
+                "arguments": [
+                  {
+                    "kind": "byte",
+                    "name": "argument_2",
+                    "value": 3
+                  }
+                ]
+              },
+              {
+                "object_id": 19,
+                "action_collection": 15,
+                "arguments": [
+                  {
+                    "kind": "byte",
+                    "name": "argument_2",
+                    "value": 0
+                  },
+                  {
+                    "kind": "byte",
+                    "name": "argument_3",
+                    "value": 11
+                  },
+                  {
+                    "kind": "byte",
+                    "name": "argument_4",
+                    "value": 39
+                  }
+                ]
+              },
+              {
+                "object_id": 17,
+                "action_collection": 11,
+                "arguments": [
+                  {
+                    "kind": "byte",
+                    "name": "argument_2",
+                    "value": 0
+                  }
+                ]
+              },
+              {
+                "object_id": 18,
+                "action_collection": 12,
+                "arguments": [
+                  {
+                    "kind": "byte",
+                    "name": "argument_2",
+                    "value": 2
+                  }
+                ]
+              },
+              {
+                "object_id": 24,
+                "action_collection": 12,
+                "arguments": [
+                  {
+                    "kind": "byte",
+                    "name": "argument_2",
+                    "value": 2
+                  }
+                ]
+              },
+              {
+                "object_id": 12,
+                "action_collection": 16,
+                "arguments": [
+                  {
+                    "kind": "byte",
+                    "name": "argument_2",
+                    "value": 0
+                  },
+                  {
+                    "kind": "byte",
+                    "name": "argument_3",
+                    "value": 7
+                  },
+                  {
+                    "kind": "byte",
+                    "name": "argument_4",
+                    "value": 8
+                  },
+                  {
+                    "kind": "byte",
+                    "name": "argument_5",
+                    "value": 9
+                  },
+                  {
+                    "kind": "byte",
+                    "name": "argument_6",
+                    "value": 10
+                  }
+                ]
+              },
+              {
+                "object_id": 11,
+                "action_collection": 17,
+                "arguments": []
+              },
+              {
+                "object_id": 31,
+                "action_collection": 19,
+                "arguments": [
+                  {
+                    "kind": "byte",
+                    "name": "argument_2",
+                    "value": 23
+                  },
+                  {
+                    "kind": "byte",
+                    "name": "argument_3",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "object_id": 26,
+                "action_collection": 19,
+                "arguments": [
+                  {
+                    "kind": "byte",
+                    "name": "argument_2",
+                    "value": 27
+                  },
+                  {
+                    "kind": "byte",
+                    "name": "argument_3",
+                    "value": 2
+                  }
+                ]
+              },
+              {
+                "object_id": 13,
+                "action_collection": 26,
+                "arguments": []
+              },
+              {
+                "object_id": 9,
+                "action_collection": 19,
+                "arguments": [
+                  {
+                    "kind": "byte",
+                    "name": "argument_2",
+                    "value": 38
+                  },
+                  {
+                    "kind": "byte",
+                    "name": "argument_3",
+                    "value": 3
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "room section 1"
+      }
+    ],
+    "terminated": false,
+    "tail": [],
+    "role": "room index 6 (game room 7)"
+  }
+}

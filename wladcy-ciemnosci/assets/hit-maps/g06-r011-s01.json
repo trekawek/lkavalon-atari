@@ -1,0 +1,357 @@
+{
+  "version": 1,
+  "format": "gam.hit-map",
+  "note": "Object hit/depth lookup cells, not visual transparency; rows are the only source of cell values.",
+  "data": {
+    "kind": "hit-map",
+    "width": 9,
+    "height": 19,
+    "rows": [
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        29,
+        29,
+        29,
+        29,
+        29,
+        29,
+        29,
+        29,
+        29
+      ],
+      [
+        29,
+        29,
+        29,
+        29,
+        29,
+        29,
+        29,
+        29,
+        29
+      ],
+      [
+        29,
+        29,
+        29,
+        29,
+        29,
+        29,
+        29,
+        29,
+        29
+      ],
+      [
+        29,
+        29,
+        29,
+        29,
+        29,
+        29,
+        29,
+        29,
+        29
+      ],
+      [
+        29,
+        29,
+        29,
+        29,
+        29,
+        29,
+        29,
+        29,
+        29
+      ],
+      [
+        29,
+        29,
+        29,
+        29,
+        29,
+        29,
+        29,
+        29,
+        29
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        28,
+        28,
+        28,
+        28,
+        28,
+        28,
+        28,
+        28,
+        28
+      ],
+      [
+        28,
+        28,
+        28,
+        28,
+        28,
+        28,
+        28,
+        28,
+        28
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        28,
+        28,
+        28,
+        28,
+        28
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "encoding_columns": [
+      [
+        {
+          "pattern_size": 1,
+          "repeat": 5
+        },
+        {
+          "pattern_size": 1,
+          "repeat": 6
+        },
+        {
+          "literals": 4
+        },
+        {
+          "pattern_size": 1,
+          "repeat": 4
+        }
+      ],
+      [
+        {
+          "pattern_size": 1,
+          "repeat": 5
+        },
+        {
+          "pattern_size": 1,
+          "repeat": 6
+        },
+        {
+          "literals": 4
+        },
+        {
+          "pattern_size": 1,
+          "repeat": 4
+        }
+      ],
+      [
+        {
+          "pattern_size": 1,
+          "repeat": 5
+        },
+        {
+          "pattern_size": 1,
+          "repeat": 6
+        },
+        {
+          "literals": 4
+        },
+        {
+          "pattern_size": 1,
+          "repeat": 4
+        }
+      ],
+      [
+        {
+          "pattern_size": 1,
+          "repeat": 5
+        },
+        {
+          "pattern_size": 1,
+          "repeat": 6
+        },
+        {
+          "literals": 4
+        },
+        {
+          "pattern_size": 1,
+          "repeat": 4
+        }
+      ],
+      [
+        {
+          "pattern_size": 1,
+          "repeat": 5
+        },
+        {
+          "pattern_size": 1,
+          "repeat": 6
+        },
+        {
+          "literals": 8
+        }
+      ],
+      [
+        {
+          "pattern_size": 1,
+          "repeat": 5
+        },
+        {
+          "pattern_size": 1,
+          "repeat": 6
+        },
+        {
+          "literals": 8
+        }
+      ],
+      [
+        {
+          "pattern_size": 1,
+          "repeat": 5
+        },
+        {
+          "pattern_size": 1,
+          "repeat": 6
+        },
+        {
+          "literals": 8
+        }
+      ],
+      [
+        {
+          "pattern_size": 1,
+          "repeat": 5
+        },
+        {
+          "pattern_size": 1,
+          "repeat": 6
+        },
+        {
+          "literals": 8
+        }
+      ],
+      [
+        {
+          "pattern_size": 1,
+          "repeat": 5
+        },
+        {
+          "pattern_size": 1,
+          "repeat": 6
+        },
+        {
+          "literals": 8
+        }
+      ]
+    ],
+    "tail": []
+  }
+}

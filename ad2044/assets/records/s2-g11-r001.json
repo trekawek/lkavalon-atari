@@ -1,0 +1,287 @@
+{
+  "format": "ad2044.object-actions",
+  "version": 1,
+  "consumer": "SELECTED-OBJECT-RECORD $7281 and action handlers via $7664",
+  "objects": [
+    {
+      "object_id": 0,
+      "actions": [
+        {
+          "opcode": 1,
+          "handler": "ACT-BACK",
+          "fields": []
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 1,
+      "actions": [
+        {
+          "opcode": 1,
+          "handler": "ACT-BACK",
+          "fields": []
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 2,
+      "actions": [
+        {
+          "opcode": 13,
+          "handler": "ACT-USE-RELATIVE-EXIT",
+          "fields": [
+            {
+              "type": "u8",
+              "name": "relative_direction",
+              "value": 3
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 3,
+      "actions": [
+        {
+          "opcode": 7,
+          "handler": "ACT-EXAMINE",
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "WYJsCIE=NA=POWIERZCHNIe."
+              ],
+              "name": "message_1"
+            }
+          ]
+        },
+        {
+          "opcode": 6,
+          "handler": "ACT-GOTO-ROOM",
+          "fields": [
+            {
+              "type": "u8",
+              "name": "room_id",
+              "value": 25
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 4,
+      "actions": [
+        {
+          "opcode": 7,
+          "handler": "ACT-EXAMINE",
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "METALOWA=DRABINKA."
+              ],
+              "name": "message_1"
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 5,
+      "actions": [
+        {
+          "opcode": 7,
+          "handler": "ACT-EXAMINE",
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "PERYSKOP=Z=NOKTOWIZOREM."
+              ],
+              "name": "message_1"
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 6,
+      "actions": [
+        {
+          "opcode": 7,
+          "handler": "ACT-EXAMINE",
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "EKRAN=NOKTOWIZORA."
+              ],
+              "name": "message_1"
+            }
+          ]
+        },
+        {
+          "opcode": 2,
+          "handler": "ACT-SHOW-CLOSEUP",
+          "fields": [
+            {
+              "type": "u8",
+              "name": "view_id",
+              "value": 1
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 7,
+      "actions": [
+        {
+          "opcode": 7,
+          "handler": "ACT-EXAMINE",
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "SKAFANDER=OCHRONNY.",
+                "^^^^^^^^^^^^^^^^^^^",
+                "CHRONI=PRZED=PROMIENIOWANIEM",
+                "RADIOAKTYWNYM."
+              ],
+              "name": "message_1"
+            }
+          ]
+        },
+        {
+          "opcode": 54,
+          "handler": "ACT-REFUSE-WITH-OVERLAY",
+          "fields": [
+            {
+              "type": "u8",
+              "name": "revealed_object_id_or_255",
+              "value": 255
+            },
+            {
+              "type": "message",
+              "lines": [
+                "PO=CO=CI=TO=?",
+                "^^^^^^^^^^^^",
+                "NIE=OGLaDAlEs=FILMU=?",
+                "NA=POWIERZCHNI=NIE=MA",
+                "zADNEGO=PROMIENIOWANIA."
+              ],
+              "name": "message_1"
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 8,
+      "actions": [
+        {
+          "opcode": 7,
+          "handler": "ACT-EXAMINE",
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "PRZYCISK=WlaCZAJaCY=NOKTOWIZOR."
+              ],
+              "name": "message_1"
+            }
+          ]
+        },
+        {
+          "opcode": 38,
+          "handler": "ACT-ANIMATE-OPEN",
+          "fields": [
+            {
+              "type": "u8",
+              "name": "revealed_object_id",
+              "value": 2
+            },
+            {
+              "type": "u8",
+              "name": "exit_direction",
+              "value": 5
+            },
+            {
+              "type": "u8",
+              "name": "animation_frame_count",
+              "value": 4
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 9,
+      "actions": [
+        {
+          "opcode": 7,
+          "handler": "ACT-EXAMINE",
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "WIDOCZEK=Z=POWIERZCHNI."
+              ],
+              "name": "message_1"
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 10,
+      "actions": [
+        {
+          "opcode": 39,
+          "handler": "ACT-ANIMATE-CLOSE",
+          "fields": [
+            {
+              "type": "u8",
+              "name": "hidden_object_id",
+              "value": 2
+            },
+            {
+              "type": "u8",
+              "name": "exit_direction",
+              "value": 5
+            },
+            {
+              "type": "u8",
+              "name": "animation_frame_count",
+              "value": 4
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    }
+  ],
+  "terminator_cells": 0,
+  "unused": []
+}

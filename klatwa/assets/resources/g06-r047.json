@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "format": "gam.message-banks",
+  "group": 6,
+  "resource": 47,
+  "data": {
+    "kind": "records",
+    "records": [
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "message",
+            "lines": [
+              "DAlEs=MI=KLEPSYDRe.",
+              "WEz=W=NAGRODe=KLEJNOT=ZE=SKRZYNI."
+            ],
+            "encoding": "game-font-byte-glyphs"
+          }
+        ],
+        "terminated": true,
+        "tail": []
+      }
+    ],
+    "terminated": false,
+    "tail": []
+  }
+}

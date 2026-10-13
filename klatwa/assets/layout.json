@@ -1,10 +1,10 @@
 {
   "version": 1,
   "notes": [
-    "All unspecified bytes are zero, including blank compiler output, unused sectors and zero allocation tails.",
-    "GAM record payloads are native compressed graphics, masks, action data and text. Counts and directory are regenerated.",
-    "Font and sprite pixel files and CMC files replace their duplicate extraction records as authoritative build inputs.",
-    "Image dimensions and compressed/native record sizes remain fixed; edits must preserve each declared input size."
+    "Unspecified bytes are zero. Forth compilation owns the blank 32000-byte program prefix.",
+    "GAM lengths, action/room/text structures, hit maps, saved-state fields and DOS metadata are encoded from version-1 gam.* JSON.",
+    "Only native pictures, font data and CMC modules remain binary canonical assets. Preview and decoded image files are derived graphics.",
+    "Native fixed-size allocation is preserved. Edits must respect the sizes declared here, or update layout and all affected resource offsets deliberately."
   ],
   "disks": [
     {
@@ -35,7 +35,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g03-r000.bin",
+              "file": "assets/resources/g03-r000.json",
               "size": 7
             }
           ]
@@ -51,7 +51,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g03-r001.bin",
+              "file": "assets/resources/g03-r001.json",
               "size": 7
             }
           ]
@@ -67,7 +67,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g03-r002.bin",
+              "file": "assets/resources/g03-r002.json",
               "size": 444
             }
           ]
@@ -83,7 +83,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g03-r003.bin",
+              "file": "assets/resources/g03-r003.json",
               "size": 811
             }
           ]
@@ -99,7 +99,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g03-r004.bin",
+              "file": "assets/resources/g03-r004.json",
               "size": 732
             }
           ]
@@ -115,7 +115,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g03-r005.bin",
+              "file": "assets/resources/g03-r005.json",
               "size": 441
             }
           ]
@@ -131,7 +131,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g03-r006.bin",
+              "file": "assets/resources/g03-r006.json",
               "size": 1604
             }
           ]
@@ -147,7 +147,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/fonts/gameplay.bin",
+              "file": "graphics/fonts/gameplay.fnt",
               "size": 1023
             }
           ]
@@ -163,7 +163,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/fonts/title.bin",
+              "file": "graphics/fonts/title.fnt",
               "size": 1023
             }
           ]
@@ -179,7 +179,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g03-r009.bin",
+              "file": "assets/resources/g03-r009.json",
               "size": 732
             }
           ]
@@ -195,168 +195,8 @@
           "record16": true,
           "parts": [
             {
-              "file": "assets/structure/player-bank-00.bin",
-              "size": 8
-            },
-            {
-              "file": "graphics/sprites/direction-0-frame-0.bin",
-              "size": 123
-            },
-            {
-              "file": "assets/structure/player-bank-01.bin",
-              "size": 7
-            },
-            {
-              "file": "graphics/sprites/direction-0-frame-1.bin",
-              "size": 120
-            },
-            {
-              "file": "assets/structure/player-bank-02.bin",
-              "size": 7
-            },
-            {
-              "file": "graphics/sprites/direction-0-frame-2.bin",
-              "size": 120
-            },
-            {
-              "file": "assets/structure/player-bank-03.bin",
-              "size": 7
-            },
-            {
-              "file": "graphics/sprites/direction-0-frame-3.bin",
-              "size": 123
-            },
-            {
-              "file": "assets/structure/player-bank-04.bin",
-              "size": 7
-            },
-            {
-              "file": "graphics/sprites/direction-0-frame-4.bin",
-              "size": 120
-            },
-            {
-              "file": "assets/structure/player-bank-05.bin",
-              "size": 11
-            },
-            {
-              "file": "graphics/sprites/direction-1-frame-0.bin",
-              "size": 120
-            },
-            {
-              "file": "assets/structure/player-bank-06.bin",
-              "size": 7
-            },
-            {
-              "file": "graphics/sprites/direction-1-frame-1.bin",
-              "size": 117
-            },
-            {
-              "file": "assets/structure/player-bank-07.bin",
-              "size": 7
-            },
-            {
-              "file": "graphics/sprites/direction-1-frame-2.bin",
-              "size": 120
-            },
-            {
-              "file": "assets/structure/player-bank-08.bin",
-              "size": 7
-            },
-            {
-              "file": "graphics/sprites/direction-1-frame-3.bin",
-              "size": 120
-            },
-            {
-              "file": "assets/structure/player-bank-09.bin",
-              "size": 7
-            },
-            {
-              "file": "graphics/sprites/direction-1-frame-4.bin",
-              "size": 117
-            },
-            {
-              "file": "assets/structure/player-bank-10.bin",
-              "size": 11
-            },
-            {
-              "file": "graphics/sprites/direction-2-frame-0.bin",
-              "size": 117
-            },
-            {
-              "file": "assets/structure/player-bank-11.bin",
-              "size": 7
-            },
-            {
-              "file": "graphics/sprites/direction-2-frame-1.bin",
-              "size": 123
-            },
-            {
-              "file": "assets/structure/player-bank-12.bin",
-              "size": 7
-            },
-            {
-              "file": "graphics/sprites/direction-2-frame-2.bin",
-              "size": 120
-            },
-            {
-              "file": "assets/structure/player-bank-13.bin",
-              "size": 7
-            },
-            {
-              "file": "graphics/sprites/direction-2-frame-3.bin",
-              "size": 117
-            },
-            {
-              "file": "assets/structure/player-bank-14.bin",
-              "size": 7
-            },
-            {
-              "file": "graphics/sprites/direction-2-frame-4.bin",
-              "size": 123
-            },
-            {
-              "file": "assets/structure/player-bank-15.bin",
-              "size": 11
-            },
-            {
-              "file": "graphics/sprites/direction-3-frame-0.bin",
-              "size": 120
-            },
-            {
-              "file": "assets/structure/player-bank-16.bin",
-              "size": 7
-            },
-            {
-              "file": "graphics/sprites/direction-3-frame-1.bin",
-              "size": 117
-            },
-            {
-              "file": "assets/structure/player-bank-17.bin",
-              "size": 7
-            },
-            {
-              "file": "graphics/sprites/direction-3-frame-2.bin",
-              "size": 120
-            },
-            {
-              "file": "assets/structure/player-bank-18.bin",
-              "size": 7
-            },
-            {
-              "file": "graphics/sprites/direction-3-frame-3.bin",
-              "size": 120
-            },
-            {
-              "file": "assets/structure/player-bank-19.bin",
-              "size": 7
-            },
-            {
-              "file": "graphics/sprites/direction-3-frame-4.bin",
-              "size": 117
-            },
-            {
-              "file": "assets/structure/player-bank-tail.bin",
-              "size": 5
+              "file": "assets/resources/g03-r010.json",
+              "size": 2552
             }
           ]
         },
@@ -371,7 +211,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g03-r011.bin",
+              "file": "assets/resources/g03-r011.json",
               "size": 192
             }
           ]
@@ -412,7 +252,7 @@
               "header_hex": "FFFF528D4394"
             },
             {
-              "file": "assets/padding/title-cmc-tail.bin",
+              "file": "assets/padding/title-cmc-tail.json",
               "size": 6
             }
           ]
@@ -427,7 +267,7 @@
           ],
           "parts": [
             {
-              "file": "assets/padding/group-03-tail.bin",
+              "file": "assets/padding/group-03-tail.json",
               "size": 118
             }
           ]
@@ -443,7 +283,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g04-r000.bin",
+              "file": "assets/resources/g04-r000.json",
               "size": 1636
             }
           ]
@@ -459,7 +299,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g04-r001.bin",
+              "file": "assets/resources/g04-r001.json",
               "size": 1457
             }
           ]
@@ -491,7 +331,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g04-r003.bin",
+              "file": "assets/resources/g04-r003.json",
               "size": 652
             }
           ]
@@ -507,7 +347,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g04-r004.bin",
+              "file": "assets/resources/g04-r004.json",
               "size": 647
             }
           ]
@@ -527,7 +367,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g04-r005.bin",
+              "file": "assets/resources/g04-r005.json",
               "size": 646
             }
           ]
@@ -543,7 +383,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g04-r006.bin",
+              "file": "assets/resources/g04-r006.json",
               "size": 645
             }
           ]
@@ -559,7 +399,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g04-r007.bin",
+              "file": "assets/resources/g04-r007.json",
               "size": 343
             }
           ]
@@ -575,7 +415,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g04-r008.bin",
+              "file": "assets/resources/g04-r008.json",
               "size": 360
             }
           ]
@@ -591,7 +431,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g04-r009.bin",
+              "file": "assets/resources/g04-r009.json",
               "size": 144
             }
           ]
@@ -607,7 +447,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g04-r010.bin",
+              "file": "assets/resources/g04-r010.json",
               "size": 194
             }
           ]
@@ -623,7 +463,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g04-r011.bin",
+              "file": "assets/resources/g04-r011.json",
               "size": 300
             }
           ]
@@ -639,7 +479,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g04-r012.bin",
+              "file": "assets/resources/g04-r012.json",
               "size": 358
             }
           ]
@@ -655,7 +495,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g04-r013.bin",
+              "file": "assets/resources/g04-r013.json",
               "size": 175
             }
           ]
@@ -671,7 +511,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g04-r014.bin",
+              "file": "assets/resources/g04-r014.json",
               "size": 247
             }
           ]
@@ -687,7 +527,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g04-r015.bin",
+              "file": "assets/resources/g04-r015.json",
               "size": 232
             }
           ]
@@ -703,7 +543,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g04-r016.bin",
+              "file": "assets/resources/g04-r016.json",
               "size": 237
             }
           ]
@@ -719,7 +559,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g04-r017.bin",
+              "file": "assets/resources/g04-r017.json",
               "size": 269
             }
           ]
@@ -735,7 +575,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g04-r018.bin",
+              "file": "assets/resources/g04-r018.json",
               "size": 306
             }
           ]
@@ -751,7 +591,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g04-r019.bin",
+              "file": "assets/resources/g04-r019.json",
               "size": 220
             }
           ]
@@ -767,7 +607,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g04-r020.bin",
+              "file": "assets/resources/g04-r020.json",
               "size": 361
             }
           ]
@@ -783,7 +623,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g04-r021.bin",
+              "file": "assets/resources/g04-r021.json",
               "size": 165
             }
           ]
@@ -799,7 +639,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g04-r022.bin",
+              "file": "assets/resources/g04-r022.json",
               "size": 238
             }
           ]
@@ -815,7 +655,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g04-r023.bin",
+              "file": "assets/resources/g04-r023.json",
               "size": 222
             }
           ]
@@ -831,7 +671,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g04-r024.bin",
+              "file": "assets/resources/g04-r024.json",
               "size": 1
             }
           ]
@@ -847,7 +687,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g04-r025.bin",
+              "file": "assets/resources/g04-r025.json",
               "size": 178
             }
           ]
@@ -863,7 +703,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g04-r026.bin",
+              "file": "assets/resources/g04-r026.json",
               "size": 231
             }
           ]
@@ -879,7 +719,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g04-r027.bin",
+              "file": "assets/resources/g04-r027.json",
               "size": 197
             }
           ]
@@ -895,7 +735,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g04-r028.bin",
+              "file": "assets/resources/g04-r028.json",
               "size": 35
             }
           ]
@@ -911,7 +751,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g04-r029.bin",
+              "file": "assets/resources/g04-r029.json",
               "size": 149
             }
           ]
@@ -927,7 +767,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g04-r030.bin",
+              "file": "assets/resources/g04-r030.json",
               "size": 185
             }
           ]
@@ -943,7 +783,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g04-r031.bin",
+              "file": "assets/resources/g04-r031.json",
               "size": 290
             }
           ]
@@ -959,7 +799,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g04-r032.bin",
+              "file": "assets/resources/g04-r032.json",
               "size": 104
             }
           ]
@@ -975,7 +815,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g04-r033.bin",
+              "file": "assets/resources/g04-r033.json",
               "size": 167
             }
           ]
@@ -991,7 +831,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g04-r034.bin",
+              "file": "assets/resources/g04-r034.json",
               "size": 121
             }
           ]
@@ -1007,7 +847,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g04-r035.bin",
+              "file": "assets/resources/g04-r035.json",
               "size": 121
             }
           ]
@@ -1023,7 +863,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g04-r036.bin",
+              "file": "assets/resources/g04-r036.json",
               "size": 217
             }
           ]
@@ -1039,7 +879,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g04-r037.bin",
+              "file": "assets/resources/g04-r037.json",
               "size": 141
             }
           ]
@@ -1055,7 +895,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g04-r038.bin",
+              "file": "assets/resources/g04-r038.json",
               "size": 90
             }
           ]
@@ -1071,7 +911,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g04-r039.bin",
+              "file": "assets/resources/g04-r039.json",
               "size": 137
             }
           ]
@@ -1087,7 +927,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g04-r040.bin",
+              "file": "assets/resources/g04-r040.json",
               "size": 181
             }
           ]
@@ -1103,7 +943,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g04-r041.bin",
+              "file": "assets/resources/g04-r041.json",
               "size": 65
             }
           ]
@@ -1119,7 +959,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g04-r042.bin",
+              "file": "assets/resources/g04-r042.json",
               "size": 53
             }
           ]
@@ -1135,7 +975,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g04-r043.bin",
+              "file": "assets/resources/g04-r043.json",
               "size": 145
             }
           ]
@@ -1151,7 +991,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g04-r044.bin",
+              "file": "assets/resources/g04-r044.json",
               "size": 227
             }
           ]
@@ -1167,7 +1007,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g04-r045.bin",
+              "file": "assets/resources/g04-r045.json",
               "size": 28
             }
           ]
@@ -1183,7 +1023,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g04-r046.bin",
+              "file": "assets/resources/g04-r046.json",
               "size": 86
             }
           ]
@@ -1199,7 +1039,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g04-r047.bin",
+              "file": "assets/resources/g04-r047.json",
               "size": 52
             }
           ]
@@ -1215,7 +1055,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g04-r048.bin",
+              "file": "assets/resources/g04-r048.json",
               "size": 138
             }
           ]
@@ -1231,7 +1071,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g04-r049.bin",
+              "file": "assets/resources/g04-r049.json",
               "size": 76
             }
           ]
@@ -1247,7 +1087,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g04-r050.bin",
+              "file": "assets/resources/g04-r050.json",
               "size": 46
             }
           ]
@@ -1263,7 +1103,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g04-r051.bin",
+              "file": "assets/resources/g04-r051.json",
               "size": 39
             }
           ]
@@ -1279,7 +1119,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g04-r052.bin",
+              "file": "assets/resources/g04-r052.json",
               "size": 143
             }
           ]
@@ -1295,7 +1135,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g04-r053.bin",
+              "file": "assets/resources/g04-r053.json",
               "size": 127
             }
           ]
@@ -1311,7 +1151,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g05-r000.bin",
+              "file": "assets/resources/g05-r000.json",
               "size": 7
             }
           ]
@@ -1327,7 +1167,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g05-r001.bin",
+              "file": "assets/resources/g05-r001.json",
               "size": 467
             }
           ]
@@ -1359,7 +1199,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g05-r003.bin",
+              "file": "assets/resources/g05-r003.json",
               "size": 13
             }
           ]
@@ -1391,7 +1231,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g05-r005.bin",
+              "file": "assets/resources/g05-r005.json",
               "size": 13
             }
           ]
@@ -1423,7 +1263,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g05-r007.bin",
+              "file": "assets/resources/g05-r007.json",
               "size": 14
             }
           ]
@@ -1455,7 +1295,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g05-r009.bin",
+              "file": "assets/resources/g05-r009.json",
               "size": 12
             }
           ]
@@ -1487,7 +1327,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g05-r011.bin",
+              "file": "assets/resources/g05-r011.json",
               "size": 12
             }
           ]
@@ -1519,7 +1359,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g05-r013.bin",
+              "file": "assets/resources/g05-r013.json",
               "size": 13
             }
           ]
@@ -1551,7 +1391,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g05-r015.bin",
+              "file": "assets/resources/g05-r015.json",
               "size": 14
             }
           ]
@@ -1583,7 +1423,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g05-r017.bin",
+              "file": "assets/resources/g05-r017.json",
               "size": 12
             }
           ]
@@ -1615,7 +1455,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g05-r019.bin",
+              "file": "assets/resources/g05-r019.json",
               "size": 14
             }
           ]
@@ -1647,7 +1487,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g05-r021.bin",
+              "file": "assets/resources/g05-r021.json",
               "size": 13
             }
           ]
@@ -1679,7 +1519,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g05-r023.bin",
+              "file": "assets/resources/g05-r023.json",
               "size": 14
             }
           ]
@@ -1711,7 +1551,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g05-r025.bin",
+              "file": "assets/resources/g05-r025.json",
               "size": 14
             }
           ]
@@ -1743,7 +1583,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g05-r027.bin",
+              "file": "assets/resources/g05-r027.json",
               "size": 12
             }
           ]
@@ -1775,7 +1615,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g05-r029.bin",
+              "file": "assets/resources/g05-r029.json",
               "size": 12
             }
           ]
@@ -1807,7 +1647,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g05-r031.bin",
+              "file": "assets/resources/g05-r031.json",
               "size": 12
             }
           ]
@@ -1839,7 +1679,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g05-r033.bin",
+              "file": "assets/resources/g05-r033.json",
               "size": 13
             }
           ]
@@ -1871,7 +1711,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g05-r035.bin",
+              "file": "assets/resources/g05-r035.json",
               "size": 14
             }
           ]
@@ -1903,7 +1743,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g05-r037.bin",
+              "file": "assets/resources/g05-r037.json",
               "size": 14
             }
           ]
@@ -1919,7 +1759,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g06-r000.bin",
+              "file": "assets/resources/g06-r000.json",
               "size": 1559
             }
           ]
@@ -1935,7 +1775,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g06-r001.bin",
+              "file": "assets/resources/g06-r001.json",
               "size": 523
             }
           ]
@@ -1967,7 +1807,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g06-r003.bin",
+              "file": "assets/resources/g06-r003.json",
               "size": 726
             }
           ]
@@ -1983,7 +1823,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g06-r004.bin",
+              "file": "assets/resources/g06-r004.json",
               "size": 732
             }
           ]
@@ -1999,7 +1839,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g06-r005.bin",
+              "file": "assets/resources/g06-r005.json",
               "size": 670
             }
           ]
@@ -2015,7 +1855,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g06-r006.bin",
+              "file": "assets/resources/g06-r006.json",
               "size": 691
             }
           ]
@@ -2031,7 +1871,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g06-r007.bin",
+              "file": "assets/resources/g06-r007.json",
               "size": 252
             }
           ]
@@ -2047,7 +1887,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g06-r008.bin",
+              "file": "assets/resources/g06-r008.json",
               "size": 151
             }
           ]
@@ -2063,7 +1903,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g06-r009.bin",
+              "file": "assets/resources/g06-r009.json",
               "size": 321
             }
           ]
@@ -2079,7 +1919,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g06-r010.bin",
+              "file": "assets/resources/g06-r010.json",
               "size": 136
             }
           ]
@@ -2095,7 +1935,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g06-r011.bin",
+              "file": "assets/resources/g06-r011.json",
               "size": 302
             }
           ]
@@ -2111,7 +1951,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g06-r012.bin",
+              "file": "assets/resources/g06-r012.json",
               "size": 358
             }
           ]
@@ -2127,7 +1967,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g06-r013.bin",
+              "file": "assets/resources/g06-r013.json",
               "size": 332
             }
           ]
@@ -2143,7 +1983,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g06-r014.bin",
+              "file": "assets/resources/g06-r014.json",
               "size": 118
             }
           ]
@@ -2159,7 +1999,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g06-r015.bin",
+              "file": "assets/resources/g06-r015.json",
               "size": 127
             }
           ]
@@ -2175,7 +2015,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g06-r016.bin",
+              "file": "assets/resources/g06-r016.json",
               "size": 184
             }
           ]
@@ -2191,7 +2031,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g06-r017.bin",
+              "file": "assets/resources/g06-r017.json",
               "size": 175
             }
           ]
@@ -2207,7 +2047,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g06-r018.bin",
+              "file": "assets/resources/g06-r018.json",
               "size": 196
             }
           ]
@@ -2223,7 +2063,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g06-r019.bin",
+              "file": "assets/resources/g06-r019.json",
               "size": 131
             }
           ]
@@ -2239,7 +2079,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g06-r020.bin",
+              "file": "assets/resources/g06-r020.json",
               "size": 167
             }
           ]
@@ -2255,7 +2095,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g06-r021.bin",
+              "file": "assets/resources/g06-r021.json",
               "size": 294
             }
           ]
@@ -2271,7 +2111,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g06-r022.bin",
+              "file": "assets/resources/g06-r022.json",
               "size": 212
             }
           ]
@@ -2287,7 +2127,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g06-r023.bin",
+              "file": "assets/resources/g06-r023.json",
               "size": 502
             }
           ]
@@ -2303,7 +2143,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g06-r024.bin",
+              "file": "assets/resources/g06-r024.json",
               "size": 359
             }
           ]
@@ -2319,7 +2159,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g06-r025.bin",
+              "file": "assets/resources/g06-r025.json",
               "size": 335
             }
           ]
@@ -2335,7 +2175,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g06-r026.bin",
+              "file": "assets/resources/g06-r026.json",
               "size": 133
             }
           ]
@@ -2351,7 +2191,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g06-r027.bin",
+              "file": "assets/resources/g06-r027.json",
               "size": 117
             }
           ]
@@ -2367,7 +2207,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g06-r028.bin",
+              "file": "assets/resources/g06-r028.json",
               "size": 85
             }
           ]
@@ -2383,7 +2223,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g06-r029.bin",
+              "file": "assets/resources/g06-r029.json",
               "size": 393
             }
           ]
@@ -2399,7 +2239,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g06-r030.bin",
+              "file": "assets/resources/g06-r030.json",
               "size": 121
             }
           ]
@@ -2415,7 +2255,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g06-r031.bin",
+              "file": "assets/resources/g06-r031.json",
               "size": 150
             }
           ]
@@ -2431,7 +2271,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g06-r032.bin",
+              "file": "assets/resources/g06-r032.json",
               "size": 229
             }
           ]
@@ -2447,7 +2287,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g06-r033.bin",
+              "file": "assets/resources/g06-r033.json",
               "size": 228
             }
           ]
@@ -2463,7 +2303,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g06-r034.bin",
+              "file": "assets/resources/g06-r034.json",
               "size": 221
             }
           ]
@@ -2479,7 +2319,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g06-r035.bin",
+              "file": "assets/resources/g06-r035.json",
               "size": 224
             }
           ]
@@ -2495,7 +2335,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g06-r036.bin",
+              "file": "assets/resources/g06-r036.json",
               "size": 210
             }
           ]
@@ -2511,7 +2351,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g06-r037.bin",
+              "file": "assets/resources/g06-r037.json",
               "size": 214
             }
           ]
@@ -2527,7 +2367,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g06-r038.bin",
+              "file": "assets/resources/g06-r038.json",
               "size": 166
             }
           ]
@@ -2543,7 +2383,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g06-r039.bin",
+              "file": "assets/resources/g06-r039.json",
               "size": 108
             }
           ]
@@ -2559,7 +2399,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g06-r040.bin",
+              "file": "assets/resources/g06-r040.json",
               "size": 169
             }
           ]
@@ -2575,7 +2415,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g06-r041.bin",
+              "file": "assets/resources/g06-r041.json",
               "size": 41
             }
           ]
@@ -2591,7 +2431,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g06-r042.bin",
+              "file": "assets/resources/g06-r042.json",
               "size": 41
             }
           ]
@@ -2607,7 +2447,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g06-r043.bin",
+              "file": "assets/resources/g06-r043.json",
               "size": 41
             }
           ]
@@ -2623,7 +2463,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g06-r044.bin",
+              "file": "assets/resources/g06-r044.json",
               "size": 117
             }
           ]
@@ -2639,7 +2479,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g06-r045.bin",
+              "file": "assets/resources/g06-r045.json",
               "size": 61
             }
           ]
@@ -2655,7 +2495,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g06-r046.bin",
+              "file": "assets/resources/g06-r046.json",
               "size": 58
             }
           ]
@@ -2671,7 +2511,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g06-r047.bin",
+              "file": "assets/resources/g06-r047.json",
               "size": 61
             }
           ]
@@ -2687,7 +2527,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g06-r048.bin",
+              "file": "assets/resources/g06-r048.json",
               "size": 51
             }
           ]
@@ -2703,7 +2543,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g06-r049.bin",
+              "file": "assets/resources/g06-r049.json",
               "size": 43
             }
           ]
@@ -2718,7 +2558,7 @@
           ],
           "parts": [
             {
-              "file": "assets/padding/group-06-tail.bin",
+              "file": "assets/padding/group-06-tail.json",
               "size": 62
             }
           ]
@@ -2734,7 +2574,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g07-r000.bin",
+              "file": "assets/resources/g07-r000.json",
               "size": 7
             }
           ]
@@ -2750,7 +2590,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g07-r001.bin",
+              "file": "assets/resources/g07-r001.json",
               "size": 442
             }
           ]
@@ -2782,7 +2622,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g07-r003.bin",
+              "file": "assets/resources/g07-r003.json",
               "size": 13
             }
           ]
@@ -2814,7 +2654,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g07-r005.bin",
+              "file": "assets/resources/g07-r005.json",
               "size": 13
             }
           ]
@@ -2846,7 +2686,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g07-r007.bin",
+              "file": "assets/resources/g07-r007.json",
               "size": 13
             }
           ]
@@ -2878,7 +2718,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g07-r009.bin",
+              "file": "assets/resources/g07-r009.json",
               "size": 13
             }
           ]
@@ -2910,7 +2750,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g07-r011.bin",
+              "file": "assets/resources/g07-r011.json",
               "size": 11
             }
           ]
@@ -2942,7 +2782,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g07-r013.bin",
+              "file": "assets/resources/g07-r013.json",
               "size": 13
             }
           ]
@@ -2974,7 +2814,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g07-r015.bin",
+              "file": "assets/resources/g07-r015.json",
               "size": 13
             }
           ]
@@ -3006,7 +2846,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g07-r017.bin",
+              "file": "assets/resources/g07-r017.json",
               "size": 11
             }
           ]
@@ -3022,7 +2862,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g07-r018.bin",
+              "file": "assets/resources/g07-r018.json",
               "size": 1
             }
           ]
@@ -3038,7 +2878,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g07-r019.bin",
+              "file": "assets/resources/g07-r019.json",
               "size": 1
             }
           ]
@@ -3054,7 +2894,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g07-r020.bin",
+              "file": "assets/resources/g07-r020.json",
               "size": 1
             }
           ]
@@ -3070,7 +2910,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g07-r021.bin",
+              "file": "assets/resources/g07-r021.json",
               "size": 1
             }
           ]
@@ -3102,7 +2942,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g07-r023.bin",
+              "file": "assets/resources/g07-r023.json",
               "size": 12
             }
           ]
@@ -3118,7 +2958,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g07-r024.bin",
+              "file": "assets/resources/g07-r024.json",
               "size": 1
             }
           ]
@@ -3134,7 +2974,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g07-r025.bin",
+              "file": "assets/resources/g07-r025.json",
               "size": 1
             }
           ]
@@ -3150,7 +2990,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g07-r026.bin",
+              "file": "assets/resources/g07-r026.json",
               "size": 1
             }
           ]
@@ -3166,7 +3006,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g07-r027.bin",
+              "file": "assets/resources/g07-r027.json",
               "size": 1
             }
           ]
@@ -3182,7 +3022,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g07-r028.bin",
+              "file": "assets/resources/g07-r028.json",
               "size": 1
             }
           ]
@@ -3198,7 +3038,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g07-r029.bin",
+              "file": "assets/resources/g07-r029.json",
               "size": 1
             }
           ]
@@ -3230,7 +3070,7 @@
           "record16": true,
           "parts": [
             {
-              "file": "graphics/records/g07-r031.bin",
+              "file": "assets/resources/g07-r031.json",
               "size": 12
             }
           ]
@@ -3245,7 +3085,7 @@
           ],
           "parts": [
             {
-              "file": "assets/filesystem/vtoc.bin",
+              "file": "assets/filesystem/vtoc.json",
               "size": 128
             }
           ]
@@ -3260,7 +3100,7 @@
           ],
           "parts": [
             {
-              "file": "assets/state/saved-game.bin",
+              "file": "assets/state/saved-game.json",
               "size": 896
             }
           ]
@@ -3275,7 +3115,7 @@
           ],
           "parts": [
             {
-              "file": "assets/padding/unused-sector-709.bin",
+              "file": "assets/padding/unused-sector-709.json",
               "size": 128
             }
           ]

@@ -1,0 +1,5326 @@
+{
+  "format": "sound.ad2044-bank",
+  "version": 1,
+  "origin": 24064,
+  "size": 3631,
+  "entry_points": {
+    "initialize": 24073,
+    "player": 24431,
+    "reset": 25903,
+    "dispatcher": 26264
+  },
+  "sections": [
+    {
+      "address": 24064,
+      "end_address": 24073,
+      "name": "player globals",
+      "type": "fields",
+      "fields": [
+        {
+          "name": "current_control_byte",
+          "bytes": 1,
+          "value": 0
+        },
+        {
+          "name": "scratch_1",
+          "bytes": 1,
+          "value": 0
+        },
+        {
+          "name": "scratch_2",
+          "bytes": 1,
+          "value": 0
+        },
+        {
+          "name": "scratch_3",
+          "bytes": 1,
+          "value": 0
+        },
+        {
+          "name": "scratch_4",
+          "bytes": 1,
+          "value": 0
+        },
+        {
+          "name": "scratch_5",
+          "bytes": 1,
+          "value": 0
+        },
+        {
+          "name": "scratch_6",
+          "bytes": 1,
+          "value": 0
+        },
+        {
+          "name": "current_voice_offset",
+          "bytes": 1,
+          "value": 0
+        },
+        {
+          "name": "vbi_install_marker",
+          "bytes": 1,
+          "value": 0
+        }
+      ]
+    },
+    {
+      "address": 24073,
+      "end_address": 24089,
+      "name": "initialize and install player",
+      "type": "assembly",
+      "instructions": [
+        "LDA.# 98 ; 5E09",
+        "STA.ABS 6035 ; 5E0B",
+        "LDA.# 66 ; 5E0E",
+        "STA.ABS 6036 ; 5E10",
+        "JSR.ABS 652F ; 5E13",
+        "JMP.ABS 6552 ; 5E16"
+      ]
+    },
+    {
+      "address": 24089,
+      "end_address": 24095,
+      "name": "stream and stop state",
+      "type": "fields",
+      "fields": [
+        {
+          "name": "saved_stream_pointer",
+          "bytes": 2,
+          "value": 41352
+        },
+        {
+          "name": "subroutine_active",
+          "bytes": 1,
+          "value": 1
+        },
+        {
+          "name": "subroutine_return_pointer",
+          "bytes": 2,
+          "value": 40559
+        },
+        {
+          "name": "stop",
+          "bytes": 1,
+          "value": 1
+        }
+      ]
+    },
+    {
+      "address": 24095,
+      "end_address": 24103,
+      "name": "duration table",
+      "type": "byte-table",
+      "values": [6, 12, 18, 24, 36, 48, 72, 96]
+    },
+    {
+      "address": 24103,
+      "end_address": 24112,
+      "name": "command registers",
+      "type": "fields",
+      "fields": [
+        {
+          "name": "sound_command",
+          "bytes": 1,
+          "value": 80
+        },
+        {
+          "name": "command_register_1",
+          "bytes": 1,
+          "value": 0
+        },
+        {
+          "name": "command_register_2",
+          "bytes": 1,
+          "value": 0
+        },
+        {
+          "name": "command_register_3",
+          "bytes": 1,
+          "value": 0
+        },
+        {
+          "name": "command_register_4",
+          "bytes": 1,
+          "value": 0
+        },
+        {
+          "name": "command_register_5",
+          "bytes": 1,
+          "value": 0
+        },
+        {
+          "name": "command_register_6",
+          "bytes": 1,
+          "value": 0
+        },
+        {
+          "name": "command_register_7",
+          "bytes": 1,
+          "value": 0
+        },
+        {
+          "name": "command_register_8",
+          "bytes": 1,
+          "value": 0
+        }
+      ]
+    },
+    {
+      "address": 24112,
+      "end_address": 24120,
+      "name": "VM instruction length classes",
+      "type": "byte-table",
+      "values": [2, 1, 3, 4, 5, 9, 6, 0],
+      "note": "Class index is (opcode & 63) >> 3. Return/end has a special zero class length in the original table."
+    },
+    {
+      "address": 24120,
+      "end_address": 24132,
+      "name": "decoder scratch",
+      "type": "fields",
+      "fields": [
+        {
+          "name": "scratch_0",
+          "bytes": 1,
+          "value": 6
+        },
+        {
+          "name": "scratch_1",
+          "bytes": 1,
+          "value": 6
+        },
+        {
+          "name": "scratch_2",
+          "bytes": 1,
+          "value": 6
+        },
+        {
+          "name": "scratch_3",
+          "bytes": 1,
+          "value": 6
+        },
+        {
+          "name": "scratch_4",
+          "bytes": 1,
+          "value": 6
+        },
+        {
+          "name": "scratch_5",
+          "bytes": 1,
+          "value": 134
+        },
+        {
+          "name": "scratch_6",
+          "bytes": 1,
+          "value": 0
+        },
+        {
+          "name": "scratch_7",
+          "bytes": 1,
+          "value": 0
+        },
+        {
+          "name": "scratch_8",
+          "bytes": 1,
+          "value": 0
+        },
+        {
+          "name": "scratch_9",
+          "bytes": 1,
+          "value": 0
+        },
+        {
+          "name": "scratch_10",
+          "bytes": 1,
+          "value": 0
+        },
+        {
+          "name": "scratch_11",
+          "bytes": 1,
+          "value": 0
+        }
+      ]
+    },
+    {
+      "address": 24132,
+      "end_address": 24303,
+      "name": "VM opcode flags and targets",
+      "type": "vm-handlers",
+      "entries": [
+        {
+          "opcode": 0,
+          "flags": 1,
+          "target": 24732
+        },
+        {
+          "opcode": 1,
+          "flags": 1,
+          "target": 24732
+        },
+        {
+          "opcode": 2,
+          "flags": 1,
+          "target": 24732
+        },
+        {
+          "opcode": 3,
+          "flags": 1,
+          "target": 24732
+        },
+        {
+          "opcode": 4,
+          "flags": 1,
+          "target": 24732
+        },
+        {
+          "opcode": 5,
+          "flags": 1,
+          "target": 24732
+        },
+        {
+          "opcode": 6,
+          "flags": 1,
+          "target": 24732
+        },
+        {
+          "opcode": 7,
+          "flags": 1,
+          "target": 24732
+        },
+        {
+          "opcode": 8,
+          "flags": 1,
+          "target": 24826
+        },
+        {
+          "opcode": 9,
+          "flags": 1,
+          "target": 24826
+        },
+        {
+          "opcode": 10,
+          "flags": 1,
+          "target": 24826
+        },
+        {
+          "opcode": 11,
+          "flags": 1,
+          "target": 24826
+        },
+        {
+          "opcode": 12,
+          "flags": 1,
+          "target": 24826
+        },
+        {
+          "opcode": 13,
+          "flags": 1,
+          "target": 24826
+        },
+        {
+          "opcode": 14,
+          "flags": 1,
+          "target": 24826
+        },
+        {
+          "opcode": 15,
+          "flags": 1,
+          "target": 24826
+        },
+        {
+          "opcode": 16,
+          "flags": 1,
+          "target": 24857
+        },
+        {
+          "opcode": 17,
+          "flags": 1,
+          "target": 24874
+        },
+        {
+          "opcode": 18,
+          "flags": 0,
+          "target": 25148
+        },
+        {
+          "opcode": 19,
+          "flags": 0,
+          "target": 25166
+        },
+        {
+          "opcode": 20,
+          "flags": 0,
+          "target": 0
+        },
+        {
+          "opcode": 21,
+          "flags": 0,
+          "target": 0
+        },
+        {
+          "opcode": 22,
+          "flags": 0,
+          "target": 0
+        },
+        {
+          "opcode": 23,
+          "flags": 0,
+          "target": 0
+        },
+        {
+          "opcode": 24,
+          "flags": 0,
+          "target": 24952
+        },
+        {
+          "opcode": 25,
+          "flags": 0,
+          "target": 0
+        },
+        {
+          "opcode": 26,
+          "flags": 0,
+          "target": 0
+        },
+        {
+          "opcode": 27,
+          "flags": 0,
+          "target": 0
+        },
+        {
+          "opcode": 28,
+          "flags": 0,
+          "target": 0
+        },
+        {
+          "opcode": 29,
+          "flags": 0,
+          "target": 0
+        },
+        {
+          "opcode": 30,
+          "flags": 0,
+          "target": 0
+        },
+        {
+          "opcode": 31,
+          "flags": 0,
+          "target": 0
+        },
+        {
+          "opcode": 32,
+          "flags": 1,
+          "target": 24910
+        },
+        {
+          "opcode": 33,
+          "flags": 1,
+          "target": 24931
+        },
+        {
+          "opcode": 34,
+          "flags": 0,
+          "target": 0
+        },
+        {
+          "opcode": 35,
+          "flags": 0,
+          "target": 0
+        },
+        {
+          "opcode": 36,
+          "flags": 0,
+          "target": 0
+        },
+        {
+          "opcode": 37,
+          "flags": 0,
+          "target": 0
+        },
+        {
+          "opcode": 38,
+          "flags": 0,
+          "target": 0
+        },
+        {
+          "opcode": 39,
+          "flags": 0,
+          "target": 0
+        },
+        {
+          "opcode": 40,
+          "flags": 0,
+          "target": 25022
+        },
+        {
+          "opcode": 41,
+          "flags": 0,
+          "target": 25184
+        },
+        {
+          "opcode": 42,
+          "flags": 0,
+          "target": 0
+        },
+        {
+          "opcode": 43,
+          "flags": 0,
+          "target": 0
+        },
+        {
+          "opcode": 44,
+          "flags": 0,
+          "target": 0
+        },
+        {
+          "opcode": 45,
+          "flags": 0,
+          "target": 0
+        },
+        {
+          "opcode": 46,
+          "flags": 0,
+          "target": 0
+        },
+        {
+          "opcode": 47,
+          "flags": 0,
+          "target": 0
+        },
+        {
+          "opcode": 48,
+          "flags": 0,
+          "target": 24978
+        },
+        {
+          "opcode": 49,
+          "flags": 0,
+          "target": 0
+        },
+        {
+          "opcode": 50,
+          "flags": 0,
+          "target": 0
+        },
+        {
+          "opcode": 51,
+          "flags": 0,
+          "target": 0
+        },
+        {
+          "opcode": 52,
+          "flags": 0,
+          "target": 0
+        },
+        {
+          "opcode": 53,
+          "flags": 0,
+          "target": 0
+        },
+        {
+          "opcode": 54,
+          "flags": 0,
+          "target": 0
+        },
+        {
+          "opcode": 55,
+          "flags": 0,
+          "target": 0
+        },
+        {
+          "opcode": 56,
+          "flags": 1,
+          "target": 25084
+        }
+      ]
+    },
+    {
+      "address": 24303,
+      "end_address": 24431,
+      "name": "mutable voice state",
+      "type": "voice-states",
+      "voices": [
+        {
+          "channel": 0,
+          "finished": 1,
+          "release_ticks": 3,
+          "gate_threshold": 6,
+          "audc_distortion_mask": 128,
+          "complex_envelope": 1,
+          "fade_initial_volume": 1,
+          "fade_period": 1,
+          "fade_countdown": 1,
+          "pitch_slide_step": 0,
+          "pitch_slide_end": 0,
+          "pending_pitch_slide_step": 0,
+          "volume_bias": 0,
+          "fade_volume": 0,
+          "base_frequency": 7,
+          "mute_or_redirect_audio": 0,
+          "control_pointer": 26149,
+          "pitch_pointer": 26142,
+          "sustain_index": 2,
+          "release_index": 4,
+          "envelope_position": 7,
+          "elapsed_ticks": 3,
+          "duration_ticks": 3,
+          "phase_handler_index": 6,
+          "post_effect_mode": 0,
+          "initialized_audf_offset": 0,
+          "initialized_audc_offset": 1,
+          "unknown_28": 0,
+          "unknown_29": 0,
+          "unknown_30": 0,
+          "unknown_31": 0
+        },
+        {
+          "channel": 1,
+          "finished": 0,
+          "release_ticks": 6,
+          "gate_threshold": 11,
+          "audc_distortion_mask": 224,
+          "complex_envelope": 1,
+          "fade_initial_volume": 1,
+          "fade_period": 1,
+          "fade_countdown": 1,
+          "pitch_slide_step": 0,
+          "pitch_slide_end": 47,
+          "pending_pitch_slide_step": 0,
+          "volume_bias": 0,
+          "fade_volume": 1,
+          "base_frequency": 47,
+          "mute_or_redirect_audio": 0,
+          "control_pointer": 26183,
+          "pitch_pointer": 26164,
+          "sustain_index": 4,
+          "release_index": 13,
+          "envelope_position": 17,
+          "elapsed_ticks": 4,
+          "duration_ticks": 6,
+          "phase_handler_index": 6,
+          "post_effect_mode": 0,
+          "initialized_audf_offset": 2,
+          "initialized_audc_offset": 3,
+          "unknown_28": 0,
+          "unknown_29": 0,
+          "unknown_30": 0,
+          "unknown_31": 0
+        },
+        {
+          "channel": 2,
+          "finished": 0,
+          "release_ticks": 3,
+          "gate_threshold": 6,
+          "audc_distortion_mask": 224,
+          "complex_envelope": 1,
+          "fade_initial_volume": 1,
+          "fade_period": 1,
+          "fade_countdown": 1,
+          "pitch_slide_step": 0,
+          "pitch_slide_end": 0,
+          "pending_pitch_slide_step": 0,
+          "volume_bias": 0,
+          "fade_volume": 1,
+          "base_frequency": 81,
+          "mute_or_redirect_audio": 0,
+          "control_pointer": 26125,
+          "pitch_pointer": 26112,
+          "sustain_index": 2,
+          "release_index": 10,
+          "envelope_position": 11,
+          "elapsed_ticks": 1,
+          "duration_ticks": 3,
+          "phase_handler_index": 6,
+          "post_effect_mode": 0,
+          "initialized_audf_offset": 4,
+          "initialized_audc_offset": 5,
+          "unknown_28": 0,
+          "unknown_29": 0,
+          "unknown_30": 0,
+          "unknown_31": 0
+        },
+        {
+          "channel": 3,
+          "finished": 1,
+          "release_ticks": 0,
+          "gate_threshold": 0,
+          "audc_distortion_mask": 224,
+          "complex_envelope": 0,
+          "fade_initial_volume": 1,
+          "fade_period": 1,
+          "fade_countdown": 2,
+          "pitch_slide_step": 0,
+          "pitch_slide_end": 0,
+          "pending_pitch_slide_step": 0,
+          "volume_bias": 0,
+          "fade_volume": 0,
+          "base_frequency": 35,
+          "mute_or_redirect_audio": 0,
+          "control_pointer": 24120,
+          "pitch_pointer": 24126,
+          "sustain_index": 0,
+          "release_index": 0,
+          "envelope_position": 0,
+          "elapsed_ticks": 0,
+          "duration_ticks": 0,
+          "phase_handler_index": 0,
+          "post_effect_mode": 0,
+          "initialized_audf_offset": 6,
+          "initialized_audc_offset": 7,
+          "unknown_28": 0,
+          "unknown_29": 0,
+          "unknown_30": 0,
+          "unknown_31": 0
+        }
+      ],
+      "note": "Final six bytes retain initialized register offsets and four fields whose consumers are not established."
+    },
+    {
+      "address": 24431,
+      "end_address": 25723,
+      "name": "VBI command interpreter and envelope player",
+      "type": "assembly",
+      "instructions": [
+        "LDA.ABS 5E1E ; 5F6F",
+        "BEQ 5F77 ; 5F72",
+        "JMP.ABS 62E1 ; 5F74",
+        "LDA.# 00 ; 5F77",
+        "STA.ABS 5E03 ; 5F79",
+        "STA.ABS 5E04 ; 5F7C",
+        "STA.ABS 5E05 ; 5F7F",
+        "STA.ABS 5E06 ; 5F82",
+        "STA.ABS 5E07 ; 5F85",
+        "STA.ABS 5E02 ; 5F88",
+        "LDA.ABS 6035 ; 5F8B",
+        "STA.ABS 5F98 ; 5F8E",
+        "LDA.ABS 6036 ; 5F91",
+        "STA.ABS 5F99 ; 5F94",
+        "LDA.ABS A18F ; 5F97",
+        "STA.ABS 5E01 ; 5F9A",
+        "AND.# 3F ; 5F9D",
+        "LSR.A ; 5F9F",
+        "LSR.A ; 5FA0",
+        "LSR.A ; 5FA1",
+        "TAX ; 5FA2",
+        "CLC ; 5FA3",
+        "LDA.ABSX 5E30 ; 5FA4",
+        "ADC.ABS 5F98 ; 5FA7",
+        "STA.ABS 5F98 ; 5FAA",
+        "LDA.# 00 ; 5FAD",
+        "ADC.ABS 5F99 ; 5FAF",
+        "STA.ABS 5F99 ; 5FB2",
+        "LDA.ABS 5E01 ; 5FB5",
+        "AND.# C0 ; 5FB8",
+        "CMP.ABS 5E07 ; 5FBA",
+        "BCC 5FE7 ; 5FBD",
+        "BNE 5FC6 ; 5FBF",
+        "LDA.ABS 5E02 ; 5FC1",
+        "BNE 5FE7 ; 5FC4",
+        "LDA.ABS 5E01 ; 5FC6",
+        "AND.# 3F ; 5FC9",
+        "TAX ; 5FCB",
+        "LDA.ABSX 5E44 ; 5FCC",
+        "STA.ABS 5E02 ; 5FCF",
+        "LDA.ABS 5E01 ; 5FD2",
+        "AND.# C0 ; 5FD5",
+        "STA.ABS 5E07 ; 5FD7",
+        "CLC ; 5FDA",
+        "ROL.A ; 5FDB",
+        "ROL.A ; 5FDC",
+        "ROL.A ; 5FDD",
+        "TAX ; 5FDE",
+        "LDA.# 01 ; 5FDF",
+        "STA.ABSX 5E03 ; 5FE1",
+        "JMP.ABS 5F97 ; 5FE4",
+        "LDA.# 00 ; 5FE7",
+        "STA.ABS 5E00 ; 5FE9",
+        "LDA.ABS 5E03 ; 5FEC",
+        "BEQ 5FFC ; 5FEF",
+        "LDA.ABS 5EEF ; 5FF1",
+        "EOR.# 01 ; 5FF4",
+        "ORA.ABS 5E00 ; 5FF6",
+        "STA.ABS 5E00 ; 5FF9",
+        "LDA.ABS 5E04 ; 5FFC",
+        "BEQ 600C ; 5FFF",
+        "LDA.ABS 5F0F ; 6001",
+        "EOR.# 01 ; 6004",
+        "ORA.ABS 5E00 ; 6006",
+        "STA.ABS 5E00 ; 6009",
+        "LDA.ABS 5E05 ; 600C",
+        "BEQ 601C ; 600F",
+        "LDA.ABS 5F2F ; 6011",
+        "EOR.# 01 ; 6014",
+        "ORA.ABS 5E00 ; 6016",
+        "STA.ABS 5E00 ; 6019",
+        "LDA.ABS 5E06 ; 601C",
+        "BEQ 602C ; 601F",
+        "LDA.ABS 5F4F ; 6021",
+        "EOR.# 01 ; 6024",
+        "ORA.ABS 5E00 ; 6026",
+        "STA.ABS 5E00 ; 6029",
+        "LDA.ABS 5E00 ; 602C",
+        "BEQ 6040 ; 602F",
+        "JMP.ABS 6293 ; 6031",
+        "LDA.ABS A188 ; 6034",
+        "INC.ABS 6035 ; 6037",
+        "BNE 603F ; 603A",
+        "INC.ABS 6036 ; 603C",
+        "RTS ; 603F",
+        "LDA.# 00 ; 6040",
+        "STA.ABS 5E07 ; 6042",
+        "STA.ABS 5E02 ; 6045",
+        "LDA.ABS 6035 ; 6048",
+        "STA.ABS 5E19 ; 604B",
+        "LDA.ABS 6036 ; 604E",
+        "STA.ABS 5E1A ; 6051",
+        "JSR.ABS 6034 ; 6054",
+        "STA.ABS 5E01 ; 6057",
+        "AND.# C0 ; 605A",
+        "LSR.A ; 605C",
+        "CMP.ABS 5E07 ; 605D",
+        "BCC 608D ; 6060",
+        "BNE 6069 ; 6062",
+        "LDA.ABS 5E02 ; 6064",
+        "BNE 608D ; 6067",
+        "LDA.ABS 5E01 ; 6069",
+        "AND.# 3F ; 606C",
+        "TAX ; 606E",
+        "LDA.ABSX 5E44 ; 606F",
+        "STA.ABS 5E02 ; 6072",
+        "LDA.ABS 5E01 ; 6075",
+        "AND.# C0 ; 6078",
+        "LSR.A ; 607A",
+        "STA.ABS 5E07 ; 607B",
+        "LDA.ABSX 5E7D ; 607E",
+        "STA.ABS 608B ; 6081",
+        "LDA.ABSX 5EB6 ; 6084",
+        "STA.ABS 608C ; 6087",
+        "JMP.ABS 609C ; 608A",
+        "LDA.ABS 5E19 ; 608D",
+        "STA.ABS 6035 ; 6090",
+        "LDA.ABS 5E1A ; 6093",
+        "STA.ABS 6036 ; 6096",
+        "JMP.ABS 6293 ; 6099",
+        "JSR.ABS 6034 ; 609C",
+        "LDX.ABS 5E07 ; 609F",
+        "STA.ABSX 5EFC ; 60A2",
+        "LDA.# 00 ; 60A5",
+        "STA.ABSX 5F08 ; 60A7",
+        "STA.ABSX 5F05 ; 60AA",
+        "STA.ABSX 5EEF ; 60AD",
+        "STA.ABSX 5F04 ; 60B0",
+        "LDA.ABSX 5EF3 ; 60B3",
+        "BNE 60CC ; 60B6",
+        "LDA.ABS 5E01 ; 60B8",
+        "AND.# 07 ; 60BB",
+        "TAY ; 60BD",
+        "LDA.ABSY 5E1F ; 60BE",
+        "STA.ABSX 5F06 ; 60C1",
+        "LDA.# 03 ; 60C4",
+        "STA.ABSX 5F07 ; 60C6",
+        "JMP.ABS 6048 ; 60C9",
+        "LDA.ABS 5E01 ; 60CC",
+        "AND.# 07 ; 60CF",
+        "TAY ; 60D1",
+        "LDA.ABSY 5E1F ; 60D2",
+        "CMP.ABSX 5EF1 ; 60D5",
+        "BCS 60EB ; 60D8",
+        "STA.ABSX 5F06 ; 60DA",
+        "LDA.ABSX 5F02 ; 60DD",
+        "STA.ABSX 5F04 ; 60E0",
+        "LDA.# 03 ; 60E3",
+        "STA.ABSX 5F07 ; 60E5",
+        "JMP.ABS 6048 ; 60E8",
+        "SEC ; 60EB",
+        "SBC.ABSX 5EF0 ; 60EC",
+        "STA.ABSX 5F06 ; 60EF",
+        "LDA.# 02 ; 60F2",
+        "STA.ABSX 5F07 ; 60F4",
+        "JMP.ABS 6048 ; 60F7",
+        "LDX.ABS 5E07 ; 60FA",
+        "LDA.# 00 ; 60FD",
+        "STA.ABSX 5EEF ; 60FF",
+        "STA.ABSX 5F05 ; 6102",
+        "LDA.# 01 ; 6105",
+        "STA.ABSX 5F07 ; 6107",
+        "LDA.ABS 5E01 ; 610A",
+        "AND.# 07 ; 610D",
+        "TAY ; 610F",
+        "LDA.ABSY 5E1F ; 6110",
+        "STA.ABSX 5F06 ; 6113",
+        "JMP.ABS 6048 ; 6116",
+        "JSR.ABS 6034 ; 6119",
+        "PHA ; 611C",
+        "JSR.ABS 6034 ; 611D",
+        "STA.ABS 6036 ; 6120",
+        "PLA ; 6123",
+        "STA.ABS 6035 ; 6124",
+        "JMP.ABS 62E1 ; 6127",
+        "JSR.ABS 6034 ; 612A",
+        "PHA ; 612D",
+        "JSR.ABS 6034 ; 612E",
+        "PHA ; 6131",
+        "LDA.ABS 6035 ; 6132",
+        "STA.ABS 5E1C ; 6135",
+        "LDA.ABS 6036 ; 6138",
+        "STA.ABS 5E1D ; 613B",
+        "LDA.# 01 ; 613E",
+        "STA.ABS 5E1B ; 6140",
+        "PLA ; 6143",
+        "STA.ABS 6036 ; 6144",
+        "PLA ; 6147",
+        "STA.ABS 6035 ; 6148",
+        "JMP.ABS 62E1 ; 614B",
+        "JSR.ABS 6034 ; 614E",
+        "TAX ; 6151",
+        "JSR.ABS 6034 ; 6152",
+        "CMP.ABSX 5E27 ; 6155",
+        "BEQ 6119 ; 6158",
+        "JSR.ABS 6034 ; 615A",
+        "JSR.ABS 6034 ; 615D",
+        "JMP.ABS 6048 ; 6160",
+        "JSR.ABS 6034 ; 6163",
+        "TAX ; 6166",
+        "JSR.ABS 6034 ; 6167",
+        "CMP.ABSX 5E27 ; 616A",
+        "BEQ 612A ; 616D",
+        "JSR.ABS 6034 ; 616F",
+        "JSR.ABS 6034 ; 6172",
+        "JMP.ABS 6048 ; 6175",
+        "JSR.ABS 6034 ; 6178",
+        "STA.ABS 618D ; 617B",
+        "JSR.ABS 6034 ; 617E",
+        "STA.ABS 618E ; 6181",
+        "JSR.ABS 6034 ; 6184",
+        "STA.ABS 618B ; 6187",
+        "LDA.# 01 ; 618A",
+        "STA.ABS 00E2 ; 618C",
+        "JMP.ABS 6048 ; 618F",
+        "LDX.ABS 5E07 ; 6192",
+        "JSR.ABS 6034 ; 6195",
+        "STA.ABSX 5EFE ; 6198",
+        "JSR.ABS 6034 ; 619B",
+        "STA.ABSX 5EFF ; 619E",
+        "JSR.ABS 6034 ; 61A1",
+        "STA.ABSX 5F00 ; 61A4",
+        "JSR.ABS 6034 ; 61A7",
+        "STA.ABSX 5F01 ; 61AA",
+        "JSR.ABS 6034 ; 61AD",
+        "STA.ABSX 5F04 ; 61B0",
+        "STA.ABSX 5F02 ; 61B3",
+        "LDA.# 00 ; 61B6",
+        "STA.ABSX 5EF3 ; 61B8",
+        "JMP.ABS 6048 ; 61BB",
+        "LDX.ABS 5E07 ; 61BE",
+        "JSR.ABS 6034 ; 61C1",
+        "STA.ABSX 5EFE ; 61C4",
+        "JSR.ABS 6034 ; 61C7",
+        "STA.ABSX 5EFF ; 61CA",
+        "JSR.ABS 6034 ; 61CD",
+        "STA.ABSX 5F00 ; 61D0",
+        "JSR.ABS 6034 ; 61D3",
+        "STA.ABSX 5F01 ; 61D6",
+        "JSR.ABS 6034 ; 61D9",
+        "STA.ABSX 5F04 ; 61DC",
+        "STA.ABSX 5F02 ; 61DF",
+        "JSR.ABS 6034 ; 61E2",
+        "STA.ABSX 5F03 ; 61E5",
+        "JSR.ABS 6034 ; 61E8",
+        "STA.ABSX 5EF0 ; 61EB",
+        "JSR.ABS 6034 ; 61EE",
+        "STA.ABSX 5EF1 ; 61F1",
+        "LDA.# 01 ; 61F4",
+        "STA.ABSX 5EF3 ; 61F6",
+        "JMP.ABS 6048 ; 61F9",
+        "LDA.ABS 5E1B ; 61FC",
+        "BEQ 6215 ; 61FF",
+        "LDA.ABS 5E1C ; 6201",
+        "STA.ABS 6035 ; 6204",
+        "LDA.ABS 5E1D ; 6207",
+        "STA.ABS 6036 ; 620A",
+        "LDA.# 00 ; 620D",
+        "STA.ABS 5E1B ; 620F",
+        "JMP.ABS 5F6F ; 6212",
+        "LDA.ABS 5EEF ; 6215",
+        "AND.ABS 5F0F ; 6218",
+        "AND.ABS 5F2F ; 621B",
+        "AND.ABS 5F4F ; 621E",
+        "BEQ 6239 ; 6221",
+        "LDA.ABS 5F08 ; 6223",
+        "ORA.ABS 5F28 ; 6226",
+        "ORA.ABS 5F48 ; 6229",
+        "ORA.ABS 5F68 ; 622C",
+        "BNE 6239 ; 622F",
+        "LDA.# 01 ; 6231",
+        "STA.ABS 5E1E ; 6233",
+        "JMP.ABS 62E1 ; 6236",
+        "JMP.ABS 608D ; 6239",
+        "LDX.ABS 5E07 ; 623C",
+        "JSR.ABS 6034 ; 623F",
+        "STA.ABSX 5EF4 ; 6242",
+        "JSR.ABS 6034 ; 6245",
+        "STA.ABSX 5EF5 ; 6248",
+        "JMP.ABS 6048 ; 624B",
+        "LDX.ABS 5E07 ; 624E",
+        "JSR.ABS 6034 ; 6251",
+        "STA.ABSX 5EF9 ; 6254",
+        "JSR.ABS 6034 ; 6257",
+        "STA.ABSX 5EF8 ; 625A",
+        "JMP.ABS 6048 ; 625D",
+        "JSR.ABS 6034 ; 6260",
+        "STA.ABS 5E1F ; 6263",
+        "JSR.ABS 6034 ; 6266",
+        "STA.ABS 5E20 ; 6269",
+        "JSR.ABS 6034 ; 626C",
+        "STA.ABS 5E21 ; 626F",
+        "JSR.ABS 6034 ; 6272",
+        "STA.ABS 5E22 ; 6275",
+        "JSR.ABS 6034 ; 6278",
+        "STA.ABS 5E23 ; 627B",
+        "JSR.ABS 6034 ; 627E",
+        "STA.ABS 5E24 ; 6281",
+        "JSR.ABS 6034 ; 6284",
+        "STA.ABS 5E25 ; 6287",
+        "JSR.ABS 6034 ; 628A",
+        "STA.ABS 5E26 ; 628D",
+        "JMP.ABS 6048 ; 6290",
+        "LDA.# 03 ; 6293",
+        "STA.ABS D20F ; 6295",
+        "LDA.# 00 ; 6298",
+        "STA.ABS D208 ; 629A",
+        "LDX.# 00 ; 629D",
+        "STX.ABS 631A ; 629F",
+        "INX ; 62A2",
+        "STX.ABS 6310 ; 62A3",
+        "STX.ABS 6427 ; 62A6",
+        "LDX.# 00 ; 62A9",
+        "JSR.ABS 6451 ; 62AB",
+        "LDX.# 20 ; 62AE",
+        "LDY.# 02 ; 62B0",
+        "STY.ABS 631A ; 62B2",
+        "INY ; 62B5",
+        "STY.ABS 6310 ; 62B6",
+        "STY.ABS 6427 ; 62B9",
+        "JSR.ABS 6451 ; 62BC",
+        "LDX.# 40 ; 62BF",
+        "LDY.# 04 ; 62C1",
+        "STY.ABS 631A ; 62C3",
+        "INY ; 62C6",
+        "STY.ABS 6427 ; 62C7",
+        "STY.ABS 6310 ; 62CA",
+        "JSR.ABS 6451 ; 62CD",
+        "LDX.# 60 ; 62D0",
+        "LDY.# 06 ; 62D2",
+        "STY.ABS 631A ; 62D4",
+        "INY ; 62D7",
+        "STY.ABS 6310 ; 62D8",
+        "STY.ABS 6427 ; 62DB",
+        "JSR.ABS 6451 ; 62DE",
+        "JMP.ABS C28A ; 62E1",
+        "NOP ; 62E4",
+        "LDA.ABSX 5EFE ; 62E5",
+        "STA.ABS 6301 ; 62E8",
+        "LDA.ABSX 5EFF ; 62EB",
+        "STA.ABS 6302 ; 62EE",
+        "LDA.ABSX 5F00 ; 62F1",
+        "STA.ABS 6313 ; 62F4",
+        "LDA.ABSX 5F01 ; 62F7",
+        "STA.ABS 6314 ; 62FA",
+        "LDY.ABSX 5F04 ; 62FD",
+        "LDA.ABSY 660D ; 6300",
+        "STA.ABS 5E00 ; 6303",
+        "AND.# 3F ; 6306",
+        "CLC ; 6308",
+        "ADC.ABSX 5EFA ; 6309",
+        "ORA.ABSX 5EF2 ; 630C",
+        "STA.ABS D207 ; 630F",
+        "LDA.ABSY 6600 ; 6312",
+        "CLC ; 6315",
+        "ADC.ABSX 5EFC ; 6316",
+        "STA.ABS D206 ; 6319",
+        "INC.ABSX 5F05 ; 631C",
+        "INC.ABSX 5F04 ; 631F",
+        "RTS ; 6322",
+        "INC.ABSX 5F05 ; 6323",
+        "LDA.ABSX 5F05 ; 6326",
+        "CMP.ABSX 5F06 ; 6329",
+        "BNE 6333 ; 632C",
+        "LDA.# 01 ; 632E",
+        "STA.ABSX 5EEF ; 6330",
+        "JMP.ABS 6401 ; 6333",
+        "LDA.ABSX 5EF7 ; 6336",
+        "BEQ 6341 ; 6339",
+        "LDA.ABSX 5F02 ; 633B",
+        "STA.ABSX 5F04 ; 633E",
+        "LDA.# 05 ; 6341",
+        "STA.ABSX 5F07 ; 6343",
+        "JSR.ABS 62E4 ; 6346",
+        "LDA.ABSX 5F06 ; 6349",
+        "CMP.ABSX 5F05 ; 634C",
+        "BEQ 635E ; 634F",
+        "LDA.ABS 5E00 ; 6351",
+        "BMI 6357 ; 6354",
+        "RTS ; 6356",
+        "LDA.ABSX 5F02 ; 6357",
+        "STA.ABSX 5F04 ; 635A",
+        "RTS ; 635D",
+        "LDA.ABSX 5EF9 ; 635E",
+        "BEQ 637F ; 6361",
+        "STA.ABSX 5EF7 ; 6363",
+        "LDA.# 00 ; 6366",
+        "STA.ABSX 5EF9 ; 6368",
+        "STA.ABSX 5F05 ; 636B",
+        "LDA.# 07 ; 636E",
+        "STA.ABSX 5F07 ; 6370",
+        "LDA.ABSX 5EF0 ; 6373",
+        "STA.ABSX 5F06 ; 6376",
+        "LDA.ABS 5E00 ; 6379",
+        "BMI 6357 ; 637C",
+        "RTS ; 637E",
+        "LDA.# 00 ; 637F",
+        "STA.ABSX 5F05 ; 6381",
+        "LDA.# 06 ; 6384",
+        "STA.ABSX 5F07 ; 6386",
+        "LDA.ABSX 5EF0 ; 6389",
+        "STA.ABSX 5F06 ; 638C",
+        "LDA.ABSX 5F03 ; 638F",
+        "STA.ABSX 5F04 ; 6392",
+        "RTS ; 6395",
+        "JSR.ABS 659A ; 6396",
+        "LDA.ABS 5E00 ; 6399",
+        "BMI 639F ; 639C",
+        "RTS ; 639E",
+        "JMP.ABS 63CF ; 639F",
+        "JSR.ABS 62E4 ; 63A2",
+        "LDA.ABSX 5F06 ; 63A5",
+        "CMP.ABSX 5F05 ; 63A8",
+        "BEQ 639F ; 63AB",
+        "LDA.ABS 5E00 ; 63AD",
+        "BMI 6357 ; 63B0",
+        "RTS ; 63B2",
+        "JSR.ABS 62E4 ; 63B3",
+        "LDA.ABSX 5F06 ; 63B6",
+        "CMP.ABSX 5F05 ; 63B9",
+        "BEQ 63C4 ; 63BC",
+        "LDA.ABS 5E00 ; 63BE",
+        "BMI 6357 ; 63C1",
+        "RTS ; 63C3",
+        "LDA.ABSX 5EF9 ; 63C4",
+        "STA.ABSX 5EF7 ; 63C7",
+        "LDA.# 00 ; 63CA",
+        "STA.ABSX 5EF9 ; 63CC",
+        "LDA.# 01 ; 63CF",
+        "STA.ABSX 5EEF ; 63D1",
+        "LDA.ABSX 5EF7 ; 63D4",
+        "BEQ 63E7 ; 63D7",
+        "LDA.# 02 ; 63D9",
+        "STA.ABSX 5F08 ; 63DB",
+        "LDA.ABS 5E00 ; 63DE",
+        "BPL 63E6 ; 63E1",
+        "JMP.ABS 6357 ; 63E3",
+        "RTS ; 63E6",
+        "LDA.ABSX 5EF4 ; 63E7",
+        "BEQ 63FB ; 63EA",
+        "STA.ABSX 5EFB ; 63EC",
+        "LDA.ABSX 5EF5 ; 63EF",
+        "STA.ABSX 5EF6 ; 63F2",
+        "LDA.# 01 ; 63F5",
+        "STA.ABSX 5F08 ; 63F7",
+        "RTS ; 63FA",
+        "LDA.# 00 ; 63FB",
+        "STA.ABSX 5F08 ; 63FD",
+        "RTS ; 6400",
+        "LDA.ABSX 5F08 ; 6401",
+        "BNE 6407 ; 6404",
+        "RTS ; 6406",
+        "CMP.# 01 ; 6407",
+        "BNE 642A ; 6409",
+        "DEC.ABSX 5EF6 ; 640B",
+        "BNE 6420 ; 640E",
+        "LDA.ABSX 5EF5 ; 6410",
+        "STA.ABSX 5EF6 ; 6413",
+        "DEC.ABSX 5EFB ; 6416",
+        "BNE 6420 ; 6419",
+        "LDA.# 00 ; 641B",
+        "STA.ABSX 5F08 ; 641D",
+        "LDA.ABSX 5EF2 ; 6420",
+        "ORA.ABSX 5EFB ; 6423",
+        "STA.ABS D207 ; 6426",
+        "RTS ; 6429",
+        "JSR.ABS 62E4 ; 642A",
+        "LDA.ABS 5E00 ; 642D",
+        "BPL 6438 ; 6430",
+        "LDA.ABSX 5F02 ; 6432",
+        "STA.ABSX 5F04 ; 6435",
+        "DEC.ABSX 5F05 ; 6438",
+        "LDA.ABSX 5EFC ; 643B",
+        "CLC ; 643E",
+        "ADC.ABSX 5EF7 ; 643F",
+        "STA.ABSX 5EFC ; 6442",
+        "CMP.ABSX 5EF8 ; 6445",
+        "BEQ 644B ; 6448",
+        "RTS ; 644A",
+        "LDA.# 00 ; 644B",
+        "STA.ABSX 5EF7 ; 644D",
+        "RTS ; 6450",
+        "LDA.ABSX 5EFD ; 6451",
+        "BEQ 6461 ; 6454",
+        "LDA.# 0C ; 6456",
+        "STA.ABS 631A ; 6458",
+        "STA.ABS 6310 ; 645B",
+        "STA.ABS 6427 ; 645E",
+        "LDA.ABSX 5EEF ; 6461",
+        "BEQ 6469 ; 6464",
+        "JMP.ABS 6401 ; 6466",
+        "LDY.ABSX 5F07 ; 6469",
+        "LDA.ABSY 647B ; 646C",
+        "STA.ABS 6479 ; 646F",
+        "LDA.ABSY 6483 ; 6472",
+        "STA.ABS 647A ; 6475",
+        "JMP.ABS 6396 ; 6478"
+      ]
+    },
+    {
+      "address": 25723,
+      "end_address": 25739,
+      "name": "voice phase handler addresses",
+      "type": "voice-handlers",
+      "targets": [60138, 25379, 25398, 25523, 0, 25414, 25494, 25506]
+    },
+    {
+      "address": 25739,
+      "end_address": 25775,
+      "name": "retained demo stream",
+      "type": "stream",
+      "instructions": [
+        {
+          "at": 25739,
+          "channel": 0,
+          "op": "note",
+          "duration_index": 5,
+          "frequency_divider": 53
+        },
+        {
+          "at": 25741,
+          "channel": 1,
+          "op": "note",
+          "duration_index": 5,
+          "frequency_divider": 68
+        },
+        {
+          "at": 25743,
+          "channel": 2,
+          "op": "note",
+          "duration_index": 5,
+          "frequency_divider": 91
+        },
+        {
+          "at": 25745,
+          "channel": 0,
+          "op": "note",
+          "duration_index": 5,
+          "frequency_divider": 60
+        },
+        {
+          "at": 25747,
+          "channel": 1,
+          "op": "note",
+          "duration_index": 5,
+          "frequency_divider": 81
+        },
+        {
+          "at": 25749,
+          "channel": 2,
+          "op": "note",
+          "duration_index": 5,
+          "frequency_divider": 96
+        },
+        {
+          "at": 25751,
+          "channel": 0,
+          "op": "note",
+          "duration_index": 5,
+          "frequency_divider": 45
+        },
+        {
+          "at": 25753,
+          "channel": 1,
+          "op": "note",
+          "duration_index": 5,
+          "frequency_divider": 60
+        },
+        {
+          "at": 25755,
+          "channel": 2,
+          "op": "note",
+          "duration_index": 5,
+          "frequency_divider": 72
+        },
+        {
+          "at": 25757,
+          "channel": 0,
+          "op": "note",
+          "duration_index": 3,
+          "frequency_divider": 40
+        },
+        {
+          "at": 25759,
+          "channel": 1,
+          "op": "note",
+          "duration_index": 5,
+          "frequency_divider": 47
+        },
+        {
+          "at": 25761,
+          "channel": 2,
+          "op": "note",
+          "duration_index": 5,
+          "frequency_divider": 60
+        },
+        {
+          "at": 25763,
+          "channel": 0,
+          "op": "note",
+          "duration_index": 3,
+          "frequency_divider": 29
+        },
+        {
+          "at": 25765,
+          "channel": 0,
+          "op": "note",
+          "duration_index": 7,
+          "frequency_divider": 35
+        },
+        {
+          "at": 25767,
+          "channel": 1,
+          "op": "note",
+          "duration_index": 7,
+          "frequency_divider": 45
+        },
+        {
+          "at": 25769,
+          "channel": 2,
+          "op": "note",
+          "duration_index": 7,
+          "frequency_divider": 60
+        },
+        {
+          "at": 25771,
+          "channel": 0,
+          "op": "rest",
+          "duration_index": 7
+        },
+        {
+          "at": 25772,
+          "channel": 0,
+          "op": "jump",
+          "target": 9611
+        }
+      ],
+      "note": "Retained note sequence; its final jump still targets an old address outside this bank. Not a game song entry."
+    },
+    {
+      "address": 25775,
+      "end_address": 25903,
+      "name": "reset voice defaults",
+      "type": "voice-states",
+      "voices": [
+        {
+          "channel": 0,
+          "finished": 1,
+          "release_ticks": 0,
+          "gate_threshold": 0,
+          "audc_distortion_mask": 224,
+          "complex_envelope": 0,
+          "fade_initial_volume": 1,
+          "fade_period": 1,
+          "fade_countdown": 2,
+          "pitch_slide_step": 0,
+          "pitch_slide_end": 0,
+          "pending_pitch_slide_step": 0,
+          "volume_bias": 0,
+          "fade_volume": 0,
+          "base_frequency": 35,
+          "mute_or_redirect_audio": 0,
+          "control_pointer": 7992,
+          "pitch_pointer": 7998,
+          "sustain_index": 0,
+          "release_index": 0,
+          "envelope_position": 0,
+          "elapsed_ticks": 0,
+          "duration_ticks": 0,
+          "phase_handler_index": 0,
+          "post_effect_mode": 0,
+          "initialized_audf_offset": 0,
+          "initialized_audc_offset": 1,
+          "unknown_28": 0,
+          "unknown_29": 0,
+          "unknown_30": 0,
+          "unknown_31": 0
+        },
+        {
+          "channel": 1,
+          "finished": 1,
+          "release_ticks": 0,
+          "gate_threshold": 0,
+          "audc_distortion_mask": 224,
+          "complex_envelope": 0,
+          "fade_initial_volume": 1,
+          "fade_period": 1,
+          "fade_countdown": 2,
+          "pitch_slide_step": 0,
+          "pitch_slide_end": 0,
+          "pending_pitch_slide_step": 0,
+          "volume_bias": 0,
+          "fade_volume": 0,
+          "base_frequency": 35,
+          "mute_or_redirect_audio": 0,
+          "control_pointer": 7992,
+          "pitch_pointer": 7998,
+          "sustain_index": 0,
+          "release_index": 0,
+          "envelope_position": 0,
+          "elapsed_ticks": 0,
+          "duration_ticks": 0,
+          "phase_handler_index": 0,
+          "post_effect_mode": 0,
+          "initialized_audf_offset": 2,
+          "initialized_audc_offset": 3,
+          "unknown_28": 0,
+          "unknown_29": 0,
+          "unknown_30": 0,
+          "unknown_31": 0
+        },
+        {
+          "channel": 2,
+          "finished": 1,
+          "release_ticks": 0,
+          "gate_threshold": 0,
+          "audc_distortion_mask": 224,
+          "complex_envelope": 0,
+          "fade_initial_volume": 1,
+          "fade_period": 1,
+          "fade_countdown": 2,
+          "pitch_slide_step": 0,
+          "pitch_slide_end": 0,
+          "pending_pitch_slide_step": 0,
+          "volume_bias": 0,
+          "fade_volume": 0,
+          "base_frequency": 35,
+          "mute_or_redirect_audio": 0,
+          "control_pointer": 7992,
+          "pitch_pointer": 7998,
+          "sustain_index": 0,
+          "release_index": 0,
+          "envelope_position": 0,
+          "elapsed_ticks": 0,
+          "duration_ticks": 0,
+          "phase_handler_index": 0,
+          "post_effect_mode": 0,
+          "initialized_audf_offset": 4,
+          "initialized_audc_offset": 5,
+          "unknown_28": 0,
+          "unknown_29": 0,
+          "unknown_30": 0,
+          "unknown_31": 0
+        },
+        {
+          "channel": 3,
+          "finished": 1,
+          "release_ticks": 0,
+          "gate_threshold": 0,
+          "audc_distortion_mask": 224,
+          "complex_envelope": 0,
+          "fade_initial_volume": 1,
+          "fade_period": 1,
+          "fade_countdown": 2,
+          "pitch_slide_step": 0,
+          "pitch_slide_end": 0,
+          "pending_pitch_slide_step": 0,
+          "volume_bias": 0,
+          "fade_volume": 0,
+          "base_frequency": 35,
+          "mute_or_redirect_audio": 0,
+          "control_pointer": 7992,
+          "pitch_pointer": 7998,
+          "sustain_index": 0,
+          "release_index": 0,
+          "envelope_position": 0,
+          "elapsed_ticks": 0,
+          "duration_ticks": 0,
+          "phase_handler_index": 0,
+          "post_effect_mode": 0,
+          "initialized_audf_offset": 6,
+          "initialized_audc_offset": 7,
+          "unknown_28": 0,
+          "unknown_29": 0,
+          "unknown_30": 0,
+          "unknown_31": 0
+        }
+      ],
+      "note": "Final six bytes retain initialized register offsets and four fields whose consumers are not established."
+    },
+    {
+      "address": 25903,
+      "end_address": 25994,
+      "name": "reset state and install OS VBI",
+      "type": "assembly",
+      "instructions": [
+        "LDA.# 00 ; 652F",
+        "STA.ABS 5E1B ; 6531",
+        "LDA.# 01 ; 6534",
+        "STA.ABS 5E1E ; 6536",
+        "LDX.# 7F ; 6539",
+        "LDA.ABSX 64AF ; 653B",
+        "STA.ABSX 5EEF ; 653E",
+        "DEX ; 6541",
+        "BPL 653B ; 6542",
+        "LDX.# 00 ; 6544",
+        "LDA.ABSX 658A ; 6546",
+        "STA.ABSX 5E1F ; 6549",
+        "INX ; 654C",
+        "CPX.# 10 ; 654D",
+        "BNE 6546 ; 654F",
+        "RTS ; 6551",
+        "LDA.# 01 ; 6552",
+        "STA.ZP 42 ; 6554",
+        "LDX.# FF ; 6556",
+        "LDY.# 64 ; 6558",
+        "DEY ; 655A",
+        "BNE 655A ; 655B",
+        "DEX ; 655D",
+        "BNE 6558 ; 655E",
+        "LDA.ABS 5E08 ; 6560",
+        "CMP.# B2 ; 6563",
+        "BEQ 6582 ; 6565",
+        "LDA.ABS 0224 ; 6567",
+        "STA.ABS 62E2 ; 656A",
+        "LDA.ABS 0225 ; 656D",
+        "STA.ABS 62E3 ; 6570",
+        "LDA.# 6F ; 6573",
+        "STA.ABS 0224 ; 6575",
+        "LDA.# 5F ; 6578",
+        "STA.ABS 0225 ; 657A",
+        "LDA.# B2 ; 657D",
+        "STA.ABS 5E08 ; 657F",
+        "LDA.# 00 ; 6582",
+        "STA.ZP 42 ; 6584",
+        "NOP ; 6586",
+        "NOP ; 6587",
+        "NOP ; 6588",
+        "RTS ; 6589"
+      ]
+    },
+    {
+      "address": 25994,
+      "end_address": 26002,
+      "name": "reset duration values",
+      "type": "byte-table",
+      "values": [4, 8, 12, 16, 24, 32, 48, 64]
+    },
+    {
+      "address": 26002,
+      "end_address": 26010,
+      "name": "reset command registers",
+      "type": "fields",
+      "fields": [
+        {
+          "name": "command_register_0",
+          "bytes": 1,
+          "value": 0
+        },
+        {
+          "name": "command_register_1",
+          "bytes": 1,
+          "value": 0
+        },
+        {
+          "name": "command_register_2",
+          "bytes": 1,
+          "value": 0
+        },
+        {
+          "name": "command_register_3",
+          "bytes": 1,
+          "value": 0
+        },
+        {
+          "name": "command_register_4",
+          "bytes": 1,
+          "value": 0
+        },
+        {
+          "name": "command_register_5",
+          "bytes": 1,
+          "value": 0
+        },
+        {
+          "name": "command_register_6",
+          "bytes": 1,
+          "value": 0
+        },
+        {
+          "name": "command_register_7",
+          "bytes": 1,
+          "value": 0
+        }
+      ]
+    },
+    {
+      "address": 26010,
+      "end_address": 26019,
+      "name": "envelope phase helper",
+      "type": "assembly",
+      "instructions": [
+        "JSR.ABS 62E4 ; 659A",
+        "LDA.# 00 ; 659D",
+        "STA.ABSX 5EF7 ; 659F",
+        "RTS ; 65A2"
+      ]
+    },
+    {
+      "address": 26019,
+      "end_address": 26022,
+      "name": "retained indirect-jump fragment",
+      "type": "assembly",
+      "instructions": [
+        "JMP.IND 000A ; 65A3"
+      ],
+      "note": "JMP.IND $000A retained between the live helper and old marker; no game caller established."
+    },
+    {
+      "address": 26022,
+      "end_address": 26024,
+      "name": "retained marker",
+      "type": "fields",
+      "fields": [
+        {
+          "name": "marker",
+          "bytes": 2,
+          "value": 65535
+        }
+      ]
+    },
+    {
+      "address": 26024,
+      "end_address": 26112,
+      "name": "unused bank gap",
+      "type": "fill",
+      "value": 0,
+      "count": 88
+    },
+    {
+      "address": 26112,
+      "end_address": 26125,
+      "name": "pitch envelope 0",
+      "type": "pitch-envelope",
+      "steps": [1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0]
+    },
+    {
+      "address": 26125,
+      "end_address": 26138,
+      "name": "control envelope 0",
+      "type": "control-envelope",
+      "steps": [
+        {
+          "volume": 2,
+          "loop": false,
+          "flag6": false
+        },
+        {
+          "volume": 3,
+          "loop": false,
+          "flag6": false
+        },
+        {
+          "volume": 4,
+          "loop": false,
+          "flag6": false
+        },
+        {
+          "volume": 4,
+          "loop": false,
+          "flag6": false
+        },
+        {
+          "volume": 4,
+          "loop": false,
+          "flag6": false
+        },
+        {
+          "volume": 4,
+          "loop": false,
+          "flag6": false
+        },
+        {
+          "volume": 4,
+          "loop": false,
+          "flag6": false
+        },
+        {
+          "volume": 4,
+          "loop": false,
+          "flag6": false
+        },
+        {
+          "volume": 4,
+          "loop": false,
+          "flag6": false
+        },
+        {
+          "volume": 4,
+          "loop": true,
+          "flag6": false
+        },
+        {
+          "volume": 2,
+          "loop": false,
+          "flag6": false
+        },
+        {
+          "volume": 2,
+          "loop": false,
+          "flag6": false
+        },
+        {
+          "volume": 1,
+          "loop": true,
+          "flag6": false
+        }
+      ],
+      "note": "Bit7 selects envelope looping. Bit6 is retained explicitly; no additional meaning is claimed."
+    },
+    {
+      "address": 26138,
+      "end_address": 26140,
+      "name": "pitch envelope 1",
+      "type": "pitch-envelope",
+      "steps": [0, 0]
+    },
+    {
+      "address": 26140,
+      "end_address": 26142,
+      "name": "control envelope 1",
+      "type": "control-envelope",
+      "steps": [
+        {
+          "volume": 5,
+          "loop": false,
+          "flag6": false
+        },
+        {
+          "volume": 5,
+          "loop": true,
+          "flag6": false
+        }
+      ],
+      "note": "Bit7 selects envelope looping. Bit6 is retained explicitly; no additional meaning is claimed."
+    },
+    {
+      "address": 26142,
+      "end_address": 26149,
+      "name": "pitch envelope 2",
+      "type": "pitch-envelope",
+      "steps": [0, 0, 0, 0, -2, 1, -2]
+    },
+    {
+      "address": 26149,
+      "end_address": 26164,
+      "name": "control envelope 2",
+      "type": "control-envelope",
+      "steps": [
+        {
+          "volume": 2,
+          "loop": false,
+          "flag6": false
+        },
+        {
+          "volume": 4,
+          "loop": false,
+          "flag6": false
+        },
+        {
+          "volume": 5,
+          "loop": false,
+          "flag6": false
+        },
+        {
+          "volume": 5,
+          "loop": true,
+          "flag6": false
+        },
+        {
+          "volume": 3,
+          "loop": false,
+          "flag6": false
+        },
+        {
+          "volume": 3,
+          "loop": false,
+          "flag6": false
+        },
+        {
+          "volume": 2,
+          "loop": true,
+          "flag6": false
+        },
+        {
+          "volume": 0,
+          "loop": false,
+          "flag6": false
+        },
+        {
+          "volume": 0,
+          "loop": false,
+          "flag6": false
+        },
+        {
+          "volume": 0,
+          "loop": false,
+          "flag6": false
+        },
+        {
+          "volume": 0,
+          "loop": false,
+          "flag6": false
+        },
+        {
+          "volume": 3,
+          "loop": false,
+          "flag6": false
+        },
+        {
+          "volume": 6,
+          "loop": false,
+          "flag6": false
+        },
+        {
+          "volume": 6,
+          "loop": false,
+          "flag6": false
+        },
+        {
+          "volume": 6,
+          "loop": true,
+          "flag6": false
+        }
+      ],
+      "note": "Bit7 selects envelope looping. Bit6 is retained explicitly; no additional meaning is claimed."
+    },
+    {
+      "address": 26164,
+      "end_address": 26183,
+      "name": "pitch envelope 3",
+      "type": "pitch-envelope",
+      "steps": [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    },
+    {
+      "address": 26183,
+      "end_address": 26202,
+      "name": "control envelope 3",
+      "type": "control-envelope",
+      "steps": [
+        {
+          "volume": 3,
+          "loop": false,
+          "flag6": false
+        },
+        {
+          "volume": 6,
+          "loop": false,
+          "flag6": false
+        },
+        {
+          "volume": 5,
+          "loop": false,
+          "flag6": false
+        },
+        {
+          "volume": 5,
+          "loop": false,
+          "flag6": false
+        },
+        {
+          "volume": 4,
+          "loop": false,
+          "flag6": false
+        },
+        {
+          "volume": 4,
+          "loop": false,
+          "flag6": false
+        },
+        {
+          "volume": 5,
+          "loop": false,
+          "flag6": false
+        },
+        {
+          "volume": 5,
+          "loop": false,
+          "flag6": false
+        },
+        {
+          "volume": 6,
+          "loop": false,
+          "flag6": false
+        },
+        {
+          "volume": 6,
+          "loop": false,
+          "flag6": false
+        },
+        {
+          "volume": 5,
+          "loop": false,
+          "flag6": false
+        },
+        {
+          "volume": 4,
+          "loop": false,
+          "flag6": false
+        },
+        {
+          "volume": 4,
+          "loop": true,
+          "flag6": false
+        },
+        {
+          "volume": 3,
+          "loop": false,
+          "flag6": false
+        },
+        {
+          "volume": 2,
+          "loop": false,
+          "flag6": false
+        },
+        {
+          "volume": 2,
+          "loop": false,
+          "flag6": false
+        },
+        {
+          "volume": 1,
+          "loop": false,
+          "flag6": false
+        },
+        {
+          "volume": 1,
+          "loop": false,
+          "flag6": false
+        },
+        {
+          "volume": 1,
+          "loop": true,
+          "flag6": false
+        }
+      ],
+      "note": "Bit7 selects envelope looping. Bit6 is retained explicitly; no additional meaning is claimed."
+    },
+    {
+      "address": 26202,
+      "end_address": 26213,
+      "name": "pitch envelope 4",
+      "type": "pitch-envelope",
+      "steps": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    },
+    {
+      "address": 26213,
+      "end_address": 26224,
+      "name": "control envelope 4",
+      "type": "control-envelope",
+      "steps": [
+        {
+          "volume": 3,
+          "loop": false,
+          "flag6": false
+        },
+        {
+          "volume": 3,
+          "loop": false,
+          "flag6": false
+        },
+        {
+          "volume": 3,
+          "loop": false,
+          "flag6": false
+        },
+        {
+          "volume": 3,
+          "loop": false,
+          "flag6": false
+        },
+        {
+          "volume": 3,
+          "loop": false,
+          "flag6": false
+        },
+        {
+          "volume": 2,
+          "loop": false,
+          "flag6": false
+        },
+        {
+          "volume": 2,
+          "loop": false,
+          "flag6": false
+        },
+        {
+          "volume": 2,
+          "loop": false,
+          "flag6": false
+        },
+        {
+          "volume": 2,
+          "loop": false,
+          "flag6": false
+        },
+        {
+          "volume": 2,
+          "loop": true,
+          "flag6": false
+        },
+        {
+          "volume": 2,
+          "loop": true,
+          "flag6": false
+        }
+      ],
+      "note": "Bit7 selects envelope looping. Bit6 is retained explicitly; no additional meaning is claimed."
+    },
+    {
+      "address": 26224,
+      "end_address": 26229,
+      "name": "pitch envelope 5",
+      "type": "pitch-envelope",
+      "steps": [0, 0, 0, 2, 2]
+    },
+    {
+      "address": 26229,
+      "end_address": 26234,
+      "name": "control envelope 5",
+      "type": "control-envelope",
+      "steps": [
+        {
+          "volume": 3,
+          "loop": false,
+          "flag6": false
+        },
+        {
+          "volume": 4,
+          "loop": false,
+          "flag6": false
+        },
+        {
+          "volume": 5,
+          "loop": false,
+          "flag6": false
+        },
+        {
+          "volume": 6,
+          "loop": false,
+          "flag6": false
+        },
+        {
+          "volume": 6,
+          "loop": true,
+          "flag6": false
+        }
+      ],
+      "note": "Bit7 selects envelope looping. Bit6 is retained explicitly; no additional meaning is claimed."
+    },
+    {
+      "address": 26234,
+      "end_address": 26243,
+      "name": "pitch envelope 6",
+      "type": "pitch-envelope",
+      "steps": [0, 0, 0, 0, 0, 0, 0, 0, 0]
+    },
+    {
+      "address": 26243,
+      "end_address": 26252,
+      "name": "control envelope 6",
+      "type": "control-envelope",
+      "steps": [
+        {
+          "volume": 3,
+          "loop": false,
+          "flag6": false
+        },
+        {
+          "volume": 6,
+          "loop": false,
+          "flag6": false
+        },
+        {
+          "volume": 10,
+          "loop": false,
+          "flag6": false
+        },
+        {
+          "volume": 14,
+          "loop": false,
+          "flag6": false
+        },
+        {
+          "volume": 8,
+          "loop": false,
+          "flag6": false
+        },
+        {
+          "volume": 7,
+          "loop": true,
+          "flag6": false
+        },
+        {
+          "volume": 3,
+          "loop": false,
+          "flag6": false
+        },
+        {
+          "volume": 2,
+          "loop": false,
+          "flag6": false
+        },
+        {
+          "volume": 1,
+          "loop": true,
+          "flag6": false
+        }
+      ],
+      "note": "Bit7 selects envelope looping. Bit6 is retained explicitly; no additional meaning is claimed."
+    },
+    {
+      "address": 26252,
+      "end_address": 26258,
+      "name": "pitch envelope 7",
+      "type": "pitch-envelope",
+      "steps": [0, 2, -2, 2, 0, 0]
+    },
+    {
+      "address": 26258,
+      "end_address": 26264,
+      "name": "control envelope 7",
+      "type": "control-envelope",
+      "steps": [
+        {
+          "volume": 14,
+          "loop": false,
+          "flag6": false
+        },
+        {
+          "volume": 14,
+          "loop": false,
+          "flag6": false
+        },
+        {
+          "volume": 14,
+          "loop": false,
+          "flag6": false
+        },
+        {
+          "volume": 14,
+          "loop": false,
+          "flag6": false
+        },
+        {
+          "volume": 15,
+          "loop": false,
+          "flag6": false
+        },
+        {
+          "volume": 10,
+          "loop": true,
+          "flag6": false
+        }
+      ],
+      "note": "Bit7 selects envelope looping. Bit6 is retained explicitly; no additional meaning is claimed."
+    },
+    {
+      "address": 26264,
+      "end_address": 26391,
+      "name": "command dispatcher",
+      "type": "stream",
+      "commands": [],
+      "instructions": [
+        {
+          "at": 26264,
+          "channel": 0,
+          "op": "durations",
+          "duration_0": 2,
+          "duration_1": 4,
+          "duration_2": 6,
+          "duration_3": 8,
+          "duration_4": 12,
+          "duration_5": 16,
+          "duration_6": 24,
+          "duration_7": 32
+        },
+        {
+          "at": 26273,
+          "channel": 0,
+          "op": "store",
+          "address": 25241,
+          "value": 0
+        },
+        {
+          "at": 26277,
+          "channel": 0,
+          "op": "call-if-register",
+          "register": 0,
+          "equals": 1,
+          "target": 26391
+        },
+        {
+          "at": 26282,
+          "channel": 0,
+          "op": "call-if-register",
+          "register": 0,
+          "equals": 2,
+          "target": 26420
+        },
+        {
+          "at": 26287,
+          "channel": 0,
+          "op": "call-if-register",
+          "register": 0,
+          "equals": 7,
+          "target": 26449
+        },
+        {
+          "at": 26292,
+          "channel": 0,
+          "op": "call-if-register",
+          "register": 0,
+          "equals": 8,
+          "target": 26475
+        },
+        {
+          "at": 26297,
+          "channel": 0,
+          "op": "call-if-register",
+          "register": 0,
+          "equals": 10,
+          "target": 26502
+        },
+        {
+          "at": 26302,
+          "channel": 0,
+          "op": "call-if-register",
+          "register": 0,
+          "equals": 11,
+          "target": 26567
+        },
+        {
+          "at": 26307,
+          "channel": 0,
+          "op": "call-if-register",
+          "register": 0,
+          "equals": 12,
+          "target": 26534
+        },
+        {
+          "at": 26312,
+          "channel": 0,
+          "op": "call-if-register",
+          "register": 0,
+          "equals": 14,
+          "target": 26420
+        },
+        {
+          "at": 26317,
+          "channel": 0,
+          "op": "call-if-register",
+          "register": 0,
+          "equals": 15,
+          "target": 26618
+        },
+        {
+          "at": 26322,
+          "channel": 0,
+          "op": "call-if-register",
+          "register": 0,
+          "equals": 16,
+          "target": 26391
+        },
+        {
+          "at": 26327,
+          "channel": 0,
+          "op": "call-if-register",
+          "register": 0,
+          "equals": 19,
+          "target": 26693
+        },
+        {
+          "at": 26332,
+          "channel": 0,
+          "op": "call-if-register",
+          "register": 0,
+          "equals": 20,
+          "target": 26713
+        },
+        {
+          "at": 26337,
+          "channel": 0,
+          "op": "call-if-register",
+          "register": 0,
+          "equals": 21,
+          "target": 26738
+        },
+        {
+          "at": 26342,
+          "channel": 0,
+          "op": "call-if-register",
+          "register": 0,
+          "equals": 22,
+          "target": 26764
+        },
+        {
+          "at": 26347,
+          "channel": 0,
+          "op": "call-if-register",
+          "register": 0,
+          "equals": 25,
+          "target": 26933
+        },
+        {
+          "at": 26352,
+          "channel": 0,
+          "op": "call-if-register",
+          "register": 0,
+          "equals": 28,
+          "target": 26784
+        },
+        {
+          "at": 26357,
+          "channel": 0,
+          "op": "call-if-register",
+          "register": 0,
+          "equals": 31,
+          "target": 26804
+        },
+        {
+          "at": 26362,
+          "channel": 0,
+          "op": "call-if-register",
+          "register": 0,
+          "equals": 32,
+          "target": 26831
+        },
+        {
+          "at": 26367,
+          "channel": 0,
+          "op": "call-if-register",
+          "register": 0,
+          "equals": 33,
+          "target": 26858
+        },
+        {
+          "at": 26372,
+          "channel": 0,
+          "op": "call-if-register",
+          "register": 0,
+          "equals": 35,
+          "target": 26894
+        },
+        {
+          "at": 26377,
+          "channel": 0,
+          "op": "call-if-register",
+          "register": 0,
+          "equals": 40,
+          "target": 26594
+        },
+        {
+          "at": 26382,
+          "channel": 0,
+          "op": "call-if-register",
+          "register": 0,
+          "equals": 80,
+          "target": 27084
+        },
+        {
+          "at": 26387,
+          "channel": 0,
+          "op": "jump",
+          "target": 26264
+        },
+        {
+          "at": 26390,
+          "channel": 0,
+          "op": "return-or-end"
+        }
+      ]
+    },
+    {
+      "address": 26391,
+      "end_address": 26420,
+      "name": "sound effect 1,16",
+      "type": "stream",
+      "commands": [1, 16],
+      "instructions": [
+        {
+          "at": 26391,
+          "channel": 0,
+          "op": "store",
+          "address": 24103,
+          "value": 0
+        },
+        {
+          "at": 26395,
+          "channel": 0,
+          "op": "store",
+          "address": 24306,
+          "value": 160
+        },
+        {
+          "at": 26399,
+          "channel": 0,
+          "op": "simple-envelope",
+          "control_pointer": 26229,
+          "pitch_pointer": 26224,
+          "start_index": 3
+        },
+        {
+          "at": 26405,
+          "channel": 0,
+          "op": "pitch-slide",
+          "step": 1,
+          "end_frequency": 19
+        },
+        {
+          "at": 26408,
+          "channel": 0,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 14
+        },
+        {
+          "at": 26410,
+          "channel": 0,
+          "op": "rest",
+          "duration_index": 1
+        },
+        {
+          "at": 26411,
+          "channel": 0,
+          "op": "simple-envelope",
+          "control_pointer": 26258,
+          "pitch_pointer": 26252,
+          "start_index": 4
+        },
+        {
+          "at": 26417,
+          "channel": 0,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 19
+        },
+        {
+          "at": 26419,
+          "channel": 0,
+          "op": "return-or-end"
+        }
+      ]
+    },
+    {
+      "address": 26420,
+      "end_address": 26449,
+      "name": "sound effect 2,14",
+      "type": "stream",
+      "commands": [2, 14],
+      "instructions": [
+        {
+          "at": 26420,
+          "channel": 0,
+          "op": "store",
+          "address": 24306,
+          "value": 160
+        },
+        {
+          "at": 26424,
+          "channel": 0,
+          "op": "simple-envelope",
+          "control_pointer": 26229,
+          "pitch_pointer": 26224,
+          "start_index": 3
+        },
+        {
+          "at": 26430,
+          "channel": 0,
+          "op": "pitch-slide",
+          "step": -1,
+          "end_frequency": 14
+        },
+        {
+          "at": 26433,
+          "channel": 0,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 19
+        },
+        {
+          "at": 26435,
+          "channel": 0,
+          "op": "rest",
+          "duration_index": 1
+        },
+        {
+          "at": 26436,
+          "channel": 0,
+          "op": "simple-envelope",
+          "control_pointer": 26258,
+          "pitch_pointer": 26252,
+          "start_index": 4
+        },
+        {
+          "at": 26442,
+          "channel": 0,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 14
+        },
+        {
+          "at": 26444,
+          "channel": 0,
+          "op": "store",
+          "address": 24103,
+          "value": 0
+        },
+        {
+          "at": 26448,
+          "channel": 0,
+          "op": "return-or-end"
+        }
+      ]
+    },
+    {
+      "address": 26449,
+      "end_address": 26475,
+      "name": "sound effect 7",
+      "type": "stream",
+      "commands": [7],
+      "instructions": [
+        {
+          "at": 26449,
+          "channel": 0,
+          "op": "store",
+          "address": 24306,
+          "value": 160
+        },
+        {
+          "at": 26453,
+          "channel": 0,
+          "op": "envelope",
+          "control_pointer": 26243,
+          "pitch_pointer": 26234,
+          "sustain_index": 4,
+          "release_index": 6,
+          "release_ticks": 3,
+          "gate_threshold": 8
+        },
+        {
+          "at": 26462,
+          "channel": 0,
+          "op": "pitch-slide",
+          "step": -1,
+          "end_frequency": 11
+        },
+        {
+          "at": 26465,
+          "channel": 0,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 17
+        },
+        {
+          "at": 26467,
+          "channel": 0,
+          "op": "rest",
+          "duration_index": 0
+        },
+        {
+          "at": 26468,
+          "channel": 0,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 11
+        },
+        {
+          "at": 26470,
+          "channel": 0,
+          "op": "store",
+          "address": 24103,
+          "value": 0
+        },
+        {
+          "at": 26474,
+          "channel": 0,
+          "op": "return-or-end"
+        }
+      ]
+    },
+    {
+      "address": 26475,
+      "end_address": 26502,
+      "name": "sound effect 8",
+      "type": "stream",
+      "commands": [8],
+      "instructions": [
+        {
+          "at": 26475,
+          "channel": 0,
+          "op": "store",
+          "address": 24306,
+          "value": 128
+        },
+        {
+          "at": 26479,
+          "channel": 0,
+          "op": "simple-envelope",
+          "control_pointer": 26229,
+          "pitch_pointer": 26224,
+          "start_index": 3
+        },
+        {
+          "at": 26485,
+          "channel": 0,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 13
+        },
+        {
+          "at": 26487,
+          "channel": 0,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 7
+        },
+        {
+          "at": 26489,
+          "channel": 0,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 5
+        },
+        {
+          "at": 26491,
+          "channel": 0,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 9
+        },
+        {
+          "at": 26493,
+          "channel": 0,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 5
+        },
+        {
+          "at": 26495,
+          "channel": 0,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 1
+        },
+        {
+          "at": 26497,
+          "channel": 0,
+          "op": "store",
+          "address": 24103,
+          "value": 0
+        },
+        {
+          "at": 26501,
+          "channel": 0,
+          "op": "return-or-end"
+        }
+      ]
+    },
+    {
+      "address": 26502,
+      "end_address": 26534,
+      "name": "sound effect 10",
+      "type": "stream",
+      "commands": [10],
+      "instructions": [
+        {
+          "at": 26502,
+          "channel": 1,
+          "op": "fade",
+          "initial_volume": 8,
+          "period": 3
+        },
+        {
+          "at": 26505,
+          "channel": 0,
+          "op": "store",
+          "address": 24306,
+          "value": 128
+        },
+        {
+          "at": 26509,
+          "channel": 1,
+          "op": "store",
+          "address": 24338,
+          "value": 160
+        },
+        {
+          "at": 26513,
+          "channel": 0,
+          "op": "simple-envelope",
+          "control_pointer": 26258,
+          "pitch_pointer": 26252,
+          "start_index": 4
+        },
+        {
+          "at": 26519,
+          "channel": 1,
+          "op": "simple-envelope",
+          "control_pointer": 26258,
+          "pitch_pointer": 26252,
+          "start_index": 4
+        },
+        {
+          "at": 26525,
+          "channel": 0,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 11
+        },
+        {
+          "at": 26527,
+          "channel": 1,
+          "op": "note",
+          "duration_index": 1,
+          "frequency_divider": 7
+        },
+        {
+          "at": 26529,
+          "channel": 0,
+          "op": "store",
+          "address": 24103,
+          "value": 0
+        },
+        {
+          "at": 26533,
+          "channel": 0,
+          "op": "return-or-end"
+        }
+      ]
+    },
+    {
+      "address": 26534,
+      "end_address": 26567,
+      "name": "sound effect 12",
+      "type": "stream",
+      "commands": [12],
+      "instructions": [
+        {
+          "at": 26534,
+          "channel": 0,
+          "op": "simple-envelope",
+          "control_pointer": 26229,
+          "pitch_pointer": 26224,
+          "start_index": 3
+        },
+        {
+          "at": 26540,
+          "channel": 0,
+          "op": "store",
+          "address": 24306,
+          "value": 128
+        },
+        {
+          "at": 26544,
+          "channel": 0,
+          "op": "store",
+          "address": 24314,
+          "value": 2
+        },
+        {
+          "at": 26548,
+          "channel": 0,
+          "op": "pitch-slide",
+          "step": 1,
+          "end_frequency": 15
+        },
+        {
+          "at": 26551,
+          "channel": 0,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 5
+        },
+        {
+          "at": 26553,
+          "channel": 0,
+          "op": "rest",
+          "duration_index": 0
+        },
+        {
+          "at": 26554,
+          "channel": 0,
+          "op": "simple-envelope",
+          "control_pointer": 26258,
+          "pitch_pointer": 26252,
+          "start_index": 4
+        },
+        {
+          "at": 26560,
+          "channel": 0,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 15
+        },
+        {
+          "at": 26562,
+          "channel": 0,
+          "op": "store",
+          "address": 24103,
+          "value": 0
+        },
+        {
+          "at": 26566,
+          "channel": 0,
+          "op": "return-or-end"
+        }
+      ]
+    },
+    {
+      "address": 26567,
+      "end_address": 26594,
+      "name": "sound effect 11",
+      "type": "stream",
+      "commands": [11],
+      "instructions": [
+        {
+          "at": 26567,
+          "channel": 0,
+          "op": "simple-envelope",
+          "control_pointer": 26229,
+          "pitch_pointer": 26224,
+          "start_index": 3
+        },
+        {
+          "at": 26573,
+          "channel": 0,
+          "op": "store",
+          "address": 24306,
+          "value": 128
+        },
+        {
+          "at": 26577,
+          "channel": 0,
+          "op": "store",
+          "address": 24314,
+          "value": 2
+        },
+        {
+          "at": 26581,
+          "channel": 0,
+          "op": "pitch-slide",
+          "step": -1,
+          "end_frequency": 5
+        },
+        {
+          "at": 26584,
+          "channel": 0,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 15
+        },
+        {
+          "at": 26586,
+          "channel": 0,
+          "op": "rest",
+          "duration_index": 0
+        },
+        {
+          "at": 26587,
+          "channel": 0,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 5
+        },
+        {
+          "at": 26589,
+          "channel": 0,
+          "op": "store",
+          "address": 24103,
+          "value": 0
+        },
+        {
+          "at": 26593,
+          "channel": 0,
+          "op": "return-or-end"
+        }
+      ]
+    },
+    {
+      "address": 26594,
+      "end_address": 26618,
+      "name": "sound effect 40",
+      "type": "stream",
+      "commands": [40],
+      "instructions": [
+        {
+          "at": 26594,
+          "channel": 0,
+          "op": "store",
+          "address": 24306,
+          "value": 32
+        },
+        {
+          "at": 26598,
+          "channel": 0,
+          "op": "simple-envelope",
+          "control_pointer": 26140,
+          "pitch_pointer": 26138,
+          "start_index": 0
+        },
+        {
+          "at": 26604,
+          "channel": 0,
+          "op": "pitch-slide",
+          "step": -1,
+          "end_frequency": 7
+        },
+        {
+          "at": 26607,
+          "channel": 0,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 27
+        },
+        {
+          "at": 26609,
+          "channel": 0,
+          "op": "rest",
+          "duration_index": 5
+        },
+        {
+          "at": 26610,
+          "channel": 0,
+          "op": "rest",
+          "duration_index": 1
+        },
+        {
+          "at": 26611,
+          "channel": 0,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 7
+        },
+        {
+          "at": 26613,
+          "channel": 0,
+          "op": "store",
+          "address": 24103,
+          "value": 0
+        },
+        {
+          "at": 26617,
+          "channel": 0,
+          "op": "return-or-end"
+        }
+      ]
+    },
+    {
+      "address": 26618,
+      "end_address": 26693,
+      "name": "sound effect 15",
+      "type": "stream",
+      "commands": [15],
+      "instructions": [
+        {
+          "at": 26618,
+          "channel": 1,
+          "op": "store",
+          "address": 24338,
+          "value": 160
+        },
+        {
+          "at": 26622,
+          "channel": 2,
+          "op": "store",
+          "address": 24370,
+          "value": 160
+        },
+        {
+          "at": 26626,
+          "channel": 1,
+          "op": "simple-envelope",
+          "control_pointer": 26258,
+          "pitch_pointer": 26252,
+          "start_index": 4
+        },
+        {
+          "at": 26632,
+          "channel": 2,
+          "op": "simple-envelope",
+          "control_pointer": 26258,
+          "pitch_pointer": 26252,
+          "start_index": 4
+        },
+        {
+          "at": 26638,
+          "channel": 1,
+          "op": "fade",
+          "initial_volume": 8,
+          "period": 1
+        },
+        {
+          "at": 26641,
+          "channel": 2,
+          "op": "fade",
+          "initial_volume": 8,
+          "period": 1
+        },
+        {
+          "at": 26644,
+          "channel": 1,
+          "op": "note",
+          "duration_index": 7,
+          "frequency_divider": 23
+        },
+        {
+          "at": 26646,
+          "channel": 2,
+          "op": "note",
+          "duration_index": 7,
+          "frequency_divider": 26
+        },
+        {
+          "at": 26648,
+          "channel": 1,
+          "op": "note",
+          "duration_index": 7,
+          "frequency_divider": 31
+        },
+        {
+          "at": 26650,
+          "channel": 2,
+          "op": "note",
+          "duration_index": 7,
+          "frequency_divider": 35
+        },
+        {
+          "at": 26652,
+          "channel": 1,
+          "op": "note",
+          "duration_index": 7,
+          "frequency_divider": 23
+        },
+        {
+          "at": 26654,
+          "channel": 2,
+          "op": "note",
+          "duration_index": 7,
+          "frequency_divider": 26
+        },
+        {
+          "at": 26656,
+          "channel": 1,
+          "op": "note",
+          "duration_index": 7,
+          "frequency_divider": 31
+        },
+        {
+          "at": 26658,
+          "channel": 2,
+          "op": "note",
+          "duration_index": 7,
+          "frequency_divider": 35
+        },
+        {
+          "at": 26660,
+          "channel": 1,
+          "op": "note",
+          "duration_index": 7,
+          "frequency_divider": 23
+        },
+        {
+          "at": 26662,
+          "channel": 2,
+          "op": "note",
+          "duration_index": 7,
+          "frequency_divider": 26
+        },
+        {
+          "at": 26664,
+          "channel": 1,
+          "op": "note",
+          "duration_index": 7,
+          "frequency_divider": 31
+        },
+        {
+          "at": 26666,
+          "channel": 2,
+          "op": "note",
+          "duration_index": 7,
+          "frequency_divider": 35
+        },
+        {
+          "at": 26668,
+          "channel": 0,
+          "op": "store",
+          "address": 24103,
+          "value": 0
+        },
+        {
+          "at": 26672,
+          "channel": 0,
+          "op": "return-or-end"
+        },
+        {
+          "at": 26673,
+          "channel": 1,
+          "op": "store",
+          "address": 24338,
+          "value": 128
+        },
+        {
+          "at": 26677,
+          "channel": 1,
+          "op": "simple-envelope",
+          "control_pointer": 26258,
+          "pitch_pointer": 26252,
+          "start_index": 4
+        },
+        {
+          "at": 26683,
+          "channel": 1,
+          "op": "fade",
+          "initial_volume": 8,
+          "period": 1
+        },
+        {
+          "at": 26686,
+          "channel": 1,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 7
+        },
+        {
+          "at": 26688,
+          "channel": 0,
+          "op": "store",
+          "address": 24103,
+          "value": 0
+        },
+        {
+          "at": 26692,
+          "channel": 0,
+          "op": "return-or-end"
+        }
+      ]
+    },
+    {
+      "address": 26693,
+      "end_address": 26713,
+      "name": "sound effect 19",
+      "type": "stream",
+      "commands": [19],
+      "instructions": [
+        {
+          "at": 26693,
+          "channel": 1,
+          "op": "envelope",
+          "control_pointer": 26243,
+          "pitch_pointer": 26234,
+          "sustain_index": 4,
+          "release_index": 6,
+          "release_ticks": 3,
+          "gate_threshold": 8
+        },
+        {
+          "at": 26702,
+          "channel": 1,
+          "op": "store",
+          "address": 24338,
+          "value": 192
+        },
+        {
+          "at": 26706,
+          "channel": 1,
+          "op": "note",
+          "duration_index": 5,
+          "frequency_divider": 72
+        },
+        {
+          "at": 26708,
+          "channel": 1,
+          "op": "store",
+          "address": 24103,
+          "value": 0
+        },
+        {
+          "at": 26712,
+          "channel": 0,
+          "op": "return-or-end"
+        }
+      ]
+    },
+    {
+      "address": 26713,
+      "end_address": 26738,
+      "name": "sound effect 20",
+      "type": "stream",
+      "commands": [20],
+      "instructions": [
+        {
+          "at": 26713,
+          "channel": 1,
+          "op": "simple-envelope",
+          "control_pointer": 26258,
+          "pitch_pointer": 26252,
+          "start_index": 4
+        },
+        {
+          "at": 26719,
+          "channel": 1,
+          "op": "store",
+          "address": 24338,
+          "value": 160
+        },
+        {
+          "at": 26723,
+          "channel": 1,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 29
+        },
+        {
+          "at": 26725,
+          "channel": 1,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 31
+        },
+        {
+          "at": 26727,
+          "channel": 1,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 26
+        },
+        {
+          "at": 26729,
+          "channel": 1,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 35
+        },
+        {
+          "at": 26731,
+          "channel": 1,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 23
+        },
+        {
+          "at": 26733,
+          "channel": 1,
+          "op": "store",
+          "address": 24103,
+          "value": 0
+        },
+        {
+          "at": 26737,
+          "channel": 0,
+          "op": "return-or-end"
+        }
+      ]
+    },
+    {
+      "address": 26738,
+      "end_address": 26764,
+      "name": "sound effect 21",
+      "type": "stream",
+      "commands": [21],
+      "instructions": [
+        {
+          "at": 26738,
+          "channel": 1,
+          "op": "store",
+          "address": 24103,
+          "value": 0
+        },
+        {
+          "at": 26742,
+          "channel": 1,
+          "op": "store",
+          "address": 24338,
+          "value": 160
+        },
+        {
+          "at": 26746,
+          "channel": 1,
+          "op": "envelope",
+          "control_pointer": 26243,
+          "pitch_pointer": 26234,
+          "sustain_index": 4,
+          "release_index": 6,
+          "release_ticks": 3,
+          "gate_threshold": 8
+        },
+        {
+          "at": 26755,
+          "channel": 1,
+          "op": "fade",
+          "initial_volume": 6,
+          "period": 4
+        },
+        {
+          "at": 26758,
+          "channel": 1,
+          "op": "note",
+          "duration_index": 3,
+          "frequency_divider": 15
+        },
+        {
+          "at": 26760,
+          "channel": 1,
+          "op": "rest",
+          "duration_index": 5
+        },
+        {
+          "at": 26761,
+          "channel": 1,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 17
+        },
+        {
+          "at": 26763,
+          "channel": 0,
+          "op": "return-or-end"
+        }
+      ]
+    },
+    {
+      "address": 26764,
+      "end_address": 26784,
+      "name": "sound effect 22",
+      "type": "stream",
+      "commands": [22],
+      "instructions": [
+        {
+          "at": 26764,
+          "channel": 0,
+          "op": "store",
+          "address": 24306,
+          "value": 128
+        },
+        {
+          "at": 26768,
+          "channel": 0,
+          "op": "envelope",
+          "control_pointer": 26243,
+          "pitch_pointer": 26234,
+          "sustain_index": 4,
+          "release_index": 6,
+          "release_ticks": 3,
+          "gate_threshold": 8
+        },
+        {
+          "at": 26777,
+          "channel": 0,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 5
+        },
+        {
+          "at": 26779,
+          "channel": 0,
+          "op": "store",
+          "address": 24103,
+          "value": 0
+        },
+        {
+          "at": 26783,
+          "channel": 0,
+          "op": "return-or-end"
+        }
+      ]
+    },
+    {
+      "address": 26784,
+      "end_address": 26804,
+      "name": "sound effect 28",
+      "type": "stream",
+      "commands": [28],
+      "instructions": [
+        {
+          "at": 26784,
+          "channel": 1,
+          "op": "store",
+          "address": 24338,
+          "value": 128
+        },
+        {
+          "at": 26788,
+          "channel": 1,
+          "op": "simple-envelope",
+          "control_pointer": 26229,
+          "pitch_pointer": 26224,
+          "start_index": 3
+        },
+        {
+          "at": 26794,
+          "channel": 1,
+          "op": "fade",
+          "initial_volume": 6,
+          "period": 1
+        },
+        {
+          "at": 26797,
+          "channel": 1,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 7
+        },
+        {
+          "at": 26799,
+          "channel": 0,
+          "op": "store",
+          "address": 24103,
+          "value": 0
+        },
+        {
+          "at": 26803,
+          "channel": 0,
+          "op": "return-or-end"
+        }
+      ]
+    },
+    {
+      "address": 26804,
+      "end_address": 26831,
+      "name": "sound effect 31",
+      "type": "stream",
+      "commands": [31],
+      "instructions": [
+        {
+          "at": 26804,
+          "channel": 0,
+          "op": "store",
+          "address": 24314,
+          "value": 3
+        },
+        {
+          "at": 26808,
+          "channel": 0,
+          "op": "simple-envelope",
+          "control_pointer": 26229,
+          "pitch_pointer": 26224,
+          "start_index": 3
+        },
+        {
+          "at": 26814,
+          "channel": 0,
+          "op": "store",
+          "address": 24306,
+          "value": 160
+        },
+        {
+          "at": 26818,
+          "channel": 0,
+          "op": "pitch-slide",
+          "step": 1,
+          "end_frequency": 81
+        },
+        {
+          "at": 26821,
+          "channel": 0,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 60
+        },
+        {
+          "at": 26823,
+          "channel": 0,
+          "op": "rest",
+          "duration_index": 1
+        },
+        {
+          "at": 26824,
+          "channel": 0,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 81
+        },
+        {
+          "at": 26826,
+          "channel": 0,
+          "op": "store",
+          "address": 24103,
+          "value": 0
+        },
+        {
+          "at": 26830,
+          "channel": 0,
+          "op": "return-or-end"
+        }
+      ]
+    },
+    {
+      "address": 26831,
+      "end_address": 26858,
+      "name": "sound effect 32",
+      "type": "stream",
+      "commands": [32],
+      "instructions": [
+        {
+          "at": 26831,
+          "channel": 0,
+          "op": "store",
+          "address": 24314,
+          "value": 3
+        },
+        {
+          "at": 26835,
+          "channel": 0,
+          "op": "simple-envelope",
+          "control_pointer": 26229,
+          "pitch_pointer": 26224,
+          "start_index": 3
+        },
+        {
+          "at": 26841,
+          "channel": 0,
+          "op": "store",
+          "address": 24306,
+          "value": 160
+        },
+        {
+          "at": 26845,
+          "channel": 0,
+          "op": "pitch-slide",
+          "step": -1,
+          "end_frequency": 60
+        },
+        {
+          "at": 26848,
+          "channel": 0,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 81
+        },
+        {
+          "at": 26850,
+          "channel": 0,
+          "op": "rest",
+          "duration_index": 1
+        },
+        {
+          "at": 26851,
+          "channel": 0,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 60
+        },
+        {
+          "at": 26853,
+          "channel": 0,
+          "op": "store",
+          "address": 24103,
+          "value": 0
+        },
+        {
+          "at": 26857,
+          "channel": 0,
+          "op": "return-or-end"
+        }
+      ]
+    },
+    {
+      "address": 26858,
+      "end_address": 26894,
+      "name": "sound effect 33",
+      "type": "stream",
+      "commands": [33],
+      "instructions": [
+        {
+          "at": 26858,
+          "channel": 0,
+          "op": "simple-envelope",
+          "control_pointer": 26229,
+          "pitch_pointer": 26224,
+          "start_index": 3
+        },
+        {
+          "at": 26864,
+          "channel": 0,
+          "op": "store",
+          "address": 24306,
+          "value": 160
+        },
+        {
+          "at": 26868,
+          "channel": 0,
+          "op": "pitch-slide",
+          "step": 1,
+          "end_frequency": 5
+        },
+        {
+          "at": 26871,
+          "channel": 0,
+          "op": "note",
+          "duration_index": 1,
+          "frequency_divider": 7
+        },
+        {
+          "at": 26873,
+          "channel": 0,
+          "op": "rest",
+          "duration_index": 5
+        },
+        {
+          "at": 26874,
+          "channel": 0,
+          "op": "envelope",
+          "control_pointer": 26243,
+          "pitch_pointer": 26234,
+          "sustain_index": 4,
+          "release_index": 6,
+          "release_ticks": 3,
+          "gate_threshold": 8
+        },
+        {
+          "at": 26883,
+          "channel": 0,
+          "op": "store",
+          "address": 24306,
+          "value": 128
+        },
+        {
+          "at": 26887,
+          "channel": 0,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 5
+        },
+        {
+          "at": 26889,
+          "channel": 0,
+          "op": "store",
+          "address": 24103,
+          "value": 0
+        },
+        {
+          "at": 26893,
+          "channel": 0,
+          "op": "return-or-end"
+        }
+      ]
+    },
+    {
+      "address": 26894,
+      "end_address": 26933,
+      "name": "sound effect 35",
+      "type": "stream",
+      "commands": [35],
+      "instructions": [
+        {
+          "at": 26894,
+          "channel": 0,
+          "op": "durations",
+          "duration_0": 16,
+          "duration_1": 32,
+          "duration_2": 48,
+          "duration_3": 64,
+          "duration_4": 96,
+          "duration_5": 128,
+          "duration_6": 192,
+          "duration_7": 255
+        },
+        {
+          "at": 26903,
+          "channel": 1,
+          "op": "envelope",
+          "control_pointer": 26213,
+          "pitch_pointer": 26202,
+          "sustain_index": 0,
+          "release_index": 10,
+          "release_ticks": 1,
+          "gate_threshold": 2
+        },
+        {
+          "at": 26912,
+          "channel": 1,
+          "op": "store",
+          "address": 24103,
+          "value": 0
+        },
+        {
+          "at": 26916,
+          "channel": 1,
+          "op": "store",
+          "address": 24338,
+          "value": 64
+        },
+        {
+          "at": 26920,
+          "channel": 1,
+          "op": "note",
+          "duration_index": 7,
+          "frequency_divider": 21
+        },
+        {
+          "at": 26922,
+          "channel": 1,
+          "op": "note",
+          "duration_index": 7,
+          "frequency_divider": 21
+        },
+        {
+          "at": 26924,
+          "channel": 1,
+          "op": "note",
+          "duration_index": 7,
+          "frequency_divider": 21
+        },
+        {
+          "at": 26926,
+          "channel": 1,
+          "op": "note",
+          "duration_index": 7,
+          "frequency_divider": 21
+        },
+        {
+          "at": 26928,
+          "channel": 1,
+          "op": "note",
+          "duration_index": 7,
+          "frequency_divider": 21
+        },
+        {
+          "at": 26930,
+          "channel": 1,
+          "op": "note",
+          "duration_index": 7,
+          "frequency_divider": 21
+        },
+        {
+          "at": 26932,
+          "channel": 0,
+          "op": "return-or-end"
+        }
+      ]
+    },
+    {
+      "address": 26933,
+      "end_address": 27084,
+      "name": "game-over music",
+      "type": "stream",
+      "commands": [25],
+      "instructions": [
+        {
+          "at": 26933,
+          "channel": 0,
+          "op": "durations",
+          "duration_0": 8,
+          "duration_1": 16,
+          "duration_2": 24,
+          "duration_3": 32,
+          "duration_4": 48,
+          "duration_5": 64,
+          "duration_6": 96,
+          "duration_7": 128
+        },
+        {
+          "at": 26942,
+          "channel": 0,
+          "op": "store",
+          "address": 25241,
+          "value": 1
+        },
+        {
+          "at": 26946,
+          "channel": 0,
+          "op": "envelope",
+          "control_pointer": 26183,
+          "pitch_pointer": 26164,
+          "sustain_index": 4,
+          "release_index": 13,
+          "release_ticks": 6,
+          "gate_threshold": 11
+        },
+        {
+          "at": 26955,
+          "channel": 1,
+          "op": "envelope",
+          "control_pointer": 26183,
+          "pitch_pointer": 26164,
+          "sustain_index": 4,
+          "release_index": 13,
+          "release_ticks": 6,
+          "gate_threshold": 11
+        },
+        {
+          "at": 26964,
+          "channel": 2,
+          "op": "envelope",
+          "control_pointer": 26243,
+          "pitch_pointer": 26234,
+          "sustain_index": 4,
+          "release_index": 6,
+          "release_ticks": 3,
+          "gate_threshold": 8
+        },
+        {
+          "at": 26973,
+          "channel": 0,
+          "op": "store",
+          "address": 24306,
+          "value": 160
+        },
+        {
+          "at": 26977,
+          "channel": 1,
+          "op": "store",
+          "address": 24338,
+          "value": 160
+        },
+        {
+          "at": 26981,
+          "channel": 2,
+          "op": "store",
+          "address": 24370,
+          "value": 160
+        },
+        {
+          "at": 26985,
+          "channel": 0,
+          "op": "note",
+          "duration_index": 3,
+          "frequency_divider": 53
+        },
+        {
+          "at": 26987,
+          "channel": 1,
+          "op": "note",
+          "duration_index": 5,
+          "frequency_divider": 35
+        },
+        {
+          "at": 26989,
+          "channel": 2,
+          "op": "note",
+          "duration_index": 3,
+          "frequency_divider": 53
+        },
+        {
+          "at": 26991,
+          "channel": 0,
+          "op": "note",
+          "duration_index": 3,
+          "frequency_divider": 57
+        },
+        {
+          "at": 26993,
+          "channel": 2,
+          "op": "note",
+          "duration_index": 3,
+          "frequency_divider": 57
+        },
+        {
+          "at": 26995,
+          "channel": 0,
+          "op": "note",
+          "duration_index": 3,
+          "frequency_divider": 53
+        },
+        {
+          "at": 26997,
+          "channel": 1,
+          "op": "note",
+          "duration_index": 3,
+          "frequency_divider": 35
+        },
+        {
+          "at": 26999,
+          "channel": 2,
+          "op": "note",
+          "duration_index": 3,
+          "frequency_divider": 53
+        },
+        {
+          "at": 27001,
+          "channel": 0,
+          "op": "note",
+          "duration_index": 3,
+          "frequency_divider": 53
+        },
+        {
+          "at": 27003,
+          "channel": 1,
+          "op": "note",
+          "duration_index": 3,
+          "frequency_divider": 35
+        },
+        {
+          "at": 27005,
+          "channel": 2,
+          "op": "note",
+          "duration_index": 3,
+          "frequency_divider": 53
+        },
+        {
+          "at": 27007,
+          "channel": 0,
+          "op": "note",
+          "duration_index": 4,
+          "frequency_divider": 45
+        },
+        {
+          "at": 27009,
+          "channel": 1,
+          "op": "note",
+          "duration_index": 4,
+          "frequency_divider": 33
+        },
+        {
+          "at": 27011,
+          "channel": 2,
+          "op": "note",
+          "duration_index": 4,
+          "frequency_divider": 68
+        },
+        {
+          "at": 27013,
+          "channel": 0,
+          "op": "note",
+          "duration_index": 1,
+          "frequency_divider": 103
+        },
+        {
+          "at": 27015,
+          "channel": 1,
+          "op": "note",
+          "duration_index": 1,
+          "frequency_divider": 33
+        },
+        {
+          "at": 27017,
+          "channel": 2,
+          "op": "note",
+          "duration_index": 1,
+          "frequency_divider": 53
+        },
+        {
+          "at": 27019,
+          "channel": 0,
+          "op": "note",
+          "duration_index": 5,
+          "frequency_divider": 47
+        },
+        {
+          "at": 27021,
+          "channel": 1,
+          "op": "note",
+          "duration_index": 5,
+          "frequency_divider": 35
+        },
+        {
+          "at": 27023,
+          "channel": 2,
+          "op": "note",
+          "duration_index": 5,
+          "frequency_divider": 72
+        },
+        {
+          "at": 27025,
+          "channel": 0,
+          "op": "rest",
+          "duration_index": 1
+        },
+        {
+          "at": 27026,
+          "channel": 1,
+          "op": "note",
+          "duration_index": 3,
+          "frequency_divider": 45
+        },
+        {
+          "at": 27028,
+          "channel": 2,
+          "op": "note",
+          "duration_index": 3,
+          "frequency_divider": 53
+        },
+        {
+          "at": 27030,
+          "channel": 0,
+          "op": "note",
+          "duration_index": 1,
+          "frequency_divider": 45
+        },
+        {
+          "at": 27032,
+          "channel": 0,
+          "op": "note",
+          "duration_index": 1,
+          "frequency_divider": 45
+        },
+        {
+          "at": 27034,
+          "channel": 1,
+          "op": "note",
+          "duration_index": 1,
+          "frequency_divider": 35
+        },
+        {
+          "at": 27036,
+          "channel": 2,
+          "op": "note",
+          "duration_index": 1,
+          "frequency_divider": 57
+        },
+        {
+          "at": 27038,
+          "channel": 0,
+          "op": "note",
+          "duration_index": 1,
+          "frequency_divider": 47
+        },
+        {
+          "at": 27040,
+          "channel": 1,
+          "op": "note",
+          "duration_index": 3,
+          "frequency_divider": 35
+        },
+        {
+          "at": 27042,
+          "channel": 2,
+          "op": "note",
+          "duration_index": 5,
+          "frequency_divider": 53
+        },
+        {
+          "at": 27044,
+          "channel": 0,
+          "op": "note",
+          "duration_index": 1,
+          "frequency_divider": 45
+        },
+        {
+          "at": 27046,
+          "channel": 0,
+          "op": "note",
+          "duration_index": 1,
+          "frequency_divider": 35
+        },
+        {
+          "at": 27048,
+          "channel": 1,
+          "op": "note",
+          "duration_index": 3,
+          "frequency_divider": 45
+        },
+        {
+          "at": 27050,
+          "channel": 0,
+          "op": "note",
+          "duration_index": 1,
+          "frequency_divider": 35
+        },
+        {
+          "at": 27052,
+          "channel": 0,
+          "op": "note",
+          "duration_index": 3,
+          "frequency_divider": 26
+        },
+        {
+          "at": 27054,
+          "channel": 1,
+          "op": "note",
+          "duration_index": 5,
+          "frequency_divider": 40
+        },
+        {
+          "at": 27056,
+          "channel": 2,
+          "op": "note",
+          "duration_index": 5,
+          "frequency_divider": 131
+        },
+        {
+          "at": 27058,
+          "channel": 0,
+          "op": "note",
+          "duration_index": 3,
+          "frequency_divider": 23
+        },
+        {
+          "at": 27060,
+          "channel": 0,
+          "op": "note",
+          "duration_index": 5,
+          "frequency_divider": 27
+        },
+        {
+          "at": 27062,
+          "channel": 1,
+          "op": "note",
+          "duration_index": 5,
+          "frequency_divider": 47
+        },
+        {
+          "at": 27064,
+          "channel": 2,
+          "op": "note",
+          "duration_index": 5,
+          "frequency_divider": 72
+        },
+        {
+          "at": 27066,
+          "channel": 0,
+          "op": "durations",
+          "duration_0": 2,
+          "duration_1": 4,
+          "duration_2": 6,
+          "duration_3": 8,
+          "duration_4": 12,
+          "duration_5": 16,
+          "duration_6": 24,
+          "duration_7": 32
+        },
+        {
+          "at": 27075,
+          "channel": 0,
+          "op": "store",
+          "address": 25241,
+          "value": 0
+        },
+        {
+          "at": 27079,
+          "channel": 0,
+          "op": "store",
+          "address": 24103,
+          "value": 0
+        },
+        {
+          "at": 27083,
+          "channel": 0,
+          "op": "return-or-end"
+        }
+      ]
+    },
+    {
+      "address": 27084,
+      "end_address": 27431,
+      "name": "title music",
+      "type": "stream",
+      "commands": [80],
+      "instructions": [
+        {
+          "at": 27084,
+          "channel": 0,
+          "op": "durations",
+          "duration_0": 6,
+          "duration_1": 12,
+          "duration_2": 18,
+          "duration_3": 24,
+          "duration_4": 36,
+          "duration_5": 48,
+          "duration_6": 72,
+          "duration_7": 159
+        },
+        {
+          "at": 27093,
+          "channel": 0,
+          "op": "store",
+          "address": 24306,
+          "value": 128
+        },
+        {
+          "at": 27097,
+          "channel": 0,
+          "op": "envelope",
+          "control_pointer": 26149,
+          "pitch_pointer": 26142,
+          "sustain_index": 2,
+          "release_index": 4,
+          "release_ticks": 3,
+          "gate_threshold": 6
+        },
+        {
+          "at": 27106,
+          "channel": 1,
+          "op": "envelope",
+          "control_pointer": 26183,
+          "pitch_pointer": 26164,
+          "sustain_index": 4,
+          "release_index": 13,
+          "release_ticks": 6,
+          "gate_threshold": 11
+        },
+        {
+          "at": 27115,
+          "channel": 2,
+          "op": "envelope",
+          "control_pointer": 26125,
+          "pitch_pointer": 26112,
+          "sustain_index": 2,
+          "release_index": 10,
+          "release_ticks": 3,
+          "gate_threshold": 6
+        },
+        {
+          "at": 27124,
+          "channel": 0,
+          "op": "rest",
+          "duration_index": 3
+        },
+        {
+          "at": 27125,
+          "channel": 1,
+          "op": "note",
+          "duration_index": 1,
+          "frequency_divider": 60
+        },
+        {
+          "at": 27127,
+          "channel": 2,
+          "op": "rest",
+          "duration_index": 3
+        },
+        {
+          "at": 27128,
+          "channel": 1,
+          "op": "note",
+          "duration_index": 1,
+          "frequency_divider": 72
+        },
+        {
+          "at": 27130,
+          "channel": 1,
+          "op": "note",
+          "duration_index": 1,
+          "frequency_divider": 64
+        },
+        {
+          "at": 27132,
+          "channel": 1,
+          "op": "note",
+          "duration_index": 1,
+          "frequency_divider": 60
+        },
+        {
+          "at": 27134,
+          "channel": 0,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 5
+        },
+        {
+          "at": 27136,
+          "channel": 1,
+          "op": "note",
+          "duration_index": 4,
+          "frequency_divider": 47
+        },
+        {
+          "at": 27138,
+          "channel": 2,
+          "op": "note",
+          "duration_index": 4,
+          "frequency_divider": 81
+        },
+        {
+          "at": 27140,
+          "channel": 0,
+          "op": "rest",
+          "duration_index": 1
+        },
+        {
+          "at": 27141,
+          "channel": 0,
+          "op": "note",
+          "duration_index": 1,
+          "frequency_divider": 7
+        },
+        {
+          "at": 27143,
+          "channel": 0,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 15
+        },
+        {
+          "at": 27145,
+          "channel": 1,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 53
+        },
+        {
+          "at": 27147,
+          "channel": 2,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 96
+        },
+        {
+          "at": 27149,
+          "channel": 0,
+          "op": "rest",
+          "duration_index": 0
+        },
+        {
+          "at": 27150,
+          "channel": 1,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 60
+        },
+        {
+          "at": 27152,
+          "channel": 2,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 121
+        },
+        {
+          "at": 27154,
+          "channel": 0,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 1
+        },
+        {
+          "at": 27156,
+          "channel": 1,
+          "op": "pitch-slide",
+          "step": -1,
+          "end_frequency": 47
+        },
+        {
+          "at": 27159,
+          "channel": 1,
+          "op": "note",
+          "duration_index": 3,
+          "frequency_divider": 47
+        },
+        {
+          "at": 27161,
+          "channel": 2,
+          "op": "note",
+          "duration_index": 3,
+          "frequency_divider": 144
+        },
+        {
+          "at": 27163,
+          "channel": 0,
+          "op": "store",
+          "address": 226,
+          "value": 1
+        },
+        {
+          "at": 27167,
+          "channel": 2,
+          "op": "note",
+          "duration_index": 1,
+          "frequency_divider": 121
+        },
+        {
+          "at": 27169,
+          "channel": 2,
+          "op": "note",
+          "duration_index": 1,
+          "frequency_divider": 96
+        },
+        {
+          "at": 27171,
+          "channel": 0,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 5
+        },
+        {
+          "at": 27173,
+          "channel": 1,
+          "op": "note",
+          "duration_index": 4,
+          "frequency_divider": 47
+        },
+        {
+          "at": 27175,
+          "channel": 2,
+          "op": "note",
+          "duration_index": 4,
+          "frequency_divider": 81
+        },
+        {
+          "at": 27177,
+          "channel": 0,
+          "op": "rest",
+          "duration_index": 1
+        },
+        {
+          "at": 27178,
+          "channel": 0,
+          "op": "note",
+          "duration_index": 1,
+          "frequency_divider": 7
+        },
+        {
+          "at": 27180,
+          "channel": 0,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 15
+        },
+        {
+          "at": 27182,
+          "channel": 1,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 47
+        },
+        {
+          "at": 27184,
+          "channel": 2,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 96
+        },
+        {
+          "at": 27186,
+          "channel": 0,
+          "op": "rest",
+          "duration_index": 0
+        },
+        {
+          "at": 27187,
+          "channel": 1,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 47
+        },
+        {
+          "at": 27189,
+          "channel": 2,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 121
+        },
+        {
+          "at": 27191,
+          "channel": 0,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 1
+        },
+        {
+          "at": 27193,
+          "channel": 1,
+          "op": "note",
+          "duration_index": 3,
+          "frequency_divider": 72
+        },
+        {
+          "at": 27195,
+          "channel": 2,
+          "op": "note",
+          "duration_index": 3,
+          "frequency_divider": 144
+        },
+        {
+          "at": 27197,
+          "channel": 0,
+          "op": "rest",
+          "duration_index": 0
+        },
+        {
+          "at": 27198,
+          "channel": 0,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 7
+        },
+        {
+          "at": 27200,
+          "channel": 0,
+          "op": "rest",
+          "duration_index": 0
+        },
+        {
+          "at": 27201,
+          "channel": 0,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 7
+        },
+        {
+          "at": 27203,
+          "channel": 1,
+          "op": "note",
+          "duration_index": 1,
+          "frequency_divider": 60
+        },
+        {
+          "at": 27205,
+          "channel": 2,
+          "op": "note",
+          "duration_index": 1,
+          "frequency_divider": 121
+        },
+        {
+          "at": 27207,
+          "channel": 1,
+          "op": "note",
+          "duration_index": 1,
+          "frequency_divider": 60
+        },
+        {
+          "at": 27209,
+          "channel": 2,
+          "op": "note",
+          "duration_index": 1,
+          "frequency_divider": 96
+        },
+        {
+          "at": 27211,
+          "channel": 0,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 5
+        },
+        {
+          "at": 27213,
+          "channel": 1,
+          "op": "note",
+          "duration_index": 4,
+          "frequency_divider": 40
+        },
+        {
+          "at": 27215,
+          "channel": 2,
+          "op": "note",
+          "duration_index": 4,
+          "frequency_divider": 144
+        },
+        {
+          "at": 27217,
+          "channel": 0,
+          "op": "rest",
+          "duration_index": 1
+        },
+        {
+          "at": 27218,
+          "channel": 0,
+          "op": "note",
+          "duration_index": 1,
+          "frequency_divider": 7
+        },
+        {
+          "at": 27220,
+          "channel": 0,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 15
+        },
+        {
+          "at": 27222,
+          "channel": 1,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 47
+        },
+        {
+          "at": 27224,
+          "channel": 2,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 96
+        },
+        {
+          "at": 27226,
+          "channel": 0,
+          "op": "rest",
+          "duration_index": 0
+        },
+        {
+          "at": 27227,
+          "channel": 1,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 53
+        },
+        {
+          "at": 27229,
+          "channel": 2,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 121
+        },
+        {
+          "at": 27231,
+          "channel": 0,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 1
+        },
+        {
+          "at": 27233,
+          "channel": 1,
+          "op": "pitch-slide",
+          "step": -1,
+          "end_frequency": 47
+        },
+        {
+          "at": 27236,
+          "channel": 1,
+          "op": "note",
+          "duration_index": 3,
+          "frequency_divider": 47
+        },
+        {
+          "at": 27238,
+          "channel": 2,
+          "op": "note",
+          "duration_index": 3,
+          "frequency_divider": 144
+        },
+        {
+          "at": 27240,
+          "channel": 0,
+          "op": "store",
+          "address": 226,
+          "value": 1
+        },
+        {
+          "at": 27244,
+          "channel": 2,
+          "op": "note",
+          "duration_index": 1,
+          "frequency_divider": 121
+        },
+        {
+          "at": 27246,
+          "channel": 2,
+          "op": "note",
+          "duration_index": 1,
+          "frequency_divider": 96
+        },
+        {
+          "at": 27248,
+          "channel": 0,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 3
+        },
+        {
+          "at": 27250,
+          "channel": 1,
+          "op": "note",
+          "duration_index": 4,
+          "frequency_divider": 47
+        },
+        {
+          "at": 27252,
+          "channel": 2,
+          "op": "note",
+          "duration_index": 4,
+          "frequency_divider": 81
+        },
+        {
+          "at": 27254,
+          "channel": 0,
+          "op": "rest",
+          "duration_index": 1
+        },
+        {
+          "at": 27255,
+          "channel": 0,
+          "op": "note",
+          "duration_index": 1,
+          "frequency_divider": 7
+        },
+        {
+          "at": 27257,
+          "channel": 0,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 15
+        },
+        {
+          "at": 27259,
+          "channel": 1,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 47
+        },
+        {
+          "at": 27261,
+          "channel": 2,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 96
+        },
+        {
+          "at": 27263,
+          "channel": 0,
+          "op": "rest",
+          "duration_index": 0
+        },
+        {
+          "at": 27264,
+          "channel": 1,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 47
+        },
+        {
+          "at": 27266,
+          "channel": 2,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 121
+        },
+        {
+          "at": 27268,
+          "channel": 0,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 1
+        },
+        {
+          "at": 27270,
+          "channel": 1,
+          "op": "note",
+          "duration_index": 1,
+          "frequency_divider": 60
+        },
+        {
+          "at": 27272,
+          "channel": 2,
+          "op": "note",
+          "duration_index": 3,
+          "frequency_divider": 144
+        },
+        {
+          "at": 27274,
+          "channel": 0,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 7
+        },
+        {
+          "at": 27276,
+          "channel": 1,
+          "op": "note",
+          "duration_index": 1,
+          "frequency_divider": 72
+        },
+        {
+          "at": 27278,
+          "channel": 0,
+          "op": "rest",
+          "duration_index": 0
+        },
+        {
+          "at": 27279,
+          "channel": 0,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 7
+        },
+        {
+          "at": 27281,
+          "channel": 1,
+          "op": "note",
+          "duration_index": 1,
+          "frequency_divider": 64
+        },
+        {
+          "at": 27283,
+          "channel": 2,
+          "op": "note",
+          "duration_index": 1,
+          "frequency_divider": 121
+        },
+        {
+          "at": 27285,
+          "channel": 1,
+          "op": "note",
+          "duration_index": 1,
+          "frequency_divider": 60
+        },
+        {
+          "at": 27287,
+          "channel": 2,
+          "op": "note",
+          "duration_index": 1,
+          "frequency_divider": 96
+        },
+        {
+          "at": 27289,
+          "channel": 0,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 5
+        },
+        {
+          "at": 27291,
+          "channel": 1,
+          "op": "note",
+          "duration_index": 4,
+          "frequency_divider": 53
+        },
+        {
+          "at": 27293,
+          "channel": 2,
+          "op": "note",
+          "duration_index": 4,
+          "frequency_divider": 182
+        },
+        {
+          "at": 27295,
+          "channel": 0,
+          "op": "rest",
+          "duration_index": 1
+        },
+        {
+          "at": 27296,
+          "channel": 0,
+          "op": "note",
+          "duration_index": 1,
+          "frequency_divider": 7
+        },
+        {
+          "at": 27298,
+          "channel": 0,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 15
+        },
+        {
+          "at": 27300,
+          "channel": 1,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 47
+        },
+        {
+          "at": 27302,
+          "channel": 2,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 144
+        },
+        {
+          "at": 27304,
+          "channel": 0,
+          "op": "rest",
+          "duration_index": 0
+        },
+        {
+          "at": 27305,
+          "channel": 1,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 40
+        },
+        {
+          "at": 27307,
+          "channel": 2,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 162
+        },
+        {
+          "at": 27309,
+          "channel": 0,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 1
+        },
+        {
+          "at": 27311,
+          "channel": 1,
+          "op": "note",
+          "duration_index": 1,
+          "frequency_divider": 53
+        },
+        {
+          "at": 27313,
+          "channel": 2,
+          "op": "note",
+          "duration_index": 3,
+          "frequency_divider": 182
+        },
+        {
+          "at": 27315,
+          "channel": 1,
+          "op": "note",
+          "duration_index": 1,
+          "frequency_divider": 53
+        },
+        {
+          "at": 27317,
+          "channel": 1,
+          "op": "note",
+          "duration_index": 1,
+          "frequency_divider": 53
+        },
+        {
+          "at": 27319,
+          "channel": 2,
+          "op": "note",
+          "duration_index": 1,
+          "frequency_divider": 121
+        },
+        {
+          "at": 27321,
+          "channel": 1,
+          "op": "note",
+          "duration_index": 1,
+          "frequency_divider": 53
+        },
+        {
+          "at": 27323,
+          "channel": 2,
+          "op": "note",
+          "duration_index": 1,
+          "frequency_divider": 128
+        },
+        {
+          "at": 27325,
+          "channel": 0,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 5
+        },
+        {
+          "at": 27327,
+          "channel": 1,
+          "op": "note",
+          "duration_index": 4,
+          "frequency_divider": 53
+        },
+        {
+          "at": 27329,
+          "channel": 2,
+          "op": "note",
+          "duration_index": 4,
+          "frequency_divider": 182
+        },
+        {
+          "at": 27331,
+          "channel": 0,
+          "op": "rest",
+          "duration_index": 1
+        },
+        {
+          "at": 27332,
+          "channel": 0,
+          "op": "note",
+          "duration_index": 1,
+          "frequency_divider": 7
+        },
+        {
+          "at": 27334,
+          "channel": 0,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 15
+        },
+        {
+          "at": 27336,
+          "channel": 1,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 47
+        },
+        {
+          "at": 27338,
+          "channel": 2,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 162
+        },
+        {
+          "at": 27340,
+          "channel": 0,
+          "op": "rest",
+          "duration_index": 0
+        },
+        {
+          "at": 27341,
+          "channel": 1,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 47
+        },
+        {
+          "at": 27343,
+          "channel": 2,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 182
+        },
+        {
+          "at": 27345,
+          "channel": 0,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 1
+        },
+        {
+          "at": 27347,
+          "channel": 1,
+          "op": "note",
+          "duration_index": 3,
+          "frequency_divider": 53
+        },
+        {
+          "at": 27349,
+          "channel": 2,
+          "op": "note",
+          "duration_index": 3,
+          "frequency_divider": 108
+        },
+        {
+          "at": 27351,
+          "channel": 0,
+          "op": "rest",
+          "duration_index": 0
+        },
+        {
+          "at": 27352,
+          "channel": 0,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 7
+        },
+        {
+          "at": 27354,
+          "channel": 0,
+          "op": "rest",
+          "duration_index": 0
+        },
+        {
+          "at": 27355,
+          "channel": 0,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 7
+        },
+        {
+          "at": 27357,
+          "channel": 1,
+          "op": "note",
+          "duration_index": 1,
+          "frequency_divider": 60
+        },
+        {
+          "at": 27359,
+          "channel": 2,
+          "op": "note",
+          "duration_index": 1,
+          "frequency_divider": 121
+        },
+        {
+          "at": 27361,
+          "channel": 1,
+          "op": "note",
+          "duration_index": 1,
+          "frequency_divider": 60
+        },
+        {
+          "at": 27363,
+          "channel": 2,
+          "op": "note",
+          "duration_index": 1,
+          "frequency_divider": 121
+        },
+        {
+          "at": 27365,
+          "channel": 0,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 5
+        },
+        {
+          "at": 27367,
+          "channel": 1,
+          "op": "note",
+          "duration_index": 4,
+          "frequency_divider": 64
+        },
+        {
+          "at": 27369,
+          "channel": 2,
+          "op": "note",
+          "duration_index": 2,
+          "frequency_divider": 108
+        },
+        {
+          "at": 27371,
+          "channel": 0,
+          "op": "rest",
+          "duration_index": 1
+        },
+        {
+          "at": 27372,
+          "channel": 0,
+          "op": "note",
+          "duration_index": 1,
+          "frequency_divider": 7
+        },
+        {
+          "at": 27374,
+          "channel": 0,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 15
+        },
+        {
+          "at": 27376,
+          "channel": 1,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 60
+        },
+        {
+          "at": 27378,
+          "channel": 2,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 162
+        },
+        {
+          "at": 27380,
+          "channel": 0,
+          "op": "rest",
+          "duration_index": 0
+        },
+        {
+          "at": 27381,
+          "channel": 1,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 64
+        },
+        {
+          "at": 27383,
+          "channel": 2,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 128
+        },
+        {
+          "at": 27385,
+          "channel": 0,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 1
+        },
+        {
+          "at": 27387,
+          "channel": 1,
+          "op": "pitch-slide",
+          "step": -1,
+          "end_frequency": 81
+        },
+        {
+          "at": 27390,
+          "channel": 1,
+          "op": "note",
+          "duration_index": 3,
+          "frequency_divider": 81
+        },
+        {
+          "at": 27392,
+          "channel": 2,
+          "op": "note",
+          "duration_index": 3,
+          "frequency_divider": 108
+        },
+        {
+          "at": 27394,
+          "channel": 1,
+          "op": "note",
+          "duration_index": 1,
+          "frequency_divider": 81
+        },
+        {
+          "at": 27396,
+          "channel": 2,
+          "op": "note",
+          "duration_index": 1,
+          "frequency_divider": 121
+        },
+        {
+          "at": 27398,
+          "channel": 1,
+          "op": "note",
+          "duration_index": 1,
+          "frequency_divider": 81
+        },
+        {
+          "at": 27400,
+          "channel": 2,
+          "op": "note",
+          "duration_index": 1,
+          "frequency_divider": 128
+        },
+        {
+          "at": 27402,
+          "channel": 0,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 5
+        },
+        {
+          "at": 27404,
+          "channel": 1,
+          "op": "note",
+          "duration_index": 4,
+          "frequency_divider": 81
+        },
+        {
+          "at": 27406,
+          "channel": 2,
+          "op": "note",
+          "duration_index": 4,
+          "frequency_divider": 162
+        },
+        {
+          "at": 27408,
+          "channel": 0,
+          "op": "rest",
+          "duration_index": 1
+        },
+        {
+          "at": 27409,
+          "channel": 0,
+          "op": "note",
+          "duration_index": 1,
+          "frequency_divider": 7
+        },
+        {
+          "at": 27411,
+          "channel": 0,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 15
+        },
+        {
+          "at": 27413,
+          "channel": 1,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 81
+        },
+        {
+          "at": 27415,
+          "channel": 2,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 193
+        },
+        {
+          "at": 27417,
+          "channel": 0,
+          "op": "rest",
+          "duration_index": 0
+        },
+        {
+          "at": 27418,
+          "channel": 1,
+          "op": "rest",
+          "duration_index": 0
+        },
+        {
+          "at": 27419,
+          "channel": 2,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 144
+        },
+        {
+          "at": 27421,
+          "channel": 0,
+          "op": "note",
+          "duration_index": 0,
+          "frequency_divider": 1
+        },
+        {
+          "at": 27423,
+          "channel": 1,
+          "op": "rest",
+          "duration_index": 3
+        },
+        {
+          "at": 27424,
+          "channel": 2,
+          "op": "note",
+          "duration_index": 3,
+          "frequency_divider": 162
+        },
+        {
+          "at": 27426,
+          "channel": 0,
+          "op": "jump",
+          "target": 27084
+        },
+        {
+          "at": 27429,
+          "channel": 0,
+          "op": "return-or-end"
+        },
+        {
+          "at": 27430,
+          "channel": 0,
+          "op": "return-or-end"
+        }
+      ]
+    },
+    {
+      "address": 27431,
+      "end_address": 27449,
+      "name": "retained OS vector assignments",
+      "type": "retained-os-vectors",
+      "vectors": [
+        {
+          "name": "RUNAD",
+          "low_address": 738,
+          "high_address": 739,
+          "value": 7945
+        },
+        {
+          "name": "INITAD",
+          "low_address": 736,
+          "high_address": 737,
+          "value": 9891
+        },
+        {
+          "name": "MEMLO",
+          "low_address": 743,
+          "high_address": 744,
+          "value": 11366
+        }
+      ],
+      "note": "Preserved loader/editor data after the music streams; the addresses/values are not relocated."
+    },
+    {
+      "address": 27449,
+      "end_address": 27695,
+      "name": "unused trailing bank space",
+      "type": "fill",
+      "value": 0,
+      "count": 246
+    }
+  ]
+}

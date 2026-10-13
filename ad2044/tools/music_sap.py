@@ -13,7 +13,12 @@ at $62E1 into RTS and add an independent initialization stub at $5000.
 
 import argparse
 import json
+import sys
 from pathlib import Path
+
+GAME = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(GAME.parent / "util"))
+from reference_media import read_reference
 
 LOAD_ADDRESS = 0x5E00
 END_ADDRESS = 0x6C2F  # Exclusive: next saved Forth dictionary header.
@@ -203,10 +208,17 @@ def extract(atr):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("atr", type=Path, help="original AD2044 side-one disk")
-    parser.add_argument("output", type=Path, help="output folder")
+    parser.add_argument(
+        "atr", type=Path, nargs="?",
+        default=GAME / "reference/ad2044-side1.atr",
+        help="original AD2044 side-one disk (default: verified reference)",
+    )
+    parser.add_argument(
+        "output", type=Path, nargs="?", default=GAME / "build/music",
+        help="output folder (default: ad2044/build/music)",
+    )
     args = parser.parse_args()
-    files, metadata = extract(args.atr.read_bytes())
+    files, metadata = extract(read_reference(args.atr))
     args.output.mkdir(parents=True, exist_ok=True)
     for filename, data in files.items():
         (args.output / filename).write_bytes(data)

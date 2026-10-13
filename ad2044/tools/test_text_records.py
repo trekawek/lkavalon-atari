@@ -9,6 +9,8 @@ import codecs
 import json
 from pathlib import Path
 import sys
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "util"))
+from reference_media import read_reference
 import unittest
 from unittest.mock import patch
 
@@ -157,7 +159,7 @@ class DictionaryCatalogTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.data = decompile.memory(
-            (decompile.ROOT / "reference/ad2044-side1.atr").read_bytes()
+            read_reference(decompile.ROOT / "reference/ad2044-side1.atr")
         )
         cls.words = decompile.dictionary(cls.data)
         names = json.loads((TOOLS / "names.json").read_text())
@@ -317,7 +319,7 @@ class OtherGameProfilesTests(unittest.TestCase):
             ("wladcy-ciemnosci", "wladcy-ciemnosci.atr"),
         ]:
             folder = root / game
-            disk = (folder / "reference" / filename).read_bytes()
+            disk = read_reference(folder / "reference" / filename)
             data = bytearray(65536)
             # These images have a contiguous saved dictionary plus retired
             # dictionary residue in the first 250 sectors, unlike AD's overlap.

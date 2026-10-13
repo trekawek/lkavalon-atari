@@ -1,0 +1,7190 @@
+{
+  "format": "apx-figforth-bootstrap-v1",
+  "description": "APX Extended fig-FORTH 1.1 revision 2.0. Intact original headers and thread names; native 6502 code is assembled at its original addresses.",
+  "origin": "0E80",
+  "dictionary_end": "2AFE",
+  "boot_end": "2B80",
+  "runtimes": {
+    "DOCOL": "1441",
+    "DOCON": "147D",
+    "DOVAR": "1499",
+    "DOUSER": "14B2",
+    "DODOES": "18D8"
+  },
+  "prefix": [
+    {
+      "at": "0E80",
+      "boot": {
+        "flags": 0,
+        "sectors": 58,
+        "load": "0E80",
+        "init": "1EEB"
+      }
+    },
+    {
+      "at": "0E86",
+      "asm": [
+        "JSR.ABS E465",
+        "LDA.# 00",
+        "STA.ZP 0A",
+        "LDA.# 0F",
+        "STA.ZP 0B",
+        "LDA.# 76",
+        "STA.ABS 02E7",
+        "STA.ZP 0E",
+        "LDA.# 2A",
+        "STA.ABS 02E8",
+        "STA.ZP 0F",
+        "CLC",
+        "CLD",
+        "RTS"
+      ]
+    },
+    {
+      "at": "0EA2",
+      "note": "Reserved boot memory, initially zero",
+      "fill": {
+        "value": 0,
+        "count": 94
+      }
+    },
+    {
+      "at": "0F00",
+      "asm": [
+        "NOP",
+        "JMP.ABS 1EF5",
+        "NOP",
+        "JMP.ABS 1F22"
+      ]
+    },
+    {
+      "at": "0F08",
+      "fields": [
+        {
+          "name": "Preserved system configuration word",
+          "cell": "0004"
+        },
+        {
+          "name": "Preserved system revision word",
+          "cell": "5ED2"
+        },
+        {
+          "name": "Initial latest dictionary name",
+          "cell": "2ADA"
+        },
+        {
+          "name": "Reserved cold-start parameter at $0F0E",
+          "cell": "007E"
+        },
+        {
+          "name": "Initial user-area address",
+          "cell": "0480"
+        },
+        {
+          "name": "Initial data stack pointer",
+          "cell": "00BC"
+        },
+        {
+          "name": "Initial return stack pointer",
+          "cell": "01FF"
+        },
+        {
+          "name": "Initial terminal input buffer",
+          "cell": "0100"
+        },
+        {
+          "name": "Initial maximum name width",
+          "cell": "001F"
+        },
+        {
+          "name": "Initial warning mode",
+          "cell": "0001"
+        },
+        {
+          "name": "Initial dictionary fence",
+          "cell": "2AFE"
+        },
+        {
+          "name": "Initial dictionary pointer",
+          "cell": "2AFE"
+        },
+        {
+          "name": "Initial vocabulary link",
+          "cell": "1E48"
+        },
+        {
+          "name": "Initial block parameter",
+          "cell": "0000"
+        },
+        {
+          "name": "Initial input offset",
+          "cell": "0000"
+        }
+      ]
+    },
+    {
+      "at": "0F26",
+      "note": "Alignment before the first dictionary header",
+      "fill": {
+        "value": 0,
+        "count": 1
+      }
+    }
+  ],
+  "definitions": [
+    {
+      "at": "0F27",
+      "name": "LIT",
+      "cfa": "0F2D",
+      "flags": "83",
+      "link": "0000",
+      "runtime": "native",
+      "entry": "0F2F",
+      "body": [
+        {
+          "at": "0F2F",
+          "asm": [
+            "LDA.INDY CA",
+            "PHA",
+            "INC.ZP CA",
+            "BNE 0F38",
+            "INC.ZP CB",
+            "LDA.INDY CA",
+            "INC.ZP CA",
+            "BNE 0F40",
+            "INC.ZP CB",
+            "DEX",
+            "DEX",
+            "STA.ZPX 01",
+            "PLA",
+            "STA.ZPX 00",
+            "LDY.# 01",
+            "LDA.INDY CA",
+            "STA.ZP CE",
+            "DEY",
+            "LDA.INDY CA",
+            "STA.ZP CD",
+            "CLC",
+            "LDA.ZP CA",
+            "ADC.# 02",
+            "STA.ZP CA",
+            "BCC 0F5D",
+            "INC.ZP CB",
+            "JMP.ABS 00CC"
+          ]
+        }
+      ],
+      "end": "0F60"
+    },
+    {
+      "at": "0F60",
+      "name": "CLIT",
+      "cfa": "0F67",
+      "flags": "84",
+      "link": "0F27",
+      "runtime": "native",
+      "entry": "0F69",
+      "body": [
+        {
+          "at": "0F69",
+          "asm": [
+            "LDA.INDY CA",
+            "PHA",
+            "TYA",
+            "BEQ 0F3A",
+            "ASL.A",
+            "STA.ZP C1",
+            "LDA.ZPX 00",
+            "STA.ABSY 00C2",
+            "INX",
+            "INY",
+            "CPY.ZP C1",
+            "BNE 0F72",
+            "LDY.# 00",
+            "RTS"
+          ]
+        }
+      ],
+      "end": "0F80"
+    },
+    {
+      "at": "0F80",
+      "name": "EXECUTE",
+      "cfa": "0F8A",
+      "flags": "87",
+      "link": "0F60",
+      "runtime": "native",
+      "entry": "0F8C",
+      "body": [
+        {
+          "at": "0F8C",
+          "asm": [
+            "LDA.ZPX 00",
+            "STA.ZP CD",
+            "LDA.ZPX 01",
+            "STA.ZP CE",
+            "INX",
+            "INX",
+            "JMP.ABS 00CC"
+          ]
+        }
+      ],
+      "end": "0F99"
+    },
+    {
+      "at": "0F99",
+      "name": "BRANCH",
+      "cfa": "0FA2",
+      "flags": "86",
+      "link": "0F80",
+      "runtime": "native",
+      "entry": "0FA4",
+      "body": [
+        {
+          "at": "0FA4",
+          "asm": [
+            "CLC",
+            "LDA.INDY CA",
+            "ADC.ZP CA",
+            "PHA",
+            "INY",
+            "LDA.INDY CA",
+            "ADC.ZP CB",
+            "STA.ZP CB",
+            "PLA",
+            "STA.ZP CA",
+            "JMP.ABS 0F49"
+          ]
+        }
+      ],
+      "end": "0FB7"
+    },
+    {
+      "at": "0FB7",
+      "name": "0BRANCH",
+      "cfa": "0FC1",
+      "flags": "87",
+      "link": "0F99",
+      "runtime": "native",
+      "entry": "0FC3",
+      "body": [
+        {
+          "at": "0FC3",
+          "asm": [
+            "INX",
+            "INX",
+            "LDA.ZPX FE",
+            "ORA.ZPX FF",
+            "BEQ 0FA4",
+            "CLC",
+            "LDA.ZP CA",
+            "ADC.# 02",
+            "STA.ZP CA",
+            "BCC 0FD6",
+            "INC.ZP CB",
+            "JMP.ABS 0F47"
+          ]
+        }
+      ],
+      "end": "0FD9"
+    },
+    {
+      "at": "0FD9",
+      "name": "(LOOP)",
+      "cfa": "0FE2",
+      "flags": "86",
+      "link": "0FB7",
+      "runtime": "native",
+      "entry": "0FE4",
+      "body": [
+        {
+          "at": "0FE4",
+          "asm": [
+            "STX.ZP D1",
+            "TSX",
+            "INC.ABSX 0101",
+            "BNE 0FEF",
+            "INC.ABSX 0102",
+            "CLC",
+            "LDA.ABSX 0103",
+            "SBC.ABSX 0101",
+            "LDA.ABSX 0104",
+            "SBC.ABSX 0102",
+            "LDX.ZP D1",
+            "ASL.A",
+            "BCC 0FA4",
+            "PLA",
+            "PLA",
+            "PLA",
+            "PLA",
+            "JMP.ABS 0FCB"
+          ]
+        }
+      ],
+      "end": "1008"
+    },
+    {
+      "at": "1008",
+      "name": "(+LOOP)",
+      "cfa": "1012",
+      "flags": "87",
+      "link": "0FD9",
+      "runtime": "native",
+      "entry": "1014",
+      "body": [
+        {
+          "at": "1014",
+          "asm": [
+            "INX",
+            "INX",
+            "STX.ZP D1",
+            "LDA.ZPX FF",
+            "PHA",
+            "PHA",
+            "LDA.ZPX FE",
+            "TSX",
+            "INX",
+            "INX",
+            "CLC",
+            "ADC.ABSX 0101",
+            "STA.ABSX 0101",
+            "PLA",
+            "ADC.ABSX 0102",
+            "STA.ABSX 0102",
+            "PLA",
+            "BPL 0FEF",
+            "CLC",
+            "LDA.ABSX 0101",
+            "SBC.ABSX 0103",
+            "LDA.ABSX 0102",
+            "SBC.ABSX 0104",
+            "JMP.ABS 0FFC"
+          ]
+        }
+      ],
+      "end": "1042"
+    },
+    {
+      "at": "1042",
+      "name": "(DO)",
+      "cfa": "1049",
+      "flags": "84",
+      "link": "1008",
+      "runtime": "native",
+      "entry": "104B",
+      "body": [
+        {
+          "at": "104B",
+          "asm": [
+            "LDA.ZPX 03",
+            "PHA",
+            "LDA.ZPX 02",
+            "PHA",
+            "LDA.ZPX 01",
+            "PHA",
+            "LDA.ZPX 00",
+            "PHA",
+            "INX",
+            "INX",
+            "INX",
+            "INX",
+            "JMP.ABS 0F47"
+          ]
+        }
+      ],
+      "end": "105E"
+    },
+    {
+      "at": "105E",
+      "name": "I",
+      "cfa": "1062",
+      "flags": "81",
+      "link": "1042",
+      "runtime": "native",
+      "entry": "12CA",
+      "body": [],
+      "end": "1064"
+    },
+    {
+      "at": "1064",
+      "name": "DIGIT",
+      "cfa": "106C",
+      "flags": "85",
+      "link": "105E",
+      "runtime": "native",
+      "entry": "106E",
+      "body": [
+        {
+          "at": "106E",
+          "asm": [
+            "SEC",
+            "LDA.ZPX 02",
+            "SBC.# 30",
+            "BMI 108D",
+            "CMP.# 0A",
+            "BMI 1080",
+            "SEC",
+            "SBC.# 07",
+            "CMP.# 0A",
+            "BMI 108D",
+            "CMP.ZPX 00",
+            "BPL 108D",
+            "STA.ZPX 02",
+            "LDA.# 01",
+            "PHA",
+            "TYA",
+            "JMP.ABS 0F42",
+            "TYA",
+            "PHA",
+            "INX",
+            "INX",
+            "JMP.ABS 0F42"
+          ]
+        }
+      ],
+      "end": "1094"
+    },
+    {
+      "at": "1094",
+      "name": "(FIND)",
+      "cfa": "109D",
+      "flags": "86",
+      "link": "1064",
+      "runtime": "native",
+      "entry": "109F",
+      "body": [
+        {
+          "at": "109F",
+          "asm": [
+            "LDA.# 02",
+            "JSR.ABS 0F6F",
+            "STX.ZP D1",
+            "LDY.# 00",
+            "LDA.INDY C2",
+            "EOR.INDY C4",
+            "AND.# 3F",
+            "BNE 10DD",
+            "INY",
+            "LDA.INDY C2",
+            "EOR.INDY C4",
+            "ASL.A",
+            "BNE 10DB",
+            "BCC 10B0",
+            "LDX.ZP D1",
+            "DEX",
+            "DEX",
+            "DEX",
+            "DEX",
+            "CLC",
+            "TYA",
+            "ADC.# 05",
+            "ADC.ZP C2",
+            "STA.ZPX 02",
+            "LDY.# 00",
+            "TYA",
+            "ADC.ZP C3",
+            "STA.ZPX 03",
+            "STY.ZPX 01",
+            "LDA.INDY C2",
+            "STA.ZPX 00",
+            "LDA.# 01",
+            "PHA",
+            "JMP.ABS 0F40",
+            "BCS 10E2",
+            "INY",
+            "LDA.INDY C2",
+            "BPL 10DD",
+            "INY",
+            "LDA.INDY C2",
+            "TAX",
+            "INY",
+            "LDA.INDY C2",
+            "STA.ZP C3",
+            "STX.ZP C2",
+            "ORA.ZP C2",
+            "BNE 10A6",
+            "LDX.ZP D1",
+            "LDA.# 00",
+            "PHA",
+            "JMP.ABS 0F40"
+          ]
+        }
+      ],
+      "end": "10F9"
+    },
+    {
+      "at": "10F9",
+      "name": "ENCLOSE",
+      "cfa": "1103",
+      "flags": "87",
+      "link": "1094",
+      "runtime": "native",
+      "entry": "1105",
+      "body": [
+        {
+          "at": "1105",
+          "asm": [
+            "LDA.# 02",
+            "JSR.ABS 0F6F",
+            "TXA",
+            "SEC",
+            "SBC.# 08",
+            "TAX",
+            "STY.ZPX 03",
+            "STY.ZPX 01",
+            "DEY",
+            "INY",
+            "LDA.INDY C4",
+            "CMP.ZP C2",
+            "BEQ 1114",
+            "STY.ZPX 04",
+            "LDA.INDY C4",
+            "BNE 112F",
+            "STY.ZPX 02",
+            "STY.ZPX 00",
+            "TYA",
+            "CMP.ZPX 04",
+            "BNE 112C",
+            "INC.ZPX 02",
+            "JMP.ABS 0F47",
+            "STY.ZPX 02",
+            "INY",
+            "CMP.ZP C2",
+            "BNE 111D",
+            "STY.ZPX 00",
+            "JMP.ABS 0F47"
+          ]
+        }
+      ],
+      "end": "113B"
+    },
+    {
+      "at": "113B",
+      "name": "EMIT",
+      "cfa": "1142",
+      "flags": "84",
+      "link": "10F9",
+      "runtime": "native",
+      "entry": "2306",
+      "body": [],
+      "end": "1144"
+    },
+    {
+      "at": "1144",
+      "name": "KEY",
+      "cfa": "114A",
+      "flags": "83",
+      "link": "113B",
+      "runtime": "native",
+      "entry": "2344",
+      "body": [],
+      "end": "114C"
+    },
+    {
+      "at": "114C",
+      "name": "?TERMINAL",
+      "cfa": "1158",
+      "flags": "89",
+      "link": "1144",
+      "runtime": "native",
+      "entry": "2364",
+      "body": [],
+      "end": "115A"
+    },
+    {
+      "at": "115A",
+      "name": "CR",
+      "cfa": "115F",
+      "flags": "82",
+      "link": "114C",
+      "runtime": "native",
+      "entry": "2370",
+      "body": [],
+      "end": "1161"
+    },
+    {
+      "at": "1161",
+      "name": "CMOVE",
+      "cfa": "1169",
+      "flags": "85",
+      "link": "115A",
+      "runtime": "native",
+      "entry": "116B",
+      "body": [
+        {
+          "at": "116B",
+          "asm": [
+            "LDA.# 03",
+            "JSR.ABS 0F6F",
+            "CPY.ZP C2",
+            "BNE 117B",
+            "DEC.ZP C3",
+            "BPL 117B",
+            "JMP.ABS 0F47",
+            "LDA.INDY C6",
+            "STA.INDY C4",
+            "INY",
+            "BNE 1170",
+            "INC.ZP C7",
+            "INC.ZP C5",
+            "JMP.ABS 1170"
+          ]
+        }
+      ],
+      "end": "1189"
+    },
+    {
+      "at": "1189",
+      "name": "U*",
+      "cfa": "118E",
+      "flags": "82",
+      "link": "1161",
+      "runtime": "native",
+      "entry": "1190",
+      "body": [
+        {
+          "at": "1190",
+          "asm": [
+            "LDA.ZPX 02",
+            "STA.ZP C2",
+            "STY.ZPX 02",
+            "LDA.ZPX 03",
+            "STA.ZP C3",
+            "STY.ZPX 03",
+            "LDY.# 10",
+            "ASL.ZPX 02",
+            "ROL.ZPX 03",
+            "ROL.ZPX 00",
+            "ROL.ZPX 01",
+            "BCC 11BB",
+            "CLC",
+            "LDA.ZP C2",
+            "ADC.ZPX 02",
+            "STA.ZPX 02",
+            "LDA.ZP C3",
+            "ADC.ZPX 03",
+            "STA.ZPX 03",
+            "LDA.# 00",
+            "ADC.ZPX 00",
+            "STA.ZPX 00",
+            "DEY",
+            "BNE 119E",
+            "JMP.ABS 0F47"
+          ]
+        }
+      ],
+      "end": "11C1"
+    },
+    {
+      "at": "11C1",
+      "name": "U/",
+      "cfa": "11C6",
+      "flags": "82",
+      "link": "1189",
+      "runtime": "native",
+      "entry": "11C8",
+      "body": [
+        {
+          "at": "11C8",
+          "asm": [
+            "LDA.ZPX 04",
+            "LDY.ZPX 02",
+            "STY.ZPX 04",
+            "ASL.A",
+            "STA.ZPX 02",
+            "LDA.ZPX 05",
+            "LDY.ZPX 03",
+            "STY.ZPX 05",
+            "ROL.A",
+            "STA.ZPX 03",
+            "LDA.# 10",
+            "STA.ZP C2",
+            "ROL.ZPX 04",
+            "ROL.ZPX 05",
+            "SEC",
+            "LDA.ZPX 04",
+            "SBC.ZPX 00",
+            "TAY",
+            "LDA.ZPX 05",
+            "SBC.ZPX 01",
+            "BCC 11F2",
+            "STY.ZPX 04",
+            "STA.ZPX 05",
+            "ROL.ZPX 02",
+            "ROL.ZPX 03",
+            "DEC.ZP C2",
+            "BNE 11DE",
+            "JMP.ABS 1059"
+          ]
+        }
+      ],
+      "end": "11FD"
+    },
+    {
+      "at": "11FD",
+      "name": "AND",
+      "cfa": "1203",
+      "flags": "83",
+      "link": "11C1",
+      "runtime": "native",
+      "entry": "1205",
+      "body": [
+        {
+          "at": "1205",
+          "asm": [
+            "LDA.ZPX 00",
+            "AND.ZPX 02",
+            "PHA",
+            "LDA.ZPX 01",
+            "AND.ZPX 03",
+            "INX",
+            "INX",
+            "JMP.ABS 0F42"
+          ]
+        }
+      ],
+      "end": "1213"
+    },
+    {
+      "at": "1213",
+      "name": "OR",
+      "cfa": "1218",
+      "flags": "82",
+      "link": "11FD",
+      "runtime": "native",
+      "entry": "121A",
+      "body": [
+        {
+          "at": "121A",
+          "asm": [
+            "LDA.ZPX 00",
+            "ORA.ZPX 02",
+            "PHA",
+            "LDA.ZPX 01",
+            "ORA.ZPX 03",
+            "INX",
+            "INX",
+            "JMP.ABS 0F42"
+          ]
+        }
+      ],
+      "end": "1228"
+    },
+    {
+      "at": "1228",
+      "name": "XOR",
+      "cfa": "122E",
+      "flags": "83",
+      "link": "1213",
+      "runtime": "native",
+      "entry": "1230",
+      "body": [
+        {
+          "at": "1230",
+          "asm": [
+            "LDA.ZPX 00",
+            "EOR.ZPX 02",
+            "PHA",
+            "LDA.ZPX 01",
+            "EOR.ZPX 03",
+            "INX",
+            "INX",
+            "JMP.ABS 0F42"
+          ]
+        }
+      ],
+      "end": "123E"
+    },
+    {
+      "at": "123E",
+      "name": "SP@",
+      "cfa": "1244",
+      "flags": "83",
+      "link": "1228",
+      "runtime": "native",
+      "entry": "1246",
+      "body": [
+        {
+          "at": "1246",
+          "asm": [
+            "TXA",
+            "PHA",
+            "LDA.# 00",
+            "JMP.ABS 0F40"
+          ]
+        }
+      ],
+      "end": "124D"
+    },
+    {
+      "at": "124D",
+      "name": "SP!",
+      "cfa": "1253",
+      "flags": "83",
+      "link": "123E",
+      "runtime": "native",
+      "entry": "1255",
+      "body": [
+        {
+          "at": "1255",
+          "asm": [
+            "LDY.# 06",
+            "LDA.INDY CF",
+            "TAX",
+            "JMP.ABS 0F47"
+          ]
+        }
+      ],
+      "end": "125D"
+    },
+    {
+      "at": "125D",
+      "name": "RP!",
+      "cfa": "1263",
+      "flags": "83",
+      "link": "124D",
+      "runtime": "native",
+      "entry": "1265",
+      "body": [
+        {
+          "at": "1265",
+          "asm": [
+            "STX.ZP D1",
+            "LDY.# 08",
+            "LDA.INDY CF",
+            "TAX",
+            "TXS",
+            "LDX.ZP D1",
+            "JMP.ABS 0F47"
+          ]
+        }
+      ],
+      "end": "1272"
+    },
+    {
+      "at": "1272",
+      "name": ";S",
+      "cfa": "1277",
+      "flags": "82",
+      "link": "125D",
+      "runtime": "native",
+      "entry": "1279",
+      "body": [
+        {
+          "at": "1279",
+          "asm": [
+            "PLA",
+            "STA.ZP CA",
+            "PLA",
+            "STA.ZP CB",
+            "JMP.ABS 0F47"
+          ]
+        }
+      ],
+      "end": "1282"
+    },
+    {
+      "at": "1282",
+      "name": "LEAVE",
+      "cfa": "128A",
+      "flags": "85",
+      "link": "1272",
+      "runtime": "native",
+      "entry": "128C",
+      "body": [
+        {
+          "at": "128C",
+          "asm": [
+            "STX.ZP D1",
+            "TSX",
+            "LDA.ABSX 0101",
+            "STA.ABSX 0103",
+            "LDA.ABSX 0102",
+            "STA.ABSX 0104",
+            "LDX.ZP D1",
+            "JMP.ABS 0F47"
+          ]
+        }
+      ],
+      "end": "12A0"
+    },
+    {
+      "at": "12A0",
+      "name": ">R",
+      "cfa": "12A5",
+      "flags": "82",
+      "link": "1282",
+      "runtime": "native",
+      "entry": "12A7",
+      "body": [
+        {
+          "at": "12A7",
+          "asm": [
+            "LDA.ZPX 01",
+            "PHA",
+            "LDA.ZPX 00",
+            "PHA",
+            "INX",
+            "INX",
+            "JMP.ABS 0F47"
+          ]
+        }
+      ],
+      "end": "12B2"
+    },
+    {
+      "at": "12B2",
+      "name": "R>",
+      "cfa": "12B7",
+      "flags": "82",
+      "link": "12A0",
+      "runtime": "native",
+      "entry": "12B9",
+      "body": [
+        {
+          "at": "12B9",
+          "asm": [
+            "DEX",
+            "DEX",
+            "PLA",
+            "STA.ZPX 00",
+            "PLA",
+            "STA.ZPX 01",
+            "JMP.ABS 0F47"
+          ]
+        }
+      ],
+      "end": "12C4"
+    },
+    {
+      "at": "12C4",
+      "name": "R",
+      "cfa": "12C8",
+      "flags": "81",
+      "link": "12B2",
+      "runtime": "native",
+      "entry": "12CA",
+      "body": [
+        {
+          "at": "12CA",
+          "asm": [
+            "STX.ZP D1",
+            "TSX",
+            "LDA.ABSX 0101",
+            "PHA",
+            "LDA.ABSX 0102",
+            "LDX.ZP D1",
+            "JMP.ABS 0F40"
+          ]
+        }
+      ],
+      "end": "12D9"
+    },
+    {
+      "at": "12D9",
+      "name": "0=",
+      "cfa": "12DE",
+      "flags": "82",
+      "link": "12C4",
+      "runtime": "native",
+      "entry": "12E0",
+      "body": [
+        {
+          "at": "12E0",
+          "asm": [
+            "LDA.ZPX 00",
+            "ORA.ZPX 01",
+            "STY.ZPX 01",
+            "BNE 12E9",
+            "INY",
+            "STY.ZPX 00",
+            "JMP.ABS 0F47"
+          ]
+        }
+      ],
+      "end": "12EE"
+    },
+    {
+      "at": "12EE",
+      "name": "0<",
+      "cfa": "12F3",
+      "flags": "82",
+      "link": "12D9",
+      "runtime": "native",
+      "entry": "12F5",
+      "body": [
+        {
+          "at": "12F5",
+          "asm": [
+            "ASL.ZPX 01",
+            "TYA",
+            "ROL.A",
+            "STY.ZPX 01",
+            "STA.ZPX 00",
+            "JMP.ABS 0F47"
+          ]
+        }
+      ],
+      "end": "1300"
+    },
+    {
+      "at": "1300",
+      "name": "+",
+      "cfa": "1304",
+      "flags": "81",
+      "link": "12EE",
+      "runtime": "native",
+      "entry": "1306",
+      "body": [
+        {
+          "at": "1306",
+          "asm": [
+            "CLC",
+            "LDA.ZPX 00",
+            "ADC.ZPX 02",
+            "STA.ZPX 02",
+            "LDA.ZPX 01",
+            "ADC.ZPX 03",
+            "STA.ZPX 03",
+            "INX",
+            "INX",
+            "JMP.ABS 0F47"
+          ]
+        }
+      ],
+      "end": "1318"
+    },
+    {
+      "at": "1318",
+      "name": "D+",
+      "cfa": "131D",
+      "flags": "82",
+      "link": "1300",
+      "runtime": "native",
+      "entry": "131F",
+      "body": [
+        {
+          "at": "131F",
+          "asm": [
+            "CLC",
+            "LDA.ZPX 02",
+            "ADC.ZPX 06",
+            "STA.ZPX 06",
+            "LDA.ZPX 03",
+            "ADC.ZPX 07",
+            "STA.ZPX 07",
+            "LDA.ZPX 00",
+            "ADC.ZPX 04",
+            "STA.ZPX 04",
+            "LDA.ZPX 01",
+            "ADC.ZPX 05",
+            "STA.ZPX 05",
+            "JMP.ABS 1057"
+          ]
+        }
+      ],
+      "end": "133B"
+    },
+    {
+      "at": "133B",
+      "name": "MINUS",
+      "cfa": "1343",
+      "flags": "85",
+      "link": "1318",
+      "runtime": "native",
+      "entry": "1345",
+      "body": [
+        {
+          "at": "1345",
+          "asm": [
+            "SEC",
+            "TYA",
+            "SBC.ZPX 00",
+            "STA.ZPX 00",
+            "TYA",
+            "SBC.ZPX 01",
+            "STA.ZPX 01",
+            "JMP.ABS 0F47"
+          ]
+        }
+      ],
+      "end": "1353"
+    },
+    {
+      "at": "1353",
+      "name": "DMINUS",
+      "cfa": "135C",
+      "flags": "86",
+      "link": "133B",
+      "runtime": "native",
+      "entry": "135E",
+      "body": [
+        {
+          "at": "135E",
+          "asm": [
+            "SEC",
+            "TYA",
+            "SBC.ZPX 02",
+            "STA.ZPX 02",
+            "TYA",
+            "SBC.ZPX 03",
+            "STA.ZPX 03",
+            "JMP.ABS 1346"
+          ]
+        }
+      ],
+      "end": "136C"
+    },
+    {
+      "at": "136C",
+      "name": "OVER",
+      "cfa": "1373",
+      "flags": "84",
+      "link": "1353",
+      "runtime": "native",
+      "entry": "1375",
+      "body": [
+        {
+          "at": "1375",
+          "asm": [
+            "LDA.ZPX 02",
+            "PHA",
+            "LDA.ZPX 03",
+            "JMP.ABS 0F40"
+          ]
+        }
+      ],
+      "end": "137D"
+    },
+    {
+      "at": "137D",
+      "name": "DROP",
+      "cfa": "1384",
+      "flags": "84",
+      "link": "136C",
+      "runtime": "native",
+      "entry": "1059",
+      "body": [],
+      "end": "1386"
+    },
+    {
+      "at": "1386",
+      "name": "SWAP",
+      "cfa": "138D",
+      "flags": "84",
+      "link": "137D",
+      "runtime": "native",
+      "entry": "138F",
+      "body": [
+        {
+          "at": "138F",
+          "asm": [
+            "LDA.ZPX 02",
+            "PHA",
+            "LDA.ZPX 00",
+            "STA.ZPX 02",
+            "LDA.ZPX 03",
+            "LDY.ZPX 01",
+            "STY.ZPX 03",
+            "JMP.ABS 0F42"
+          ]
+        }
+      ],
+      "end": "139F"
+    },
+    {
+      "at": "139F",
+      "name": "DUP",
+      "cfa": "13A5",
+      "flags": "83",
+      "link": "1386",
+      "runtime": "native",
+      "entry": "13A7",
+      "body": [
+        {
+          "at": "13A7",
+          "asm": [
+            "LDA.ZPX 00",
+            "PHA",
+            "LDA.ZPX 01",
+            "JMP.ABS 0F40"
+          ]
+        }
+      ],
+      "end": "13AF"
+    },
+    {
+      "at": "13AF",
+      "name": "+!",
+      "cfa": "13B4",
+      "flags": "82",
+      "link": "139F",
+      "runtime": "native",
+      "entry": "13B6",
+      "body": [
+        {
+          "at": "13B6",
+          "asm": [
+            "CLC",
+            "LDA.INDX 00",
+            "ADC.ZPX 02",
+            "STA.INDX 00",
+            "INC.ZPX 00",
+            "BNE 13C3",
+            "INC.ZPX 01",
+            "LDA.INDX 00",
+            "ADC.ZPX 03",
+            "STA.INDX 00",
+            "JMP.ABS 1057"
+          ]
+        }
+      ],
+      "end": "13CC"
+    },
+    {
+      "at": "13CC",
+      "name": "TOGGLE",
+      "cfa": "13D5",
+      "flags": "86",
+      "link": "13AF",
+      "runtime": "native",
+      "entry": "13D7",
+      "body": [
+        {
+          "at": "13D7",
+          "asm": [
+            "LDA.INDX 02",
+            "EOR.ZPX 00",
+            "STA.INDX 02",
+            "JMP.ABS 1057"
+          ]
+        }
+      ],
+      "end": "13E0"
+    },
+    {
+      "at": "13E0",
+      "name": "@",
+      "cfa": "13E4",
+      "flags": "81",
+      "link": "13CC",
+      "runtime": "native",
+      "entry": "13E6",
+      "body": [
+        {
+          "at": "13E6",
+          "asm": [
+            "LDA.INDX 00",
+            "PHA",
+            "INC.ZPX 00",
+            "BNE 13EF",
+            "INC.ZPX 01",
+            "LDA.INDX 00",
+            "JMP.ABS 0F42"
+          ]
+        }
+      ],
+      "end": "13F4"
+    },
+    {
+      "at": "13F4",
+      "name": "C@",
+      "cfa": "13F9",
+      "flags": "82",
+      "link": "13E0",
+      "runtime": "native",
+      "entry": "13FB",
+      "body": [
+        {
+          "at": "13FB",
+          "asm": [
+            "LDA.INDX 00",
+            "STA.ZPX 00",
+            "STY.ZPX 01",
+            "JMP.ABS 0F47"
+          ]
+        }
+      ],
+      "end": "1404"
+    },
+    {
+      "at": "1404",
+      "name": "!",
+      "cfa": "1408",
+      "flags": "81",
+      "link": "13F4",
+      "runtime": "native",
+      "entry": "140A",
+      "body": [
+        {
+          "at": "140A",
+          "asm": [
+            "LDA.ZPX 02",
+            "STA.INDX 00",
+            "INC.ZPX 00",
+            "BNE 1414",
+            "INC.ZPX 01",
+            "LDA.ZPX 03",
+            "STA.INDX 00",
+            "JMP.ABS 1057"
+          ]
+        }
+      ],
+      "end": "141B"
+    },
+    {
+      "at": "141B",
+      "name": "C!",
+      "cfa": "1420",
+      "flags": "82",
+      "link": "1404",
+      "runtime": "native",
+      "entry": "1422",
+      "body": [
+        {
+          "at": "1422",
+          "asm": [
+            "LDA.ZPX 02",
+            "STA.INDX 00",
+            "JMP.ABS 1057"
+          ]
+        }
+      ],
+      "end": "1429"
+    },
+    {
+      "at": "1429",
+      "name": ":",
+      "cfa": "142D",
+      "flags": "C1",
+      "link": "141B",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "142F",
+          "thread": [
+            "?EXEC",
+            "!CSP",
+            "CURRENT",
+            "@",
+            "CONTEXT",
+            "!",
+            "CREATE",
+            "]",
+            "(;CODE)"
+          ]
+        },
+        {
+          "at": "1441",
+          "asm": [
+            "LDA.ZP CB",
+            "PHA",
+            "LDA.ZP CA",
+            "PHA",
+            "CLC",
+            "LDA.ZP CD",
+            "ADC.# 02",
+            "STA.ZP CA",
+            "TYA",
+            "ADC.ZP CE",
+            "STA.ZP CB",
+            "JMP.ABS 0F47"
+          ]
+        }
+      ],
+      "end": "1456"
+    },
+    {
+      "at": "1456",
+      "name": ";",
+      "cfa": "145A",
+      "flags": "C1",
+      "link": "1429",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "145C",
+          "thread": [
+            "?CSP",
+            {
+              "compile": ";S"
+            },
+            "SMUDGE",
+            "[",
+            ";S"
+          ]
+        }
+      ],
+      "end": "1468"
+    },
+    {
+      "at": "1468",
+      "name": "CONSTANT",
+      "cfa": "1473",
+      "flags": "88",
+      "link": "1456",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "1475",
+          "thread": [
+            "CREATE",
+            "SMUDGE",
+            ",",
+            "(;CODE)"
+          ]
+        },
+        {
+          "at": "147D",
+          "asm": [
+            "LDY.# 02",
+            "LDA.INDY CD",
+            "PHA",
+            "INY",
+            "LDA.INDY CD",
+            "JMP.ABS 0F40"
+          ]
+        }
+      ],
+      "end": "1488"
+    },
+    {
+      "at": "1488",
+      "name": "VARIABLE",
+      "cfa": "1493",
+      "flags": "88",
+      "link": "1468",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "1495",
+          "thread": [
+            "CONSTANT",
+            "(;CODE)"
+          ]
+        },
+        {
+          "at": "1499",
+          "asm": [
+            "CLC",
+            "LDA.ZP CD",
+            "ADC.# 02",
+            "PHA",
+            "TYA",
+            "ADC.ZP CE",
+            "JMP.ABS 0F40"
+          ]
+        }
+      ],
+      "end": "14A5"
+    },
+    {
+      "at": "14A5",
+      "name": "USER",
+      "cfa": "14AC",
+      "flags": "84",
+      "link": "1488",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "14AE",
+          "thread": [
+            "CONSTANT",
+            "(;CODE)"
+          ]
+        },
+        {
+          "at": "14B2",
+          "asm": [
+            "LDY.# 02",
+            "CLC",
+            "LDA.INDY CD",
+            "ADC.ZP CF",
+            "PHA",
+            "LDA.# 00",
+            "ADC.ZP D0",
+            "JMP.ABS 0F40"
+          ]
+        }
+      ],
+      "end": "14C1"
+    },
+    {
+      "at": "14C1",
+      "name": "0",
+      "cfa": "14C5",
+      "flags": "81",
+      "link": "14A5",
+      "runtime": "DOCON",
+      "body": [
+        {
+          "at": "14C7",
+          "note": "Constant value",
+          "fill": {
+            "value": 0,
+            "count": 2
+          }
+        }
+      ],
+      "end": "14C9"
+    },
+    {
+      "at": "14C9",
+      "name": "1",
+      "cfa": "14CD",
+      "flags": "81",
+      "link": "14C1",
+      "runtime": "DOCON",
+      "body": [
+        {
+          "at": "14CF",
+          "note": "Constant value",
+          "cells": [
+            "0001"
+          ]
+        }
+      ],
+      "end": "14D1"
+    },
+    {
+      "at": "14D1",
+      "name": "2",
+      "cfa": "14D5",
+      "flags": "81",
+      "link": "14C9",
+      "runtime": "DOCON",
+      "body": [
+        {
+          "at": "14D7",
+          "note": "Constant value",
+          "cells": [
+            "0002"
+          ]
+        }
+      ],
+      "end": "14D9"
+    },
+    {
+      "at": "14D9",
+      "name": "3",
+      "cfa": "14DD",
+      "flags": "81",
+      "link": "14D1",
+      "runtime": "DOCON",
+      "body": [
+        {
+          "at": "14DF",
+          "note": "Constant value",
+          "cells": [
+            "0003"
+          ]
+        }
+      ],
+      "end": "14E1"
+    },
+    {
+      "at": "14E1",
+      "name": "BL",
+      "cfa": "14E6",
+      "flags": "82",
+      "link": "14D9",
+      "runtime": "DOCON",
+      "body": [
+        {
+          "at": "14E8",
+          "note": "Constant value",
+          "cells": [
+            "0020"
+          ]
+        }
+      ],
+      "end": "14EA"
+    },
+    {
+      "at": "14EA",
+      "name": "C/L",
+      "cfa": "14F0",
+      "flags": "83",
+      "link": "14E1",
+      "runtime": "DOCON",
+      "body": [
+        {
+          "at": "14F2",
+          "note": "Constant value",
+          "cells": [
+            "0040"
+          ]
+        }
+      ],
+      "end": "14F4"
+    },
+    {
+      "at": "14F4",
+      "name": "FIRST",
+      "cfa": "14FC",
+      "flags": "85",
+      "link": "14EA",
+      "runtime": "DOCON",
+      "body": [
+        {
+          "at": "14FE",
+          "note": "Constant value",
+          "cells": [
+            "0600"
+          ]
+        }
+      ],
+      "end": "1500"
+    },
+    {
+      "at": "1500",
+      "name": "LIMIT",
+      "cfa": "1508",
+      "flags": "85",
+      "link": "14F4",
+      "runtime": "DOCON",
+      "body": [
+        {
+          "at": "150A",
+          "note": "Constant value",
+          "cells": [
+            "0E40"
+          ]
+        }
+      ],
+      "end": "150C"
+    },
+    {
+      "at": "150C",
+      "name": "B/BUF",
+      "cfa": "1514",
+      "flags": "85",
+      "link": "1500",
+      "runtime": "DOCON",
+      "body": [
+        {
+          "at": "1516",
+          "note": "Constant value",
+          "cells": [
+            "0080"
+          ]
+        }
+      ],
+      "end": "1518"
+    },
+    {
+      "at": "1518",
+      "name": "B/SCR",
+      "cfa": "1520",
+      "flags": "85",
+      "link": "150C",
+      "runtime": "DOCON",
+      "body": [
+        {
+          "at": "1522",
+          "note": "Constant value",
+          "cells": [
+            "0008"
+          ]
+        }
+      ],
+      "end": "1524"
+    },
+    {
+      "at": "1524",
+      "name": "+ORIGIN",
+      "cfa": "152E",
+      "flags": "87",
+      "link": "1518",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "1530",
+          "thread": [
+            {
+              "lit16": "0F00"
+            },
+            "+",
+            ";S"
+          ]
+        }
+      ],
+      "end": "1538"
+    },
+    {
+      "at": "1538",
+      "name": "TIB",
+      "cfa": "153E",
+      "flags": "83",
+      "link": "1524",
+      "runtime": "DOUSER",
+      "body": [
+        {
+          "at": "1540",
+          "note": "User-area byte offset",
+          "fill": {
+            "value": 10,
+            "count": 1
+          }
+        }
+      ],
+      "end": "1541"
+    },
+    {
+      "at": "1541",
+      "name": "WIDTH",
+      "cfa": "1549",
+      "flags": "85",
+      "link": "1538",
+      "runtime": "DOUSER",
+      "body": [
+        {
+          "at": "154B",
+          "note": "User-area byte offset",
+          "fill": {
+            "value": 12,
+            "count": 1
+          }
+        }
+      ],
+      "end": "154C"
+    },
+    {
+      "at": "154C",
+      "name": "WARNING",
+      "cfa": "1556",
+      "flags": "87",
+      "link": "1541",
+      "runtime": "DOUSER",
+      "body": [
+        {
+          "at": "1558",
+          "note": "User-area byte offset",
+          "fill": {
+            "value": 14,
+            "count": 1
+          }
+        }
+      ],
+      "end": "1559"
+    },
+    {
+      "at": "1559",
+      "name": "FENCE",
+      "cfa": "1561",
+      "flags": "85",
+      "link": "154C",
+      "runtime": "DOUSER",
+      "body": [
+        {
+          "at": "1563",
+          "note": "User-area byte offset",
+          "fill": {
+            "value": 16,
+            "count": 1
+          }
+        }
+      ],
+      "end": "1564"
+    },
+    {
+      "at": "1564",
+      "name": "DP",
+      "cfa": "1569",
+      "flags": "82",
+      "link": "1559",
+      "runtime": "DOUSER",
+      "body": [
+        {
+          "at": "156B",
+          "note": "User-area byte offset",
+          "fill": {
+            "value": 18,
+            "count": 1
+          }
+        }
+      ],
+      "end": "156C"
+    },
+    {
+      "at": "156C",
+      "name": "VOC-LINK",
+      "cfa": "1577",
+      "flags": "88",
+      "link": "1564",
+      "runtime": "DOUSER",
+      "body": [
+        {
+          "at": "1579",
+          "note": "User-area byte offset",
+          "fill": {
+            "value": 20,
+            "count": 1
+          }
+        }
+      ],
+      "end": "157A"
+    },
+    {
+      "at": "157A",
+      "name": "BLK",
+      "cfa": "1580",
+      "flags": "83",
+      "link": "156C",
+      "runtime": "DOUSER",
+      "body": [
+        {
+          "at": "1582",
+          "note": "User-area byte offset",
+          "fill": {
+            "value": 22,
+            "count": 1
+          }
+        }
+      ],
+      "end": "1583"
+    },
+    {
+      "at": "1583",
+      "name": "IN",
+      "cfa": "1588",
+      "flags": "82",
+      "link": "157A",
+      "runtime": "DOUSER",
+      "body": [
+        {
+          "at": "158A",
+          "note": "User-area byte offset",
+          "fill": {
+            "value": 24,
+            "count": 1
+          }
+        }
+      ],
+      "end": "158B"
+    },
+    {
+      "at": "158B",
+      "name": "OUT",
+      "cfa": "1591",
+      "flags": "83",
+      "link": "1583",
+      "runtime": "DOUSER",
+      "body": [
+        {
+          "at": "1593",
+          "note": "User-area byte offset",
+          "fill": {
+            "value": 26,
+            "count": 1
+          }
+        }
+      ],
+      "end": "1594"
+    },
+    {
+      "at": "1594",
+      "name": "SCR",
+      "cfa": "159A",
+      "flags": "83",
+      "link": "158B",
+      "runtime": "DOUSER",
+      "body": [
+        {
+          "at": "159C",
+          "note": "User-area byte offset",
+          "fill": {
+            "value": 28,
+            "count": 1
+          }
+        }
+      ],
+      "end": "159D"
+    },
+    {
+      "at": "159D",
+      "name": "OFFSET",
+      "cfa": "15A6",
+      "flags": "86",
+      "link": "1594",
+      "runtime": "DOUSER",
+      "body": [
+        {
+          "at": "15A8",
+          "note": "User-area byte offset",
+          "fill": {
+            "value": 30,
+            "count": 1
+          }
+        }
+      ],
+      "end": "15A9"
+    },
+    {
+      "at": "15A9",
+      "name": "CONTEXT",
+      "cfa": "15B3",
+      "flags": "87",
+      "link": "159D",
+      "runtime": "DOUSER",
+      "body": [
+        {
+          "at": "15B5",
+          "note": "User-area byte offset",
+          "fill": {
+            "value": 32,
+            "count": 1
+          }
+        }
+      ],
+      "end": "15B6"
+    },
+    {
+      "at": "15B6",
+      "name": "CURRENT",
+      "cfa": "15C0",
+      "flags": "87",
+      "link": "15A9",
+      "runtime": "DOUSER",
+      "body": [
+        {
+          "at": "15C2",
+          "note": "User-area byte offset",
+          "fill": {
+            "value": 34,
+            "count": 1
+          }
+        }
+      ],
+      "end": "15C3"
+    },
+    {
+      "at": "15C3",
+      "name": "STATE",
+      "cfa": "15CB",
+      "flags": "85",
+      "link": "15B6",
+      "runtime": "DOUSER",
+      "body": [
+        {
+          "at": "15CD",
+          "note": "User-area byte offset",
+          "fill": {
+            "value": 36,
+            "count": 1
+          }
+        }
+      ],
+      "end": "15CE"
+    },
+    {
+      "at": "15CE",
+      "name": "BASE",
+      "cfa": "15D5",
+      "flags": "84",
+      "link": "15C3",
+      "runtime": "DOUSER",
+      "body": [
+        {
+          "at": "15D7",
+          "note": "User-area byte offset",
+          "fill": {
+            "value": 38,
+            "count": 1
+          }
+        }
+      ],
+      "end": "15D8"
+    },
+    {
+      "at": "15D8",
+      "name": "DPL",
+      "cfa": "15DE",
+      "flags": "83",
+      "link": "15CE",
+      "runtime": "DOUSER",
+      "body": [
+        {
+          "at": "15E0",
+          "note": "User-area byte offset",
+          "fill": {
+            "value": 40,
+            "count": 1
+          }
+        }
+      ],
+      "end": "15E1"
+    },
+    {
+      "at": "15E1",
+      "name": "FLD",
+      "cfa": "15E7",
+      "flags": "83",
+      "link": "15D8",
+      "runtime": "DOUSER",
+      "body": [
+        {
+          "at": "15E9",
+          "note": "User-area byte offset",
+          "fill": {
+            "value": 42,
+            "count": 1
+          }
+        }
+      ],
+      "end": "15EA"
+    },
+    {
+      "at": "15EA",
+      "name": "CSP",
+      "cfa": "15F0",
+      "flags": "83",
+      "link": "15E1",
+      "runtime": "DOUSER",
+      "body": [
+        {
+          "at": "15F2",
+          "note": "User-area byte offset",
+          "fill": {
+            "value": 44,
+            "count": 1
+          }
+        }
+      ],
+      "end": "15F3"
+    },
+    {
+      "at": "15F3",
+      "name": "R#",
+      "cfa": "15F8",
+      "flags": "82",
+      "link": "15EA",
+      "runtime": "DOUSER",
+      "body": [
+        {
+          "at": "15FA",
+          "note": "User-area byte offset",
+          "fill": {
+            "value": 46,
+            "count": 1
+          }
+        }
+      ],
+      "end": "15FB"
+    },
+    {
+      "at": "15FB",
+      "name": "HLD",
+      "cfa": "1601",
+      "flags": "83",
+      "link": "15F3",
+      "runtime": "DOUSER",
+      "body": [
+        {
+          "at": "1603",
+          "note": "User-area byte offset",
+          "fill": {
+            "value": 48,
+            "count": 1
+          }
+        }
+      ],
+      "end": "1604"
+    },
+    {
+      "at": "1604",
+      "name": "1+",
+      "cfa": "1609",
+      "flags": "82",
+      "link": "15FB",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "160B",
+          "thread": [
+            "1",
+            "+",
+            ";S"
+          ]
+        }
+      ],
+      "end": "1611"
+    },
+    {
+      "at": "1611",
+      "name": "2+",
+      "cfa": "1616",
+      "flags": "82",
+      "link": "1604",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "1618",
+          "thread": [
+            "2",
+            "+",
+            ";S"
+          ]
+        }
+      ],
+      "end": "161E"
+    },
+    {
+      "at": "161E",
+      "name": "HERE",
+      "cfa": "1625",
+      "flags": "84",
+      "link": "1611",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "1627",
+          "thread": [
+            "DP",
+            "@",
+            ";S"
+          ]
+        }
+      ],
+      "end": "162D"
+    },
+    {
+      "at": "162D",
+      "name": "ALLOT",
+      "cfa": "1635",
+      "flags": "85",
+      "link": "161E",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "1637",
+          "thread": [
+            "DP",
+            "+!",
+            ";S"
+          ]
+        }
+      ],
+      "end": "163D"
+    },
+    {
+      "at": "163D",
+      "name": ",",
+      "cfa": "1641",
+      "flags": "81",
+      "link": "162D",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "1643",
+          "thread": [
+            "HERE",
+            "!",
+            "2",
+            "ALLOT",
+            ";S"
+          ]
+        }
+      ],
+      "end": "164D"
+    },
+    {
+      "at": "164D",
+      "name": "C,",
+      "cfa": "1652",
+      "flags": "82",
+      "link": "163D",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "1654",
+          "thread": [
+            "HERE",
+            "C!",
+            "1",
+            "ALLOT",
+            ";S"
+          ]
+        }
+      ],
+      "end": "165E"
+    },
+    {
+      "at": "165E",
+      "name": "-",
+      "cfa": "1662",
+      "flags": "81",
+      "link": "164D",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "1664",
+          "thread": [
+            "MINUS",
+            "+",
+            ";S"
+          ]
+        }
+      ],
+      "end": "166A"
+    },
+    {
+      "at": "166A",
+      "name": "=",
+      "cfa": "166E",
+      "flags": "81",
+      "link": "165E",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "1670",
+          "thread": [
+            "-",
+            "0=",
+            ";S"
+          ]
+        }
+      ],
+      "end": "1676"
+    },
+    {
+      "at": "1676",
+      "name": "U<",
+      "cfa": "167B",
+      "flags": "82",
+      "link": "166A",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "167D",
+          "thread": [
+            "2DUP",
+            "XOR",
+            "0<",
+            {
+              "branch": "0BRANCH",
+              "target": "1691"
+            },
+            "DROP",
+            "0<",
+            "0=",
+            {
+              "branch": "BRANCH",
+              "target": "1695"
+            },
+            "-",
+            "0<",
+            ";S"
+          ]
+        }
+      ],
+      "end": "1697"
+    },
+    {
+      "at": "1697",
+      "name": "<",
+      "cfa": "169B",
+      "flags": "81",
+      "link": "1676",
+      "runtime": "native",
+      "entry": "169D",
+      "body": [
+        {
+          "at": "169D",
+          "asm": [
+            "SEC",
+            "LDA.ZPX 02",
+            "SBC.ZPX 00",
+            "LDA.ZPX 03",
+            "SBC.ZPX 01",
+            "STY.ZPX 03",
+            "BVC 16AC",
+            "EOR.# 80",
+            "BPL 16AF",
+            "INY",
+            "STY.ZPX 02",
+            "JMP.ABS 1059"
+          ]
+        }
+      ],
+      "end": "16B4"
+    },
+    {
+      "at": "16B4",
+      "name": ">",
+      "cfa": "16B8",
+      "flags": "81",
+      "link": "1697",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "16BA",
+          "thread": [
+            "SWAP",
+            "<",
+            ";S"
+          ]
+        }
+      ],
+      "end": "16C0"
+    },
+    {
+      "at": "16C0",
+      "name": "ROT",
+      "cfa": "16C6",
+      "flags": "83",
+      "link": "16B4",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "16C8",
+          "thread": [
+            ">R",
+            "SWAP",
+            "R>",
+            "SWAP",
+            ";S"
+          ]
+        }
+      ],
+      "end": "16D2"
+    },
+    {
+      "at": "16D2",
+      "name": "SPACE",
+      "cfa": "16DA",
+      "flags": "85",
+      "link": "16C0",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "16DC",
+          "thread": [
+            "BL",
+            "EMIT",
+            ";S"
+          ]
+        }
+      ],
+      "end": "16E2"
+    },
+    {
+      "at": "16E2",
+      "name": "-DUP",
+      "cfa": "16E9",
+      "flags": "84",
+      "link": "16D2",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "16EB",
+          "thread": [
+            "DUP",
+            {
+              "branch": "0BRANCH",
+              "target": "16F3"
+            },
+            "DUP",
+            ";S"
+          ]
+        }
+      ],
+      "end": "16F5"
+    },
+    {
+      "at": "16F5",
+      "name": "TRAVERSE",
+      "cfa": "1700",
+      "flags": "88",
+      "link": "16E2",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "1702",
+          "thread": [
+            "SWAP",
+            "OVER",
+            "+",
+            {
+              "lit8": "7F"
+            },
+            "OVER",
+            "C@",
+            "<",
+            {
+              "branch": "0BRANCH",
+              "target": "1704"
+            },
+            "SWAP",
+            "DROP",
+            ";S"
+          ]
+        }
+      ],
+      "end": "171B"
+    },
+    {
+      "at": "171B",
+      "name": "LATEST",
+      "cfa": "1724",
+      "flags": "86",
+      "link": "16F5",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "1726",
+          "thread": [
+            "CURRENT",
+            "@",
+            "@",
+            ";S"
+          ]
+        }
+      ],
+      "end": "172E"
+    },
+    {
+      "at": "172E",
+      "name": "LFA",
+      "cfa": "1734",
+      "flags": "83",
+      "link": "171B",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "1736",
+          "thread": [
+            {
+              "lit8": "04"
+            },
+            "-",
+            ";S"
+          ]
+        }
+      ],
+      "end": "173D"
+    },
+    {
+      "at": "173D",
+      "name": "CFA",
+      "cfa": "1743",
+      "flags": "83",
+      "link": "172E",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "1745",
+          "thread": [
+            "2",
+            "-",
+            ";S"
+          ]
+        }
+      ],
+      "end": "174B"
+    },
+    {
+      "at": "174B",
+      "name": "NFA",
+      "cfa": "1751",
+      "flags": "83",
+      "link": "173D",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "1753",
+          "thread": [
+            {
+              "lit8": "05"
+            },
+            "-",
+            {
+              "lit16": "FFFF"
+            },
+            "TRAVERSE",
+            ";S"
+          ]
+        }
+      ],
+      "end": "1760"
+    },
+    {
+      "at": "1760",
+      "name": "PFA",
+      "cfa": "1766",
+      "flags": "83",
+      "link": "174B",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "1768",
+          "thread": [
+            "1",
+            "TRAVERSE",
+            {
+              "lit8": "05"
+            },
+            "+",
+            ";S"
+          ]
+        }
+      ],
+      "end": "1773"
+    },
+    {
+      "at": "1773",
+      "name": "!CSP",
+      "cfa": "177A",
+      "flags": "84",
+      "link": "1760",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "177C",
+          "thread": [
+            "SP@",
+            "CSP",
+            "!",
+            ";S"
+          ]
+        }
+      ],
+      "end": "1784"
+    },
+    {
+      "at": "1784",
+      "name": "?ERROR",
+      "cfa": "178D",
+      "flags": "86",
+      "link": "1773",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "178F",
+          "thread": [
+            "SWAP",
+            {
+              "branch": "0BRANCH",
+              "target": "179B"
+            },
+            "ERROR",
+            {
+              "branch": "BRANCH",
+              "target": "179D"
+            },
+            "DROP",
+            ";S"
+          ]
+        }
+      ],
+      "end": "179F"
+    },
+    {
+      "at": "179F",
+      "name": "?COMP",
+      "cfa": "17A7",
+      "flags": "85",
+      "link": "1784",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "17A9",
+          "thread": [
+            "STATE",
+            "@",
+            "0=",
+            {
+              "lit8": "11"
+            },
+            "?ERROR",
+            ";S"
+          ]
+        }
+      ],
+      "end": "17B6"
+    },
+    {
+      "at": "17B6",
+      "name": "?EXEC",
+      "cfa": "17BE",
+      "flags": "85",
+      "link": "179F",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "17C0",
+          "thread": [
+            "STATE",
+            "@",
+            {
+              "lit8": "12"
+            },
+            "?ERROR",
+            ";S"
+          ]
+        }
+      ],
+      "end": "17CB"
+    },
+    {
+      "at": "17CB",
+      "name": "?PAIRS",
+      "cfa": "17D4",
+      "flags": "86",
+      "link": "17B6",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "17D6",
+          "thread": [
+            "-",
+            {
+              "lit8": "13"
+            },
+            "?ERROR",
+            ";S"
+          ]
+        }
+      ],
+      "end": "17DF"
+    },
+    {
+      "at": "17DF",
+      "name": "?CSP",
+      "cfa": "17E6",
+      "flags": "84",
+      "link": "17CB",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "17E8",
+          "thread": [
+            "SP@",
+            "CSP",
+            "@",
+            "-",
+            {
+              "lit8": "14"
+            },
+            "?ERROR",
+            ";S"
+          ]
+        }
+      ],
+      "end": "17F7"
+    },
+    {
+      "at": "17F7",
+      "name": "?LOADING",
+      "cfa": "1802",
+      "flags": "88",
+      "link": "17DF",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "1804",
+          "thread": [
+            "BLK",
+            "@",
+            "0=",
+            {
+              "lit8": "16"
+            },
+            "?ERROR",
+            ";S"
+          ]
+        }
+      ],
+      "end": "1811"
+    },
+    {
+      "at": "1811",
+      "name": "COMPILE",
+      "cfa": "181B",
+      "flags": "87",
+      "link": "17F7",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "181D",
+          "thread": [
+            "?COMP",
+            "R>",
+            "DUP",
+            "2+",
+            ">R",
+            "@",
+            ",",
+            ";S"
+          ]
+        }
+      ],
+      "end": "182D"
+    },
+    {
+      "at": "182D",
+      "name": "[",
+      "cfa": "1831",
+      "flags": "C1",
+      "link": "1811",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "1833",
+          "thread": [
+            "0",
+            "STATE",
+            "!",
+            ";S"
+          ]
+        }
+      ],
+      "end": "183B"
+    },
+    {
+      "at": "183B",
+      "name": "]",
+      "cfa": "183F",
+      "flags": "81",
+      "link": "182D",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "1841",
+          "thread": [
+            {
+              "lit8": "C0"
+            },
+            "STATE",
+            "!",
+            ";S"
+          ]
+        }
+      ],
+      "end": "184A"
+    },
+    {
+      "at": "184A",
+      "name": "SMUDGE",
+      "cfa": "1853",
+      "flags": "86",
+      "link": "183B",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "1855",
+          "thread": [
+            "LATEST",
+            {
+              "lit8": "20"
+            },
+            "TOGGLE",
+            ";S"
+          ]
+        }
+      ],
+      "end": "185E"
+    },
+    {
+      "at": "185E",
+      "name": "HEX",
+      "cfa": "1864",
+      "flags": "83",
+      "link": "184A",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "1866",
+          "thread": [
+            {
+              "lit8": "10"
+            },
+            "BASE",
+            "!",
+            ";S"
+          ]
+        }
+      ],
+      "end": "186F"
+    },
+    {
+      "at": "186F",
+      "name": "DECIMAL",
+      "cfa": "1879",
+      "flags": "87",
+      "link": "185E",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "187B",
+          "thread": [
+            {
+              "lit8": "0A"
+            },
+            "BASE",
+            "!",
+            ";S"
+          ]
+        }
+      ],
+      "end": "1884"
+    },
+    {
+      "at": "1884",
+      "name": "(;CODE)",
+      "cfa": "188E",
+      "flags": "87",
+      "link": "186F",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "1890",
+          "thread": [
+            "R>",
+            "LATEST",
+            "PFA",
+            "CFA",
+            "!",
+            ";S"
+          ]
+        }
+      ],
+      "end": "189C"
+    },
+    {
+      "at": "189C",
+      "name": ";CODE",
+      "cfa": "18A4",
+      "flags": "C5",
+      "link": "1884",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "18A6",
+          "thread": [
+            "?CSP",
+            {
+              "compile": "(;CODE)"
+            },
+            "[",
+            "SMUDGE",
+            ";S"
+          ]
+        }
+      ],
+      "end": "18B2"
+    },
+    {
+      "at": "18B2",
+      "name": "<BUILDS",
+      "cfa": "18BC",
+      "flags": "87",
+      "link": "189C",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "18BE",
+          "thread": [
+            "0",
+            "CONSTANT",
+            ";S"
+          ]
+        }
+      ],
+      "end": "18C4"
+    },
+    {
+      "at": "18C4",
+      "name": "DOES>",
+      "cfa": "18CC",
+      "flags": "85",
+      "link": "18B2",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "18CE",
+          "thread": [
+            "R>",
+            "LATEST",
+            "PFA",
+            "!",
+            "(;CODE)"
+          ]
+        },
+        {
+          "at": "18D8",
+          "asm": [
+            "LDA.ZP CB",
+            "PHA",
+            "LDA.ZP CA",
+            "PHA",
+            "LDY.# 02",
+            "LDA.INDY CD",
+            "STA.ZP CA",
+            "INY",
+            "LDA.INDY CD",
+            "STA.ZP CB",
+            "CLC",
+            "LDA.ZP CD",
+            "ADC.# 04",
+            "PHA",
+            "LDA.ZP CE",
+            "ADC.# 00",
+            "JMP.ABS 0F40"
+          ]
+        }
+      ],
+      "end": "18F6"
+    },
+    {
+      "at": "18F6",
+      "name": "COUNT",
+      "cfa": "18FE",
+      "flags": "85",
+      "link": "18C4",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "1900",
+          "thread": [
+            "DUP",
+            "1+",
+            "SWAP",
+            "C@",
+            ";S"
+          ]
+        }
+      ],
+      "end": "190A"
+    },
+    {
+      "at": "190A",
+      "name": "TYPE",
+      "cfa": "1911",
+      "flags": "84",
+      "link": "18F6",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "1913",
+          "thread": [
+            "-DUP",
+            {
+              "branch": "0BRANCH",
+              "target": "1934"
+            },
+            "OVER",
+            "+",
+            "SWAP",
+            "(DO)",
+            "I",
+            "C@",
+            {
+              "lit8": "7F"
+            },
+            "AND",
+            "EMIT",
+            {
+              "branch": "(LOOP)",
+              "target": "1921"
+            },
+            {
+              "branch": "BRANCH",
+              "target": "1936"
+            },
+            "DROP",
+            ";S"
+          ]
+        }
+      ],
+      "end": "1938"
+    },
+    {
+      "at": "1938",
+      "name": "-TRAILING",
+      "cfa": "1944",
+      "flags": "89",
+      "link": "190A",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "1946",
+          "thread": [
+            "DUP",
+            "0",
+            "(DO)",
+            "OVER",
+            "OVER",
+            "+",
+            "1",
+            "-",
+            "C@",
+            "BL",
+            "-",
+            {
+              "branch": "0BRANCH",
+              "target": "1966"
+            },
+            "LEAVE",
+            {
+              "branch": "BRANCH",
+              "target": "196A"
+            },
+            "1",
+            "-",
+            {
+              "branch": "(LOOP)",
+              "target": "194C"
+            },
+            ";S"
+          ]
+        }
+      ],
+      "end": "1970"
+    },
+    {
+      "at": "1970",
+      "name": "(.\")",
+      "cfa": "1977",
+      "flags": "84",
+      "link": "1938",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "1979",
+          "thread": [
+            "R",
+            "COUNT",
+            "DUP",
+            "1+",
+            "R>",
+            "+",
+            ">R",
+            "TYPE",
+            ";S"
+          ]
+        }
+      ],
+      "end": "198B"
+    },
+    {
+      "at": "198B",
+      "name": ".\"",
+      "cfa": "1990",
+      "flags": "C2",
+      "link": "1970",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "1992",
+          "thread": [
+            {
+              "lit8": "22"
+            },
+            "STATE",
+            "@",
+            {
+              "branch": "0BRANCH",
+              "target": "19AF"
+            },
+            {
+              "compile": "(.\")"
+            },
+            "WORD",
+            "HERE",
+            "C@",
+            "1+",
+            "ALLOT",
+            {
+              "branch": "BRANCH",
+              "target": "19B7"
+            },
+            "WORD",
+            "HERE",
+            "COUNT",
+            "TYPE",
+            ";S"
+          ]
+        }
+      ],
+      "end": "19B9"
+    },
+    {
+      "at": "19B9",
+      "name": "QUERY",
+      "cfa": "19C1",
+      "flags": "85",
+      "link": "198B",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "19C3",
+          "thread": [
+            "TIB",
+            "@",
+            {
+              "lit8": "50"
+            },
+            "EXPECT",
+            "0",
+            "IN",
+            "!",
+            ";S"
+          ]
+        }
+      ],
+      "end": "19D4"
+    },
+    {
+      "at": "19D4",
+      "name": "\u0000",
+      "cfa": "19D8",
+      "flags": "C1",
+      "link": "19B9",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "19DA",
+          "thread": [
+            "BLK",
+            "@",
+            {
+              "branch": "0BRANCH",
+              "target": "1A0A"
+            },
+            "1",
+            "BLK",
+            "+!",
+            "0",
+            "IN",
+            "!",
+            "BLK",
+            "@",
+            "0",
+            "B/SCR",
+            "U/",
+            "DROP",
+            "0=",
+            {
+              "branch": "0BRANCH",
+              "target": "1A06"
+            },
+            "?EXEC",
+            "R>",
+            "DROP",
+            {
+              "branch": "BRANCH",
+              "target": "1A0E"
+            },
+            "R>",
+            "DROP",
+            ";S"
+          ]
+        }
+      ],
+      "end": "1A10"
+    },
+    {
+      "at": "1A10",
+      "name": "FILL",
+      "cfa": "1A17",
+      "flags": "84",
+      "link": "19D4",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "1A19",
+          "thread": [
+            "SWAP",
+            ">R",
+            "OVER",
+            "C!",
+            "DUP",
+            "1+",
+            "R>",
+            "1",
+            "-",
+            "CMOVE",
+            ";S"
+          ]
+        }
+      ],
+      "end": "1A2F"
+    },
+    {
+      "at": "1A2F",
+      "name": "ERASE",
+      "cfa": "1A37",
+      "flags": "85",
+      "link": "1A10",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "1A39",
+          "thread": [
+            "0",
+            "FILL",
+            ";S"
+          ]
+        }
+      ],
+      "end": "1A3F"
+    },
+    {
+      "at": "1A3F",
+      "name": "BLANKS",
+      "cfa": "1A48",
+      "flags": "86",
+      "link": "1A2F",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "1A4A",
+          "thread": [
+            "BL",
+            "FILL",
+            ";S"
+          ]
+        }
+      ],
+      "end": "1A50"
+    },
+    {
+      "at": "1A50",
+      "name": "HOLD",
+      "cfa": "1A57",
+      "flags": "84",
+      "link": "1A3F",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "1A59",
+          "thread": [
+            {
+              "lit16": "FFFF"
+            },
+            "HLD",
+            "+!",
+            "HLD",
+            "@",
+            "C!",
+            ";S"
+          ]
+        }
+      ],
+      "end": "1A69"
+    },
+    {
+      "at": "1A69",
+      "name": "PAD",
+      "cfa": "1A6F",
+      "flags": "83",
+      "link": "1A50",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "1A71",
+          "thread": [
+            "HERE",
+            {
+              "lit8": "80"
+            },
+            "+",
+            ";S"
+          ]
+        }
+      ],
+      "end": "1A7A"
+    },
+    {
+      "at": "1A7A",
+      "name": "NEXT",
+      "cfa": "1A81",
+      "flags": "84",
+      "link": "1A69",
+      "runtime": "DOCON",
+      "body": [
+        {
+          "at": "1A83",
+          "note": "Constant value",
+          "cells": [
+            "0F47"
+          ]
+        }
+      ],
+      "end": "1A85"
+    },
+    {
+      "at": "1A85",
+      "name": "PUSH",
+      "cfa": "1A8C",
+      "flags": "84",
+      "link": "1A7A",
+      "runtime": "DOCON",
+      "body": [
+        {
+          "at": "1A8E",
+          "note": "Constant value",
+          "cells": [
+            "0F40"
+          ]
+        }
+      ],
+      "end": "1A90"
+    },
+    {
+      "at": "1A90",
+      "name": "PUT",
+      "cfa": "1A96",
+      "flags": "83",
+      "link": "1A85",
+      "runtime": "DOCON",
+      "body": [
+        {
+          "at": "1A98",
+          "note": "Constant value",
+          "cells": [
+            "0F42"
+          ]
+        }
+      ],
+      "end": "1A9A"
+    },
+    {
+      "at": "1A9A",
+      "name": "PUSH0A",
+      "cfa": "1AA3",
+      "flags": "86",
+      "link": "1A90",
+      "runtime": "DOCON",
+      "body": [
+        {
+          "at": "1AA5",
+          "note": "Constant value",
+          "cells": [
+            "1247"
+          ]
+        }
+      ],
+      "end": "1AA7"
+    },
+    {
+      "at": "1AA7",
+      "name": "POP",
+      "cfa": "1AAD",
+      "flags": "83",
+      "link": "1A9A",
+      "runtime": "DOCON",
+      "body": [
+        {
+          "at": "1AAF",
+          "note": "Constant value",
+          "cells": [
+            "1059"
+          ]
+        }
+      ],
+      "end": "1AB1"
+    },
+    {
+      "at": "1AB1",
+      "name": "POPTWO",
+      "cfa": "1ABA",
+      "flags": "86",
+      "link": "1AA7",
+      "runtime": "DOCON",
+      "body": [
+        {
+          "at": "1ABC",
+          "note": "Constant value",
+          "cells": [
+            "1057"
+          ]
+        }
+      ],
+      "end": "1ABE"
+    },
+    {
+      "at": "1ABE",
+      "name": "BINARY",
+      "cfa": "1AC7",
+      "flags": "86",
+      "link": "1AB1",
+      "runtime": "DOCON",
+      "body": [
+        {
+          "at": "1AC9",
+          "note": "Constant value",
+          "cells": [
+            "120E"
+          ]
+        }
+      ],
+      "end": "1ACB"
+    },
+    {
+      "at": "1ACB",
+      "name": "IP",
+      "cfa": "1AD0",
+      "flags": "82",
+      "link": "1ABE",
+      "runtime": "DOCON",
+      "body": [
+        {
+          "at": "1AD2",
+          "note": "Constant value",
+          "cells": [
+            "00CA"
+          ]
+        }
+      ],
+      "end": "1AD4"
+    },
+    {
+      "at": "1AD4",
+      "name": "W",
+      "cfa": "1AD8",
+      "flags": "81",
+      "link": "1ACB",
+      "runtime": "DOCON",
+      "body": [
+        {
+          "at": "1ADA",
+          "note": "Constant value",
+          "cells": [
+            "00CD"
+          ]
+        }
+      ],
+      "end": "1ADC"
+    },
+    {
+      "at": "1ADC",
+      "name": "N",
+      "cfa": "1AE0",
+      "flags": "81",
+      "link": "1AD4",
+      "runtime": "DOCON",
+      "body": [
+        {
+          "at": "1AE2",
+          "note": "Constant value",
+          "cells": [
+            "00C2"
+          ]
+        }
+      ],
+      "end": "1AE4"
+    },
+    {
+      "at": "1AE4",
+      "name": "XSAVE",
+      "cfa": "1AEC",
+      "flags": "85",
+      "link": "1ADC",
+      "runtime": "DOCON",
+      "body": [
+        {
+          "at": "1AEE",
+          "note": "Constant value",
+          "cells": [
+            "00D1"
+          ]
+        }
+      ],
+      "end": "1AF0"
+    },
+    {
+      "at": "1AF0",
+      "name": "UP",
+      "cfa": "1AF5",
+      "flags": "82",
+      "link": "1AE4",
+      "runtime": "DOCON",
+      "body": [
+        {
+          "at": "1AF7",
+          "note": "Constant value",
+          "cells": [
+            "00CF"
+          ]
+        }
+      ],
+      "end": "1AF9"
+    },
+    {
+      "at": "1AF9",
+      "name": "SETUP",
+      "cfa": "1B01",
+      "flags": "85",
+      "link": "1AF0",
+      "runtime": "DOCON",
+      "body": [
+        {
+          "at": "1B03",
+          "note": "Constant value",
+          "cells": [
+            "0F6F"
+          ]
+        }
+      ],
+      "end": "1B05"
+    },
+    {
+      "at": "1B05",
+      "name": "PFLAG",
+      "cfa": "1B0D",
+      "flags": "85",
+      "link": "1AF9",
+      "runtime": "DOVAR",
+      "body": [
+        {
+          "at": "1B0F",
+          "note": "Initial variable contents",
+          "fill": {
+            "value": 0,
+            "count": 2
+          }
+        }
+      ],
+      "end": "1B11"
+    },
+    {
+      "at": "1B11",
+      "name": "GFLAG",
+      "cfa": "1B19",
+      "flags": "85",
+      "link": "1B05",
+      "runtime": "DOVAR",
+      "body": [
+        {
+          "at": "1B1B",
+          "note": "Initial variable contents",
+          "fill": {
+            "value": 0,
+            "count": 2
+          }
+        }
+      ],
+      "end": "1B1D"
+    },
+    {
+      "at": "1B1D",
+      "name": "WORD",
+      "cfa": "1B24",
+      "flags": "84",
+      "link": "1B11",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "1B26",
+          "thread": [
+            "BLK",
+            "@",
+            {
+              "branch": "0BRANCH",
+              "target": "1B38"
+            },
+            "BLK",
+            "@",
+            "BLOCK",
+            {
+              "branch": "BRANCH",
+              "target": "1B3C"
+            },
+            "TIB",
+            "@",
+            "IN",
+            "@",
+            "+",
+            "SWAP",
+            "ENCLOSE",
+            "HERE",
+            {
+              "lit8": "22"
+            },
+            "BLANKS",
+            "IN",
+            "+!",
+            "OVER",
+            "-",
+            ">R",
+            "R",
+            "HERE",
+            "C!",
+            "+",
+            "HERE",
+            "1+",
+            "R>",
+            "CMOVE",
+            ";S"
+          ]
+        }
+      ],
+      "end": "1B69"
+    },
+    {
+      "at": "1B69",
+      "name": "(NUMBER)",
+      "cfa": "1B74",
+      "flags": "88",
+      "link": "1B1D",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "1B76",
+          "thread": [
+            "1+",
+            "DUP",
+            ">R",
+            "C@",
+            "BASE",
+            "@",
+            "DIGIT",
+            {
+              "branch": "0BRANCH",
+              "target": "1BB2"
+            },
+            "SWAP",
+            "BASE",
+            "@",
+            "U*",
+            "DROP",
+            "ROT",
+            "BASE",
+            "@",
+            "U*",
+            "D+",
+            "DPL",
+            "@",
+            "1+",
+            {
+              "branch": "0BRANCH",
+              "target": "1BAC"
+            },
+            "1",
+            "DPL",
+            "+!",
+            "R>",
+            {
+              "branch": "BRANCH",
+              "target": "1B76"
+            },
+            "R>",
+            ";S"
+          ]
+        }
+      ],
+      "end": "1BB6"
+    },
+    {
+      "at": "1BB6",
+      "name": "NUMBER",
+      "cfa": "1BBF",
+      "flags": "86",
+      "link": "1B69",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "1BC1",
+          "thread": [
+            "0",
+            "0",
+            "ROT",
+            "DUP",
+            "1+",
+            "C@",
+            {
+              "lit8": "2D"
+            },
+            "=",
+            "DUP",
+            ">R",
+            "+",
+            {
+              "lit16": "FFFF"
+            },
+            "DPL",
+            "!",
+            "(NUMBER)",
+            "DUP",
+            "C@",
+            "BL",
+            "-",
+            {
+              "branch": "0BRANCH",
+              "target": "1C01"
+            },
+            "DUP",
+            "C@",
+            {
+              "lit8": "2E"
+            },
+            "-",
+            "0",
+            "?ERROR",
+            "0",
+            {
+              "branch": "BRANCH",
+              "target": "1BDC"
+            },
+            "DROP",
+            "R>",
+            {
+              "branch": "0BRANCH",
+              "target": "1C0B"
+            },
+            "DMINUS",
+            ";S"
+          ]
+        }
+      ],
+      "end": "1C0D"
+    },
+    {
+      "at": "1C0D",
+      "name": "-FIND",
+      "cfa": "1C15",
+      "flags": "85",
+      "link": "1BB6",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "1C17",
+          "thread": [
+            "BL",
+            "WORD",
+            "HERE",
+            "CONTEXT",
+            "@",
+            "@",
+            "(FIND)",
+            "DUP",
+            "0=",
+            {
+              "branch": "0BRANCH",
+              "target": "1C35"
+            },
+            "DROP",
+            "HERE",
+            "LATEST",
+            "(FIND)",
+            ";S"
+          ]
+        }
+      ],
+      "end": "1C37"
+    },
+    {
+      "at": "1C37",
+      "name": "(ABORT)",
+      "cfa": "1C41",
+      "flags": "87",
+      "link": "1C0D",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "1C43",
+          "thread": [
+            "ABORT",
+            ";S"
+          ]
+        }
+      ],
+      "end": "1C47"
+    },
+    {
+      "at": "1C47",
+      "name": "ERROR",
+      "cfa": "1C4F",
+      "flags": "85",
+      "link": "1C37",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "1C51",
+          "thread": [
+            "WARNING",
+            "@",
+            "0<",
+            {
+              "branch": "0BRANCH",
+              "target": "1C5D"
+            },
+            "(ABORT)",
+            "HERE",
+            "COUNT",
+            "TYPE",
+            {
+              "string": "  ? ",
+              "word": "(.\")"
+            },
+            "MESSAGE",
+            "SP!",
+            "DROP",
+            "DROP",
+            "IN",
+            "@",
+            "BLK",
+            "@",
+            "QUIT",
+            ";S"
+          ]
+        }
+      ],
+      "end": "1C7E"
+    },
+    {
+      "at": "1C7E",
+      "name": "ID.",
+      "cfa": "1C84",
+      "flags": "83",
+      "link": "1C47",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "1C86",
+          "thread": [
+            "PAD",
+            {
+              "lit8": "20"
+            },
+            {
+              "lit8": "5F"
+            },
+            "FILL",
+            "DUP",
+            "PFA",
+            "LFA",
+            "OVER",
+            "-",
+            "PAD",
+            "SWAP",
+            "CMOVE",
+            "PAD",
+            "COUNT",
+            {
+              "lit8": "1F"
+            },
+            "AND",
+            "TYPE",
+            "SPACE",
+            ";S"
+          ]
+        }
+      ],
+      "end": "1CAF"
+    },
+    {
+      "at": "1CAF",
+      "name": "CREATE",
+      "cfa": "1CB8",
+      "flags": "86",
+      "link": "1C7E",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "1CBA",
+          "thread": [
+            {
+              "lit16": "02E5"
+            },
+            "@",
+            "HERE",
+            {
+              "lit8": "80"
+            },
+            "+",
+            "U<",
+            "2",
+            "?ERROR",
+            "-FIND",
+            {
+              "branch": "0BRANCH",
+              "target": "1CE0"
+            },
+            "DROP",
+            "NFA",
+            "ID.",
+            {
+              "lit8": "04"
+            },
+            "MESSAGE",
+            "SPACE",
+            "HERE",
+            "DUP",
+            "C@",
+            "WIDTH",
+            "@",
+            "MIN",
+            "1+",
+            "ALLOT",
+            "DP",
+            "C@",
+            {
+              "lit8": "FD"
+            },
+            "=",
+            "ALLOT",
+            "DUP",
+            {
+              "lit8": "A0"
+            },
+            "TOGGLE",
+            "HERE",
+            "1",
+            "-",
+            {
+              "lit8": "80"
+            },
+            "TOGGLE",
+            "LATEST",
+            ",",
+            "CURRENT",
+            "@",
+            "!",
+            "HERE",
+            "2+",
+            ",",
+            ";S"
+          ]
+        }
+      ],
+      "end": "1D1F"
+    },
+    {
+      "at": "1D1F",
+      "name": "[COMPILE]",
+      "cfa": "1D2B",
+      "flags": "C9",
+      "link": "1CAF",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "1D2D",
+          "thread": [
+            "-FIND",
+            "0=",
+            "0",
+            "?ERROR",
+            "DROP",
+            "CFA",
+            ",",
+            ";S"
+          ]
+        }
+      ],
+      "end": "1D3D"
+    },
+    {
+      "at": "1D3D",
+      "name": "LITERAL",
+      "cfa": "1D47",
+      "flags": "C7",
+      "link": "1D1F",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "1D49",
+          "thread": [
+            "STATE",
+            "@",
+            {
+              "branch": "0BRANCH",
+              "target": "1D57"
+            },
+            {
+              "compile": "LIT"
+            },
+            ",",
+            ";S"
+          ]
+        }
+      ],
+      "end": "1D59"
+    },
+    {
+      "at": "1D59",
+      "name": "DLITERAL",
+      "cfa": "1D64",
+      "flags": "C8",
+      "link": "1D3D",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "1D66",
+          "thread": [
+            "STATE",
+            "@",
+            {
+              "branch": "0BRANCH",
+              "target": "1D74"
+            },
+            "SWAP",
+            "LITERAL",
+            "LITERAL",
+            ";S"
+          ]
+        }
+      ],
+      "end": "1D76"
+    },
+    {
+      "at": "1D76",
+      "name": "?STACK",
+      "cfa": "1D7F",
+      "flags": "86",
+      "link": "1D59",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "1D81",
+          "thread": [
+            "SP@",
+            {
+              "lit8": "BC"
+            },
+            "SWAP",
+            "U<",
+            "1",
+            "?ERROR",
+            "SP@",
+            {
+              "lit8": "80"
+            },
+            "U<",
+            {
+              "lit8": "07"
+            },
+            "?ERROR",
+            ";S"
+          ]
+        }
+      ],
+      "end": "1D9C"
+    },
+    {
+      "at": "1D9C",
+      "name": "INTERPRET",
+      "cfa": "1DA8",
+      "flags": "89",
+      "link": "1D76",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "1DAA",
+          "thread": [
+            "-FIND",
+            {
+              "branch": "0BRANCH",
+              "target": "1DCC"
+            },
+            "STATE",
+            "@",
+            "<",
+            {
+              "branch": "0BRANCH",
+              "target": "1DC2"
+            },
+            "CFA",
+            ",",
+            {
+              "branch": "BRANCH",
+              "target": "1DC6"
+            },
+            "CFA",
+            "EXECUTE",
+            "?STACK",
+            {
+              "branch": "BRANCH",
+              "target": "1DE6"
+            },
+            "HERE",
+            "NUMBER",
+            "DPL",
+            "@",
+            "1+",
+            {
+              "branch": "0BRANCH",
+              "target": "1DE0"
+            },
+            "DLITERAL",
+            {
+              "branch": "BRANCH",
+              "target": "1DE4"
+            },
+            "DROP",
+            "LITERAL",
+            "?STACK",
+            {
+              "branch": "BRANCH",
+              "target": "1DAA"
+            },
+            ";S"
+          ]
+        }
+      ],
+      "end": "1DEC"
+    },
+    {
+      "at": "1DEC",
+      "name": "IMMEDIATE",
+      "cfa": "1DF8",
+      "flags": "89",
+      "link": "1D9C",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "1DFA",
+          "thread": [
+            "LATEST",
+            {
+              "lit8": "40"
+            },
+            "TOGGLE",
+            ";S"
+          ]
+        }
+      ],
+      "end": "1E03"
+    },
+    {
+      "at": "1E03",
+      "name": "VOCABULARY",
+      "cfa": "1E10",
+      "flags": "8A",
+      "link": "1DEC",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "1E12",
+          "thread": [
+            "<BUILDS",
+            {
+              "lit16": "A081"
+            },
+            ",",
+            "CURRENT",
+            "@",
+            "CFA",
+            ",",
+            "HERE",
+            "VOC-LINK",
+            "@",
+            ",",
+            "VOC-LINK",
+            "!",
+            "DOES>"
+          ]
+        },
+        {
+          "at": "1E30",
+          "thread": [
+            "2+",
+            "CONTEXT",
+            "!",
+            ";S"
+          ],
+          "note": "Thread executed by words created through this DOES> clause"
+        }
+      ],
+      "end": "1E38"
+    },
+    {
+      "at": "1E38",
+      "name": "FORTH",
+      "cfa": "1E40",
+      "flags": "C5",
+      "link": "1E03",
+      "runtime": "DODOES",
+      "body": [
+        {
+          "at": "1E42",
+          "fields": [
+            {
+              "name": "DOES> thread",
+              "cell": "1E30"
+            },
+            {
+              "name": "Vocabulary placeholder name",
+              "bytes": [
+                129,
+                160
+              ]
+            },
+            {
+              "name": "Latest visible dictionary header",
+              "cell": "2ADA"
+            },
+            {
+              "name": "Previous vocabulary link",
+              "cell": "0000"
+            }
+          ]
+        }
+      ],
+      "end": "1E4A"
+    },
+    {
+      "at": "1E4A",
+      "name": "DEFINITIONS",
+      "cfa": "1E58",
+      "flags": "8B",
+      "link": "1E38",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "1E5A",
+          "thread": [
+            "CONTEXT",
+            "@",
+            "CURRENT",
+            "!",
+            ";S"
+          ]
+        }
+      ],
+      "end": "1E64"
+    },
+    {
+      "at": "1E64",
+      "name": "PROMPT",
+      "cfa": "1E6D",
+      "flags": "86",
+      "link": "1E4A",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "1E6F",
+          "thread": [
+            "PFLAG",
+            "@",
+            "0",
+            "PFLAG",
+            "!",
+            {
+              "string": "ok",
+              "word": "(.\")"
+            },
+            "PFLAG",
+            "!",
+            ";S"
+          ]
+        }
+      ],
+      "end": "1E84"
+    },
+    {
+      "at": "1E84",
+      "name": "(",
+      "cfa": "1E88",
+      "flags": "C1",
+      "link": "1E64",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "1E8A",
+          "thread": [
+            {
+              "lit8": "29"
+            },
+            "WORD",
+            ";S"
+          ]
+        }
+      ],
+      "end": "1E91"
+    },
+    {
+      "at": "1E91",
+      "name": "QUIT",
+      "cfa": "1E98",
+      "flags": "84",
+      "link": "1E84",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "1E9A",
+          "thread": [
+            "0",
+            "BLK",
+            "!",
+            "[",
+            "RP!",
+            "CR",
+            "QUERY",
+            "INTERPRET",
+            "STATE",
+            "@",
+            "0=",
+            {
+              "branch": "0BRANCH",
+              "target": "1EB6"
+            },
+            "PROMPT",
+            {
+              "branch": "BRANCH",
+              "target": "1EA2"
+            },
+            ";S"
+          ]
+        }
+      ],
+      "end": "1EBC"
+    },
+    {
+      "at": "1EBC",
+      "name": "ABORT",
+      "cfa": "1EC4",
+      "flags": "85",
+      "link": "1E91",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "1EC6",
+          "thread": [
+            "SP!",
+            "DECIMAL",
+            "DR0",
+            "CR",
+            {
+              "string": "fig-FORTH  1.1      ",
+              "word": "(.\")"
+            },
+            "FORTH",
+            "DEFINITIONS",
+            "QUIT"
+          ]
+        },
+        {
+          "at": "1EEB",
+          "asm": [
+            "RTS"
+          ],
+          "note": "Atari boot initialization return entry"
+        }
+      ],
+      "end": "1EEC"
+    },
+    {
+      "at": "1EEC",
+      "name": "COLD",
+      "cfa": "1EF3",
+      "flags": "84",
+      "link": "1EBC",
+      "runtime": "native",
+      "entry": "1EF5",
+      "body": [
+        {
+          "at": "1EF5",
+          "asm": [
+            "LDA.# 00",
+            "STA.ZP 0A",
+            "STA.ZP 0C",
+            "LDA.# 0F",
+            "STA.ZP 0B",
+            "STA.ZP 0D",
+            "LDA.# 76",
+            "STA.ABS 02E7",
+            "STA.ZP 0E",
+            "LDA.# 2A",
+            "STA.ABS 02E8",
+            "STA.ZP 0F",
+            "JSR.ABS 22BE",
+            "LDA.ABS 0F0C",
+            "STA.ABS 1E46",
+            "LDA.ABS 0F0D",
+            "STA.ABS 1E47",
+            "LDY.# 15",
+            "BNE 1F24",
+            "LDY.# 0F",
+            "LDA.ABS 0F10",
+            "STA.ZP CF",
+            "LDA.ABS 0F11",
+            "STA.ZP D0",
+            "LDA.ABSY 0F0C",
+            "STA.INDY CF",
+            "DEY",
+            "BPL 1F2E",
+            "LDA.# 1E",
+            "STA.ZP CB",
+            "LDA.# C6",
+            "STA.ZP CA",
+            "CLD",
+            "LDA.# 6C",
+            "STA.ZP CC",
+            "JMP.ABS 1265"
+          ]
+        }
+      ],
+      "end": "1F46"
+    },
+    {
+      "at": "1F46",
+      "name": "S->D",
+      "cfa": "1F4D",
+      "flags": "84",
+      "link": "1EEC",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "1F4F",
+          "thread": [
+            "DUP",
+            "0<",
+            "MINUS",
+            ";S"
+          ]
+        }
+      ],
+      "end": "1F57"
+    },
+    {
+      "at": "1F57",
+      "name": "+-",
+      "cfa": "1F5C",
+      "flags": "82",
+      "link": "1F46",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "1F5E",
+          "thread": [
+            "0<",
+            {
+              "branch": "0BRANCH",
+              "target": "1F66"
+            },
+            "MINUS",
+            ";S"
+          ]
+        }
+      ],
+      "end": "1F68"
+    },
+    {
+      "at": "1F68",
+      "name": "D+-",
+      "cfa": "1F6E",
+      "flags": "83",
+      "link": "1F57",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "1F70",
+          "thread": [
+            "0<",
+            {
+              "branch": "0BRANCH",
+              "target": "1F78"
+            },
+            "DMINUS",
+            ";S"
+          ]
+        }
+      ],
+      "end": "1F7A"
+    },
+    {
+      "at": "1F7A",
+      "name": "ABS",
+      "cfa": "1F80",
+      "flags": "83",
+      "link": "1F68",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "1F82",
+          "thread": [
+            "DUP",
+            "+-",
+            ";S"
+          ]
+        }
+      ],
+      "end": "1F88"
+    },
+    {
+      "at": "1F88",
+      "name": "DABS",
+      "cfa": "1F8F",
+      "flags": "84",
+      "link": "1F7A",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "1F91",
+          "thread": [
+            "DUP",
+            "D+-",
+            ";S"
+          ]
+        }
+      ],
+      "end": "1F97"
+    },
+    {
+      "at": "1F97",
+      "name": "MIN",
+      "cfa": "1F9D",
+      "flags": "83",
+      "link": "1F88",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "1F9F",
+          "thread": [
+            "OVER",
+            "OVER",
+            ">",
+            {
+              "branch": "0BRANCH",
+              "target": "1FAB"
+            },
+            "SWAP",
+            "DROP",
+            ";S"
+          ]
+        }
+      ],
+      "end": "1FAF"
+    },
+    {
+      "at": "1FAF",
+      "name": "MAX",
+      "cfa": "1FB5",
+      "flags": "83",
+      "link": "1F97",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "1FB7",
+          "thread": [
+            "OVER",
+            "OVER",
+            "<",
+            {
+              "branch": "0BRANCH",
+              "target": "1FC3"
+            },
+            "SWAP",
+            "DROP",
+            ";S"
+          ]
+        }
+      ],
+      "end": "1FC7"
+    },
+    {
+      "at": "1FC7",
+      "name": "M*",
+      "cfa": "1FCC",
+      "flags": "82",
+      "link": "1FAF",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "1FCE",
+          "thread": [
+            "OVER",
+            "OVER",
+            "XOR",
+            ">R",
+            "ABS",
+            "SWAP",
+            "ABS",
+            "U*",
+            "R>",
+            "D+-",
+            ";S"
+          ]
+        }
+      ],
+      "end": "1FE4"
+    },
+    {
+      "at": "1FE4",
+      "name": "M/",
+      "cfa": "1FE9",
+      "flags": "82",
+      "link": "1FC7",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "1FEB",
+          "thread": [
+            "OVER",
+            ">R",
+            ">R",
+            "DABS",
+            "R",
+            "ABS",
+            "U/",
+            "R>",
+            "R",
+            "XOR",
+            "+-",
+            "SWAP",
+            "R>",
+            "+-",
+            "SWAP",
+            ";S"
+          ]
+        }
+      ],
+      "end": "200B"
+    },
+    {
+      "at": "200B",
+      "name": "*",
+      "cfa": "200F",
+      "flags": "81",
+      "link": "1FE4",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "2011",
+          "thread": [
+            "U*",
+            "DROP",
+            ";S"
+          ]
+        }
+      ],
+      "end": "2017"
+    },
+    {
+      "at": "2017",
+      "name": "/MOD",
+      "cfa": "201E",
+      "flags": "84",
+      "link": "200B",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "2020",
+          "thread": [
+            ">R",
+            "S->D",
+            "R>",
+            "M/",
+            ";S"
+          ]
+        }
+      ],
+      "end": "202A"
+    },
+    {
+      "at": "202A",
+      "name": "/",
+      "cfa": "202E",
+      "flags": "81",
+      "link": "2017",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "2030",
+          "thread": [
+            "/MOD",
+            "SWAP",
+            "DROP",
+            ";S"
+          ]
+        }
+      ],
+      "end": "2038"
+    },
+    {
+      "at": "2038",
+      "name": "MOD",
+      "cfa": "203E",
+      "flags": "83",
+      "link": "202A",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "2040",
+          "thread": [
+            "/MOD",
+            "DROP",
+            ";S"
+          ]
+        }
+      ],
+      "end": "2046"
+    },
+    {
+      "at": "2046",
+      "name": "*/MOD",
+      "cfa": "204E",
+      "flags": "85",
+      "link": "2038",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "2050",
+          "thread": [
+            ">R",
+            "M*",
+            "R>",
+            "M/",
+            ";S"
+          ]
+        }
+      ],
+      "end": "205A"
+    },
+    {
+      "at": "205A",
+      "name": "*/",
+      "cfa": "205F",
+      "flags": "82",
+      "link": "2046",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "2061",
+          "thread": [
+            "*/MOD",
+            "SWAP",
+            "DROP",
+            ";S"
+          ]
+        }
+      ],
+      "end": "2069"
+    },
+    {
+      "at": "2069",
+      "name": "M/MOD",
+      "cfa": "2071",
+      "flags": "85",
+      "link": "205A",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "2073",
+          "thread": [
+            ">R",
+            "0",
+            "R",
+            "U/",
+            "R>",
+            "SWAP",
+            ">R",
+            "U/",
+            "R>",
+            ";S"
+          ]
+        }
+      ],
+      "end": "2087"
+    },
+    {
+      "at": "2087",
+      "name": "USE",
+      "cfa": "208D",
+      "flags": "83",
+      "link": "2069",
+      "runtime": "DOVAR",
+      "body": [
+        {
+          "at": "208F",
+          "note": "Initial variable contents",
+          "cells": [
+            "0A20"
+          ]
+        }
+      ],
+      "end": "2091"
+    },
+    {
+      "at": "2091",
+      "name": "PREV",
+      "cfa": "2098",
+      "flags": "84",
+      "link": "2087",
+      "runtime": "DOVAR",
+      "body": [
+        {
+          "at": "209A",
+          "note": "Initial variable contents",
+          "cells": [
+            "099C"
+          ]
+        }
+      ],
+      "end": "209C"
+    },
+    {
+      "at": "209C",
+      "name": "+BUF",
+      "cfa": "20A3",
+      "flags": "84",
+      "link": "2091",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "20A5",
+          "thread": [
+            {
+              "lit16": "0084"
+            },
+            "+",
+            "DUP",
+            "LIMIT",
+            "=",
+            {
+              "branch": "0BRANCH",
+              "target": "20B9"
+            },
+            "DROP",
+            "FIRST",
+            "DUP",
+            "PREV",
+            "@",
+            "-",
+            ";S"
+          ]
+        }
+      ],
+      "end": "20C3"
+    },
+    {
+      "at": "20C3",
+      "name": "UPDATE",
+      "cfa": "20CC",
+      "flags": "86",
+      "link": "209C",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "20CE",
+          "thread": [
+            "PREV",
+            "@",
+            "@",
+            {
+              "lit16": "8000"
+            },
+            "OR",
+            "PREV",
+            "@",
+            "!",
+            ";S"
+          ]
+        }
+      ],
+      "end": "20E2"
+    },
+    {
+      "at": "20E2",
+      "name": "FLUSH",
+      "cfa": "20EA",
+      "flags": "85",
+      "link": "20C3",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "20EC",
+          "thread": [
+            "LIMIT",
+            "FIRST",
+            "-",
+            "B/BUF",
+            {
+              "lit8": "04"
+            },
+            "+",
+            "/",
+            "1+",
+            "0",
+            "(DO)",
+            {
+              "lit16": "7FFF"
+            },
+            "BUFFER",
+            "DROP",
+            {
+              "branch": "(LOOP)",
+              "target": "2101"
+            },
+            ";S"
+          ]
+        }
+      ],
+      "end": "210F"
+    },
+    {
+      "at": "210F",
+      "name": "EMPTY-BUFFERS",
+      "cfa": "211F",
+      "flags": "8D",
+      "link": "20E2",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "2121",
+          "thread": [
+            "FIRST",
+            "LIMIT",
+            "OVER",
+            "-",
+            "ERASE",
+            ";S"
+          ]
+        }
+      ],
+      "end": "212D"
+    },
+    {
+      "at": "212D",
+      "name": "DR0",
+      "cfa": "2133",
+      "flags": "83",
+      "link": "210F",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "2135",
+          "thread": [
+            "0",
+            "OFFSET",
+            "!",
+            ";S"
+          ]
+        }
+      ],
+      "end": "213D"
+    },
+    {
+      "at": "213D",
+      "name": "DR1",
+      "cfa": "2143",
+      "flags": "83",
+      "link": "212D",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "2145",
+          "thread": [
+            {
+              "lit16": "02D0"
+            },
+            "OFFSET",
+            "!",
+            ";S"
+          ]
+        }
+      ],
+      "end": "214F"
+    },
+    {
+      "at": "214F",
+      "name": "BUFFER",
+      "cfa": "2158",
+      "flags": "86",
+      "link": "213D",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "215A",
+          "thread": [
+            "USE",
+            "@",
+            "DUP",
+            ">R",
+            "+BUF",
+            {
+              "branch": "0BRANCH",
+              "target": "2162"
+            },
+            "USE",
+            "!",
+            "R",
+            "@",
+            "0<",
+            {
+              "branch": "0BRANCH",
+              "target": "2188"
+            },
+            "R",
+            "2+",
+            "R",
+            "@",
+            {
+              "lit16": "7FFF"
+            },
+            "AND",
+            "0",
+            "R/W",
+            "R",
+            "!",
+            "R",
+            "PREV",
+            "!",
+            "R>",
+            "2+",
+            ";S"
+          ]
+        }
+      ],
+      "end": "2198"
+    },
+    {
+      "at": "2198",
+      "name": "BLOCK",
+      "cfa": "21A0",
+      "flags": "85",
+      "link": "214F",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "21A2",
+          "thread": [
+            "OFFSET",
+            "@",
+            "+",
+            ">R",
+            "PREV",
+            "@",
+            "DUP",
+            "@",
+            "R",
+            "-",
+            "DUP",
+            "+",
+            {
+              "branch": "0BRANCH",
+              "target": "21F0"
+            },
+            "+BUF",
+            "0=",
+            {
+              "branch": "0BRANCH",
+              "target": "21D8"
+            },
+            "DROP",
+            "R",
+            "BUFFER",
+            "DUP",
+            "R",
+            "1",
+            "R/W",
+            "2",
+            "-",
+            "DUP",
+            "@",
+            "R",
+            "-",
+            "DUP",
+            "+",
+            "0=",
+            {
+              "branch": "0BRANCH",
+              "target": "21BE"
+            },
+            "DUP",
+            "PREV",
+            "!",
+            "R>",
+            "DROP",
+            "2+",
+            ";S"
+          ]
+        }
+      ],
+      "end": "21F8"
+    },
+    {
+      "at": "21F8",
+      "name": "(LINE)",
+      "cfa": "2201",
+      "flags": "86",
+      "link": "2198",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "2203",
+          "thread": [
+            ">R",
+            "C/L",
+            "B/BUF",
+            "*/MOD",
+            "R>",
+            "B/SCR",
+            "*",
+            "+",
+            "BLOCK",
+            "+",
+            "C/L",
+            ";S"
+          ]
+        }
+      ],
+      "end": "221B"
+    },
+    {
+      "at": "221B",
+      "name": ".LINE",
+      "cfa": "2223",
+      "flags": "85",
+      "link": "21F8",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "2225",
+          "thread": [
+            "(LINE)",
+            "-TRAILING",
+            "TYPE",
+            ";S"
+          ]
+        }
+      ],
+      "end": "222D"
+    },
+    {
+      "at": "222D",
+      "name": "MESSAGE",
+      "cfa": "2237",
+      "flags": "87",
+      "link": "221B",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "2239",
+          "thread": [
+            "WARNING",
+            "@",
+            {
+              "branch": "0BRANCH",
+              "target": "225A"
+            },
+            "-DUP",
+            {
+              "branch": "0BRANCH",
+              "target": "2256"
+            },
+            {
+              "lit8": "0E"
+            },
+            "OFFSET",
+            "@",
+            "B/SCR",
+            "/",
+            "-",
+            ".LINE",
+            {
+              "branch": "BRANCH",
+              "target": "2265"
+            },
+            {
+              "string": "MSG # ",
+              "word": "(.\")"
+            },
+            ".",
+            "CR",
+            ";S"
+          ]
+        }
+      ],
+      "end": "2269"
+    },
+    {
+      "at": "2269",
+      "name": "LOAD",
+      "cfa": "2270",
+      "flags": "84",
+      "link": "222D",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "2272",
+          "thread": [
+            "BLK",
+            "@",
+            ">R",
+            "IN",
+            "@",
+            ">R",
+            "0",
+            "IN",
+            "!",
+            "B/SCR",
+            "*",
+            "BLK",
+            "!",
+            "INTERPRET",
+            "R>",
+            "IN",
+            "!",
+            "R>",
+            "BLK",
+            "!",
+            ";S"
+          ]
+        }
+      ],
+      "end": "229C"
+    },
+    {
+      "at": "229C",
+      "name": "-->",
+      "cfa": "22A2",
+      "flags": "C3",
+      "link": "2269",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "22A4",
+          "thread": [
+            "?LOADING",
+            "0",
+            "IN",
+            "!",
+            "B/SCR",
+            "BLK",
+            "@",
+            "OVER",
+            "MOD",
+            "-",
+            "BLK",
+            "+!",
+            ";S"
+          ]
+        },
+        {
+          "at": "22BE",
+          "asm": [
+            "LDX.# 10",
+            "LDA.# 03",
+            "STA.ABSX 0344",
+            "LDA.# 23",
+            "STA.ABSX 0345",
+            "LDA.# 04",
+            "JSR.ABS 22F2",
+            "LDX.# 20",
+            "LDA.# 04",
+            "STA.ABSX 0344",
+            "LDA.# 23",
+            "STA.ABSX 0345",
+            "LDA.# 0C",
+            "JSR.ABS 22F2",
+            "LDX.# 60",
+            "LDA.# 05",
+            "STA.ABSX 0344",
+            "LDA.# 23",
+            "STA.ABSX 0345",
+            "LDA.# 08",
+            "JSR.ABS 22F2",
+            "RTS",
+            "STA.ABSX 034A",
+            "LDA.# 00",
+            "STA.ABSX 034B",
+            "LDA.# 03",
+            "STA.ABSX 0342",
+            "JSR.ABS E456",
+            "RTS"
+          ]
+        },
+        {
+          "at": "2303",
+          "text": "KEP",
+          "note": "CIO device names: keyboard, editor, printer"
+        },
+        {
+          "at": "2306",
+          "asm": [
+            "TYA",
+            "SEC",
+            "LDY.# 1A",
+            "ADC.INDY CF",
+            "STA.INDY CF",
+            "INY",
+            "LDA.# 00",
+            "ADC.INDY CF",
+            "STA.INDY CF",
+            "LDA.ZPX 00",
+            "JSR.ABS 232B",
+            "LDY.ABS 1B0F",
+            "BEQ 2328",
+            "LDA.ZPX 00",
+            "STX.ZP D1",
+            "LDX.# 60",
+            "JSR.ABS 232F",
+            "JMP.ABS 1059",
+            "STX.ZP D1",
+            "LDX.# 20",
+            "PHA",
+            "LDA.# 0B",
+            "STA.ABSX 0342",
+            "LDA.# 00",
+            "STA.ABSX 0348",
+            "STA.ABSX 0349",
+            "PLA",
+            "JSR.ABS E456",
+            "LDX.ZP D1",
+            "RTS",
+            "STX.ZP D1",
+            "LDX.# 10",
+            "LDA.# 07",
+            "STA.ABSX 0342",
+            "LDA.# 00",
+            "STA.ABSX 0348",
+            "STA.ABSX 0349",
+            "JSR.ABS E456",
+            "CPY.# 80",
+            "BNE 235F",
+            "LDA.# 9B",
+            "NOP",
+            "LDX.ZP D1",
+            "JMP.ABS 1247",
+            "LDA.ABS 02FC",
+            "EOR.# FF",
+            "BEQ 236D",
+            "LDA.# 01",
+            "JMP.ABS 1247",
+            "LDA.# 9B",
+            "JSR.ABS 232B",
+            "LDA.ABS 1B0F",
+            "BEQ 2383",
+            "LDA.# 9B",
+            "STX.ZP D1",
+            "LDX.# 60",
+            "JSR.ABS 232F",
+            "JMP.ABS 0F47"
+          ]
+        }
+      ],
+      "end": "2386"
+    },
+    {
+      "at": "2386",
+      "name": "EXPECT",
+      "cfa": "238F",
+      "flags": "86",
+      "link": "229C",
+      "runtime": "native",
+      "entry": "2391",
+      "body": [
+        {
+          "at": "2391",
+          "asm": [
+            "LDY.# 20",
+            "LDA.# 05",
+            "STA.ABSY 0342",
+            "LDA.ZPX 00",
+            "STA.ABSY 0348",
+            "LDA.ZPX 01",
+            "STA.ABSY 0349",
+            "LDA.ZPX 02",
+            "STA.ABSY 0344",
+            "STA.ZP C2",
+            "LDA.ZPX 03",
+            "STA.ABSY 0345",
+            "STA.ZP C3",
+            "STX.ZP C4",
+            "LDX.# 20",
+            "JSR.ABS E456",
+            "CPY.# 80",
+            "BNE 23C0",
+            "LDX.ZP C4",
+            "JMP.ABS 2391",
+            "LDA.ABSX 0348",
+            "SEC",
+            "SBC.# 01",
+            "TAY",
+            "LDA.# 00",
+            "STA.INDY C2",
+            "CLC",
+            "LDA.ABS 1B1B",
+            "BEQ 23EC",
+            "TYA",
+            "BEQ 23E7",
+            "ADC.ABS 0291",
+            "CMP.ZP 53",
+            "BCC 23E0",
+            "SBC.ZP 53",
+            "CLC",
+            "ADC.ZP 52",
+            "STA.ABS 0291",
+            "CMP.ZP 52",
+            "BEQ 2402",
+            "DEC.ABS 0290",
+            "BPL 2402",
+            "TYA",
+            "BEQ 2400",
+            "ADC.ZP 55",
+            "CMP.ZP 53",
+            "BCC 23FA",
+            "SBC.ZP 53",
+            "CLC",
+            "ADC.ZP 52",
+            "STA.ZP 55",
+            "CMP.ZP 52",
+            "BEQ 2402",
+            "DEC.ZP 54",
+            "LDA.# 20",
+            "JSR.ABS 232B",
+            "LDX.ZP C4",
+            "LDY.# 00",
+            "JMP.ABS 1057"
+          ]
+        }
+      ],
+      "end": "240E"
+    },
+    {
+      "at": "240E",
+      "name": "-DISK",
+      "cfa": "2416",
+      "flags": "85",
+      "link": "2386",
+      "runtime": "native",
+      "entry": "2418",
+      "body": [
+        {
+          "at": "2418",
+          "asm": [
+            "LDY.# 52",
+            "LDA.ZPX 00",
+            "BNE 2420",
+            "LDY.# 57",
+            "STY.ABS 0302",
+            "LDA.ZPX 02",
+            "STA.ABS 0301",
+            "LDA.ZPX 04",
+            "STA.ABS 030A",
+            "LDA.ZPX 05",
+            "STA.ABS 030B",
+            "LDA.ZPX 06",
+            "STA.ABS 0304",
+            "LDA.ZPX 07",
+            "STA.ABS 0305",
+            "STX.ZP D1",
+            "JSR.ABS E453",
+            "LDX.ZP D1",
+            "INX",
+            "INX",
+            "LDA.ABS 0303",
+            "BMI 244C",
+            "LDA.# 00",
+            "STA.ZPX 04",
+            "LDA.# 00",
+            "STA.ZPX 05",
+            "JMP.ABS 1057"
+          ]
+        }
+      ],
+      "end": "2455"
+    },
+    {
+      "at": "2455",
+      "name": "R/W",
+      "cfa": "245B",
+      "flags": "83",
+      "link": "240E",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "245D",
+          "thread": [
+            "SWAP",
+            "1+",
+            {
+              "lit16": "02D0"
+            },
+            "/MOD",
+            "1+",
+            "DUP",
+            {
+              "lit8": "04"
+            },
+            ">",
+            {
+              "lit8": "06"
+            },
+            "?ERROR",
+            "ROT",
+            "-DISK",
+            "-DUP",
+            {
+              "branch": "0BRANCH",
+              "target": "2486"
+            },
+            ".",
+            {
+              "lit8": "08"
+            },
+            "?ERROR",
+            ";S"
+          ]
+        }
+      ],
+      "end": "2488"
+    },
+    {
+      "at": "2488",
+      "name": "'",
+      "cfa": "248C",
+      "flags": "C1",
+      "link": "2455",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "248E",
+          "thread": [
+            "-FIND",
+            "0=",
+            "0",
+            "?ERROR",
+            "DROP",
+            "LITERAL",
+            ";S"
+          ]
+        }
+      ],
+      "end": "249C"
+    },
+    {
+      "at": "249C",
+      "name": "FORGET",
+      "cfa": "24A5",
+      "flags": "86",
+      "link": "2488",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "24A7",
+          "thread": [
+            "'",
+            "NFA",
+            "DUP",
+            "FENCE",
+            "@",
+            "U<",
+            {
+              "lit8": "15"
+            },
+            "?ERROR",
+            ">R",
+            "VOC-LINK",
+            "@",
+            "R",
+            "OVER",
+            "U<",
+            {
+              "branch": "0BRANCH",
+              "target": "24D8"
+            },
+            "FORTH",
+            "DEFINITIONS",
+            "@",
+            "DUP",
+            "VOC-LINK",
+            "!",
+            {
+              "branch": "BRANCH",
+              "target": "24BE"
+            },
+            "DUP",
+            {
+              "lit8": "04"
+            },
+            "-",
+            "PFA",
+            "LFA",
+            "@",
+            "DUP",
+            "R",
+            "U<",
+            {
+              "branch": "0BRANCH",
+              "target": "24DF"
+            },
+            "OVER",
+            "2",
+            "-",
+            "!",
+            "@",
+            "-DUP",
+            "0=",
+            {
+              "branch": "0BRANCH",
+              "target": "24D8"
+            },
+            "R>",
+            "DP",
+            "!",
+            ";S"
+          ]
+        }
+      ],
+      "end": "2509"
+    },
+    {
+      "at": "2509",
+      "name": "BACK",
+      "cfa": "2510",
+      "flags": "84",
+      "link": "249C",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "2512",
+          "thread": [
+            "HERE",
+            "-",
+            ",",
+            ";S"
+          ]
+        }
+      ],
+      "end": "251A"
+    },
+    {
+      "at": "251A",
+      "name": "BEGIN",
+      "cfa": "2522",
+      "flags": "C5",
+      "link": "2509",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "2524",
+          "thread": [
+            "?COMP",
+            "HERE",
+            "1",
+            ";S"
+          ]
+        }
+      ],
+      "end": "252C"
+    },
+    {
+      "at": "252C",
+      "name": "ENDIF",
+      "cfa": "2534",
+      "flags": "C5",
+      "link": "251A",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "2536",
+          "thread": [
+            "?COMP",
+            "2",
+            "?PAIRS",
+            "HERE",
+            "OVER",
+            "-",
+            "SWAP",
+            "!",
+            ";S"
+          ]
+        }
+      ],
+      "end": "2548"
+    },
+    {
+      "at": "2548",
+      "name": "THEN",
+      "cfa": "254F",
+      "flags": "C4",
+      "link": "252C",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "2551",
+          "thread": [
+            "ENDIF",
+            ";S"
+          ]
+        }
+      ],
+      "end": "2555"
+    },
+    {
+      "at": "2555",
+      "name": "DO",
+      "cfa": "255A",
+      "flags": "C2",
+      "link": "2548",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "255C",
+          "thread": [
+            {
+              "compile": "(DO)"
+            },
+            "HERE",
+            "3",
+            ";S"
+          ]
+        }
+      ],
+      "end": "2566"
+    },
+    {
+      "at": "2566",
+      "name": "LOOP",
+      "cfa": "256D",
+      "flags": "C4",
+      "link": "2555",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "256F",
+          "thread": [
+            "3",
+            "?PAIRS",
+            {
+              "compile": "(LOOP)"
+            },
+            "BACK",
+            ";S"
+          ]
+        }
+      ],
+      "end": "257B"
+    },
+    {
+      "at": "257B",
+      "name": "+LOOP",
+      "cfa": "2583",
+      "flags": "C5",
+      "link": "2566",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "2585",
+          "thread": [
+            "3",
+            "?PAIRS",
+            {
+              "compile": "(+LOOP)"
+            },
+            "BACK",
+            ";S"
+          ]
+        }
+      ],
+      "end": "2591"
+    },
+    {
+      "at": "2591",
+      "name": "UNTIL",
+      "cfa": "2599",
+      "flags": "C5",
+      "link": "257B",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "259B",
+          "thread": [
+            "1",
+            "?PAIRS",
+            {
+              "compile": "0BRANCH"
+            },
+            "BACK",
+            ";S"
+          ]
+        }
+      ],
+      "end": "25A7"
+    },
+    {
+      "at": "25A7",
+      "name": "END",
+      "cfa": "25AD",
+      "flags": "C3",
+      "link": "2591",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "25AF",
+          "thread": [
+            "UNTIL",
+            ";S"
+          ]
+        }
+      ],
+      "end": "25B3"
+    },
+    {
+      "at": "25B3",
+      "name": "AGAIN",
+      "cfa": "25BB",
+      "flags": "C5",
+      "link": "25A7",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "25BD",
+          "thread": [
+            "1",
+            "?PAIRS",
+            {
+              "compile": "BRANCH"
+            },
+            "BACK",
+            ";S"
+          ]
+        }
+      ],
+      "end": "25C9"
+    },
+    {
+      "at": "25C9",
+      "name": "REPEAT",
+      "cfa": "25D2",
+      "flags": "C6",
+      "link": "25B3",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "25D4",
+          "thread": [
+            ">R",
+            ">R",
+            "AGAIN",
+            "R>",
+            "R>",
+            "2",
+            "-",
+            "ENDIF",
+            ";S"
+          ]
+        }
+      ],
+      "end": "25E6"
+    },
+    {
+      "at": "25E6",
+      "name": "IF",
+      "cfa": "25EB",
+      "flags": "C2",
+      "link": "25C9",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "25ED",
+          "thread": [
+            {
+              "compile": "0BRANCH"
+            },
+            "HERE",
+            "0",
+            ",",
+            "2",
+            ";S"
+          ]
+        }
+      ],
+      "end": "25FB"
+    },
+    {
+      "at": "25FB",
+      "name": "ELSE",
+      "cfa": "2602",
+      "flags": "C4",
+      "link": "25E6",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "2604",
+          "thread": [
+            "2",
+            "?PAIRS",
+            {
+              "compile": "BRANCH"
+            },
+            "HERE",
+            "0",
+            ",",
+            "SWAP",
+            "2",
+            "ENDIF",
+            "2",
+            ";S"
+          ]
+        }
+      ],
+      "end": "261C"
+    },
+    {
+      "at": "261C",
+      "name": "WHILE",
+      "cfa": "2624",
+      "flags": "C5",
+      "link": "25FB",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "2626",
+          "thread": [
+            "IF",
+            "2+",
+            ";S"
+          ]
+        }
+      ],
+      "end": "262C"
+    },
+    {
+      "at": "262C",
+      "name": "SPACES",
+      "cfa": "2635",
+      "flags": "86",
+      "link": "261C",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "2637",
+          "thread": [
+            "0",
+            "MAX",
+            "-DUP",
+            {
+              "branch": "0BRANCH",
+              "target": "264B"
+            },
+            "0",
+            "(DO)",
+            "SPACE",
+            {
+              "branch": "(LOOP)",
+              "target": "2645"
+            },
+            ";S"
+          ]
+        }
+      ],
+      "end": "264D"
+    },
+    {
+      "at": "264D",
+      "name": "<#",
+      "cfa": "2652",
+      "flags": "82",
+      "link": "262C",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "2654",
+          "thread": [
+            "PAD",
+            "HLD",
+            "!",
+            ";S"
+          ]
+        }
+      ],
+      "end": "265C"
+    },
+    {
+      "at": "265C",
+      "name": "#>",
+      "cfa": "2661",
+      "flags": "82",
+      "link": "264D",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "2663",
+          "thread": [
+            "DROP",
+            "DROP",
+            "HLD",
+            "@",
+            "PAD",
+            "OVER",
+            "-",
+            ";S"
+          ]
+        }
+      ],
+      "end": "2673"
+    },
+    {
+      "at": "2673",
+      "name": "SIGN",
+      "cfa": "267A",
+      "flags": "84",
+      "link": "265C",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "267C",
+          "thread": [
+            "ROT",
+            "0<",
+            {
+              "branch": "0BRANCH",
+              "target": "2689"
+            },
+            {
+              "lit8": "2D"
+            },
+            "HOLD",
+            ";S"
+          ]
+        }
+      ],
+      "end": "268B"
+    },
+    {
+      "at": "268B",
+      "name": "#",
+      "cfa": "268F",
+      "flags": "81",
+      "link": "2673",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "2691",
+          "thread": [
+            "BASE",
+            "@",
+            "M/MOD",
+            "ROT",
+            {
+              "lit8": "09"
+            },
+            "OVER",
+            "<",
+            {
+              "branch": "0BRANCH",
+              "target": "26A9"
+            },
+            {
+              "lit8": "07"
+            },
+            "+",
+            {
+              "lit8": "30"
+            },
+            "+",
+            "HOLD",
+            ";S"
+          ]
+        }
+      ],
+      "end": "26B2"
+    },
+    {
+      "at": "26B2",
+      "name": "#S",
+      "cfa": "26B7",
+      "flags": "82",
+      "link": "268B",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "26B9",
+          "thread": [
+            "#",
+            "OVER",
+            "OVER",
+            "OR",
+            "0=",
+            {
+              "branch": "0BRANCH",
+              "target": "26B9"
+            },
+            ";S"
+          ]
+        }
+      ],
+      "end": "26C9"
+    },
+    {
+      "at": "26C9",
+      "name": "D.R",
+      "cfa": "26CF",
+      "flags": "83",
+      "link": "26B2",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "26D1",
+          "thread": [
+            ">R",
+            "SWAP",
+            "OVER",
+            "DABS",
+            "<#",
+            "#S",
+            "SIGN",
+            "#>",
+            "R>",
+            "OVER",
+            "-",
+            "SPACES",
+            "TYPE",
+            ";S"
+          ]
+        }
+      ],
+      "end": "26ED"
+    },
+    {
+      "at": "26ED",
+      "name": "D.",
+      "cfa": "26F2",
+      "flags": "82",
+      "link": "26C9",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "26F4",
+          "thread": [
+            "0",
+            "D.R",
+            "SPACE",
+            ";S"
+          ]
+        }
+      ],
+      "end": "26FC"
+    },
+    {
+      "at": "26FC",
+      "name": ".R",
+      "cfa": "2701",
+      "flags": "82",
+      "link": "26ED",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "2703",
+          "thread": [
+            ">R",
+            "S->D",
+            "R>",
+            "D.R",
+            ";S"
+          ]
+        }
+      ],
+      "end": "270D"
+    },
+    {
+      "at": "270D",
+      "name": ".",
+      "cfa": "2711",
+      "flags": "81",
+      "link": "26FC",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "2713",
+          "thread": [
+            "S->D",
+            "D.",
+            ";S"
+          ]
+        }
+      ],
+      "end": "2719"
+    },
+    {
+      "at": "2719",
+      "name": "?",
+      "cfa": "271D",
+      "flags": "81",
+      "link": "270D",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "271F",
+          "thread": [
+            "@",
+            ".",
+            ";S"
+          ]
+        }
+      ],
+      "end": "2725"
+    },
+    {
+      "at": "2725",
+      "name": "U.",
+      "cfa": "272A",
+      "flags": "82",
+      "link": "2719",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "272C",
+          "thread": [
+            "0",
+            "D.",
+            ";S"
+          ]
+        }
+      ],
+      "end": "2732"
+    },
+    {
+      "at": "2732",
+      "name": "C?",
+      "cfa": "2737",
+      "flags": "82",
+      "link": "2725",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "2739",
+          "thread": [
+            "C@",
+            ".",
+            ";S"
+          ]
+        }
+      ],
+      "end": "273F"
+    },
+    {
+      "at": "273F",
+      "name": "D@",
+      "cfa": "2744",
+      "flags": "82",
+      "link": "2732",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "2746",
+          "thread": [
+            "DUP",
+            "@",
+            "SWAP",
+            "2+",
+            "@",
+            "SWAP",
+            ";S"
+          ]
+        }
+      ],
+      "end": "2754"
+    },
+    {
+      "at": "2754",
+      "name": "D!",
+      "cfa": "2759",
+      "flags": "82",
+      "link": "273F",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "275B",
+          "thread": [
+            "DUP",
+            ">R",
+            "!",
+            "R>",
+            "2+",
+            "!",
+            ";S"
+          ]
+        }
+      ],
+      "end": "2769"
+    },
+    {
+      "at": "2769",
+      "name": "2DUP",
+      "cfa": "2770",
+      "flags": "84",
+      "link": "2754",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "2772",
+          "thread": [
+            "OVER",
+            "OVER",
+            ";S"
+          ]
+        }
+      ],
+      "end": "2778"
+    },
+    {
+      "at": "2778",
+      "name": "2DROP",
+      "cfa": "2780",
+      "flags": "85",
+      "link": "2769",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "2782",
+          "thread": [
+            "DROP",
+            "DROP",
+            ";S"
+          ]
+        }
+      ],
+      "end": "2788"
+    },
+    {
+      "at": "2788",
+      "name": "2SWAP",
+      "cfa": "2790",
+      "flags": "85",
+      "link": "2778",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "2792",
+          "thread": [
+            "ROT",
+            ">R",
+            "ROT",
+            "R>",
+            ";S"
+          ]
+        }
+      ],
+      "end": "279C"
+    },
+    {
+      "at": "279C",
+      "name": "2OVER",
+      "cfa": "27A4",
+      "flags": "85",
+      "link": "2788",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "27A6",
+          "thread": [
+            "2SWAP",
+            "2DUP",
+            ">R",
+            ">R",
+            "2SWAP",
+            "R>",
+            "R>",
+            ";S"
+          ]
+        }
+      ],
+      "end": "27B6"
+    },
+    {
+      "at": "27B6",
+      "name": "ok",
+      "cfa": "27BB",
+      "flags": "82",
+      "link": "279C",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "27BD",
+          "thread": [
+            {
+              "lit8": "7E"
+            },
+            "DUP",
+            "EMIT",
+            "DUP",
+            "EMIT",
+            "EMIT",
+            ";S"
+          ]
+        }
+      ],
+      "end": "27CC"
+    },
+    {
+      "at": "27CC",
+      "name": "U?",
+      "cfa": "27D1",
+      "flags": "82",
+      "link": "27B6",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "27D3",
+          "thread": [
+            "@",
+            "U.",
+            ";S"
+          ]
+        }
+      ],
+      "end": "27D9"
+    },
+    {
+      "at": "27D9",
+      "name": "LIST",
+      "cfa": "27E0",
+      "flags": "84",
+      "link": "27CC",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "27E2",
+          "thread": [
+            "DECIMAL",
+            "CR",
+            "DUP",
+            "SCR",
+            "!",
+            {
+              "string": "SCR # ",
+              "word": "(.\")"
+            },
+            ".",
+            {
+              "lit8": "10"
+            },
+            "0",
+            "(DO)",
+            "CR",
+            "I",
+            "3",
+            ".R",
+            "SPACE",
+            "I",
+            "SCR",
+            "@",
+            ".LINE",
+            {
+              "branch": "(LOOP)",
+              "target": "27FE"
+            },
+            "CR",
+            ";S"
+          ]
+        }
+      ],
+      "end": "2818"
+    },
+    {
+      "at": "2818",
+      "name": "MATCH",
+      "cfa": "2820",
+      "flags": "85",
+      "link": "27D9",
+      "runtime": "native",
+      "entry": "2822",
+      "body": [
+        {
+          "at": "2822",
+          "asm": [
+            "LDA.# 04",
+            "JSR.ABS 0F6F",
+            "DEX",
+            "DEX",
+            "DEX",
+            "DEX",
+            "STY.ZPX 00",
+            "STY.ZPX 01",
+            "STY.ZPX 03",
+            "LDY.# FF",
+            "INY",
+            "CPY.ZP C2",
+            "BEQ 2862",
+            "LDA.INDY C4",
+            "CMP.INDY C8",
+            "BEQ 2833",
+            "INC.ZP C8",
+            "BNE 2844",
+            "INC.ZP C9",
+            "INC.ZPX 00",
+            "BNE 284A",
+            "INC.ZPX 01",
+            "LDA.ZP C6",
+            "BNE 2850",
+            "DEC.ZP C7",
+            "DEC.ZP C6",
+            "LDA.ZP C6",
+            "CMP.ZP C2",
+            "LDA.ZP C7",
+            "SBC.ZP C3",
+            "BCS 2831",
+            "LDY.ZP C6",
+            "LDA.# 00",
+            "BEQ 2864",
+            "LDA.# 01",
+            "STA.ZPX 02",
+            "CLC",
+            "TYA",
+            "ADC.ZPX 00",
+            "PHA",
+            "LDA.# 00",
+            "ADC.ZPX 01",
+            "JMP.ABS 0F42"
+          ]
+        }
+      ],
+      "end": "2872"
+    },
+    {
+      "at": "2872",
+      "name": "INDEX",
+      "cfa": "287A",
+      "flags": "85",
+      "link": "2818",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "287C",
+          "thread": [
+            "CR",
+            "1+",
+            "SWAP",
+            "(DO)",
+            "CR",
+            "I",
+            "3",
+            ".R",
+            "SPACE",
+            "0",
+            "I",
+            ".LINE",
+            "?TERMINAL",
+            {
+              "branch": "0BRANCH",
+              "target": "289C"
+            },
+            "LEAVE",
+            {
+              "branch": "(LOOP)",
+              "target": "2884"
+            },
+            ";S"
+          ]
+        }
+      ],
+      "end": "28A2"
+    },
+    {
+      "at": "28A2",
+      "name": "TRIAD",
+      "cfa": "28AA",
+      "flags": "85",
+      "link": "2872",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "28AC",
+          "thread": [
+            "3",
+            "/",
+            "3",
+            "*",
+            "3",
+            "OVER",
+            "+",
+            "SWAP",
+            "(DO)",
+            "CR",
+            "I",
+            "LIST",
+            {
+              "branch": "(LOOP)",
+              "target": "28BE"
+            },
+            "CR",
+            {
+              "lit8": "0F"
+            },
+            "MESSAGE",
+            "CR",
+            ";S"
+          ]
+        }
+      ],
+      "end": "28D3"
+    },
+    {
+      "at": "28D3",
+      "name": "VLIST",
+      "cfa": "28DB",
+      "flags": "85",
+      "link": "28A2",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "28DD",
+          "thread": [
+            {
+              "lit8": "80"
+            },
+            "OUT",
+            "!",
+            "CONTEXT",
+            "@",
+            "@",
+            "OUT",
+            "@",
+            "C/L",
+            ">",
+            {
+              "branch": "0BRANCH",
+              "target": "28FE"
+            },
+            "CR",
+            "0",
+            "OUT",
+            "!",
+            "DUP",
+            "ID.",
+            "SPACE",
+            "SPACE",
+            "PFA",
+            "LFA",
+            "@",
+            "DUP",
+            "0=",
+            "?TERMINAL",
+            "OR",
+            {
+              "branch": "0BRANCH",
+              "target": "28EA"
+            },
+            "DROP",
+            ";S"
+          ]
+        }
+      ],
+      "end": "291C"
+    },
+    {
+      "at": "291C",
+      "name": "BOOT",
+      "cfa": "2923",
+      "flags": "84",
+      "link": "28D3",
+      "runtime": "native",
+      "entry": "2925",
+      "body": [
+        {
+          "at": "2925",
+          "asm": [
+            "LDA.# 01",
+            "STA.ABS 0244",
+            "JMP.IND FFFC"
+          ]
+        }
+      ],
+      "end": "292D"
+    },
+    {
+      "at": "292D",
+      "name": "(FMT)",
+      "cfa": "2935",
+      "flags": "85",
+      "link": "291C",
+      "runtime": "native",
+      "entry": "2937",
+      "body": [
+        {
+          "at": "2937",
+          "asm": [
+            "LDA.ZPX 00",
+            "STA.ABS 0301",
+            "LDA.# 21",
+            "STA.ABS 0302",
+            "STX.ZP D1",
+            "JSR.ABS E453",
+            "TYA",
+            "PHA",
+            "LDA.# 00",
+            "LDX.ZP D1",
+            "JMP.ABS 0F42"
+          ]
+        }
+      ],
+      "end": "294F"
+    },
+    {
+      "at": "294F",
+      "name": "(SAVE)",
+      "cfa": "2958",
+      "flags": "86",
+      "link": "292D",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "295A",
+          "thread": [
+            "FORTH",
+            "DEFINITIONS",
+            "LATEST",
+            {
+              "lit8": "0C"
+            },
+            "+ORIGIN",
+            "!",
+            "HERE",
+            {
+              "lit8": "1C"
+            },
+            "+ORIGIN",
+            "!",
+            "HERE",
+            {
+              "lit8": "1E"
+            },
+            "+ORIGIN",
+            "!",
+            "VOC-LINK",
+            "@",
+            {
+              "lit8": "20"
+            },
+            "+ORIGIN",
+            "!",
+            "HERE",
+            {
+              "lit8": "06"
+            },
+            "+",
+            {
+              "lit16": "FF80"
+            },
+            "+ORIGIN",
+            "-",
+            {
+              "lit8": "7F"
+            },
+            "+",
+            {
+              "lit8": "80"
+            },
+            "/",
+            ";S"
+          ]
+        }
+      ],
+      "end": "299F"
+    },
+    {
+      "at": "299F",
+      "name": "SAVE",
+      "cfa": "29A6",
+      "flags": "84",
+      "link": "294F",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "29A8",
+          "thread": [
+            "(SAVE)",
+            "SAVE-DISK-PRIMITIVE",
+            ";S"
+          ]
+        }
+      ],
+      "end": "29AE"
+    },
+    {
+      "at": "29AE",
+      "name": "SAVE-DISK-PRIMITIVE",
+      "cfa": "29AE",
+      "headerless": true,
+      "runtime": "native",
+      "entry": "29B0",
+      "body": [
+        {
+          "at": "29B0",
+          "asm": [
+            "STX.ZP D1",
+            "LDA.ZPX 00",
+            "STA.ABS 2A00",
+            "STA.ABS 0E81",
+            "LDA.# 01",
+            "STA.ABS 0301",
+            "LDA.# 57",
+            "STA.ABS 0302",
+            "LDA.# 80",
+            "STA.ABS 0304",
+            "LDA.# 0E",
+            "STA.ABS 0305",
+            "LDA.# 01",
+            "STA.ABS 030A",
+            "LDA.# 00",
+            "STA.ABS 030B",
+            "JSR.ABS E453",
+            "BMI 2A01",
+            "LDA.ABS 0304",
+            "CLC",
+            "ADC.# 80",
+            "STA.ABS 0304",
+            "LDA.ABS 0305",
+            "ADC.# 00",
+            "STA.ABS 0305",
+            "INC.ABS 030A",
+            "BNE 29F6",
+            "INC.ABS 030B",
+            "DEC.ABS 2A00",
+            "BNE 29D8",
+            "LDX.ZP D1",
+            "JMP.ABS 1059"
+          ]
+        },
+        {
+          "at": "2A00",
+          "note": "SAVE sector counter; mutable data",
+          "fill": {
+            "value": 3,
+            "count": 1
+          }
+        },
+        {
+          "at": "2A01",
+          "asm": [
+            "JMP.ABS 1EF3"
+          ]
+        }
+      ],
+      "end": "2A04"
+    },
+    {
+      "at": "2A04",
+      "name": "CSAVE",
+      "cfa": "2A0C",
+      "flags": "85",
+      "link": "299F",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "2A0E",
+          "thread": [
+            "(SAVE)",
+            "DUP",
+            {
+              "lit8": "80"
+            },
+            "*",
+            "SAVE-CASSETTE-PRIMITIVE",
+            ";S"
+          ]
+        }
+      ],
+      "end": "2A1B"
+    },
+    {
+      "at": "2A1B",
+      "name": "SAVE-CASSETTE-PRIMITIVE",
+      "cfa": "2A1B",
+      "headerless": true,
+      "runtime": "native",
+      "entry": "2A1D",
+      "body": [
+        {
+          "at": "2A1D",
+          "asm": [
+            "STX.ZP D1",
+            "LDA.ZPX 02",
+            "STA.ABS 0E81",
+            "LDX.# 30",
+            "LDA.# 03",
+            "STA.ABSX 0342",
+            "LDA.# 08",
+            "STA.ABSX 034A",
+            "LDA.# 80",
+            "STA.ABSX 034B",
+            "LDA.# 75",
+            "STA.ABSX 0344",
+            "LDA.# 2A",
+            "STA.ABSX 0345",
+            "JSR.ABS E456",
+            "BMI 2A01",
+            "LDA.# 0B",
+            "STA.ABSX 0342",
+            "LDA.# 80",
+            "STA.ABSX 0344",
+            "LDA.# 0E",
+            "STA.ABSX 0345",
+            "LDY.ZP D1",
+            "LDA.ABSY 0000",
+            "STA.ABSX 0348",
+            "LDA.ABSY 0001",
+            "STA.ABSX 0349",
+            "JSR.ABS E456",
+            "BMI 2A01",
+            "LDA.# 0C",
+            "STA.ABSX 0342",
+            "JSR.ABS E456",
+            "BMI 2A01",
+            "LDX.ZP D1",
+            "JMP.ABS 1057"
+          ]
+        },
+        {
+          "at": "2A75",
+          "note": "Cassette filename: ASCII C",
+          "fill": {
+            "value": 67,
+            "count": 1
+          }
+        }
+      ],
+      "end": "2A76"
+    },
+    {
+      "at": "2A76",
+      "name": "PON",
+      "cfa": "2A7C",
+      "flags": "83",
+      "link": "2A04",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "2A7E",
+          "thread": [
+            "1",
+            "PFLAG",
+            "!",
+            ";S"
+          ]
+        }
+      ],
+      "end": "2A86"
+    },
+    {
+      "at": "2A86",
+      "name": "POFF",
+      "cfa": "2A8D",
+      "flags": "84",
+      "link": "2A76",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "2A8F",
+          "thread": [
+            "0",
+            "PFLAG",
+            "!",
+            ";S"
+          ]
+        }
+      ],
+      "end": "2A97"
+    },
+    {
+      "at": "2A97",
+      "name": "BEEP",
+      "cfa": "2A9E",
+      "flags": "84",
+      "link": "2A86",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "2AA0",
+          "thread": [
+            {
+              "lit16": "00C0"
+            },
+            "0",
+            "(DO)",
+            {
+              "lit16": "0008"
+            },
+            {
+              "lit16": "D01F"
+            },
+            "C!",
+            {
+              "lit16": "0006"
+            },
+            "0",
+            "(DO)",
+            {
+              "branch": "(LOOP)",
+              "target": "2ABA"
+            },
+            {
+              "lit16": "0000"
+            },
+            {
+              "lit16": "D01F"
+            },
+            "C!",
+            {
+              "lit16": "0006"
+            },
+            "0",
+            "(DO)",
+            {
+              "branch": "(LOOP)",
+              "target": "2AD0"
+            },
+            {
+              "branch": "(LOOP)",
+              "target": "2AA8"
+            },
+            ";S"
+          ]
+        }
+      ],
+      "end": "2ADA"
+    },
+    {
+      "at": "2ADA",
+      "name": "ASCII",
+      "cfa": "2AE2",
+      "flags": "C5",
+      "link": "2A97",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "2AE4",
+          "thread": [
+            "BL",
+            "WORD",
+            "HERE",
+            "1+",
+            "C@",
+            "STATE",
+            "@",
+            {
+              "branch": "0BRANCH",
+              "target": "2AFC"
+            },
+            {
+              "compile": "CLIT"
+            },
+            "C,",
+            ";S"
+          ]
+        }
+      ],
+      "end": "2AFE"
+    }
+  ],
+  "post_dictionary": [
+    {
+      "at": "2AFE",
+      "counted_buffer": {
+        "text": "SAVE",
+        "width": 34,
+        "padding": 32
+      },
+      "note": "Saved WORD input buffer at initial HERE; overwritten by compilation"
+    },
+    {
+      "at": "2B20",
+      "bytes": [
+        0
+      ],
+      "note": "Saved input buffer terminator"
+    },
+    {
+      "at": "2B21",
+      "thread": [
+        {
+          "compile": "CLIT"
+        },
+        "C,",
+        ";S"
+      ]
+    }
+  ],
+  "retired_definitions": [
+    {
+      "at": "2B29",
+      "name": "TEXT",
+      "cfa": "2B30",
+      "flags": "84",
+      "link": "2B05",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "2B32",
+          "thread": [
+            "HERE",
+            "C/L",
+            "1+",
+            "BLANKS",
+            "WORD",
+            "HERE",
+            "PAD",
+            "C/L",
+            "1+",
+            "CMOVE",
+            ";S"
+          ]
+        }
+      ],
+      "end": "2B48",
+      "note": "Stale saved definition beyond initial HERE; retained only to reproduce the last boot sector"
+    },
+    {
+      "at": "2B48",
+      "name": "LINE",
+      "cfa": "2B4F",
+      "flags": "84",
+      "link": "2B29",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "2B51",
+          "thread": [
+            "DUP",
+            {
+              "lit16": "FFF0"
+            },
+            "AND",
+            {
+              "lit16": "0017"
+            },
+            "?ERROR",
+            "SCR",
+            "@",
+            "(LINE)",
+            "DROP",
+            ";S"
+          ]
+        }
+      ],
+      "end": "2B69",
+      "note": "Stale saved definition beyond initial HERE; retained only to reproduce the last boot sector"
+    },
+    {
+      "at": "2B69",
+      "name": "MARK",
+      "cfa": "2B70",
+      "flags": "84",
+      "link": "2B48",
+      "runtime": "DOCOL",
+      "body": [
+        {
+          "at": "2B72",
+          "thread": [
+            {
+              "lit16": "0010"
+            },
+            "0",
+            "(DO)",
+            "I",
+            "LINE"
+          ]
+        }
+      ],
+      "end": "2B7E",
+      "note": "Stale saved definition beyond initial HERE; retained only to reproduce the last boot sector"
+    }
+  ],
+  "trailer": [
+    {
+      "at": "2B7E",
+      "partial_header": {
+        "flags": "81",
+        "name": "#"
+      },
+      "note": "Only the flag and name of the next retired word fit in the loaded boot image"
+    }
+  ]
+}

@@ -1,0 +1,570 @@
+{
+  "format": "ad2044.object-actions",
+  "version": 1,
+  "consumer": "SELECTED-OBJECT-RECORD $7281 and action handlers via $7664",
+  "objects": [
+    {
+      "object_id": 0,
+      "actions": [
+        {
+          "opcode": 1,
+          "handler": "ACT-BACK",
+          "fields": []
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 1,
+      "actions": [
+        {
+          "opcode": 1,
+          "handler": "ACT-BACK",
+          "fields": []
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 2,
+      "actions": [
+        {
+          "opcode": 7,
+          "handler": "ACT-EXAMINE",
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "PIEC=DO=PALENIA",
+                "sMIECI"
+              ],
+              "name": "message_1"
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 3,
+      "actions": [
+        {
+          "opcode": 7,
+          "handler": "ACT-EXAMINE",
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "OKAP=Z=INSTALACJa",
+                "PRZECIWPOzAROWa"
+              ],
+              "name": "message_1"
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 4,
+      "actions": [
+        {
+          "opcode": 7,
+          "handler": "ACT-EXAMINE",
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "POJEMNIK=NA=ODPADY",
+                "ORGANICZNE"
+              ],
+              "name": "message_1"
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 5,
+      "actions": [
+        {
+          "opcode": 2,
+          "handler": "ACT-SHOW-CLOSEUP",
+          "fields": [
+            {
+              "type": "u8",
+              "name": "view_id",
+              "value": 4
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 6,
+      "actions": [
+        {
+          "opcode": 7,
+          "handler": "ACT-EXAMINE",
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "POJEMNIK=NA=PRODUKTY",
+                "SPOzYWCZE"
+              ],
+              "name": "message_1"
+            }
+          ]
+        },
+        {
+          "opcode": 2,
+          "handler": "ACT-SHOW-CLOSEUP",
+          "fields": [
+            {
+              "type": "u8",
+              "name": "view_id",
+              "value": 2
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 7,
+      "actions": [
+        {
+          "opcode": 7,
+          "handler": "ACT-EXAMINE",
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "DRZWICZKI=DO=PIECA"
+              ],
+              "name": "message_1"
+            }
+          ]
+        },
+        {
+          "opcode": 26,
+          "handler": "ACT-OPEN-IF-COUNTER-CLEAR",
+          "fields": [
+            {
+              "type": "u8",
+              "name": "revealed_object_id",
+              "value": 5
+            },
+            {
+              "type": "u8",
+              "name": "tested_state_index",
+              "value": 2
+            },
+            {
+              "type": "u8",
+              "name": "incremented_state_index",
+              "value": 1
+            },
+            {
+              "type": "message",
+              "lines": [
+                "OSZALAlEs",
+                "^^^^^^^^^",
+                "PIEC=JEST=WlaCZONY"
+              ],
+              "name": "message_1"
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 8,
+      "actions": [
+        {
+          "opcode": 7,
+          "handler": "ACT-EXAMINE",
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "DRUGIE=DRZWICZKI=DO=PIECA"
+              ],
+              "name": "message_1"
+            }
+          ]
+        },
+        {
+          "opcode": 26,
+          "handler": "ACT-OPEN-IF-COUNTER-CLEAR",
+          "fields": [
+            {
+              "type": "u8",
+              "name": "revealed_object_id",
+              "value": 6
+            },
+            {
+              "type": "u8",
+              "name": "tested_state_index",
+              "value": 2
+            },
+            {
+              "type": "u8",
+              "name": "incremented_state_index",
+              "value": 1
+            },
+            {
+              "type": "message",
+              "lines": [
+                "OSZALAlEs",
+                "^^^^^^^^^",
+                "PIEC=JEST=WlaCZONY"
+              ],
+              "name": "message_1"
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 9,
+      "actions": [
+        {
+          "opcode": 7,
+          "handler": "ACT-EXAMINE",
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "TRZECIE=DRZWICZKI=DO=PIECA"
+              ],
+              "name": "message_1"
+            }
+          ]
+        },
+        {
+          "opcode": 26,
+          "handler": "ACT-OPEN-IF-COUNTER-CLEAR",
+          "fields": [
+            {
+              "type": "u8",
+              "name": "revealed_object_id",
+              "value": 7
+            },
+            {
+              "type": "u8",
+              "name": "tested_state_index",
+              "value": 2
+            },
+            {
+              "type": "u8",
+              "name": "incremented_state_index",
+              "value": 1
+            },
+            {
+              "type": "message",
+              "lines": [
+                "OSZALAlEs",
+                "^^^^^^^^^",
+                "PIEC=JEST=WlaCZONY"
+              ],
+              "name": "message_1"
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 10,
+      "actions": [
+        {
+          "opcode": 7,
+          "handler": "ACT-EXAMINE",
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "ZAMYKADlO"
+              ],
+              "name": "message_1"
+            }
+          ]
+        },
+        {
+          "opcode": 18,
+          "handler": "ACT-SHOW-CLOSEUP",
+          "fields": [
+            {
+              "type": "u8",
+              "name": "view_id",
+              "value": 3
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 11,
+      "actions": [
+        {
+          "opcode": 7,
+          "handler": "ACT-EXAMINE",
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "PRZYKRYWKA=NA=POJEMNIK"
+              ],
+              "name": "message_1"
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 12,
+      "actions": [
+        {
+          "opcode": 7,
+          "handler": "ACT-EXAMINE",
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "NIE=WIDZISZ?"
+              ],
+              "name": "message_1"
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 13,
+      "actions": [
+        {
+          "opcode": 7,
+          "handler": "ACT-EXAMINE",
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "OTWORY=WENTYLACYJNE"
+              ],
+              "name": "message_1"
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 14,
+      "actions": [
+        {
+          "opcode": 24,
+          "handler": "ACT-ENABLE-IF-CLEAR",
+          "fields": [
+            {
+              "type": "u8",
+              "name": "revealed_object_id",
+              "value": 8
+            },
+            {
+              "type": "u8",
+              "name": "cleared_view_id",
+              "value": 1
+            },
+            {
+              "type": "u8",
+              "name": "tested_state_index",
+              "value": 1
+            },
+            {
+              "type": "u8",
+              "name": "set_state_index",
+              "value": 2
+            },
+            {
+              "type": "message",
+              "lines": [
+                "ZAMKNIJ=NAJPIERW=DRZWICZKI"
+              ],
+              "name": "message_1"
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 15,
+      "actions": [
+        {
+          "opcode": 27,
+          "handler": "ACT-CLOSE-DECREMENT",
+          "fields": [
+            {
+              "type": "u8",
+              "name": "hidden_object_id",
+              "value": 5
+            },
+            {
+              "type": "u8",
+              "name": "decremented_state_index",
+              "value": 1
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 16,
+      "actions": [
+        {
+          "opcode": 7,
+          "handler": "ACT-EXAMINE",
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "OTWoR=PALENISKA"
+              ],
+              "name": "message_1"
+            }
+          ]
+        },
+        {
+          "opcode": 2,
+          "handler": "ACT-SHOW-CLOSEUP",
+          "fields": [
+            {
+              "type": "u8",
+              "name": "view_id",
+              "value": 1
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 17,
+      "actions": [
+        {
+          "opcode": 7,
+          "handler": "ACT-EXAMINE",
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "OTWoR=PALENISKA"
+              ],
+              "name": "message_1"
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 18,
+      "actions": [
+        {
+          "opcode": 27,
+          "handler": "ACT-CLOSE-DECREMENT",
+          "fields": [
+            {
+              "type": "u8",
+              "name": "hidden_object_id",
+              "value": 6
+            },
+            {
+              "type": "u8",
+              "name": "decremented_state_index",
+              "value": 1
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 19,
+      "actions": [
+        {
+          "opcode": 27,
+          "handler": "ACT-CLOSE-DECREMENT",
+          "fields": [
+            {
+              "type": "u8",
+              "name": "hidden_object_id",
+              "value": 7
+            },
+            {
+              "type": "u8",
+              "name": "decremented_state_index",
+              "value": 1
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 20,
+      "actions": [
+        {
+          "opcode": 25,
+          "handler": "ACT-DISABLE-FLAG",
+          "fields": [
+            {
+              "type": "u8",
+              "name": "hidden_object_id",
+              "value": 8
+            },
+            {
+              "type": "u8",
+              "name": "cleared_state_index",
+              "value": 2
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    }
+  ],
+  "terminator_cells": 0,
+  "unused": []
+}

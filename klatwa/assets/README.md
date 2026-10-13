@@ -1,33 +1,48 @@
-`layout.json` lists the inputs used to build `build/assets.atr`. Run `make
-assets` from the game directory to repack them. The first 32,000 payload
-bytes remain zero until fig-Forth compiles the program into that disk.
+`layout.json` packs `build/assets.atr` from the editable sources below. The
+first 32,000 payload bytes stay blank until fig-Forth compiles the program.
+`make assets` does not read a reference ATR or a stored whole resource group.
 
-The authoritative inputs are:
+- `resources/*.json` describes nested GAM records: action dispatch IDs and
+  arguments, room image references and color registers, object lookup streams,
+  title pages, messages, and sprite-bank structure. Record lengths are derived.
+- `hit-maps/*.json` contains row-by-row object hit/depth values. Its column RLE
+  plan preserves the original encoding boundaries without duplicating values.
+- `state/saved-game.json` describes the release's saved snapshot: room, spell
+  slots, item coordinates, room/view objects, achievement bits and puzzle cells.
+  Saved dictionary headers between fields are explicit. This is separate from
+  the new-game state compiled into Forth.
+- `filesystem/vtoc.json` preserves DOS allocation metadata. GAM uses the
+  separate directory generated from `layout.json`.
+- `padding/*.json` preserves small unused allocation remnants in annotated,
+  bounded segments. Their meaning is unresolved; they are not live game data.
 
-- `graphics/records/*.bin`: native GAM record payloads, including compressed
-  pictures, hit maps, action records and text. The packer generates their
-  two-byte length prefixes.
-- `graphics/fonts/*.bin`: the two original 1,023-byte font records.
-- `graphics/sprites/*.bin`: the 20 uncompressed player-frame pixel arrays.
-  `structure/player-bank-*.bin` preserves their nested record lengths,
-  positioning headers and allocation residue.
-- `music/*.cmc`: the playable modules, with their original load headers.
-  Gameplay adds five zero bytes on disk; the title's six extra resource bytes
-  are preserved in `padding/title-cmc-tail.bin`.
+Native compressed pictures remain in `graphics/native/*.pic` or the few
+single-picture `graphics/records/*.bin`. Fonts are `graphics/fonts/*.fnt`;
+the two Klątwa records each contain 1,023 bytes. The player bank references
+20 `graphics/sprites/*.bin` pixel arrays; JSON generates the nested lengths,
+frame offsets, dimensions and padding. Other PNGs and raster `.bin` exports
+are derived previews, not inputs to the disk packer.
 
-The corresponding font, sprite-bank and music records in `graphics/records`
-are extraction copies and are not also packed. PNGs, decoded compressed-image
-previews, complete room/title bitmaps and `graphics/groups` are derived exports.
-Use `python3 ../util/pack_assets.py --game-dir . --dependencies` for the exact
-list of inputs. The cursor stored inside the program is handled separately by
-`util/forth_assets.py` during source compilation.
+Text fields use original game-font byte glyphs: `=` is the normal blank and
+lowercase slots include Polish capitals. `\xNN` denotes an explicit control,
+font tile or inverse glyph. These are editable text, not hexadecimal copies
+of a whole resource. Messages and title pages generate their own line counts.
+Action/object parameter names are descriptive inferences; unproved arguments
+retain offset names instead of guessed meanings.
 
-`filesystem/vtoc.bin` preserves the DOS allocation map; `state/saved-game.bin`
-preserves the release's saved-game slot. Small files under `padding` retain
-nonzero allocation residue, including unused sector 709. Other unused bytes
-are generated as zeros. The GAM directory is generated from the manifest.
+`music/*.cmc` supplies the music. The gameplay resource adds five zero bytes;
+the title's six bytes beyond its declared module are represented by
+`padding/title-cmc-tail.json`.
 
-Edits must preserve each declared input size and fixed CMC header. An invalid
-size or overlapping placement is an error. Reference comparison and extraction
-checks intentionally detect changes from the released game; they are separate
-from packing edited assets. The normal packer never reads the reference ATR.
+The shared encoder is `../klatwa/tools/asset_formats.py`. For example:
+
+```
+python3 ../util/structured_assets.py assets/resources/g04-r000.json --game-dir . --output build/actions.bin
+python3 ../util/pack_assets.py --game-dir . --dependencies
+```
+
+Edits must preserve each manifest's encoded size and fixed CMC header. A hit-map
+edit must still fit its column token plan; otherwise adjust the plan and the
+fixed disk allocation deliberately. Invalid dimensions, records, references or
+sizes fail instead of falling back to the original disk. `binary-migration.json`
+accounts for every replaced, removed or retained binary export.

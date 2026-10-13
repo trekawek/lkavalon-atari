@@ -1,0 +1,20 @@
+{
+  "references": [
+    {
+      "file": "wladcy-ciemnosci.atr",
+      "optional_fixture": "build/reference/wladcy-ciemnosci.atr",
+      "size": 133136,
+      "sha256": "2e609a1514a05993f2b3daa6bf72273cb39a40afdaac49e917b09197eddd84c5",
+      "source_url": "https://atarionline.pl/v01/kazip.php?ct=kazip&sub=W&title=+Wladcy+Ciemnosci&file=Wladcy+Ciemnosci+%28v1%29.atr",
+      "purpose": "Optional forensic comparison only; normal builds use readable source and native graphics/font/CMC inputs."
+    },
+    {
+      "file": "figforth.atr",
+      "optional_fixture": "build/reference/figforth.atr",
+      "size": 92176,
+      "sha256": "e47b67da25bb595c14cad943df9bde03f2beeb3148af4662ad35e5d202f490e2",
+      "source_url": "https://atarionline.pl/v01/index.php?ct=utils2&sub=4.%20Programowanie&title=+Fig-Forth#kaz_5e1378ca54e4be7921002662b90a091c",
+      "purpose": "Historical compiler provenance only. The compiler is built from util/figforth text sources."
+    }
+  ]
+}

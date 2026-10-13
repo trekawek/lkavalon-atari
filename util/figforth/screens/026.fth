@@ -1,0 +1,16 @@
+( DEFINITION TRACER )
+    ' : 12 + CONSTANT DOCOL
+
+: T?PR CR CR ." Primitive" CR CR ;
+: ?DOCOL DUP 2 - @ DOCOL -  IF
+  T?PR PROMPT QUIT THEN ;
+
+: .SETUP [COMPILE] ' ?DOCOL .WORD ! ;
+
+: NXT1  .WORD @ U. 2 SPACES .WORD
+    @ @ 2 .WORD +! ;
+
+: DECOMP .SETUP CR CR BEGIN NXT1 NP
+      CKIT CR AGAIN ;
+
+BASE !     ;S

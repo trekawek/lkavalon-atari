@@ -8,6 +8,9 @@ The tests create no disk images or audio files.
 
 import importlib.util
 from pathlib import Path
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "util"))
+from reference_media import read_reference
 import unittest
 
 SPEC = importlib.util.spec_from_file_location(
@@ -79,7 +82,7 @@ def call(cpu, address, accumulator=0):
 class MusicExtractionTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.atr = (ROOT / "reference/ad2044-side1.atr").read_bytes()
+        cls.atr = read_reference(ROOT / "reference/ad2044-side1.atr")
         cls.files, cls.metadata = music.extract(cls.atr)
 
     def test_raw_bank_is_exact_disk_slice_and_input_is_unchanged(self):

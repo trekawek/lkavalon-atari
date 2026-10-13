@@ -2,6 +2,9 @@
 """Wladcy-specific resource coverage and original-blitter regression checks."""
 
 from pathlib import Path
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "util"))
+from reference_media import read_reference
 import unittest
 
 import graphics
@@ -18,7 +21,7 @@ ROOT = Path(__file__).resolve().parents[1]
 class GraphicsTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.atr = (ROOT / "reference/wladcy-ciemnosci.atr").read_bytes()
+        cls.atr = read_reference(ROOT / "reference/wladcy-ciemnosci.atr")
         cls.files, cls.metadata = graphics.extract(cls.atr)
 
     def test_initial_rooms_and_obsolete_layouts_are_distinct(self):

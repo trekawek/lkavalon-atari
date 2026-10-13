@@ -1,0 +1,16 @@
+( DEBUGGER AIDS -- DUMP , CDUMP )
+    DECIMAL
+: ?EXIT  ?TERMINAL
+         IF LEAVE ENDIF ;
+: U.R    0 SWAP D.R ;
+: LDMP  DUP 8 + SWAP DO I C@ 4 .R
+         LOOP ;
+: DUMP   OVER + SWAP DO CR I 5 U.R I
+         LDMP ?EXIT 8 +LOOP CR ;
+: CDMP   DUP 16 + SWAP DO
+         I C@ EMIT LOOP ;
+ HEX
+: CDUMP   OVER + SWAP DO CR I 5 U.R I
+      SPACE 1 2FE C! CDMP 0 2FE C!
+       ?EXIT 10 +LOOP CR ;
+ DECIMAL -->

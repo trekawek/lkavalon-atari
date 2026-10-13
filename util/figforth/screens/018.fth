@@ -1,0 +1,16 @@
+( FULL LOAD )
+
+
+
+( LOAD DEBUG )
+   21 LOAD
+
+( LOAD EDITOR )
+  27 LOAD
+
+( LOAD ASSEMBLER )
+   39 LOAD
+
+;S
+
+

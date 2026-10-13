@@ -113,12 +113,19 @@ copy of the program. Host compilation takes several minutes.
 The target starts with all 32,000 program and residual-code bytes zero.
 Forth writes every byte of the first 250 sectors. The resource disk is freshly
 packed from native `graphics/records`, fonts in `graphics/fonts`, sprite frames
-in `graphics/sprites`, both `music/*.cmc` files, and state/padding in `assets/`.
+in `graphics/sprites`, both `music/*.cmc` files, and editable structured JSON
+in `assets/` (actions, rooms, hit maps, messages, state and residue).
+See [format notes](assets/README.md).
 The embedded cursor comes from `graphics/cursors/player-planes.bin`. No
 prebuilt game ATR or disk-tail blob is used. Changes to these inputs trigger
 rebuilding through the Makefile. Normal builds do not read the reference game ATR or run the
 decompiler. Verification compares the entire resulting ATR, including its
 header and all 1,040 sectors, with the original release.
+
+`make` also builds `reference/figforth.atr` from [readable compiler sources](../util/figforth).
+No original ATR is stored or needed for compilation. Optional original-game
+fixtures belong in ignored `build/reference/`; release checks can also validate
+an unchanged build against the recorded historical hash.
 
 `make assets` packs only the resource disk; `make sources` packs the Forth
 source ATR including embedded assets. Asset sizes and CMC load addresses
@@ -193,8 +200,9 @@ Run `make graphics` to regenerate, or
 `python3 ../util/extract_graphics.py --game wladcy-ciemnosci --check` to verify.
 Extraction reuses Klątwa's shared GAM decoder and the repository's dependency-free
 PNG helpers; Python 3 is sufficient. Native records, fonts and sprite frames
-selected by `assets/layout.json` feed the build. Regeneration restores the
-original files and can overwrite edits; normal `make` does not run it.
+selected by `assets/layout.json` feed the build. Inspection exports go to
+ignored `build/graphics`, preserving source edits. Mixed containers, hit maps
+and room layouts are structured JSON; see `assets/binary-migration.json`.
 
 ## Music
 
@@ -225,9 +233,9 @@ The restored gameplay file also matches the original player's POKEY writes
 in a 1,000-frame test of the second subsong. All referenced patterns now
 terminate inside their exported modules.
 
-Run `make music` to reproduce the files with Python 3. Details and checksums
-are in [music/extraction.json](music/extraction.json). Music extraction is
-an explicit recovery step and can overwrite edits to these build inputs.
+Run `make music` to export the current inputs under ignored `build/music`.
+Details and original checksums are in [music/extraction.json](music/extraction.json).
+This command leaves the CMC build inputs unchanged.
 Packing validates the six restored gameplay bytes and writes only the 1,899
 bytes present in its original disk record. The title module's 164 residue
 bytes are preserved separately under `assets/`.

@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "format": "gam.residue",
+  "note": "Unused saved allocation bytes. No live consumer established; segment offsets and literal values retain provenance honestly.",
+  "data": {
+    "kind": "residue",
+    "segments": [
+      {
+        "offset": 0,
+        "fill": 0,
+        "count": 8,
+        "note": "Unresolved unused allocation residue."
+      },
+      {
+        "offset": 8,
+        "unresolved_bytes": [
+          170,
+          170,
+          85,
+          141,
+          48,
+          255,
+          191,
+          171,
+          170,
+          175,
+          174,
+          169,
+          229,
+          141,
+          48,
+          250
+        ],
+        "note": "Unresolved unused allocation residue."
+      },
+      {
+        "offset": 24,
+        "unresolved_bytes": [
+          234,
+          2,
+          6,
+          0,
+          2,
+          2
+        ],
+        "note": "Unresolved unused allocation residue."
+      },
+      {
+        "offset": 30,
+        "fill": 0,
+        "count": 32,
+        "note": "Unresolved unused allocation residue."
+      }
+    ],
+    "role": "Unresolved unused allocation residue."
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "version": 1,
+  "format": "gam.room",
+  "group": 6,
+  "room_id": 24,
+  "data": {
+    "kind": "records",
+    "records": [
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "room-layers",
+            "layers": [
+              {
+                "resource": 5,
+                "subrecord": 0
+              },
+              {
+                "resource": 6,
+                "subrecord": 0
+              },
+              {
+                "resource": 46,
+                "subrecord": 0
+              },
+              {
+                "resource": 47,
+                "subrecord": 0
+              }
+            ]
+          },
+          {
+            "kind": "sequence",
+            "role": "COLPF color registers",
+            "parts": [
+              {
+                "kind": "byte",
+                "name": "COLPF0",
+                "value": 228
+              },
+              {
+                "kind": "byte",
+                "name": "COLPF1",
+                "value": 248
+              },
+              {
+                "kind": "byte",
+                "name": "COLPF2",
+                "value": 252
+              }
+            ]
+          },
+          {
+            "kind": "bytes",
+            "name": "layout_flags",
+            "values": [
+              1
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "room section 0"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "object-selectors",
+            "note": "Runtime searches this flat byte stream for selector=object+200; entries have no stored length. Parameter roles depend on the selected action collection.",
+            "objects": [
+              {
+                "object_id": 4,
+                "action_collection": 9,
+                "arguments": [
+                  {
+                    "kind": "byte",
+                    "name": "argument_2",
+                    "value": 20
+                  }
+                ]
+              },
+              {
+                "object_id": 25,
+                "action_collection": 12,
+                "arguments": [
+                  {
+                    "kind": "byte",
+                    "name": "argument_2",
+                    "value": 63
+                  }
+                ]
+              },
+              {
+                "object_id": 26,
+                "action_collection": 32,
+                "arguments": []
+              }
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "room section 1"
+      }
+    ],
+    "terminated": false,
+    "tail": [],
+    "role": "room index 23 (game room 24)"
+  }
+}

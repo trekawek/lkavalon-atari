@@ -10,6 +10,9 @@ Install py65 to run this optional playback regression.
 """
 
 from pathlib import Path
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from reference_media import read_reference
 import unittest
 
 try:
@@ -84,7 +87,7 @@ def playback(ram):
 class CmcPlaybackTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        atr = (GAME / "reference/wladcy-ciemnosci.atr").read_bytes()
+        atr = read_reference(GAME / "reference/wladcy-ciemnosci.atr")
         if len(atr) != 133136:
             raise AssertionError("Unexpected Wladcy v1 ATR geometry")
         original = dictionary_ram(atr)

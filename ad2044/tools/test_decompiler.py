@@ -7,6 +7,9 @@ import json
 import tempfile
 import unittest
 from pathlib import Path
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "util"))
+from reference_media import read_reference
 from unittest.mock import patch
 
 HERE = Path(__file__).resolve().parent
@@ -47,7 +50,7 @@ def comments_removed_tokens(source):
 class DictionaryTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.original = (ROOT / "reference/ad2044-side1.atr").read_bytes()
+        cls.original = read_reference(ROOT / "reference/ad2044-side1.atr")
         cls.data = d.memory(cls.original)
 
     def test_bad_atr_geometry_is_rejected(self):
@@ -194,7 +197,7 @@ class NativeListingTests(unittest.TestCase):
                          ['t.DOES>', 'BYTES', '670F'])
 
     def test_io_device_names_between_code_islands_stay_data(self):
-        data = d.memory((ROOT / 'reference/ad2044-side1.atr').read_bytes())
+        data = d.memory(read_reference(ROOT / 'reference/ad2044-side1.atr'))
         out = d.Listing()
         d.emit_region(out, data, 0x22be, 0x2386)
         raw = [line for line in out.lines if line.startswith('BYTES ')]

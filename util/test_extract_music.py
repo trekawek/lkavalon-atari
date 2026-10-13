@@ -3,6 +3,8 @@
 
 from pathlib import Path
 import sys
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from reference_media import read_reference
 import unittest
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -69,7 +71,7 @@ class MusicExtractionTests(unittest.TestCase):
         cls.disks = {}
         cls.exports = {}
         for game, (filename, _) in extract_music.REFERENCES.items():
-            disk = (extract_music.ROOT / game / "reference" / filename).read_bytes()
+            disk = read_reference(extract_music.ROOT / game / "reference" / filename)
             cls.disks[game] = disk
             cls.exports[game] = extract_music.extract_game(game, disk)
 
@@ -77,8 +79,12 @@ class MusicExtractionTests(unittest.TestCase):
         for game, (files, _) in self.exports.items():
             for filename, data in files.items():
                 with self.subTest(game=game, file=filename):
-                    target = extract_music.ROOT / game / "music" / filename
-                    self.assertEqual(target.read_bytes(), data)
+                    if filename == "extraction.json":
+                        target = extract_music.ROOT / game / "music" / filename
+                        self.assertEqual(target.read_bytes(), data)
+                    else:
+                        generated, _ = extract_music.build_music(game)
+                        self.assertEqual(generated[filename], data)
 
     def test_cmc_sequences_reference_complete_patterns(self):
         expected = {

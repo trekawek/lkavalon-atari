@@ -1,0 +1,29 @@
+{
+  "format": "ad2044.editor-records",
+  "version": 1,
+  "counted16": true,
+  "fields": [
+    {
+      "type": "record16",
+      "index": 0,
+      "fields": [
+        {
+          "type": "record16",
+          "index": 0,
+          "fields": [
+            {
+              "type": "u8-array",
+              "values": [1],
+              "note": "Editor leaf values; game consumer not established"
+            }
+          ]
+        },
+        {
+          "type": "u8-array",
+          "values": [0, 0],
+          "note": "Zero terminator / unused bytes after the editor record list"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "format": "gam.placeholder",
+  "group": 7,
+  "resource": 29,
+  "data": {
+    "kind": "byte",
+    "name": "unused_placeholder",
+    "value": 33
+  }
+}

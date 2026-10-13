@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "format": "gam.record-list",
+  "group": 4,
+  "resource": 18,
+  "data": {
+    "kind": "records",
+    "records": [
+      {
+        "kind": "byte",
+        "name": "unused_subrecord_placeholder",
+        "value": 71
+      },
+      {
+        "kind": "byte",
+        "name": "unused_subrecord_placeholder",
+        "value": 71
+      },
+      {
+        "kind": "file",
+        "file": "graphics/native/g04-r018-s02.pic",
+        "size": 72
+      },
+      {
+        "kind": "file",
+        "file": "assets/hit-maps/g04-r018-s03.json",
+        "size": 13
+      }
+    ],
+    "terminated": true,
+    "tail": []
+  }
+}

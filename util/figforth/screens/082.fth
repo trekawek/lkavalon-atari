@@ -1,0 +1,16 @@
+( DOS I/O )
+: GETREC  IOCC 5 ICCOM C! ICBLL ! ICBAL ! XCIO ;
+: PUTREC  IOCC 9 ICCOM C! ICBLL ! ICBAL ! XCIO ;
+: STATUS  IOCC ICSTA C@ ;
+: DEVSTAT  IOCC 0D ICCOM C! XCIO >R 2EA @ 2EC @ R> ;
+: SPECIAL IOCC ICCOM C! ICAX6 C! ICAX5 C! ICAX4 C! ICAX3 C!
+ICAX2 C! ICAX1 C! XCIO ;
+: FORMAT  CR CR ." Input Drive # " KEY DUP EMIT 30 -
+1 MAX 4 MIN
+CR CR ." When you hit RETURN I'm going to" CR ." FORMAT Drive "
+DUP . CR CR ." Hit any other key to abort  " BEEP KEY
+9B = IF (FMT) 1 = CR CR ." Format " IF ." OK" ELSE ." ERROR"
+THEN ELSE DROP THEN CR CR ;
+BASE ! ;S
+
+

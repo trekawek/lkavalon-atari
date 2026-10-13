@@ -1,0 +1,38 @@
+{
+  "format": "ad2044.residue",
+  "version": 1,
+  "fields": [
+    {
+      "type": "fill",
+      "value": 0,
+      "count": 10,
+      "note": "Past collection zero terminator; fragment left by editor, not live game data"
+    },
+    {
+      "type": "text",
+      "text": "ODCZAS=GRY.===",
+      "note": "Past collection zero terminator; fragment left by editor, not live game data"
+    },
+    {
+      "type": "u8-array",
+      "values": [5],
+      "note": "Past collection zero terminator; fragment left by editor, not live game data"
+    },
+    {
+      "type": "text",
+      "text": "AUTOR",
+      "note": "Past collection zero terminator; fragment left by editor, not live game data"
+    },
+    {
+      "type": "fill",
+      "value": 0,
+      "count": 6,
+      "note": "Past collection zero terminator; fragment left by editor, not live game data"
+    },
+    {
+      "type": "text",
+      "text": "ASA=PODAWAlA=ZE=",
+      "note": "Past collection zero terminator; fragment left by editor, not live game data"
+    }
+  ]
+}

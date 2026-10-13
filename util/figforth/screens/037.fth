@@ -1,0 +1,16 @@
+( DISK COPY ROUTINE )
+
+( INSERT SOURCE DISK IN DRIVE #1
+
+( SIMPLY TYPE  "DISKCOPY" !
+
+: MS1 CR CR
+." SINGLE-DRIVE DISK COPY" CR CR ;
+
+
+: %COPY      0 DO I 90 *
+             DUP DUP RDIN WRTO
+             90 +  . LOOP ;
+: DISKCOPY   CR MS1 CR 8 %COPY ;
+
+BASE !   ;S

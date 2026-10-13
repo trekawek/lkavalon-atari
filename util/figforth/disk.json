@@ -1,0 +1,335 @@
+{
+  "format": "apx-figforth-disk-v1",
+  "sector_size": 128,
+  "sectors": 720,
+  "header_fields": [
+    {
+      "offset": 8,
+      "value": 2,
+      "note": "Preserved legacy ATR header field"
+    },
+    {
+      "offset": 15,
+      "value": 1,
+      "note": "Original ATR protection flag"
+    }
+  ],
+  "compiler": "compiler.json",
+  "screens": [
+    {
+      "number": 11,
+      "file": "screens/011.fth"
+    },
+    {
+      "number": 12,
+      "file": "screens/012.fth"
+    },
+    {
+      "number": 13,
+      "file": "screens/013.fth"
+    },
+    {
+      "number": 14,
+      "file": "screens/014.fth"
+    },
+    {
+      "number": 15,
+      "file": "screens/015.fth"
+    },
+    {
+      "number": 16,
+      "file": "screens/016.fth"
+    },
+    {
+      "number": 17,
+      "file": "screens/017.fth"
+    },
+    {
+      "number": 18,
+      "file": "screens/018.fth"
+    },
+    {
+      "number": 19,
+      "file": "screens/019.fth"
+    },
+    {
+      "number": 20,
+      "file": "screens/020.fth"
+    },
+    {
+      "number": 21,
+      "file": "screens/021.fth"
+    },
+    {
+      "number": 22,
+      "file": "screens/022.fth"
+    },
+    {
+      "number": 23,
+      "file": "screens/023.fth"
+    },
+    {
+      "number": 24,
+      "file": "screens/024.fth"
+    },
+    {
+      "number": 25,
+      "file": "screens/025.fth"
+    },
+    {
+      "number": 26,
+      "file": "screens/026.fth"
+    },
+    {
+      "number": 27,
+      "file": "screens/027.fth"
+    },
+    {
+      "number": 28,
+      "file": "screens/028.fth"
+    },
+    {
+      "number": 29,
+      "file": "screens/029.fth"
+    },
+    {
+      "number": 30,
+      "file": "screens/030.fth"
+    },
+    {
+      "number": 31,
+      "file": "screens/031.fth"
+    },
+    {
+      "number": 32,
+      "file": "screens/032.fth"
+    },
+    {
+      "number": 33,
+      "file": "screens/033.fth"
+    },
+    {
+      "number": 34,
+      "file": "screens/034.fth"
+    },
+    {
+      "number": 35,
+      "file": "screens/035.fth"
+    },
+    {
+      "number": 36,
+      "file": "screens/036.fth"
+    },
+    {
+      "number": 37,
+      "file": "screens/037.fth"
+    },
+    {
+      "number": 38,
+      "file": "screens/038.fth"
+    },
+    {
+      "number": 39,
+      "file": "screens/039.fth"
+    },
+    {
+      "number": 40,
+      "file": "screens/040.fth"
+    },
+    {
+      "number": 41,
+      "file": "screens/041.fth"
+    },
+    {
+      "number": 42,
+      "file": "screens/042.fth"
+    },
+    {
+      "number": 43,
+      "file": "screens/043.fth"
+    },
+    {
+      "number": 44,
+      "file": "screens/044.fth"
+    },
+    {
+      "number": 46,
+      "file": "screens/046.fth"
+    },
+    {
+      "number": 47,
+      "file": "screens/047.fth"
+    },
+    {
+      "number": 48,
+      "file": "screens/048.fth"
+    },
+    {
+      "number": 49,
+      "file": "screens/049.fth"
+    },
+    {
+      "number": 50,
+      "file": "screens/050.fth"
+    },
+    {
+      "number": 51,
+      "file": "screens/051.fth"
+    },
+    {
+      "number": 52,
+      "file": "screens/052.fth"
+    },
+    {
+      "number": 53,
+      "file": "screens/053.fth"
+    },
+    {
+      "number": 54,
+      "file": "screens/054.fth"
+    },
+    {
+      "number": 55,
+      "file": "screens/055.fth"
+    },
+    {
+      "number": 56,
+      "file": "screens/056.fth"
+    },
+    {
+      "number": 57,
+      "file": "screens/057.fth"
+    },
+    {
+      "number": 58,
+      "file": "screens/058.fth"
+    },
+    {
+      "number": 59,
+      "file": "screens/059.fth"
+    },
+    {
+      "number": 60,
+      "file": "screens/060.fth"
+    },
+    {
+      "number": 61,
+      "file": "screens/061.fth"
+    },
+    {
+      "number": 62,
+      "file": "screens/062.fth"
+    },
+    {
+      "number": 63,
+      "file": "screens/063.fth"
+    },
+    {
+      "number": 64,
+      "file": "screens/064.fth"
+    },
+    {
+      "number": 65,
+      "file": "screens/065.fth"
+    },
+    {
+      "number": 66,
+      "file": "screens/066.fth"
+    },
+    {
+      "number": 67,
+      "file": "screens/067.fth"
+    },
+    {
+      "number": 68,
+      "file": "screens/068.fth"
+    },
+    {
+      "number": 69,
+      "file": "screens/069.fth"
+    },
+    {
+      "number": 70,
+      "file": "screens/070.fth"
+    },
+    {
+      "number": 71,
+      "file": "screens/071.fth"
+    },
+    {
+      "number": 72,
+      "file": "screens/072.fth"
+    },
+    {
+      "number": 73,
+      "file": "screens/073.fth"
+    },
+    {
+      "number": 74,
+      "file": "screens/074.fth"
+    },
+    {
+      "number": 75,
+      "file": "screens/075.fth"
+    },
+    {
+      "number": 76,
+      "file": "screens/076.fth"
+    },
+    {
+      "number": 77,
+      "file": "screens/077.fth"
+    },
+    {
+      "number": 78,
+      "file": "screens/078.fth"
+    },
+    {
+      "number": 79,
+      "file": "screens/079.fth"
+    },
+    {
+      "number": 80,
+      "file": "screens/080.fth"
+    },
+    {
+      "number": 81,
+      "file": "screens/081.fth"
+    },
+    {
+      "number": 82,
+      "file": "screens/082.fth"
+    },
+    {
+      "number": 83,
+      "file": "screens/083.fth"
+    },
+    {
+      "number": 84,
+      "file": "screens/084.fth"
+    },
+    {
+      "number": 85,
+      "file": "screens/085.fth"
+    },
+    {
+      "number": 86,
+      "file": "screens/086.fth"
+    },
+    {
+      "number": 87,
+      "file": "screens/087.fth"
+    },
+    {
+      "number": 88,
+      "file": "screens/088.fth"
+    }
+  ],
+  "default_fill": 32,
+  "notes": [
+    "Boot sectors 1..58 are reconstructed exactly from named Forth records and 6502 instructions.",
+    "Unused stale precompiled debugger/editor/assembler sectors after the boot image and the DOS screen45 directory are omitted.",
+    "Their original readable Forth screens are retained; blank sectors are initialized with spaces.",
+    "Neither normal compilation nor original Atari COLD reads the omitted sectors."
+  ]
+}

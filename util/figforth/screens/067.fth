@@ -1,0 +1,16 @@
+( FLOATING POINT )
+
+: FVARIABLE
+ <BUILDS HERE F! 6 ALLOT DOES> ;
+
+: FCONSTANT
+  <BUILDS HERE F! 6 ALLOT DOES>
+  F@ ;
+
+: F0=   OR OR 0= ;
+: F=    F- F0= ;
+: F<    F- DROP DROP 80 AND 0 > ;
+
+
+
+BASE !  ;S

@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "format": "gam.action-collections",
+  "group": 5,
+  "resource": 0,
+  "data": {
+    "kind": "records",
+    "records": [
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "byte",
+            "name": "legacy_approach_control",
+            "value": 3
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "action collection 0"
+      }
+    ],
+    "terminated": false,
+    "tail": []
+  }
+}

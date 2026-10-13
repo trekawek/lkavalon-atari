@@ -10,6 +10,7 @@ import argparse
 import json
 from pathlib import Path
 import struct
+import structured_assets
 
 
 class AssetError(ValueError):
@@ -93,8 +94,9 @@ def dependencies(game_dir):
             for part in _parts(write, label):
                 if "file" in part:
                     path = _path(root, part["file"], label)
-                    if path not in result:
-                        result.append(path)
+                    for source in structured_assets.dependencies(root, part["file"]):
+                        if source not in result:
+                            result.append(source)
     return result
 
 
@@ -107,8 +109,8 @@ def _part_data(root, part, label):
     label = f"{label} [{part['file']}]"
     expected = _integer(part.get("size"), label + " size")
     try:
-        data = path.read_bytes()
-    except OSError as exc:
+        data = structured_assets.encode_file(root, part["file"])
+    except (OSError, structured_assets.AssetError) as exc:
         raise AssetError(f"{label}: {exc}") from exc
     if len(data) != expected:
         raise AssetError(f"{label}: expected {expected} bytes, found {len(data)}")
@@ -254,7 +256,7 @@ def main():
             print(" ".join(map(str, dependencies(args.game_dir))))
         else:
             prepare(args.game_dir)
-    except AssetError as exc:
+    except (AssetError, structured_assets.AssetError) as exc:
         parser.exit(1, f"asset packing failed: {exc}\n")
 
 

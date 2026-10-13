@@ -1,0 +1,263 @@
+{
+  "version": 1,
+  "format": "gam.room",
+  "group": 6,
+  "room_id": 16,
+  "data": {
+    "kind": "records",
+    "records": [
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "room-layers",
+            "layers": [
+              {
+                "resource": 28,
+                "subrecord": 0
+              },
+              {
+                "resource": 7,
+                "subrecord": 0
+              },
+              {
+                "resource": 11,
+                "subrecord": 0
+              },
+              {
+                "resource": 8,
+                "subrecord": 0
+              },
+              {
+                "resource": 8,
+                "subrecord": 2
+              },
+              {
+                "resource": 9,
+                "subrecord": 2
+              },
+              {
+                "resource": 10,
+                "subrecord": 0
+              }
+            ]
+          },
+          {
+            "kind": "sequence",
+            "role": "COLPF color registers",
+            "parts": [
+              {
+                "kind": "byte",
+                "name": "COLPF0",
+                "value": 244
+              },
+              {
+                "kind": "byte",
+                "name": "COLPF1",
+                "value": 216
+              },
+              {
+                "kind": "byte",
+                "name": "COLPF2",
+                "value": 236
+              }
+            ]
+          },
+          {
+            "kind": "bytes",
+            "name": "layout_flags",
+            "values": [
+              1
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "room section 0"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "object-selectors",
+            "note": "Runtime searches this flat byte stream for selector=object+200; entries have no stored length. Parameter roles depend on the selected action collection.",
+            "objects": [
+              {
+                "object_id": 27,
+                "action_collection": 17,
+                "arguments": [
+                  {
+                    "kind": "byte",
+                    "name": "argument_2",
+                    "value": 17
+                  }
+                ]
+              },
+              {
+                "object_id": 28,
+                "action_collection": 37,
+                "arguments": [
+                  {
+                    "kind": "byte",
+                    "name": "argument_2",
+                    "value": 50
+                  }
+                ]
+              },
+              {
+                "object_id": 20,
+                "action_collection": 15,
+                "arguments": []
+              },
+              {
+                "object_id": 17,
+                "action_collection": 19,
+                "arguments": [
+                  {
+                    "kind": "byte",
+                    "name": "argument_2",
+                    "value": 5
+                  },
+                  {
+                    "kind": "byte",
+                    "name": "argument_3",
+                    "value": 4
+                  }
+                ]
+              },
+              {
+                "object_id": 18,
+                "action_collection": 19,
+                "arguments": [
+                  {
+                    "kind": "byte",
+                    "name": "argument_2",
+                    "value": 6
+                  },
+                  {
+                    "kind": "byte",
+                    "name": "argument_3",
+                    "value": 5
+                  }
+                ]
+              },
+              {
+                "object_id": 19,
+                "action_collection": 19,
+                "arguments": [
+                  {
+                    "kind": "byte",
+                    "name": "argument_2",
+                    "value": 7
+                  },
+                  {
+                    "kind": "byte",
+                    "name": "argument_3",
+                    "value": 6
+                  }
+                ]
+              },
+              {
+                "object_id": 10,
+                "action_collection": 19,
+                "arguments": [
+                  {
+                    "kind": "byte",
+                    "name": "argument_2",
+                    "value": 5
+                  },
+                  {
+                    "kind": "byte",
+                    "name": "argument_3",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "object_id": 11,
+                "action_collection": 19,
+                "arguments": [
+                  {
+                    "kind": "byte",
+                    "name": "argument_2",
+                    "value": 6
+                  },
+                  {
+                    "kind": "byte",
+                    "name": "argument_3",
+                    "value": 2
+                  }
+                ]
+              },
+              {
+                "object_id": 12,
+                "action_collection": 19,
+                "arguments": [
+                  {
+                    "kind": "byte",
+                    "name": "argument_2",
+                    "value": 7
+                  },
+                  {
+                    "kind": "byte",
+                    "name": "argument_3",
+                    "value": 3
+                  }
+                ]
+              },
+              {
+                "object_id": 16,
+                "action_collection": 20,
+                "arguments": [
+                  {
+                    "kind": "byte",
+                    "name": "argument_2",
+                    "value": 55
+                  },
+                  {
+                    "kind": "byte",
+                    "name": "argument_3",
+                    "value": 55
+                  }
+                ]
+              },
+              {
+                "object_id": 15,
+                "action_collection": 20,
+                "arguments": [
+                  {
+                    "kind": "byte",
+                    "name": "argument_2",
+                    "value": 55
+                  },
+                  {
+                    "kind": "byte",
+                    "name": "argument_3",
+                    "value": 55
+                  }
+                ]
+              },
+              {
+                "object_id": 30,
+                "action_collection": 12,
+                "arguments": [
+                  {
+                    "kind": "byte",
+                    "name": "argument_2",
+                    "value": 1
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "room section 1"
+      }
+    ],
+    "terminated": false,
+    "tail": [],
+    "role": "room index 15 (game room 16)"
+  }
+}

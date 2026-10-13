@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
-"""Extract verified music from the three reconstructed Forth games.
+"""Export current music inputs; optionally compare them with the releases.
 
-Run from any directory; only Python's standard library is required. CMC files
-retain their original Atari segment headers. Wladcy's truncated gameplay
-resource additionally needs six bytes from the game's runtime memory layout.
-The AD2044 helper preserves its custom engine in SAP containers instead.
+Outputs go to ignored build/music directories. Only Python's standard library
+is required. CMC files retain their original Atari segment headers; Wladcy's
+restored gameplay CMC includes six bytes from its runtime memory layout.
+AD2044's structured custom engine is encoded and wrapped in SAP containers.
+The pure extraction helpers also support optional forensic reference disks.
 """
 
 import argparse
@@ -20,6 +21,8 @@ import wave
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "ad2044/tools"))
 import music_sap
+import structured_assets
+from reference_media import read_reference
 
 REFERENCES = {
     "ad2044": (
@@ -221,6 +224,32 @@ def validate_asap(executable, files, manifest):
             print(f"ASAP: {manifest['game']}/{filename}: {songs} subsong(s) rendered")
 
 
+def build_music(game):
+    """Generate listening/export files from the current editable inputs."""
+    root = ROOT / game
+    manifest = json.loads((root / "music/extraction.json").read_text("ascii"))
+    if game == "ad2044":
+        bank = structured_assets.encode_file(root, "music/sound-bank.json")
+        effects = [command for command, _ in music_sap.COMMANDS if command not in (0x19, 0x50)]
+        files = {
+            "sound-bank.bin": bank,
+            "title.sap": music_sap._sap(bank, [0x50], "A.D. 2044 - title and ending"),
+            "game-over.sap": music_sap._sap(bank, [0x19], "A.D. 2044 - game over"),
+            "sound-effects.sap": music_sap._sap(bank, effects, "A.D. 2044 - sound effects"),
+        }
+    else:
+        files = {name: (root / "music" / name).read_bytes()
+                 for name, *_ in CMC_RECORDS[game]}
+    manifest["provenance_note"] = "Source disk fields describe the historical release; file hashes describe the current build inputs."
+    manifest["build_inputs"] = (["music/sound-bank.json"] if game == "ad2044" else
+                                ["music/" + name for name in files])
+    for track in manifest["files"]:
+        track["size"] = len(files[track["file"]])
+        track["sha256"] = digest(files[track["file"]])
+    files["extraction.json"] = (json.dumps(manifest, indent=2) + "\n").encode("ascii")
+    return files, manifest
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
@@ -235,19 +264,23 @@ def main():
     args = parser.parse_args()
     for game in ([args.game] if args.game else REFERENCES):
         source = ROOT / game / "reference" / REFERENCES[game][0]
-        files, manifest = extract_game(game, source.read_bytes())
-        output = ROOT / game / "music"
-        if not args.check:
-            output.mkdir(exist_ok=True)
+        files, manifest = build_music(game)
+        output = ROOT / game / "build/music"
+        if args.check:
+            original, _ = extract_game(game, read_reference(source))
+            for filename, data in original.items():
+                actual = ((ROOT / game / "music/extraction.json").read_bytes()
+                          if filename == "extraction.json" else files[filename])
+                if actual != data:
+                    raise SystemExit(f"Encoded music differs from original: {game}/{filename}")
+        else:
+            output.mkdir(parents=True, exist_ok=True)
         for filename, data in files.items():
             target = output / filename
-            if args.check:
-                if not target.is_file() or target.read_bytes() != data:
-                    raise SystemExit(f"Export differs or is missing: {target}")
-            else:
+            if not args.check:
                 target.write_bytes(data)
         print(
-            f"{game}: {'checked' if args.check else 'extracted'} {len(files) - 1} music/bank files"
+            f"{game}: {'checked' if args.check else 'exported'} {len(files) - 1} music/bank files"
         )
         if args.asapconv:
             validate_asap(args.asapconv, files, manifest)

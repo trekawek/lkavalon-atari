@@ -19,6 +19,8 @@ import unittest
 from unittest.mock import patch
 
 import forth_assets as assets
+import structured_assets
+from reference_media import read_reference
 
 ROOT = Path(__file__).resolve().parents[1]
 HAS_PY65 = importlib.util.find_spec('py65') is not None
@@ -40,8 +42,16 @@ def write_native(root, game, salt=0):
     for item in assets.ASSETS_BY_GAME[game]:
         path = root / item['path']
         path.parent.mkdir(parents=True, exist_ok=True)
-        data = bytes((i * 73 + salt) & 255 for i in range(item['size']))
-        path.write_bytes(data)
+        if path.suffix == '.json':
+            document = json.loads((ROOT / game / item['path']).read_text('ascii'))
+            registers = next(section for section in document['sections']
+                             if section['name'] == 'command registers')
+            registers['fields'][0]['value'] = salt & 255
+            path.write_text(json.dumps(document), 'ascii')
+            data = structured_assets.encode_file(root, item['path'])
+        else:
+            data = bytes((i * 73 + salt) & 255 for i in range(item['size']))
+            path.write_bytes(data)
         result.append(data)
     return result
 
@@ -190,20 +200,18 @@ class RegenerationTests(unittest.TestCase):
 
     @unittest.skipUnless(HAS_PY65, 'py65 required for forensic regeneration')
     def test_all_regenerators_keep_edited_assets_without_recreating_opaque_tails(self):
-        if not all((ROOT / game / 'reference' / name).exists()
-                   for game, name in REFERENCES.items()):
-            self.skipTest('forensic game references absent; normal builds do not need them')
         with tempfile.TemporaryDirectory() as directory:
             repo = Path(directory)
             (repo / 'util').mkdir()
-            shutil.copy2(ROOT / 'util/forth_assets.py', repo / 'util/forth_assets.py')
+            shutil.copytree(ROOT / 'util', repo / 'util', dirs_exist_ok=True,
+                            ignore=shutil.ignore_patterns('__pycache__'))
             for game, reference in REFERENCES.items():
                 root = repo / game
                 shutil.copytree(ROOT / game / 'tools', root / 'tools',
                                 ignore=shutil.ignore_patterns('__pycache__'))
                 (root / 'reference').mkdir()
-                shutil.copy2(ROOT / game / 'reference' / reference,
-                             root / 'reference' / reference)
+                (root / 'reference' / reference).write_bytes(
+                    read_reference(ROOT / game / 'reference' / reference))
                 write_native(root, game, salt=31)
                 (root / 'assets').mkdir()
             for game in assets.ASSETS_BY_GAME:

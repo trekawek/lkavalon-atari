@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "format": "gam.record-list",
+  "group": 3,
+  "resource": 5,
+  "data": {
+    "kind": "records",
+    "records": [
+      {
+        "kind": "file",
+        "file": "graphics/native/g03-r005-s00.pic",
+        "size": 413
+      }
+    ],
+    "terminated": true,
+    "tail": []
+  }
+}

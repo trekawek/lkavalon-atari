@@ -1,0 +1,529 @@
+{
+  "format": "ad2044.text-pages",
+  "version": 1,
+  "counted16": true,
+  "note": "Retired introduction in unallocated sectors",
+  "fields": [
+    {
+      "type": "record16",
+      "index": 0,
+      "fields": [
+        {
+          "type": "record16",
+          "index": 0,
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "W=CZASACH=sWIETNOsCI=SYSTEMU",
+                "KOMUNISTYCZNEGO=NA=sWIECIE,",
+                "GRUPA=NAUKOWCoW=PRZEPROWADZIlA",
+                "GlOsNY=W=TYCH=LATACH=EKSPERYMENT.",
+                "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+                [
+                  "W=Dol^=",
+                  {
+                    "inverse": "NASTePNA"
+                  },
+                  "=",
+                  {
+                    "inverse": "STRONA"
+                  }
+                ],
+                [
+                  "W=GoRe^=",
+                  {
+                    "inverse": "POPRZEDNIA"
+                  }
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "type": "u8-array",
+          "values": [0, 0],
+          "note": "Zero terminator / unused bytes after the editor record list"
+        }
+      ]
+    },
+    {
+      "type": "record16",
+      "index": 1,
+      "fields": [
+        {
+          "type": "record16",
+          "index": 0,
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "POSTANOWIONO=PRZESlAc=NASTePNYM",
+                "POKOLENIOM=PRoBKe=SPOlECZEnSTWA",
+                "Z=USTROJU=DOBROBYTU.",
+                "PRoBKA=TA=MIAlA=REPREZENTOWAc",
+                "STATYSTYCZNE=CECHY=CAlEGO=NARODU.",
+                "DANE=OSOBOWE=WSZYSTKICH=OBYWATELI",
+                "WPROWADZONO=DO=NAJSZYBSZEGO",
+                "WoWCZAS=SUPERKOMPUTERA=TYPU",
+                "ODRA."
+              ]
+            }
+          ]
+        },
+        {
+          "type": "u8-array",
+          "values": [0, 0],
+          "note": "Zero terminator / unused bytes after the editor record list"
+        }
+      ]
+    },
+    {
+      "type": "record16",
+      "index": 2,
+      "fields": [
+        {
+          "type": "record16",
+          "index": 0,
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "PO=KILKU=DNIACH=WYTezONEJ=PRACY",
+                "KOMPUTER=WYTYPOWAl=JEDNOSTKe,KToRA",
+                "NAJLEPIEJ=SPElNIAlA=ZAlOzONE",
+                "WYMAGANIA.",
+                "PRoBKa=STATYSTYCZNEGO=OBYWATELA",
+                "PRL=ZOSTAlEs=WlAsNIE=TY."
+              ]
+            }
+          ]
+        },
+        {
+          "type": "u8-array",
+          "values": [0, 0],
+          "note": "Zero terminator / unused bytes after the editor record list"
+        }
+      ]
+    },
+    {
+      "type": "record16",
+      "index": 3,
+      "fields": [
+        {
+          "type": "record16",
+          "index": 0,
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "PRASA=PODAWAlA,zE=SPElNIAJaC",
+                "OBYWATELSKI=OBOWIaZEK=PODDAlEs",
+                "SIe=HIBERNACJI,=ABY=NIEsc",
+                "W=PRZYSZlOsc=WIELKIE=IDEE=SWOICH",
+                "CZASoW.=PRAWDZIWY=POWoD=TAK",
+                "DESPERACKIEGO=CZYNU=BYl=JEDNAK",
+                "ZUPElNIE=PROZAICZNY.=UMOzLIWIONO",
+                "CI=UCIECZKe=W=INNY=sWIAT,=A=TY",
+                "SKORZYSTAlEs=Z=TEJ=OKAZJI."
+              ]
+            }
+          ]
+        },
+        {
+          "type": "u8-array",
+          "values": [0, 0],
+          "note": "Zero terminator / unused bytes after the editor record list"
+        }
+      ]
+    },
+    {
+      "type": "record16",
+      "index": 4,
+      "fields": [
+        {
+          "type": "record16",
+          "index": 0,
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "GLOBALNA=WOJNA=ATOMOWA=DOPROWADZIlA",
+                "DO=ZNISZCZENIA=CAlEJ=PLANETY.",
+                "OCALAlA=TYLKO=GARSTKA=KOBIET",
+                "W=JEDNYM=Z=ATOMOWYCH=SCHRONoW.",
+                "Z=CZASEM=STWORZYlY=ONE=SWOJa",
+                "WlASNa=CYWILIZACJe.",
+                "JESTEs=JEDYNYM=MezCZYZNa,=KToRY",
+                "W=STANIE=HIBERNACJI=PRZETRWAl",
+                "TE=CIezKIE=CZASY."
+              ]
+            }
+          ]
+        },
+        {
+          "type": "u8-array",
+          "values": [0, 0],
+          "note": "Zero terminator / unused bytes after the editor record list"
+        }
+      ]
+    },
+    {
+      "type": "record16",
+      "index": 5,
+      "fields": [
+        {
+          "type": "record16",
+          "index": 0,
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "WlAsNIE=ZOSTAlEs=ODNALEZIONY",
+                "I=PRZYWRoCONY=DO=zYCIA.=STAlEs",
+                "SIe=JEDNAK=ZAGROzENIEM=DLA",
+                "KOBIECEJ=SPOlECZNOsCI.=ZAPADA",
+                "WIeC=JEDYNA=SlUSZNA=DECYZJA,",
+                "JAKa=MOGlY=PODJac=KOBIETY=W=CELU",
+                "OCHRONY=SWOJEGO=sWIATA.=NIE=MASZ",
+                "INNEGO=WYJsCIA,=MUSISZ=UCIEKAc."
+              ]
+            }
+          ]
+        },
+        {
+          "type": "u8-array",
+          "values": [0, 0],
+          "note": "Zero terminator / unused bytes after the editor record list"
+        }
+      ]
+    },
+    {
+      "type": "record16",
+      "index": 6,
+      "fields": [
+        {
+          "type": "record16",
+          "index": 0,
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "ZAMIAST=BEZTROSKIEGO=zYCIA",
+                "W=sWIECIE=TWOICH=MARZEn,=SPADlA",
+                "NA=CIEBIE=WIELKA=ODPOWIEDZIALNOsc.",
+                "MUSISZ=DOPROWADZIc=DO=ODRODZENIA",
+                "SIe=MeSKIEJ=CZesCI=LUDZKOsCI.",
+                "GDY=TEGO=DOKONASZ,=TWOJA=MISJA",
+                "BeDZIE=SKOnCZONA."
+              ]
+            }
+          ]
+        },
+        {
+          "type": "u8-array",
+          "values": [0, 0],
+          "note": "Zero terminator / unused bytes after the editor record list"
+        }
+      ]
+    },
+    {
+      "type": "record16",
+      "index": 7,
+      "fields": [
+        {
+          "type": "record16",
+          "index": 0,
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "DROGA=DO=CELU=NIE=JEST=JEDNAK",
+                "PROSTA,=BeDZIESZ=ZMUSZONY=WYKAZAc",
+                "SIe=WIELOMA=UMIEJeTNOsCIAMI.",
+                "PODCZAS=SWOJEJ=WeDRoWKI=POZNASZ",
+                "sWIAT=STWORZONY=PRZEZ=KOBIETY.",
+                "DOWIESZ=SIe=JAKIE=IDEE",
+                "Z=PRZESZlOsCI=PRZETRWAlY=PRoBe",
+                "CZASU,A=JAKIE=ZGINelY=BEZPOWROTNIE."
+              ]
+            }
+          ]
+        },
+        {
+          "type": "u8-array",
+          "values": [0, 0],
+          "note": "Zero terminator / unused bytes after the editor record list"
+        }
+      ]
+    },
+    {
+      "type": "record16",
+      "index": 8,
+      "fields": [
+        {
+          "type": "record16",
+          "index": 0,
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                [
+                  "====",
+                  {
+                    "inverse": "EKRAN"
+                  },
+                  "===="
+                ],
+                "W=sRODKOWYM=OKNIE=EKRANU=WIDAc",
+                "RYSUNEK=PRZEDSTAWIAJaCY=MIEJSCE,",
+                "W=KToRYM=SIe=ZNAJDUJESZ.",
+                "MNIEJSZE=OKIENKO=PO=LEWEJ=STRONIE",
+                "ZAWIERA=RZECZY,=KToRE=NIESIESZ.",
+                "NA=PRAWO=JEST=MAPA=ODKRYWANEGO",
+                "POZIOMU=I=JEGO=NUMER."
+              ]
+            }
+          ]
+        },
+        {
+          "type": "u8-array",
+          "values": [0, 0],
+          "note": "Zero terminator / unused bytes after the editor record list"
+        }
+      ]
+    },
+    {
+      "type": "record16",
+      "index": 9,
+      "fields": [
+        {
+          "type": "record16",
+          "index": 0,
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "JAsNIEJSZY=ZNAK=NA=MAPIE",
+                "OZNACZA=MIEJSCE=TWEGO=POBYTU.",
+                "ZNAK=TEN=OKREsLA=TAKzE",
+                "KIERUNEK=PATRZENIA.",
+                "POZWALA=TO=LEPIEJ=ORIENTOWAc",
+                "SIe=W=LABIRYNCIE=KORYTARZY."
+              ]
+            }
+          ]
+        },
+        {
+          "type": "u8-array",
+          "values": [0, 0],
+          "note": "Zero terminator / unused bytes after the editor record list"
+        }
+      ]
+    },
+    {
+      "type": "record16",
+      "index": 10,
+      "fields": [
+        {
+          "type": "record16",
+          "index": 0,
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                [
+                  "====",
+                  {
+                    "inverse": "JAK"
+                  },
+                  "=",
+                  {
+                    "inverse": "GRAc"
+                  },
+                  "=",
+                  {
+                    "inverse": "?"
+                  },
+                  "===="
+                ],
+                "GRe=ROZPOCZYNAMY=W=MOMENCIE",
+                "POJAWIENIA=SIe=KURSORA=W=KSZTAlCIE",
+                "STRZAlKI.=UMOzLIWIA=ON=WSKAZANIE",
+                "DOWOLNEGO=ELEMENTU=OBRAZKA",
+                "W=CENTRALNYM=OKNIE.",
+                "ZATWIERDZAJaC=POlOzENIE=KURSORA",
+                "PRZYCISKIEM,=UZYSKAMY=ZESTAW",
+                "MOzLIWYCH=DO=WYKONANIA=CZYNNOsCI."
+              ]
+            }
+          ]
+        },
+        {
+          "type": "u8-array",
+          "values": [0, 0],
+          "note": "Zero terminator / unused bytes after the editor record list"
+        }
+      ]
+    },
+    {
+      "type": "record16",
+      "index": 11,
+      "fields": [
+        {
+          "type": "record16",
+          "index": 0,
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "WYJAsNIENIA=WYMAGAJa=DWA",
+                "NAJCZesCIEJ=WYSTePUJaCE=SlOWA.",
+                [
+                  "====",
+                  {
+                    "inverse": "NIC"
+                  },
+                  "^=JEDYNYM=EFEKTEM=JEGO"
+                ],
+                "WYKONANIA=JEST=POWRoT=DO=EDYCJI",
+                "GloWNEGO=OBRAZKA=LUB=WCZEsNIEJ",
+                "OTWARTEGO=OKIENKA.",
+                [
+                  "====",
+                  {
+                    "inverse": "WRoc"
+                  },
+                  "^=POWODUJE=WYJsCIE"
+                ],
+                "Z=OSTATNIO=OTWARTEGO=OKIENKA",
+                "I=JEGO=SKASOWANIE."
+              ]
+            }
+          ]
+        },
+        {
+          "type": "u8-array",
+          "values": [0, 0],
+          "note": "Zero terminator / unused bytes after the editor record list"
+        }
+      ]
+    },
+    {
+      "type": "record16",
+      "index": 12,
+      "fields": [
+        {
+          "type": "record16",
+          "index": 0,
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "W=DOLNEJ=CZesCI=RAMKI=WIDNIEJE",
+                [
+                  "NAPIS=",
+                  {
+                    "inverse": "IDz"
+                  },
+                  ".=WSKAZANIE=TEGO=SlOWA"
+                ],
+                "I=NACIsNIeCIE=PRZYCISKU=UMOzLIWI",
+                "WYBoR=KIERUNKU=PORUSZANIA=SIe.",
+                "KORZYSTANIE=Z=TEJ=METODY=JEST",
+                "NIEZBeDNE,=GDY=MIEJSCE",
+                "PRZEMIESZCZANIA=NIE=JEST=WIDOCZNE",
+                "NA=EKRANIE."
+              ]
+            }
+          ]
+        },
+        {
+          "type": "u8-array",
+          "values": [0, 0],
+          "note": "Zero terminator / unused bytes after the editor record list"
+        }
+      ]
+    },
+    {
+      "type": "record16",
+      "index": 13,
+      "fields": [
+        {
+          "type": "record16",
+          "index": 0,
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "NACIsNIeCIE=SPACJI=W=CZASIE",
+                "EDYCJI=GloWNEGO=OBRAZKA",
+                "UMOzLIWIA=ZAPIS=GRY,=ODCZYT,",
+                "POWRoT=DO=POCZaTKU=LUB",
+                "WYWOlANIE=NINIEJSZEGO=OPISU."
+              ]
+            }
+          ]
+        },
+        {
+          "type": "u8-array",
+          "values": [0, 0],
+          "note": "Zero terminator / unused bytes after the editor record list"
+        }
+      ]
+    },
+    {
+      "type": "record16",
+      "index": 14,
+      "fields": [
+        {
+          "type": "record16",
+          "index": 0,
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "GWARANCJa=UZYSKANIA=SPRAWNIE",
+                "DZIAlAJaCEJ=GRY=JEST=ZAMoWIENIE",
+                "JEJ=BEZPOsREDNIO=U=PRODUCENTA.",
+                "====R.M.P.=SOFT===",
+                "====37=450==STALOWA=WOLA====",
+                "====SK.POCZT.=1594===="
+              ]
+            }
+          ]
+        },
+        {
+          "type": "u8-array",
+          "values": [0, 0],
+          "note": "Zero terminator / unused bytes after the editor record list"
+        }
+      ]
+    },
+    {
+      "type": "record16",
+      "index": 15,
+      "fields": [
+        {
+          "type": "record16",
+          "index": 0,
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "===zYCZe=WIELU=EKSCYTUJaCYCH===",
+                "===MOMENToW=PODCZAS=GRY.===",
+                "AUTOR"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "u8-array",
+          "values": [0, 0],
+          "note": "Zero terminator / unused bytes after the editor record list"
+        }
+      ]
+    }
+  ]
+}

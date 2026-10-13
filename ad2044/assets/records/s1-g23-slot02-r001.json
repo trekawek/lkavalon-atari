@@ -1,0 +1,178 @@
+{
+  "format": "ad2044.object-actions",
+  "version": 1,
+  "consumer": "SELECTED-OBJECT-RECORD $7281 and action handlers via $7664",
+  "objects": [
+    {
+      "object_id": 0,
+      "actions": [
+        {
+          "opcode": 1,
+          "handler": "ACT-BACK",
+          "fields": []
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 1,
+      "actions": [
+        {
+          "opcode": 1,
+          "handler": "ACT-BACK",
+          "fields": []
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 2,
+      "actions": [
+        {
+          "opcode": 7,
+          "handler": "ACT-EXAMINE",
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "KLUCZ=MAGNETYCZNY"
+              ],
+              "name": "message_1"
+            }
+          ]
+        },
+        {
+          "opcode": 14,
+          "handler": "ACT-TAKE-ITEM",
+          "fields": []
+        },
+        {
+          "opcode": 48,
+          "handler": "ACT-DISCARD-OBJECT",
+          "fields": [
+            {
+              "type": "u8",
+              "name": "hidden_object_id",
+              "value": 110
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 3,
+      "actions": [
+        {
+          "opcode": 7,
+          "handler": "ACT-EXAMINE",
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "LEGITYMACJA=CZlONKA",
+                "SEKRETARIATU."
+              ],
+              "name": "message_1"
+            }
+          ]
+        },
+        {
+          "opcode": 14,
+          "handler": "ACT-TAKE-ITEM",
+          "fields": []
+        },
+        {
+          "opcode": 48,
+          "handler": "ACT-DISCARD-OBJECT",
+          "fields": [
+            {
+              "type": "u8",
+              "name": "hidden_object_id",
+              "value": 111
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 4,
+      "actions": [
+        {
+          "opcode": 7,
+          "handler": "ACT-EXAMINE",
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "KLUCZYK."
+              ],
+              "name": "message_1"
+            }
+          ]
+        },
+        {
+          "opcode": 14,
+          "handler": "ACT-TAKE-ITEM",
+          "fields": []
+        },
+        {
+          "opcode": 48,
+          "handler": "ACT-DISCARD-OBJECT",
+          "fields": [
+            {
+              "type": "u8",
+              "name": "hidden_object_id",
+              "value": 112
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 5,
+      "actions": [
+        {
+          "opcode": 7,
+          "handler": "ACT-EXAMINE",
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "MAGNETYCZNA=OBRaCZKA."
+              ],
+              "name": "message_1"
+            }
+          ]
+        },
+        {
+          "opcode": 14,
+          "handler": "ACT-TAKE-ITEM",
+          "fields": []
+        },
+        {
+          "opcode": 48,
+          "handler": "ACT-DISCARD-OBJECT",
+          "fields": [
+            {
+              "type": "u8",
+              "name": "hidden_object_id",
+              "value": 113
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    }
+  ],
+  "terminator_cells": 0,
+  "unused": []
+}

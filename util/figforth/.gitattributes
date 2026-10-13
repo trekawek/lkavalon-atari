@@ -1,0 +1,2 @@
+# Trailing blank rows preserve the original sixteen-line Forth screen format.
+screens/*.fth whitespace=-blank-at-eof

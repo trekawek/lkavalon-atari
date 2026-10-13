@@ -1,0 +1,209 @@
+{
+  "format": "ad2044.object-actions",
+  "version": 1,
+  "consumer": "SELECTED-OBJECT-RECORD $7281 and action handlers via $7664",
+  "objects": [
+    {
+      "object_id": 0,
+      "actions": [
+        {
+          "opcode": 1,
+          "handler": "ACT-BACK",
+          "fields": []
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 1,
+      "actions": [
+        {
+          "opcode": 1,
+          "handler": "ACT-BACK",
+          "fields": []
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 2,
+      "actions": [
+        {
+          "opcode": 7,
+          "handler": "ACT-EXAMINE",
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "WIDZISZ=CIEMNOsc."
+              ],
+              "name": "message_1"
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 3,
+      "actions": [
+        {
+          "opcode": 7,
+          "handler": "ACT-EXAMINE",
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "DOTYKASZ=PloTNA."
+              ],
+              "name": "message_1"
+            }
+          ]
+        },
+        {
+          "opcode": 57,
+          "handler": "ACT-CUT-WITH-ITEM",
+          "fields": [
+            {
+              "type": "u8",
+              "name": "revealed_object_id",
+              "value": 1
+            },
+            {
+              "type": "u8",
+              "name": "exit_direction",
+              "value": 0
+            },
+            {
+              "type": "u8",
+              "name": "animation_frame_count",
+              "value": 15
+            },
+            {
+              "type": "u8",
+              "name": "required_inventory_id",
+              "value": 122
+            },
+            {
+              "type": "message",
+              "lines": [
+                "TYM=NIE=PRZETNIESZ."
+              ],
+              "name": "message_1"
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 4,
+      "actions": [
+        {
+          "opcode": 7,
+          "handler": "ACT-EXAMINE",
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "WYCZUWASZ=POD=NOGAMI",
+                "WEJsCIE=DO=WlAZU."
+              ],
+              "name": "message_1"
+            }
+          ]
+        },
+        {
+          "opcode": 6,
+          "handler": "ACT-GOTO-ROOM",
+          "fields": [
+            {
+              "type": "u8",
+              "name": "room_id",
+              "value": 24
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 5,
+      "actions": [
+        {
+          "opcode": 7,
+          "handler": "ACT-EXAMINE",
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "UDERZYlEs=W=COs=TWARDEGO.",
+                "CHYBA=JEST=TO=GlAZ."
+              ],
+              "name": "message_1"
+            }
+          ]
+        },
+        {
+          "opcode": 42,
+          "handler": "ACT-REFUSE-WITH-OVERLAY",
+          "fields": [
+            {
+              "type": "u8",
+              "name": "revealed_object_id_or_255",
+              "value": 255
+            },
+            {
+              "type": "message",
+              "lines": [
+                "NIE=MOzESZ=TEGO=WZIac.",
+                "JESTEs=ZA=SlABY."
+              ],
+              "name": "message_1"
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 6,
+      "actions": [
+        {
+          "opcode": 7,
+          "handler": "ACT-EXAMINE",
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "OKNO=NA=sWIAT."
+              ],
+              "name": "message_1"
+            }
+          ]
+        },
+        {
+          "opcode": 13,
+          "handler": "ACT-USE-RELATIVE-EXIT",
+          "fields": [
+            {
+              "type": "u8",
+              "name": "relative_direction",
+              "value": 0
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    }
+  ],
+  "terminator_cells": 0,
+  "unused": []
+}

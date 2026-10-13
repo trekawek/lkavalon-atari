@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "format": "gam.record-list",
+  "group": 6,
+  "resource": 11,
+  "data": {
+    "kind": "records",
+    "records": [
+      {
+        "kind": "file",
+        "file": "graphics/native/g06-r011-s00.pic",
+        "size": 63
+      },
+      {
+        "kind": "file",
+        "file": "assets/hit-maps/g06-r011-s01.json",
+        "size": 10
+      },
+      {
+        "kind": "file",
+        "file": "graphics/native/g06-r011-s02.pic",
+        "size": 198
+      },
+      {
+        "kind": "file",
+        "file": "assets/hit-maps/g06-r011-s03.json",
+        "size": 21
+      }
+    ],
+    "terminated": true,
+    "tail": []
+  }
+}

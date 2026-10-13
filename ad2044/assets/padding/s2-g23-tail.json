@@ -1,0 +1,48 @@
+{
+  "format": "ad2044.residue",
+  "version": 1,
+  "fields": [
+    {
+      "type": "fill",
+      "value": 0,
+      "count": 4,
+      "note": "Past collection zero terminator; fragment left by editor, not live game data"
+    },
+    {
+      "type": "u8-array",
+      "values": [255, 0, 254, 60],
+      "note": "Past collection zero terminator; fragment left by editor, not live game data"
+    },
+    {
+      "type": "fill",
+      "value": 0,
+      "count": 5,
+      "note": "Past collection zero terminator; fragment left by editor, not live game data"
+    },
+    {
+      "type": "u8-array",
+      "values": [19, 85, 21, 254, 19, 85, 21, 254, 19, 85, 21, 254, 19, 85, 21, 254],
+      "note": "Past collection zero terminator; fragment left by editor, not live game data"
+    },
+    {
+      "type": "u8-array",
+      "values": [19, 85, 21, 254, 19, 85, 21, 254, 19, 85, 21, 254, 19, 85, 21, 254],
+      "note": "Past collection zero terminator; fragment left by editor, not live game data"
+    },
+    {
+      "type": "u8-array",
+      "values": [19, 85, 21, 85, 85, 169, 169, 85, 254, 4, 169, 85, 153, 254, 5, 169],
+      "note": "Past collection zero terminator; fragment left by editor, not live game data"
+    },
+    {
+      "type": "u8-array",
+      "values": [254, 3, 85, 21, 85, 85, 49, 205, 85, 13, 193, 193, 49, 85, 221, 193],
+      "note": "Past collection zero terminator; fragment left by editor, not live game data"
+    },
+    {
+      "type": "u8-array",
+      "values": [205, 193, 13, 205, 254, 3, 85, 21, 85, 85, 117, 221, 85, 93, 213],
+      "note": "Past collection zero terminator; fragment left by editor, not live game data"
+    }
+  ]
+}

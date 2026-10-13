@@ -1,0 +1,16 @@
+( END OF ASSEMBLER )
+
+FORTH DEFINITIONS
+
+
+LATEST 0C +ORIGIN !  ( NTOP )
+
+HERE   1C +ORIGIN !  ( FENCE )
+
+HERE   1E +ORIGIN !  ( DP )
+
+
+
+
+
+BASE !      ;S

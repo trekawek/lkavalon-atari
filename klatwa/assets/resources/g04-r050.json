@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "format": "gam.record-list",
+  "group": 4,
+  "resource": 50,
+  "data": {
+    "kind": "records",
+    "records": [
+      {
+        "kind": "file",
+        "file": "graphics/native/g04-r050-s00.pic",
+        "size": 30
+      },
+      {
+        "kind": "file",
+        "file": "assets/hit-maps/g04-r050-s01.json",
+        "size": 10
+      }
+    ],
+    "terminated": true,
+    "tail": []
+  }
+}

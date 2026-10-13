@@ -1,0 +1,208 @@
+{
+  "format": "ad2044.object-actions",
+  "version": 1,
+  "consumer": "SELECTED-OBJECT-RECORD $7281 and action handlers via $7664",
+  "objects": [
+    {
+      "object_id": 0,
+      "actions": [
+        {
+          "opcode": 1,
+          "handler": "ACT-BACK",
+          "fields": []
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 1,
+      "actions": [
+        {
+          "opcode": 16,
+          "handler": "ACT-DROP-INVENTORY-ITEM",
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "WYBIERZ"
+              ],
+              "name": "message_1"
+            }
+          ]
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 2,
+      "actions": [
+        {
+          "opcode": 7,
+          "handler": "ACT-EXAMINE",
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "JAKIs=OWOC"
+              ],
+              "name": "message_1"
+            }
+          ]
+        },
+        {
+          "opcode": 8,
+          "handler": "ACT-EAT",
+          "fields": [
+            {
+              "type": "u8",
+              "name": "object_id",
+              "value": 102
+            },
+            {
+              "type": "u8",
+              "name": "energy_added",
+              "value": 70
+            },
+            {
+              "type": "message",
+              "lines": [],
+              "name": "message_1"
+            }
+          ]
+        },
+        {
+          "opcode": 14,
+          "handler": "ACT-TAKE-ITEM",
+          "fields": []
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 3,
+      "actions": [
+        {
+          "opcode": 7,
+          "handler": "ACT-EXAMINE",
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "KIELICH"
+              ],
+              "name": "message_1"
+            }
+          ]
+        },
+        {
+          "opcode": 14,
+          "handler": "ACT-TAKE-ITEM",
+          "fields": []
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 4,
+      "actions": [
+        {
+          "opcode": 7,
+          "handler": "ACT-EXAMINE",
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "PAPIEROSY=MARKI=SPORT"
+              ],
+              "name": "message_1"
+            }
+          ]
+        },
+        {
+          "opcode": 15,
+          "handler": "ACT-SMOKE",
+          "fields": [
+            {
+              "type": "u8",
+              "name": "revealed_object_id",
+              "value": 3
+            },
+            {
+              "type": "u8",
+              "name": "exit_direction",
+              "value": 0
+            }
+          ]
+        },
+        {
+          "opcode": 14,
+          "handler": "ACT-TAKE-ITEM",
+          "fields": []
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 5,
+      "actions": [
+        {
+          "opcode": 7,
+          "handler": "ACT-EXAMINE",
+          "fields": [
+            {
+              "type": "message",
+              "lines": [
+                "NAKReTKA=M20"
+              ],
+              "name": "message_1"
+            }
+          ]
+        },
+        {
+          "opcode": 14,
+          "handler": "ACT-TAKE-ITEM",
+          "fields": []
+        }
+      ],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 6,
+      "actions": [],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 7,
+      "actions": [],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 8,
+      "actions": [],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 9,
+      "actions": [],
+      "terminator_cells": 1,
+      "unused": []
+    },
+    {
+      "object_id": 10,
+      "actions": [],
+      "terminator_cells": 1,
+      "unused": []
+    }
+  ],
+  "terminator_cells": 0,
+  "unused": []
+}

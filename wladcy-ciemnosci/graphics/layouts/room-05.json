@@ -1,0 +1,217 @@
+{
+  "version": 1,
+  "format": "gam.room",
+  "group": 4,
+  "room_id": 5,
+  "data": {
+    "kind": "records",
+    "records": [
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "room-layers",
+            "layers": [
+              {
+                "resource": 5,
+                "subrecord": 0
+              },
+              {
+                "resource": 6,
+                "subrecord": 0
+              },
+              {
+                "resource": 16,
+                "subrecord": 2
+              },
+              {
+                "resource": 17,
+                "subrecord": 0
+              },
+              {
+                "resource": 18,
+                "subrecord": 2
+              },
+              {
+                "resource": 21,
+                "subrecord": 0
+              },
+              {
+                "resource": 21,
+                "subrecord": 2
+              },
+              {
+                "resource": 55,
+                "subrecord": 0
+              },
+              {
+                "resource": 55,
+                "subrecord": 2
+              },
+              {
+                "resource": 56,
+                "subrecord": 0
+              },
+              {
+                "resource": 56,
+                "subrecord": 2
+              },
+              {
+                "resource": 22,
+                "subrecord": 0
+              },
+              {
+                "resource": 22,
+                "subrecord": 2
+              },
+              {
+                "resource": 47,
+                "subrecord": 0
+              },
+              {
+                "resource": 47,
+                "subrecord": 2
+              },
+              {
+                "resource": 54,
+                "subrecord": 0
+              },
+              {
+                "resource": 54,
+                "subrecord": 2
+              },
+              {
+                "resource": 57,
+                "subrecord": 0
+              },
+              {
+                "resource": 57,
+                "subrecord": 2
+              },
+              {
+                "resource": 52,
+                "subrecord": 0
+              },
+              {
+                "resource": 53,
+                "subrecord": 2
+              }
+            ]
+          },
+          {
+            "kind": "sequence",
+            "role": "COLPF color registers",
+            "parts": [
+              {
+                "kind": "byte",
+                "name": "COLPF0",
+                "value": 20
+              },
+              {
+                "kind": "byte",
+                "name": "COLPF1",
+                "value": 248
+              },
+              {
+                "kind": "byte",
+                "name": "COLPF2",
+                "value": 236
+              }
+            ]
+          },
+          {
+            "kind": "bytes",
+            "name": "layout_flags",
+            "values": [
+              1
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "room section 0"
+      },
+      {
+        "kind": "records",
+        "records": [
+          {
+            "kind": "object-selectors",
+            "note": "Runtime searches this flat byte stream for selector=object+200; entries have no stored length. Parameter roles depend on the selected action collection.",
+            "objects": [
+              {
+                "object_id": 3,
+                "action_collection": 8,
+                "arguments": [
+                  {
+                    "kind": "byte",
+                    "name": "argument_2",
+                    "value": 4
+                  }
+                ]
+              },
+              {
+                "object_id": 2,
+                "action_collection": 42,
+                "arguments": [
+                  {
+                    "kind": "byte",
+                    "name": "argument_2",
+                    "value": 6
+                  }
+                ]
+              },
+              {
+                "object_id": 12,
+                "action_collection": 12,
+                "arguments": [
+                  {
+                    "kind": "byte",
+                    "name": "argument_2",
+                    "value": 69
+                  }
+                ]
+              },
+              {
+                "object_id": 20,
+                "action_collection": 43,
+                "arguments": [
+                  {
+                    "kind": "byte",
+                    "name": "argument_2",
+                    "value": 25
+                  },
+                  {
+                    "kind": "byte",
+                    "name": "argument_3",
+                    "value": 19
+                  },
+                  {
+                    "kind": "byte",
+                    "name": "argument_4",
+                    "value": 21
+                  }
+                ]
+              },
+              {
+                "object_id": 18,
+                "action_collection": 44,
+                "arguments": []
+              },
+              {
+                "object_id": 16,
+                "action_collection": 45,
+                "arguments": []
+              }
+            ]
+          }
+        ],
+        "terminated": true,
+        "tail": [],
+        "role": "room section 1"
+      }
+    ],
+    "terminated": false,
+    "tail": [],
+    "role": "room index 4 (game room 5)"
+  }
+}

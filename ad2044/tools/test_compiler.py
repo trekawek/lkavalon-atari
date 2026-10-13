@@ -6,6 +6,9 @@ These execute the original APX 6502 Forth in the same OS shim as compile.py.
 import importlib.util
 import unittest
 from pathlib import Path
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "util"))
+from reference_media import read_reference
 
 SPEC = importlib.util.spec_from_file_location("ad2044_compile", Path(__file__).with_name("compile.py"))
 compiler = importlib.util.module_from_spec(SPEC)
@@ -90,7 +93,7 @@ class CompilerTests(unittest.TestCase):
         self.assertEqual(machine.output_disks[3][:11], bytes.fromhex("ffff0080670fff2d0f0080"))
 
     def test_atr_preserves_template_metadata(self):
-        header = (ROOT / "reference/ad2044-side1.atr").read_bytes()[:16]
+        header = read_reference(ROOT / "reference/ad2044-side1.atr")[:16]
         rebuilt = compiler.atr(bytes(133120), header)
         self.assertEqual(rebuilt[:16], header)
 

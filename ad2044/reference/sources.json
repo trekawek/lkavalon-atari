@@ -1,0 +1,28 @@
+{
+  "references": [
+    {
+      "file": "ad2044-side1.atr",
+      "optional_fixture": "build/reference/ad2044-side1.atr",
+      "size": 133136,
+      "sha256": "0dc417788632b58822eefb25d50557465220870a15c984f2dd54e6a1591b445f",
+      "source_url": "https://atarionline.pl/v01/kazip.php?ct=kazip&sub=A&title=+A.D.+2044+Sexmisja&file=A.D.+2044+Sexmisja+%28v1%2Cs1%29.atr",
+      "purpose": "Optional forensic comparison only; normal builds use readable source and native graphics/font/CMC inputs."
+    },
+    {
+      "file": "ad2044-side2.atr",
+      "optional_fixture": "build/reference/ad2044-side2.atr",
+      "size": 133136,
+      "sha256": "62bdb56d34961021a0e458b0829b75e97c455f0fa31bfa391cbae28913cbb6fd",
+      "source_url": "https://atarionline.pl/v01/kazip.php?ct=kazip&sub=A&title=+A.D.+2044+Sexmisja&file=A.D.+2044+Sexmisja+%28v1%2Cs2%29.atr",
+      "purpose": "Optional forensic comparison only; normal builds use readable source and native graphics/font/CMC inputs."
+    },
+    {
+      "file": "figforth.atr",
+      "optional_fixture": "build/reference/figforth.atr",
+      "size": 92176,
+      "sha256": "e47b67da25bb595c14cad943df9bde03f2beeb3148af4662ad35e5d202f490e2",
+      "source_url": "https://atarionline.pl/v01/index.php?ct=utils2&sub=4.%20Programowanie&title=+Fig-Forth#kaz_5e1378ca54e4be7921002662b90a091c",
+      "purpose": "Historical compiler provenance only. The compiler is built from util/figforth text sources."
+    }
+  ]
+}

@@ -7,6 +7,9 @@ bounded routines need RAM and controller registers, but no Atari OS services.
 
 import importlib.util
 from pathlib import Path
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "util"))
+from reference_media import read_reference
 import unittest
 
 from semantic_runtime import OriginalForth
@@ -19,7 +22,7 @@ SPEC.loader.exec_module(d)
 
 class SemanticTests(unittest.TestCase):
     def setUp(self):
-        memory = d.memory((d.ROOT / 'reference/ad2044-side1.atr').read_bytes())
+        memory = d.memory(read_reference(d.ROOT / 'reference/ad2044-side1.atr'))
         self.forth = OriginalForth(memory)
 
     def test_current_room_exit_returns_mask_bit_not_normalized_boolean(self):

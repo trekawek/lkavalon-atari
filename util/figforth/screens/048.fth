@@ -1,0 +1,16 @@
+( ASSEMBLER )
+
+: OPCODE  C@ ZPAGE XYMODE IF 10
+          OR THEN ;
+: M2  <BUILDS C, DOES> OPCODE
+      MODE @ 9 = IF 4 - THEN
+      STOREADD ;
+
+AC M2 LDY,   AE M2 LDX,
+CC M2 CPY,   EC M2 CPX,
+
+: M3    <BUILDS C, DOES> OPCODE
+        STOREADD ;
+
+8C M3 STY,    8E M3 STX,
+-->

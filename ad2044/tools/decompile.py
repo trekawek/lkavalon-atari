@@ -11,6 +11,8 @@ import sys
 import textwrap
 from collections import Counter
 from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "util"))
+from reference_media import read_reference
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT.parent / 'util'))
@@ -357,7 +359,7 @@ def main():
     parser.add_argument('--reference', type=Path,
                         default=ROOT / 'reference/ad2044-side1.atr')
     args = parser.parse_args()
-    disk = args.reference.read_bytes()
+    disk = read_reference(args.reference)
     data = memory(disk)
     words = dictionary(data)
     names = json.loads((ROOT / 'tools/names.json').read_text())

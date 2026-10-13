@@ -2,6 +2,9 @@
 """Independent media and source-completeness checks after Forth compilation."""
 import json
 from pathlib import Path
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "util"))
+from reference_media import read_reference
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -13,7 +16,7 @@ def main():
         source.decode('ascii')
         assert all(len(line) <= 64 for line in source.splitlines()), name
     for side in (1, 2):
-        original = (ROOT / f'reference/ad2044-side{side}.atr').read_bytes()
+        original = read_reference(ROOT / f'reference/ad2044-side{side}.atr')
         rebuilt = (ROOT / f'build/ad2044-side{side}.atr').read_bytes()
         assert len(original) == len(rebuilt) == 133136
         # The source ATR marks the disk write-protected. Built disks must be

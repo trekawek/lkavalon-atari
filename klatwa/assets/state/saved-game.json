@@ -1,0 +1,1624 @@
+{
+  "version": 1,
+  "format": "gam.saved-state",
+  "load_address": "5562",
+  "logical_end": "58D3",
+  "note": "Original on-disk save snapshot, including saved dictionary headers between values. Descriptive field names are inferred from consumers; this is not the new-game initial state.",
+  "data": {
+    "kind": "sequence",
+    "parts": [
+      {
+        "kind": "sequence",
+        "name": "SAVED-STATE-BASE",
+        "address": "5562",
+        "parts": [
+          {
+            "kind": "cells",
+            "name": "SAVED-STATE-BASE",
+            "values": [
+              2,
+              10
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "dictionary-header",
+        "for_word": "CURRENT-ROOM",
+        "address": "5566",
+        "flags": 132,
+        "stored_name_bytes": [
+          0,
+          0,
+          0,
+          205
+        ],
+        "link_nfa": 21850,
+        "runtime": 5273
+      },
+      {
+        "kind": "sequence",
+        "name": "CURRENT-ROOM",
+        "address": "556F",
+        "parts": [
+          {
+            "kind": "cells",
+            "name": "CURRENT-ROOM",
+            "values": [
+              30
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "dictionary-header",
+        "for_word": "SPELLBOOK-RECORDS",
+        "address": "5571",
+        "flags": 131,
+        "stored_name_bytes": [
+          0,
+          0,
+          201
+        ],
+        "link_nfa": 21862,
+        "runtime": 6360
+      },
+      {
+        "kind": "sequence",
+        "name": "SPELLBOOK-RECORDS",
+        "address": "5579",
+        "parts": [
+          {
+            "kind": "cell",
+            "name": "DOES_parameter_runtime",
+            "value": 16199
+          },
+          {
+            "kind": "cell",
+            "name": "capacity",
+            "value": 180
+          },
+          {
+            "kind": "records",
+            "records": [
+              {
+                "kind": "slot",
+                "power_id": 1,
+                "requirement_1": 210,
+                "requirement_2": 0,
+                "display": "\\xA4=OTWARCIA==#"
+              },
+              {
+                "kind": "slot",
+                "power_id": 2,
+                "requirement_1": 200,
+                "requirement_2": 200,
+                "display": "$=ZIMNA=====\\xA3"
+              },
+              {
+                "kind": "slot",
+                "power_id": 4,
+                "requirement_1": 214,
+                "requirement_2": 0,
+                "display": "\\xA4=WIATRU====#"
+              },
+              {
+                "kind": "slot",
+                "power_id": 3,
+                "requirement_1": 212,
+                "requirement_2": 0,
+                "display": "$=PIECZeCI==\\xA3"
+              },
+              {
+                "kind": "slot",
+                "power_id": 6,
+                "requirement_1": 213,
+                "requirement_2": 0,
+                "display": "\\xA4=ALCHEMII==#"
+              },
+              {
+                "kind": "slot",
+                "power_id": 5,
+                "requirement_1": 208,
+                "requirement_2": 0,
+                "display": "$=SIlY======\\xA3"
+              },
+              {
+                "kind": "slot",
+                "power_id": 7,
+                "requirement_1": 0,
+                "requirement_2": 0,
+                "display": "\\xA4=NICOsCI===#"
+              },
+              {
+                "kind": "slot",
+                "power_id": 8,
+                "requirement_1": 215,
+                "requirement_2": 0,
+                "display": "$=ISTNIENIA=\\xA3"
+              },
+              {
+                "kind": "slot",
+                "power_id": 9,
+                "requirement_1": 216,
+                "requirement_2": 0,
+                "display": "\\xA4=CZASU>====#"
+              },
+              {
+                "kind": "slot",
+                "power_id": 10,
+                "requirement_1": 207,
+                "requirement_2": 0,
+                "display": "$=OGNIA=====\\xA3"
+              }
+            ],
+            "terminated": false,
+            "tail": [],
+            "role": "spell / power display slots"
+          }
+        ]
+      },
+      {
+        "kind": "dictionary-header",
+        "for_word": "ITEM-POSITIONS",
+        "address": "5631",
+        "flags": 132,
+        "stored_name_bytes": [
+          0,
+          0,
+          0,
+          217
+        ],
+        "link_nfa": 21873,
+        "runtime": 6360
+      },
+      {
+        "kind": "sequence",
+        "name": "ITEM-POSITIONS",
+        "address": "563A",
+        "parts": [
+          {
+            "kind": "cell",
+            "name": "DOES_parameter_runtime",
+            "value": 20941
+          },
+          {
+            "kind": "positions",
+            "positions": [
+              {
+                "x": 20,
+                "y": 60
+              },
+              {
+                "x": 20,
+                "y": 60
+              },
+              {
+                "x": 20,
+                "y": 60
+              },
+              {
+                "x": 20,
+                "y": 60
+              },
+              {
+                "x": 15,
+                "y": 78
+              },
+              {
+                "x": 31,
+                "y": 66
+              },
+              {
+                "x": 15,
+                "y": 78
+              },
+              {
+                "x": 6,
+                "y": 66
+              },
+              {
+                "x": 32,
+                "y": 32
+              },
+              {
+                "x": 32,
+                "y": 32
+              },
+              {
+                "x": 31,
+                "y": 66
+              },
+              {
+                "x": 27,
+                "y": 60
+              },
+              {
+                "x": 22,
+                "y": 72
+              },
+              {
+                "x": 20,
+                "y": 72
+              },
+              {
+                "x": 11,
+                "y": 78
+              },
+              {
+                "x": 9,
+                "y": 60
+              },
+              {
+                "x": 21,
+                "y": 66
+              },
+              {
+                "x": 15,
+                "y": 78
+              },
+              {
+                "x": 0,
+                "y": 0
+              },
+              {
+                "x": 0,
+                "y": 0
+              },
+              {
+                "x": 0,
+                "y": 0
+              },
+              {
+                "x": 0,
+                "y": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "dictionary-header",
+        "for_word": "PART2-ITEM-POSITIONS",
+        "address": "5668",
+        "flags": 131,
+        "stored_name_bytes": [
+          0,
+          0,
+          178
+        ],
+        "link_nfa": 22065,
+        "runtime": 6360
+      },
+      {
+        "kind": "sequence",
+        "name": "PART2-ITEM-POSITIONS",
+        "address": "5670",
+        "parts": [
+          {
+            "kind": "cell",
+            "name": "DOES_parameter_runtime",
+            "value": 20941
+          },
+          {
+            "kind": "positions",
+            "positions": [
+              {
+                "x": 31,
+                "y": 72
+              },
+              {
+                "x": 6,
+                "y": 66
+              },
+              {
+                "x": 31,
+                "y": 66
+              },
+              {
+                "x": 20,
+                "y": 60
+              },
+              {
+                "x": 20,
+                "y": 60
+              },
+              {
+                "x": 31,
+                "y": 66
+              },
+              {
+                "x": 7,
+                "y": 66
+              },
+              {
+                "x": 6,
+                "y": 66
+              },
+              {
+                "x": 32,
+                "y": 32
+              },
+              {
+                "x": 32,
+                "y": 32
+              },
+              {
+                "x": 31,
+                "y": 66
+              },
+              {
+                "x": 32,
+                "y": 32
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "dictionary-header",
+        "for_word": "CURRENT-PART-GROUP",
+        "address": "568A",
+        "flags": 132,
+        "stored_name_bytes": [
+          0,
+          0,
+          0,
+          203
+        ],
+        "link_nfa": 22120,
+        "runtime": 5273
+      },
+      {
+        "kind": "sequence",
+        "name": "CURRENT-PART-GROUP",
+        "address": "5693",
+        "parts": [
+          {
+            "kind": "cell",
+            "name": "CURRENT-PART-GROUP",
+            "value": 4
+          },
+          {
+            "kind": "residue",
+            "segments": [
+              {
+                "offset": 0,
+                "unresolved_bytes": [
+                  5,
+                  65
+                ],
+                "note": "Unused dictionary allocation after the current group cell."
+              }
+            ],
+            "role": "Unused dictionary allocation after the current group cell."
+          }
+        ]
+      },
+      {
+        "kind": "dictionary-header",
+        "for_word": "w569E",
+        "address": "5697",
+        "flags": 132,
+        "stored_name_bytes": [
+          0,
+          0,
+          0,
+          201
+        ],
+        "link_nfa": 22154,
+        "runtime": 6360
+      },
+      {
+        "kind": "sequence",
+        "name": "w569E",
+        "address": "56A0",
+        "parts": [
+          {
+            "kind": "cell",
+            "name": "DOES_parameter_runtime",
+            "value": 20941
+          },
+          {
+            "kind": "residue",
+            "segments": [
+              {
+                "offset": 0,
+                "fill": 32,
+                "count": 6,
+                "note": "No proven live consumer of this retained allocation."
+              }
+            ],
+            "role": "No proven live consumer of this retained allocation."
+          }
+        ]
+      },
+      {
+        "kind": "dictionary-header",
+        "for_word": "ROOM-OBJECT-STATE",
+        "address": "56A8",
+        "flags": 131,
+        "stored_name_bytes": [
+          0,
+          0,
+          194
+        ],
+        "link_nfa": 22167,
+        "runtime": 5273
+      },
+      {
+        "kind": "sequence",
+        "name": "ROOM-OBJECT-STATE",
+        "address": "56B0",
+        "parts": [
+          {
+            "kind": "records",
+            "records": [
+              {
+                "kind": "records",
+                "records": [
+                  {
+                    "kind": "view-objects",
+                    "view": 0,
+                    "control": 0,
+                    "objects": []
+                  },
+                  {
+                    "kind": "view-objects",
+                    "view": 1,
+                    "control": 12,
+                    "objects": [
+                      216,
+                      208,
+                      0,
+                      0,
+                      0
+                    ]
+                  }
+                ],
+                "terminated": false,
+                "tail": []
+              },
+              {
+                "kind": "records",
+                "records": [
+                  {
+                    "kind": "view-objects",
+                    "view": 0,
+                    "control": 108,
+                    "objects": [
+                      0,
+                      0
+                    ]
+                  },
+                  {
+                    "kind": "view-objects",
+                    "view": 1,
+                    "control": 111,
+                    "objects": [
+                      1
+                    ]
+                  }
+                ],
+                "terminated": false,
+                "tail": []
+              },
+              {
+                "kind": "records",
+                "records": [
+                  {
+                    "kind": "view-objects",
+                    "view": 0,
+                    "control": 114,
+                    "objects": [
+                      116,
+                      0
+                    ]
+                  },
+                  {
+                    "kind": "view-objects",
+                    "view": 1,
+                    "control": 111,
+                    "objects": [
+                      1
+                    ]
+                  },
+                  {
+                    "kind": "view-objects",
+                    "view": 2,
+                    "control": 15,
+                    "objects": [
+                      204
+                    ]
+                  },
+                  {
+                    "kind": "view-objects",
+                    "view": 3,
+                    "control": 115,
+                    "objects": [
+                      0,
+                      1
+                    ]
+                  },
+                  {
+                    "kind": "view-objects",
+                    "view": 4,
+                    "control": 40,
+                    "objects": [
+                      141,
+                      0
+                    ]
+                  }
+                ],
+                "terminated": false,
+                "tail": []
+              },
+              {
+                "kind": "records",
+                "records": [
+                  {
+                    "kind": "view-objects",
+                    "view": 0,
+                    "control": 0,
+                    "objects": [
+                      0
+                    ]
+                  },
+                  {
+                    "kind": "view-objects",
+                    "view": 1,
+                    "control": 120,
+                    "objects": [
+                      0,
+                      0
+                    ]
+                  }
+                ],
+                "terminated": false,
+                "tail": []
+              },
+              {
+                "kind": "records",
+                "records": [
+                  {
+                    "kind": "view-objects",
+                    "view": 0,
+                    "control": 0,
+                    "objects": []
+                  },
+                  {
+                    "kind": "view-objects",
+                    "view": 1,
+                    "control": 111,
+                    "objects": [
+                      208,
+                      0
+                    ]
+                  }
+                ],
+                "terminated": false,
+                "tail": []
+              },
+              {
+                "kind": "records",
+                "records": [
+                  {
+                    "kind": "view-objects",
+                    "view": 0,
+                    "control": 108,
+                    "objects": [
+                      0
+                    ]
+                  },
+                  {
+                    "kind": "view-objects",
+                    "view": 1,
+                    "control": 111,
+                    "objects": [
+                      0
+                    ]
+                  }
+                ],
+                "terminated": false,
+                "tail": []
+              },
+              {
+                "kind": "records",
+                "records": [
+                  {
+                    "kind": "view-objects",
+                    "view": 0,
+                    "control": 0,
+                    "objects": [
+                      0
+                    ]
+                  },
+                  {
+                    "kind": "view-objects",
+                    "view": 1,
+                    "control": 127,
+                    "objects": [
+                      129,
+                      0
+                    ]
+                  },
+                  {
+                    "kind": "view-objects",
+                    "view": 2,
+                    "control": 120,
+                    "objects": [
+                      0
+                    ]
+                  },
+                  {
+                    "kind": "view-objects",
+                    "view": 3,
+                    "control": 127,
+                    "objects": [
+                      0,
+                      0
+                    ]
+                  }
+                ],
+                "terminated": false,
+                "tail": []
+              },
+              {
+                "kind": "records",
+                "records": [
+                  {
+                    "kind": "view-objects",
+                    "view": 0,
+                    "control": 131,
+                    "objects": [
+                      0
+                    ]
+                  },
+                  {
+                    "kind": "view-objects",
+                    "view": 1,
+                    "control": 133,
+                    "objects": [
+                      214,
+                      0
+                    ]
+                  }
+                ],
+                "terminated": false,
+                "tail": []
+              },
+              {
+                "kind": "records",
+                "records": [
+                  {
+                    "kind": "view-objects",
+                    "view": 0,
+                    "control": 0,
+                    "objects": [
+                      0
+                    ]
+                  },
+                  {
+                    "kind": "view-objects",
+                    "view": 1,
+                    "control": 36,
+                    "objects": [
+                      0
+                    ]
+                  }
+                ],
+                "terminated": false,
+                "tail": []
+              },
+              {
+                "kind": "records",
+                "records": [
+                  {
+                    "kind": "view-objects",
+                    "view": 0,
+                    "control": 0,
+                    "objects": [
+                      25
+                    ]
+                  },
+                  {
+                    "kind": "view-objects",
+                    "view": 1,
+                    "control": 127,
+                    "objects": [
+                      129,
+                      0
+                    ]
+                  }
+                ],
+                "terminated": false,
+                "tail": []
+              },
+              {
+                "kind": "records",
+                "records": [
+                  {
+                    "kind": "view-objects",
+                    "view": 0,
+                    "control": 0,
+                    "objects": [
+                      25,
+                      0
+                    ]
+                  },
+                  {
+                    "kind": "view-objects",
+                    "view": 1,
+                    "control": 36,
+                    "objects": [
+                      1,
+                      136
+                    ]
+                  },
+                  {
+                    "kind": "view-objects",
+                    "view": 2,
+                    "control": 37,
+                    "objects": [
+                      0
+                    ]
+                  }
+                ],
+                "terminated": false,
+                "tail": []
+              },
+              {
+                "kind": "records",
+                "records": [
+                  {
+                    "kind": "view-objects",
+                    "view": 0,
+                    "control": 46,
+                    "objects": [
+                      131,
+                      0
+                    ]
+                  },
+                  {
+                    "kind": "view-objects",
+                    "view": 1,
+                    "control": 111,
+                    "objects": [
+                      0
+                    ]
+                  },
+                  {
+                    "kind": "view-objects",
+                    "view": 2,
+                    "control": 48,
+                    "objects": [
+                      1
+                    ]
+                  },
+                  {
+                    "kind": "view-objects",
+                    "view": 3,
+                    "control": 133,
+                    "objects": [
+                      134,
+                      1
+                    ]
+                  }
+                ],
+                "terminated": false,
+                "tail": []
+              },
+              {
+                "kind": "records",
+                "records": [
+                  {
+                    "kind": "view-objects",
+                    "view": 0,
+                    "control": 0,
+                    "objects": []
+                  },
+                  {
+                    "kind": "view-objects",
+                    "view": 1,
+                    "control": 40,
+                    "objects": [
+                      207,
+                      0
+                    ]
+                  }
+                ],
+                "terminated": false,
+                "tail": []
+              },
+              {
+                "kind": "records",
+                "records": [
+                  {
+                    "kind": "view-objects",
+                    "view": 0,
+                    "control": 108,
+                    "objects": [
+                      0
+                    ]
+                  },
+                  {
+                    "kind": "view-objects",
+                    "view": 1,
+                    "control": 111,
+                    "objects": [
+                      1
+                    ]
+                  }
+                ],
+                "terminated": false,
+                "tail": []
+              },
+              {
+                "kind": "records",
+                "records": [
+                  {
+                    "kind": "view-objects",
+                    "view": 0,
+                    "control": 116,
+                    "objects": [
+                      114
+                    ]
+                  },
+                  {
+                    "kind": "view-objects",
+                    "view": 1,
+                    "control": 111,
+                    "objects": [
+                      1
+                    ]
+                  },
+                  {
+                    "kind": "view-objects",
+                    "view": 2,
+                    "control": 52,
+                    "objects": [
+                      206
+                    ]
+                  },
+                  {
+                    "kind": "view-objects",
+                    "view": 3,
+                    "control": 15,
+                    "objects": [
+                      1
+                    ]
+                  },
+                  {
+                    "kind": "view-objects",
+                    "view": 4,
+                    "control": 115,
+                    "objects": [
+                      213,
+                      0
+                    ]
+                  }
+                ],
+                "terminated": false,
+                "tail": []
+              },
+              {
+                "kind": "records",
+                "records": [
+                  {
+                    "kind": "view-objects",
+                    "view": 0,
+                    "control": 108,
+                    "objects": [
+                      0,
+                      0
+                    ]
+                  }
+                ],
+                "terminated": false,
+                "tail": []
+              },
+              {
+                "kind": "records",
+                "records": [
+                  {
+                    "kind": "view-objects",
+                    "view": 0,
+                    "control": 114,
+                    "objects": [
+                      116
+                    ]
+                  },
+                  {
+                    "kind": "view-objects",
+                    "view": 1,
+                    "control": 40,
+                    "objects": [
+                      1
+                    ]
+                  },
+                  {
+                    "kind": "view-objects",
+                    "view": 2,
+                    "control": 115,
+                    "objects": [
+                      202
+                    ]
+                  },
+                  {
+                    "kind": "view-objects",
+                    "view": 3,
+                    "control": 111,
+                    "objects": [
+                      210
+                    ]
+                  },
+                  {
+                    "kind": "view-objects",
+                    "view": 4,
+                    "control": 15,
+                    "objects": [
+                      203,
+                      0
+                    ]
+                  }
+                ],
+                "terminated": false,
+                "tail": []
+              },
+              {
+                "kind": "records",
+                "records": [
+                  {
+                    "kind": "view-objects",
+                    "view": 0,
+                    "control": 131,
+                    "objects": []
+                  },
+                  {
+                    "kind": "view-objects",
+                    "view": 1,
+                    "control": 133,
+                    "objects": [
+                      134,
+                      205
+                    ]
+                  }
+                ],
+                "terminated": false,
+                "tail": []
+              },
+              {
+                "kind": "records",
+                "records": [
+                  {
+                    "kind": "view-objects",
+                    "view": 0,
+                    "control": 0,
+                    "objects": []
+                  },
+                  {
+                    "kind": "view-objects",
+                    "view": 1,
+                    "control": 120,
+                    "objects": [
+                      215,
+                      0
+                    ]
+                  }
+                ],
+                "terminated": false,
+                "tail": []
+              },
+              {
+                "kind": "records",
+                "records": [
+                  {
+                    "kind": "view-objects",
+                    "view": 0,
+                    "control": 0,
+                    "objects": [
+                      0,
+                      0
+                    ]
+                  }
+                ],
+                "terminated": false,
+                "tail": []
+              },
+              {
+                "kind": "records",
+                "records": [
+                  {
+                    "kind": "view-objects",
+                    "view": 0,
+                    "control": 131,
+                    "objects": []
+                  },
+                  {
+                    "kind": "view-objects",
+                    "view": 1,
+                    "control": 133,
+                    "objects": [
+                      1,
+                      0
+                    ]
+                  },
+                  {
+                    "kind": "view-objects",
+                    "view": 2,
+                    "control": 127,
+                    "objects": [
+                      212
+                    ]
+                  },
+                  {
+                    "kind": "view-objects",
+                    "view": 3,
+                    "control": 130,
+                    "objects": [
+                      217
+                    ]
+                  }
+                ],
+                "terminated": false,
+                "tail": []
+              },
+              {
+                "kind": "records",
+                "records": [
+                  {
+                    "kind": "view-objects",
+                    "view": 0,
+                    "control": 0,
+                    "objects": []
+                  },
+                  {
+                    "kind": "view-objects",
+                    "view": 1,
+                    "control": 40,
+                    "objects": [
+                      211
+                    ]
+                  },
+                  {
+                    "kind": "view-objects",
+                    "view": 2,
+                    "control": 48,
+                    "objects": [
+                      1
+                    ]
+                  }
+                ],
+                "terminated": false,
+                "tail": []
+              },
+              {
+                "kind": "records",
+                "records": [
+                  {
+                    "kind": "view-objects",
+                    "view": 0,
+                    "control": 0,
+                    "objects": []
+                  },
+                  {
+                    "kind": "view-objects",
+                    "view": 1,
+                    "control": 127,
+                    "objects": [
+                      129,
+                      209
+                    ]
+                  }
+                ],
+                "terminated": false,
+                "tail": []
+              },
+              {
+                "kind": "records",
+                "records": [
+                  {
+                    "kind": "view-objects",
+                    "view": 0,
+                    "control": 13,
+                    "objects": [
+                      17,
+                      107
+                    ]
+                  },
+                  {
+                    "kind": "view-objects",
+                    "view": 1,
+                    "control": 115,
+                    "objects": [
+                      1
+                    ]
+                  },
+                  {
+                    "kind": "view-objects",
+                    "view": 2,
+                    "control": 16,
+                    "objects": [
+                      0
+                    ]
+                  }
+                ],
+                "terminated": false,
+                "tail": []
+              },
+              {
+                "kind": "records",
+                "records": [
+                  {
+                    "kind": "view-objects",
+                    "view": 0,
+                    "control": 120,
+                    "objects": []
+                  },
+                  {
+                    "kind": "view-objects",
+                    "view": 1,
+                    "control": 115,
+                    "objects": [
+                      209
+                    ]
+                  },
+                  {
+                    "kind": "view-objects",
+                    "view": 2,
+                    "control": 16,
+                    "objects": [
+                      0
+                    ]
+                  },
+                  {
+                    "kind": "view-objects",
+                    "view": 3,
+                    "control": 18,
+                    "objects": [
+                      1
+                    ]
+                  }
+                ],
+                "terminated": false,
+                "tail": []
+              },
+              {
+                "kind": "records",
+                "records": [
+                  {
+                    "kind": "view-objects",
+                    "view": 0,
+                    "control": 107,
+                    "objects": [
+                      31,
+                      7
+                    ]
+                  },
+                  {
+                    "kind": "view-objects",
+                    "view": 1,
+                    "control": 23,
+                    "objects": [
+                      202
+                    ]
+                  },
+                  {
+                    "kind": "view-objects",
+                    "view": 2,
+                    "control": 121,
+                    "objects": [
+                      0
+                    ]
+                  },
+                  {
+                    "kind": "view-objects",
+                    "view": 3,
+                    "control": 115,
+                    "objects": [
+                      1
+                    ]
+                  }
+                ],
+                "terminated": false,
+                "tail": []
+              },
+              {
+                "kind": "records",
+                "records": [
+                  {
+                    "kind": "view-objects",
+                    "view": 0,
+                    "control": 0,
+                    "objects": []
+                  },
+                  {
+                    "kind": "view-objects",
+                    "view": 1,
+                    "control": 23,
+                    "objects": [
+                      203
+                    ]
+                  },
+                  {
+                    "kind": "view-objects",
+                    "view": 2,
+                    "control": 115,
+                    "objects": [
+                      0
+                    ]
+                  },
+                  {
+                    "kind": "view-objects",
+                    "view": 3,
+                    "control": 16,
+                    "objects": [
+                      1,
+                      0
+                    ]
+                  }
+                ],
+                "terminated": false,
+                "tail": []
+              },
+              {
+                "kind": "records",
+                "records": [
+                  {
+                    "kind": "view-objects",
+                    "view": 0,
+                    "control": 0,
+                    "objects": []
+                  },
+                  {
+                    "kind": "view-objects",
+                    "view": 1,
+                    "control": 23,
+                    "objects": [
+                      204
+                    ]
+                  },
+                  {
+                    "kind": "view-objects",
+                    "view": 2,
+                    "control": 115,
+                    "objects": [
+                      0
+                    ]
+                  },
+                  {
+                    "kind": "view-objects",
+                    "view": 3,
+                    "control": 16,
+                    "objects": [
+                      212
+                    ]
+                  },
+                  {
+                    "kind": "view-objects",
+                    "view": 4,
+                    "control": 132,
+                    "objects": [
+                      1
+                    ]
+                  }
+                ],
+                "terminated": false,
+                "tail": []
+              },
+              {
+                "kind": "records",
+                "records": [
+                  {
+                    "kind": "view-objects",
+                    "view": 0,
+                    "control": 7,
+                    "objects": [
+                      130,
+                      107
+                    ]
+                  },
+                  {
+                    "kind": "view-objects",
+                    "view": 1,
+                    "control": 23,
+                    "objects": [
+                      205
+                    ]
+                  },
+                  {
+                    "kind": "view-objects",
+                    "view": 2,
+                    "control": 16,
+                    "objects": [
+                      0
+                    ]
+                  },
+                  {
+                    "kind": "view-objects",
+                    "view": 3,
+                    "control": 18,
+                    "objects": [
+                      1
+                    ]
+                  }
+                ],
+                "terminated": false,
+                "tail": []
+              },
+              {
+                "kind": "records",
+                "records": [
+                  {
+                    "kind": "view-objects",
+                    "view": 0,
+                    "control": 29,
+                    "objects": [
+                      129
+                    ]
+                  },
+                  {
+                    "kind": "view-objects",
+                    "view": 1,
+                    "control": 16,
+                    "objects": [
+                      207
+                    ]
+                  }
+                ],
+                "terminated": false,
+                "tail": []
+              },
+              {
+                "kind": "records",
+                "records": [
+                  {
+                    "kind": "view-objects",
+                    "view": 0,
+                    "control": 25,
+                    "objects": [
+                      28
+                    ]
+                  },
+                  {
+                    "kind": "view-objects",
+                    "view": 1,
+                    "control": 33,
+                    "objects": [
+                      1
+                    ]
+                  }
+                ],
+                "terminated": false,
+                "tail": []
+              }
+            ],
+            "terminated": true,
+            "tail": [
+              {
+                "offset": 0,
+                "unresolved_bytes": [
+                  0,
+                  0
+                ],
+                "note": "Record terminator / allocation remainder; preserved without interpreting unused bytes."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "dictionary-header",
+        "for_word": "w5872",
+        "address": "586A",
+        "flags": 133,
+        "stored_name_bytes": [
+          0,
+          0,
+          0,
+          0,
+          205
+        ],
+        "link_nfa": 22184,
+        "runtime": 5245
+      },
+      {
+        "kind": "sequence",
+        "name": "w5872",
+        "address": "5874",
+        "parts": [
+          {
+            "kind": "cells",
+            "name": "w5872",
+            "values": [
+              30
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "dictionary-header",
+        "for_word": "ROOM-ACHIEVEMENT-BITS",
+        "address": "5876",
+        "flags": 131,
+        "stored_name_bytes": [
+          0,
+          0,
+          208
+        ],
+        "link_nfa": 22634,
+        "runtime": 5273
+      },
+      {
+        "kind": "sequence",
+        "name": "ROOM-ACHIEVEMENT-BITS",
+        "address": "587E",
+        "parts": [
+          {
+            "kind": "bytes",
+            "name": "room_bits",
+            "values": [
+              0,
+              0,
+              67,
+              69,
+              9,
+              1,
+              69,
+              67,
+              5,
+              5,
+              101,
+              3,
+              65,
+              9,
+              75,
+              33,
+              11,
+              3,
+              65,
+              5,
+              3,
+              33,
+              17,
+              1,
+              1,
+              1,
+              65,
+              25,
+              1,
+              1,
+              17
+            ]
+          },
+          {
+            "kind": "residue",
+            "segments": [
+              {
+                "offset": 0,
+                "unresolved_bytes": [
+                  32
+                ],
+                "note": "Unused allocation byte after the last room."
+              }
+            ],
+            "role": "Unused allocation byte after the last room."
+          }
+        ]
+      },
+      {
+        "kind": "dictionary-header",
+        "for_word": "PUZZLE-STATE-CELLS",
+        "address": "589E",
+        "flags": 131,
+        "stored_name_bytes": [
+          0,
+          0,
+          217
+        ],
+        "link_nfa": 22646,
+        "runtime": 6360
+      },
+      {
+        "kind": "sequence",
+        "name": "PUZZLE-STATE-CELLS",
+        "address": "58A6",
+        "parts": [
+          {
+            "kind": "cell",
+            "name": "DOES_parameter_runtime",
+            "value": 20941
+          },
+          {
+            "kind": "cells",
+            "name": "PUZZLE-STATE-CELLS",
+            "values": [
+              0,
+              1,
+              0,
+              1,
+              1,
+              1,
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "dictionary-header",
+        "for_word": "LAST-DIRECTION",
+        "address": "58C8",
+        "flags": 132,
+        "stored_name_bytes": [
+          0,
+          0,
+          0,
+          197
+        ],
+        "link_nfa": 22686,
+        "runtime": 5273
+      },
+      {
+        "kind": "sequence",
+        "name": "LAST-DIRECTION",
+        "address": "58D1",
+        "parts": [
+          {
+            "kind": "cells",
+            "name": "LAST-DIRECTION",
+            "values": [
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "dictionary-header",
+        "note": "Sector-rounded save remainder: following dictionary header, outside restored logical state.",
+        "flags": 131,
+        "stored_name_bytes": [
+          0,
+          0,
+          206
+        ],
+        "link_nfa": 22728,
+        "runtime": 5185
+      },
+      {
+        "kind": "sequence",
+        "role": "Unused saved prefix of ITEM-PICTURE-INDEX colon thread: CLIT 202 - 2",
+        "parts": [
+          {
+            "kind": "cell",
+            "name": "CLIT_CFA",
+            "value": 3943
+          },
+          {
+            "kind": "byte",
+            "name": "literal_object_base",
+            "value": 202
+          },
+          {
+            "kind": "cell",
+            "name": "MINUS_CFA",
+            "value": 5730
+          },
+          {
+            "kind": "cell",
+            "name": "TWO_CFA",
+            "value": 5333
+          }
+        ]
+      }
+    ]
+  }
+}

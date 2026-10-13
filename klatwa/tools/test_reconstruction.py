@@ -7,6 +7,9 @@ import json
 import tempfile
 import unittest
 from pathlib import Path
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "util"))
+from reference_media import read_reference
 from unittest.mock import patch
 
 import decompile
@@ -38,7 +41,7 @@ def uncommented_tokens(text):
 
 class DictionaryTests(unittest.TestCase):
     def test_boot_residue_and_resource_boundaries(self):
-        raw = (ROOT / "reference/klatwa-v1.atr").read_bytes()
+        raw = read_reference(ROOT / "reference/klatwa-v1.atr")
         data = recover.memory(raw)
         self.assertEqual(data[0x0E80:0x8880], raw[16:0x7A10])
         self.assertEqual(data[0x8880:0x8B80], raw[0x7A10:0x7D10])

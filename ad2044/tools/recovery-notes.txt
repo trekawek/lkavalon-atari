@@ -96,6 +96,29 @@ https://tajemnice.atari8.info/11-12_92/11-12_92_forth.html
 https://tajemnice.atari8.info/1-2_93/1-2_93_forth.html
 https://github.com/ptodt/gam-forth
 
+GAM SOURCE INTEGRATION CHECK (2026-10-16)
+
+Checked upstream commit a1de7b5fa1c2871c15c1d842681fee386fe48700.
+The archive already supports 111 recovered entries: 50 recorded exact bodies
+after known relocation, 58 structural/sequence matches, one named dependency
+and two native source matches. These are evidence categories, not a count of
+all GAM-derived code; inferred words can also be modified GAM routines.
+
+tools/check_gam_forth.py now compiles eleven original colon definitions from
+09_B_Ekrany source screens using our generated APX compiler. All 210 code/body
+bytes match the verified game executable, including the DOES> tails of SELECT
+and ARRAY. Each definition is placed at its game's NFA; stripped headers are
+excluded. Signed range boundaries and cursor reads/writes execute correctly.
+PAUSE is compared byte-for-byte but needs real clock interrupts to execute.
+The optional check requires a local upstream checkout; normal builds do not.
+
+Wholesale replacement is not equivalent. For example, GRAF screen 6's XPM!
+omits the 1 PAUSE that AD2044 inserts before CMOVE to the sprite registers.
+The archive also contains source revisions, editors, and conditional LOAD"
+screen searching rather than one sequential game build. The game listings
+themselves are absent. README.md describes a staged source-level integration
+that retains the existing executable layout and authored asset formats.
+
 UNRESOLVED AND VALIDATION
 
 w4381: a persisted cell initially containing 1; no proven consumer.

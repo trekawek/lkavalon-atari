@@ -102,5 +102,65 @@ catalogs under `build/research/`. They are reports, not build inputs.
 Historical extraction tools need an original fixture as described in
 [reference/README.md](reference/README.md).
 
+### Relationship to the original GAM-Forth
+
+AD2044 contains GAM-Forth extensions to APX fig-Forth. The preserved
+[GAM-Forth and GRAF sources](https://github.com/ptodt/gam-forth) are useful
+original source material, and were already used to recover names here.
+They are not currently build inputs: our APX host executes the reconstructed
+target emitters to produce the game's kernel, extensions and logic.
+
+A direct compilation check against upstream commit
+`a1de7b5fa1c2871c15c1d842681fee386fe48700` confirms more than similar names:
+
+| Original source in `09_B_Ekrany` | AD2044 words | Verified result |
+| --- | --- | --- |
+| Screen 1 | `<=<`, `%` | Strict range check and byte-literal compiler, 72 bytes |
+| Screen 77 | `X!`, `Y!`, `X@`, `Y@`, `POS` | Atari cursor helpers, 44 bytes |
+| Screen 3 | `PAUSE` | Wait for clock-byte changes, 34 bytes |
+| Screens 108, 6, 7 | `SELECT`, `ARRAY`, `OUNT` | Dispatch, arrays and counted records, 60 bytes |
+
+All eleven definitions compile from the original source screens through our
+generated APX compiler into exactly the game's 210 code/body bytes. The
+experiment places each definition at its original address and excludes the
+stripped dictionary headers. It also executes signed range-boundary checks
+and cursor reads/writes. `PAUSE` is byte-checked; this compiler shim does not
+simulate clock interrupts. To repeat after building AD2044, with a local
+checkout of the upstream repository:
+
+```sh
+.venv/bin/python tools/check_gam_forth.py /path/to/gam-forth
+```
+
+Selective integration can therefore simplify the Forth listings. A sensible
+next step is to compile verified common words from normal colon definitions,
+keeping their fixed addresses and stripped headers in a separate layout table.
+For example, the original `ARRAY` definition expresses its complete behavior:
+
+```forth
+: ARRAY <BUILDS 2 * ALLOT DOES> SWAP 2 * + ;
+```
+
+It reproduces even the `DOES>` tail currently represented by `BYTES` in
+`src/20-framework.fth`.
+The compiler can then calculate branches from `IF`, `BEGIN` and `DO` instead
+of requiring hand-written offsets. Game-specific variants must stay explicit:
+for example, AD2044's `XPM!` adds `1 PAUSE` before moving sprite positions to
+hardware, whereas the archived GRAF version omits that wait.
+
+The archive is a development environment with editors and several revisions,
+not a ready replacement for this game's executable. It does not contain the
+AD2044 game listings. Its source exports also omit some ATASCII/binary data;
+the check reads the original source screens to avoid those losses and token
+splits at 32-column boundaries. A complete source-level integration still
+needs header/layout handling, game patches and full rebuild/boot validation.
+Any vendored original definitions should retain the archive's MIT attribution;
+the APX implementation has its own provenance.
+
+GRAF's dynamic records and packed-picture tools explain much of the historical
+asset layout: they were editor output. The current room pictures, hitmaps,
+actions and map remain suitable editable inputs. GAM integration would improve
+the code without requiring those old containers as authored assets.
+
 This layout is the first simplification pass. Klątwa and Władcy Ciemności
 still use their existing asset manifests pending review of this version.

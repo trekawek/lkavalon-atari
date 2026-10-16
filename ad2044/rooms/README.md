@@ -66,13 +66,12 @@ Y is in scanlines. Width and height come from the PNG. Positioned pictures must
 fit the 160 by 104 logical-pixel screen, and their width must be a multiple of
 four.
 
-Keep PNGs indexed, with pixel values 0..3 and no transparency. Their RGB palette
-is a preview; changing that palette alone does not change Atari colors. The
-five comma-separated values in `scene.txt` are hexadecimal bytes. The first
+Follow the shared [graphics format](../../FORTH.md#graphics) when editing PNGs.
+The five comma-separated values in `scene.txt` are hexadecimal bytes. The first
 three supply the room's playfield colors; retain the last two unless changing
 their native behavior deliberately. `-` means the picture has no color block.
-The builder selects compression flags automatically. Room 25 retains an unusual
-original flag in an optional final column; ordinary picture edits need no flag.
+The builder selects compression flags automatically. Room 25's base picture
+uses the explicit decimal flag `19` in an optional final column.
 
 Resource IDs must stay consecutive. Animation scripts can address frame
 resources directly, so preserve their numbers. Room 32's `placeholder` rows
@@ -101,10 +100,10 @@ Unsupported or inverse glyphs retain exact escapes such as `"\\xFF"`. The
 doubled backslash is required inside a quoted line.
 Long text may need manual line breaks to fit the game's display.
 
-Run `make -C ad2044` from the repository root after an edit. Record lengths,
-compression and disk placement are generated; there are no offsets to update.
-`make -C ad2044 test-content` checks the parsers and content builders. The fixed
-game executable still limits room IDs, action kinds and available RAM.
+Use the shared [build instructions](../../FORTH.md#build) after an edit.
+The [content tests](../../FORTH.md#build-targets) check parsers and builders.
+Record lengths, compression and disk placement are generated. The executable
+fixes the available room IDs, action kinds and memory limits.
 
 ## Special rooms
 

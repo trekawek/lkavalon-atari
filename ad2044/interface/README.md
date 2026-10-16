@@ -6,10 +6,9 @@
 - `cursor.pmg`: the three 13-byte player/missile graphics planes used by the cursor.
 - `credits.txt`: all rotating title messages, in sections `[00]` through `[07]`.
 
-PNGs are indexed images with pixel values 0..3, at the Atari's logical size.
-Keep palette indices when editing; RGB conversions are rejected. Full screens
-have 160x105 stored pixels, with only the first 104 rows displayed. PNG palette
-colors are previews: the title's actual color changes come from the executable.
+See the shared [graphics format](../../FORTH.md#graphics) for PNG editing rules.
+AD2044's full screens have 160 by 105 stored pixels, with only the first 104 rows
+displayed. The title's color changes come from the executable.
 Fonts are compiled into disk resources; the cursor is embedded in Forth code.
 
 Each quoted string in `credits.txt` is one displayed line; spaces inside quotes

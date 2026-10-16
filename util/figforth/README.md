@@ -1,39 +1,46 @@
-# Readable APX fig-Forth bootstrap
+# APX fig-Forth compiler sources
 
-`compiler.json` reconstructs the original APX Extended fig-FORTH 1.1 revision
-2.0 boot image from its intact dictionary names and executable structure. It
-contains 253 linked Forth definitions, two embedded native SAVE entry points,
-named threaded calls, literals, counted strings, relative branch destinations,
-explicit-mode 6502 instructions, and typed initial values.
+These files build the APX Extended fig-FORTH 1.1 revision 2.0 compiler used by
+the three [Forth game projects](../../FORTH.md#forth-sources).
 
-The small saved input buffer and partial retired definitions after the initial
-dictionary pointer are represented separately. They are overwritten during
-normal compilation, but retaining them reproduces all 58 original boot sectors
-exactly. Unknown system fields retain neutral labels rather than guessed roles.
+| File | Contents |
+| --- | --- |
+| [compiler.json](compiler.json) | 253 linked Forth definitions, two native SAVE entry points, 6502 instructions and initial memory values. |
+| [disk.json](disk.json) | Disk geometry and source-screen placement. |
+| [screens](screens) | 77 ASCII Forth screens: error messages and optional assembler, editor, graphics and floating-point tools. |
+| [provenance.json](provenance.json) | Compiler edition, source location and reference hashes. |
+| [test_builder.py](test_builder.py) | Source validation, boot-byte comparisons and compiler execution tests. |
 
-`disk.json` supplies disk geometry and screen placement. The 77 files in
-`screens/` retain the original 16-line ASCII source screens, including error
-messages and optional assembler, editor, graphics and floating-point tools.
-Whitespace removed from line ends is restored to 64 columns when packing.
+The dictionary uses named calls, literals, counted strings and relative branch
+destinations. Native instructions use the opcode declarations in
+[ad2044/src/06-assembler.fth](../../ad2044/src/06-assembler.fth). Saved input
+buffers and partial retired definitions preserve the initial memory image;
+normal compilation overwrites them. Unknown system fields have neutral labels.
 
-Stale, unloaded compiled debugger/editor/assembler data after the 58-sector
-boot image and the unrelated DOS directory/description at screen 45 are omitted.
-Unused sectors contain spaces. Consequently the generated compiler ATR has the
-same executable boot bytes and preserved source screens, but is deliberately
-not a byte-for-byte copy of the whole historical disk. Game output remains
-independently checked against its original disk hashes.
+Each source screen has 16 lines, padded to 64 columns when packed. The generated
+ATR reproduces all 58 boot sectors and the retained screens. Other sectors
+contain spaces; the complete disk does not match the historical ATR byte for
+byte.
 
-Build with Python's standard library:
+Build from the repository root with Python 3.9 or later; only its standard
+library is required:
 
 ```sh
 python3 util/build_figforth.py --output /tmp/figforth.atr
 ```
 
-No original ATR, network download or binary snapshot is needed. The assembler
-uses the explicit opcode declarations in `ad2044/src/06-assembler.fth`.
-`--dependencies` lists every input as an absolute path for Make prerequisites.
+The game Makefiles generate this compiler automatically. No original ATR or
+download is needed. `--dependencies` lists its build inputs as absolute paths.
 
-The optional authentic-6502 test requires `py65`; it executes COLD, compiles a
-new colon definition, and runs the portable target writer. The boot-sector
-comparison uses the independently recorded historical digest in
-`provenance.json`, so it also works without an archived binary fixture.
+Run the compiler tests from the repository root:
+
+```sh
+python3 util/figforth/test_builder.py
+```
+
+The tests compare the ATR header and boot sectors with the recorded hashes in
+`provenance.json`, and check source-screen packing. With `py65` installed they
+also execute COLD, compile new definitions, exercise target emission and load a
+source screen from disk. Those execution tests are skipped without `py65`.
+Game verification checks executable bytes and current resources separately;
+see [validation and reference material](../../FORTH.md#validation-and-reference-material).

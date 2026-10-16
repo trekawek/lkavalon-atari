@@ -1,8 +1,8 @@
 # Editing inventory items
 
 Items use global IDs starting at 102. Each directory contains one four-item bank:
-`102-105`, `106-109`, and so on. Empty positions need no picture. The current
-sources contain items 102..120 and 122; the remaining reserved banks are generated
+`102-105`, `106-109`, and so on. Empty positions need no picture. The sources
+contain items 102..120 and 122; the remaining reserved banks are generated
 empty. Keep the existing IDs because room overlays and action parameters use
 them.
 
@@ -47,8 +47,7 @@ four `inventory:` values in [world/initial.txt](../world/initial.txt); zero mean
 an empty carried slot. Those four slots are separate from the four-item resource
 banks.
 
-Run `make -C ad2044` from the repository root to rebuild the disks. The executable
-reserves 512 bytes for each bank, including its compressed pictures, hitmaps and
-actions. The builder checks this limit and generates padding and fresh saved
-inventory automatically. Item edits are authored here, not in a generated ATR or
-the saved-game area.
+Use the shared [build instructions](../../FORTH.md#build) to rebuild the disks.
+The executable reserves 512 bytes for each bank, including its compressed
+pictures, hitmaps and actions. The builder checks this limit and generates
+padding and fresh saved inventory automatically.

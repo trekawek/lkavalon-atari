@@ -1,8 +1,8 @@
 # Editing Klątwa and Władcy Ciemności
 
 Both games use the same authoring formats. Files contain decimal numbers unless
-explicitly marked otherwise. A line starting with `#` is a comment. Source
-files never contain disk-sector positions or compression plans.
+explicitly marked otherwise. A line starting with `#` is a comment. The builder
+calculates compression and disk placement from these files.
 
 ## Follow a room
 
@@ -23,21 +23,19 @@ hitmap  003 1 art/003-1.hit.txt
 ```
 
 The picture's last two values are x in **bytes** and y in pixels. One bitmap
-byte holds four horizontal pixels. PNGs use their native logical resolution
-and four indexed pixel values, 0–3. Atari color registers in `scene.txt`
-control the displayed colors; grayscale PNG palettes keep shared art neutral.
-Export an indexed PNG when editing; RGB conversion and quantization are not
-performed silently. Hardware display stretches pixels horizontally.
+byte holds four horizontal pixels. Atari color registers in `scene.txt`
+control the displayed colors. See the shared [graphics guide](../FORTH.md#graphics)
+for PNG pixel formats, palettes and display proportions.
 
 Variants 0/2/4 normally pair with hitmaps 1/3/5. `-` means a direct resource,
-used by item pictures and the scene cursor. A `placeholder` is a one-byte
-legacy slot retained because resource IDs are significant. It is not a picture.
+used by item pictures and the scene cursor. A `placeholder` reserves a one-byte
+resource slot, preserving the indices of subsequent records.
 The builder derives record lengths and column compression from current pixels.
 
 ## Hitmaps and actions
 
 A `.hit.txt` file has a `size`, an optional `legend`, and a character grid.
-The grid is the only source of cell values; there is no parallel encoded copy.
+The grid supplies the cell values.
 Dots represent zero. Without a legend, `1`–`9` mean 1–9, `A`–`Z` mean 10–35,
 and `a`–`z` mean 36–61. A declaration such as `legend A=192` overrides that
 symbol for this file; the grid still stores the full byte, 0–255.
@@ -64,8 +62,8 @@ The first line chooses collection `[06]` from `stages/N/actions.txt` and gets
 its target from the matching room/zone row of `world/map.txt`. The second
 chooses collection `[21]` with metadata value 109. Metadata belongs to the
 chosen handler; it can mean a drawable, view, item or puzzle argument. A
-`message` followed by quoted lines stores a local inline message. Original
-repeated selectors are retained in order; the runtime uses the first match.
+`message` followed by quoted lines stores a local inline message. The runtime
+searches repeated selectors in source order and uses the first match.
 
 Shared collections have one section per ID. For example:
 
@@ -75,17 +73,16 @@ approach facing=2 run=1 x=18 y=19 final=2
 enter-room
 ```
 
-Klątwa uses approach coordinates for walking. Władcy retains that structure
-from the shared engine. `control=` and `legacy=` preserve small fields whose
+Both games store approach metadata; Klątwa uses it for walking.
+`control=` and `legacy=` preserve small fields whose
 full behavior is not established. Action names and parameter names describe
 recovered behavior; unproved parameters keep neutral names.
 
 `world/map.txt` lists ordinary connections as room, zone, destination and a
 direction label. The label describes the exit; the destination number feeds
-`destination` fields in the room selectors. Gated
-transitions, stage changes and puzzle-dependent movement are additionally
-implemented by named action handlers in `src/30-game.fth`; this table is not
-a claim that every possible transition is an ordinary exit.
+`destination` fields in the room selectors. Named action handlers in
+`src/30-game.fth` implement gated transitions, stage changes and
+puzzle-dependent movement.
 
 ## Initial objects, inventory and puzzles
 
@@ -152,29 +149,26 @@ Room notices are inline in `scene.txt`; local action messages stay in
 
 Both games put all title pages in `interface/pages.txt`, under sections `[00]`
 through `[07]` for Klątwa or `[08]` for Władcy. Each quoted line is one displayed
-line on that page. Title pages use a different font with paired glyphs.
-`{AUTOR}` expands to the
-author's wide letters; `{~ROLAND PANTOŁA}` uses their inverse forms. Framing
-tiles and unusual numeral glyphs remain explicit escapes. This preserves title
-art while making the credits readable. The builder does not treat these lines
-as ordinary gameplay text.
+line on that page. Title pages use a font with paired glyphs: `{AUTOR}` expands
+to wide letters, and `{~ROLAND PANTOŁA}` uses their inverse forms. Framing tiles
+and unusual numeral glyphs use explicit escapes. The title decoder preserves
+these font-specific mappings.
 
 Klątwa's `player/frames.txt` gives direction, frame, PNG and sprite offsets.
 Four directions each have five frames. Władcy has no walking animation;
-its inherited, unused frame bank is replaced by a generated placeholder
-that preserves the resource numbers used by the music. `interface/cursor.pmg` is
-the small native hardware bitmap embedded in Forth. Fonts remain `.fnt`, and
-music remains `.cmc`.
+its resource 10 is a generated placeholder that preserves the music indices.
+`interface/cursor.pmg` is the small native hardware bitmap embedded in Forth.
+Fonts use `.fnt` files and music uses `.cmc` files.
 
 ## Generated output and limits
 
 `build/packing.txt` shows generated group sizes and sector locations. Group IDs
 stay fixed: title 3, stage scenes/items 4/5 and 6/7, save slot 8. Sector 500
-contains the generated directory. Padding is generated rather than authored.
+contains the generated directory. The builder supplies sector padding.
 Runtime bank, cache, hitmap and state capacities are validated independently
 of disk capacity; free disk sectors do not imply free Atari RAM.
-Live resources and the save slot must finish at sector 767: the preserved
-loader patch intercepts sectors 768–1023. The builder checks this limit too.
+Live resources and the save slot must finish at sector 767: the loader patch
+intercepts sectors 768–1023. The builder checks this limit too.
 
-The normal build needs no original disk. Optional recovery tools write reports
-and previews below `build/`; they do not overwrite these authoring files.
+See [validation and reference material](../FORTH.md#validation-and-reference-material)
+for generated-disk checks, source regeneration and comparison with original media.

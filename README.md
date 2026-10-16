@@ -21,10 +21,10 @@ Most original sources were downloaded from [Atari XL/XE Source Archive](http://s
 ## Requirements
 
 * MADS assembler
-* GNU make
+* GNU make (3.81 or later for the Forth games; macOS's bundled version works)
 * golang - optionally, for running extra tools
 * Python 3 - for Heartlight's cave data and Watson's packed source tools
-* Python 3 with py65 - for the original fig-Forth compiler used by A.D. 2044, Klątwa, and Władcy Ciemności
+* Python 3.9 or later with py65 - for the original fig-Forth compiler used by A.D. 2044, Klątwa, and Władcy Ciemności
 
 ## Compilation
 

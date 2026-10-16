@@ -71,7 +71,7 @@ class SemanticTests(unittest.TestCase):
                        bytes((i * 37) & 0xFF for i in range(31))):
             f.memory[0x587E:0x589D] = values
             self.assertEqual(f.call(0x69C0), [])
-            self.assertEqual(f.memory[0x69B8], sum(v.bit_count() for v in values))
+            self.assertEqual(f.memory[0x69B8], sum(bin(v).count("1") for v in values))
 
     def test_room_marker_update_requires_no_overlapping_bits(self):
         f = self.forth

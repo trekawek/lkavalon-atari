@@ -39,7 +39,9 @@ sector positions and the directory are calculated by the builder.
 
 ## Build
 
-Python 3 and the pinned `py65` dependency are required for host compilation:
+Python 3.9 or later, GNU Make 3.81 or later and the pinned `py65` dependency
+are required for host compilation. macOS's bundled `make` is supported.
+Run these commands from `ad2044`:
 
 ```sh
 python3 -m venv .venv

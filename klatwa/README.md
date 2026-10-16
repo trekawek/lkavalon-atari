@@ -42,8 +42,10 @@ their actions. Short texts need no separate file or filename table.
 
 ## Build
 
-Keep the sibling `ad2044` and `util` directories. Python 3 and the pinned
-`py65` package are required for compilation on the host:
+Keep the sibling `ad2044` and `util` directories. Python 3.9 or later,
+GNU Make 3.81 or later and the pinned `py65` package are required for
+compilation on the host. macOS's bundled `make` is supported.
+Run these commands from `klatwa`:
 
 ```sh
 python3 -m venv .venv

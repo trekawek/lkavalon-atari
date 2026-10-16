@@ -1,0 +1,12 @@
+# rooms/28: clickable zones for image-06.png
+size 5 9
+grid
+.JJJ.
+.JJJ.
+.JJJ.
+KJJJ.
+KJJJ.
+.JJJ.
+3JJJ.
+3JJ4.
+3.J4.

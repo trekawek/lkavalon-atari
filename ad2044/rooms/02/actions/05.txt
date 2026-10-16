@@ -1,0 +1,5 @@
+[05]
+examine
+  message_1:
+    "TABLICA Z NIERDZEWNEJ"
+    "STALI."

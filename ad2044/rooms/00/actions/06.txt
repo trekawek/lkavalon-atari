@@ -1,0 +1,4 @@
+[06]
+examine
+  message_1:
+    "CZUJNIK PRZECIWPO\\x7AAROWY."

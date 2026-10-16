@@ -1,0 +1,5 @@
+[15]
+examine
+  message_1:
+    "KIESZONKA"
+show-closeup view_id=3

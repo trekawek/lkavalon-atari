@@ -1,0 +1,5 @@
+[16]
+examine
+  message_1:
+    "OTWÓR PALENISKA"
+show-closeup view_id=1

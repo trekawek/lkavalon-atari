@@ -1,0 +1,16 @@
+[02]
+examine-counter counter_state_index=10
+  message_1:
+    "SPALONY BEZPIECZNIK."
+  message_2:
+    "DOBRY BEZPIECZNIK."
+  message_3:
+    "WATOWANY BEZPIECZNIK."
+apply-item-set-three required_inventory_id=119 state_index=10
+  message_1:
+    "W PORZĄDKU."
+  message_2:
+    "PRZECIE\\x7A JEST DOBRY."
+  message_3:
+    "TYM NIE PODWATUJESZ."
+take-item

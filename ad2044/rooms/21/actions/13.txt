@@ -1,0 +1,4 @@
+[13]
+examine
+  message_1:
+    "MIEJSCE DO SIEDZENIA."

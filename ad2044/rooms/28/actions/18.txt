@@ -1,0 +1,12 @@
+[18]
+examine
+  message_1:
+    "PRZYCISK."
+press-two-and-flag revealed_object_id=7 exit_direction=0 animation_frame_count=5
+  tested_state_index=11 second_tested_state_index=12
+  message_1:
+    "BRAK PRĄDU."
+  message_2:
+    "KTOŚ MO\\x7AE ZOBACZYĆ."
+    "DZIAŁA TYLKO PRZY"
+    "ZASŁONIĘTYM OKNIE."

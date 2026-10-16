@@ -1,0 +1,5 @@
+[16]
+examine
+  message_1:
+    "CIĄGLE JEST TO GUZIK."
+animate-close hidden_object_id=4 exit_direction=5 animation_frame_count=0

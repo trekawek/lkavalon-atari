@@ -1,0 +1,5 @@
+[14]
+examine
+  message_1:
+    "WNĘTRZE SZAFKI."
+show-closeup view_id=2

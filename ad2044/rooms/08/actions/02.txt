@@ -1,0 +1,2 @@
+[02]
+reveal-object revealed_object_id=7

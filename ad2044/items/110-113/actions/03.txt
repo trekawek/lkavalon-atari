@@ -1,0 +1,7 @@
+[03]
+examine
+  message_1:
+    "LEGITYMACJA CZŁONKA"
+    "SEKRETARIATU."
+take-item
+discard-object hidden_object_id=111

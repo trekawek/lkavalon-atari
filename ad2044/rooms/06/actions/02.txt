@@ -1,0 +1,7 @@
+[02]
+use-relative-exit relative_direction=1
+examine
+  message_1:
+    "ODEBRAŁEŚ ŚILNY IMPULS"
+    "WYSŁANY PRZEZ TWOJE"
+    "RECEPTORY WĘCHU"

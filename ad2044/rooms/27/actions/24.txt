@@ -1,0 +1,2 @@
+[24]
+close-exit hidden_object_id=9 exit_direction=3

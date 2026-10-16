@@ -1,0 +1,4 @@
+[06]
+examine
+  message_1:
+    "CHŁODNICA STEROWNIKA."

@@ -1,0 +1,5 @@
+[13]
+examine
+  message_1:
+    "ATRAPA KSIĄ\\x7AEK."
+reveal-object revealed_object_id=5

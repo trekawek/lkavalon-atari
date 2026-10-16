@@ -1,0 +1,2 @@
+[14]
+animate-close hidden_object_id=3 exit_direction=5 animation_frame_count=0

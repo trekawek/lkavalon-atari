@@ -1,0 +1,13 @@
+# rooms/13: clickable zones for image-04.png
+size 5 10
+grid
+2..G.
+2..G.
+2EEG.
+2EFG.
+2EEG.
+2EEG.
+2EEG.
+2EEG.
+2EEG.
+2..G.

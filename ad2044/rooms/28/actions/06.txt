@@ -1,0 +1,5 @@
+[06]
+examine
+  message_1:
+    "STÓŁ Z KOŚCI SŁONIOWEJ."
+show-closeup view_id=1

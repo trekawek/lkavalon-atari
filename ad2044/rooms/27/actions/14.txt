@@ -1,0 +1,8 @@
+[14]
+examine
+  message_1:
+    "OTWÓR NA BEZPIECZNIK."
+screw-in-item hidden_object_id=7 required_inventory_id=118 bit_source_state_index=10
+  counter_state_index=11
+  message_1:
+    "TEGO NIE WKRĘCISZ."

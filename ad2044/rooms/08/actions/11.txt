@@ -1,0 +1,5 @@
+[11]
+examine
+  message_1:
+    "NIEERGONOMICZNE KRZESŁO"
+move-reveal revealed_object_id=6

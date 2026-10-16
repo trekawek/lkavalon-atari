@@ -1,0 +1,5 @@
+[03]
+examine
+  message_1:
+    "PAPIEREK"
+take-item

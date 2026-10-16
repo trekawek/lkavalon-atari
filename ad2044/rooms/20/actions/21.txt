@@ -1,0 +1,4 @@
+[21]
+examine
+  message_1:
+    "GAŁKA OD PRYSZNICA."

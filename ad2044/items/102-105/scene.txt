@@ -1,0 +1,10 @@
+# Resource placement; x is in 4-pixel bytes, y in scanlines. Colors are hex.
+# picture ID file x y colors [flag] | hitmap ID file | placeholder ID byte
+picture  2 item-102.png       19 64 -
+hitmap   3 item-102.hit.txt
+picture  4 item-103.png       25 22 -
+hitmap   5 item-103.hit.txt
+picture  6 item-104.png       19 46 -
+hitmap   7 item-104.hit.txt
+picture  8 item-105.png       19 64 -
+hitmap   9 item-105.hit.txt

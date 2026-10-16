@@ -1,0 +1,5 @@
+[10]
+examine
+  message_1:
+    "DRZWI DO WINDY."
+close-exit hidden_object_id=4 exit_direction=3

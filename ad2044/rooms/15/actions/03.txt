@@ -1,0 +1,10 @@
+[03]
+examine
+  message_1:
+    "KABINA UBRANIOWA."
+open-with-item object_id=1 required_inventory_id=255 exit_direction=0
+  message_1:
+    "NIESTETY, TYM NIE OTWORZYSZ."
+    "^^^^^^^^^^^^^^^^^^^^^^^^"
+    "ZAMEK REAGUJE NA GŁOS"
+    "UPOWA\\x7ANIONEJ OSOBY."

@@ -1,0 +1,10 @@
+[21]
+examine-counter counter_state_index=10
+  message_1:
+    "SPALONY BEZPIECZNIK."
+  message_2:
+    "DOBRY BEZPIECZNIK."
+  message_3:
+    "WATOWANY BEZPIECZNIK."
+unscrew-item revealed_object_id=7 selected_object_id=118 bit_source_state_index=10
+  counter_state_index=11

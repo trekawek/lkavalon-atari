@@ -307,7 +307,7 @@ def emit_region(out, data, start, end):
     out.raw_region(data, at, end)
 
 
-def save_symbol_notes(root, data, words):
+def save_symbol_notes(root, data, words, output=None):
     """Readable evidence and decoded callers for descriptive inferred names."""
     by_cfa = {word['cfa']: word for word in words}
     callers = {word['cfa']: set() for word in words}
@@ -351,13 +351,16 @@ def save_symbol_notes(root, data, words):
         for reference in word.get('source_refs', ()):
             lines.append('  Related source: ' + reference)
         lines.append('')
-    (root / 'symbols.txt').write_text('\n'.join(lines) + '\n', encoding='ascii')
+    (Path(output) if output is not None else root).joinpath('symbols.txt').write_text(
+        '\n'.join(lines) + '\n', encoding='ascii')
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--reference', type=Path,
                         default=ROOT / 'reference/ad2044-side1.atr')
+    parser.add_argument('--research-dir', type=Path, default=ROOT / 'build/research',
+                        help='output directory for generated research catalogs')
     args = parser.parse_args()
     disk = read_reference(args.reference)
     data = memory(disk)
@@ -437,9 +440,15 @@ def main():
             out.line('T-FINISH')
         out.save(source / filename)
     report = {'origin': ORIGIN, 'end': END, 'words': words, 'statistics': dict(stats)}
-    (ROOT / 'dictionary.json').write_text(json.dumps(report, indent=2, ensure_ascii=True) + '\n')
-    catalog.save(ROOT)
-    save_symbol_notes(ROOT, data, words)
+    args.research_dir.mkdir(parents=True, exist_ok=True)
+    (args.research_dir / 'dictionary.json').write_text(
+        json.dumps(report, indent=2, ensure_ascii=True) + '\n', encoding='ascii')
+    catalog.save(args.research_dir)
+    save_symbol_notes(ROOT, data, words, args.research_dir)
+    notes = ROOT / 'tools/recovery-notes.txt'
+    if notes.exists():
+        (args.research_dir / 'research-notes.txt').write_text(
+            notes.read_text('ascii'), encoding='ascii')
     print(f"Recovered {len(words)} words ({len(names)} names), {dict(stats)}")
 
 

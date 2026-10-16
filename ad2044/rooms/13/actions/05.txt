@@ -1,0 +1,5 @@
+[05]
+examine
+  message_1:
+    "POJEMNIK NA ŚMIECI"
+reveal-object revealed_object_id=6

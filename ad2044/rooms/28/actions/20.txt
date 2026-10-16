@@ -1,0 +1,4 @@
+[20]
+examine
+  message_1:
+    "SPALONY PRZYCISK."

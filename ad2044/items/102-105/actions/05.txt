@@ -1,0 +1,5 @@
+[05]
+examine
+  message_1:
+    "NAKRĘTKA M20"
+take-item

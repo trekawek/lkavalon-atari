@@ -1,0 +1,11 @@
+# rooms/04: clickable zones for image-02.png
+size 5 8
+grid
+77.88
+77868
+77668
+77888
+77888
+77888
+77888
+77788

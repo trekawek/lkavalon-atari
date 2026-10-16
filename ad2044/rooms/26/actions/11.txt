@@ -1,0 +1,7 @@
+[11]
+open-if-puzzle-set revealed_object_id=3 exit_direction=0 tested_state_index=9
+  message_1:
+    "DRZWI ZAMKNIĘTE NA KLUCZ."
+examine
+  message_1:
+    "DRZWI WEJŚCIOWE."

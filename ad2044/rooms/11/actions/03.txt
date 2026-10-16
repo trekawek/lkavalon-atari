@@ -1,0 +1,5 @@
+[03]
+examine
+  message_1:
+    "NIE MO\\x7AESZ NIC ZBADAĆ."
+    "NIE DENERWUJ PANI MILICJANTKI."

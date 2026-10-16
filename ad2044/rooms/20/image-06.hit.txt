@@ -1,0 +1,13 @@
+# rooms/20: clickable zones for image-06.png
+size 5 10
+grid
+.....
+KK.MM
+.KKMM
+...MM
+...MM
+L..MM
+L..MM
+...MM
+...MM
+.....

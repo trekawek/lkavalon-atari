@@ -1,0 +1,6 @@
+[08]
+examine
+  message_1:
+    "KLUCZ."
+turn-set-flag revealed_object_id=4 exit_direction=5 animation_frame_count=5
+  set_state_index=9

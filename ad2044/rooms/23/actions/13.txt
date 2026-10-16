@@ -1,0 +1,5 @@
+[13]
+examine
+  message_1:
+    "JAKAŚ KARTKA."
+show-closeup view_id=2

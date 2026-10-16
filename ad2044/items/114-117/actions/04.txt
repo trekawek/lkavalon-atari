@@ -1,0 +1,6 @@
+[04]
+examine
+  message_1:
+    "PRZEPUSTKA."
+take-item
+discard-object hidden_object_id=116

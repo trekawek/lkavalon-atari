@@ -1,0 +1,4 @@
+[07]
+examine
+  message_1:
+    "PRZYCISK WYWOŁUJĄCY WINDĘ."

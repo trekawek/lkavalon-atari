@@ -1,0 +1,5 @@
+[02]
+examine
+  message_1:
+    "NÓ\\x7A DO PAPIERU."
+take-item

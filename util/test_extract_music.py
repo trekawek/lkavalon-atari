@@ -6,6 +6,8 @@ import sys
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from reference_media import read_reference
 import unittest
+import tempfile
+from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import extract_music
@@ -80,11 +82,34 @@ class MusicExtractionTests(unittest.TestCase):
             for filename, data in files.items():
                 with self.subTest(game=game, file=filename):
                     if filename == "extraction.json":
+                        if game == "ad2044":
+                            continue
                         target = extract_music.ROOT / game / "music" / filename
                         self.assertEqual(target.read_bytes(), data)
                     else:
                         generated, _ = extract_music.build_music(game)
                         self.assertEqual(generated[filename], data)
+
+    def test_ad_music_uses_only_native_bank_and_regenerates_listening_exports(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            music = root / "ad2044/music"
+            music.mkdir(parents=True)
+            bank = self.exports["ad2044"][0]["sound-bank.bin"]
+            (music / "ad2044.snd").write_bytes(bank)
+            with patch.object(extract_music, "ROOT", root):
+                before, manifest = extract_music.build_music("ad2044")
+                self.assertEqual(manifest["build_inputs"], ["music/ad2044.snd"])
+                changed = bytearray(bank)
+                changed[0x27] ^= 1
+                (music / "ad2044.snd").write_bytes(changed)
+                after, _ = extract_music.build_music("ad2044")
+                self.assertEqual(after["sound-bank.bin"], changed)
+                for filename in ("title.sap", "game-over.sap", "sound-effects.sap"):
+                    self.assertNotEqual(before[filename], after[filename])
+                (music / "ad2044.snd").write_bytes(bank[:-1])
+                with self.assertRaisesRegex(ValueError, "expected 3631"):
+                    extract_music.build_music("ad2044")
 
     def test_cmc_sequences_reference_complete_patterns(self):
         expected = {

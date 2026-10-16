@@ -1,0 +1,5 @@
+[04]
+examine
+  message_1:
+    "GUZIK."
+animate-open revealed_object_id=4 exit_direction=5 animation_frame_count=0

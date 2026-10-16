@@ -1,0 +1,5 @@
+[02]
+use-relative-exit relative_direction=1
+examine
+  message_1:
+    "KORYTARZ."

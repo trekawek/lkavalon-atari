@@ -1,0 +1,4 @@
+[01]
+drop-inventory-item
+  message_1:
+    "WYBIERZ"

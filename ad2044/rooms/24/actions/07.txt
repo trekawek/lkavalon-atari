@@ -1,0 +1,14 @@
+[07]
+examine
+  message_1:
+    "SKAFANDER OCHRONNY."
+    "^^^^^^^^^^^^^^^^^^^"
+    "CHRONI PRZED PROMIENIOWANIEM"
+    "RADIOAKTYWNYM."
+refuse-with-overlay-54 revealed_object_id_or_255=255
+  message_1:
+    "PO CO CI TO ?"
+    "^^^^^^^^^^^^"
+    "NIE OGLĄDAŁEŚ FILMU ?"
+    "NA POWIERZCHNI NIE MA"
+    "\\x7AADNEGO PROMIENIOWANIA."

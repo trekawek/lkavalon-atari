@@ -1,0 +1,5 @@
+[04]
+examine
+  message_1:
+    "ZABYTKOWA TARCZA."
+reveal-object-62 revealed_object_id=5

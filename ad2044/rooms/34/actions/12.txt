@@ -1,0 +1,7 @@
+[12]
+examine
+  message_1:
+    "DRUGIE ŚNIADANIE."
+eat object_id=3 energy_added=70
+  message_1:
+    "BARDZO DOBRE."

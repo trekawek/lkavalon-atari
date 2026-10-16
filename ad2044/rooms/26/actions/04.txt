@@ -1,0 +1,5 @@
+[04]
+examine
+  message_1:
+    "DRZEWO LIŚCIASTE,"
+    "PRAWDOPODOBNIE GRUSZA."

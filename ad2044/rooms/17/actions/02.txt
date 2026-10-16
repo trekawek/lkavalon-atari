@@ -1,0 +1,6 @@
+[02]
+examine
+  message_1:
+    "DRZWI DO POKOJU"
+    "RATOWNICZKI."
+open-exit revealed_object_id=2 exit_direction=3

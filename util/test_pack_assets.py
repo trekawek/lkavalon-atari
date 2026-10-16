@@ -13,10 +13,6 @@ from reference_media import read_reference
 
 ROOT = Path(__file__).resolve().parents[1]
 REFERENCES = {
-    "ad2044": {
-        "build/assets-side1.atr": ("ad2044-side1.atr", 33959),
-        "build/ad2044-side2.atr": ("ad2044-side2.atr", 0),
-    },
     "klatwa": {"build/assets.atr": ("klatwa-v1.atr", 32000)},
     "wladcy-ciemnosci": {"build/assets.atr": ("wladcy-ciemnosci.atr", 32000)},
 }
@@ -69,8 +65,6 @@ class ReleaseAssets(unittest.TestCase):
 
     def test_same_size_native_edits_change_only_the_corresponding_disk_byte(self):
         cases = [
-            ("ad2044", "graphics/packed/s1-g03-r000.bin", 10,
-             "build/assets-side1.atr", 35856 + 10),
             ("klatwa", "music/title.cmc", 100,
              "build/assets.atr", 0xE01C + 100),
             ("klatwa", "graphics/fonts/gameplay.fnt", 100,

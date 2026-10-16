@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Reject tracked non-graphic binaries in the three reconstructed Forth games.
+"""Reject tracked binaries other than graphics, fonts and music in Forth games.
 
 Generated ATRs/SAPs may exist locally in ignored build directories. This audit
 uses Git's index, so ignored outputs and unrelated historical projects are not
@@ -25,6 +25,8 @@ def allowed_binary(path):
     game, *parts = path.parts
     if game not in GAMES:
         return False
+    if str(path) in ("ad2044/interface/cursor.pmg", "ad2044/music/ad2044.snd"):
+        return True
     if path.suffix in (".png", ".fnt", ".cmc"):
         return True
     if not parts or parts[0] != "graphics":
@@ -66,7 +68,7 @@ def main():
     count, failures = audit(args.root)
     if failures:
         raise SystemExit("Forbidden binary sources:\n" + "\n".join(failures))
-    print(f"Audited {count} tracked binary files: graphics, fonts and CMC only")
+    print(f"Audited {count} tracked binary files: graphics, fonts and music only")
 
 
 if __name__ == "__main__":

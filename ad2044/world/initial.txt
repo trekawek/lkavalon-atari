@@ -1,0 +1,8 @@
+# New game and the fresh disk save both start here.
+current-room 0
+energy 30
+legacy-ubr 1 # Original UBR cell; no live reader identified.
+map-floor 2
+inventory: 0 0 0 0
+# Puzzle cells 0..15, shared by the action handlers.
+puzzle-cells: 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 8

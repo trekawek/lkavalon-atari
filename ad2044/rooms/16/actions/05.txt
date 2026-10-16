@@ -1,0 +1,8 @@
+[05]
+examine
+  message_1:
+    "ZAMKNIĘTE OKIENKO PORTIERNI."
+open-with-item object_id=3 required_inventory_id=255 exit_direction=0
+  message_1:
+    "NIESTETY,ZAMKNIĘTE OD ŚRODKA."
+shout-answer revealed_object_id=3 answer_result_bias=1

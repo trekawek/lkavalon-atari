@@ -1,0 +1,8 @@
+[07]
+examine
+  message_1:
+    "PANCERNE OKIENKO."
+open-with-item object_id=2 required_inventory_id=255 exit_direction=0
+  message_1:
+    "ZAMKNIĘTE OD ŚRODKA."
+shout-reveal-if-clear revealed_object_id=2 answer_result_bias=1 expected_answer="\\x08"

@@ -1,0 +1,5 @@
+[20]
+examine
+  message_1:
+    "NIEERGONOMICZNE KRZESŁO"
+move-hide hidden_object_id=6

@@ -1,0 +1,10 @@
+[06]
+examine
+  message_1:
+    "PRZYCISK WYWOŁUJĄCY"
+    "PROCEDURĘ OTWARCIA."
+press-if-flag-set revealed_object_id=3 exit_direction=0 animation_frame_count=6
+  tested_state_index=8
+  message_1:
+    "STRA\\x7ANICZKA MUSI"
+    "ODBLOKOWAĆ DRZWI."

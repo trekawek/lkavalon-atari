@@ -1,0 +1,9 @@
+# rooms/23: clickable zones for image-04.png
+size 5 6
+grid
+...A.
+.CCA.
+.CCA.
+.CBA.
+.CBA.
+...A.

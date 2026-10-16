@@ -1,28 +1,23 @@
 #!/usr/bin/env python3
 """Check inferred game semantics by executing the original Forth on a 6502.
 
-The oracle is the released disk, not a Python translation of its words. These
+The oracle is the verified rebuilt executable, not a Python translation. These
 bounded routines need RAM and controller registers, but no Atari OS services.
 """
 
-import importlib.util
 from pathlib import Path
-import sys
-sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "util"))
-from reference_media import read_reference
 import unittest
 
 from semantic_runtime import OriginalForth
 
-SPEC = importlib.util.spec_from_file_location(
-    'semantic_decompiler', Path(__file__).with_name('decompile.py'))
-d = importlib.util.module_from_spec(SPEC)
-SPEC.loader.exec_module(d)
+from verify import program_memory
+
+ROOT = Path(__file__).resolve().parents[1]
 
 
 class SemanticTests(unittest.TestCase):
     def setUp(self):
-        memory = d.memory(read_reference(d.ROOT / 'reference/ad2044-side1.atr'))
+        memory = program_memory((ROOT / 'build/ad2044-side1.atr').read_bytes())
         self.forth = OriginalForth(memory)
 
     def test_current_room_exit_returns_mask_bit_not_normalized_boolean(self):

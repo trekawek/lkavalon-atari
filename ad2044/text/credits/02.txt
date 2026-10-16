@@ -1,0 +1,7 @@
+# One quoted line per displayed line; keep spaces inside quotes.
+"GRAFIKA"
+"    "
+"   ; "
+"TAKZE"
+"    "
+"ROLAND  PANTOŁA"

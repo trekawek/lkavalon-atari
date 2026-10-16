@@ -1,0 +1,4 @@
+[03]
+examine
+  message_1:
+    "SUSZARKA DO WŁOSÓW."

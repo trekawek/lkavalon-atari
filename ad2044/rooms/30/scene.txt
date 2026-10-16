@@ -1,0 +1,41 @@
+# Resource placement; x is in 4-pixel bytes, y in scanlines. Colors are hex.
+# picture ID file x y colors [flag] | hitmap ID file | placeholder ID byte
+# Drawable n uses picture resource 2*n+2 and hitmap 2*n+3; base is drawable 0.
+# Frame resources after the last hitmap are addressed directly by animations.
+picture  2 base.png           10  8 24,E8,FD,A2,00
+hitmap   3 base.hit.txt
+picture  4 image-01.png       15 15 -
+hitmap   5 image-01.hit.txt
+picture  6 image-02.png       12 20 -
+hitmap   7 image-02.hit.txt
+picture  8 image-03.png       18 33 -
+hitmap   9 image-03.hit.txt
+picture 10 image-04.png       18 45 -
+hitmap  11 image-04.hit.txt
+picture 12 image-05.png       18 45 -
+hitmap  13 image-05.hit.txt
+picture 14 frame-14.png       13 32 -
+picture 15 frame-15.png       13 32 -
+picture 16 frame-16.png       13 32 -
+picture 17 frame-17.png       13 32 -
+picture 18 frame-18.png       13 32 -
+picture 19 frame-19.png       13 32 -
+picture 20 frame-20.png       13 32 -
+picture 21 frame-21.png       13 32 -
+picture 22 frame-22.png       13 32 -
+picture 23 frame-23.png       13 32 -
+picture 24 frame-24.png       13 32 -
+picture 25 frame-25.png       13 32 -
+picture 26 frame-26.png       13 32 -
+picture 27 frame-27.png       13 32 -
+picture 28 frame-28.png       13 32 -
+picture 29 frame-29.png       13 32 -
+picture 30 frame-30.png       13 32 -
+picture 31 frame-31.png       13 32 -
+picture 32 frame-32.png       13 32 -
+picture 33 frame-33.png       13 32 -
+picture 34 frame-34.png       13 32 -
+picture 35 frame-35.png       13 32 -
+picture 36 frame-36.png       13 32 -
+picture 37 frame-37.png       13 32 -
+picture 38 frame-38.png       13 32 -

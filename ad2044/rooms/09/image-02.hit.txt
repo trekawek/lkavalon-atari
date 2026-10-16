@@ -1,0 +1,11 @@
+# rooms/09: clickable zones for image-02.png
+size 12 7
+legend A=101
+grid
+............
+............
+.......AAA..
+.......AAA..
+.......AAA..
+.......AAA..
+............

@@ -1,0 +1,5 @@
+[10]
+show-closeup view_id=1
+examine
+  message_1:
+    "DĘBOWY BLAT STOŁU."

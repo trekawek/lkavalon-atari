@@ -47,14 +47,14 @@ class AssemblerTests(unittest.TestCase):
         paths = [ROOT / "src" / name for name in (
             "metacompiler.fth", "05-emission.fth", "06-assembler.fth")]
         cls.base = compiler.ForthMachine(
-            ROOT / "reference/figforth.atr", compiler.read_sources(paths))
+            ROOT / "build/figforth.atr", compiler.read_sources(paths))
         cls.base.run()
 
     def machine(self, source):
         lines = [("<assembler test>", no, line)
                  for no, line in enumerate(source.splitlines(), 1)]
         machine = compiler.ForthMachine(
-            ROOT / "reference/figforth.atr", lines, 20_000_000)
+            ROOT / "build/figforth.atr", lines, 20_000_000)
         machine.mem[:] = self.base.mem[:]
         for register in ("pc", "sp", "a", "x", "y", "p"):
             setattr(machine.cpu, register, getattr(self.base.cpu, register))

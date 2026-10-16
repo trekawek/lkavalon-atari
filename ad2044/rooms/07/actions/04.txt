@@ -1,0 +1,5 @@
+[04]
+examine
+  message_1:
+    "POJEMNIK NA ODPADY"
+    "ORGANICZNE"

@@ -1,0 +1,6 @@
+[03]
+examine
+  message_1:
+    "KAWAŁEK DRUTU."
+take-item
+discard-object hidden_object_id=119

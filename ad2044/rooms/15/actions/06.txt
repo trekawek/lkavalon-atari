@@ -1,0 +1,5 @@
+[06]
+examine
+  message_1:
+    "OTWARTE DRZWI DO WINDY."
+close-exit hidden_object_id=1 exit_direction=3

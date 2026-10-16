@@ -1,0 +1,11 @@
+[05]
+examine
+  message_1:
+    "ELEKTRONICZNY ZAMEK"
+    "Z WEJŚCIEM NA"
+    "KLUCZ MAGNETYCZNY"
+open-with-item object_id=5 required_inventory_id=109 exit_direction=3
+  message_1:
+    "NIE PSUJ ZAMKA"
+    "^^^^^^^^^^^^^^"
+    "TYM NIE OTWORZYSZ"

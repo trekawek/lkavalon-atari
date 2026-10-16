@@ -1,0 +1,5 @@
+[07]
+examine
+  message_1:
+    "MARMUROWA PŁYTA."
+show-closeup view_id=1

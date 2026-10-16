@@ -1,0 +1,6 @@
+[03]
+examine
+  message_1:
+    "PRZYCISK WYWOŁUJĄCY"
+    "WINDĘ."
+open-exit revealed_object_id=1 exit_direction=3

@@ -1,0 +1,5 @@
+[08]
+examine
+  message_1:
+    "PRZYCISK WŁĄCZAJĄCY NOKTOWIZOR."
+animate-open revealed_object_id=2 exit_direction=5 animation_frame_count=4

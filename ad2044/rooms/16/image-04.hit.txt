@@ -1,0 +1,10 @@
+# rooms/16: clickable zones for image-04.png
+size 7 7
+grid
+...999.
+...999.
+AA.999.
+AA.999.
+...999.
+...999.
+...999.

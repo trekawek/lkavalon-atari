@@ -1,0 +1,7 @@
+[09]
+examine
+  message_1:
+    "NAUKA PŁYWANIA."
+    "^^^^^^^^^^^^^^^"
+    "PORADNIK DLA POCZĄTKUJĄCYCH"
+    "DZIAŁACZEK SEKRETARIATU."

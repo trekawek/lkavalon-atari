@@ -1,0 +1,4 @@
+[10]
+examine
+  message_1:
+    "REGAŁ Z KSIĄ\\x7AKAMI."

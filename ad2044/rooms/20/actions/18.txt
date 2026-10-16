@@ -1,0 +1,8 @@
+[18]
+examine
+  message_1:
+    "WNĘTRZE SZAFY."
+refuse-closeup
+  message_1:
+    "NIC CIEKAWEGO,"
+    "PUSTA PÓŁKA."

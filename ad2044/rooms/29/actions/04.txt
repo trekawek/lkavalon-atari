@@ -1,0 +1,5 @@
+[04]
+examine
+  message_1:
+    "PORCELANOWA UMYWALKA."
+show-closeup view_id=1

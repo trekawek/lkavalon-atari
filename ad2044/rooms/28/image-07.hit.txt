@@ -1,0 +1,10 @@
+# rooms/28: clickable zones for image-07.png
+size 7 7
+grid
+.MMMML.
+.MMMML.
+.MMMML.
+.MMMMLK
+.MMMML.
+.MMMML.
+.333333

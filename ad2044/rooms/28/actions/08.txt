@@ -1,0 +1,8 @@
+[08]
+examine
+  message_1:
+    "PRZYCISK."
+press-if-state-two revealed_object_id=3 exit_direction=5 animation_frame_count=0
+  tested_state_index=11 unused_parameter_5=1
+  message_1:
+    "BRAK PRĄDU."

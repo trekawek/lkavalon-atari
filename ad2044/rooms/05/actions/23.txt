@@ -1,0 +1,2 @@
+[23]
+show-closeup view_id=4

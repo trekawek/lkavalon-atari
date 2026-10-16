@@ -1,0 +1,5 @@
+[07]
+examine
+  message_1:
+    "ZASŁONA PÓŁPRZEPUSZCZALNA."
+move-reveal-43 revealed_object_id=6

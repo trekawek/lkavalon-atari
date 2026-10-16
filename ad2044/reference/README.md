@@ -1,17 +1,11 @@
-# Optional reference media
+# Optional historical references
 
-Only provenance metadata is tracked here. Normal game builds use readable
-Forth and structured records plus the native graphics, font and CMC inputs.
-The compiler disk is generated from `util/figforth/` at repository level;
-`reference/figforth.atr` is an ignored generated artifact, not a binary input.
+`sources.json` records provenance for the original releases. Normal builds and
+validation need none of those disks: code, assets and the compiler are built
+from repository sources, and verification pins only the original executable.
+Generated compiler media live at `build/figforth.atr`.
 
-Historical originals may be placed in this game's ignored `build/reference/`
-directory under the filenames recorded in `sources.json`. They are optional
-forensic fixtures. `make clean` removes this directory, so retain personal
-archive copies outside `build/` when needed.
-
-Without an original game fixture, verification can use an existing build only
-if its complete historical SHA-256 matches. AD2044's writable header flag is
-normalized before comparison. A modified build never silently becomes its
-own comparison baseline. Source regeneration and extraction do not download
-missing media; build the unchanged game first or supply an original fixture.
+For forensic extraction or source recovery, place historical game images in
+ignored `build/reference/` using the filenames in `sources.json`. Those tools
+require the original full-disk hashes. Newly packed AD2044 disks intentionally
+do not match them. Keep archive copies elsewhere: `make clean` removes `build/`.

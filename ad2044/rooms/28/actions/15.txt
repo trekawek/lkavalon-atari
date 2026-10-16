@@ -1,0 +1,4 @@
+[15]
+examine
+  message_1:
+    "SZTUCZNY OGIEŃ."

@@ -7,14 +7,32 @@ ATR, opaque disk tail, extraction hash, or generated preview is read here.
 """
 
 import argparse
+import importlib.util
 import json
 from pathlib import Path
 import struct
+import sys
 import structured_assets
 
 
 class AssetError(ValueError):
     """An asset or its placement violates the manifest contract."""
+
+
+def _room_builder(root):
+    """AD2044 uses human room sources; the other games retain their manifests."""
+    root = Path(root).resolve()
+    path = root / "tools/content.py"
+    if not (root / "world/map.txt").exists() or not path.exists():
+        return None
+    sys.path.insert(0, str(path.parent))
+    try:
+        spec = importlib.util.spec_from_file_location("ad2044_content", path)
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+        return module
+    finally:
+        sys.path.pop(0)
 
 
 def _integer(value, label, minimum=0, maximum=None):
@@ -85,6 +103,9 @@ def _parts(write, label):
 def dependencies(game_dir):
     """List the manifest and all authoritative file inputs, without duplicates."""
     root = Path(game_dir).resolve()
+    builder = _room_builder(root)
+    if builder is not None:
+        return builder.dependencies(root)
     result = [root / "assets/layout.json"]
     manifest = load_manifest(root)
     for disk in _disks(manifest):
@@ -139,6 +160,12 @@ def _part_data(root, part, label):
 def build_disks(game_dir, manifest=None):
     """Return output-path -> ATR bytes, validating all files and placements."""
     root = Path(game_dir).resolve()
+    builder = _room_builder(root) if manifest is None else None
+    if builder is not None:
+        try:
+            return builder.build_disks(root)
+        except (OSError, ValueError) as exc:
+            raise AssetError(str(exc)) from exc
     if manifest is None:
         manifest = load_manifest(root)
     result = {}

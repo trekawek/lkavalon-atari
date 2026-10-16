@@ -1,0 +1,4 @@
+[16]
+examine
+  message_1:
+    "PUSTE NACZYNIE."

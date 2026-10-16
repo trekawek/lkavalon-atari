@@ -1,0 +1,9 @@
+# One quoted line per displayed line; keep spaces inside quotes.
+"W CZASACH ŚWIETNOŚCI SYSTEMU"
+"KOMUNISTYCZNEGO NA ŚWIECIE,"
+"GRUPA NAUKOWCÓW PRZEPROWADZIŁA"
+"GŁOŚNY W TYCH LATACH EKSPERYMENT."
+"^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^"
+"\\xD7\\xBD\\xC4\\xEF\\xEC^ NASTĘPNA STRONA"
+"\\xD7 \\xC7\\xEF\\xD2\\xE5^ POPRZEDNIA"
+"\\xC6\\xC9\\xD2\\xC5^ GRA"

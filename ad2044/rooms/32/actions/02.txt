@@ -1,0 +1,5 @@
+[02]
+examine
+  message_1:
+    "POJEMNIK ZAWIERAJĄCY"
+    "MASĘ BIAŁKOWĄ."

@@ -1,0 +1,2 @@
+[13]
+hide-object hidden_object_id=5

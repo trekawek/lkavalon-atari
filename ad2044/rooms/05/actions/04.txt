@@ -1,0 +1,5 @@
+[04]
+examine
+  message_1:
+    "KALENDARZ"
+show-closeup view_id=1

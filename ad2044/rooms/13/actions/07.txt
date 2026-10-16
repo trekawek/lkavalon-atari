@@ -1,0 +1,9 @@
+[07]
+examine
+  message_1:
+    "METALOWY WIESZAK."
+    "^^^^^^^^^^^^^^^^^"
+    "POCHODZI Z ROKU 1980."
+    "BEZCENNA PAMIĄTKA PO JEDNYM"
+    "Z KOMITETÓW CENTRALNYCH,"
+    "Z TERENÓW EUROPY WSCHODNIEJ."

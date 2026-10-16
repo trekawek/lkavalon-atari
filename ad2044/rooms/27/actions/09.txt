@@ -1,0 +1,10 @@
+[09]
+examine
+  message_1:
+    "JEDEN Z CZTERECH"
+    "ROGÓW DYWANU."
+lift-energy-gated view_id=1 energy_threshold_exclusive=25
+  message_1:
+    "JESTEŚ ZA SŁABY."
+    "^^^^^^^^^^^^^^^"
+    "ZJEDZ COŚ."

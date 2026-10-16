@@ -5,6 +5,7 @@ from pathlib import Path
 import sys
 sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "util"))
 from reference_media import read_reference
+from dictionary_signatures import read as read_signatures
 import json
 import difflib
 
@@ -157,7 +158,7 @@ def main():
                 "confidence": "core-match",
                 "evidence": "Same NFA/CFA and header shape as the APX fig-FORTH kernel, verified against the AD2044 reconstruction.",
             }
-    ad = json.loads((ROOT.parent / "ad2044/dictionary.json").read_text())["words"]
+    ad = read_signatures(ROOT.parent / "ad2044/tools/runtime-signatures.tsv")
     for block in difflib.SequenceMatcher(
         None, [signature(h) for h in ad], [signature(h) for h in ws], autojunk=False
     ).get_matching_blocks():

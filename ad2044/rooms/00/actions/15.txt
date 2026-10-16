@@ -1,0 +1,7 @@
+[15]
+examine
+  message_1:
+    "ROZBITE LAMPY."
+    "   ^^^^^^^^^^^^^   "
+    "ZDEWASTOWANE PRAWDOPODOBNIE"
+    "PRZEZ JAKIEGOŚ CHULIGANA."

@@ -1,0 +1,4 @@
+[17]
+examine
+  message_1:
+    "OTWÓR PALENISKA"

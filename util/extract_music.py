@@ -4,7 +4,7 @@
 Outputs go to ignored build/music directories. Only Python's standard library
 is required. CMC files retain their original Atari segment headers; Wladcy's
 restored gameplay CMC includes six bytes from its runtime memory layout.
-AD2044's structured custom engine is encoded and wrapped in SAP containers.
+AD2044's native custom sound bank is wrapped in SAP containers.
 The pure extraction helpers also support optional forensic reference disks.
 """
 
@@ -21,7 +21,7 @@ import wave
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "ad2044/tools"))
 import music_sap
-import structured_assets
+import forth_assets
 from reference_media import read_reference
 
 REFERENCES = {
@@ -227,9 +227,8 @@ def validate_asap(executable, files, manifest):
 def build_music(game):
     """Generate listening/export files from the current editable inputs."""
     root = ROOT / game
-    manifest = json.loads((root / "music/extraction.json").read_text("ascii"))
     if game == "ad2044":
-        bank = structured_assets.encode_file(root, "music/sound-bank.json")
+        bank = forth_assets.read_asset(root, "music/ad2044.snd")
         effects = [command for command, _ in music_sap.COMMANDS if command not in (0x19, 0x50)]
         files = {
             "sound-bank.bin": bank,
@@ -237,12 +236,22 @@ def build_music(game):
             "game-over.sap": music_sap._sap(bank, [0x19], "A.D. 2044 - game over"),
             "sound-effects.sap": music_sap._sap(bank, effects, "A.D. 2044 - sound effects"),
         }
+        manifest = {
+            "game": game,
+            "build_inputs": ["music/ad2044.snd"],
+            "files": [
+                {"file": "title.sap", "format": "SAP", "songs": 1},
+                {"file": "game-over.sap", "format": "SAP", "songs": 1},
+                {"file": "sound-effects.sap", "format": "SAP", "songs": len(effects)},
+                {"file": "sound-bank.bin", "format": "raw custom sound bank"},
+            ],
+        }
     else:
+        manifest = json.loads((root / "music/extraction.json").read_text("ascii"))
         files = {name: (root / "music" / name).read_bytes()
                  for name, *_ in CMC_RECORDS[game]}
-    manifest["provenance_note"] = "Source disk fields describe the historical release; file hashes describe the current build inputs."
-    manifest["build_inputs"] = (["music/sound-bank.json"] if game == "ad2044" else
-                                ["music/" + name for name in files])
+        manifest["provenance_note"] = "Source disk fields describe the historical release; file hashes describe the current build inputs."
+        manifest["build_inputs"] = ["music/" + name for name in files]
     for track in manifest["files"]:
         track["size"] = len(files[track["file"]])
         track["sha256"] = digest(files[track["file"]])
@@ -269,6 +278,8 @@ def main():
         if args.check:
             original, _ = extract_game(game, read_reference(source))
             for filename, data in original.items():
+                if game == "ad2044" and filename == "extraction.json":
+                    continue
                 actual = ((ROOT / game / "music/extraction.json").read_bytes()
                           if filename == "extraction.json" else files[filename])
                 if actual != data:

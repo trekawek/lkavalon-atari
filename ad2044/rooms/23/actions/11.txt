@@ -1,0 +1,2 @@
+[11]
+show-closeup view_id=3

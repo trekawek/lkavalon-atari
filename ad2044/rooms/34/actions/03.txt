@@ -1,0 +1,5 @@
+[03]
+examine
+  message_1:
+    "MAHONIOWY BLAT BIURKA."
+show-closeup view_id=1

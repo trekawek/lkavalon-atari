@@ -1,0 +1,6 @@
+[02]
+examine
+  message_1:
+    "KLUCZ MAGNETYCZNY"
+take-item
+discard-object hidden_object_id=110

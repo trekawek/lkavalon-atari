@@ -1,0 +1,5 @@
+[18]
+examine
+  message_1:
+    "PRZYKRYWADŁO"
+hide-object hidden_object_id=6

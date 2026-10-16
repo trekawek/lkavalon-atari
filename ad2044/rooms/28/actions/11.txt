@@ -1,0 +1,5 @@
+[11]
+examine
+  message_1:
+    "NIBY KSIĄ\\x7AKI."
+show-closeup view_id=2

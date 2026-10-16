@@ -1,0 +1,5 @@
+[06]
+examine
+  message_1:
+    "SAM SPRAWDZ"
+show-closeup view_id=1

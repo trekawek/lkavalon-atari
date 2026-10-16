@@ -1,0 +1,4 @@
+# One quoted line per displayed line; keep spaces inside quotes.
+"   \\x7AYCZĘ WIELU EKSCYTUJĄCYCH   "
+"   MOMENTÓW PODCZAS GRY.   "
+"AUTOR"

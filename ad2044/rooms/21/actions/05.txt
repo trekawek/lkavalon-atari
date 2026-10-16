@@ -1,0 +1,4 @@
+[05]
+examine
+  message_1:
+    "WODA, CHLOR, METALE CIĘ\\x7AKIE."

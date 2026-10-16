@@ -1,0 +1,5 @@
+[07]
+examine
+  message_1:
+    "NOGA STOŁOWA."
+    "KOŚĆ SŁONIOWA."

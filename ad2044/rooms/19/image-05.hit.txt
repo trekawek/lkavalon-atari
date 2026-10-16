@@ -1,0 +1,8 @@
+# rooms/19: clickable zones for image-05.png
+size 4 5
+grid
+.D.7
+DDE7
+DDE7
+DDE7
+DDE7

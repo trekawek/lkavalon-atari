@@ -1,0 +1,2 @@
+[05]
+show-closeup view_id=2

@@ -1,0 +1,6 @@
+[21]
+examine
+  message_1:
+    "WYŁĄCZNIK"
+off-remove-remote revealed_object_id=6 remote_room_id=10 remote_object_id=1
+  remote_exit_direction=0

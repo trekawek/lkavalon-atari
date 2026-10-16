@@ -13,6 +13,7 @@ import html
 import importlib.util
 import json
 from pathlib import Path
+import sys
 
 import graphics_common
 import pack_assets
@@ -155,14 +156,85 @@ def extract_game(game, disks):
     return files, manifest
 
 
+def check_ad_authored_graphics(root, files):
+    """Compare live AD picture/font/cursor content, allowing new disk placement.
+
+    Reference-only duplicates from the old saved inventory are intentionally
+    excluded. This does not check game logic, action text, or whole disk bytes.
+    A picture's compression flag is not visual content; its position, geometry,
+    pixel indices and optional color registers are compared after decoding.
+    """
+    sys.path.insert(0, str(ROOT / "ad2044/tools"))
+    import content
+    import forth_assets
+
+    root = Path(root)
+    helper = load_helper("ad2044")
+    groups = content.build_groups(root)
+    report = json.loads(files["extraction.json"])["details"]
+
+    def live(side, group, slot):
+        if (side, group) == (1, 21):
+            return slot is not None and 0 <= slot < 6
+        return slot is None and ((side == 1 and 3 <= group <= 18)
+                                 or (side == 2 and 1 <= group <= 23))
+
+    expected = {}
+    for asset in report["assets"]:
+        if asset["kind"] == "cursor player bitplane":
+            cursor = forth_assets.read_asset(root, "interface/cursor.pmg")
+            if cursor != files[asset["packed_file"]]:
+                raise ValueError("Authored graphic differs from release: interface/cursor.pmg")
+            continue
+        side, group = asset["source"]["side"], asset["source"]["group"]
+        slot = asset.get("slot")
+        if not live(side, group, slot):
+            continue
+        key = side, group, slot, asset["record"]
+        decoded = files[asset["decoded_file"]]
+        expected[key] = decoded[:-1] if "bitmap_offset" in asset else decoded
+
+    actual = {}
+    for (side, group), body in groups.items():
+        slots = range(6) if (side, group) == (1, 21) else (None,)
+        for slot in slots:
+            if not live(side, group, slot):
+                continue
+            start, end = (slot * 512, (slot + 1) * 512) if slot is not None else (0, len(body))
+            records, _ = helper.records(body, start, end)
+            special = side == 1 and group in (3, 4)
+            for record in records:
+                index, data = record["index"], record["body"]
+                key = side, group, slot, index
+                if special and index == 1:
+                    actual[key] = data
+                elif (special or (side, group) == (2, 22)) and index == 0:
+                    actual[key] = helper.unpack(data)
+                elif index >= 2:
+                    picture = helper.picture(data)
+                    if picture is not None:
+                        actual[key] = picture["decoded"][:-1]
+    if actual.keys() != expected.keys():
+        raise ValueError("Authored graphic resource IDs differ from release: "
+                         f"missing={expected.keys()-actual.keys()}, extra={actual.keys()-expected.keys()}")
+    for key, original in expected.items():
+        if actual[key] != original:
+            raise ValueError(f"Authored graphic differs from release: side/group/slot/record={key}")
+    return len(expected) + 1  # The separately checked cursor.
+
+
 def check_exports(game, files, disks):
     """Check retained views and the structured replacements of old exports.
 
+    AD2044 instead compares authored pictures/fonts/cursor by decoded content;
+    it no longer has a retained physical-layout or extraction-file manifest.
     Removed raw hit maps and duplicate group containers are checked through
     their complete re-encoded disk spans. They must be explicitly accounted
     for in the migration catalog, so a missing genuine graphic still fails.
     """
     root = ROOT / game
+    if game == "ad2044":
+        return check_ad_authored_graphics(root, files)
     catalog = root / "assets/binary-migration.json"
     migrations = json.loads(catalog.read_text("ascii"))["files"] if catalog.exists() else {}
     for filename, data in files.items():
@@ -196,7 +268,7 @@ def main():
         "--game", choices=tuple(REFERENCES), help="default: all three games"
     )
     parser.add_argument(
-        "--check", action="store_true", help="compare existing exports without writing"
+        "--check", action="store_true", help="compare current graphics with the historical release without writing"
     )
     args = parser.parse_args()
     for game in ([args.game] if args.game else REFERENCES):
@@ -207,7 +279,7 @@ def main():
         files, _ = extract_game(game, disks)
         output = ROOT / game / "build/graphics"
         if args.check:
-            check_exports(game, files, disks)
+            checked = check_exports(game, files, disks)
         for filename, data in files.items():
             target = output / filename
             if not args.check:
@@ -217,9 +289,11 @@ def main():
             name.endswith(".png") and not name.startswith("contact-sheets/")
             for name in files
         )
-        print(
-            f"{game}: {'checked' if args.check else 'extracted'} {previews} previews, {len(files)} files"
-        )
+        if args.check and game == "ad2044":
+            print(f"ad2044: checked {checked} authored pictures/fonts/cursor against release; "
+                  "disk placement, text and program are outside this check")
+        else:
+            print(f"{game}: {'checked' if args.check else 'extracted'} {previews} previews, {len(files)} files")
 
 
 if __name__ == "__main__":

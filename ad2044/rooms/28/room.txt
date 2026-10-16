@@ -1,0 +1,5 @@
+room 28
+# Drawable IDs; 0 is an empty slot available during play.
+view 0: 0 0 0 0
+view 1: 4 0 0
+view 2: 0 0

@@ -1,0 +1,7 @@
+[12]
+examine
+  message_1:
+    "CHRUPKI."
+eat object_id=4 energy_added=70
+  message_1:
+    "BARDZO SMACZNE."

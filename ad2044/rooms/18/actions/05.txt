@@ -1,0 +1,5 @@
+[05]
+examine
+  message_1:
+    "MARMUROWA TABLICZKA."
+show-closeup view_id=1

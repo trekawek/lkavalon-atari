@@ -1,0 +1,4 @@
+[02]
+examine
+  message_1:
+    "KOŁO RATUNKOWE."

@@ -1,0 +1,5 @@
+[07]
+examine
+  message_1:
+    "PIERWSZA SKRYTKA"
+show-closeup view_id=3

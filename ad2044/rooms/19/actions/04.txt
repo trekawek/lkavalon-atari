@@ -1,0 +1,5 @@
+[04]
+examine
+  message_1:
+    "STÓŁ."
+show-closeup view_id=1

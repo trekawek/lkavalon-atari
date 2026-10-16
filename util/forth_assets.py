@@ -25,8 +25,8 @@ from pathlib import Path
 # spans deliberately omit the following saved ;S token (77 12).
 ASSETS_BY_GAME = {
     "ad2044": (
-        {"path": "graphics/packed/cursor-players.bin", "start": 0x4CA1, "size": 39},
-        {"path": "music/sound-bank.json", "start": 0x5E00, "size": 0xE2F},
+        {"path": "interface/cursor.pmg", "start": 0x4CA1, "size": 39},
+        {"path": "music/ad2044.snd", "start": 0x5E00, "size": 0xE2F},
     ),
     "klatwa": (
         {"path": "graphics/cursors/player-planes.bin", "start": 0x4E8D, "size": 39},

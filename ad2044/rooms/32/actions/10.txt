@@ -1,0 +1,11 @@
+[10]
+examine
+  message_1:
+    "MASA CROMOSOMOWA."
+    "^^^^^^^^^^^^^^^^"
+    "ZAWIERA 23 PARY"
+    "LUDZKICH CHOMOSOMÓW."
+chromosome-ending expected_answer="Y"
+  message_1:
+    "TAKICH NIE MO\\x7AESZ"
+    "WPROWADZIĆ."

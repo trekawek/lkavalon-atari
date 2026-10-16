@@ -1,0 +1,4 @@
+[19]
+release-sub-counter hidden_object_id=5 counter_delta=4 counter_index=3
+  target_counter_value=5 question_object_id=11 answer_object_id=12 success_state_index=4
+  expected_answer="ASIA"

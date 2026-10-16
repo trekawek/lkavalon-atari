@@ -1,0 +1,8 @@
+# items/118-121: clickable zones for item-120.png
+size 4 4
+legend A=120
+grid
+.AA.
+.AA.
+.AA.
+....

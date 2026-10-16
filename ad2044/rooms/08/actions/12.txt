@@ -1,0 +1,4 @@
+[12]
+examine
+  message_1:
+    "RADIATORY"

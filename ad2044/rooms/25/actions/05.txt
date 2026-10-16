@@ -1,0 +1,9 @@
+[05]
+examine
+  message_1:
+    "UDERZYŁEŚ W COŚ TWARDEGO."
+    "CHYBA JEST TO GŁAZ."
+refuse-with-overlay revealed_object_id_or_255=255
+  message_1:
+    "NIE MO\\x7AESZ TEGO WZIĄĆ."
+    "JESTEŚ ZA SŁABY."

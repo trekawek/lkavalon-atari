@@ -1,0 +1,9 @@
+# One quoted line per displayed line; keep spaces inside quotes.
+"PRODUKCJA"
+"    "
+"    "
+" R.M.P. SOFTWARE "
+"    "
+"  37 450 STALOWA WOLA  "
+"    "
+"SK.POCZ. 1594"

@@ -1,0 +1,2 @@
+[17]
+animate-close hidden_object_id=6 exit_direction=0 animation_frame_count=6

@@ -10,6 +10,7 @@ from pathlib import Path
 import sys
 sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "util"))
 from reference_media import read_reference
+from dictionary_signatures import read as read_signatures
 from unittest.mock import patch
 
 HERE = Path(__file__).resolve().parent
@@ -58,6 +59,15 @@ class DictionaryTests(unittest.TestCase):
         malformed[4] = 0
         with self.assertRaises(ValueError):
             d.memory(malformed)
+
+    def test_compact_shared_signatures_match_the_original_dictionary(self):
+        original = d.dictionary(self.data)
+        signatures = read_signatures(ROOT / "tools/runtime-signatures.tsv")
+        self.assertEqual(len(original), len(signatures))
+        for word, compact in zip(original, signatures):
+            with self.subTest(cfa=f"{word['cfa']:04X}"):
+                for field in ("cfa", "pfa", "end", "flags", "suffix", "code"):
+                    self.assertEqual(word[field], compact[field])
 
     def test_dictionary_link_cannot_point_forward_or_cycle(self):
         data = bytearray(self.data)

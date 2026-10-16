@@ -1,0 +1,5 @@
+[11]
+examine
+  message_1:
+    "ZAGIĘTY RÓG"
+show-closeup-19 view_id=2

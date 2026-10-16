@@ -1,0 +1,5 @@
+[05]
+examine
+  message_1:
+    "KLUCZ MAGNETYCZNY"
+take-item

@@ -7,12 +7,17 @@ import importlib.util
 import json
 from pathlib import Path
 import tempfile
+import shutil
+import sys
 import unittest
 
 import pack_assets
 import structured_assets as assets
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "ad2044/tools"))
+import room_text
+import world
 spec = importlib.util.spec_from_file_location("gam_asset_formats", ROOT / "klatwa/tools/asset_formats.py")
 gam = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(gam)
@@ -162,39 +167,65 @@ class CanonicalGameAssets(unittest.TestCase):
                 self.assertFalse(any((ROOT / game / "assets").rglob("*.bin")))
                 self.assertFalse(any((ROOT / game / "graphics").rglob("*.gam")))
 
-    def test_ad2044_message_state_and_grid_edits_change_only_their_values(self):
-        spec = importlib.util.spec_from_file_location("ad_asset_formats", ROOT / "ad2044/tools/asset_formats.py")
-        ad = importlib.util.module_from_spec(spec)
-        spec.loader.exec_module(ad)
+    def test_ad_plain_message_edit_changes_only_its_encoded_glyph(self):
+        source = ROOT / "ad2044/rooms/01/actions"
+        before = room_text.encode_actions(source)
+        with tempfile.TemporaryDirectory() as tmp:
+            target = Path(tmp) / "actions"
+            shutil.copytree(source, target)
+            path = target / "02.txt"
+            text = path.read_text()
+            self.assertIn('"KORYTARZ."', text)
+            path.write_text(text.replace('"KORYTARZ."', '"KORYTARZ!"'))
+            after = room_text.encode_actions(target)
+        changes = [i for i, pair in enumerate(zip(before, after)) if pair[0] != pair[1]]
+        self.assertEqual(len(before), len(after))
+        self.assertEqual(len(changes), 1)
+        self.assertEqual((before[changes[0]], after[changes[0]]), (ord("."), ord("!")))
+
+    def test_ad_plain_state_field_changes_only_its_encoded_cell(self):
         root = ROOT / "ad2044"
-        cases = [
-            ("assets/records/s1-g05-r001.json", "message"),
-            ("assets/state/initial-state.json", "state"),
-            ("assets/records/s1-g05-r009.json", "grid"),
-        ]
-        for filename, kind in cases:
-            with self.subTest(kind=kind):
-                document = json.loads((root / filename).read_text())
-                read = lambda name: assets.encode_file(root, name)
-                before = ad.encode(document, read)
-                if kind == "message":
-                    field = document["objects"][2]["actions"][1]["fields"][0]
-                    self.assertEqual(field["lines"][0], "KORYTARZ.")
-                    field["lines"][0] = "KORYTARZ!"
-                elif kind == "state":
-                    self.assertEqual(document["fields"][0]["value"], 0)
-                    document["fields"][0]["value"] = 1
+        with tempfile.TemporaryDirectory() as tmp:
+            target = Path(tmp)
+            for path in world.dependencies(root):
+                destination = target / path.relative_to(root)
+                destination.parent.mkdir(parents=True, exist_ok=True)
+                shutil.copyfile(path, destination)
+            before = world.build_state(target)
+            path = target / "world/initial.txt"
+            text = path.read_text()
+            self.assertIn("current-room 0", text)
+            path.write_text(text.replace("current-room 0", "current-room 1"))
+            after = world.build_state(target)
+        self.assertEqual(before[0], 0)
+        self.assertEqual(after[0], 1)
+        self.assertEqual(before[1:], after[1:])
+
+    def test_ad_plain_grid_edit_reaches_the_native_hitmap(self):
+        source = ROOT / "ad2044/rooms/00/image-03.hit.txt"
+        document = room_text.read_hitmap(source)
+        self.assertEqual(document["object_ids"][0][0], 18)
+        before = room_text.hitmap_body(document)
+        document["object_ids"][0][0] = 19
+        after = room_text.hitmap_body(document)
+        # Recompression is allowed to change size or run layout: verify the
+        # decoded field, rather than preserving a historical compression plan.
+        def unpack(data):
+            result = bytearray()
+            index = 0
+            while index < len(data):
+                value = data[index]
+                index += 1
+                if value == 254:
+                    count, value = data[index:index + 2]
+                    index += 2
+                    result.extend(bytes([value]) * (count or 256))
                 else:
-                    self.assertEqual(document["object_ids"][0][0], 18)
-                    document["object_ids"][0][0] = 19
-                after = ad.encode(document, read)
-                self.assertEqual(len(after), len(before))
-                changed = [i for i, (a, b) in enumerate(zip(before, after)) if a != b]
-                self.assertEqual(len(changed), 1)
-                if kind == "state":
-                    self.assertEqual(changed, [0])
-                elif kind == "grid":
-                    self.assertEqual(changed, [4])
+                    result.append(value)
+            return bytes(result)
+        old, edited = unpack(before), unpack(after)
+        self.assertEqual((old[2], edited[2]), (18, 19))
+        self.assertEqual(old[:2] + old[3:], edited[:2] + edited[3:])
 
     def test_saved_room_field_changes_exactly_its_stored_byte(self):
         for game in ("klatwa", "wladcy-ciemnosci"):

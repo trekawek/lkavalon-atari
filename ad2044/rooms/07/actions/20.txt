@@ -1,0 +1,2 @@
+[20]
+disable-flag hidden_object_id=8 cleared_state_index=2

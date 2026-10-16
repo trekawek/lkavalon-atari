@@ -1,0 +1,11 @@
+[08]
+examine
+  message_1:
+    "ZASPANA PORTIERKA W KUFAJCE."
+    "\\x7AĄDA OKAZANIA ODPOWIEDNIEGO"
+    "DOKUMENTU."
+show-item-open revealed_object_id=4 exit_direction=0 animation_frame_count=3
+  required_inventory_id=111
+  message_1:
+    "CO MI TU TOWARZYSZKA"
+    "WCISKA?"

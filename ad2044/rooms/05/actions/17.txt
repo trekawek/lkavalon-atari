@@ -1,0 +1,5 @@
+[17]
+examine
+  message_1:
+    "PUZDERKO"
+reveal-object revealed_object_id=5

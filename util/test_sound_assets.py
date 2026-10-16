@@ -1,13 +1,12 @@
 #!/usr/bin/env python3
-"""Check structured sound encoding, edits and original-6502 playback."""
+"""Check native sound input, edits and original-6502 playback."""
 
-import copy
 import importlib.util
-import json
 from pathlib import Path
 import unittest
+import tempfile
 
-import sound_assets
+import forth_assets
 from reference_media import read_reference
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -27,60 +26,32 @@ replay = load_module("sound_replay_helpers", GAME / "tools/test_music_sap.py")
 class SoundAssets(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.document = json.loads((GAME / "music/sound-bank.json").read_text("ascii"))
         cls.original = read_reference(GAME / "reference/ad2044-side1.atr")
-        cls.bank = sound_assets.encode(cls.document, cls.no_read)
-
-    @staticmethod
-    def no_read(name):
-        raise AssertionError(f"Sound source unexpectedly reads {name}")
+        cls.bank = forth_assets.read_asset(GAME, "music/ad2044.snd")
 
     def test_every_byte_matches_the_historical_bank(self):
         self.assertEqual(self.bank, self.original[0x4F90:0x5DBF])
         self.assertEqual(len(self.bank), 3631)
-        self.assertEqual(sound_assets.dependencies(self.document), [])
 
-    def test_editing_named_command_register_changes_only_its_byte(self):
-        doc = copy.deepcopy(self.document)
-        section = next(s for s in doc["sections"] if s["name"] == "command registers")
-        section["fields"][0]["value"] ^= 1
-        expected = bytearray(self.bank)
-        expected[0x27] ^= 1
-        self.assertEqual(sound_assets.encode(doc, self.no_read), expected)
+    def test_native_bank_size_cannot_shift_absolute_sound_addresses(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "music").mkdir()
+            path = root / "music/ad2044.snd"
+            for data in (self.bank[:-1], self.bank + b"\0"):
+                with self.subTest(size=len(data)):
+                    path.write_bytes(data)
+                    with self.assertRaisesRegex(forth_assets.AssetError, "expected 3631"):
+                        forth_assets.read_asset(root, "music/ad2044.snd")
 
-    def test_note_and_envelope_edits_reach_their_named_locations(self):
-        doc = copy.deepcopy(self.document)
-        title = next(s for s in doc["sections"] if s["name"] == "title music")
-        note = next(i for i in title["instructions"] if i["op"] == "note")
-        note["frequency_divider"] ^= 1
-        expected = bytearray(self.bank)
-        expected[note["at"] + 1 - doc["origin"]] ^= 1
-        pitch = next(s for s in doc["sections"] if s["type"] == "pitch-envelope")
-        pitch["steps"][0] = -1
-        expected[pitch["address"] - doc["origin"]] = 255
-        self.assertEqual(sound_assets.encode(doc, self.no_read), expected)
-
-    def test_invalid_duration_and_signed_slide_are_rejected(self):
-        for record in (
-            {"op": "note", "duration_index": 8, "frequency_divider": 40},
-            {"op": "pitch-slide", "step": -129, "end_frequency": 0},
-        ):
-            with self.subTest(record=record), self.assertRaises(ValueError):
-                sound_assets.vm_instruction(record)
-
-    def test_size_changes_cannot_shift_absolute_sound_addresses(self):
-        doc = copy.deepcopy(self.document)
-        section = next(s for s in doc["sections"] if s["type"] == "assembly")
-        section["instructions"].append("NOP")
-        with self.assertRaisesRegex(ValueError, "changed size"):
-            sound_assets.encode(doc, self.no_read)
-
-    def test_stream_address_annotations_are_validated(self):
-        doc = copy.deepcopy(self.document)
-        section = next(s for s in doc["sections"] if s["type"] == "stream")
-        section["instructions"][0]["at"] += 1
-        with self.assertRaisesRegex(ValueError, "instruction address"):
-            sound_assets.encode(doc, self.no_read)
+    def test_native_byte_edit_reaches_the_sap_player_segment(self):
+        changed = bytearray(self.bank)
+        changed[0x27] ^= 1
+        sap = replay.music._sap(bytes(changed), [0x50], "Native sound edit")
+        _, segments = replay.parse_sap(sap)
+        # Standalone SAP playback returns instead of chaining the Atari OS VBI.
+        changed[replay.music.VBI_TAIL - 0x5E00] = 0x60
+        self.assertEqual(segments[0x5E00], changed)
 
     @unittest.skipUnless(replay.MPU is not None, "py65 is required for original replay")
     def test_all_22_commands_match_original_ordered_pokey_writes(self):
@@ -95,7 +66,7 @@ class SoundAssets(unittest.TestCase):
                 original[0x5E1E] = 0
                 original[0x5E27] = command
 
-                sap = replay.music._sap(self.bank, [command], "Structured sound test")
+                sap = replay.music._sap(self.bank, [command], "Native sound test")
                 header, parts = replay.parse_sap(sap)
                 memory = replay.PokeyMemory([0] * 65536)
                 for address, data in parts.items():

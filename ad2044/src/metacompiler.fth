@@ -83,4 +83,4 @@ A200 CONSTANT T-LAST
 ( address T: name defines an executable target CFA emitter. )
 ( value #16 and value #8 emit target literal instructions. )
 ( GAME-MODE preserves AD 2044 boot-loader overlap and assets. )
-( Its D3 disk must already contain the original game assets. )
+( For Atari LOAD, D3 contains the generated game assets. )

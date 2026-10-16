@@ -1,0 +1,2 @@
+[19]
+close-decrement hidden_object_id=7 decremented_state_index=1

@@ -1,0 +1,5 @@
+[07]
+examine
+  message_1:
+    "POKRYWA SEDESU."
+reveal-object revealed_object_id=3

@@ -1,0 +1,13 @@
+[16]
+eat object_id=5 energy_added=100
+  message_1:
+    "CZUJESZ SIĘ ŚWIETNIE."
+    "ZNACZNIE WZROSŁA TWOJA"
+    "ENERGIA POTENCJALNA."
+    "MO\\x7AESZ BEZ OBAW REALIZOWAĆ"
+    "JAK\\x7AE WA\\x7ANĄ DLA LUDZKOŚĆI"
+    "MISJĘ."
+examine
+  message_1:
+    "CZUJESZ SWOJSKI ZAPACH"
+    "ZUPKI REGENERACYJNEJ."

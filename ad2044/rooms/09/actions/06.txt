@@ -1,0 +1,9 @@
+[06]
+examine
+  message_1:
+    "ANTYSTATYCZNA"
+    "WYCIERACZKA"
+lift-energy-gated view_id=2 energy_threshold_exclusive=20
+  message_1:
+    "JESTEŚ BARDZO OSŁABIONY."
+    "NIE MO\\x7AESZ TEGO PODNIEŚĆ."

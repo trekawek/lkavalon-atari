@@ -1,0 +1,10 @@
+[03]
+examine
+  message_1:
+    "NOWOŚĆ."
+    "^^^^^^^^"
+    "SPECJALNE GAŚNICE"
+    "DO GASZENIA WODY."
+refuse-with-overlay revealed_object_id_or_255=255
+  message_1:
+    "PO CO CI TO?"

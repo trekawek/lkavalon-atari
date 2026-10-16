@@ -1,0 +1,5 @@
+[03]
+examine
+  message_1:
+    "WYJŚCIE NA POWIERZCHNIĘ."
+goto-room room_id=25

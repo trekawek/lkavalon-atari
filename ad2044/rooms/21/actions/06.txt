@@ -1,0 +1,7 @@
+[06]
+examine
+  message_1:
+    "TOWARZYSZKA LAMIA RENO."
+swim-require-item view_id=1 required_inventory_id=114
+  message_1:
+    "NIE UMIESZ PŁYWAĆ."

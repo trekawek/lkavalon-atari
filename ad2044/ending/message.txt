@@ -1,0 +1,5 @@
+# One quoted line per displayed line; keep spaces inside quotes.
+"BRAWO ALBERCIK."
+"WYKONAŁEŚ 100 PROCENT MISJI."
+"^^^^^^^^^^^^^^^^^^^^"
+"   \\xD3\\xD0\\xC1\\xC3\\xCA\\xC1^ POCZĄTEK GRY.   "

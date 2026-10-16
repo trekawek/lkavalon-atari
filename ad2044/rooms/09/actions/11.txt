@@ -1,0 +1,6 @@
+[11]
+examine
+  message_1:
+    "NIE SŁYSZYSZ"
+    "NIC PODEJRZANEGO"
+use-relative-exit relative_direction=3

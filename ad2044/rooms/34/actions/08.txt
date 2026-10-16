@@ -1,0 +1,5 @@
+[08]
+examine
+  message_1:
+    "PORTRETY ZAŁO\\x7AYCIELEK"
+    "SEKRETARIATU."

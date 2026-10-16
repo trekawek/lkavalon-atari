@@ -1,0 +1,5 @@
+[05]
+examine
+  message_1:
+    "POKRYWA POJEMNIKA."
+reveal-object revealed_object_id=2

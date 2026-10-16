@@ -1,0 +1,7 @@
+# rooms/13: clickable zones for image-07.png
+size 4 4
+grid
+....
+K..2
+KLL2
+KLL2

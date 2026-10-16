@@ -1,0 +1,76 @@
+# Clickable zone IDs; drawable image IDs are a separate namespace.
+
+[00]
+back
+
+[01]
+back
+
+[02]
+examine
+  message_1:
+    "METALOWA DRABINKA."
+
+[03]
+examine
+  message_1:
+    "WIE\\x7AA DO SKOKÓW."
+
+[04]
+examine
+  message_1:
+    "TRAMPOLINA."
+
+[05]
+examine
+  message_1:
+    "WODA, CHLOR, METALE CIĘ\\x7AKIE."
+
+[06]
+examine
+  message_1:
+    "TOWARZYSZKA LAMIA RENO."
+swim-require-item view_id=1 required_inventory_id=114
+  message_1:
+    "NIE UMIESZ PŁYWAĆ."
+
+[07]
+examine
+  message_1:
+    "BRANZOLETA MAGNETYCZNA."
+take-parameter-object revealed_object_id=2 selected_object_id=113
+
+[08]
+examine
+  message_1:
+    "GŁÓWKA."
+
+[09]
+examine
+  message_1:
+    "RĄCZKA."
+
+[10]
+examine
+  message_1:
+    "NÓ\\x7AKA."
+
+[11]
+examine
+  message_1:
+    "KTO TO MA WIEDZIEĆ,"
+    "KOMPUTER CZY TY?"
+refuse-closeup
+  message_1:
+    "NIE UWA\\x7AASZ, \\x7AE"
+    "JESTEŚ ZBYT NACHALNY."
+
+[12]
+examine
+  message_1:
+    "COŚ, DOŚĆ DOŚĆ."
+
+[13]
+examine
+  message_1:
+    "MIEJSCE DO SIEDZENIA."

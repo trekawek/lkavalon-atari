@@ -1,0 +1,44 @@
+# Clickable zone IDs; drawable image IDs are a separate namespace.
+
+[00]
+back
+
+[01]
+back
+
+[02]
+examine
+  message_1:
+    "WIDZISZ CIEMNOŚĆ."
+
+[03]
+examine
+  message_1:
+    "DOTYKASZ PŁÓTNA."
+cut-with-item revealed_object_id=1 exit_direction=0 animation_frame_count=15
+  required_inventory_id=122
+  message_1:
+    "TYM NIE PRZETNIESZ."
+
+[04]
+examine
+  message_1:
+    "WYCZUWASZ POD NOGAMI"
+    "WEJŚCIE DO WŁAZU."
+goto-room room_id=24
+
+[05]
+examine
+  message_1:
+    "UDERZYŁEŚ W COŚ TWARDEGO."
+    "CHYBA JEST TO GŁAZ."
+refuse-with-overlay revealed_object_id_or_255=255
+  message_1:
+    "NIE MO\\x7AESZ TEGO WZIĄĆ."
+    "JESTEŚ ZA SŁABY."
+
+[06]
+examine
+  message_1:
+    "OKNO NA ŚWIAT."
+use-relative-exit relative_direction=0

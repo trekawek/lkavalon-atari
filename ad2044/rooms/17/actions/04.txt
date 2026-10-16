@@ -1,5 +1,0 @@
-[04]
-examine
-  message_1:
-    "PRZYCISK."
-animate-open revealed_object_id=3 exit_direction=0 animation_frame_count=4

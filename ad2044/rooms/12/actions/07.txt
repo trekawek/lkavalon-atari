@@ -1,6 +1,0 @@
-[07]
-press-if-state-set revealed_object_id=3 exit_direction=0 tested_state_index=4
-  message_1:
-    "NIE UZYSKAŁEŚ ZEZWOLENIA"
-    "NA ZWOLNIENIE WINDY"
-    "DLA TWOICH POTRZEB."

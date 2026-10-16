@@ -1,0 +1,32 @@
+# Clickable zone IDs; drawable image IDs are a separate namespace.
+
+[00]
+back
+
+[01]
+back
+
+[02]
+use-relative-exit relative_direction=1
+examine
+  message_1:
+    "KORYTARZ."
+
+[03]
+show-closeup view_id=1
+
+[04]
+examine
+  message_1:
+    "OZDOBNE ELEMENTY KLIMATYZACJI."
+
+[05]
+examine
+  message_1:
+    "TABLICA Z NIERDZEWNEJ"
+    "STALI."
+
+[06]
+examine
+  message_1:
+    "ŚRUBY M16."

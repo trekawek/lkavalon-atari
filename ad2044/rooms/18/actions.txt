@@ -1,0 +1,53 @@
+# Clickable zone IDs; drawable image IDs are a separate namespace.
+
+[00]
+back
+
+[01]
+back
+
+[02]
+use-relative-exit relative_direction=1
+
+[03]
+examine
+  message_1:
+    "PRZEBIERALNIE."
+open-with-item object_id=2 required_inventory_id=255 exit_direction=3
+  message_1:
+    "NIESTETY, ZAMEK REAGUJE"
+    "TYLKO NA GŁOS"
+    "UPOWA\\x7ANIONEJ OSOBY."
+
+[04]
+examine
+  message_1:
+    "NIEDOMKNIĘTE DRZWICZKI."
+open-exit revealed_object_id=2 exit_direction=3
+
+[05]
+examine
+  message_1:
+    "MARMUROWA TABLICZKA."
+show-closeup view_id=1
+
+[06]
+examine
+  message_1:
+    "TO SĄ SCHODY."
+
+[07]
+examine
+  message_1:
+    "MARMUROWE LITERY."
+
+[08]
+examine
+  message_1:
+    "MARMUROWA STRZAŁKA."
+
+[09]
+close-exit hidden_object_id=2 exit_direction=3
+
+[10]
+use-relative-exit relative_direction=3

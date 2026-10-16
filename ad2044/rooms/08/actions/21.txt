@@ -1,3 +1,0 @@
-[21]
-hide-object hidden_object_id=7
-show-closeup view_id=2

@@ -1,5 +1,0 @@
-[06]
-examine
-  message_1:
-    "DAMSKA TOREBKA"
-reveal-object revealed_object_id=5

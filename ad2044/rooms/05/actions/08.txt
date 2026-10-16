@@ -1,5 +1,0 @@
-[08]
-examine
-  message_1:
-    "JAKIEŚ DRZWICZKI"
-reveal-object revealed_object_id=7

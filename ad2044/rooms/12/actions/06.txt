@@ -1,4 +1,0 @@
-[06]
-examine
-  message_1:
-    "DRZWI DO GŁÓWNEJ WINDY"

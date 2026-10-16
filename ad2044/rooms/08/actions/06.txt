@@ -1,6 +1,0 @@
-[06]
-examine
-  message_1:
-    "SYSTEM ŁĄCZNOŚCI"
-    "Z CENTRALNYM STEROWNIKIEM"
-    "GŁÓWNEJ WINDY"

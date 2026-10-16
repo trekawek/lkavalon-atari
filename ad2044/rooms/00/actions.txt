@@ -1,0 +1,127 @@
+# Clickable zone IDs; drawable image IDs are a separate namespace.
+
+[00]
+back
+
+[01]
+back
+
+[02]
+use-relative-exit relative_direction=0
+examine
+  message_1:
+    "KORYTARZ."
+
+[03]
+examine
+  message_1:
+    "PODŁOGA Z TWORZYWA EMITUJĄCEGO"
+    "PROMIENIOWANIE ELEKTROMAGNETYCZNE"
+    "W PAŚMIE WIDZIALNYM."
+
+[04]
+examine
+  message_1:
+    "KRATKA WENTYLACYJNA."
+
+[05]
+examine
+  message_1:
+    "LAMPY POHIBERNACYJNE."
+    "   ^^^^^^^^^^^^^^^   "
+    "WZMACNIAJĄ TWOJĄ ENERGIĘ"
+    "POTENCJALNĄ,OSŁABIONĄ"
+    "STANEM HIBERNACJI."
+break-reveal revealed_object_id=4 unused_parameter_2=0
+
+[06]
+examine
+  message_1:
+    "CZUJNIK PRZECIWPO\\x7AAROWY."
+
+[07]
+open-with-item object_id=3 required_inventory_id=255 exit_direction=0
+  message_1:
+    "TYM NIE OTWORZYSZ"
+examine
+  message_1:
+    "DRZWI STEROWANE ELEKTRONICZNIE"
+    "PRZEZ SYSTEM KOMPUTEROWY."
+
+[08]
+examine
+  message_1:
+    "POJEMNIK HIBERNACYJNY."
+
+[09]
+lift-energy-gated view_id=2 energy_threshold_exclusive=0
+  message_1:
+examine
+  message_1:
+    "MATERAC HIBERNACYJNY."
+    "   ^^^^^^^^^^^^^^^^^^^   "
+    "ZAPOBIEGA POWSTAWANIU ODLE\\x7AYN."
+
+[10]
+show-closeup view_id=1
+examine
+  message_1:
+    "DĘBOWY BLAT STOŁU."
+
+[11]
+examine
+  message_1:
+    "KUBEK Z NIEOKREŚLONEGO TWORZYWA."
+
+[12]
+examine
+  message_1:
+    "PRAWDOPODOBNIE JEST TO TALERZ."
+
+[13]
+examine
+  message_1:
+    "TYTANOWA ŁY\\x7AKA."
+
+[14]
+examine
+  message_1:
+    "ELEKTRONICZNE OBWODY"
+    "PODTRZYMYWANIA \\x7AYCIA."
+
+[15]
+examine
+  message_1:
+    "ROZBITE LAMPY."
+    "   ^^^^^^^^^^^^^   "
+    "ZDEWASTOWANE PRAWDOPODOBNIE"
+    "PRZEZ JAKIEGOŚ CHULIGANA."
+
+[16]
+eat object_id=5 energy_added=100
+  message_1:
+    "CZUJESZ SIĘ ŚWIETNIE."
+    "ZNACZNIE WZROSŁA TWOJA"
+    "ENERGIA POTENCJALNA."
+    "MO\\x7AESZ BEZ OBAW REALIZOWAĆ"
+    "JAK\\x7AE WA\\x7ANĄ DLA LUDZKOŚĆI"
+    "MISJĘ."
+examine
+  message_1:
+    "CZUJESZ SWOJSKI ZAPACH"
+    "ZUPKI REGENERACYJNEJ."
+
+[17]
+drink object_id=6 energy_added=30 unused_parameter_3=1
+  message_1:
+    "JESTEŚ ROZCZAROWANY."
+    "   ^^^^^^^^^^^^^^^^^^^   "
+    "NIGDY PRZED HIBERNACJĄ"
+    "NIE PIŁEŚ NAPOJÓW TAK"
+    "NISKOPROCENTOWYCH."
+examine
+  message_1:
+    "NAPÓJ."
+
+[18]
+close-exit hidden_object_id=3 exit_direction=0

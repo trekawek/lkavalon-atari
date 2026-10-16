@@ -1,4 +1,0 @@
-[03]
-examine
-  message_1:
-    "KRYSZTAŁOWE LUSTRO."

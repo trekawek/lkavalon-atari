@@ -1,6 +1,0 @@
-[09]
-examine
-  message_1:
-    "KLUCZ."
-turn-clear-flag hidden_object_id=4 exit_direction=5 animation_frame_count=5
-  cleared_state_index=9

@@ -1,6 +1,0 @@
-[17]
-examine
-  message_1:
-    "OTWARTA TOREBKA"
-hide-object hidden_object_id=5
-show-closeup view_id=2

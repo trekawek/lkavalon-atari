@@ -1,5 +1,0 @@
-[04]
-examine
-  message_1:
-    "POJEMNIK Z MASĄ"
-    "CHROMOSOMOWĄ."

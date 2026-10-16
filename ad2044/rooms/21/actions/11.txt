@@ -1,9 +1,0 @@
-[11]
-examine
-  message_1:
-    "KTO TO MA WIEDZIEĆ,"
-    "KOMPUTER CZY TY?"
-refuse-closeup
-  message_1:
-    "NIE UWA\\x7AASZ, \\x7AE"
-    "JESTEŚ ZBYT NACHALNY."

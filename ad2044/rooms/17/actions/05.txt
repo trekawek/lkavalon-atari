@@ -1,9 +1,0 @@
-[05]
-examine
-  message_1:
-    "ILUMINATOR Z WIDOKIEM"
-    "NA BASEN."
-adult-gated-closeup view_id=1 expected_answer="TAK"
-  message_1:
-    "CHCESZ CZEGOŚ"
-    "MAŁOLACIE ?"

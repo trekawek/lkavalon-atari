@@ -1,5 +1,0 @@
-[17]
-examine
-  message_1:
-    "WNĘTRZE SZAFY."
-show-closeup view_id=1

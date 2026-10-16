@@ -1,5 +1,0 @@
-[24]
-examine
-  message_1:
-    "OTWARTE DRZWICZKI"
-hide-object hidden_object_id=7

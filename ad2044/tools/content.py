@@ -132,7 +132,7 @@ def build_groups(root=ROOT):
         # Resource zero is the old editor's label list, never read by the game.
         records[0] = b"\0\0"
         records[1] = (b"\1" if room_id == 36 else
-                      room_text.encode_actions(directory / "actions"))
+                      room_text.encode_actions(directory / "actions.txt"))
         key = (1, room_id + 5) if room_id < 14 else (2, room_id - 13)
         groups[key] = collection(records)
 
@@ -149,7 +149,7 @@ def build_groups(root=ROOT):
         # INVENTORY-RESOURCE-BASE starts two bytes into record zero. Its nested
         # framing must land at the same next record as the ordinary outer walk.
         records[0] = b"\5\0\1\0\1\0\0"
-        records[1] = room_text.encode_actions(directory / "actions")
+        records[1] = room_text.encode_actions(directory / "actions.txt")
         data = collection(records)
         if len(data) > 512:
             raise ValueError(f"{directory}: inventory bank needs {len(data)} bytes; capacity is 512")

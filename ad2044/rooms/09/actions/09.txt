@@ -1,4 +1,0 @@
-[09]
-examine
-  message_1:
-    "ŁĄCZNIK TRANSFORMACYJNY"

@@ -1,0 +1,118 @@
+# Clickable zone IDs; drawable image IDs are a separate namespace.
+
+[00]
+back
+
+[01]
+back
+
+[02]
+examine
+  message_1:
+    "PIEC DO PALENIA"
+    "ŚMIECI"
+
+[03]
+examine
+  message_1:
+    "OKAP Z INSTALACJĄ"
+    "PRZECIWPO\\x7AAROWĄ"
+
+[04]
+examine
+  message_1:
+    "POJEMNIK NA ODPADY"
+    "ORGANICZNE"
+
+[05]
+show-closeup view_id=4
+
+[06]
+examine
+  message_1:
+    "POJEMNIK NA PRODUKTY"
+    "SPO\\x7AYWCZE"
+show-closeup view_id=2
+
+[07]
+examine
+  message_1:
+    "DRZWICZKI DO PIECA"
+open-if-counter-clear revealed_object_id=5 tested_state_index=2
+  incremented_state_index=1
+  message_1:
+    "OSZALAŁEŚ"
+    "^^^^^^^^^"
+    "PIEC JEST WŁĄCZONY"
+
+[08]
+examine
+  message_1:
+    "DRUGIE DRZWICZKI DO PIECA"
+open-if-counter-clear revealed_object_id=6 tested_state_index=2
+  incremented_state_index=1
+  message_1:
+    "OSZALAŁEŚ"
+    "^^^^^^^^^"
+    "PIEC JEST WŁĄCZONY"
+
+[09]
+examine
+  message_1:
+    "TRZECIE DRZWICZKI DO PIECA"
+open-if-counter-clear revealed_object_id=7 tested_state_index=2
+  incremented_state_index=1
+  message_1:
+    "OSZALAŁEŚ"
+    "^^^^^^^^^"
+    "PIEC JEST WŁĄCZONY"
+
+[10]
+examine
+  message_1:
+    "ZAMYKADŁO"
+show-closeup-18 view_id=3
+
+[11]
+examine
+  message_1:
+    "PRZYKRYWKA NA POJEMNIK"
+
+[12]
+examine
+  message_1:
+    "NIE WIDZISZ?"
+
+[13]
+examine
+  message_1:
+    "OTWORY WENTYLACYJNE"
+
+[14]
+enable-if-clear revealed_object_id=8 cleared_view_id=1 tested_state_index=1
+  set_state_index=2
+  message_1:
+    "ZAMKNIJ NAJPIERW DRZWICZKI"
+
+[15]
+close-decrement hidden_object_id=5 decremented_state_index=1
+
+[16]
+examine
+  message_1:
+    "OTWÓR PALENISKA"
+show-closeup view_id=1
+
+[17]
+examine
+  message_1:
+    "OTWÓR PALENISKA"
+
+[18]
+close-decrement hidden_object_id=6 decremented_state_index=1
+
+[19]
+close-decrement hidden_object_id=7 decremented_state_index=1
+
+[20]
+disable-flag hidden_object_id=8 cleared_state_index=2

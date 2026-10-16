@@ -1,5 +1,0 @@
-[14]
-examine
-  message_1:
-    "ELEKTRONICZNE OBWODY"
-    "PODTRZYMYWANIA \\x7AYCIA."

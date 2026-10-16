@@ -1,6 +1,0 @@
-[06]
-examine
-  message_1:
-    "POJEMNIK NA PRODUKTY"
-    "SPO\\x7AYWCZE"
-show-closeup view_id=2

@@ -1,7 +1,0 @@
-[06]
-examine
-  message_1:
-    "ELEKTRONICZNA PIECZĄTKARKA."
-    "^^^^^^^^^^^^^^^^^^^^^^"
-    "NAJWIĘKSZE OSIĄGNIĘCIE"
-    "KOBIECEJ MYŚLI TECHNICZNEJ."

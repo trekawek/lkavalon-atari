@@ -1,0 +1,75 @@
+# Clickable zone IDs; drawable image IDs are a separate namespace.
+
+[00]
+back
+
+[01]
+back
+
+[02]
+examine
+  message_1:
+    "UKŁAD STEROWANIA WINDĄ"
+show-closeup view_id=1
+
+[03]
+examine
+  message_1:
+    "SCHOWEK"
+show-closeup view_id=2
+
+[04]
+examine
+  message_1:
+    "TAKIE SOBIE COŚ."
+
+[05]
+examine
+  message_1:
+    "BARIERKA"
+
+[06]
+examine
+  message_1:
+    "DRZWI"
+open-exit revealed_object_id=3 exit_direction=3
+
+[07]
+examine
+  message_1:
+    "LAMPA"
+
+[08]
+examine
+  message_1:
+    "WENTYLACJA"
+
+[09]
+use-relative-exit relative_direction=3
+
+[10]
+close-exit hidden_object_id=3 exit_direction=3
+
+[11]
+select-floor floor_id=1 indicator_object_base=4 door_object_id=3 animation_object_id=12
+
+[12]
+select-floor floor_id=2 indicator_object_base=4 door_object_id=3 animation_object_id=12
+
+[13]
+select-floor floor_id=3 indicator_object_base=4 door_object_id=3 animation_object_id=12
+
+[14]
+select-floor floor_id=4 indicator_object_base=4 door_object_id=3 animation_object_id=12
+
+[15]
+select-floor floor_id=5 indicator_object_base=4 door_object_id=3 animation_object_id=12
+
+[16]
+select-floor floor_id=6 indicator_object_base=4 door_object_id=3 animation_object_id=12
+
+[17]
+select-floor floor_id=7 indicator_object_base=4 door_object_id=3 animation_object_id=12
+
+[18]
+select-floor floor_id=8 indicator_object_base=4 door_object_id=3 animation_object_id=12

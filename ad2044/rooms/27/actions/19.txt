@@ -1,2 +1,0 @@
-[19]
-hide-object-63 hidden_object_id=5

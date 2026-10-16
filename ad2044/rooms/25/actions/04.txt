@@ -1,6 +1,0 @@
-[04]
-examine
-  message_1:
-    "WYCZUWASZ POD NOGAMI"
-    "WEJŚCIE DO WŁAZU."
-goto-room room_id=24

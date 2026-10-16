@@ -1,0 +1,39 @@
+# Clickable zone IDs; drawable image IDs are a separate namespace.
+
+[00]
+back
+
+[01]
+drop-inventory-item
+  message_1:
+    "WYBIERZ"
+
+[02]
+examine
+  message_1:
+    "ZDECHŁA MYSZ"
+take-item
+
+[03]
+examine
+  message_1:
+    "PAPIEREK"
+take-item
+
+[04]
+examine
+  message_1:
+    "SPLEŚNIAŁA"
+    "KROMKA CHLEBA"
+take-item
+eat object_id=108 energy_added=0
+  message_1:
+    "FEEEE"
+
+[05]
+examine
+  message_1:
+    "KLUCZ MAGNETYCZNY"
+take-item
+
+[06]

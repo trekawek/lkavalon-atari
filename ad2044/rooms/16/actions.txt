@@ -1,0 +1,69 @@
+# Clickable zone IDs; drawable image IDs are a separate namespace.
+
+[00]
+back
+
+[01]
+back
+
+[02]
+examine
+  message_1:
+    "KABINY UBRANIOWE."
+open-with-item object_id=1 required_inventory_id=255 exit_direction=0
+  message_1:
+    "NIESTETY,TYM NIE OTWORZYSZ."
+    "^^^^^^^^^^^^^^^^^^^^^^^"
+    "ZAMEK REAGUJE NA GŁOS"
+    "UPOWA\\x7ANIONEJ OSOBY."
+
+[03]
+show-closeup view_id=1
+
+[04]
+examine
+  message_1:
+    "DRZWI OTWIERANE ELEKTRONICZNIE."
+open-with-item object_id=1 required_inventory_id=255 exit_direction=0
+  message_1:
+    "TAK NIE OTWORZYSZ."
+
+[05]
+examine
+  message_1:
+    "ZAMKNIĘTE OKIENKO PORTIERNI."
+open-with-item object_id=3 required_inventory_id=255 exit_direction=0
+  message_1:
+    "NIESTETY,ZAMKNIĘTE OD ŚRODKA."
+shout-answer revealed_object_id=3 answer_result_bias=1
+
+[06]
+show-closeup view_id=2
+
+[07]
+examine
+  message_1:
+    "MARMUROWE LITERY."
+
+[08]
+examine
+  message_1:
+    "ZASPANA PORTIERKA W KUFAJCE."
+    "\\x7AĄDA OKAZANIA ODPOWIEDNIEGO"
+    "DOKUMENTU."
+show-item-open revealed_object_id=4 exit_direction=0 animation_frame_count=3
+  required_inventory_id=111
+  message_1:
+    "CO MI TU TOWARZYSZKA"
+    "WCISKA?"
+
+[09]
+use-relative-exit relative_direction=0
+
+[10]
+examine
+  message_1:
+    "ZAMKNIĘTE OKIENKO."
+    "^^^^^^^^^^^^^^^^^^"
+    "ZACHOWAJ CISZĘ,"
+    "PORTIERKA ŚPI."

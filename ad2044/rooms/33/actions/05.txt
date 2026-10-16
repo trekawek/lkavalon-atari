@@ -1,5 +1,0 @@
-[05]
-examine
-  message_1:
-    "KLAMKA."
-open-exit revealed_object_id=3 exit_direction=0

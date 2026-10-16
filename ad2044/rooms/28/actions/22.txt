@@ -1,5 +1,0 @@
-[22]
-examine
-  message_1:
-    "REGAŁ Z KSIĄ\\x7AKAMI."
-animate-close-73 hidden_object_id=7 exit_direction=0 animation_frame_count=5

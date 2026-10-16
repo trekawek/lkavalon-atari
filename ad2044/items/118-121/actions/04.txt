@@ -1,7 +1,0 @@
-[04]
-examine
-  message_1:
-    "CIASTKA ALBERCIKI"
-take-item
-eat object_id=120 energy_added=50
-  message_1:

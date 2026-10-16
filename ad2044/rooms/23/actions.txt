@@ -1,0 +1,81 @@
+# Clickable zone IDs; drawable image IDs are a separate namespace.
+
+[00]
+back
+
+[01]
+back
+
+[02]
+use-relative-exit relative_direction=1
+
+[03]
+examine
+  message_1:
+    "DRZWI."
+
+[04]
+examine
+  message_1:
+    "TWARZ."
+refuse-with-overlay-55 revealed_object_id_or_255=5
+  message_1:
+    "STRA\\x7ANICZKA ZEMDLAŁĄ."
+
+[05]
+examine
+  message_1:
+    "STRA\\x7ANICZKA."
+
+[06]
+password-press revealed_object_id=6 exit_direction=0 animation_frame_count=6
+  expected_answer="PARTENOGENEZA"
+  message_1:
+    "\\x7ALE"
+examine
+  message_1:
+    "SYSTEM OTWIERANIA."
+
+[07]
+examine
+  message_1:
+    "TABORET."
+
+[08]
+examine
+  message_1:
+    "NIEDOMKNIĘTY SEJF."
+
+[09]
+reveal-object revealed_object_id=4
+
+[10]
+hide-object hidden_object_id=4
+
+[11]
+show-closeup view_id=3
+
+[12]
+examine
+  message_1:
+    "WNĘTRZE."
+
+[13]
+examine
+  message_1:
+    "JAKAŚ KARTKA."
+show-closeup view_id=2
+
+[14]
+show-closeup view_id=1
+
+[15]
+examine
+  message_1:
+    "NOGI."
+
+[16]
+use-relative-exit relative_direction=0
+
+[17]
+animate-close hidden_object_id=6 exit_direction=0 animation_frame_count=6

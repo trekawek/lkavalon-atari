@@ -1,8 +1,0 @@
-[03]
-examine
-  message_1:
-    "OGRYZEK."
-eat object_id=115 energy_added=60
-  message_1:
-    "DOBRE I TO."
-take-item

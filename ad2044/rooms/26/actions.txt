@@ -1,0 +1,89 @@
+# Clickable zone IDs; drawable image IDs are a separate namespace.
+
+[00]
+back
+
+[01]
+
+[02]
+examine
+  message_1:
+    "FURTKA."
+reveal-object revealed_object_id=2
+
+[03]
+examine
+  message_1:
+    "PRZYCISK."
+inactive-button
+
+[04]
+examine
+  message_1:
+    "DRZEWO LIŚCIASTE,"
+    "PRAWDOPODOBNIE GRUSZA."
+
+[05]
+examine
+  message_1:
+    "BRAMA WJAZDOWA."
+open-with-item object_id=1 required_inventory_id=255 exit_direction=0
+  message_1:
+    "PO CO TO OTWIERASZ ?"
+    "JEDZIESZ CIĄGNIKIEM ?"
+
+[06]
+examine
+  message_1:
+    "DRZWI WEJŚCIOWE."
+
+[07]
+examine
+  message_1:
+    "OKNO."
+open-with-item object_id=1 required_inventory_id=255 exit_direction=0
+  message_1:
+    "ZAMKNIĘTE OD ŚRODKA."
+
+[08]
+examine
+  message_1:
+    "KLUCZ."
+turn-set-flag revealed_object_id=4 exit_direction=5 animation_frame_count=5
+  set_state_index=9
+
+[09]
+examine
+  message_1:
+    "KLUCZ."
+turn-clear-flag hidden_object_id=4 exit_direction=5 animation_frame_count=5
+  cleared_state_index=9
+
+[10]
+examine
+  message_1:
+    "OTWARTA FURTKA."
+hide-object hidden_object_id=2
+
+[11]
+open-if-puzzle-set revealed_object_id=3 exit_direction=0 tested_state_index=9
+  message_1:
+    "DRZWI ZAMKNIĘTE NA KLUCZ."
+examine
+  message_1:
+    "DRZWI WEJŚCIOWE."
+
+[12]
+use-relative-exit relative_direction=0
+
+[13]
+close-exit hidden_object_id=3 exit_direction=0
+
+[14]
+examine
+  message_1:
+    "ZAMEK."
+show-closeup view_id=1
+open-if-puzzle-set revealed_object_id=3 exit_direction=0 tested_state_index=9
+  message_1:
+    "ZAMKNIĘTE NA KUCZ."

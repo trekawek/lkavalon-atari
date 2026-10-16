@@ -1,0 +1,22 @@
+# Clickable zone IDs; drawable image IDs are a separate namespace.
+
+[00]
+back
+
+[01]
+back
+
+[02]
+examine
+  message_1:
+    "FUNKCJONARIUSZKA MILICJI"
+    "^^^^^^^^^^^^^^^^^^^^^^^^"
+    "ROZKAZUJE CI POWRÓCIĆ"
+    "DO POMIESZCZENIA,"
+    "Z KTÓREGO UCIEKŁEŚ"
+
+[03]
+examine
+  message_1:
+    "NIE MO\\x7AESZ NIC ZBADAĆ."
+    "NIE DENERWUJ PANI MILICJANTKI."

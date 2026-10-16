@@ -1,2 +1,0 @@
-[10]
-use-relative-exit relative_direction=0

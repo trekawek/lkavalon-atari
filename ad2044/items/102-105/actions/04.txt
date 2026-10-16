@@ -1,6 +1,0 @@
-[04]
-examine
-  message_1:
-    "PAPIEROSY MARKI SPORT"
-smoke revealed_object_id=3 exit_direction=0
-take-item

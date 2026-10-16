@@ -1,2 +1,0 @@
-[14]
-select-floor floor_id=4 indicator_object_base=4 door_object_id=3 animation_object_id=12

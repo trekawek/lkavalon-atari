@@ -1,9 +1,0 @@
-[05]
-examine
-  message_1:
-    "LAMPY POHIBERNACYJNE."
-    "   ^^^^^^^^^^^^^^^   "
-    "WZMACNIAJĄ TWOJĄ ENERGIĘ"
-    "POTENCJALNĄ,OSŁABIONĄ"
-    "STANEM HIBERNACJI."
-break-reveal revealed_object_id=4 unused_parameter_2=0

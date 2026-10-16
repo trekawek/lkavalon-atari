@@ -1,0 +1,36 @@
+# Clickable zone IDs; drawable image IDs are a separate namespace.
+
+[00]
+back
+
+[01]
+back
+
+[02]
+use-relative-exit relative_direction=1
+examine
+  message_1:
+    "ODEBRAŁEŚ ŚILNY IMPULS"
+    "WYSŁANY PRZEZ TWOJE"
+    "RECEPTORY WĘCHU"
+
+[03]
+examine
+  message_1:
+    "OTWARTE DRZWI"
+
+[04]
+show-closeup view_id=1
+
+[05]
+show-closeup view_id=2
+
+[06]
+examine
+  message_1:
+    "JAKAŚ PŁYTA"
+
+[07]
+examine
+  message_1:
+    "JAKIŚ NAPIS"

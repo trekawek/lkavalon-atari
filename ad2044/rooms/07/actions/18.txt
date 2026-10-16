@@ -1,2 +1,0 @@
-[18]
-close-decrement hidden_object_id=6 decremented_state_index=1

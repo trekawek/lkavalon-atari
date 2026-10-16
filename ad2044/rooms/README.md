@@ -10,7 +10,7 @@ stable: actions elsewhere can refer to them.
 | `scene.txt` | Picture positions, Atari colors and resource IDs. |
 | `base.png`, `image-NN.png` | Indexed, four-color picture pixels. |
 | `*.hit.txt` | Grids assigning clickable zones to areas of a picture. |
-| `actions/NN.txt` | Actions and messages for clickable zone NN. |
+| `actions.txt` | Actions and messages, with one `[NN]` section per clickable zone. |
 | `frame-NN.png` | Animation frames, where present. |
 
 Room coordinates, facing and open exits live in [world/map.txt](../world/map.txt).
@@ -45,7 +45,7 @@ Local drawable N uses picture resource `2*N+2` and hitmap resource `2*N+3` in
 102..137 use the shared [item banks](../items/README.md).
 
 A hitmap value selects an **action zone**, independently of the picture's ID.
-For example, a `4` in a room's grid selects `actions/04.txt`. `.` means no zone;
+For example, a `4` in a room's grid selects section `[04]` in `actions.txt`. `.` means no zone;
 digits and letters have their base-36 values (`A=10`, `B=11`, and so on).
 Value `1` is special: it opens the direction chooser rather than action zone 1.
 A `legend A=102` line overrides a symbol to select an inventory item. Preserve
@@ -80,7 +80,7 @@ retain single-byte unused entries; they are not aliases to other pictures.
 
 ## Editing an action or message
 
-[00/actions/02.txt](00/actions/02.txt) is a complete small example:
+Section `[02]` in [00/actions.txt](00/actions.txt) is a small example:
 
 ```text
 [02]
@@ -90,8 +90,9 @@ examine
     "KORYTARZ."
 ```
 
-The section number is the clickable zone. Keep sections consecutive from zero,
-including empty sections. Action parameters are decimal. Two spaces introduce
+Each room keeps all its zones in one `actions.txt`. The section number is the
+clickable zone. Keep sections consecutive from zero, including empty sections.
+Action parameters are decimal. Two spaces introduce
 continued parameters or a message field; four spaces introduce a quoted message
 line. An empty message block is valid. Quoted text uses uppercase game glyphs,
 including `ĄĆĘŁŃÓŚ`; unsupported or uncertain glyphs retain exact escapes such as

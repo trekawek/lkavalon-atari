@@ -1,5 +1,0 @@
-[15]
-examine
-  message_1:
-    "GŁÓWNY WYŁĄCZNIK PRĄDU."
-on-increment revealed_object_id=6 incremented_state_index=11

@@ -1,8 +1,0 @@
-[02]
-examine
-  message_1:
-    "FUNKCJONARIUSZKA MILICJI"
-    "^^^^^^^^^^^^^^^^^^^^^^^^"
-    "ROZKAZUJE CI POWRÓCIĆ"
-    "DO POMIESZCZENIA,"
-    "Z KTÓREGO UCIEKŁEŚ"

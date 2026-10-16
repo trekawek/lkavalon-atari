@@ -1,4 +1,0 @@
-[19]
-examine
-  message_1:
-    "ŚMIECI"

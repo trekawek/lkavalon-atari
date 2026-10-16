@@ -1,0 +1,136 @@
+# Clickable zone IDs; drawable image IDs are a separate namespace.
+
+[00]
+back
+
+[01]
+back
+
+[02]
+examine
+  message_1:
+    "DRZWI DO WC"
+    "^^^^^^^^^^^"
+    "KTOŚ JEST ZA DRZWIAMI"
+open-with-item object_id=1 required_inventory_id=255 exit_direction=0
+  message_1:
+    "TYM NIE OTWORZYSZ."
+    "DRZWI SĄ ZAMKNIĘTE OD ŚRODKA."
+
+[03]
+examine
+  message_1:
+    "MONITORY OBSERWACYJNE"
+
+[04]
+examine
+  message_1:
+    "KALENDARZ"
+show-closeup view_id=1
+
+[05]
+examine
+  message_1:
+    "FISZKI"
+
+[06]
+examine
+  message_1:
+    "ERGONOMICZNE KRZESŁO"
+
+[07]
+show-closeup view_id=3
+
+[08]
+examine
+  message_1:
+    "JAKIEŚ DRZWICZKI"
+reveal-object revealed_object_id=7
+
+[09]
+examine
+  message_1:
+    "D\\x7AWIĘKOCHŁONNA ŚCIANA"
+
+[10]
+examine
+  message_1:
+    "AKTUALNY ROK"
+
+[11]
+examine
+  message_1:
+    "ZAGIĘTY RÓG"
+show-closeup-19 view_id=2
+
+[12]
+examine
+  message_1:
+    "KOT JAKI JEST,"
+    "KA\\x7ADY WIDZI."
+
+[13]
+examine
+  message_1:
+    "LITERA A."
+
+[14]
+examine
+  message_1:
+    "LITERA S."
+
+[15]
+examine
+  message_1:
+    "I JAK IDIOTA"
+
+[16]
+examine
+  message_1:
+    "BLAT BIURKA"
+
+[17]
+examine
+  message_1:
+    "PUZDERKO"
+reveal-object revealed_object_id=5
+
+[18]
+examine
+  message_1:
+    "OTWARTE PUZDERKO"
+hide-object hidden_object_id=5
+
+[19]
+examine
+  message_1:
+    "PUDERNICZKA"
+
+[20]
+examine
+  message_1:
+    "KOSMETYKI"
+
+[21]
+examine
+  message_1:
+    "WYŁĄCZNIK"
+off-remove-remote revealed_object_id=6 remote_room_id=10 remote_object_id=1
+  remote_exit_direction=0
+
+[22]
+examine
+  message_1:
+    "WYŁĄCZNIK POLA"
+    "SIŁOWEGO"
+on-add-remote hidden_object_id=6 remote_room_id=10 remote_object_id=1
+  remote_exit_direction=0
+
+[23]
+show-closeup view_id=4
+
+[24]
+examine
+  message_1:
+    "OTWARTE DRZWICZKI"
+hide-object hidden_object_id=7

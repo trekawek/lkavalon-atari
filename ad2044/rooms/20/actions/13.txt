@@ -1,4 +1,0 @@
-[13]
-examine
-  message_1:
-    "LISTA CZŁONKIŃ SEKRETARIATU."

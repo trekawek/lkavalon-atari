@@ -1,2 +1,0 @@
-[10]
-animate-close hidden_object_id=2 exit_direction=5 animation_frame_count=4

@@ -1,2 +1,0 @@
-[22]
-move-hide-44 hidden_object_id=6

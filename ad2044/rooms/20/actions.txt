@@ -1,0 +1,126 @@
+# Clickable zone IDs; drawable image IDs are a separate namespace.
+
+[00]
+back
+
+[01]
+back
+
+[02]
+examine
+  message_1:
+    "KRATKA WENTYLACYJNA."
+
+[03]
+examine
+  message_1:
+    "SUSZARKA DO WŁOSÓW."
+
+[04]
+examine
+  message_1:
+    "GUZIK."
+animate-open revealed_object_id=4 exit_direction=5 animation_frame_count=0
+
+[05]
+examine
+  message_1:
+    "DRZWI DO SZAFKI."
+
+[06]
+examine
+  message_1:
+    "UCHWYT."
+reveal-object revealed_object_id=5
+
+[07]
+examine
+  message_1:
+    "ZASŁONA PÓŁPRZEPUSZCZALNA."
+move-reveal-43 revealed_object_id=6
+
+[08]
+examine
+  message_1:
+    "SŁU\\x7ABOWA WALIZKA."
+
+[09]
+examine
+  message_1:
+    "RĄCZKA."
+
+[10]
+examine
+  message_1:
+    "ZAMEK REAGUJĄCY"
+    "NA POLE MAGNETYCZNE."
+open-remove-with-item object_id=3 required_inventory_id=113 exit_direction=5
+  message_1:
+    "TYM NIE OTWORZYSZ,"
+    "NIE MA POLA MAGNETYCZNEGO."
+
+[11]
+examine
+  message_1:
+    "POZŁACANY NAPIS."
+
+[12]
+examine
+  message_1:
+    "DŁUGOPIS."
+
+[13]
+examine
+  message_1:
+    "LISTA CZŁONKIŃ SEKRETARIATU."
+
+[14]
+reveal-object-50 revealed_object_id=3
+
+[15]
+examine
+  message_1:
+    "PROMIENIOWANIE CIEPLNE."
+
+[16]
+examine
+  message_1:
+    "CIĄGLE JEST TO GUZIK."
+animate-close hidden_object_id=4 exit_direction=5 animation_frame_count=0
+
+[17]
+examine
+  message_1:
+    "WNĘTRZE SZAFY."
+show-closeup view_id=1
+
+[18]
+examine
+  message_1:
+    "WNĘTRZE SZAFY."
+refuse-closeup
+  message_1:
+    "NIC CIEKAWEGO,"
+    "PUSTA PÓŁKA."
+
+[19]
+hide-object hidden_object_id=5
+
+[20]
+examine
+  message_1:
+    "PRYSZNIC."
+
+[21]
+examine
+  message_1:
+    "GAŁKA OD PRYSZNICA."
+
+[22]
+move-hide-44 hidden_object_id=6
+
+[23]
+examine
+  message_1:
+    "TABLICZKA."
+show-closeup view_id=2

@@ -1,4 +1,0 @@
-[13]
-examine
-  message_1:
-    "FIOŁKAMI NIE PACHNIE."

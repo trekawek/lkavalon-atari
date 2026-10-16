@@ -1,0 +1,104 @@
+# Clickable zone IDs; drawable image IDs are a separate namespace.
+
+[00]
+back
+
+[01]
+back
+
+[02]
+examine
+  message_1:
+    "KOŁO RATUNKOWE."
+
+[03]
+examine
+  message_1:
+    "NOWOŚĆ."
+    "^^^^^^^^"
+    "SPECJALNE GAŚNICE"
+    "DO GASZENIA WODY."
+refuse-with-overlay revealed_object_id_or_255=255
+  message_1:
+    "PO CO CI TO?"
+
+[04]
+examine
+  message_1:
+    "STÓŁ."
+show-closeup view_id=1
+
+[05]
+examine
+  message_1:
+    "NOGA STOŁOWA."
+
+[06]
+examine
+  message_1:
+    "DRZWICZKI DO SZAFKI."
+open-with-item object_id=5 required_inventory_id=112 exit_direction=5
+  message_1:
+    "TYM NIE OTWORZYSZ,"
+    "ZAMKNIĘTE NA KLUCZYK."
+
+[07]
+examine
+  message_1:
+    "DRZWICZKI DO SZAFKI."
+open-with-item object_id=5 required_inventory_id=255 exit_direction=5
+  message_1:
+    "TYM NIE OTWORZYSZ,"
+    "ZAMKNIĘTE NA KLUCZYK."
+
+[08]
+examine
+  message_1:
+    "FAJANSOWY WAZONIK."
+refuse-with-overlay revealed_object_id_or_255=4
+  message_1:
+    "NIESTETY, WAZONIK"
+    "WYPADŁ CI Z RĘKI"
+    "I ROZBIŁ SIĘ NA"
+    "PODŁODZE."
+
+[09]
+examine
+  message_1:
+    "NAUKA PŁYWANIA."
+    "^^^^^^^^^^^^^^^"
+    "PORADNIK DLA POCZĄTKUJĄCYCH"
+    "DZIAŁACZEK SEKRETARIATU."
+
+[10]
+examine
+  message_1:
+    "ZEPSUTY ZEGAREK."
+refuse-with-overlay revealed_object_id_or_255=255
+  message_1:
+    "PO CO CI TEN RUPIEĆ,"
+    "LEPSZY KUPISZ TANIO"
+    "U RUSKICH."
+
+[11]
+examine
+  message_1:
+    "ILUSTRACJA."
+
+[12]
+examine
+  message_1:
+    "NAUKA PŁYWANIA."
+    "^^^^^^^^^^^^^^^"
+    "PORADNIK DLA POCZĄTKUJĄCYCH"
+    "DZIAŁACZEK SEKRETARIATU."
+show-closeup-18 view_id=3
+
+[13]
+hide-object hidden_object_id=5
+
+[14]
+examine
+  message_1:
+    "WNĘTRZE SZAFKI."
+show-closeup view_id=2

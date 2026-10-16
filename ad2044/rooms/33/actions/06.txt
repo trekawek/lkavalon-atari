@@ -1,5 +1,0 @@
-[06]
-examine
-  message_1:
-    "KARTKA PAPIERU."
-show-closeup view_id=2

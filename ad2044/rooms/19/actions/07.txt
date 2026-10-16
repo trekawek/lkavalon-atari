@@ -1,8 +1,0 @@
-[07]
-examine
-  message_1:
-    "DRZWICZKI DO SZAFKI."
-open-with-item object_id=5 required_inventory_id=255 exit_direction=5
-  message_1:
-    "TYM NIE OTWORZYSZ,"
-    "ZAMKNIĘTE NA KLUCZYK."

@@ -1,2 +1,0 @@
-[04]
-show-closeup view_id=1

@@ -1,0 +1,79 @@
+# Clickable zone IDs; drawable image IDs are a separate namespace.
+
+[00]
+back
+
+[01]
+back
+
+[02]
+examine
+  message_1:
+    "ZASŁONA."
+
+[03]
+examine
+  message_1:
+    "KRYSZTAŁOWE LUSTRO."
+
+[04]
+examine
+  message_1:
+    "PORCELANOWA UMYWALKA."
+show-closeup view_id=1
+
+[05]
+examine
+  message_1:
+    "WANNA."
+
+[06]
+examine
+  message_1:
+    "PAPIER DO ..."
+
+[07]
+examine
+  message_1:
+    "POKRYWA SEDESU."
+reveal-object revealed_object_id=3
+
+[08]
+examine
+  message_1:
+    "ZBIORNIK NA WODĘ."
+
+[09]
+examine
+  message_1:
+    "ŁAŃCUSZEK."
+
+[10]
+examine
+  message_1:
+    "UCHWYT NA ŁAŃCUSZKU."
+
+[11]
+examine
+  message_1:
+    "KAWAŁĘK DRUTU."
+    "^^^^^^^^^^^^^"
+    "ŁĄCZY DWIE CZĘŚCI"
+    "PRZERWANEGO ŁAŃCUSZKA."
+take-parameter-object revealed_object_id=2 selected_object_id=119
+
+[12]
+examine
+  message_1:
+    "OTWARTA POKRYWA."
+hide-object hidden_object_id=3
+
+[13]
+examine
+  message_1:
+    "FIOŁKAMI NIE PACHNIE."
+
+[14]
+examine
+  message_1:
+    "SEDES Z BAKIELITU."

@@ -1,0 +1,71 @@
+# Clickable zone IDs; drawable image IDs are a separate namespace.
+
+[00]
+back
+
+[01]
+back
+
+[02]
+use-relative-exit relative_direction=3
+examine
+  message_1:
+    "KORYTARZ."
+
+[03]
+examine
+  message_1:
+    "ZAMKNIĘTE DRZWI"
+
+[04]
+examine
+  message_1:
+    "KLAMKA"
+open-exit revealed_object_id=2 exit_direction=0
+
+[05]
+examine
+  message_1:
+    "KLIMATYZACJA"
+
+[06]
+examine
+  message_1:
+    "SAM SPRAWDZ"
+show-closeup view_id=1
+
+[07]
+examine-flag tested_state_index=5
+  message_1:
+    "WAL ŚMIAŁO,"
+    "NIKOGO TAM NIE MA."
+  message_2:
+    "UWA\\x7AAJ KTOŚ TAM JEST."
+use-relative-exit relative_direction=0
+throw-relocate-room source_room_id=11 required_inventory_id=106 destination_room_id=5
+  set_state_index=5
+  message_1:
+    "USŁYSZAŁEŚ KRZYK"
+    "PRZESTRASZONEJ KOBIETY"
+    "ORAZ TRZASK ZAMYKANYCH DRZWI"
+
+[08]
+examine
+  message_1:
+    "OTWARTE DRZWI"
+close-exit hidden_object_id=2 exit_direction=0
+
+[09]
+examine
+  message_1:
+    "NIKLOWANA BLACHA"
+
+[10]
+examine
+  message_1:
+    "GRAWEROWANE LITERY"
+
+[11]
+examine
+  message_1:
+    "ŚRUBY M5"

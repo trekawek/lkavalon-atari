@@ -1,2 +1,0 @@
-[10]
-close-exit hidden_object_id=1 exit_direction=3

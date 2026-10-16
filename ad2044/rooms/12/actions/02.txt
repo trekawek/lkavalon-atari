@@ -1,5 +1,0 @@
-[02]
-examine
-  message_1:
-    "TABLICZKA"
-show-closeup view_id=1

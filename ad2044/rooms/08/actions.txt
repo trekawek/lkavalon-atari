@@ -1,0 +1,121 @@
+# Clickable zone IDs; drawable image IDs are a separate namespace.
+
+[00]
+back
+
+[01]
+back
+
+[02]
+reveal-object revealed_object_id=7
+
+[03]
+reveal-object revealed_object_id=8
+
+[04]
+reveal-object revealed_object_id=9
+
+[05]
+reveal-object revealed_object_id=10
+
+[06]
+examine
+  message_1:
+    "SYSTEM ŁĄCZNOŚCI"
+    "Z CENTRALNYM STEROWNIKIEM"
+    "GŁÓWNEJ WINDY"
+
+[07]
+examine
+  message_1:
+    "PRZEWODY POŁĄCZENIOWE"
+
+[08]
+examine
+  message_1:
+    "MONITOR"
+
+[09]
+show-closeup view_id=1
+
+[10]
+examine
+  message_1:
+    "BIURKO"
+
+[11]
+examine
+  message_1:
+    "NIEERGONOMICZNE KRZESŁO"
+move-reveal revealed_object_id=6
+
+[12]
+examine
+  message_1:
+    "RADIATORY"
+
+[13]
+examine
+  message_1:
+    "GŁOŚNIK"
+
+[14]
+press-add-counter revealed_object_id=3 counter_delta=1 counter_index=3
+  target_counter_value=5 question_object_id=11 answer_object_id=12 success_state_index=4
+  expected_answer="ASIA"
+examine
+  message_1:
+    "WŁĄCZANIE SYSTEMU"
+    "ŁĄCZNIŚCI"
+
+[15]
+press-add-counter revealed_object_id=4 counter_delta=2 counter_index=3
+  target_counter_value=5 question_object_id=11 answer_object_id=12 success_state_index=4
+  expected_answer="ASIA"
+examine
+  message_1:
+    "WŁĄCZANIE SYSTEMU"
+    "ŁĄCZNOŚĆI"
+
+[16]
+press-add-counter revealed_object_id=5 counter_delta=4 counter_index=3
+  target_counter_value=5 question_object_id=11 answer_object_id=12 success_state_index=4
+  expected_answer="ASIA"
+examine
+  message_1:
+    "WŁĄCZANIE SYSTEMU"
+    "ŁĄCZNOŚCI"
+
+[17]
+release-sub-counter hidden_object_id=3 counter_delta=1 counter_index=3
+  target_counter_value=5 question_object_id=11 answer_object_id=12 success_state_index=4
+  expected_answer="ASIA"
+
+[18]
+release-sub-counter hidden_object_id=4 counter_delta=2 counter_index=3
+  target_counter_value=5 question_object_id=11 answer_object_id=12 success_state_index=4
+  expected_answer="ASIA"
+
+[19]
+release-sub-counter hidden_object_id=5 counter_delta=4 counter_index=3
+  target_counter_value=5 question_object_id=11 answer_object_id=12 success_state_index=4
+  expected_answer="ASIA"
+
+[20]
+examine
+  message_1:
+    "NIEERGONOMICZNE KRZESŁO"
+move-hide hidden_object_id=6
+
+[21]
+hide-object hidden_object_id=7
+show-closeup view_id=2
+
+[22]
+hide-object hidden_object_id=8
+
+[23]
+hide-object hidden_object_id=9
+
+[24]
+hide-object hidden_object_id=10

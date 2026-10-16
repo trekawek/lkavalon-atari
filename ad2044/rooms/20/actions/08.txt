@@ -1,4 +1,0 @@
-[08]
-examine
-  message_1:
-    "SŁU\\x7ABOWA WALIZKA."

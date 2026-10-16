@@ -67,16 +67,16 @@ class ContentTests(unittest.TestCase):
         self.assertEqual(groups[1, 21][6 * 512:], bytes(3 * 512))
 
     def test_action_and_longer_message_edit_reach_disk(self):
-        path = self.root / "rooms/01/actions/02.txt"
+        path = self.root / "rooms/01/actions.txt"
         original = content.build_groups(self.root)
         path.write_text(path.read_text().replace("relative_direction=1", "relative_direction=3")
-                        .replace('"KORYTARZ."', '"NOWY KORYTARZ."'), encoding="utf-8")
+                        .replace('"KORYTARZ."', '"NOWY KORYTARZ."', 1), encoding="utf-8")
         changed = content.build_groups(self.root)
         self.assertGreater(len(changed[1, 6]), len(original[1, 6]))
         image = content.build_disks(self.root)["build/assets-side1.atr"]
         actions = records(read_group(image, 6))[1]
         self.assertIn(b"NOWY=KORYTARZ.", actions)
-        self.assertEqual(actions, room_text.encode_actions(path.parent))
+        self.assertEqual(actions, room_text.encode_actions(path))
         self.assertEqual({key for key in changed if changed[key] != original[key]}, {(1, 6)})
 
     def test_hitmap_and_picture_edits_reach_native_resources(self):

@@ -1,5 +1,0 @@
-[10]
-examine
-  message_1:
-    "ZAMYKADŁO"
-show-closeup-18 view_id=3

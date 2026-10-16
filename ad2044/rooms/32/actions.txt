@@ -1,0 +1,63 @@
+# Clickable zone IDs; drawable image IDs are a separate namespace.
+
+[00]
+back
+
+[01]
+back
+
+[02]
+examine
+  message_1:
+    "POJEMNIK ZAWIERAJĄCY"
+    "MASĘ BIAŁKOWĄ."
+
+[03]
+examine
+  message_1:
+    "SYNTEZER"
+    "BIAŁKOWO^ CHROMOSOMOWY."
+
+[04]
+examine
+  message_1:
+    "POJEMNIK Z MASĄ"
+    "CHROMOSOMOWĄ."
+
+[05]
+examine
+  message_1:
+    "POKRYWA POJEMNIKA."
+reveal-object revealed_object_id=2
+
+[06]
+examine
+  message_1:
+    "CHŁODNICA STEROWNIKA."
+
+[07]
+examine
+  message_1:
+    "URZĄDZENIA"
+    "KONTROLNO^ POMIAROWE."
+
+[08]
+examine
+  message_1:
+    "STEROWNIK PROCESU"
+    "PARTENOGENEZY."
+
+[09]
+hide-object hidden_object_id=2
+
+[10]
+examine
+  message_1:
+    "MASA CROMOSOMOWA."
+    "^^^^^^^^^^^^^^^^"
+    "ZAWIERA 23 PARY"
+    "LUDZKICH CHOMOSOMÓW."
+chromosome-ending expected_answer="Y"
+  message_1:
+    "TAKICH NIE MO\\x7AESZ"
+    "WPROWADZIĆ."

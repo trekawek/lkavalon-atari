@@ -1,5 +1,0 @@
-[18]
-examine
-  message_1:
-    "OTWARTE PUZDERKO"
-hide-object hidden_object_id=5

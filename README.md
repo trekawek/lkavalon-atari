@@ -63,7 +63,7 @@ compiler from repository sources. No original ATR is a normal build input.
 The compiler's readable sources live in [util/figforth](util/figforth).
 
 AD 2044 now uses a simpler authoring layout: [world directions](ad2044/world/map.txt),
-[room folders](ad2044/rooms), character-grid hitmaps, short action files,
+[room folders](ad2044/rooms), character-grid hitmaps, one action file per room/item bank,
 indexed PNG pictures, raw fonts and a binary music bank. Its builder calculates
 record lengths, compression and disk placement. The executable matches the
 original release; historical editor data, disk padding and saves are omitted.

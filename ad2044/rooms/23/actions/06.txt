@@ -1,8 +1,0 @@
-[06]
-password-press revealed_object_id=6 exit_direction=0 animation_frame_count=6
-  expected_answer="PARTENOGENEZA"
-  message_1:
-    "\\x7ALE"
-examine
-  message_1:
-    "SYSTEM OTWIERANIA."

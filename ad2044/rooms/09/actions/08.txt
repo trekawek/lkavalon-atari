@@ -1,5 +1,0 @@
-[08]
-examine
-  message_1:
-    "DRUGA SKRYTKA"
-show-closeup view_id=4

@@ -1,5 +1,0 @@
-[06]
-examine
-  message_1:
-    "OKNO NA ŚWIAT."
-use-relative-exit relative_direction=0

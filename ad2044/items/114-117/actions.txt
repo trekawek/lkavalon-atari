@@ -1,0 +1,37 @@
+# Clickable zone IDs; drawable image IDs are a separate namespace.
+
+[00]
+back
+
+[01]
+back
+
+[02]
+examine
+  message_1:
+    "ZŁO\\x7AONY NADMUCHIWANY"
+    "KAPOK."
+take-item-47 unused_parameter_1=114
+
+[03]
+examine
+  message_1:
+    "OGRYZEK."
+eat object_id=115 energy_added=60
+  message_1:
+    "DOBRE I TO."
+take-item
+
+[04]
+examine
+  message_1:
+    "PRZEPUSTKA."
+take-item
+discard-object hidden_object_id=116
+
+[05]
+examine
+  message_1:
+    "PRZEPUSTKA Z PIECZĘCIĄ."
+take-item
+discard-object hidden_object_id=117

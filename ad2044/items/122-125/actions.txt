@@ -1,0 +1,13 @@
+# Clickable zone IDs; drawable image IDs are a separate namespace.
+
+[00]
+back
+
+[01]
+back
+
+[02]
+examine
+  message_1:
+    "NÓ\\x7A DO PAPIERU."
+take-item

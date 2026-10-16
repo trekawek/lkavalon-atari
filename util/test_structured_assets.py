@@ -168,16 +168,15 @@ class CanonicalGameAssets(unittest.TestCase):
                 self.assertFalse(any((ROOT / game / "graphics").rglob("*.gam")))
 
     def test_ad_plain_message_edit_changes_only_its_encoded_glyph(self):
-        source = ROOT / "ad2044/rooms/01/actions"
+        source = ROOT / "ad2044/rooms/01/actions.txt"
         before = room_text.encode_actions(source)
         with tempfile.TemporaryDirectory() as tmp:
-            target = Path(tmp) / "actions"
-            shutil.copytree(source, target)
-            path = target / "02.txt"
+            path = Path(tmp) / "actions.txt"
+            shutil.copyfile(source, path)
             text = path.read_text()
             self.assertIn('"KORYTARZ."', text)
-            path.write_text(text.replace('"KORYTARZ."', '"KORYTARZ!"'))
-            after = room_text.encode_actions(target)
+            path.write_text(text.replace('"KORYTARZ."', '"KORYTARZ!"', 1))
+            after = room_text.encode_actions(path)
         changes = [i for i, pair in enumerate(zip(before, after)) if pair[0] != pair[1]]
         self.assertEqual(len(before), len(after))
         self.assertEqual(len(changes), 1)

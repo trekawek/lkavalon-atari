@@ -1,5 +1,0 @@
-[14]
-enable-if-clear revealed_object_id=8 cleared_view_id=1 tested_state_index=1
-  set_state_index=2
-  message_1:
-    "ZAMKNIJ NAJPIERW DRZWICZKI"

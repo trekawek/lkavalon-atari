@@ -1,8 +1,0 @@
-[08]
-examine
-  message_1:
-    "FRAGMENT CIAŁA."
-refuse-closeup
-  message_1:
-    "NIE DOSZŁO DO ZBLI\\x7AENIA,"
-    "OBIEKT JEST ZA SZYBĄ."

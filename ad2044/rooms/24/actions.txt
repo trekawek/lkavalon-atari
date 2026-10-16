@@ -1,0 +1,61 @@
+# Clickable zone IDs; drawable image IDs are a separate namespace.
+
+[00]
+back
+
+[01]
+back
+
+[02]
+use-relative-exit relative_direction=3
+
+[03]
+examine
+  message_1:
+    "WYJŚCIE NA POWIERZCHNIĘ."
+goto-room room_id=25
+
+[04]
+examine
+  message_1:
+    "METALOWA DRABINKA."
+
+[05]
+examine
+  message_1:
+    "PERYSKOP Z NOKTOWIZOREM."
+
+[06]
+examine
+  message_1:
+    "EKRAN NOKTOWIZORA."
+show-closeup view_id=1
+
+[07]
+examine
+  message_1:
+    "SKAFANDER OCHRONNY."
+    "^^^^^^^^^^^^^^^^^^^"
+    "CHRONI PRZED PROMIENIOWANIEM"
+    "RADIOAKTYWNYM."
+refuse-with-overlay-54 revealed_object_id_or_255=255
+  message_1:
+    "PO CO CI TO ?"
+    "^^^^^^^^^^^^"
+    "NIE OGLĄDAŁEŚ FILMU ?"
+    "NA POWIERZCHNI NIE MA"
+    "\\x7AADNEGO PROMIENIOWANIA."
+
+[08]
+examine
+  message_1:
+    "PRZYCISK WŁĄCZAJĄCY NOKTOWIZOR."
+animate-open revealed_object_id=2 exit_direction=5 animation_frame_count=4
+
+[09]
+examine
+  message_1:
+    "WIDOCZEK Z POWIERZCHNI."
+
+[10]
+animate-close hidden_object_id=2 exit_direction=5 animation_frame_count=4

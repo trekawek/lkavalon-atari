@@ -1,0 +1,88 @@
+# Clickable zone IDs; drawable image IDs are a separate namespace.
+
+[00]
+back
+
+[01]
+back
+
+[02]
+examine
+  message_1:
+    "DRZWI DO WINDY."
+
+[03]
+examine
+  message_1:
+    "PRZYCISK WYWOŁUJĄCY"
+    "WINDĘ."
+open-exit revealed_object_id=1 exit_direction=3
+
+[04]
+examine
+  message_1:
+    "SCHODY DO GÓRY."
+
+[05]
+examine
+  message_1:
+    "PANCERNE DRZWI."
+
+[06]
+examine
+  message_1:
+    "PRZYCISK WYWOŁUJĄCY"
+    "PROCEDURĘ OTWARCIA."
+press-if-flag-set revealed_object_id=3 exit_direction=0 animation_frame_count=6
+  tested_state_index=8
+  message_1:
+    "STRA\\x7ANICZKA MUSI"
+    "ODBLOKOWAĆ DRZWI."
+
+[07]
+examine
+  message_1:
+    "PANCERNE OKIENKO."
+open-with-item object_id=2 required_inventory_id=255 exit_direction=0
+  message_1:
+    "ZAMKNIĘTE OD ŚRODKA."
+shout-reveal-if-clear revealed_object_id=2 answer_result_bias=1 expected_answer="\\x08"
+
+[08]
+examine
+  message_1:
+    "WENTYLACJA."
+
+[09]
+use-relative-exit relative_direction=3
+
+[10]
+close-exit hidden_object_id=1 exit_direction=3
+
+[11]
+examine
+  message_1:
+    "PRZYCISK DO WINDY."
+
+[12]
+examine
+  message_1:
+    "STRA\\x7ANICZKA \\x7AĄDA OKAZANIA"
+    "PRZEPUSTKI ZEZWALAJĄCEJ"
+    "WYJŚĆ NA POWIERZCHNIĘ."
+show-item-set-flag hidden_object_id=2 required_inventory_id=117
+  alternate_inventory_id=116 set_state_index=8
+  message_1:
+    "TO NIE JEST PRZEPUSTKA."
+    "^^^^"
+    "PRZEPUSTKI WYDAJE"
+    "SEKRETARKA LAMIA RENO."
+  message_2:
+    "BEZ PIECZĄTKI PRZEPUSTKA"
+    "JEST NIEWA\\x7ANA."
+
+[13]
+use-relative-exit relative_direction=0
+
+[14]
+animate-close hidden_object_id=3 exit_direction=0 animation_frame_count=6

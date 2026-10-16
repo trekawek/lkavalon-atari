@@ -1,4 +1,0 @@
-[05]
-examine
-  message_1:
-    "ZNOWU KLIMATYZACJA"

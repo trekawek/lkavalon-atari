@@ -1,5 +1,0 @@
-[10]
-examine
-  message_1:
-    "OTWARTA FURTKA."
-hide-object hidden_object_id=2

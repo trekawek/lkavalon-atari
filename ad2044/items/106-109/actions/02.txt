@@ -1,5 +1,0 @@
-[02]
-examine
-  message_1:
-    "ZDECHŁA MYSZ"
-take-item

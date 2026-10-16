@@ -1,4 +1,0 @@
-[14]
-examine
-  message_1:
-    "LITERA S."

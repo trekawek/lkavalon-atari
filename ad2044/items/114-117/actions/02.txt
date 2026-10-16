@@ -1,6 +1,0 @@
-[02]
-examine
-  message_1:
-    "ZŁO\\x7AONY NADMUCHIWANY"
-    "KAPOK."
-take-item-47 unused_parameter_1=114

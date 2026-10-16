@@ -1,8 +1,0 @@
-[09]
-lift-energy-gated view_id=2 energy_threshold_exclusive=0
-  message_1:
-examine
-  message_1:
-    "MATERAC HIBERNACYJNY."
-    "   ^^^^^^^^^^^^^^^^^^^   "
-    "ZAPOBIEGA POWSTAWANIU ODLE\\x7AYN."

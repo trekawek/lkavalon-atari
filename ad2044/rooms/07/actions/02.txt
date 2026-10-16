@@ -1,5 +1,0 @@
-[02]
-examine
-  message_1:
-    "PIEC DO PALENIA"
-    "ŚMIECI"

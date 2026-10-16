@@ -10,7 +10,7 @@ resources and disk padding are not source files.
 Start with [room 01](rooms/01), a small corridor. Its
 [scene](rooms/01/scene.txt) places the [picture](rooms/01/base.png) and
 [hitmap](rooms/01/base.hit.txt). A `2` in the hitmap selects
-[zone 02](rooms/01/actions/02.txt): use the right exit, or examine “KORYTARZ.”
+zone `[02]` in [actions.txt](rooms/01/actions.txt): use the right exit, or examine “KORYTARZ.”
 The [world map](world/map.txt) supplies that room's position, facing and open
 exits. Initially, room 01's right exit leads to room 02.
 
@@ -23,7 +23,7 @@ exits. Initially, room 01's right exit leads to room 02.
 | `rooms/NN/scene.txt` | Picture positions, Atari colors and resource IDs |
 | `rooms/NN/*.png` | Editable four-color indexed pictures and animation frames |
 | `rooms/NN/*.hit.txt` | Character grids identifying clickable zones |
-| `rooms/NN/actions/NN.txt` | One zone's actions, parameters and displayed messages |
+| `rooms/NN/actions.txt` | All room actions and messages, grouped by clickable zone |
 | [items](items) | Inventory pictures and actions, grouped into the engine's four-item banks |
 | [interface](interface) | Title, screen frame, fonts and cursor |
 | [text](text) | Credits and prologue, one short text file per message/page |

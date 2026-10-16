@@ -1,5 +1,0 @@
-[03]
-examine
-  message_1:
-    "OKAP Z INSTALACJĄ"
-    "PRZECIWPO\\x7AAROWĄ"

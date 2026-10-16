@@ -1,0 +1,128 @@
+# Clickable zone IDs; drawable image IDs are a separate namespace.
+
+[00]
+back
+cancel unused_parameter_1=1
+
+[01]
+back
+
+[02]
+examine
+  message_1:
+    "FONTANNA."
+
+[03]
+examine
+  message_1:
+    "CZYSTA ,\\x7ARÓDLANA WODA."
+
+[04]
+examine
+  message_1:
+    "ZABYTKOWA TARCZA."
+reveal-object-62 revealed_object_id=5
+
+[05]
+examine
+  message_1:
+    "ZABYTKOWA TARCZA."
+reveal-object-62 revealed_object_id=4
+
+[06]
+examine
+  message_1:
+    "DRZWI DO KIBLA."
+open-exit revealed_object_id=9 exit_direction=3
+
+[07]
+examine
+  message_1:
+    "ZABYTKOWY DYWAN."
+
+[08]
+use-relative-exit relative_direction=1
+
+[09]
+examine
+  message_1:
+    "JEDEN Z CZTERECH"
+    "ROGÓW DYWANU."
+lift-energy-gated view_id=1 energy_threshold_exclusive=25
+  message_1:
+    "JESTEŚ ZA SŁABY."
+    "^^^^^^^^^^^^^^^"
+    "ZJEDZ COŚ."
+
+[10]
+examine
+  message_1:
+    "WEJŚCIE DO PIWNICY."
+
+[11]
+examine
+  message_1:
+    "UCHWYT."
+open-with-item object_id=1 required_inventory_id=255 exit_direction=0
+  message_1:
+    "TYM NIE OTWORZYSZ."
+
+[12]
+examine
+  message_1:
+    "LICZNIK PRĄDU."
+
+[13]
+examine
+  message_1:
+    "DOBRY BEZPIECZNIK."
+
+[14]
+examine
+  message_1:
+    "OTWÓR NA BEZPIECZNIK."
+screw-in-item hidden_object_id=7 required_inventory_id=118 bit_source_state_index=10
+  counter_state_index=11
+  message_1:
+    "TEGO NIE WKRĘCISZ."
+
+[15]
+examine
+  message_1:
+    "GŁÓWNY WYŁĄCZNIK PRĄDU."
+on-increment revealed_object_id=6 incremented_state_index=11
+
+[16]
+show-closeup view_id=3
+
+[17]
+hide-object-63 hidden_object_id=4
+
+[18]
+show-closeup view_id=2
+
+[19]
+hide-object-63 hidden_object_id=5
+
+[20]
+off-decrement hidden_object_id=6 decremented_state_index=11
+
+[21]
+examine-counter counter_state_index=10
+  message_1:
+    "SPALONY BEZPIECZNIK."
+  message_2:
+    "DOBRY BEZPIECZNIK."
+  message_3:
+    "WATOWANY BEZPIECZNIK."
+unscrew-item revealed_object_id=7 selected_object_id=118 bit_source_state_index=10
+  counter_state_index=11
+
+[22]
+show-closeup view_id=1
+
+[23]
+use-relative-exit relative_direction=3
+
+[24]
+close-exit hidden_object_id=9 exit_direction=3

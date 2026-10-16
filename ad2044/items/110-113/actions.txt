@@ -1,0 +1,36 @@
+# Clickable zone IDs; drawable image IDs are a separate namespace.
+
+[00]
+back
+
+[01]
+back
+
+[02]
+examine
+  message_1:
+    "KLUCZ MAGNETYCZNY"
+take-item
+discard-object hidden_object_id=110
+
+[03]
+examine
+  message_1:
+    "LEGITYMACJA CZŁONKA"
+    "SEKRETARIATU."
+take-item
+discard-object hidden_object_id=111
+
+[04]
+examine
+  message_1:
+    "KLUCZYK."
+take-item
+discard-object hidden_object_id=112
+
+[05]
+examine
+  message_1:
+    "MAGNETYCZNA OBRĄCZKA."
+take-item
+discard-object hidden_object_id=113

@@ -7,7 +7,7 @@ empty. Keep the existing IDs because room overlays and action parameters use
 them.
 
 Each bank has `scene.txt`, indexed `item-NNN.png` pictures, matching `*.hit.txt`
-grids and an `actions` directory. Picture positions, colors, grid syntax and
+grids and one `actions.txt` file. Picture positions, colors, grid syntax and
 message syntax work as described in the [room guide](../rooms/README.md).
 An item's scene position is used when it appears in a room; the game adjusts its
 position when drawing it in a carried-item slot or dropping it.
@@ -23,8 +23,8 @@ The IDs inside a bank differ from its global item IDs:
 
 The same local numbering repeats in every bank. For example,
 [102-105/item-102.hit.txt](102-105/item-102.hit.txt) defines `legend A=102`.
-Selecting an `A` switches to that item's bank and selects action zone 2, whose
-file is [102-105/actions/02.txt](102-105/actions/02.txt):
+Selecting an `A` switches to that item's bank and selects action zone 2, section
+`[02]` in [102-105/actions.txt](102-105/actions.txt):
 
 ```text
 [02]
@@ -39,7 +39,7 @@ take-item
 Changing `energy_added=70` to `80` changes the energy gained from eating this
 item. Editing the quoted line changes its description. Keep the empty message
 block: this action still requires that field. Zones 0 and 1 are retained entries,
-so keep their files even when they contain no actions.
+so keep their sections even when they contain no actions.
 
 To put an item in the initial scene, add its global ID to the appropriate
 `view N:` list in `rooms/NN/room.txt`. To start with it carried, edit one of the

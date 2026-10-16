@@ -1,5 +1,0 @@
-[06]
-examine
-  message_1:
-    "DRZWI DO KIBLA."
-open-exit revealed_object_id=9 exit_direction=3

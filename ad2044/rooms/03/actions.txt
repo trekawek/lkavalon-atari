@@ -1,0 +1,24 @@
+# Clickable zone IDs; drawable image IDs are a separate namespace.
+
+[00]
+back
+
+[01]
+back
+
+[02]
+use-relative-exit relative_direction=3
+examine
+  message_1:
+    "KORYTARZ."
+
+[03]
+use-relative-exit relative_direction=0
+examine
+  message_1:
+    "KORYTARZ."
+
+[04]
+examine
+  message_1:
+    "URZĄDZENIA KLIMATYZACYJNE."

@@ -1,9 +1,0 @@
-[04]
-examine
-  message_1:
-    "SPLEŚNIAŁA"
-    "KROMKA CHLEBA"
-take-item
-eat object_id=108 energy_added=0
-  message_1:
-    "FEEEE"

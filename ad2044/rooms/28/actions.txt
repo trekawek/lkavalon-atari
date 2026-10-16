@@ -1,0 +1,134 @@
+# Clickable zone IDs; drawable image IDs are a separate namespace.
+
+[00]
+back
+
+[01]
+back
+
+[02]
+examine
+  message_1:
+    "KOMINEK."
+
+[03]
+examine
+  message_1:
+    "STYLOWA SOFA."
+
+[04]
+examine
+  message_1:
+    "STYLOWE KRZESŁO."
+
+[05]
+examine
+  message_1:
+    "AKSAMITNA KOTARA."
+
+[06]
+examine
+  message_1:
+    "STÓŁ Z KOŚCI SŁONIOWEJ."
+show-closeup view_id=1
+
+[07]
+examine
+  message_1:
+    "NOGA STOŁOWA."
+    "KOŚĆ SŁONIOWA."
+
+[08]
+examine
+  message_1:
+    "PRZYCISK."
+press-if-state-two revealed_object_id=3 exit_direction=5 animation_frame_count=0
+  tested_state_index=11 unused_parameter_5=1
+  message_1:
+    "BRAK PRĄDU."
+
+[09]
+examine
+  message_1:
+    "PRZYCISK."
+press-flash-advance revealed_object_id=6 exit_direction=5 animation_frame_count=0
+  tested_state_index=11 set_state_index=12
+  message_1:
+    "BRAK PRĄDU."
+  message_2:
+    "A TO PECH."
+    "SPALIŁ SIĘ SILNIK"
+    "ZASŁANIAJĄCY KOTARY."
+
+[10]
+examine
+  message_1:
+    "REGAŁ Z KSIĄ\\x7AKAMI."
+
+[11]
+examine
+  message_1:
+    "NIBY KSIĄ\\x7AKI."
+show-closeup view_id=2
+
+[12]
+examine
+  message_1:
+    "CHRUPKI."
+eat object_id=4 energy_added=70
+  message_1:
+    "BARDZO SMACZNE."
+
+[13]
+examine
+  message_1:
+    "ATRAPA KSIĄ\\x7AEK."
+reveal-object revealed_object_id=5
+
+[14]
+animate-close hidden_object_id=3 exit_direction=5 animation_frame_count=0
+
+[15]
+examine
+  message_1:
+    "SZTUCZNY OGIEŃ."
+
+[16]
+examine
+  message_1:
+    "PUSTE NACZYNIE."
+
+[17]
+hide-object hidden_object_id=5
+
+[18]
+examine
+  message_1:
+    "PRZYCISK."
+press-two-and-flag revealed_object_id=7 exit_direction=0 animation_frame_count=5
+  tested_state_index=11 second_tested_state_index=12
+  message_1:
+    "BRAK PRĄDU."
+  message_2:
+    "KTOŚ MO\\x7AE ZOBACZYĆ."
+    "DZIAŁA TYLKO PRZY"
+    "ZASŁONIĘTYM OKNIE."
+
+[19]
+examine
+  message_1:
+    "AKSAMITNA KOTARA."
+
+[20]
+examine
+  message_1:
+    "SPALONY PRZYCISK."
+
+[21]
+use-relative-exit relative_direction=0
+
+[22]
+examine
+  message_1:
+    "REGAŁ Z KSIĄ\\x7AKAMI."
+animate-close-73 hidden_object_id=7 exit_direction=0 animation_frame_count=5

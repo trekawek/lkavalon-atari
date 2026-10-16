@@ -1,0 +1,56 @@
+# Clickable zone IDs; drawable image IDs are a separate namespace.
+
+[00]
+back
+
+[01]
+back
+
+[02]
+examine
+  message_1:
+    "FILTRY OCZYSZCZAJĄCE POWIETRZE."
+
+[03]
+examine
+  message_1:
+    "PRZYCISK WYWOŁUJĄCY WINDĘ."
+animate-open revealed_object_id=2 exit_direction=3 animation_frame_count=0
+
+[04]
+examine
+  message_1:
+    "DRZWI DO WINDY."
+
+[05]
+examine
+  message_1:
+    "MARMUROWA TABLICA."
+show-closeup view_id=1
+
+[06]
+examine
+  message_1:
+    "DRZWI DO DZIAŁU"
+    "PRODUKCJI."
+
+[07]
+examine
+  message_1:
+    "PRZYCISK OTWIERAJĄCY."
+animate-open revealed_object_id=3 exit_direction=0 animation_frame_count=8
+
+[08]
+close-exit hidden_object_id=2 exit_direction=3
+
+[09]
+use-relative-exit relative_direction=3
+
+[10]
+use-relative-exit relative_direction=0
+
+[11]
+examine
+  message_1:
+    "PRZYCISK ZAMYKAJĄCY."
+animate-close hidden_object_id=3 exit_direction=0 animation_frame_count=8

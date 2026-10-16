@@ -1,7 +1,0 @@
-[11]
-examine
-  message_1:
-    "UCHWYT."
-open-with-item object_id=1 required_inventory_id=255 exit_direction=0
-  message_1:
-    "TYM NIE OTWORZYSZ."

@@ -1,4 +1,0 @@
-[11]
-examine
-  message_1:
-    "URZĄDZENIA HYDRAULICZNE."

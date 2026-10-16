@@ -1,8 +1,0 @@
-[11]
-examine
-  message_1:
-    "KAWAŁĘK DRUTU."
-    "^^^^^^^^^^^^^"
-    "ŁĄCZY DWIE CZĘŚCI"
-    "PRZERWANEGO ŁAŃCUSZKA."
-take-parameter-object revealed_object_id=2 selected_object_id=119

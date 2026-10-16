@@ -1,0 +1,118 @@
+# Clickable zone IDs; drawable image IDs are a separate namespace.
+
+[00]
+back
+
+[01]
+back
+
+[02]
+examine
+  message_1:
+    "DRZWI DO SZAFKI"
+    "UBRANIOWEJ"
+
+[03]
+examine
+  message_1:
+    "OTWIERADŁO"
+reveal-object revealed_object_id=4
+
+[04]
+examine
+  message_1:
+    "OTWIERADŁO"
+reveal-object revealed_object_id=7
+
+[05]
+examine
+  message_1:
+    "POJEMNIK NA ŚMIECI"
+reveal-object revealed_object_id=6
+
+[06]
+examine
+  message_1:
+    "DAMSKA TOREBKA"
+reveal-object revealed_object_id=5
+
+[07]
+examine
+  message_1:
+    "METALOWY WIESZAK."
+    "^^^^^^^^^^^^^^^^^"
+    "POCHODZI Z ROKU 1980."
+    "BEZCENNA PAMIĄTKA PO JEDNYM"
+    "Z KOMITETÓW CENTRALNYCH,"
+    "Z TERENÓW EUROPY WSCHODNIEJ."
+
+[08]
+examine
+  message_1:
+    "ZWYKŁE BIURKO"
+
+[09]
+examine
+  message_1:
+    "JEST TO KRZESŁO"
+
+[10]
+examine
+  message_1:
+    "TABLICA DO WIESZANIA KLUCZY"
+show-closeup view_id=1
+
+[11]
+examine
+  message_1:
+    "KLUCZ MAGNETYCZNY"
+
+[12]
+examine
+  message_1:
+    "KOŁEK NA KLUCZ"
+
+[13]
+examine
+  message_1:
+    "MUCHOZOL"
+
+[14]
+examine
+  message_1:
+    "FARTUCH ROBOCZY"
+
+[15]
+examine
+  message_1:
+    "KIESZONKA"
+show-closeup view_id=3
+
+[16]
+hide-object hidden_object_id=4
+
+[17]
+examine
+  message_1:
+    "OTWARTA TOREBKA"
+hide-object hidden_object_id=5
+show-closeup view_id=2
+
+[18]
+examine
+  message_1:
+    "PRZYKRYWADŁO"
+hide-object hidden_object_id=6
+
+[19]
+examine
+  message_1:
+    "ŚMIECI"
+
+[20]
+hide-object hidden_object_id=7
+
+[21]
+examine
+  message_1:
+    "CZAPKA USZATKA"

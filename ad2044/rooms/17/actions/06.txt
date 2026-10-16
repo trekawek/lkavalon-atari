@@ -1,5 +1,0 @@
-[06]
-examine
-  message_1:
-    "TO JEST"
-    "LAMIA RENO."

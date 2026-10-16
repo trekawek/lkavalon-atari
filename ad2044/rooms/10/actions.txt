@@ -1,0 +1,28 @@
+# Clickable zone IDs; drawable image IDs are a separate namespace.
+
+[00]
+back
+
+[01]
+back
+
+[02]
+use-relative-exit relative_direction=0
+
+[03]
+examine
+  message_1:
+    "W DALSZYM CIĄGU"
+    "JEST TO KLIMATYZACJA"
+
+[04]
+examine
+  message_1:
+    "POLE SIŁOWE"
+    "^^^^^^^^^^^"
+    "BARIERA DLA MATERII"
+    "ORGANICZNEJ"
+open-with-item object_id=1 required_inventory_id=255 exit_direction=0
+  message_1:
+    "TYM POLA SIŁOWEGO"
+    "NIE USUNIESZ"

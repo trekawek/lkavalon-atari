@@ -1,4 +1,0 @@
-[16]
-examine
-  message_1:
-    "BLAT BIURKA"

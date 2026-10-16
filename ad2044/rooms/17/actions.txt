@@ -1,0 +1,76 @@
+# Clickable zone IDs; drawable image IDs are a separate namespace.
+
+[00]
+back
+back
+
+[01]
+back
+
+[02]
+examine
+  message_1:
+    "DRZWI DO POKOJU"
+    "RATOWNICZKI."
+open-exit revealed_object_id=2 exit_direction=3
+
+[03]
+examine
+  message_1:
+    "DRZWI STEROWANE"
+    "ELEKTRONICZNIE."
+
+[04]
+examine
+  message_1:
+    "PRZYCISK."
+animate-open revealed_object_id=3 exit_direction=0 animation_frame_count=4
+
+[05]
+examine
+  message_1:
+    "ILUMINATOR Z WIDOKIEM"
+    "NA BASEN."
+adult-gated-closeup view_id=1 expected_answer="TAK"
+  message_1:
+    "CHCESZ CZEGOŚ"
+    "MAŁOLACIE ?"
+
+[06]
+examine
+  message_1:
+    "TO JEST"
+    "LAMIA RENO."
+
+[07]
+examine
+  message_1:
+    "FRAGMENT CAŁOŚCI,"
+    "ZWANEJ LAMIA RENO."
+
+[08]
+examine
+  message_1:
+    "FRAGMENT CIAŁA."
+refuse-closeup
+  message_1:
+    "NIE DOSZŁO DO ZBLI\\x7AENIA,"
+    "OBIEKT JEST ZA SZYBĄ."
+
+[09]
+examine
+  message_1:
+    "RATOWNICZKI TAM NIE MA."
+use-relative-exit relative_direction=3
+
+[10]
+close-exit hidden_object_id=2 exit_direction=3
+
+[11]
+use-relative-exit relative_direction=0
+
+[12]
+examine
+  message_1:
+    "PRZYCISK."
+animate-close hidden_object_id=3 exit_direction=0 animation_frame_count=4

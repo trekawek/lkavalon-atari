@@ -1,8 +1,0 @@
-[03]
-examine
-  message_1:
-    "DOTYKASZ PŁÓTNA."
-cut-with-item revealed_object_id=1 exit_direction=0 animation_frame_count=15
-  required_inventory_id=122
-  message_1:
-    "TYM NIE PRZETNIESZ."

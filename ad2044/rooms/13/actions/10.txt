@@ -1,5 +1,0 @@
-[10]
-examine
-  message_1:
-    "TABLICA DO WIESZANIA KLUCZY"
-show-closeup view_id=1

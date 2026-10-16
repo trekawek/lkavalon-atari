@@ -1,6 +1,0 @@
-[05]
-examine
-  message_1:
-    "MAGNETYCZNA OBRĄCZKA."
-take-item
-discard-object hidden_object_id=113

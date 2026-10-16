@@ -1,5 +1,0 @@
-[06]
-examine
-  message_1:
-    "DRZWI"
-open-exit revealed_object_id=3 exit_direction=3

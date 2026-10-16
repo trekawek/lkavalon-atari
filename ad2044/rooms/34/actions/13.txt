@@ -1,5 +1,0 @@
-[13]
-examine
-  message_1:
-    "OPIECZĘTOWANA PRZEPUSTKA."
-take-parameter-object revealed_object_id=4 selected_object_id=117

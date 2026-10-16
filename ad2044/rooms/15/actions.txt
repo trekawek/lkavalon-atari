@@ -1,0 +1,44 @@
+# Clickable zone IDs; drawable image IDs are a separate namespace.
+
+[00]
+back
+
+[01]
+back
+
+[02]
+use-relative-exit relative_direction=0
+
+[03]
+examine
+  message_1:
+    "KABINA UBRANIOWA."
+open-with-item object_id=1 required_inventory_id=255 exit_direction=0
+  message_1:
+    "NIESTETY, TYM NIE OTWORZYSZ."
+    "^^^^^^^^^^^^^^^^^^^^^^^^"
+    "ZAMEK REAGUJE NA GŁOS"
+    "UPOWA\\x7ANIONEJ OSOBY."
+
+[04]
+examine
+  message_1:
+    "DRZWI DO WINDY."
+
+[05]
+press-if-state-set revealed_object_id=1 exit_direction=3 tested_state_index=4
+  message_1:
+
+[06]
+examine
+  message_1:
+    "OTWARTE DRZWI DO WINDY."
+close-exit hidden_object_id=1 exit_direction=3
+
+[07]
+examine
+  message_1:
+    "PRZYCISK WYWOŁUJĄCY WINDĘ."
+
+[08]
+use-relative-exit relative_direction=3

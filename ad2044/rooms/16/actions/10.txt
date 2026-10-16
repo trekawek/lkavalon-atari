@@ -1,7 +1,0 @@
-[10]
-examine
-  message_1:
-    "ZAMKNIĘTE OKIENKO."
-    "^^^^^^^^^^^^^^^^^^"
-    "ZACHOWAJ CISZĘ,"
-    "PORTIERKA ŚPI."

@@ -1,7 +1,0 @@
-[02]
-examine
-  message_1:
-    "JAKIŚ OWOC"
-eat object_id=102 energy_added=70
-  message_1:
-take-item

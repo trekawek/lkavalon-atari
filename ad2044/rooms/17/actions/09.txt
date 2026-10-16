@@ -1,5 +1,0 @@
-[09]
-examine
-  message_1:
-    "RATOWNICZKI TAM NIE MA."
-use-relative-exit relative_direction=3

@@ -42,7 +42,7 @@ move-reveal-43 revealed_object_id=6
 [08]
 examine
   message_1:
-    "SŁU\\x7ABOWA WALIZKA."
+    "SŁUŻBOWA WALIZKA."
 
 [09]
 examine

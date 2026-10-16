@@ -17,7 +17,7 @@ open-with-item object_id=2 required_inventory_id=255 exit_direction=3
   message_1:
     "NIESTETY, ZAMEK REAGUJE"
     "TYLKO NA GŁOS"
-    "UPOWA\\x7ANIONEJ OSOBY."
+    "UPOWAŻNIONEJ OSOBY."
 
 [04]
 examine

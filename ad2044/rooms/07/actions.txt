@@ -16,7 +16,7 @@ examine
 examine
   message_1:
     "OKAP Z INSTALACJĄ"
-    "PRZECIWPO\\x7AAROWĄ"
+    "PRZECIWPOŻAROWĄ"
 
 [04]
 examine
@@ -31,7 +31,7 @@ show-closeup view_id=4
 examine
   message_1:
     "POJEMNIK NA PRODUKTY"
-    "SPO\\x7AYWCZE"
+    "SPOŻYWCZE"
 show-closeup view_id=2
 
 [07]

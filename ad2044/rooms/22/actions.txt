@@ -36,7 +36,7 @@ examine
 press-if-flag-set revealed_object_id=3 exit_direction=0 animation_frame_count=6
   tested_state_index=8
   message_1:
-    "STRA\\x7ANICZKA MUSI"
+    "STRAŻNICZKA MUSI"
     "ODBLOKOWAĆ DRZWI."
 
 [07]
@@ -67,7 +67,7 @@ examine
 [12]
 examine
   message_1:
-    "STRA\\x7ANICZKA \\x7AĄDA OKAZANIA"
+    "STRAŻNICZKA ŻĄDA OKAZANIA"
     "PRZEPUSTKI ZEZWALAJĄCEJ"
     "WYJŚĆ NA POWIERZCHNIĘ."
 show-item-set-flag hidden_object_id=2 required_inventory_id=117
@@ -79,7 +79,7 @@ show-item-set-flag hidden_object_id=2 required_inventory_id=117
     "SEKRETARKA LAMIA RENO."
   message_2:
     "BEZ PIECZĄTKI PRZEPUSTKA"
-    "JEST NIEWA\\x7ANA."
+    "JEST NIEWAŻNA."
 
 [13]
 use-relative-exit relative_direction=0

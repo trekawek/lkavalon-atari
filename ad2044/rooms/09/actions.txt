@@ -41,7 +41,7 @@ examine
 lift-energy-gated view_id=2 energy_threshold_exclusive=20
   message_1:
     "JESTEŚ BARDZO OSŁABIONY."
-    "NIE MO\\x7AESZ TEGO PODNIEŚĆ."
+    "NIE MOŻESZ TEGO PODNIEŚĆ."
 
 [07]
 examine

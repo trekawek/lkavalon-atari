@@ -15,7 +15,7 @@ examine
 [03]
 examine
   message_1:
-    "CZYSTA ,\\x7ARÓDLANA WODA."
+    "CZYSTA ,ŹRÓDLANA WODA."
 
 [04]
 examine

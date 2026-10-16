@@ -54,7 +54,7 @@ examine
     "FRAGMENT CIAŁA."
 refuse-closeup
   message_1:
-    "NIE DOSZŁO DO ZBLI\\x7AENIA,"
+    "NIE DOSZŁO DO ZBLIŻENIA,"
     "OBIEKT JEST ZA SZYBĄ."
 
 [09]

@@ -39,7 +39,7 @@ show-closeup view_id=2
 [08]
 examine
   message_1:
-    "PORTRETY ZAŁO\\x7AYCIELEK"
+    "PORTRETY ZAŁOŻYCIELEK"
     "SEKRETARIATU."
 
 [09]
@@ -54,8 +54,8 @@ examine
 insert-either-item animation_object_id=5 exit_direction=5 animation_frame_count=6
   accepted_inventory_id_1=116 accepted_inventory_id_2=117 hidden_object_id=4
   message_1:
-    "NIE MO\\x7AESZ"
-    "TEGO WŁO\\x7AYĆ."
+    "NIE MOŻESZ"
+    "TEGO WŁOŻYĆ."
 
 [11]
 examine

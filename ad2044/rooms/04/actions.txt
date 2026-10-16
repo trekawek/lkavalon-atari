@@ -40,7 +40,7 @@ examine-flag tested_state_index=5
     "WAL ŚMIAŁO,"
     "NIKOGO TAM NIE MA."
   message_2:
-    "UWA\\x7AAJ KTOŚ TAM JEST."
+    "UWAŻAJ KTOŚ TAM JEST."
 use-relative-exit relative_direction=0
 throw-relocate-room source_room_id=11 required_inventory_id=106 destination_room_id=5
   set_state_index=5

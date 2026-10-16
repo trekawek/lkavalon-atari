@@ -63,12 +63,12 @@ press-flash-advance revealed_object_id=6 exit_direction=5 animation_frame_count=
 [10]
 examine
   message_1:
-    "REGAŁ Z KSIĄ\\x7AKAMI."
+    "REGAŁ Z KSIĄŻKAMI."
 
 [11]
 examine
   message_1:
-    "NIBY KSIĄ\\x7AKI."
+    "NIBY KSIĄŻKI."
 show-closeup view_id=2
 
 [12]
@@ -82,7 +82,7 @@ eat object_id=4 energy_added=70
 [13]
 examine
   message_1:
-    "ATRAPA KSIĄ\\x7AEK."
+    "ATRAPA KSIĄŻEK."
 reveal-object revealed_object_id=5
 
 [14]
@@ -110,7 +110,7 @@ press-two-and-flag revealed_object_id=7 exit_direction=0 animation_frame_count=5
   message_1:
     "BRAK PRĄDU."
   message_2:
-    "KTOŚ MO\\x7AE ZOBACZYĆ."
+    "KTOŚ MOŻE ZOBACZYĆ."
     "DZIAŁA TYLKO PRZY"
     "ZASŁONIĘTYM OKNIE."
 
@@ -130,5 +130,5 @@ use-relative-exit relative_direction=0
 [22]
 examine
   message_1:
-    "REGAŁ Z KSIĄ\\x7AKAMI."
+    "REGAŁ Z KSIĄŻKAMI."
 animate-close-73 hidden_object_id=7 exit_direction=0 animation_frame_count=5

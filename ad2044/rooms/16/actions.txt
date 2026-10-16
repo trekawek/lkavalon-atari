@@ -15,7 +15,7 @@ open-with-item object_id=1 required_inventory_id=255 exit_direction=0
     "NIESTETY,TYM NIE OTWORZYSZ."
     "^^^^^^^^^^^^^^^^^^^^^^^"
     "ZAMEK REAGUJE NA GŁOS"
-    "UPOWA\\x7ANIONEJ OSOBY."
+    "UPOWAŻNIONEJ OSOBY."
 
 [03]
 show-closeup view_id=1
@@ -49,7 +49,7 @@ examine
 examine
   message_1:
     "ZASPANA PORTIERKA W KUFAJCE."
-    "\\x7AĄDA OKAZANIA ODPOWIEDNIEGO"
+    "ŻĄDA OKAZANIA ODPOWIEDNIEGO"
     "DOKUMENTU."
 show-item-open revealed_object_id=4 exit_direction=0 animation_frame_count=3
   required_inventory_id=111

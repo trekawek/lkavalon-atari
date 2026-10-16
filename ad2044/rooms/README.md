@@ -95,8 +95,10 @@ clickable zone. Keep sections consecutive from zero, including empty sections.
 Action parameters are decimal. Two spaces introduce
 continued parameters or a message field; four spaces introduce a quoted message
 line. An empty message block is valid. Quoted text uses uppercase game glyphs,
-including `ĄĆĘŁŃÓŚ`; unsupported or uncertain glyphs retain exact escapes such as
-`"NÓ\\x7A DO PAPIERU."`. The doubled backslash is required inside a quoted line.
+including `ĄĆĘŁŃÓŚŹŻ`, for example `"NÓŻ DO PAPIERU."`. The narrow gameplay font
+uses the same byte `$7A` for `Ż` and `Ź`; the builder accepts either spelling.
+Unsupported or inverse glyphs retain exact escapes such as `"\\xFF"`. The
+doubled backslash is required inside a quoted line.
 Long text may need manual line breaks to fit the game's display.
 
 Run `make -C ad2044` from the repository root after an edit. Record lengths,

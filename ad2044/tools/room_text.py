@@ -11,11 +11,12 @@ import json
 from pathlib import Path
 import re
 
-# Lowercase font slots with unambiguous Polish capital glyphs. The original z
-# slot is deliberately escaped: available evidence does not distinguish Z-dot
-# from Z-acute. '=' is the game's blank. Original byte $20 needs an escape.
-POLISH = dict(zip("acelnos", "ĄĆĘŁŃÓŚ"))
+# Gameplay font slots hold Polish capitals. The narrow z glyph serves both
+# Ż and Ź: decoding defaults to Ż; authored text can spell either correctly.
+# '=' is the game's blank. Original byte $20 needs an escape.
+POLISH = dict(zip("acelnosz", "ĄĆĘŁŃÓŚŻ"))
 POLISH_REVERSE = {value: ord(key) for key, value in POLISH.items()}
+POLISH_REVERSE["Ź"] = ord("z")
 SYMBOLS = "123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 # LOAD-HIT-MAP expands into $4FED; the next live dictionary header is $5140.
 HITMAP_CAPACITY = 0x5140 - 0x4FED

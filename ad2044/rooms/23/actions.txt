@@ -20,18 +20,18 @@ examine
     "TWARZ."
 refuse-with-overlay-55 revealed_object_id_or_255=5
   message_1:
-    "STRA\\x7ANICZKA ZEMDLAŁĄ."
+    "STRAŻNICZKA ZEMDLAŁĄ."
 
 [05]
 examine
   message_1:
-    "STRA\\x7ANICZKA."
+    "STRAŻNICZKA."
 
 [06]
 password-press revealed_object_id=6 exit_direction=0 animation_frame_count=6
   expected_answer="PARTENOGENEZA"
   message_1:
-    "\\x7ALE"
+    "ŹLE"
 examine
   message_1:
     "SYSTEM OTWIERANIA."

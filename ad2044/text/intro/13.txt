@@ -1,6 +1,6 @@
 # One quoted line per displayed line; keep spaces inside quotes.
 "NACIŚNIĘCIE SPACJI W CZASIE"
 "EDYCJI GŁÓWNEGO OBRAZKA"
-"UMO\\x7ALIWIA ZAPIS GRY, ODCZYT,"
+"UMOŻLIWIA ZAPIS GRY, ODCZYT,"
 "POWRÓT DO POCZĄTKU LUB"
 "WYWOŁANIE NINIEJSZEGO OPISU."

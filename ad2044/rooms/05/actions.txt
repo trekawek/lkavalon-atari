@@ -50,7 +50,7 @@ reveal-object revealed_object_id=7
 [09]
 examine
   message_1:
-    "D\\x7AWIĘKOCHŁONNA ŚCIANA"
+    "DŹWIĘKOCHŁONNA ŚCIANA"
 
 [10]
 examine
@@ -67,7 +67,7 @@ show-closeup-19 view_id=2
 examine
   message_1:
     "KOT JAKI JEST,"
-    "KA\\x7ADY WIDZI."
+    "KAŻDY WIDZI."
 
 [13]
 examine

@@ -34,7 +34,7 @@ examine
     "CHYBA JEST TO GŁAZ."
 refuse-with-overlay revealed_object_id_or_255=255
   message_1:
-    "NIE MO\\x7AESZ TEGO WZIĄĆ."
+    "NIE MOŻESZ TEGO WZIĄĆ."
     "JESTEŚ ZA SŁABY."
 
 [06]

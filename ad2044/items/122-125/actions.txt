@@ -9,5 +9,5 @@ back
 [02]
 examine
   message_1:
-    "NÓ\\x7A DO PAPIERU."
+    "NÓŻ DO PAPIERU."
 take-item

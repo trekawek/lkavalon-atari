@@ -37,7 +37,7 @@ break-reveal revealed_object_id=4 unused_parameter_2=0
 [06]
 examine
   message_1:
-    "CZUJNIK PRZECIWPO\\x7AAROWY."
+    "CZUJNIK PRZECIWPOŻAROWY."
 
 [07]
 open-with-item object_id=3 required_inventory_id=255 exit_direction=0
@@ -60,7 +60,7 @@ examine
   message_1:
     "MATERAC HIBERNACYJNY."
     "   ^^^^^^^^^^^^^^^^^^^   "
-    "ZAPOBIEGA POWSTAWANIU ODLE\\x7AYN."
+    "ZAPOBIEGA POWSTAWANIU ODLEŻYN."
 
 [10]
 show-closeup view_id=1
@@ -81,13 +81,13 @@ examine
 [13]
 examine
   message_1:
-    "TYTANOWA ŁY\\x7AKA."
+    "TYTANOWA ŁYŻKA."
 
 [14]
 examine
   message_1:
     "ELEKTRONICZNE OBWODY"
-    "PODTRZYMYWANIA \\x7AYCIA."
+    "PODTRZYMYWANIA ŻYCIA."
 
 [15]
 examine
@@ -103,8 +103,8 @@ eat object_id=5 energy_added=100
     "CZUJESZ SIĘ ŚWIETNIE."
     "ZNACZNIE WZROSŁA TWOJA"
     "ENERGIA POTENCJALNA."
-    "MO\\x7AESZ BEZ OBAW REALIZOWAĆ"
-    "JAK\\x7AE WA\\x7ANĄ DLA LUDZKOŚĆI"
+    "MOŻESZ BEZ OBAW REALIZOWAĆ"
+    "JAKŻE WAŻNĄ DLA LUDZKOŚĆI"
     "MISJĘ."
 examine
   message_1:

@@ -31,8 +31,10 @@ class ActionTextTests(unittest.TestCase):
         original = bytes(range(256))
         self.assertEqual(rt.glyph_bytes(rt.readable_text(original)), original)
         self.assertEqual(rt.readable_text(b"URZaDZENIA=KLIMATYZACYJNE."), "URZĄDZENIA KLIMATYZACYJNE.")
-        self.assertEqual(rt.readable_text(b" =z"), "\\x20 \\x7A")
-        self.assertEqual(rt.glyph_bytes("ĄĆĘŁŃÓŚ"), b"acelnos")
+        self.assertEqual(rt.readable_text(b" =z"), "\\x20 Ż")
+        self.assertEqual(rt.glyph_bytes("ĄĆĘŁŃÓŚŹŻ"), b"acelnoszz")
+        self.assertEqual(rt.glyph_bytes("NÓŻ DŹWIĘK ŹLE"), b"Noz=DzWIeK=zLE")
+        self.assertEqual(rt.glyph_bytes("\\x7A"), rt.glyph_bytes("Ż"))
 
     def test_quoted_message_whitespace_and_glyph_escapes_survive(self):
         text = '[0]\nexamine\n  message_1:\n    ' + json.dumps(" A  \\x20\\xFF ") + '\n'

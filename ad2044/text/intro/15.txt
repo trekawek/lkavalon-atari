@@ -1,4 +1,0 @@
-# One quoted line per displayed line; keep spaces inside quotes.
-"   ŻYCZĘ WIELU EKSCYTUJĄCYCH   "
-"   MOMENTÓW PODCZAS GRY.   "
-"AUTOR"

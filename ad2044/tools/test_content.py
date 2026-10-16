@@ -96,12 +96,8 @@ class ContentTests(unittest.TestCase):
 
     def test_text_pages_keep_their_runtime_nesting(self):
         groups = content.build_groups(self.root)
-        intro = records(groups[1, 25])
-        self.assertEqual(len(intro), 1)
-        # Page lists end at their enclosing length; each page has a terminator.
-        pages = records(intro[0] + b"\0\0")
-        self.assertEqual(len(pages), 16)
-        self.assertEqual(records(pages[0])[0], content.message(self.root / "text/intro/00.txt"))
+        # This release has no caller for the historical prologue (group 25).
+        self.assertNotIn((1, 25), groups)
         title = records(groups[1, 3])
         credits = records(title[2] + b"\0\0")
         self.assertEqual(len(credits), 4)

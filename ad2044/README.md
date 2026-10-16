@@ -26,7 +26,7 @@ exits. Initially, room 01's right exit leads to room 02.
 | `rooms/NN/actions.txt` | All room actions and messages, grouped by clickable zone |
 | [items](items) | Inventory pictures and actions, grouped into the engine's four-item banks |
 | [interface](interface) | Title, screen frame, fonts and cursor |
-| [text](text) | Credits and prologue, one short text file per message/page |
+| [text](text) | Title credits, one short text file per message |
 | [ending](ending) | Ending background, frames and message |
 | [music/ad2044.snd](music/ad2044.snd) | Original custom music/effects bank; binary for now |
 | [src/30-game.fth](src/30-game.fth) | Game logic; framework and kernel are beside it |
@@ -66,6 +66,17 @@ Forth. `make verify` checks the original executable bytes and the current
 source-generated assets; it deliberately does not require the old disk layout.
 A changed executable intentionally fails that release-matching check.
 
+For an optional emulator smoke check, install Atari800, Xvfb and Python Xlib,
+then run:
+
+```sh
+python3 tools/emulate.py build/ad2044-side1.atr build/ad2044-side2.atr \
+  --scenario tools/emulate-smoke.json --output build/emulator-smoke
+```
+
+The scenario checks the menu, enters the first room and moves the cursor, saving
+screenshots in the output directory.
+
 The game requires writable disks. A new build starts both the initial-state
 and save slots from [world/initial.txt](world/initial.txt). In-game save/load
 then modifies only the generated disks, not source files. Repacking resets
@@ -97,8 +108,9 @@ The 901 recovered dictionary entries have 473 recovered/matched names,
 425 inferred descriptive names and three unresolved address names.
 [tools/names.json](tools/names.json) retains the naming evidence and
 [tools/recovery-notes.txt](tools/recovery-notes.txt) explains the analysis.
-Optional decompilation writes large dictionaries, symbol lists and string
-catalogs under `build/research/`. They are reports, not build inputs.
+Optional `python3 tools/decompile.py` regenerates Forth sources and writes large
+dictionaries, symbol lists and string catalogs under `build/research/`.
+Those catalogs are reports, not build inputs.
 Historical extraction tools need an original fixture as described in
 [reference/README.md](reference/README.md).
 

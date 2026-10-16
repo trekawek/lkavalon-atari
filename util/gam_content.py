@@ -256,7 +256,10 @@ def build_groups(root):
     stub = records([records([b"\1"], True)])
     title.update({0: stub, 1: stub, 7: (root / "interface/game.fnt").read_bytes(),
                   8: (root / "interface/title.fnt").read_bytes(), 9: title_pages(root),
-                  10: player_bank(root), 11: bytes(192), 12: cmc(root), 13: cmc(root, True)})
+                  # W's engine never fetches the inherited walking-animation
+                  # bank. Keep its record index so CMC resources remain 12/13.
+                  10: player_bank(root) if root.name == "klatwa" else b"\0",
+                  11: bytes(192), 12: cmc(root), 13: cmc(root, True)})
     font_size = 1023 if root.name == "klatwa" else 1024
     if any(len(title[n]) != font_size for n in (7, 8)):
         raise ValueError(f"Fonts must contain exactly {font_size} bytes")
@@ -350,8 +353,9 @@ def dependencies(root):
         for _, fields in lines(table):
             if fields[0] in ("picture", "hitmap"):
                 result.add(source_path(root, table.parent, fields[3]))
-    for _, fields in lines(root / "player/frames.txt"):
-        result.add(source_path(root, root / "player", fields[2]))
+    if root.name == "klatwa":
+        for _, fields in lines(root / "player/frames.txt"):
+            result.add(source_path(root, root / "player", fields[2]))
     for number in range(1, GAMES[root.name][0] + 1):
         directory = root / f"rooms/{number:02}"
         for _, fields in lines(directory / "scene.txt"):

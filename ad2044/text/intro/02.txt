@@ -1,7 +1,0 @@
-# One quoted line per displayed line; keep spaces inside quotes.
-"PO KILKU DNIACH WYTĘŻONEJ PRACY"
-"KOMPUTER WYTYPOWAŁ JEDNOSTKĘ,KTÓRA"
-"NAJLEPIEJ SPEŁNIAŁA ZAŁOŻONE"
-"WYMAGANIA."
-"PRÓBKĄ STATYSTYCZNEGO OBYWATELA"
-"PRL ZOSTAŁEŚ WŁAŚNIE TY."

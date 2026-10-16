@@ -245,7 +245,9 @@ def check_gam_authored_graphics(root, files, disk):
         resource = item.get("record", item.get("resource"))
         key = "hitmap", item["group"], resource, item["subrecord"]
         expected[key] = bytes([item["width"], item["height"]]) + files[item.get("raw", item.get("raw_file"))]
-    for item in report["sprites"]:
+    # W's released disk inherited these Klątwa frames, but its executable
+    # never fetches resource 10. They are no longer authored game inputs.
+    for item in report["sprites"] if root.name == "klatwa" else ():
         key = "sprite", item.get("direction", item.get("direction_index")), item.get("frame", item.get("frame_index"))
         header = bytes([item["x_offset"], item["y_offset"], item["width_bytes"], item["height"]])
         expected[key] = header + files[item.get("raw", item.get("raw_file"))]
@@ -272,7 +274,8 @@ def check_gam_authored_graphics(root, files, disk):
             width, height = body[header - 2:header]
             decoded, _ = gam_assets.decompress_rle(body[header:], width, height)
             actual[kind, group, resource, subrecord] = body[:header] + decoded
-    directions, _ = helper.read_records(gam_content.player_bank(root))
+    directions = (helper.read_records(gam_content.player_bank(root))[0]
+                  if root.name == "klatwa" else ())
     for direction in directions:
         frames, _ = helper.read_records(direction["data"])
         for frame in frames:

@@ -8,6 +8,8 @@ import unittest
 
 import room_text as rt
 
+ROOT = Path(__file__).resolve().parents[1]
+
 
 class ActionTextTests(unittest.TestCase):
     def encode(self, text):
@@ -26,6 +28,20 @@ class ActionTextTests(unittest.TestCase):
         long = self.encode('[0]\nexamine\n  message_1:\n    "AB"\n    "C"\n')
         self.assertEqual(short, bytes.fromhex("08000400070101410000"))
         self.assertEqual(long, bytes.fromhex("0B000700070202414201430000"))
+
+    def test_authored_message_edit_changes_only_its_encoded_glyph(self):
+        source = ROOT / "rooms/01/actions.txt"
+        before = rt.encode_actions(source)
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "actions.txt"
+            text = source.read_text()
+            self.assertIn('"KORYTARZ."', text)
+            path.write_text(text.replace('"KORYTARZ."', '"KORYTARZ!"', 1))
+            after = rt.encode_actions(path)
+        changes = [i for i, pair in enumerate(zip(before, after)) if pair[0] != pair[1]]
+        self.assertEqual(len(before), len(after))
+        self.assertEqual(len(changes), 1)
+        self.assertEqual((before[changes[0]], after[changes[0]]), (ord("."), ord("!")))
 
     def test_every_byte_of_original_font_has_a_reversible_rendering(self):
         original = bytes(range(256))
@@ -127,6 +143,33 @@ class ActionTextTests(unittest.TestCase):
 
 
 class HitMapTests(unittest.TestCase):
+    def test_authored_grid_edit_reaches_the_native_hitmap(self):
+        source = ROOT / "rooms/00/image-03.hit.txt"
+        document = rt.read_hitmap(source)
+        self.assertEqual(document["object_ids"][0][0], 18)
+        before = rt.hitmap_body(document)
+        document["object_ids"][0][0] = 19
+        after = rt.hitmap_body(document)
+
+        # A changed cell can change the compression layout. Check decoded data.
+        def unpack(data):
+            result = bytearray()
+            index = 0
+            while index < len(data):
+                value = data[index]
+                index += 1
+                if value == 254:
+                    count, value = data[index:index + 2]
+                    index += 2
+                    result.extend(bytes([value]) * (count or 256))
+                else:
+                    result.append(value)
+            return bytes(result)
+
+        old, edited = unpack(before), unpack(after)
+        self.assertEqual((old[2], edited[2]), (18, 19))
+        self.assertEqual(old[:2] + old[3:], edited[:2] + edited[3:])
+
     def test_compressible_map_cannot_overwrite_the_next_forth_definition(self):
         # 21*16 cells fit at $4FED; 22*16 would reach past the header at $5140.
         fitting = 'size 21 16\ngrid\n' + ('.' * 21 + '\n') * 16

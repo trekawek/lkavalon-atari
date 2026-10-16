@@ -1,7 +1,7 @@
 PYTHON ?= python3
 SOURCES = $(wildcard src/*.fth) sources.json
 CONTENT_TOOLS = tools/content.py tools/disk.py tools/world.py tools/room_text.py tools/pictures.py
-FORTH_TOOLS = ../util/forth_assets.py ../util/sound_assets.py ../util/asm6502.py ../util/structured_assets.py
+FORTH_TOOLS = ../util/forth_assets.py
 ifneq ($(MAKECMDGOALS),clean)
 ASSETS := $(shell $(PYTHON) tools/content.py --dependencies)
 ifneq ($(.SHELLSTATUS),0)
@@ -27,7 +27,7 @@ build/assets-side1.atr build/ad2044-side2.atr &: $(ASSETS) $(CONTENT_TOOLS)
 
 assets: build/assets-side1.atr build/ad2044-side2.atr
 
-build/program/ad2044-side1.atr build/program/compile-report.json &: $(SOURCE_INPUTS) tools/compile.py build/figforth.atr build/empty.atr
+build/program/ad2044-side1.atr build/program/compile-report.json &: $(SOURCE_INPUTS) tools/compile.py build/figforth.atr | build/empty.atr
 	$(PYTHON) tools/compile.py --reference build/figforth.atr --manifest sources.json --disk3-template build/empty.atr --output-dir build/program --progress
 
 build/empty.atr: tools/disk.py

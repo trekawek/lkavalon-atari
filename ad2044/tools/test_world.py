@@ -55,6 +55,21 @@ class WorldTests(unittest.TestCase):
                          [0x4379, 0x437A])
         self.assertEqual(after[0x4379-world.BASE:0x437B-world.BASE], b"\x2c\x01")
 
+    def test_authored_starting_room_changes_only_its_state_cell(self):
+        for source in world.dependencies(ROOT):
+            destination = self.root / source.relative_to(ROOT)
+            destination.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copyfile(source, destination)
+        before = world.build_state(self.root)
+        path = self.root / "world/initial.txt"
+        text = path.read_text()
+        self.assertIn("current-room 0", text)
+        path.write_text(text.replace("current-room 0", "current-room 1"))
+        after = world.build_state(self.root)
+        self.assertEqual(before[0], 0)
+        self.assertEqual(after[0], 1)
+        self.assertEqual(before[1:], after[1:])
+
     def test_coordinate_and_exit_edit_change_separate_fields(self):
         before = world.build_state(self.root)
         path = self.root / "world/map.txt"

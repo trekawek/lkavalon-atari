@@ -127,9 +127,10 @@ tiles and unusual numeral glyphs remain explicit escapes. This preserves title
 art while making the credits readable. The builder does not treat these lines
 as ordinary gameplay text.
 
-`player/frames.txt` gives direction, frame, PNG and sprite offsets. Four
-directions each have five frames. This animation is active in Klątwa; Władcy
-retains the bank without established gameplay use. `interface/cursor.pmg` is
+Klątwa's `player/frames.txt` gives direction, frame, PNG and sprite offsets.
+Four directions each have five frames. Władcy has no walking animation;
+its inherited, unused frame bank is replaced by a generated placeholder
+that preserves the resource numbers used by the music. `interface/cursor.pmg` is
 the small native hardware bitmap embedded in Forth. Fonts remain `.fnt`, and
 music remains `.cmc`.
 

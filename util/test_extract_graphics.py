@@ -104,7 +104,7 @@ class LaterAuthoredGraphicsChecks(unittest.TestCase):
         return extraction.check_gam_authored_graphics(root, files, disk)
 
     def test_current_sources_match_without_catalogs_or_packed_copies(self):
-        for game, count in (("klatwa", 407), ("wladcy-ciemnosci", 542)):
+        for game, count in (("klatwa", 407), ("wladcy-ciemnosci", 522)):
             with self.subTest(game=game), tempfile.TemporaryDirectory() as tmp:
                 root = self.copy_sources(game, tmp)
                 self.assertFalse((root / "assets").exists())
@@ -114,8 +114,11 @@ class LaterAuthoredGraphicsChecks(unittest.TestCase):
 
     def test_changed_picture_sprite_font_cursor_or_hitmap_is_detected(self):
         for game in self.references:
-            for filename in ("stages/1/art/003-0.png", "player/0/0.png",
-                             "interface/game.fnt", "interface/cursor.pmg", "stages/1/art/003-1.hit.txt"):
+            filenames = ["stages/1/art/003-0.png", "interface/game.fnt",
+                         "interface/cursor.pmg", "stages/1/art/003-1.hit.txt"]
+            if game == "klatwa":
+                filenames.append("player/0/0.png")
+            for filename in filenames:
                 with self.subTest(game=game, file=filename), tempfile.TemporaryDirectory() as tmp:
                     root = self.copy_sources(game, tmp)
                     path = root / filename

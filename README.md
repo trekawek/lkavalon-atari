@@ -84,7 +84,7 @@ and [shared format notes](util/gam-content-format.md).
 | --- | --- | --- |
 | [AD 2044](ad2044/README.md) | Indexed PNGs beside each room/item, `interface/*.fnt`, `interface/cursor.pmg` | `music/ad2044.snd`, custom binary bank |
 | [Klątwa](klatwa/README.md) | Stage/item PNGs, text hitmaps, player PNGs, `interface/*.fnt` and cursor | `music/*.cmc` |
-| [Władcy Ciemności](wladcy-ciemnosci/README.md) | Stage/item PNGs, text hitmaps, player PNGs, `interface/*.fnt` and cursor | `music/*.cmc` |
+| [Władcy Ciemności](wladcy-ciemnosci/README.md) | Stage/item PNGs, text hitmaps, `interface/*.fnt` and cursor | `music/*.cmc` |
 
 Install each game's Python requirements, then run its Makefile:
 
@@ -125,9 +125,9 @@ AD 2044's editable pictures are ordinary indexed PNGs in its
 [ending](ad2044/ending) folders. Its [room guide](ad2044/rooms/README.md)
 explains picture placement, palette indices and clickable grids.
 
-Klątwa and Władcy use indexed PNGs as build inputs in their stage, item,
-interface and player folders. Their text hitmaps preserve clickable zones and
-depth information; [shared format notes](util/gam-content-format.md) explain
+Klątwa and Władcy use indexed PNGs as build inputs in their stage, item and
+interface folders; Klątwa also has player animation. Text hitmaps preserve
+clickable zones and depth information; [shared format notes](util/gam-content-format.md) explain
 the resource IDs, placement and palette rules.
 
 `python3 util/extract_graphics.py` is an optional historical extraction tool;

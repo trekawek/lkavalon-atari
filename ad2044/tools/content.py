@@ -178,11 +178,6 @@ def build_groups(root=ROOT):
     state = world.build_state(root, rooms)
     groups.update({(1, 19): state, (1, 20): state,
                    (1, 21): bytes(inventory), (1, 23): bytes(inventory)})
-    # The prologue is retained as editable text, although this release's menu
-    # does not select group 25. It contains one message per page.
-    pages = b"".join(record(collection({0: message(path)}))
-                     for path in numbered_files(root / "text/intro"))
-    groups[1, 25] = collection({0: pages})
     ending = root / "ending"
     records = scene(ending)
     records[0] = pictures.encode_fullscreen((ending / "background.png").read_bytes())

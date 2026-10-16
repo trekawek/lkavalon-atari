@@ -26,7 +26,6 @@ zones to the shared action collections in [stage 1](stages/1/actions.txt).
 | `stages/N/art/*.hit.txt` | Editable grids of clicked zones and depth values |
 | [items](items) | Item pictures, actions and starting coordinates for both stages |
 | [interface](interface) | Title art, readable title pages, fonts and hardware cursor |
-| [player](player) | Four directions with five PNG animation frames each |
 | [text](text) | Separate game messages referenced by the engine |
 | [music](music) | Native title/gameplay CMC modules |
 | [src](src) | Forth kernel, GAM framework, native assembler and game logic |
@@ -73,6 +72,14 @@ with room 1 and stage 1 selected. Saving in the game modifies the generated
 disk. Repacking resets that slot, so keep personal saved disks separately.
 The startup word explicitly enters room 1; `boot-room` is the pre-menu cell,
 not a setting for choosing a different starting room.
+
+The supplied emulator scenario checks the menu, first room and joystick.
+With Atari800, Xvfb and Python Xlib installed, run from this directory:
+
+```sh
+python3 ../ad2044/tools/emulate.py build/wladcy-ciemnosci.atr \
+  --scenario tools/emulate-smoke.json --output build/runtime-validation
+```
 
 ## Compile on Atari
 

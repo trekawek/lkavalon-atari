@@ -2,6 +2,7 @@
 """Logical-group placement and writable-disk contract tests."""
 
 import unittest
+from unittest.mock import patch
 
 import disk
 
@@ -23,6 +24,7 @@ class DiskTests(unittest.TestCase):
         first = images[disk.OUTPUTS[1]]
         self.assertEqual(first[16:16+disk.COMPILED_PREFIX_BYTES], bytes(disk.COMPILED_PREFIX_BYTES))
         self.assertEqual(sector(first, 500)[1:4], bytes([255, 25, 1]))
+        self.assertEqual(sector(first, 500)[24:], bytes(104))
 
     def test_variable_length_resource_and_zero_padding(self):
         group = bytes(range(129))
@@ -56,7 +58,7 @@ class DiskTests(unittest.TestCase):
         self.assertEqual(disk.GAME_BASE + 39 * disk.SECTOR_SIZE, 0xA4D0)
         self.assertLessEqual(0xA4D0, disk.OVERLAY_BASE)
         self.assertGreater(disk.GAME_BASE + 40 * disk.SECTOR_SIZE, disk.OVERLAY_BASE)
-        for key in ((1, 4), (1, 5), (1, 25), (2, 1), (2, 22), (2, 23)):
+        for key in ((1, 4), (1, 5), (1, 22), (2, 1), (2, 22), (2, 23)):
             with self.subTest(group=key):
                 disk.build_disks({key: bytes(39 * 128)})
                 with self.assertRaisesRegex(ValueError, "39-sector RAM workspace"):
@@ -71,13 +73,16 @@ class DiskTests(unittest.TestCase):
             disk.build_disks({(1, 1): b""})
 
     def test_disk_overflow_and_invalid_group_are_rejected(self):
-        groups = {(1, n): bytes(39*128) for n in range(4, 26)
+        groups = {(1, n): bytes(39*128) for n in range(4, 24)
                   if (1, n) not in disk.FIXED_DATA_LENGTHS}
         groups.update({(1, 3): bytes(36*128)})
         groups.update({key: bytes(size) for key, size in disk.FIXED_DATA_LENGTHS.items()})
-        with self.assertRaisesRegex(ValueError, "exceed1040|exceed 1040"):
-            disk.build_disks(groups)
-        for invalid in ((3, 1), (1, 26), (2, 0), (True, 3)):
+        # The live groups now fit even at their RAM limits on a full-size disk.
+        # Exercise the independent disk-capacity guard with reduced media.
+        with patch.object(disk, "SECTOR_COUNT", 720):
+            with self.assertRaisesRegex(ValueError, "exceed 720"):
+                disk.build_disks(groups)
+        for invalid in ((3, 1), (1, 24), (2, 0), (True, 3)):
             with self.assertRaises(ValueError):
                 disk.build_disks({invalid: b""})
 

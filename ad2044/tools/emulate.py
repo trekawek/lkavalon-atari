@@ -4,8 +4,8 @@
 Requires Atari800, Xvfb and Python's Xlib package. This drives the real 6502
 emulator and its monitor; it does not replace the Atari OS or Forth runtime.
 Example:
-  python3 tools/emulate.py reference/ad2044-side1.atr --output /tmp/ad2044
-  python3 tools/emulate.py reference/figforth.atr --scenario /tmp/scenario.json
+  python3 tools/emulate.py build/ad2044-side1.atr --scenario tools/emulate-smoke.json
+  python3 tools/emulate.py build/figforth.atr --scenario /tmp/scenario.json
 
 A scenario is a JSON list of steps, for example:
   [{"wait": 5}, {"key": "space"}, {"wait": 2},

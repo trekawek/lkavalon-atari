@@ -1,9 +1,9 @@
 # Text screens
 
 `credits/00.txt` through `07.txt` are the title's rotating credit messages.
-`intro/00.txt` through `15.txt` preserve the prologue pages. This release retains
-the prologue data but its normal menu does not select that resource group.
 The ending's message lives beside its pictures in `ending/message.txt`.
+The historical disks also contain unused prologue pages; this release has no
+code that loads them, so they are omitted from the editable sources and builds.
 
 Each quoted line is one displayed line. Spaces inside quotes are significant.
 The builder generates line counts, string lengths and enclosing records.

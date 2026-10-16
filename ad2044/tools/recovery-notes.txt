@@ -8,8 +8,8 @@ names and three unresolved placeholders. A source match to another GAM revision
 can still be a candidate, as stated in that entry's evidence.
 
 Read build/research/symbols.txt for evidence, stack effects and decoded callers.
-tools/names.json is the editable metadata; make decompile regenerates the Forth,
-build/research/dictionary.json, symbols.txt and string catalogs from it.
+tools/names.json is the editable metadata; python3 tools/decompile.py regenerates
+the Forth, build/research/dictionary.json, symbols.txt and string catalogs from it.
 The compact tools/runtime-signatures.tsv supports the other games' name recovery.
 It stores only CFA/header/runtime/body-size fields, without generated evidence.
 

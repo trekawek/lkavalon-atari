@@ -110,19 +110,21 @@ def validate_groups(root, groups):
         raise ValueError(f"Fonts must contain exactly {font_bytes} bytes")
     if klatwa:
         _bounded(len(title[10]), 0x9752 - 0x8D52, "Player sprite bank")
-    directions = records(title[10], "player directions")
-    if len(directions) != 4:
-        raise ValueError("Player sprite bank needs four directions")
-    for direction, body in enumerate(directions):
-        frames = records(body, f"player direction {direction}")
-        if len(frames) != 5:
-            raise ValueError("Each player direction needs five frames")
-        for frame in frames:
-            if len(frame) < 4 or len(frame) != 4 + frame[2] * frame[3]:
-                raise ValueError("Player frame geometry differs from its pixels")
-            # Movement's fixed saved rectangle is 5 bytes by 54 rows.
-            if frame[0] + frame[2] > 5 or frame[1] + frame[3] > 54:
-                raise ValueError("Player frame exceeds its fixed composition rectangle")
+        directions = records(title[10], "player directions")
+        if len(directions) != 4:
+            raise ValueError("Player sprite bank needs four directions")
+        for direction, body in enumerate(directions):
+            frames = records(body, f"player direction {direction}")
+            if len(frames) != 5:
+                raise ValueError("Each player direction needs five frames")
+            for frame in frames:
+                if len(frame) < 4 or len(frame) != 4 + frame[2] * frame[3]:
+                    raise ValueError("Player frame geometry differs from its pixels")
+                # Movement's fixed saved rectangle is 5 bytes by 54 rows.
+                if frame[0] + frame[2] > 5 or frame[1] + frame[3] > 54:
+                    raise ValueError("Player frame exceeds its fixed composition rectangle")
+    elif title[10] != b"\0":
+        raise ValueError("Wladcy's unused player resource must remain a placeholder")
     for resource in range(2, 7):
         _bounded(len(title[resource]), title_cache, f"Title art {resource}")
         for frame, body in enumerate(records(title[resource], f"title {resource}")):

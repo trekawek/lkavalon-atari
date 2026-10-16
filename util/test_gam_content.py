@@ -2,6 +2,7 @@
 
 from pathlib import Path
 import shutil
+import subprocess
 import tempfile
 import unittest
 
@@ -39,6 +40,94 @@ class ContentTests(unittest.TestCase):
                 deps = content.dependencies(root)
                 self.assertIn(root / "world/map.txt", deps)
                 self.assertNotIn(".atr", {p.suffix for p in deps})
+
+    def test_dependencies_use_only_current_authoring_files(self):
+        for game in content.GAMES:
+            with self.subTest(game=game):
+                root = ROOT / game
+                dependencies = content.dependencies(root)
+                self.assertTrue(dependencies)
+                self.assertFalse(any(p.relative_to(root).parts[0] in
+                                     ("assets", "graphics", "reference", "build")
+                                     for p in dependencies))
+                self.assertFalse({".json", ".atr"} & {p.suffix for p in dependencies})
+
+    def test_only_klatwa_requires_walking_animation_sources(self):
+        root = self.copy("wladcy-ciemnosci")
+        self.assertFalse((root / "player").exists())
+        self.assertFalse(any(p.is_relative_to(root / "player")
+                             for p in content.dependencies(root)))
+        self.assertEqual(len(content.build_disks(root)["build/assets.atr"]), program.ATR_SIZE)
+        root = self.copy("klatwa")
+        (root / "player/frames.txt").unlink()
+        with self.assertRaises(FileNotFoundError):
+            content.build_disks(root)
+
+    def test_make_rejects_invalid_content_even_with_existing_targets(self):
+        for game in content.GAMES:
+            with self.subTest(game=game):
+                root = self.copy(game)
+                shutil.copyfile(ROOT / game / "Makefile", root / "Makefile")
+                utilities = root.parent / "util"
+                utilities.mkdir()
+                for name in ("gam_content", "gam_assets", "gam_world", "gam_program", "gam_limits"):
+                    shutil.copyfile(ROOT / f"util/{name}.py", utilities / f"{name}.py")
+                pictures = root.parent / "ad2044/tools"
+                pictures.mkdir(parents=True)
+                shutil.copyfile(ROOT / "ad2044/tools/pictures.py", pictures / "pictures.py")
+                (root / "world/map.txt").write_text("invalid map row\n")
+                (root / "build").mkdir()
+                (root / "build/assets.atr").touch()
+                result = subprocess.run(["make", "assets"], cwd=root,
+                                        capture_output=True, text=True)
+                self.assertNotEqual(result.returncode, 0)
+                self.assertIn("world/map.txt:1", result.stderr)
+                self.assertIn("Cannot read authored content dependencies", result.stderr)
+
+    def test_font_music_and_live_player_edits_reach_the_generated_disk(self):
+        for game in content.GAMES:
+            filenames = ["music/title.cmc", "interface/game.fnt"]
+            if game == "klatwa":
+                filenames.append("player/0/0.png")
+            for filename in filenames:
+                with self.subTest(game=game, file=filename):
+                    root = self.copy(game)
+                    before = content.build_disks(root)["build/assets.atr"]
+                    path = root / filename
+                    if path.suffix == ".png":
+                        width, height, pixels, palette = assets.png.decode_png(path.read_bytes())
+                        changed = bytearray(pixels)
+                        changed[0] ^= 1
+                        path.write_bytes(assets.png.encode_png(width, height, changed, palette))
+                    else:
+                        changed = bytearray(path.read_bytes())
+                        changed[100] ^= 1
+                        path.write_bytes(changed)
+                    after = content.build_disks(root)["build/assets.atr"]
+                    self.assertEqual(len(before), len(after))
+                    self.assertEqual(sum(a != b for a, b in zip(before, after)), 1)
+
+    def test_fresh_save_reflects_authored_direction(self):
+        for game in content.GAMES:
+            with self.subTest(game=game):
+                root = self.copy(game)
+                before = content.world.save_state(root)
+                path = root / "world/initial.txt"
+                path.write_text(path.read_text().replace("last-direction 0", "last-direction 1"))
+                after = content.world.save_state(root)
+                self.assertEqual([(a, b) for a, b in zip(before, after) if a != b], [(0, 1)])
+                self.assertEqual(len(after), 896)
+
+    def test_real_inline_message_edit_changes_one_encoded_glyph(self):
+        root = self.copy("klatwa")
+        path = root / "stages/1/actions.txt"
+        before = assets.encode_actions(path, "klatwa")
+        text = path.read_text()
+        self.assertIn('"TEKOWE DRZWI"', text)
+        path.write_text(text.replace('"TEKOWE DRZWI"', '"TEKOWE DRZWA"', 1))
+        after = assets.encode_actions(path, "klatwa")
+        self.assertEqual(len(before), len(after))
+        self.assertEqual([(a, b) for a, b in zip(before, after) if a != b], [(ord("I"), ord("A"))])
 
     def test_map_edit_changes_the_room_selector_destination(self):
         for game in content.GAMES:

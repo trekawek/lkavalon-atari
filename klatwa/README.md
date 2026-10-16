@@ -74,6 +74,14 @@ disk. Repacking resets that slot, so keep personal saved disks separately.
 The startup word explicitly enters room 1; `boot-room` is the pre-menu cell,
 not a setting for choosing a different starting room.
 
+The supplied emulator scenario checks the menu, first room and joystick.
+With Atari800, Xvfb and Python Xlib installed, run from this directory:
+
+```sh
+python3 ../ad2044/tools/emulate.py build/klatwa.atr \
+  --scenario tools/emulate-smoke.json --output build/runtime-validation
+```
+
 ## Compile on Atari
 
 Mount `build/figforth.atr` as D1, `build/sources.atr` as D2 and a writable copy

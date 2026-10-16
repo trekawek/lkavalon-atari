@@ -1,5 +1,6 @@
 build/
 .venv/
+.venv-pypy/
 __pycache__/
 *.pyc
 /reference/*.atr

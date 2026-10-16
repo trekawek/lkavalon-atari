@@ -110,6 +110,35 @@ extraction tools require their original full-disk hashes. Fresh game disks
 intentionally have different layouts. `python3 util/audit_forth_binaries.py`
 checks that tracked binary files are graphics, fonts or music.
 
+## Faster Forth compilation
+
+The first build runs the original APX compiler instruction by instruction in
+the Python `py65` 6502 emulator. A single game's compiler has shared dictionary
+and output state, so `make -j4` only overlaps preparation tasks; it does not
+divide that compiler across cores. Different games can build concurrently.
+
+[PyPy](https://pypy.org/) can speed up the same emulator without changing the
+Forth sources or compiler. On macOS, install it with
+[Homebrew](https://formulae.brew.sh/formula/pypy3.12), then run these commands
+from the game directory (`ad2044`, `klatwa` or `wladcy-ciemnosci`):
+
+```sh
+brew install pypy3.12
+pypy3 -m venv .venv-pypy
+.venv-pypy/bin/python -m pip install -r requirements.txt
+make -j4 PYTHON=.venv-pypy/bin/python
+```
+
+A full AD2044 validation build on Linux took 54.5 seconds with PyPy 7.3.23
+(Python 3.11), versus 906.9 seconds in the earlier CPython build report.
+Both executed the same 1.65 billion 6502 instructions, and the final linked
+disk was byte-for-byte identical. These are reference timings, not Mac measurements.
+
+Keep `build/program/` between builds: it caches the compiled executable.
+Ordinary asset edits then only repack and link disks. Forth source and embedded
+data edits require compilation again. `make clean` discards that cache.
+The compiler records its elapsed time in `build/program/compile-report.json`.
+
 ## Music exports
 
 * [AD 2044](ad2044/music): custom player with title/ending music, game-over cue and twenty effects. Its binary bank is intentionally retained for now.

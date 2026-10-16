@@ -61,6 +61,9 @@ Subsequent room, text, map, font and picture edits only repack resources and
 combine them with that executable. Music and cursor are embedded in the
 executable, so changing either requires Forth compilation too.
 
+For faster first builds, see the [PyPy setup](../README.md#faster-forth-compilation).
+`make -j4` overlaps preparation tasks; the Forth compiler itself runs sequentially.
+
 `make assets` packs resources only. `make sources` packs the ASCII Forth
 screens. `make music` exports SAP listening files. `make test-content` exercises the authoring formats without compiling
 Forth. `make verify` checks the original executable bytes and the current

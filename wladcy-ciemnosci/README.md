@@ -64,6 +64,9 @@ action, message and CMC edits then only repack resources and link the disk.
 Initial world state, item coordinates, room objects and the hardware cursor
 are embedded in the executable, so editing those also recompiles Forth.
 
+For faster first builds, see the [PyPy setup](../README.md#faster-forth-compilation).
+`make -j4` overlaps preparation tasks; the Forth compiler itself runs sequentially.
+
 `make assets` packs resources; `make sources` packs ASCII Forth screens;
 `make music` generates listening exports under `build/music`.
 `make test-content` checks authoring formats. `make verify` checks the released

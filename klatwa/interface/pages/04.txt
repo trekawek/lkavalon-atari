@@ -1,8 +1,0 @@
-# One quoted line per displayed line.
-"{MUZYKA}"
-"\\xA0"
-"{~LESZEK  HOŁDA}"
-"\\xA0"
-"{~ORAZ}"
-"\\xA0"
-"{~CHAOS MUSIC COMPOSER}"

@@ -1,8 +1,0 @@
-# One quoted line per displayed line; keep spaces inside quotes.
-" MUZYKA"
-"    "
-"       ;   "
-" OCZYWISCIE"
-"    "
-"    "
-" LESZEK HOŁDA"

@@ -1,6 +1,0 @@
-# One quoted line per displayed line.
-"OLIWA MĄDROŚCI"
-"\\x76\\x76\\x76\\x76"
-"PRASTARA ODŻYWKA KLASY"
-"RZĄDZĄCEJ, CAŁKOWICIE"
-"ZANIECHANA W XX WIEKU"

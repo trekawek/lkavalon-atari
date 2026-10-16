@@ -1,3 +1,0 @@
-# One quoted line per displayed line.
-"NIESTETY, NIE WŁADASZ"
-"TUBYLCZYM JĘZYKIEM"

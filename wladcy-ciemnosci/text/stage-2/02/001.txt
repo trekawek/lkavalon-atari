@@ -1,5 +1,0 @@
-# One quoted line per displayed line.
-"RZĄD CHOĆ TRZYMA SIĘ KORYTA"
-"KONDYCJĘ GOSPODARKI PODNOSI."
-"WRACAJ WIĘC DO SWEGO KRAJU"
-"TAM LUD TEŻ O CUD SIĘ PROSI."

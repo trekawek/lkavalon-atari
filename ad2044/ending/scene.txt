@@ -16,3 +16,6 @@ picture 14 frame-14.png       12  0 -
 picture 15 frame-15.png       12  0 -
 picture 16 frame-16.png       12  0 -
 picture 17 frame-17.png       30 32 -
+
+# Each quoted string is one displayed line.
+message "BRAWO ALBERCIK." "WYKONAŁEŚ 100 PROCENT MISJI." "^^^^^^^^^^^^^^^^^^^^" "   \\xD3\\xD0\\xC1\\xC3\\xCA\\xC1^ POCZĄTEK GRY.   "

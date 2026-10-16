@@ -1,6 +1,0 @@
-# One quoted line per displayed line.
-"WYKIDAJŁO NIE WPUSZCZA"
-"ŻEBRAKÓW"
-"\\x76\\x76\\x76\\x76"
-"TWOJE ZNISZCZONE UBRANIE"
-"NIE BUDZI ZAUFANIA"

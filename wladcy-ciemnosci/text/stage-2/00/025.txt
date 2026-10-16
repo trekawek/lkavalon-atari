@@ -1,5 +1,0 @@
-# One quoted line per displayed line.
-"PRZYNIEŚ TRZY"
-"MOJE ULUBIONE"
-"ZWIERZAKI, A PRZEPUSZCZĘ"
-"CIĘ DALEJ"

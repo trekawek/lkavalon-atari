@@ -1,3 +1,0 @@
-# One quoted line per displayed line.
-"CIAŁO"
-"USTAWODAWCZO\\x76WYKONAWCZE"

@@ -1,4 +1,0 @@
-# One quoted line per displayed line.
-"KORYTO"
-"\\x76\\x76\\x76\\x76"
-"PODSTAWA WŁADZY"

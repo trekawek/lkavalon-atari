@@ -11,8 +11,9 @@ three hexadecimal Atari playfield colors, and `layers` gives the background
 drawing order. Layer `N` selects resource N, frame 0; `100+N` selects frame 2.
 Ordinary scene-layer IDs must stay below 200. Some resources also contain
 frame 4 for direct animation calls in Forth; `200+N` does not select that frame
-from a room's drawing list. A `notice` is either `none` or
-a nearby text file. These descriptions are copied into a small runtime buffer.
+from a room's drawing list. A `notice` is either `none` or quoted lines written
+directly in the scene, for example `notice "PRACOWNIA" "ALCHEMIKA"`.
+These descriptions are copied into a small runtime buffer.
 
 Open the stage's `art.txt` to find each picture and paired hitmap:
 
@@ -118,10 +119,41 @@ memory and do not override that startup code.
 Game messages use quoted Unicode lines. Space becomes the game's blank glyph;
 Polish capitals use its custom font slots. Ż and Ź share a stored glyph.
 `\\xNN` inside a quoted string preserves an explicit byte, including ornaments
-or inverse characters. A file's line count and each line's byte length are
-calculated. Keep individual lines within the game's displayed text width.
+or inverse characters. Each message's line count and each line's byte length
+are calculated. Keep individual lines within the game's displayed text width.
 
-Title pages use a different font with paired glyphs. `{AUTOR}` expands to the
+Klątwa's `stages/2/messages.txt` holds its four shared messages directly under
+resource IDs `[46]` through `[49]`:
+
+```text
+[46]
+"NIC NIE MOŻESZ ZROBIĆ."
+"CZARNOKSIĘŻNIK NIE POZWALA."
+```
+
+Władcy has one `messages.txt` per stage. Sections identify the bank and message
+used by its game code; both numbers are decimal:
+
+```text
+[00 000]
+"KARCZMA POD"
+"ŚWIŃSKIM RYJEM"
+
+[00 001]
+"BRAMA DO NIEBA"
+```
+
+Stage 1 has banks 0–3 containing 29, 28, 28 and 1 messages; stage 2 has banks
+0–2 containing 26, 21 and 18 messages. IDs start at zero within each bank.
+The complete set of IDs must remain present: removing a section fails the
+build instead of shifting the messages referenced by the unchanged game code.
+Room notices are inline in `scene.txt`; local action messages stay in
+`actions.txt` beside the action that displays them.
+
+Both games put all title pages in `interface/pages.txt`, under sections `[00]`
+through `[07]` for Klątwa or `[08]` for Władcy. Each quoted line is one displayed
+line on that page. Title pages use a different font with paired glyphs.
+`{AUTOR}` expands to the
 author's wide letters; `{~ROLAND PANTOŁA}` uses their inverse forms. Framing
 tiles and unusual numeral glyphs remain explicit escapes. This preserves title
 art while making the credits readable. The builder does not treat these lines

@@ -1,3 +1,0 @@
-# One quoted line per displayed line.
-"CARGUL ZNALAZŁ CIĘ"
-"NIEPRZYTOMNEGO NA PUSTYNI"

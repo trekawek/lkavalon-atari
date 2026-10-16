@@ -1,6 +1,0 @@
-# One quoted line per displayed line.
-"DOKONAŁEŚ CUDU"
-"GOSPODARCZEGO."
-"DZIĘKI TOBIE RZĄD POKAZAŁ"
-"OJCOWSKIE OBLICZE,A USTRÓJ"
-"UZYSKAŁ LUDZKĄ TWARZ."

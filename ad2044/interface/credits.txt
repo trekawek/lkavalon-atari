@@ -1,0 +1,67 @@
+# Rotating title credits. Sections are consecutive message IDs.
+# Each quoted string is one displayed line; spaces inside quotes are significant.
+
+[00]
+"    "
+"WYDAWCA I DYSTRYBUTOR"
+"    "
+"[C] 1991  L.K. AVALON"
+"    "
+" SKR.POCZT. 46"
+"            ;; "
+"    38 100 STRZYZOW    "
+
+[01]
+"AUTOR"
+"    "
+"    "
+"ROLAND  PANTOŁA"
+
+[02]
+"GRAFIKA"
+"    "
+"   ; "
+"TAKZE"
+"    "
+"ROLAND  PANTOŁA"
+
+[03]
+" SCENARIUSZ"
+"    "
+"    "
+" ROLAND PANTOŁA"
+"    "
+" I INNI"
+
+[04]
+" MUZYKA"
+"    "
+"       ;   "
+" OCZYWISCIE"
+"    "
+"    "
+" LESZEK HOŁDA"
+
+[05]
+"PRODUKCJA"
+"    "
+"    "
+" R.M.P. SOFTWARE "
+"    "
+"  37 450 STALOWA WOLA  "
+"    "
+"SK.POCZ. 1594"
+
+[06]
+" GRA ZOSTAŁA NAPISANA"
+"    "
+" W NARZECZU JEZYKA"
+"             :    "
+"    "
+" GAM FORTH"
+
+[07]
+"     ;   "
+" NACISNIJ"
+"    "
+" START LUB FIRE"

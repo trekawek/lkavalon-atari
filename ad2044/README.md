@@ -25,9 +25,8 @@ exits. Initially, room 01's right exit leads to room 02.
 | `rooms/NN/*.hit.txt` | Character grids identifying clickable zones |
 | `rooms/NN/actions.txt` | All room actions and messages, grouped by clickable zone |
 | [items](items) | Inventory pictures and actions, grouped into the engine's four-item banks |
-| [interface](interface) | Title, screen frame, fonts and cursor |
-| [text](text) | Title credits, one short text file per message |
-| [ending](ending) | Ending background, frames and message |
+| [interface](interface) | Title, screen frame, fonts, cursor and [credits.txt](interface/credits.txt) |
+| [ending](ending) | Ending background and frames, with the message in [scene.txt](ending/scene.txt) |
 | [music/ad2044.snd](music/ad2044.snd) | Original custom music/effects bank; binary for now |
 | [src/30-game.fth](src/30-game.fth) | Game logic; framework and kernel are beside it |
 | [tools](tools) | Builders, validation and optional recovery tools |

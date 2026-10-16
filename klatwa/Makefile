@@ -1,6 +1,6 @@
 PYTHON ?= python3
 SOURCES = $(wildcard src/*.fth) sources.json
-CONTENT_TOOLS = ../util/gam_content.py ../util/gam_limits.py ../util/gam_assets.py ../util/gam_world.py ../util/gam_program.py ../ad2044/tools/pictures.py
+CONTENT_TOOLS = ../util/gam_content.py ../util/text_sections.py ../util/gam_limits.py ../util/gam_assets.py ../util/gam_world.py ../util/gam_program.py ../ad2044/tools/pictures.py
 FORTH_TOOLS = ../util/gam_world.py ../util/gam_assets.py ../util/forth_assets.py ../ad2044/tools/pictures.py
 ifneq ($(MAKECMDGOALS),clean)
 ASSETS := $(shell $(PYTHON) ../util/gam_content.py --game-dir . --dependencies)
@@ -51,6 +51,7 @@ verify: all
 	$(PYTHON) tools/verify.py
 
 test-content:
+	$(PYTHON) ../util/test_text_sections.py
 	$(PYTHON) ../util/test_gam_assets.py
 	$(PYTHON) ../util/test_gam_content.py
 	$(PYTHON) ../util/test_gam_program.py

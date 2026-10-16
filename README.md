@@ -73,7 +73,10 @@ Start with the [AD 2044 guide](ad2044/README.md) and
 Klątwa and Władcy Ciemności use the same readable approach, with shared art
 and action collections grouped by stage. Each room has a small scene file,
 initial objects and action selectors; maps, hit/depth grids, messages and
-spell/power slots are text. Indexed PNGs, fonts and CMC music are the graphics
+spell/power slots are text. Shared messages live directly in each stage's
+`messages.txt`, and each game's `interface/pages.txt` contains its title pages.
+Room notices and action messages sit beside the settings that use them.
+Indexed PNGs, fonts and CMC music are the graphics
 and sound inputs. The builder calculates compression and placement within each
 engine's bank limits. Klątwa has 30 rooms; Władcy has 24 active rooms.
 Their initial world state also generates the fixed-address Forth data.

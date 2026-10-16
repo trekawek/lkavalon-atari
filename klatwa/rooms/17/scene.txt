@@ -2,4 +2,4 @@
 stage 1
 colors B4 98 9C
 layers 3 4 17 31 33 142 13
-notice notice.txt
+notice "KOMNATA" "SKĄPCA"

@@ -2,7 +2,6 @@
 """Build Klątwa/Władcy resources from rooms, pictures and readable text."""
 
 import argparse
-import json
 from pathlib import Path
 import shlex
 import struct
@@ -12,8 +11,10 @@ from gam_program import boot_bytes, validate_atr
 import gam_assets as assets
 import gam_world as world
 from gam_limits import validate_groups
+from text_sections import quoted_strings, read_sections
 
 GAMES = {"klatwa": (30, 22), "wladcy-ciemnosci": (24, 15)}
+MESSAGE_COUNTS = {1: (29, 28, 28, 1), 2: (26, 21, 18)}
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "ad2044/tools"))
 import pictures
@@ -102,11 +103,23 @@ def navigation(root):
 def room(root, number, links, used_links=None):
     directory = root / f"rooms/{number:02}"
     fields = {}
-    for no, values in lines(directory / "scene.txt"):
-        key, *args = values
+    path = directory / "scene.txt"
+    for no, raw in enumerate(path.read_text("utf-8").splitlines(), 1):
+        line = raw.strip()
+        if not line or line.startswith("#"):
+            continue
+        key = line.split()[0]
         if key in fields:
             raise ValueError(f"Duplicate scene field {key}: {directory}")
-        fields[key] = args
+        if key == "notice":
+            text = line[len(key):].strip()
+            try:
+                fields[key] = (None if text.split("#", 1)[0].strip() == "none"
+                               else quoted_strings(text))
+            except ValueError as exc:
+                raise ValueError(f"{path}:{no}: {exc}") from exc
+        else:
+            fields[key] = shlex.split(line, comments=True)[1:]
     if set(fields) != {"stage", "colors", "layers", "notice"}:
         raise ValueError(f"Missing/unknown scene fields in {directory}")
     colors = bytes(int(n, 16) for n in fields["colors"])
@@ -115,10 +128,7 @@ def room(root, number, links, used_links=None):
     layers = bytes(int(n) for n in fields["layers"])
     if not layers:
         raise ValueError(f"A room needs at least one background layer: {directory}")
-    if len(fields["notice"]) != 1:
-        raise ValueError(f"Expected notice none or one text filename in {directory}")
-    notice = (b"\1" if fields["notice"] == ["none"] else
-              message_file(source_path(root, directory, fields["notice"][0])))
+    notice = b"\1" if fields["notice"] is None else assets.message_body(fields["notice"])
     layout = records([layers, colors, notice], True)
     selectors = bytearray()
     for no, values in lines(directory / "actions.txt"):
@@ -152,56 +162,22 @@ def room(root, number, links, used_links=None):
     return int(fields["stage"][0]), body, layers
 
 
-def quoted_lines(path, decoder=None):
-    decoder = assets.glyph_bytes if decoder is None else decoder
-    result = []
-    for no, line in enumerate(path.read_text("utf-8").splitlines(), 1):
-        if not line.strip() or line.lstrip().startswith("#"):
-            continue
-        try:
-            value = json.loads(line)
-            if not isinstance(value, str):
-                raise ValueError("Expected a quoted text line")
-            result.append(decoder(value))
-        except (ValueError, TypeError) as error:
-            raise ValueError(f"{path}:{no}: {error}") from error
-    return result
-
-
-def message_file(path):
-    data = quoted_lines(path)
-    return bytes([len(data)]) + b"".join(bytes([len(line)]) + line for line in data)
-
-
-def numbered_texts(directory, digits, count=None):
-    paths = sorted(directory.glob("*.txt"))
-    expected = [f"{n:0{digits}d}.txt" for n in range(len(paths) if count is None else count)]
-    if not paths or [p.name for p in paths] != expected:
-        raise ValueError(f"{directory}: expected consecutive numbered text files from zero"
-                         + (f" ({count} files)" if count is not None else ""))
-    return paths
-
-
 def title_pages(root):
-    pages = numbered_texts(root / "interface/pages", 2, 8 if root.name == "klatwa" else 9)
+    ids = range(8 if root.name == "klatwa" else 9)
+    pages = read_sections(root / "interface/pages.txt", expected_ids=ids)
     result = []
-    for path in pages:
-        data = quoted_lines(path, assets.title_bytes)
+    for number in ids:
+        data = [assets.title_bytes(line) for line in pages[number]]
         result.append(records([bytes([len(data)]), *data]))
     return records(result, True)
 
 
 def message_banks(root, stage):
-    banks = []
-    base = root / f"text/stage-{stage}"
-    directories = sorted(path for path in base.iterdir() if path.is_dir())
-    expected = [f"{n:02d}" for n in range(4 if stage == 1 else 3)]
-    if [p.name for p in directories] != expected:
-        raise ValueError(f"{base}: expected message banks {', '.join(expected)}")
-    for directory in directories:
-        paths = numbered_texts(directory, 3)
-        banks.append(records([message_file(path) for path in paths], True))
-    return records(banks)
+    counts = MESSAGE_COUNTS[stage]
+    expected = {(bank, number) for bank, count in enumerate(counts) for number in range(count)}
+    messages = read_sections(root / f"stages/{stage}/messages.txt", key_fields=2, expected_ids=expected)
+    return records([records([assets.message_body(messages[bank, number]) for number in range(count)], True)
+                    for bank, count in enumerate(counts)])
 
 
 def player_bank(root):
@@ -272,8 +248,9 @@ def build_groups(root):
                              for n in range(1, count + 1)], True)
         if root.name == "klatwa" and stage == 2:
             path = root / "stages/2/messages.txt"
-            for _, (number, filename) in lines(path):
-                scenes[int(number)] = records([records([message_file(source_path(root, path.parent, filename))], True)])
+            messages = read_sections(path, expected_ids=range(46, 50))
+            for number, text in messages.items():
+                scenes[number] = records([records([assets.message_body(text)], True)])
         items = art(root, f"items/{stage}")
         items[0] = records([records([bytes([2 * stage + 1])], True)])
         items[1] = assets.encode_actions(root / f"items/{stage}/actions.txt", root.name)
@@ -342,7 +319,7 @@ def dependencies(root):
     # Parse and validate even on a cached build so missing/invalid content fails.
     root = Path(root).resolve()
     build_disks(root)
-    result = {path for directory in ("world", "rooms", "stages", "items", "interface", "player", "text", "music")
+    result = {path for directory in ("world", "rooms", "stages", "items", "interface", "player", "music")
               for path in (root / directory).rglob("*")
               if path.is_file() and path.suffix.lower() in (".txt", ".png", ".fnt", ".pmg", ".cmc")}
     # A table may share a file anywhere inside its game directory. Include
@@ -356,15 +333,6 @@ def dependencies(root):
     if root.name == "klatwa":
         for _, fields in lines(root / "player/frames.txt"):
             result.add(source_path(root, root / "player", fields[2]))
-    for number in range(1, GAMES[root.name][0] + 1):
-        directory = root / f"rooms/{number:02}"
-        for _, fields in lines(directory / "scene.txt"):
-            if fields[0] == "notice" and fields[1] != "none":
-                result.add(source_path(root, directory, fields[1]))
-    if root.name == "klatwa":
-        table = root / "stages/2/messages.txt"
-        for _, (_, filename) in lines(table):
-            result.add(source_path(root, table.parent, filename))
     return sorted(result)
 
 

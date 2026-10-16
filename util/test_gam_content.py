@@ -11,7 +11,7 @@ import gam_content as content
 import gam_program as program
 
 ROOT = Path(__file__).resolve().parents[1]
-SOURCE_DIRS = ("world", "rooms", "stages", "items", "interface", "player", "text", "music")
+SOURCE_DIRS = ("world", "rooms", "stages", "items", "interface", "player", "music")
 
 
 class ContentTests(unittest.TestCase):
@@ -70,7 +70,7 @@ class ContentTests(unittest.TestCase):
                 shutil.copyfile(ROOT / game / "Makefile", root / "Makefile")
                 utilities = root.parent / "util"
                 utilities.mkdir()
-                for name in ("gam_content", "gam_assets", "gam_world", "gam_program", "gam_limits"):
+                for name in ("gam_content", "gam_assets", "gam_world", "gam_program", "gam_limits", "text_sections"):
                     shutil.copyfile(ROOT / f"util/{name}.py", utilities / f"{name}.py")
                 pictures = root.parent / "ad2044/tools"
                 pictures.mkdir(parents=True)
@@ -178,17 +178,54 @@ class ContentTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "cannot switch stages"):
             content.navigation(root)
 
-    def test_text_ids_cannot_shift_when_a_file_is_deleted(self):
+    def test_deleted_message_or_page_ids_cannot_shift_or_disappear_silently(self):
         root = self.copy("wladcy-ciemnosci")
-        (root / "interface/pages/01.txt").unlink()
-        with self.assertRaisesRegex(ValueError, "consecutive numbered"):
+        path = root / "interface/pages.txt"
+        path.write_text(path.read_text().split("[08]")[0])
+        with self.assertRaisesRegex(ValueError, "text section IDs differ"):
             content.title_pages(root)
-        (root / "text/stage-1/00/001.txt").unlink()
-        with self.assertRaisesRegex(ValueError, "consecutive numbered"):
+        path = root / "stages/1/messages.txt"
+        path.write_text(path.read_text().replace("[00 001]", "[00 099]"))
+        with self.assertRaisesRegex(ValueError, "text section IDs differ"):
             content.message_banks(root, 1)
-        shutil.rmtree(root / "text/stage-2/01")
-        with self.assertRaisesRegex(ValueError, "expected message banks"):
+        path = root / "stages/2/messages.txt"
+        path.write_text(path.read_text().split("[02 017]")[0])
+        with self.assertRaisesRegex(ValueError, "text section IDs differ"):
             content.message_banks(root, 2)
+        root = self.copy("klatwa")
+        path = root / "stages/2/messages.txt"
+        path.write_text(path.read_text().split("[49]")[0])
+        with self.assertRaisesRegex(ValueError, "text section IDs differ"):
+            content.build_groups(root)
+
+    def test_consolidated_message_edits_reach_the_correct_stage(self):
+        for game, stage, old, new in (("klatwa", 2, "NIC NIE MOŻESZ ZROBIĆ.", "NIC NIE MOŻESZ ZROBIĆ!"),
+                                      ("wladcy-ciemnosci", 1, "KARCZMA POD", "KARCZMA PON")):
+            with self.subTest(game=game):
+                root = self.copy(game)
+                before = content.build_groups(root)
+                path = root / f"stages/{stage}/messages.txt"
+                text = path.read_text()
+                self.assertIn(old, text)
+                path.write_text(text.replace(old, new, 1))
+                after = content.build_groups(root)
+                changed_group = 2 * stage + (2 if game == "klatwa" else 3)
+                for group in before:
+                    if group == changed_group:
+                        self.assertEqual(len(before[group]), len(after[group]))
+                        self.assertEqual(sum(a != b for a, b in zip(before[group], after[group])), 1)
+                    else:
+                        self.assertEqual(before[group], after[group])
+
+    def test_title_sections_can_be_reordered_without_renumbering(self):
+        for game in content.GAMES:
+            with self.subTest(game=game):
+                root = self.copy(game)
+                before = content.title_pages(root)
+                path = root / "interface/pages.txt"
+                comment, *sections = path.read_text().strip().split("\n\n")
+                path.write_text("\n\n".join([comment, *reversed(sections)]) + "\n")
+                self.assertEqual(content.title_pages(root), before)
 
     def test_cached_dependency_check_rejects_missing_picture(self):
         root = self.copy("wladcy-ciemnosci")
@@ -211,29 +248,33 @@ class ContentTests(unittest.TestCase):
         shared.write_bytes(assets.png.encode_png(width, height, changed, palette))
         self.assertNotEqual(before, content.build_disks(root)["build/assets.atr"])
 
-    def test_room_notice_cannot_escape_the_game_directory(self):
+    def test_room_notice_requires_inline_quoted_text(self):
         root = self.copy("klatwa")
         outside = root.parent / "outside.txt"
         outside.write_text('"TEST"\n')
         scene = root / "rooms/01/scene.txt"
         scene.write_text(scene.read_text().replace("notice none", "notice " + str(outside)))
-        with self.assertRaisesRegex(ValueError, "escapes game directory"):
+        with self.assertRaisesRegex(ValueError, "JSON-quoted display line"):
             content.dependencies(root)
 
-    def test_shared_notice_and_animation_are_build_dependencies(self):
+    def test_room_notice_edit_changes_one_encoded_glyph(self):
+        root = self.copy("klatwa")
+        scene = root / "rooms/14/scene.txt"
+        before = content.build_groups(root)[4]
+        scene.write_text(scene.read_text().replace('"PRACOWNIA"', '"PRACOWNIB"'))
+        after = content.build_groups(root)[4]
+        self.assertEqual(len(before), len(after))
+        self.assertEqual(sum(a != b for a, b in zip(before, after)), 1)
+
+    def test_shared_animation_is_a_build_dependency(self):
         root = self.copy("klatwa")
         shared = root / "shared"
         shared.mkdir()
-        notice = shared / "notice.txt"
-        notice.write_text('"TEST"\n')
         frame = shared / "frame.png"
         shutil.copyfile(root / "player/0/0.png", frame)
-        scene = root / "rooms/01/scene.txt"
-        scene.write_text(scene.read_text().replace("notice none", "notice ../../shared/notice.txt"))
         table = root / "player/frames.txt"
         table.write_text(table.read_text().replace("0/0.png", "../shared/frame.png"))
         dependencies = content.dependencies(root)
-        self.assertIn(notice, dependencies)
         self.assertIn(frame, dependencies)
 
     def test_bank_expansion_cannot_reach_atari_hardware(self):

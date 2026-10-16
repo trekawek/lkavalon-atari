@@ -1,7 +1,0 @@
-# One quoted line per displayed line; keep spaces inside quotes.
-" GRA ZOSTAŁA NAPISANA"
-"    "
-" W NARZECZU JEZYKA"
-"             :    "
-"    "
-" GAM FORTH"

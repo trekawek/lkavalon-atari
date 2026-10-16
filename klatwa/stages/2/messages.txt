@@ -1,5 +1,17 @@
-# Resource ID and displayed message.
-46 ../../text/stage-2/046.txt
-47 ../../text/stage-2/047.txt
-48 ../../text/stage-2/048.txt
-49 ../../text/stage-2/049.txt
+# Message resource ID; each quoted line is one displayed line.
+
+[46]
+"NIC NIE MOŻESZ ZROBIĆ."
+"CZARNOKSIĘŻNIK NIE POZWALA."
+
+[47]
+"DAŁEŚ MI KLEPSYDRĘ."
+"WEŹ W NAGRODĘ KLEJNOT ZE SKRZYNI."
+
+[48]
+"JESTEŚ W CZASACH PANOWANIA"
+"WŁADCY CIEMNOŚCI"
+
+[49]
+"PRZERWAŁEŚ KRĄG WĘŻA."
+"JESTEŚ WOLNY."

@@ -1,4 +1,0 @@
-# One quoted line per displayed line.
-"\\x0F\\x09========={AUTOR}==========\\x14"
-"\\x0C=============================\\x0A\\x0B"
-"\\x12={ROLAND}=={PANTOŁA}=\\x15"

@@ -1,9 +1,0 @@
-# One quoted line per displayed line; keep spaces inside quotes.
-"    "
-"WYDAWCA I DYSTRYBUTOR"
-"    "
-"[C] 1991  L.K. AVALON"
-"    "
-" SKR.POCZT. 46"
-"            ;; "
-"    38 100 STRZYZOW    "

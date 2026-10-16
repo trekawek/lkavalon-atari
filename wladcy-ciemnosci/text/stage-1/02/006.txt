@@ -1,6 +1,0 @@
-# One quoted line per displayed line.
-"ŻONA CARGULA ZAMUROWAŁA"
-"PRZEJŚCIE DO KARCZMY."
-"NA LEWO OD PIEŃKA"
-"JEST SŁABY PUNKT"
-"TEJ ŚCIANKI."

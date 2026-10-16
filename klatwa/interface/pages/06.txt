@@ -1,6 +1,0 @@
-# One quoted line per displayed line.
-"{NA MASZYNOWY}"
-"\\xA0"
-"{~TŁUMACZYŁ}"
-"\\xA0"
-"{~MR}\\xAE\\xA0{~FORTH}"

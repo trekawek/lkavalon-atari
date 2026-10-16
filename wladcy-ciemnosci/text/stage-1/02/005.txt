@@ -1,3 +1,0 @@
-# One quoted line per displayed line.
-"ZA MIEDZIAKA"
-"KUP SOBIE LIZAKA"

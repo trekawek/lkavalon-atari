@@ -1,5 +1,0 @@
-# One quoted line per displayed line; keep spaces inside quotes.
-"     ;   "
-" NACISNIJ"
-"    "
-" START LUB FIRE"

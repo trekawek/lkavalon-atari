@@ -1,4 +1,0 @@
-# One quoted line per displayed line.
-"{POCZATEK  GRY}"
-"\\xA0\\xA0]\\xA0\\xA0\\xA0\\xA0\\xA0\\xA0\\xA0"
-"{~FIRE}"

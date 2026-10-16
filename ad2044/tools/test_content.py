@@ -105,13 +105,45 @@ class ContentTests(unittest.TestCase):
         self.assertEqual(credits[1:], [b"\0\0"] * 3)
         ending = records(groups[2, 22])
         pages = records(ending[1] + b"\0\0")
-        self.assertEqual(records(pages[0])[0], content.message(self.root / "ending/message.txt"))
+        self.assertEqual(records(pages[0])[0], content.message([
+            "BRAWO ALBERCIK.", "WYKONAŁEŚ 100 PROCENT MISJI.", "^^^^^^^^^^^^^^^^^^^^",
+            "   \\xD3\\xD0\\xC1\\xC3\\xCA\\xC1^ POCZĄTEK GRY.   ",
+        ]))
 
     def test_title_spaces_and_explicit_glyphs_remain_distinct(self):
-        path = self.root / "text/example.txt"
-        path.write_text('"A B\\\\x3D"\n')
-        self.assertEqual(content.message(path, title_font=True), b"\1\4A B=")
-        self.assertEqual(content.message(path), b"\1\4A=B=")
+        texts = ["A B\\x3D"]
+        self.assertEqual(content.message(texts, title_font=True), b"\1\4A B=")
+        self.assertEqual(content.message(texts), b"\1\4A=B=")
+
+    def test_consolidated_credits_and_ending_edits_reach_only_their_groups(self):
+        before = content.build_groups(self.root)
+        credits = self.root / "interface/credits.txt"
+        credits.write_text(credits.read_text().replace('"AUTOR"', '"TWÓRCA GRY"'))
+        ending = self.root / "ending/scene.txt"
+        ending.write_text(ending.read_text().replace('"BRAWO ALBERCIK."', '"GRATULACJE!"'))
+        after = content.build_groups(self.root)
+        self.assertEqual({key for key in before if before[key] != after[key]}, {(1, 3), (2, 22)})
+        self.assertIn(b"TWoRCA GRY", after[1, 3])
+        self.assertIn(b"GRATULACJE!", after[2, 22])
+
+    def test_missing_duplicate_and_misplaced_ending_messages_are_rejected(self):
+        path = self.root / "ending/scene.txt"
+        original = path.read_text()
+        path.write_text("\n".join(line for line in original.splitlines()
+                                  if not line.startswith("message ")))
+        with self.assertRaisesRegex(ValueError, "requires a message"):
+            content.build_groups(self.root)
+        path.write_text(original + 'message "SECOND"\n')
+        with self.assertRaisesRegex(ValueError, "exactly one"):
+            content.build_groups(self.root)
+        path.write_text(original.replace('message "BRAWO ALBERCIK."', 'message missing-file.txt'))
+        with self.assertRaises(ValueError):
+            content.build_groups(self.root)
+        path.write_text(original)
+        room = self.root / "rooms/01/scene.txt"
+        room.write_text(room.read_text() + 'message "UNUSED"\n')
+        with self.assertRaisesRegex(ValueError, "Only the ending"):
+            content.build_groups(self.root)
 
     def test_missing_assets_and_duplicate_resources_fail(self):
         directory = self.root / "rooms/01"

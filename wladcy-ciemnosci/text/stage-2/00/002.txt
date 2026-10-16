@@ -1,5 +1,0 @@
-# One quoted line per displayed line.
-"CZAS WCIĄŻ BIEGNIE"
-"CZAS NIE STOI"
-"ZEGAR TEŻ SIĘ"
-"CZASU BOI"

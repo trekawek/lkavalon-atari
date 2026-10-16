@@ -1,7 +1,8 @@
 # Ending
 
-`background.png` is the full screen, `message.txt` is its displayed text, and
-`frame-*.png` are the animation pictures placed by `scene.txt`.
+`background.png` is the full screen, and `frame-*.png` are the animation pictures
+placed by `scene.txt`. The same file ends with a `message` row: each quoted string
+after `message` is one displayed line, with spaces inside quotes preserved.
 The builder generates the resource framing and compression.
 
 The executable selects this collection as side-two group 22. Room 35 has a

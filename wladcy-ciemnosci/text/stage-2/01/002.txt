@@ -1,4 +1,0 @@
-# One quoted line per displayed line.
-"ABY ZASILIĆ BUDŻET,"
-"NALEŻY ZWIĘKSZYĆ"
-"PODATKI O 10 PROCENT"

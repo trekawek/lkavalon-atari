@@ -9,8 +9,11 @@ No original ATR, extraction report or serialized disk layout is a build input.
 from __future__ import annotations
 
 import argparse
-import json
 from pathlib import Path
+import sys
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "util"))
+from text_sections import quoted_strings, read_sections
 
 import disk
 import pictures
@@ -18,7 +21,7 @@ import room_text
 import world
 
 ROOT = Path(__file__).resolve().parents[1]
-SOURCE_DIRS = ("world", "rooms", "items", "interface", "text", "ending")
+SOURCE_DIRS = ("world", "rooms", "items", "interface", "ending")
 
 
 def record(body):
@@ -40,7 +43,7 @@ def source_file(directory, name):
     return path
 
 
-def scene(directory):
+def scene(directory, ending=False):
     """Read the small resource placement table beside its images and hitmaps."""
     path = directory / "scene.txt"
     result = {}
@@ -49,6 +52,14 @@ def scene(directory):
         if not fields:
             continue
         try:
+            if fields[0] == "message":
+                if not ending:
+                    raise ValueError("Only the ending scene accepts a message row")
+                if 1 in result:
+                    raise ValueError("The ending must have exactly one message row")
+                texts = quoted_strings(line.strip()[len("message"):])
+                result[1] = record(collection({0: message(texts)}))
+                continue
             kind, index = fields[0], int(fields[1])
             if index < 2 or index in result:
                 raise ValueError("Resource ID must be unique and at least 2")
@@ -74,47 +85,35 @@ def scene(directory):
             result[index] = body
         except (ValueError, IndexError, OSError) as exc:
             raise ValueError(f"{path}:{number}: {exc}") from exc
+    if ending and 1 not in result:
+        raise ValueError(f"{path}: the ending requires a message row")
     return result
 
 
-def message(path, title_font=False):
-    """One quoted line per screen line; line counts and lengths are generated."""
+def message(texts, title_font=False):
+    """Encode displayed lines; line counts and lengths are generated."""
     lines = []
-    for number, line in enumerate(path.read_text(encoding="utf-8").splitlines(), 1):
-        line = line.strip()
-        if not line or line.startswith("#"):
-            continue
-        try:
-            text = json.loads(line)
-            if title_font:
-                # The title font uses ASCII space; the room font uses '='.
-                # Explicit glyph escapes still retain their requested byte.
-                if not isinstance(text, str):
-                    raise ValueError("Expected a quoted string")
-                text = text.replace(" ", "\\x20")
-            raw = room_text.glyph_bytes(text)
-            if len(raw) > 255:
-                raise ValueError("A message line exceeds 255 glyphs")
-            lines.append(bytes([len(raw)]) + raw)
-        except (ValueError, TypeError) as exc:
-            raise ValueError(f"{path}:{number}: {exc}") from exc
+    for text in texts:
+        if not isinstance(text, str):
+            raise ValueError("Expected a string for each displayed line")
+        if title_font:
+            # The title font uses ASCII space; the room font uses '='.
+            # Explicit glyph escapes still retain their requested byte.
+            text = text.replace(" ", "\\x20")
+        raw = room_text.glyph_bytes(text)
+        if len(raw) > 255:
+            raise ValueError("A message line exceeds 255 glyphs")
+        lines.append(bytes([len(raw)]) + raw)
     if not 1 <= len(lines) <= 255:
-        raise ValueError(f"{path}: expected 1..255 quoted lines")
+        raise ValueError("Expected 1..255 displayed lines")
     return bytes([len(lines)]) + b"".join(lines)
-
-
-def numbered_files(directory):
-    files = sorted(directory.glob("*.txt"))
-    if not files or [p.stem for p in files] != [f"{n:02d}" for n in range(len(files))]:
-        raise ValueError(f"{directory}: expected consecutively numbered 00.txt, 01.txt, ...")
-    return files
 
 
 def build_groups(root=ROOT):
     root = Path(root)
     interface = root / "interface"
-    credits = collection({n: message(path, title_font=True) for n, path in
-                          enumerate(numbered_files(root / "text/credits"))})
+    credits = collection({n: message(lines, title_font=True) for n, lines in
+                          read_sections(interface / "credits.txt", expected_ids=range(8)).items()})
     # Credit pages 1..3 are empty in the executable's four-page interface.
     credit_pages = b"".join(record(body) for body in (credits, b"\0\0", b"\0\0", b"\0\0"))
     groups = {
@@ -179,9 +178,8 @@ def build_groups(root=ROOT):
     groups.update({(1, 19): state, (1, 20): state,
                    (1, 21): bytes(inventory), (1, 23): bytes(inventory)})
     ending = root / "ending"
-    records = scene(ending)
+    records = scene(ending, ending=True)
     records[0] = pictures.encode_fullscreen((ending / "background.png").read_bytes())
-    records[1] = record(collection({0: message(ending / "message.txt")}))
     groups[2, 22] = collection(records)
     return groups
 

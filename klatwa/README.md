@@ -25,9 +25,10 @@ zones to the shared action collections in [stage 1](stages/1/actions.txt).
 | `stages/N/art/*.png` | Editable indexed pictures, four pixel values |
 | `stages/N/art/*.hit.txt` | Editable grids of clicked zones and depth values |
 | [items](items) | Item pictures, actions and starting coordinates for both stages |
-| [interface](interface) | Title art, readable title pages, fonts and hardware cursor |
+| [interface](interface) | Title art, fonts and hardware cursor |
+| [interface/pages.txt](interface/pages.txt) | All title pages, with numbered sections |
 | [player](player) | Four directions with five PNG animation frames each |
-| [text](text) | Separate game messages referenced by the engine |
+| [stages/2/messages.txt](stages/2/messages.txt) | The four shared second-stage messages, inline under their resource IDs |
 | [music](music) | Native title/gameplay CMC modules |
 | [src](src) | Forth kernel, GAM framework, native assembler and game logic |
 | `build/` | Generated ATRs, compiler, packing report, previews and research catalogs |
@@ -35,6 +36,8 @@ zones to the shared action collections in [stage 1](stages/1/actions.txt).
 The stages share art between rooms. Stage 1 contains rooms 1–22; stage 2
 contains rooms 23–30. Numeric resource and action IDs are runtime identities,
 not disk offsets. Lengths, compression, sector counts and placement are generated.
+Room notices are quoted directly in `scene.txt`; action messages stay beside
+their actions. Short texts need no separate file or filename table.
 [Format notes](../util/gam-content-format.md) explain each small text format.
 
 ## Build

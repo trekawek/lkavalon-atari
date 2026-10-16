@@ -1,6 +1,0 @@
-# One quoted line per displayed line.
-"DOSZEDŁEŚ OSTATKIEM SIŁ"
-"\\x76\\x76\\x76\\x76"
-"WSZYSTKIE NIESIONE"
-"PRZEDMIOTY PORZUCIŁEŚ"
-"NA PUSTYNI"

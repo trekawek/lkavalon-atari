@@ -1,6 +1,6 @@
 PYTHON ?= python3
 SOURCES = $(wildcard src/*.fth) sources.json
-CONTENT_TOOLS = tools/content.py tools/disk.py tools/world.py tools/room_text.py tools/pictures.py
+CONTENT_TOOLS = tools/content.py tools/disk.py tools/world.py tools/room_text.py tools/pictures.py ../util/text_sections.py
 FORTH_TOOLS = ../util/forth_assets.py
 ifneq ($(MAKECMDGOALS),clean)
 ASSETS := $(shell $(PYTHON) tools/content.py --dependencies)
@@ -51,6 +51,7 @@ verify: all
 	$(PYTHON) tools/verify.py
 
 test-content:
+	$(PYTHON) ../util/test_text_sections.py
 	$(PYTHON) tools/test_content.py
 	$(PYTHON) tools/test_world.py
 	$(PYTHON) tools/test_disk.py

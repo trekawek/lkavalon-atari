@@ -1,5 +1,0 @@
-# One quoted line per displayed line.
-"LEWICA"
-"\\x76\\x76\\x76\\x76"
-"LEWE RAMIĘ"
-"WŁADZY"

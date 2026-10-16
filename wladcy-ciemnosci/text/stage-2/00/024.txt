@@ -1,6 +1,0 @@
-# One quoted line per displayed line.
-"FUNKCJONARIUSZ"
-"OCHRONY RZĄDU"
-"\\x76\\x76\\x76"
-"WIELKI MIŁOŚNIK"
-"ZWIERZĄT"

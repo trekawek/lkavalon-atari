@@ -4,8 +4,9 @@
 from pathlib import Path
 import sys
 sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "util"))
-from reference_media import read_reference
 from dictionary_signatures import read as read_signatures
+from gam_program import program_memory
+from gam_world import encode_world
 import json
 import difflib
 
@@ -30,15 +31,16 @@ def cell(m, a):
 
 def memory(raw=None):
     if raw is None:
-        raw = read_reference(ROOT / "reference/wladcy-ciemnosci.atr")
+        raw = (ROOT / "build/wladcy-ciemnosci.atr").read_bytes()
+        return program_memory(raw, "wladcy-ciemnosci", encode_world(ROOT))
     if (
         len(raw) != 133136
         or raw[:6] != bytes.fromhex("960280208000")
         or raw[16:22] != bytes.fromhex("00f2800eeb1e")
     ):
-        raise ValueError("Expected the supplied 1040-sector Wladcy Ciemnosci v1 ATR")
+        raise ValueError("Expected the 1040-sector wladcy-ciemnosci v1 ATR")
     m = bytearray(65536)
-    m[ORIGIN:DISK_END] = raw[16:0x7D10]
+    m[ORIGIN:BOOT_END] = raw[16:16 + BOOT_END - ORIGIN]
     return m
 
 
@@ -129,7 +131,7 @@ def main():
     names = {}
     oldnames = json.loads((ROOT.parent / "ad2044/tools/names.json").read_text())
     stock = bytearray(65536)
-    stock_raw = read_reference(ROOT / "reference/figforth.atr")
+    stock_raw = (ROOT / "build/figforth.atr").read_bytes()
     stock[ORIGIN : ORIGIN + stock_raw[17] * 128] = stock_raw[
         16 : 16 + stock_raw[17] * 128
     ]
@@ -187,7 +189,9 @@ def main():
     (ROOT / "tools/names.json").write_text(
         json.dumps(dict(sorted(names.items())), indent=2) + "\n", encoding="ascii"
     )
-    (ROOT / "tools/headers.json").write_text(
+    research = ROOT / "build/research"
+    research.mkdir(parents=True, exist_ok=True)
+    (research / "headers.json").write_text(
         json.dumps(ws, indent=2) + "\n", encoding="ascii"
     )
     summary = {
@@ -197,7 +201,7 @@ def main():
         "entries": len(ws),
         "names": len(names),
     }
-    (ROOT / "tools/recovery.json").write_text(json.dumps(summary, indent=2) + "\n")
+    (research / "recovery.json").write_text(json.dumps(summary, indent=2) + "\n")
     print(summary)
 
 

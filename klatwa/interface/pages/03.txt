@@ -1,0 +1,4 @@
+# One quoted line per displayed line.
+"{GRAFIKA}"
+"\\xA0"
+"{~ROLAND  PANTOŁA}"

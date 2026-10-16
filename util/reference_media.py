@@ -1,10 +1,11 @@
 """Resolve optional forensic media without making binary snapshots build inputs.
 
 The compiler is rebuilt from util/figforth text when its generated ATR is absent.
-Game comparisons prefer an optional build/reference fixture. Without one, a
-completed game build is usable only after matching the historical SHA-256;
+Game comparisons prefer an optional build/reference fixture. Without one, an
+older complete reconstruction is usable only after matching historical SHA-256;
 AD2044's writable ATR flag is normalized for this comparison. Modified builds
-therefore cannot silently serve as their own correctness oracle.
+therefore cannot silently serve as their own correctness oracle. Current builds
+generate fresh resource allocation and require original fixtures for forensics.
 """
 
 import hashlib
@@ -51,7 +52,7 @@ def read_reference(path):
         selected = built
     else:
         raise FileNotFoundError(
-            f'{path.name}: supply optional {fixture} or build the unchanged game first ({built})'
+            f'{path.name}: supply optional original fixture {fixture}; current fresh disks are not historical references'
         )
     raw = selected.read_bytes()
     if selected == built and game_root.name == 'ad2044' and len(raw) >= 16:

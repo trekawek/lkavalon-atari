@@ -1,0 +1,10 @@
+# klatwa, stages/2, resource 22, variant 1
+size 5 7
+grid
+.E...
+.E...
+.E...
+.EJJ.
+..JJ.
+..JJ.
+..JJ.

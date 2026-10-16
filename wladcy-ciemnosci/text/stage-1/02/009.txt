@@ -1,0 +1,3 @@
+# One quoted line per displayed line.
+"ZBYT MAŁA BUTELKA"
+"Z TRUNKIEM"

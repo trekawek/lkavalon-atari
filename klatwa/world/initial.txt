@@ -1,0 +1,8 @@
+# Initial executable state; values are decimal.
+# POCZATEK always selects room 1 and part 2 in game code.
+# boot-room/boot-part describe pre-menu cells, not a start-room setting.
+game klatwa
+state-prefix 2 10
+boot-room 0
+boot-part 1
+last-direction 0

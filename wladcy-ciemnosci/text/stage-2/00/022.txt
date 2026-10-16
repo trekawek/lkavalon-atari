@@ -1,0 +1,5 @@
+# One quoted line per displayed line.
+"CENTRUM"
+"\\x76\\x76\\x76\\x76"
+"CENTRALNE RAMIĘ"
+"WŁADZY"

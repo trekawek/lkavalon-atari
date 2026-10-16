@@ -1,0 +1,8 @@
+# klatwa, items/2, resource 23, variant -
+size 3 4
+legend 1=212
+grid
+.11
+.11
+111
+111

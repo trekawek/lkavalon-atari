@@ -1,0 +1,18 @@
+# Resource variant file x-byte y; - means a direct resource.
+# Picture variant 0/2/4 has hit map 1/3/5. IDs are used by game code.
+picture 002 0 art/002-0.png 0 0
+picture 003 0 art/003-0.png 10 0
+picture 004 0 art/004-0.png 20 1
+picture 005 0 art/005-0.png 30 5
+picture 006 0 art/006-0.png 18 64
+picture 006 1 art/006-1.png 18 64
+picture 006 2 art/006-2.png 18 64
+picture 006 3 art/006-3.png 18 64
+picture 006 4 art/006-4.png 18 64
+picture 006 5 art/006-5.png 18 64
+picture 006 6 art/006-6.png 18 64
+picture 006 7 art/006-7.png 18 64
+picture 006 8 art/006-8.png 18 64
+picture 006 9 art/006-9.png 18 64
+picture 006 10 art/006-10.png 18 64
+picture 006 11 art/006-11.png 18 64

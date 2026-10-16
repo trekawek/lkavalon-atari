@@ -1,0 +1,9 @@
+# wladcy-ciemnosci, stages/1, resource 47, variant 1
+size 8 6
+grid
+..EEEEEE
+.EEEEEEE
+........
+........
+........
+....3333

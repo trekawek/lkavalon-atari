@@ -1,0 +1,134 @@
+# Shared action collections. Room selector rows choose these IDs.
+
+[00]
+item 1
+
+[01]
+item 201
+drop-item
+
+[02]
+item 202
+describe
+  message:
+    "WODA KRÓLEWSKA"
+take-item
+
+[03]
+item 203
+describe
+  message:
+    "CZASZKA"
+take-item
+
+[04]
+item 204
+describe
+  message:
+    "KOSTKA"
+take-item
+
+[05]
+item 205
+take-item
+
+[06]
+item 206
+describe
+  message:
+    "CEGŁA"
+take-item
+
+[07]
+item 207
+describe
+  message:
+    "DZWONEK"
+take-item
+
+[08]
+item 208
+describe
+  message:
+    "KIEŁ SŁONIA"
+take-item
+
+[09]
+item 209
+describe
+  message:
+    "JAKIŚ PTAK"
+take-item
+
+[10]
+item 210
+describe
+  message:
+    "ZŁOTY RÓG"
+take-item
+
+[11]
+item 211
+describe
+  message:
+    "CZAPKA Z PIÓREM"
+take-item
+
+[12]
+item 212
+describe
+  message:
+    "SYGNET"
+take-item
+
+[13]
+item 213
+describe
+  message:
+    "KAMIEŃ"
+    "FILOZOFICZNY"
+take-item
+
+[14]
+item 214
+describe
+  message:
+    "MIESZEK"
+take-item
+
+[15]
+item 215
+describe
+  message:
+    "LASKA"
+take-item
+
+[16]
+item 216
+describe
+  message:
+    "MAGICZNA"
+    "KLEPSYDRA CZASU"
+take-item
+
+[17]
+item 217
+describe
+  message:
+    "MIECZ"
+take-item
+
+[18]
+item 218
+describe
+  message:
+    "FAŁSZYWY,"
+    "OŁOWIANY DENAR"
+take-item
+
+[19]
+item 219
+describe
+  message:
+    "ZŁOTY DENAR"
+take-item

@@ -1,0 +1,15 @@
+# wladcy-ciemnosci, stages/1, resource 59, variant 1
+size 4 12
+grid
+....
+4499
+4499
+4499
+4499
+4499
+4499
+4499
+4499
+4499
+44.9
+....

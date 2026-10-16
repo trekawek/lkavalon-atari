@@ -1,0 +1,12 @@
+# object zone collection metadata...
+# Collection definitions are in stages/1/actions.txt.
+# destination reads this zone's target from world/map.txt; other values are handler metadata.
+object 03 06 destination
+object 02 17 destination
+object 18 19 0 2
+object 10 40 0 1
+object 11 29 28 4 14 56 6 87 73 65 84 82 85
+object 09 39 0 3
+object 12 32 30 129 4 message "BERYL"
+object 24 52 7 51 0
+object 25 62 51 9 16 56 5 67 90 65 83 85

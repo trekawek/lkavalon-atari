@@ -1,0 +1,12 @@
+# slot power-id requirement-1 requirement-2 |13 game-font glyphs
+# Empty slots keep decorative borders; spaces after | are significant.
+0 0 0 0 |\xA4           #
+1 0 0 0 |$           \xA3
+2 0 0 0 |\xA4           #
+3 0 0 0 |$           \xA3
+4 0 0 0 |\xA4           #
+5 0 0 0 |$           \xA3
+6 0 0 0 |\xA4           #
+7 0 0 0 |$           \xA3
+8 0 0 0 |\xA4     <>    #
+9 0 0 0 |$    <>     \xA3

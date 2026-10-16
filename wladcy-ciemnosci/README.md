@@ -1,285 +1,122 @@
-# Wladcy Ciemnosci
+# Władcy Ciemności
 
-ASCII Forth reconstruction of the AtariOnline v1 Atari XL/XE disk release.
-The sources rebuild the original saved APX fig-Forth dictionary and the
-working game. They are reconstructed, address-preserving sources, not
-Roland Pantola's original source screens.
+Reconstructed ASCII Forth code with editable rooms, actions, maps, graphics
+and music. The boot-loaded executable matches the original game. The disk is
+packed afresh; old editor residue, physical allocation manifests, duplicate
+previews and historical saves are not authoring inputs.
 
 ![Rebuilt game running in Atari800](img/first-room.png)
 
-Start with [src/30-game.fth](src/30-game.fth). Named entry points include
-`BOOT-TITLE-AND-GAME`, `RUN-TITLE-PAGES`, and `GAME-MAIN-LOOP`. These descriptive
-names are explicitly marked as inferred; erased original names cannot be
-recovered with certainty.
+Start with [room 01](rooms/01). Its [scene](rooms/01/scene.txt) lists the
+background layers and Atari colors. [objects.txt](rooms/01/objects.txt) supplies
+initial objects and close-ups. [actions.txt](rooms/01/actions.txt) connects hit
+zones to the shared action collections in [stage 1](stages/1/actions.txt).
+[world/map.txt](world/map.txt) holds the ordinary room connections.
 
-The dictionary contains 906 entries: 828 in the main chain, 76 in the private
-assembler vocabulary, and two native entry points without headers. There are
-539 colon definitions and 6,569 decoded threaded instructions. Of the entries,
-106 have intact names, 221 match APX kernel headers, six have source matches,
-28 have candidate names from structural comparisons, 535 have inferred
-descriptive names, and ten retain their code-field address as an identifier.
-Per-entry evidence is in
-[dictionary.json](dictionary.json) and [tools/names.json](tools/names.json).
-Structural candidates are not independently verified semantic identifications.
-
-The semantic pass added 503 names. [symbols.txt](symbols.txt) supplies behavior
-evidence, stack effects and decoded callers; [research-notes.txt](research-notes.txt)
-records tutorial comparisons, runtime probes and unresolved entries. The eight
-text slots at `$5517` form the power list, while the inventory occupies five
-positions in the mutable room/view object table. Retained Klątwa routines are
-identified separately where active use in this game has not been established.
-
-Manual evidence belongs in [tools/inferred-names.json](tools/inferred-names.json).
-`make decompile` regenerates the Forth, symbol catalog and decoded strings from
-that evidence and recovered names. Native subroutines and embedded data have
-explicit calling-convention notes; descriptive aliases preserve saved headers.
-
-## Source layout
-
-| File | Contents |
+| Where | Meaning |
 | --- | --- |
-| [src/metacompiler.fth](src/metacompiler.fth) | Portable APX compiler and streaming disk writer |
-| [src/00-target-words.fth](src/00-target-words.fth) | Target code-field symbols |
-| [src/05-emission.fth](src/05-emission.fth) | Fast literal, cell, and byte emitters |
-| [src/06-assembler.fth](src/06-assembler.fth) | Forth target assembler for all 151 official NMOS 6502 opcodes |
-| [src/10-kernel.fth](src/10-kernel.fth) | Boot code and modified fig-Forth kernel |
-| [src/20-framework.fth](src/20-framework.fth) | Assembler, graphics, text, input, audio and disk support |
-| [src/30-game.fth](src/30-game.fth) | Game definitions and startup |
-| [src/40-disk-residue.fth](src/40-disk-residue.fth) | Retired dictionary and save-command bytes outside the boot image |
+| [rooms](rooms) | 24 room folders, each with scene, object state and action selectors |
+| [world/map.txt](world/map.txt) | Room, clicked zone, destination and direction label |
+| [world/initial.txt](world/initial.txt) | Initial executable fields; starting a game still enters room 1 |
+| [world/powers.txt](world/powers.txt) | Initial power slots and displayed names |
+| [world/puzzles.txt](world/puzzles.txt), [progress.txt](world/progress.txt) | Puzzle cells and room achievement bits |
+| [stages/1](stages/1), [stages/2](stages/2) | Shared pictures, hit/depth grids and action collections |
+| `stages/N/art.txt` | Picture positions and the resource/frame IDs used by the engine |
+| `stages/N/art/*.png` | Editable indexed pictures, four pixel values |
+| `stages/N/art/*.hit.txt` | Editable grids of clicked zones and depth values |
+| [items](items) | Item pictures, actions and starting coordinates for both stages |
+| [interface](interface) | Title art, readable title pages, fonts and hardware cursor |
+| [player](player) | Four directions with five PNG animation frames each |
+| [text](text) | Separate game messages referenced by the engine |
+| [music](music) | Native title/gameplay CMC modules |
+| [src](src) | Forth kernel, GAM framework, native assembler and game logic |
+| `build/` | Generated ATRs, compiler, packing report, previews and research catalogs |
 
-Every `.fth` file is ASCII, with LF newlines and lines at most 64 characters
-wide. `DOCOL` emits a target colon definition, a `t.` name emits a target call,
-`LIT8`/`LIT16` emit literals, and `AT` checks the target address. Branch cells
-retain signed offsets and have destination comments. Native 6502 bodies and
-verified machine-code tails use executable assembler mnemonics. `BYTES` emits
-headers, tables and unclassified mixed regions.
-`INCBIN` imports the native cursor bitmap. Both build paths expand it into
-ordinary ASCII `BYTES`; the source ATR is directly compilable in Atari Forth.
-The generator's trailing-byte count describes tails after threaded decoding,
-including native runtimes, rather than all machine code or data in the game.
-
-The assembler loads after `05-emission.fth`. Hexadecimal prefix operands look
-like `LDA.# 03`, `STA.ZP D1`, `LDA.ABS 0000`, and `JSR.ABS E456`.
-`BNE 2A01` names an absolute destination and calculates the signed relative
-displacement; `RTS` has no operand and `ASL.A` selects the accumulator.
-Explicit modes preserve absolute addressing below `$0100`. Byte operands and
-branch displacements are range-checked.
-
-The stock APX interpreter has no assembler, so the target assembler is written
-in ordinary Forth. The game's original postfix GAM assembler is reconstructed
-separately in its saved dictionary. Conventional `CODE` would allocate new headers
-and addresses; emitting saved headers and assembled instructions directly
-keeps the original target layout.
-
-[strings.txt](strings.txt) lists decoded dictionary messages and menu labels
-as ASCII text. [strings.json](strings.json) preserves their addresses, raw
-bytes, lengths, inverse characters, and action-label references. Matching
-`Decoded text:` comments appear beside the packed `BYTES` records. Game-font
-`=` becomes a space, and Polish glyphs are transliterated to ASCII letters.
-Unsupported glyphs remain `[XX]`; ordinary ATASCII keeps its case and punctuation.
-
-The parser follows counted records and resolves action aliases once. It also
-decodes the obfuscated message with the game's own byte transformation and
-marks incomplete records and unresolved references. Background screen codes
-are identified as glyph data, rather than interpreted as prose. Text in binary
-disk assets and unused buffer data are outside this catalog. `make decompile`
-regenerates the catalogs and annotations. Editing a comment or catalog does
-not change the game; the original `BYTES` values still determine its data.
-
-This is low-level threaded Forth, not a relocatable rewrite. Absolute pointers
-in code and data require preserving the memory layout. Changing definition
-sizes requires corresponding address and branch updates. Game resources are
-individual native graphics and music files, placed according to
-[assets/layout.json](assets/layout.json). Decoded pictures and PNGs are previews.
+The stages share art between rooms. Stage 1 contains rooms 1–15; stage 2
+contains rooms 16–24. Numeric resource and action IDs are runtime identities,
+not disk offsets. Lengths, compression, sector counts and placement are generated.
+[Format notes](../util/gam-content-format.md) explain each small text format.
 
 ## Build
 
-Python 3 and `py65` are required:
+Keep the sibling `ad2044` and `util` directories. Python 3 and the pinned
+`py65` package are required for compilation on the host:
 
 ```sh
-cd wladcy-ciemnosci
 python3 -m venv .venv
 .venv/bin/pip install -r requirements.txt
 make PYTHON=.venv/bin/python
 make test PYTHON=.venv/bin/python
 ```
 
-The outputs are `build/wladcy-ciemnosci.atr`, `build/sources.atr`, and the
-initially blank target `build/assets.atr`. Compilation runs the genuine APX
-fig-Forth 6502 interpreter from `reference/figforth.atr`; Python provides only
-Atari OS input/output services. It does not translate Forth or insert a saved
-copy of the program. Host compilation takes several minutes.
+Outputs are `build/wladcy-ciemnosci.atr` and `build/sources.atr`. The compiler itself is
+generated as `build/figforth.atr` from [readable APX sources](../util/figforth).
+No original ATR or network download is a build input.
 
-The target starts with all 32,000 program and residual-code bytes zero.
-Forth writes every byte of the first 250 sectors. The resource disk is freshly
-packed from native `graphics/records`, fonts in `graphics/fonts`, sprite frames
-in `graphics/sprites`, both `music/*.cmc` files, and editable structured JSON
-in `assets/` (actions, rooms, hit maps, messages, state and residue).
-See [format notes](assets/README.md).
-The embedded cursor comes from `graphics/cursors/player-planes.bin`. No
-prebuilt game ATR or disk-tail blob is used. Changes to these inputs trigger
-rebuilding through the Makefile. Normal builds do not read the reference game ATR or run the
-decompiler. Verification compares the entire resulting ATR, including its
-header and all 1,040 sectors, with the original release.
+The first build runs the original APX compiler on an emulated 6502 and takes
+several minutes. Its executable is cached in `build/program/`. Picture, map,
+action, message and CMC edits then only repack resources and link the disk.
+Initial world state, item coordinates, room objects and the hardware cursor
+are embedded in the executable, so editing those also recompiles Forth.
 
-`make` also builds `reference/figforth.atr` from [readable compiler sources](../util/figforth).
-No original ATR is stored or needed for compilation. Optional original-game
-fixtures belong in ignored `build/reference/`; release checks can also validate
-an unchanged build against the recorded historical hash.
+`make assets` packs resources; `make sources` packs ASCII Forth screens;
+`make music` generates listening exports under `build/music`.
+`make test-content` checks authoring formats. `make verify` checks the released
+executable code, the current authored initial world, and freshly built resources.
+With the supplied sources it also confirms that every loaded executable byte
+matches the original. Intentional Forth code or cursor changes require updating
+the release signature; ordinary `make` still builds them. Resource edits can
+change the disk layout. Oversized banks and unsafe resource buffers are rejected.
 
-`make assets` packs only the resource disk; `make sources` packs the Forth
-source ATR including embedded assets. Asset sizes and CMC load addresses
-remain fixed by the reconstructed layout. See the
-[shared asset-build notes](../README.md#building-the-forth-games-from-assets)
-for exact inputs and editing constraints.
+The disk is writable. Its save slot starts from the authored initial state
+with room 1 and stage 1 selected. Saving in the game modifies the generated
+disk. Repacking resets that slot, so keep personal saved disks separately.
+The startup word explicitly enters room 1; `boot-room` is the pre-menu cell,
+not a setting for choosing a different starting room.
 
-## Compile the source ATR with Atari fig-Forth
+## Compile on Atari
 
-Use an Atari XL/XE emulator with BASIC disabled, at least 48 KB of available
-RAM, and support for large 128-byte-sector source ATRs.
+Mount `build/figforth.atr` as D1, `build/sources.atr` as D2 and a writable copy
+of `build/assets.atr` as D3. Disable BASIC and enter:
 
-1. Boot `reference/figforth.atr` as D1.
-2. Mount `build/sources.atr` as D2.
-3. Mount a writable copy of `build/assets.atr` as D3.
-4. Enter this command at the Forth prompt:
+```forth
+HEX 1000 2463 ! 1000 OFFSET ! 1 LOAD
+```
 
-   ```forth
-   HEX 1000 2463 ! 1000 OFFSET ! 1 LOAD
-   ```
+After the completion message, D3 is the game disk. `INCBIN` inputs are expanded
+to ASCII Forth before packing the source ATR, including the generated initial
+state. The source disk needs no host tools when compiling on Atari.
 
-5. Wait for `WLADCY BUILD COMPLETE`. D3 contains the rebuilt game and can be
-   booted as D1.
+## Code and recovery
 
-The command changes this exact APX version's host `R/W` sector divisor from
-720 to 4096 and selects D2 source blocks. It does not modify game code.
-The source disk uses the stock `-->` continuation; its screen count is
-reported by `make sources`.
-Each physical screen line reserves a trailing space; Forth does not insert
-newlines between its 64-character rows. Expected `Isn't unique` notices come
-from the deliberate emitter redefinitions in `05-emission.fth`. Turbo mode
-speeds compilation substantially.
+These are reconstructed sources, not the author's missing game listings.
+Forth and assembler words retain their original addresses; resizing code
+requires deliberate relocation. Native routines use 6502 mnemonics. The
+interleaved headers and fixed addresses of initial state are generated by
+[gam_world.py](../util/gam_world.py), leaving editable values in the room,
+world and item files. All Forth files remain ASCII, at most 64 columns wide.
 
-## Graphics
+[tools/names.json](tools/names.json) and
+[tools/inferred-names.json](tools/inferred-names.json) retain naming evidence;
+[tools/recovery-notes.txt](tools/recovery-notes.txt) explains inferred behavior.
+Optional `make research` regenerates listings and writes large catalogs under
+`build/research/`; it is not part of a normal build. Original fixtures are
+optional forensic material described in [reference/README.md](reference/README.md).
 
-Browse [graphics/index.html](graphics/index.html) locally or view the
-[room overview](graphics/rooms-overview.png). The export includes 264 individual
-pictures, 255 interaction maps, two fonts, 20 stored sprite frames, title art
-and 24 initial room compositions. Three additional retained room-layout
-records are documented separately; one references an image absent from its
-resource group, so they are not presented as complete playable rooms.
+GAM-Forth is the common foundation. The [preserved author sources](https://github.com/ptodt/gam-forth)
+help recover definitions, but are not a replacement for game-specific routines.
+The current build uses the local reconstruction. The separate
+[AD2044 compatibility investigation](../ad2044/README.md#relationship-to-the-original-gam-forth)
+describes a possible later source-level integration.
 
-The format is the same GAM container and column-oriented `$8D` compression
-used by Klątwa. The directory in physical sector 500 gives each resource
-group's sector count; group data skips that directory sector. Nested records
-have little-endian 16-bit lengths. Pictures store `x-byte, y, width-bytes,
-height`, then compressed column bytes. An `$8D` escape introduces a control
-byte and a one-to-four-byte pattern: high control bits encode pattern length,
-and the low six bits encode repetitions. Decoded image files contain row-major
-2bpp data, four pixels per byte with the leftmost pair first.
+Władcy has 24 active rooms. Three obsolete room layouts were removed. Its
+stored walking sprite bank is retained as editable PNGs, but its use in this
+first-person game has not been established. Both fonts contain 1,024 bytes.
 
-Compositions use each room's stored palette and initial object-state layers.
-Room-dependent individual images have grayscale previews where their colors
-are not inherent to the asset. Interaction maps contain byte values for hit
-testing, rather than transparency. The original 1,024-byte fonts are exported
-unchanged, with previews showing all 128 glyphs in stored order.
+The gameplay CMC file includes six restored bytes that the original player
+reads from adjacent title-music memory. Packing verifies those bytes and writes
+only the original 1,899-byte gameplay resource. The title module keeps its
+original load address; moving it would break that overlap. Music listening
+exports preserve the complete restored module.
 
-Original resource payloads and group data are retained alongside the decoded
-files. [graphics/extraction.json](graphics/extraction.json) identifies each
-record and subrecord, physical disk spans, dimensions, placement, palettes,
-room composition and any unconsumed bytes. Generated frame borders, text
-windows, the moving cursor and later gameplay changes are outside the static
-room previews. Runtime use of the stored sprite bank has not been established;
-its frames are preserved without claiming they are active gameplay animation.
-
-All 519 compressed pictures and interaction maps match the original 6502
-decoder. Title and first-room composition tests also execute the original
-blitter. The title bitmap and first-room interior were compared with live
-Atari memory; the previews preserve the same stored pixels and palettes.
-
-Run `make graphics` to regenerate, or
-`python3 ../util/extract_graphics.py --game wladcy-ciemnosci --check` to verify.
-Extraction reuses Klątwa's shared GAM decoder and the repository's dependency-free
-PNG helpers; Python 3 is sufficient. Native records, fonts and sprite frames
-selected by `assets/layout.json` feed the build. Inspection exports go to
-ignored `build/graphics`, preserving source edits. Mixed containers, hit maps
-and room layouts are structured JSON; see `assets/binary-migration.json`.
-
-## Music
-
-[music/title.cmc](music/title.cmc) contains one title tune and
-[music/gameplay.cmc](music/gameplay.cmc) contains two gameplay subsongs.
-They are native Chaos Music Composer modules, playable with
-[ASAP](https://asap.sourceforge.net/).
-
-| File | Size | ATR offset | Loaded music data | Subsongs |
-| --- | ---: | --- | --- | ---: |
-| `gameplay.cmc` | 1,905 bytes | `$D403` | `$854D..$8CB7` | 2 |
-| `title.cmc` | 1,526 bytes | `$DB70` | `$8CB9..$92A8` | 1 |
-
-Offsets include the ATR header. The title file is unchanged; 164 bytes after
-its declared end belong to unused resource residue and are excluded.
-
-The gameplay resource on disk is six bytes shorter than its original CMC
-header declares. Its final referenced pattern continues into adjacent RAM:
-`$8CB2` contains zero in both title and gameplay captures, and `$8CB3` starts
-the still-resident title-file header. The export restores `00 FF FF B9 8C A8`
-at `$8CB2..$8CB7` and retains the original header. The zero is observed runtime
-state; the other five bytes come directly from the title header. The original
-player reads the first two restored bytes in subsong 1. Omitting them changes
-the audio, so this file includes an explicitly documented restoration.
-
-ASAP 8.0.0 identifies and renders all three subsongs through their full loops.
-The restored gameplay file also matches the original player's POKEY writes
-in a 1,000-frame test of the second subsong. All referenced patterns now
-terminate inside their exported modules.
-
-Run `make music` to export the current inputs under ignored `build/music`.
-Details and original checksums are in [music/extraction.json](music/extraction.json).
-This command leaves the CMC build inputs unchanged.
-Packing validates the six restored gameplay bytes and writes only the 1,899
-bytes present in its original disk record. The title module's 164 residue
-bytes are preserved separately under `assets/`.
-For example, render the second gameplay subsong with
-`asapconv -s 1 -o gameplay-2.wav music/gameplay.cmc`.
-
-## Recovery and validation
-
-`make decompile` regenerates sources from the reference
-image. Regeneration and the parser tests reuse the AD 2044 listing helpers and
-naming evidence through [tools/shared.py](tools/shared.py), so keep the sibling
-[ad2044](../ad2044) directory when doing that work. Building the checked-in
-Forth sources is independent of those regeneration helpers.
-
-The v1 boot loads 242 sectors at `$0E80..$877F`. The saved dictionary ends at
-`$8758`, with last main header `$8715`. Retired `N>N` and `SAVE-RUN` definitions
-remain in the padding; additional stale dictionary data, including residue
-shared with Klatwa, remains after the boot image. All of this is reconstructed
-through `$8B7F`, rather than retained as a hidden program copy in the assets.
-The custom counted-string runtime is `$3A8B`; `CLIT`, `COMPILE` operands,
-unaligned cells, and private vocabulary chains are handled explicitly.
-
-The final source ATR was compiled through the real Atari800 `LOAD` path into
-a target whose 32,000 program bytes were initially zero. The result matched
-the complete original ATR byte for byte. The rebuilt main menu, first room,
-and joystick movement screenshots matched the original. This is a smoke test,
-not a full playthrough. Use [tools/emulate-smoke.json](tools/emulate-smoke.json)
-with the sibling [Atari800 harness](../ad2044/tools/emulate.py) for an optional
-repeat; it requires Atari800, Xvfb, and Python Xlib.
-
-The renamed sources passed a fresh original fig-Forth `LOAD` build from a
-blank target. All 209 source screens compiled and reproduced the complete ATR
-byte for byte. Host `HERE` reached `$896E`, leaving 5,522 bytes below `$9F00`.
-Local evidence is in `build/runtime-validation/semantic-load-report.json`.
-[tools/test_semantics.py](tools/test_semantics.py) executes original game
-routines to check the inferred behavior and stack effects.
-
-## References
-
-* [AtariOnline game catalog](https://atarionline.pl/v01/index.php?ct=kazip&sub=W&title=+Wladcy+Ciemnosci)
-* [Selected v1 disk](https://atarionline.pl/v01/kazip.php?ct=kazip&sub=W&title=+Wladcy+Ciemnosci&file=Wladcy+Ciemnosci+%28v1%29.atr)
-* [Forth reverse-engineering discussion](https://atarionline.pl/forum/comments.php?DiscussionID=7059&page=1)
-* [APX Extended fig-Forth documentation](https://atariwiki.org/wiki/Wiki.jsp?page=Extended+Atari+FIG-Forth+APX20029)
-* [Preserved GAM FORTH sources](https://github.com/ptodt/gam-forth)
-
-The game and its original resources remain the work of their original authors;
-this reconstruction does not change their licensing.
+The original games and assets remain the work of their original authors.

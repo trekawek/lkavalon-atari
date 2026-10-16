@@ -1,0 +1,36 @@
+# Room and initial achievement mask, decimal; each bit scores once per room.
+# Masks: 1=visited (except room 01), 2=open result, 4=replacement result,
+# 8=special puzzle action, 16=quest/purchase, 32=take reward/add object,
+# 64=learn spell.
+# Labels below identify scenes, not recovered original room names.
+00 0 # Inventory storage; not a playable room.
+01 0 # Starting room: teak door and wall recess.
+02 0 # Ruby and opening spell.
+03 0 # Platinum chain, grate and cold spell.
+04 0 # Hidden view: NOTHING VISIBLE action.
+05 0 # Teak door and wall recess.
+06 0 # Beryl, hidden time spell and wind spell.
+07 0 # Magically sealed object and alchemy spell.
+08 0 # Bronze grate and alchemy spell.
+09 0 # Antimagic cloud and sapphire.
+10 0 # Gold bar, covered door and strength spell.
+11 0 # Amethyst and magic lock.
+12 0 # Nothingness spell.
+13 0 # Miser guarding the door; payment trap.
+14 0 # Alchemical furnace and seal spell.
+15 0 # Sword behind the door.
+16 0 # Gambler and one-time prize.
+17 0 # Turquoise and ordinary lock.
+18 0 # Antimagic passage and existence spell.
+19 0 # Gordian knot and magic tapestry.
+20 0 # Sealed object and nested views.
+21 0 # Bird to catch with the feathered cap.
+22 0 # Time niche, opal and second-stage transition.
+23 0 # Stage-two entrance, haystack and column mechanism.
+24 0 # Stage-two room with three nested views.
+25 0 # Snake head and sealed snake book.
+26 0 # Second snake segment and fire spell.
+27 0 # Third snake segment and mouse hole.
+28 0 # Snake tail; fourth segment.
+29 0 # Movable stone and golden door.
+30 0 # Warlock, hourglass payment and final crystal ball.

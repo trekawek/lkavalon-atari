@@ -19,13 +19,16 @@ import unittest
 from unittest.mock import patch
 
 import forth_assets as assets
-import structured_assets
 from reference_media import read_reference
 
 ROOT = Path(__file__).resolve().parents[1]
 HAS_PY65 = importlib.util.find_spec('py65') is not None
 REFERENCES = {'ad2044': 'ad2044-side1.atr', 'klatwa': 'klatwa-v1.atr',
               'wladcy-ciemnosci': 'wladcy-ciemnosci.atr'}
+
+
+def includes(game):
+    return tuple(item['path'] for item in assets.ASSETS_BY_GAME[game])
 
 
 def module(game, filename):
@@ -42,13 +45,23 @@ def write_native(root, game, salt=0):
     for item in assets.ASSETS_BY_GAME[game]:
         path = root / item['path']
         path.parent.mkdir(parents=True, exist_ok=True)
-        if path.suffix == '.json':
-            document = json.loads((ROOT / game / item['path']).read_text('ascii'))
-            registers = next(section for section in document['sections']
-                             if section['name'] == 'command registers')
-            registers['fields'][0]['value'] = salt & 255
-            path.write_text(json.dumps(document), 'ascii')
-            data = structured_assets.encode_file(root, item['path'])
+        if item['path'] == 'world/initial.txt':
+            import gam_world
+            for original in gam_world.dependencies(ROOT / game):
+                target = root / original.relative_to(ROOT / game)
+                target.parent.mkdir(parents=True, exist_ok=True)
+                shutil.copyfile(original, target)
+            puzzle = root / 'world/puzzles.txt'
+            rows = puzzle.read_text().splitlines()
+            for index, row in enumerate(rows):
+                data, separator, comment = row.partition('#')
+                if data.split()[:1] == ['00']:
+                    rows[index] = f'00 {salt}' + (' # ' + comment.strip() if separator else '')
+                    break
+            else:
+                raise AssertionError('Puzzle fixture has no cell 00')
+            puzzle.write_text('\n'.join(rows) + '\n')
+            data = gam_world.encode_world(root)
         else:
             data = bytes((i * 73 + salt) & 255 for i in range(item['size']))
             path.write_bytes(data)
@@ -64,7 +77,7 @@ class ExpansionTests(unittest.TestCase):
             source = root / 'fixture.fth'
             source.write_text('( INCBIN is a build directive )\nHEX\n' +
                               '\n'.join('INCBIN ' + path for path in
-                                        assets.dependencies('ad2044')) + '\n', 'ascii')
+                                        includes('ad2044')) + '\n', 'ascii')
             lines = list(assets.source_lines(source, root))
             self.assertEqual(lines[:2], [(str(source), 1, '( INCBIN is a build directive )'),
                                        (str(source), 2, 'HEX')])
@@ -79,7 +92,7 @@ class ExpansionTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
             source = root / 'fixture.fth'
-            name = assets.dependencies('klatwa')[0]
+            name = includes('klatwa')[0]
             source.write_text('INCBIN ' + name + '\n', 'ascii')
             with self.assertRaisesRegex(assets.AssetError, 'cannot read'):
                 list(assets.source_lines(source, root))
@@ -98,13 +111,13 @@ class ExpansionTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             base = Path(directory)
             root = base / 'game'
-            path = root / assets.dependencies('klatwa')[0]
+            path = root / includes('klatwa')[0]
             path.parent.mkdir(parents=True)
             outside = base / 'outside.bin'
             outside.write_bytes(bytes(39))
             path.symlink_to(outside)
             with self.assertRaisesRegex(assets.AssetError, 'escapes game directory'):
-                assets.read_asset(root, assets.dependencies('klatwa')[0])
+                assets.read_asset(root, includes('klatwa')[0])
 
     def test_dependency_cli_matches_declared_native_inputs(self):
         for game in assets.ASSETS_BY_GAME:
@@ -122,7 +135,7 @@ class ConsumerTests(unittest.TestCase):
                 packer = module(game, 'pack_sources')
                 (root / 'sources.json').write_text(json.dumps({'sources': ['fixture.fth']}))
                 (root / 'fixture.fth').write_text('HEX\n' + '\n'.join(
-                    'INCBIN ' + path for path in assets.dependencies(game)) + '\n', 'ascii')
+                    'INCBIN ' + path for path in includes(game)) + '\n', 'ascii')
                 previous = None
                 for salt in (0, 1):
                     expected_bytes = write_native(root, game, salt)
@@ -146,7 +159,7 @@ class ConsumerTests(unittest.TestCase):
                         self.assertNotEqual(disk, previous)
                     previous = disk
                 # Existing packed output must never become a missing-input fallback.
-                (root / assets.dependencies(game)[0]).unlink()
+                (root / includes(game)[0]).unlink()
                 with patch.object(packer, 'ROOT', root), self.assertRaises(assets.AssetError):
                     packer.main()
 
@@ -154,7 +167,7 @@ class ConsumerTests(unittest.TestCase):
     def test_edited_assets_compile_through_original_apx_for_all_games(self):
         for game in assets.ASSETS_BY_GAME:
             # Klatwa deliberately shares the AD compiler through its wrapper.
-            compiler = module('ad2044' if game == 'klatwa' else game, 'compile')
+            compiler = module('ad2044', 'compile')
             with self.subTest(game=game), tempfile.TemporaryDirectory() as directory:
                 root = Path(directory)
                 data = write_native(root, game, salt=91)
@@ -162,7 +175,7 @@ class ConsumerTests(unittest.TestCase):
                 cursor = 0x4000
                 lines = ['3 T-DISK 4000 T-ORG']
                 expected = b''
-                for path, raw in zip(assets.dependencies(game), data):
+                for path, raw in zip(includes(game), data):
                     cursor += len(raw)
                     lines += ['INCBIN ' + path, f'AT {cursor:04X}', 'BYTES 7712']
                     cursor += 2
@@ -172,7 +185,7 @@ class ConsumerTests(unittest.TestCase):
                 inputs = compiler.read_sources(
                     [ROOT / game / 'src/metacompiler.fth',
                      ROOT / game / 'src/05-emission.fth', source], game_root=root)
-                machine = compiler.ForthMachine(ROOT / game / 'reference/figforth.atr',
+                machine = compiler.ForthMachine(ROOT / game / 'build/figforth.atr',
                                                 inputs, 30_000_000)
                 machine.run()
                 self.assertEqual(bytes(machine.output_disks[3][:len(expected)]), expected)
@@ -212,12 +225,26 @@ class RegenerationTests(unittest.TestCase):
                 (root / 'reference').mkdir()
                 (root / 'reference' / reference).write_bytes(
                     read_reference(ROOT / game / 'reference' / reference))
-                write_native(root, game, salt=31)
+                if game != 'ad2044':
+                    (root / 'build').mkdir()
+                    shutil.copyfile(ROOT / game / f'build/{game}.atr',
+                                    root / f'build/{game}.atr')
+                edited = write_native(root, game, salt=31)
+                if game != 'ad2044':
+                    # Recovery reads the current compiled world. Keep this
+                    # fixture consistent with its deliberately edited input.
+                    image_path = root / f'build/{game}.atr'
+                    image = bytearray(image_path.read_bytes())
+                    for item, data in zip(assets.ASSETS_BY_GAME[game], edited):
+                        if item['path'] == 'world/initial.txt':
+                            offset = 16 + item['start'] - 0x0E80
+                            image[offset:offset + len(data)] = data
+                    image_path.write_bytes(image)
                 (root / 'assets').mkdir()
             for game in assets.ASSETS_BY_GAME:
                 root = repo / game
                 expected = {path: (root / path).read_bytes()
-                            for path in assets.dependencies(game)}
+                            for path in includes(game)}
                 env = dict(os.environ)
                 env['PYTHONPATH'] = os.pathsep.join(sys.path)
                 for iteration in range(2):

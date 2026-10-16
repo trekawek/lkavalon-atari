@@ -1,0 +1,6 @@
+# One quoted line per displayed line.
+"NAWET KAMIENNA TWARZ"
+"ZMIENI SWÓJ WYGLĄD, GDY"
+"USŁYSZY PRAWDĘ"
+"O PARLAMENTARNYCH RZĄDACH"
+"W TWOIM KRAJU"

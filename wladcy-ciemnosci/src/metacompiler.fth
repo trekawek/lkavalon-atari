@@ -68,4 +68,4 @@ A200 CONSTANT T-LAST
 ( address T: name defines an executable target CFA emitter. )
 ( value #16 and value #8 emit target literal instructions. )
 ( GAME-MODE preserves existing data in a partial final sector. )
-( Its D3 disk must already contain the original game assets. )
+( D3 can be blank, or contain the freshly built assets. )

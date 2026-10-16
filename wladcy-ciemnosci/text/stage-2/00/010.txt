@@ -1,0 +1,6 @@
+# One quoted line per displayed line.
+"ŁÓDKA JEST DZIURAWA"
+"\\x76\\x76\\x76"
+"JEJ WYPORNOŚĆ"
+"UMOŻLIWIA PRZEWIEZIENIE"
+"TYLKO JEDNEGO ZWIERZAKA"

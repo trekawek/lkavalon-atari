@@ -3,7 +3,8 @@
 
 Generated ATRs/SAPs may exist locally in ignored build directories. This audit
 uses Git's index, so ignored outputs and unrelated historical projects are not
-part of the source policy. Raster .bin files contain Atari pixels, not code.
+part of the source policy. Compressed intermediates and raw raster duplicates
+belong in build/; source pictures are PNGs and the cursor uses a native PMG.
 """
 
 import argparse
@@ -12,31 +13,19 @@ import subprocess
 
 ROOT = Path(__file__).resolve().parents[1]
 GAMES = ("ad2044", "klatwa", "wladcy-ciemnosci")
-RASTER_DIRS = {
-    "ad2044": {"packed", "decoded", "scenes"},
-    "klatwa": {"pictures", "rooms", "records", "sprites", "title-animation", "cursors"},
-    "wladcy-ciemnosci": {"pictures", "rooms", "records", "sprites", "cursors"},
-}
 
 
 def allowed_binary(path):
-    """Recognized native music/font or one of the audited raster locations."""
+    """Recognized graphics/font/music inputs, without obsolete binary aliases."""
     path = Path(path)
-    game, *parts = path.parts
+    if not path.parts:
+        return False
+    game = path.parts[0]
     if game not in GAMES:
         return False
-    if str(path) in ("ad2044/interface/cursor.pmg", "ad2044/music/ad2044.snd"):
+    if path == Path(game) / "interface/cursor.pmg" or str(path) == "ad2044/music/ad2044.snd":
         return True
-    if path.suffix in (".png", ".fnt", ".cmc"):
-        return True
-    if not parts or parts[0] != "graphics":
-        return False
-    if path.suffix in (".png", ".pic"):
-        return True
-    if path.suffix != ".bin":
-        return False
-    return (parts == ["graphics", "title.bin"] or
-            len(parts) >= 3 and parts[1] in RASTER_DIRS[game])
+    return path.suffix in (".png", ".fnt", ".cmc")
 
 
 def audit(root=ROOT):

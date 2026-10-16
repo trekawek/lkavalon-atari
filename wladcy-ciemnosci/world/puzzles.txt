@@ -1,0 +1,28 @@
+# Puzzle index and initial 16-bit value, decimal. Comments are inferred roles.
+# Concrete users: src/30-game.fth and the shared stages/*/actions.txt.
+# Unknown retained cells are preserved; their original names are lost.
+00 0 # Retained cell; no specific active role established.
+01 0 # Retained cell; no specific active role established.
+02 0 # Pantry entry gate (>1); special item pickups also clear this cell.
+03 0 # Cap tree revealed/harvested; REVEAL-WITH-POWER and TAKE-SET-STATE.
+04 0 # Retained cell; no specific active role established.
+05 0 # Retained cell; no specific active role established.
+06 0 # Retained cell; no specific active role established.
+07 0 # Neighbour gate: 1=hinges oiled, 2=bone taken, 4=hatchet buried.
+08 0 # Clothing worn: 4 admits the player past the tavern bouncer.
+09 0 # Tongue (item 218) carried: enables reading; cleared on dropping it.
+10 0 # Stone ear: 1=animated, 2=told the truth (room 03).
+11 0 # Bone of contention removed: 4 opens Cargul's gate (room 07).
+12 0 # Cargul cheered: 2 allows entry; nonzero allows taking his hatchet.
+13 0 # Legacy four-item latch; also selects a tavern reply. Active setter unproven.
+14 0 # Pawlack dialogue selector; no specific active setter established.
+15 0 # Lamp burning in the dark room: 1=lit, 0=extinguished.
+16 0 # Lamp contains oil: 1=filled; required by LIGHT-WITH-ITEM.
+17 0 # Windowless room closed: combines with cell 15 to restore darkness.
+18 0 # Waterskin filled: 1=water; desert failure clears it.
+19 0 # Animals animated; drives paired-room transfers, cleared by time reset.
+20 0 # First council representative: 0=untrained, 1=trained, 2=empowered.
+21 0 # Second council representative: same states; both at 2 open the ladder.
+22 0 # Retained cell; no specific active role established.
+23 0 # Budget hole patched: 4 opens the government door (room 22).
+24 63700 # Retained allocated cell (63700); no consumer established.

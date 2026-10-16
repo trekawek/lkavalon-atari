@@ -1,0 +1,3 @@
+# One quoted line per displayed line.
+"NIC NIE MOŻESZ ZROBIĆ."
+"CZARNOKSIĘŻNIK NIE POZWALA."

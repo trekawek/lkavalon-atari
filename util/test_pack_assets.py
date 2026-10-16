@@ -9,104 +9,63 @@ import tempfile
 import unittest
 
 import pack_assets as pack
-from reference_media import read_reference
+import gam_assets
+import gam_content as content
 
 ROOT = Path(__file__).resolve().parents[1]
-REFERENCES = {
-    "klatwa": {"build/assets.atr": ("klatwa-v1.atr", 32000)},
-    "wladcy-ciemnosci": {"build/assets.atr": ("wladcy-ciemnosci.atr", 32000)},
-}
+GAMES = ("klatwa", "wladcy-ciemnosci")
 
 
 def copy_inputs(game, destination):
     source = ROOT / game
-    for path in pack.dependencies(source):
+    for path in content.dependencies(source):
         target = destination / path.relative_to(source)
         target.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(path, target)
 
 
-class ReleaseAssets(unittest.TestCase):
-    @unittest.skipUnless(shutil.which("make"), "GNU Make is required")
-    def test_make_rejects_invalid_manifest_even_with_existing_targets(self):
-        for game, outputs in REFERENCES.items():
+class CurrentAssetBuilds(unittest.TestCase):
+    def test_make_rejects_invalid_content_even_with_existing_targets(self):
+        for game in GAMES:
             with self.subTest(game=game), tempfile.TemporaryDirectory() as tmp:
                 root = Path(tmp)
                 isolated = root / game
-                (isolated / "assets").mkdir(parents=True)
-                (root / "util").mkdir()
+                copy_inputs(game, isolated)
                 shutil.copyfile(ROOT / game / "Makefile", isolated / "Makefile")
-                shutil.copyfile(ROOT / "util/pack_assets.py", root / "util/pack_assets.py")
-                (isolated / "assets/layout.json").write_text("{broken")
-                for output in outputs:
-                    path = isolated / output
-                    path.parent.mkdir(exist_ok=True)
-                    path.touch()
+                for name in ("gam_content", "gam_assets", "gam_world", "gam_program"):
+                    target = root / f"util/{name}.py"
+                    target.parent.mkdir(exist_ok=True)
+                    shutil.copyfile(ROOT / f"util/{name}.py", target)
+                (root / "ad2044/tools").mkdir(parents=True)
+                shutil.copyfile(ROOT / "ad2044/tools/pictures.py", root / "ad2044/tools/pictures.py")
+                (isolated / "world/map.txt").write_text("invalid map row\n")
+                (isolated / "build").mkdir()
+                (isolated / "build/assets.atr").touch()
                 result = subprocess.run(["make", "assets"], cwd=isolated,
                                         capture_output=True, text=True)
                 self.assertNotEqual(result.returncode, 0)
-                self.assertIn("Cannot read assets/layout.json dependencies", result.stderr)
+                self.assertIn("Cannot read authored content dependencies", result.stderr)
 
-    def test_templates_from_only_declared_inputs_match_every_original_sector(self):
-        for game, outputs in REFERENCES.items():
-            with self.subTest(game=game), tempfile.TemporaryDirectory() as tmp:
-                isolated = Path(tmp) / game
-                copy_inputs(game, isolated)
-                self.assertEqual(list(isolated.rglob("*.atr")), [])
-                self.assertFalse((isolated / "reference").exists())
-                self.assertFalse((isolated / "build").exists())
-                actual = pack.build_disks(isolated)
-                self.assertEqual(set(actual), set(outputs))
-                for output, (reference, prefix) in outputs.items():
-                    expected = bytearray(read_reference(ROOT / game / "reference" / reference))
-                    expected[15] = 0  # writable ATR metadata
-                    expected[16:16 + prefix] = bytes(prefix)
-                    self.assertEqual(actual[output], expected, (game, output))
-
-    def test_same_size_native_edits_change_only_the_corresponding_disk_byte(self):
-        cases = [
-            ("klatwa", "music/title.cmc", 100,
-             "build/assets.atr", 0xE01C + 100),
-            ("klatwa", "graphics/fonts/gameplay.fnt", 100,
-             "build/assets.atr", 0xC3EE + 100),
-            ("klatwa", "graphics/sprites/direction-0-frame-0.bin", 20,
-             "build/assets.atr", 0xCED6 + 20),
-            ("wladcy-ciemnosci", "music/title.cmc", 100,
-             "build/assets.atr", 0xDB70 + 100),
-            ("wladcy-ciemnosci", "graphics/fonts/gameplay.fnt", 100,
-             "build/assets.atr", 0xBC86 + 100),
-            ("wladcy-ciemnosci", "graphics/sprites/direction-0-frame-0.bin", 20,
-             "build/assets.atr", 0xC94F + 20),
-        ]
-        for game, filename, index, output, offset in cases:
-            with self.subTest(game=game, file=filename), tempfile.TemporaryDirectory() as tmp:
-                isolated = Path(tmp) / game
-                copy_inputs(game, isolated)
-                before = pack.build_disks(isolated)
-                asset = isolated / filename
-                data = bytearray(asset.read_bytes())
-                data[index] ^= 1
-                asset.write_bytes(data)
-                after = pack.build_disks(isolated)
-                expected = bytearray(before[output])
-                expected[offset] ^= 1
-                self.assertEqual(after[output], expected)
-                for other in before.keys() - {output}:
-                    self.assertEqual(after[other], before[other])
-
-    def test_restored_cmc_bytes_and_load_header_cannot_be_silently_discarded(self):
-        with tempfile.TemporaryDirectory() as tmp:
-            isolated = Path(tmp) / "wladcy-ciemnosci"
-            copy_inputs("wladcy-ciemnosci", isolated)
-            path = isolated / "music/gameplay.cmc"
-            original = path.read_bytes()
-            for index, message in ((-1, "discarded tail changed"), (2, "fixed header changed")):
-                with self.subTest(index=index):
-                    data = bytearray(original)
-                    data[index] ^= 1
-                    path.write_bytes(data)
-                    with self.assertRaisesRegex(pack.AssetError, message):
-                        pack.build_disks(isolated)
+    def test_font_music_and_player_edits_reach_the_generated_disk(self):
+        for game in GAMES:
+            for filename in ("music/title.cmc", "interface/game.fnt", "player/0/0.png"):
+                with self.subTest(game=game, file=filename), tempfile.TemporaryDirectory() as tmp:
+                    isolated = Path(tmp) / game
+                    copy_inputs(game, isolated)
+                    before = content.build_disks(isolated)["build/assets.atr"]
+                    path = isolated / filename
+                    if path.suffix == ".png":
+                        width, height, pixels, palette = gam_assets.png.decode_png(path.read_bytes())
+                        changed = bytearray(pixels)
+                        changed[0] ^= 1
+                        path.write_bytes(gam_assets.png.encode_png(width, height, changed, palette))
+                    else:
+                        changed = bytearray(path.read_bytes())
+                        changed[100] ^= 1
+                        path.write_bytes(changed)
+                    after = content.build_disks(isolated)["build/assets.atr"]
+                    self.assertEqual(len(before), len(after))
+                    self.assertEqual(sum(a != b for a, b in zip(before, after)), 1)
 
 
 class PackingFailures(unittest.TestCase):

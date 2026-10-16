@@ -1,0 +1,4 @@
+# One quoted line per displayed line.
+"USŁYSZAŁEŚ ŁOMOT,"
+"TO PSY ZAGRYZŁY"
+"SIĘ NAWZAJEM"

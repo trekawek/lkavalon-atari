@@ -1,0 +1,3 @@
+# One quoted line per displayed line.
+"CZUJ SIĘ JAK"
+"U SIEBIE W DOMU"

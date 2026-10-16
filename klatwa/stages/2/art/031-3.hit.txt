@@ -1,0 +1,4 @@
+# klatwa, stages/2, resource 31, variant 3
+size 12 1
+grid
+333333333333

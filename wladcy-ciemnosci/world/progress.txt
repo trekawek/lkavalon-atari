@@ -1,0 +1,30 @@
+# Room and initial achievement mask, decimal; each bit scores once per room.
+# Masks: 1=visited (except room 01), 2=open result, 4=replacement result,
+# 8=special puzzle action, 16=quest/purchase, 32=take reward/add object,
+# 64=learn power.
+# Labels below identify scenes, not recovered original room names.
+00 0 # Inventory storage; not a playable room.
+01 0 # Starting room: gate to heaven and amber shelf.
+02 0 # Clothing and cap tree.
+03 0 # Stone ear, tongue and clay wall.
+04 0 # Tavern bouncer and sign.
+05 0 # Tavern: landlady, Pawlack and pantry entrance.
+06 0 # Pantry and storage chests.
+07 0 # Cargul's gate, rusty hinges and neighbours' dispute.
+08 0 # Pawlack's house.
+09 0 # Hearth, table and bench.
+10 0 # Cargul and the war hatchet.
+11 0 # Windowless room; lamp and darkness.
+12 0 # Fountain and desert route instructions.
+13 0 # Desert path room: forward/right/left choices.
+14 0 # Desert path room: four direction choices.
+15 0 # Desert exit and stage-two transition.
+16 0 # Animal table, clock and moat.
+17 0 # Landing place, stone and ice crossing.
+18 0 # Opposite animal table and boat.
+19 0 # Government guard; animal delivery.
+20 0 # Council entrance and political-career ladder.
+21 0 # Two council representatives to train and empower.
+22 0 # Budget hole and government door.
+23 0 # Society crucible and final arrangement.
+24 0 # Tax collector and tax leaf.

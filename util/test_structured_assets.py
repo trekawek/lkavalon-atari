@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
 """Test structural encoding, edit propagation and rejected ambiguous edits."""
 
-import copy
-import hashlib
 import importlib.util
 import json
 from pathlib import Path
@@ -11,7 +9,9 @@ import shutil
 import sys
 import unittest
 
-import pack_assets
+import gam_content
+import gam_assets
+import gam_world
 import structured_assets as assets
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -153,19 +153,16 @@ class StructuredDispatcher(unittest.TestCase):
 
 
 class CanonicalGameAssets(unittest.TestCase):
-    def test_klatwa_and_wladcy_templates_match_independent_release_baselines(self):
-        # Baselines independently compared byte-for-byte against original disks
-        # before deleting binary containers; the code prefix is all zeros.
-        expected = {
-            "klatwa": "bf0f89cbdc2926ac7b839220861035204683ab45c6fd0cfdd6045155baa34915",
-            "wladcy-ciemnosci": "86b256ce279c255fefad64482bc65e8357ff9d71f9317ad33efdae5c91ce4153",
-        }
-        for game, digest in expected.items():
+    def test_authored_game_builds_have_no_snapshot_dependencies(self):
+        for game in ("klatwa", "wladcy-ciemnosci"):
             with self.subTest(game=game):
-                disk = pack_assets.build_disks(ROOT / game)["build/assets.atr"]
-                self.assertEqual(hashlib.sha256(disk).hexdigest(), digest)
-                self.assertFalse(any((ROOT / game / "assets").rglob("*.bin")))
-                self.assertFalse(any((ROOT / game / "graphics").rglob("*.gam")))
+                root = ROOT / game
+                dependencies = gam_content.dependencies(root)
+                self.assertTrue(dependencies)
+                self.assertFalse(any(p.relative_to(root).parts[0] in ("assets", "graphics", "reference", "build")
+                                     for p in dependencies))
+                self.assertNotIn(".json", {p.suffix for p in dependencies})
+                self.assertNotIn(".atr", {p.suffix for p in dependencies})
 
     def test_ad_plain_message_edit_changes_only_its_encoded_glyph(self):
         source = ROOT / "ad2044/rooms/01/actions.txt"
@@ -226,28 +223,34 @@ class CanonicalGameAssets(unittest.TestCase):
         self.assertEqual((old[2], edited[2]), (18, 19))
         self.assertEqual(old[:2] + old[3:], edited[:2] + edited[3:])
 
-    def test_saved_room_field_changes_exactly_its_stored_byte(self):
+    def test_fresh_save_reflects_authored_direction_without_a_saved_snapshot(self):
         for game in ("klatwa", "wladcy-ciemnosci"):
-            with self.subTest(game=game):
-                source = ROOT / game / "assets/state/saved-game.json"
-                document = json.loads(source.read_text())
-                before = encode(document)
-                state = next(part for part in document["data"]["parts"] if part.get("name") == "CURRENT-ROOM")
-                state["parts"][0]["values"][0] ^= 1
-                after = encode(document)
-                self.assertEqual([i for i, (a, b) in enumerate(zip(before, after)) if a != b], [13])
+            with self.subTest(game=game), tempfile.TemporaryDirectory() as tmp:
+                root = Path(tmp)
+                source = ROOT / game
+                for path in gam_world.dependencies(source):
+                    target = root / path.relative_to(source)
+                    target.parent.mkdir(parents=True, exist_ok=True)
+                    shutil.copyfile(path, target)
+                before = gam_world.save_state(root)
+                path = root / "world/initial.txt"
+                path.write_text(path.read_text().replace("last-direction 0", "last-direction 1"))
+                after = gam_world.save_state(root)
+                changes = [(a, b) for a, b in zip(before, after) if a != b]
+                self.assertEqual(changes, [(0, 1)])
                 self.assertEqual(len(after), 896)
 
     def test_real_inline_message_edit_changes_one_encoded_glyph(self):
-        source = ROOT / "klatwa/assets/resources/g04-r000.json"
-        document = json.loads(source.read_text())
-        record = document["data"]["records"][3]["records"][1]
-        self.assertEqual(record["dispatch_id"], 6)
-        self.assertEqual(record["arguments"][0]["lines"], ["TEKOWE=DRZWI"])
-        before = encode(document)
-        record["arguments"][0]["lines"][0] = "TEKOWE=DRZWA"
-        after = encode(document)
+        source = ROOT / "klatwa/stages/1/actions.txt"
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "actions.txt"
+            text = source.read_text()
+            before = gam_assets.encode_actions(source, "klatwa")
+            self.assertIn('"TEKOWE DRZWI"', text)
+            path.write_text(text.replace('"TEKOWE DRZWI"', '"TEKOWE DRZWA"', 1))
+            after = gam_assets.encode_actions(path, "klatwa")
         changes = [i for i, (a, b) in enumerate(zip(before, after)) if a != b]
+        self.assertEqual(len(before), len(after))
         self.assertEqual(len(changes), 1)
         self.assertEqual((before[changes[0]], after[changes[0]]), (ord("I"), ord("A")))
 

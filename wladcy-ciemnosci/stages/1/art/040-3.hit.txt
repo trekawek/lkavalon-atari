@@ -1,0 +1,4 @@
+# wladcy-ciemnosci, stages/1, resource 40, variant 3
+size 5 1
+grid
+.PPPP

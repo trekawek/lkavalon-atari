@@ -1,0 +1,4 @@
+# One quoted line per displayed line.
+"SZUKAJĄC CELU BĘDZIESZ"
+"PEWNIEJSZY, GDY ILOŚĆ"
+"KROKÓW ZAWSZE POMNIEJSZYSZ"

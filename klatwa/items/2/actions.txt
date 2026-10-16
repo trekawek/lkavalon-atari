@@ -1,0 +1,119 @@
+# Shared action collections. Room selector rows choose these IDs.
+
+[00]
+item 1
+
+[01]
+item 201
+drop-item
+
+[02]
+item 202
+describe
+  message:
+    "CHRYZOLIT"
+take-item
+
+[03]
+item 203
+describe
+  message:
+    "SZAFIR"
+take-item
+
+[04]
+item 204
+describe
+  message:
+    "OPAL"
+take-item
+
+[05]
+item 205
+describe
+  message:
+    "NEFRYT"
+take-item
+
+[06]
+item 206
+describe
+  message:
+    "ZWYKŁA KLEPSYDRA"
+take-item
+
+[07]
+item 207
+describe
+  message:
+    "FLAKON Z SIARKĄ"
+take-item
+
+[08]
+item 208
+describe
+  message:
+    "MŁOTEK"
+take-item
+
+[09]
+item 209
+describe
+  message:
+    "DZIWNY PRZEDMIOT"
+    "Z NAPISEM"
+read-message
+  message:
+    "ZAGRAJ W A.D.2044"
+    "^^^^^^^^^^^^^^^^^"
+    "L.K. AVALON"
+    "TO FIRMA DLA"
+    "TWEGO LUDU"
+take-item
+
+[10]
+item 210
+take-item
+
+[11]
+item 211
+take-item
+
+[12]
+item 212
+describe
+  message:
+    "STEMPEL"
+take-item
+
+[13]
+item 213
+take-item
+
+[14]
+item 214
+take-item
+
+[15]
+item 215
+take-item
+
+[16]
+item 216
+describe
+  message:
+    "MAGICZNA"
+    "KLEPSYDRA CZASU"
+take-item
+
+[17]
+item 217
+take-item
+
+[18]
+item 218
+take-item
+
+[19]
+item 219
+take-item

@@ -70,25 +70,21 @@ original release; historical editor data, disk padding and saves are omitted.
 Start with the [AD 2044 guide](ad2044/README.md) and
 [room 01](ad2044/rooms/01).
 
-Klątwa and Władcy Ciemności retain their existing structured asset manifests
-pending review of AD 2044. Their `assets/layout.json` files specify physical
-placement and their JSON records preserve exact original streams. See the
-[Klątwa](klatwa/assets/README.md) and [Władcy](wladcy-ciemnosci/assets/README.md)
-format notes. Their existing full-disk reference checks remain in place.
-
-The corresponding simplification would give each room a scene/action folder,
-with shared pictures under `art/`, text hit/depth grids, separate message files,
-and existing fonts/CMC music. Klątwa has 30 extracted rooms and walking sprites;
-Władcy has 24 active rooms and three obsolete layouts. Their 160×112 scenes
-share layered pictures across rooms, so duplicating AD's self-contained room
-groups would be wasteful. Their banked resource buffers also need separate
-packing limits before migration.
+Klątwa and Władcy Ciemności use the same readable approach, with shared art
+and action collections grouped by stage. Each room has a small scene file,
+initial objects and action selectors; maps, hit/depth grids, messages and
+spell/power slots are text. Indexed PNGs, fonts and CMC music are the graphics
+and sound inputs. The builder calculates compression and placement within each
+engine's bank limits. Klątwa has 30 rooms; Władcy has 24 active rooms.
+Their initial world state also generates the fixed-address Forth data.
+See the [Klątwa guide](klatwa/README.md), [Władcy guide](wladcy-ciemnosci/README.md)
+and [shared format notes](util/gam-content-format.md).
 
 | Game | Pictures and fonts | Music |
 | --- | --- | --- |
 | [AD 2044](ad2044/README.md) | Indexed PNGs beside each room/item, `interface/*.fnt`, `interface/cursor.pmg` | `music/ad2044.snd`, custom binary bank |
-| [Klątwa](klatwa/README.md) | Native records selected by `assets/layout.json`, fonts and sprite/cursor pixels | `music/*.cmc` |
-| [Władcy Ciemności](wladcy-ciemnosci/README.md) | Native records selected by `assets/layout.json`, fonts and sprite/cursor pixels | `music/*.cmc` |
+| [Klątwa](klatwa/README.md) | Stage/item PNGs, text hitmaps, player PNGs, `interface/*.fnt` and cursor | `music/*.cmc` |
+| [Władcy Ciemności](wladcy-ciemnosci/README.md) | Stage/item PNGs, text hitmaps, player PNGs, `interface/*.fnt` and cursor | `music/*.cmc` |
 
 Install each game's Python requirements, then run its Makefile:
 
@@ -100,14 +96,15 @@ make -C wladcy-ciemnosci
 
 `make assets` packs resources; `make sources` generates an ASCII Forth source
 ATR. The generated source screens compile with the original Atari `LOAD`
-command. `INCBIN` directives expand embedded cursor/music bytes into ordinary
-Forth byte-emission statements during source packing and host compilation.
-AD 2044 caches its compiled executable, so later room edits only repack disks.
+command. `INCBIN` directives expand embedded cursor, music or generated world
+data into ordinary Forth byte-emission statements during source packing and
+host compilation. All three games cache their compiled executables, so
+resource edits only repack disks; embedded state changes also recompile Forth.
 
 Generated media and reports stay in ignored `build/` folders. Historical game
-images are optional forensic fixtures under `build/reference/`; extraction
-and recovery tools require their original full-disk hashes. Fresh AD 2044 disks
-intentionally have a different layout. `python3 util/audit_forth_binaries.py`
+images are optional forensic fixtures under `build/reference/`; historical
+extraction tools require their original full-disk hashes. Fresh game disks
+intentionally have different layouts. `python3 util/audit_forth_binaries.py`
 checks that tracked binary files are graphics, fonts or music.
 
 ## Music exports
@@ -128,9 +125,12 @@ AD 2044's editable pictures are ordinary indexed PNGs in its
 [ending](ad2044/ending) folders. Its [room guide](ad2044/rooms/README.md)
 explains picture placement, palette indices and clickable grids.
 
-Klątwa and Władcy retain native GAM picture records and their derived galleries:
-[Klątwa](klatwa/graphics/index.html),
-[Władcy Ciemności](wladcy-ciemnosci/graphics/index.html).
-Their PNGs remain previews. `python3 util/extract_graphics.py` is an optional
-historical extraction tool; it reads original reference fixtures and writes
-only under `build/graphics/`.
+Klątwa and Władcy use indexed PNGs as build inputs in their stage, item,
+interface and player folders. Their text hitmaps preserve clickable zones and
+depth information; [shared format notes](util/gam-content-format.md) explain
+the resource IDs, placement and palette rules.
+
+`python3 util/extract_graphics.py` is an optional historical extraction tool;
+it reads original reference fixtures and writes galleries under
+`build/graphics/`. `--check` compares authored graphics with the originals by
+decoded content, allowing different compression and disk placement.

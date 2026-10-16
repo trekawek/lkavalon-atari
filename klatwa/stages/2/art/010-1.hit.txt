@@ -1,0 +1,5 @@
+# klatwa, stages/2, resource 10, variant 1
+size 4 2
+grid
+.KKK
+.KKK

@@ -247,11 +247,21 @@ def build_music(game):
             ],
         }
     else:
-        manifest = json.loads((root / "music/extraction.json").read_text("ascii"))
-        files = {name: (root / "music" / name).read_bytes()
-                 for name, *_ in CMC_RECORDS[game]}
-        manifest["provenance_note"] = "Source disk fields describe the historical release; file hashes describe the current build inputs."
-        manifest["build_inputs"] = ["music/" + name for name in files]
+        files, tracks = {}, []
+        for name, _, _, load, end, songs in CMC_RECORDS[game]:
+            data = (root / "music" / name).read_bytes()
+            header = b"\xff\xff" + load.to_bytes(2, "little") + end.to_bytes(2, "little")
+            if data[:6] != header or len(data) != end - load + 7:
+                raise ValueError(f"{name}: CMC load address or segment size differs from the engine")
+            if data[6:21] != CMC_SIGNATURE:
+                raise ValueError(f"{name}: missing CMC signature")
+            files[name] = data
+            tracks.append({"file": name, "format": "CMC", "songs": songs,
+                           "subsong_indices": list(range(songs)), "load_address": load,
+                           "end_address_inclusive": end})
+        manifest = {"game": game, "build_inputs": ["music/" + name for name in files],
+                    "files": tracks,
+                    "note": "Generated from current CMC inputs; no historical disk or extraction catalog is required."}
     for track in manifest["files"]:
         track["size"] = len(files[track["file"]])
         track["sha256"] = digest(files[track["file"]])
@@ -270,19 +280,25 @@ def main():
     parser.add_argument(
         "--asapconv", help="optionally validate with this ASAP converter executable"
     )
+    parser.add_argument("--reference", type=Path, help="extract an explicit original ATR instead of current sources; requires --game")
+    parser.add_argument("--output", type=Path, help="export directory; defaults to GAME/build/music; requires --game")
     args = parser.parse_args()
+    if (args.reference or args.output) and not args.game:
+        parser.error("--reference and --output require --game")
     for game in ([args.game] if args.game else REFERENCES):
-        source = ROOT / game / "reference" / REFERENCES[game][0]
-        files, manifest = build_music(game)
-        output = ROOT / game / "build/music"
+        source = args.reference or ROOT / game / "reference" / REFERENCES[game][0]
+        files, manifest = (extract_game(game, read_reference(source))
+                           if args.reference and not args.check else build_music(game))
+        output = (args.output or ROOT / game / "build/music").resolve()
+        for project in REFERENCES:
+            if output.is_relative_to(ROOT / project) and not output.is_relative_to(ROOT / project / "build"):
+                parser.error("exports inside a game directory must go under build/ to protect authored inputs")
         if args.check:
             original, _ = extract_game(game, read_reference(source))
             for filename, data in original.items():
-                if game == "ad2044" and filename == "extraction.json":
+                if filename == "extraction.json":
                     continue
-                actual = ((ROOT / game / "music/extraction.json").read_bytes()
-                          if filename == "extraction.json" else files[filename])
-                if actual != data:
+                if files[filename] != data:
                     raise SystemExit(f"Encoded music differs from original: {game}/{filename}")
         else:
             output.mkdir(parents=True, exist_ok=True)

@@ -1,0 +1,7 @@
+# One quoted line per displayed line.
+"PODZIEL MAJĄTEK"
+"SPOŁECZEŃSTWA TAK,"
+"ABY KAŻDA DŁOŃ SYMBOLU"
+"WŁADZY DOSTAŁA SWOJĄ CZĘŚĆ,"
+"A TYGIEL SPOŁECZEŃSTWA"
+"NIE POZOSTAŁ PUSTY."

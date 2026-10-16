@@ -1,0 +1,185 @@
+# Resource variant file x-byte y; - means a direct resource.
+# Picture variant 0/2/4 has hit map 1/3/5. IDs are used by game code.
+picture 002 - art/002.png 4 0
+placeholder 003 - 45
+placeholder 004 - 45
+picture 005 0 art/005-0.png 4 0
+hitmap 005 1 art/005-1.hit.txt
+picture 006 0 art/006-0.png 20 0
+hitmap 006 1 art/006-1.hit.txt
+picture 007 0 art/007-0.png 19 0
+hitmap 007 1 art/007-1.hit.txt
+picture 008 0 art/008-0.png 7 12
+hitmap 008 1 art/008-1.hit.txt
+picture 008 2 art/008-2.png 4 48
+hitmap 008 3 art/008-3.hit.txt
+picture 009 0 art/009-0.png 4 48
+hitmap 009 1 art/009-1.hit.txt
+picture 009 2 art/009-2.png 7 78
+hitmap 009 3 art/009-3.hit.txt
+picture 010 0 art/010-0.png 9 78
+hitmap 010 1 art/010-1.hit.txt
+picture 010 2 art/010-2.png 9 66
+hitmap 010 3 art/010-3.hit.txt
+picture 011 0 art/011-0.png 27 0
+hitmap 011 1 art/011-1.hit.txt
+picture 012 0 art/012-0.png 10 72
+hitmap 012 1 art/012-1.hit.txt
+picture 013 0 art/013-0.png 19 60
+hitmap 013 1 art/013-1.hit.txt
+picture 013 2 art/013-2.png 20 66
+hitmap 013 3 art/013-3.hit.txt
+picture 014 0 art/014-0.png 27 84
+hitmap 014 1 art/014-1.hit.txt
+picture 014 2 art/014-2.png 11 84
+hitmap 014 3 art/014-3.hit.txt
+picture 015 0 art/015-0.png 24 0
+hitmap 015 1 art/015-1.hit.txt
+picture 015 2 art/015-2.png 23 36
+hitmap 015 3 art/015-3.hit.txt
+picture 016 0 art/016-0.png 4 60
+hitmap 016 1 art/016-1.hit.txt
+picture 016 2 art/016-2.png 15 60
+hitmap 016 3 art/016-3.hit.txt
+picture 017 0 art/017-0.png 23 90
+hitmap 017 1 art/017-1.hit.txt
+picture 017 2 art/017-2.png 28 84
+hitmap 017 3 art/017-3.hit.txt
+picture 018 0 art/018-0.png 27 54
+hitmap 018 1 art/018-1.hit.txt
+picture 018 2 art/018-2.png 27 54
+hitmap 018 3 art/018-3.hit.txt
+picture 019 0 art/019-0.png 9 78
+hitmap 019 1 art/019-1.hit.txt
+picture 019 2 art/019-2.png 28 66
+hitmap 019 3 art/019-3.hit.txt
+picture 020 0 art/020-0.png 9 12
+hitmap 020 1 art/020-1.hit.txt
+picture 020 2 art/020-2.png 18 30
+hitmap 020 3 art/020-3.hit.txt
+picture 021 0 art/021-0.png 20 36
+hitmap 021 1 art/021-1.hit.txt
+picture 021 2 art/021-2.png 18 42
+hitmap 021 3 art/021-3.hit.txt
+picture 022 0 art/022-0.png 19 60
+hitmap 022 1 art/022-1.hit.txt
+picture 022 2 art/022-2.png 20 36
+hitmap 022 3 art/022-3.hit.txt
+picture 023 0 art/023-0.png 20 42
+hitmap 023 1 art/023-1.hit.txt
+picture 023 2 art/023-2.png 18 24
+hitmap 023 3 art/023-3.hit.txt
+picture 024 0 art/024-0.png 20 48
+hitmap 024 1 art/024-1.hit.txt
+picture 024 2 art/024-2.png 13 90
+hitmap 024 3 art/024-3.hit.txt
+picture 025 0 art/025-0.png 8 30
+hitmap 025 1 art/025-1.hit.txt
+picture 025 2 art/025-2.png 9 84
+hitmap 025 3 art/025-3.hit.txt
+picture 026 0 art/026-0.png 21 36
+hitmap 026 1 art/026-1.hit.txt
+picture 026 2 art/026-2.png 20 18
+hitmap 026 3 art/026-3.hit.txt
+picture 027 0 art/027-0.png 14 66
+hitmap 027 1 art/027-1.hit.txt
+picture 027 2 art/027-2.png 20 84
+hitmap 027 3 art/027-3.hit.txt
+picture 028 0 art/028-0.png 4 0
+hitmap 028 1 art/028-1.hit.txt
+picture 028 2 art/028-2.png 20 0
+hitmap 028 3 art/028-3.hit.txt
+picture 029 0 art/029-0.png 33 24
+hitmap 029 1 art/029-1.hit.txt
+picture 029 2 art/029-2.png 4 24
+hitmap 029 3 art/029-3.hit.txt
+picture 030 0 art/030-0.png 30 24
+hitmap 030 1 art/030-1.hit.txt
+picture 030 2 art/030-2.png 12 24
+hitmap 030 3 art/030-3.hit.txt
+picture 031 0 art/031-0.png 16 66
+hitmap 031 1 art/031-1.hit.txt
+picture 031 2 art/031-2.png 25 66
+hitmap 031 3 art/031-3.hit.txt
+picture 032 0 art/032-0.png 19 84
+hitmap 032 1 art/032-1.hit.txt
+picture 032 2 art/032-2.png 28 84
+hitmap 032 3 art/032-3.hit.txt
+picture 033 0 art/033-0.png 16 48
+hitmap 033 1 art/033-1.hit.txt
+picture 033 2 art/033-2.png 25 48
+hitmap 033 3 art/033-3.hit.txt
+picture 034 0 art/034-0.png 16 48
+hitmap 034 1 art/034-1.hit.txt
+picture 034 2 art/034-2.png 25 48
+hitmap 034 3 art/034-3.hit.txt
+picture 035 0 art/035-0.png 21 42
+hitmap 035 1 art/035-1.hit.txt
+picture 035 2 art/035-2.png 20 30
+hitmap 035 3 art/035-3.hit.txt
+picture 036 0 art/036-0.png 20 36
+hitmap 036 1 art/036-1.hit.txt
+picture 036 2 art/036-2.png 14 66
+hitmap 036 3 art/036-3.hit.txt
+picture 037 0 art/037-0.png 16 30
+hitmap 037 1 art/037-1.hit.txt
+picture 037 2 art/037-2.png 22 30
+hitmap 037 3 art/037-3.hit.txt
+picture 038 0 art/038-0.png 19 30
+hitmap 038 1 art/038-1.hit.txt
+picture 038 2 art/038-2.png 25 36
+hitmap 038 3 art/038-3.hit.txt
+picture 039 0 art/039-0.png 7 54
+hitmap 039 1 art/039-1.hit.txt
+picture 039 2 art/039-2.png 7 24
+hitmap 039 3 art/039-3.hit.txt
+picture 040 0 art/040-0.png 12 84
+hitmap 040 1 art/040-1.hit.txt
+picture 040 2 art/040-2.png 20 90
+hitmap 040 3 art/040-3.hit.txt
+picture 041 0 art/041-0.png 20 18
+hitmap 041 1 art/041-1.hit.txt
+picture 041 2 art/041-2.png 27 42
+hitmap 041 3 art/041-3.hit.txt
+picture 042 0 art/042-0.png 19 90
+hitmap 042 1 art/042-1.hit.txt
+picture 042 2 art/042-2.png 16 48
+hitmap 042 3 art/042-3.hit.txt
+picture 043 0 art/043-0.png 16 48
+hitmap 043 1 art/043-1.hit.txt
+picture 044 0 art/044-0.png 17 36
+hitmap 044 1 art/044-1.hit.txt
+picture 045 0 art/045-0.png 17 36
+hitmap 045 1 art/045-1.hit.txt
+picture 046 0 art/046-0.png 8 30
+hitmap 046 1 art/046-1.hit.txt
+picture 046 2 art/046-2.png 31 30
+hitmap 046 3 art/046-3.hit.txt
+picture 047 0 art/047-0.png 19 36
+hitmap 047 1 art/047-1.hit.txt
+picture 047 2 art/047-2.png 19 48
+hitmap 047 3 art/047-3.hit.txt
+picture 048 0 art/048-0.png 15 48
+hitmap 048 1 art/048-1.hit.txt
+picture 048 2 art/048-2.png 31 42
+hitmap 048 3 art/048-3.hit.txt
+picture 049 0 art/049-0.png 15 30
+hitmap 049 1 art/049-1.hit.txt
+picture 049 2 art/049-2.png 13 54
+hitmap 049 3 art/049-3.hit.txt
+picture 050 0 art/050-0.png 14 60
+hitmap 050 1 art/050-1.hit.txt
+picture 050 2 art/050-2.png 20 30
+hitmap 050 3 art/050-3.hit.txt
+picture 051 0 art/051-0.png 28 78
+hitmap 051 1 art/051-1.hit.txt
+picture 051 2 art/051-2.png 8 78
+hitmap 051 3 art/051-3.hit.txt
+picture 052 0 art/052-0.png 15 90
+hitmap 052 1 art/052-1.hit.txt
+picture 052 2 art/052-2.png 8 78
+hitmap 052 3 art/052-3.hit.txt
+picture 053 0 art/053-0.png 7 66
+hitmap 053 1 art/053-1.hit.txt
+picture 053 2 art/053-2.png 4 78
+hitmap 053 3 art/053-3.hit.txt

@@ -1,0 +1,303 @@
+# Shared action collections. Room selector rows choose these IDs.
+
+[00]
+approach control=4
+
+[01]
+approach control=255
+
+[02]
+approach control=1
+close-scene-object redraw_background=7 removed_object=108 replacement_object=8
+
+[03]
+approach control=1
+
+[04]
+approach legacy=3,6,4,18
+
+[05]
+approach control=1
+
+[06]
+approach control=1
+enter-linked-room-12
+
+[07]
+approach control=1
+enter-linked-room-13
+
+[08]
+approach control=1
+enter-linked-room-14
+
+[09]
+approach facing=1 run=2 x=27 y=16 final=1
+enter-linked-room-15
+
+[10]
+approach control=1
+describe-arg argument_1=11
+open-scene-object redraw_background=18 removed_object=0 replacement_object=118
+
+[11]
+approach control=1
+close-scene-object redraw_background=18 removed_object=118 replacement_object=0
+
+[12]
+approach control=1
+describe-metadata
+
+[13]
+approach control=1
+describe-arg argument_1=5
+read-metadata-state
+
+[14]
+approach control=1
+read-metadata-state
+
+[15]
+approach control=1
+describe-arg argument_1=4
+reveal-set-power-state revealed_object=19 required_power=1 message=12 state_value=1 state_cell=19
+
+[16]
+approach control=1
+describe-arg argument_1=9
+swim-with-light-load error_message=10 argument_2=19
+
+[17]
+approach control=1
+describe-arg argument_1=8
+enter-update-pairs state_cell=19
+
+[18]
+approach control=1
+describe-arg argument_1=13
+enter-update-pairs state_cell=19
+
+[19]
+approach control=1
+describe-metadata
+look-closer
+
+[20]
+approach control=1
+describe-arg argument_1=1
+reset-paired-items argument_1=9 message=14 argument_3=10 argument_4=19
+open-with-item-20 argument_1=108
+open-with-power argument_1=108
+
+[21]
+approach control=1
+describe-arg argument_1=24
+listen-state-reply argument_1=18 argument_2=25 argument_3=18 argument_4=25 argument_5=23 argument_6=24 argument_7=25
+give-inventory revealed_object=120 power_id=5 requirement_1=22 requirement_2=56 text="MĄDROŚCI"
+
+[22]
+approach control=1
+describe-arg argument_1=19
+listen-state-reply argument_1=20 argument_2=32 argument_3=18 argument_4=32 argument_5=33 argument_6=34 argument_7=34
+train-with-item required_item=3 state_cell=20 argument_3=40 error_message=39
+empower-trained-state required_power=5 state_cell=20 argument_3=38 argument_4=34 argument_5=33 argument_6=34 argument_7=37
+
+[23]
+approach control=1
+describe-arg argument_1=20
+listen-state-reply argument_1=21 argument_2=33 argument_3=18 argument_4=33 argument_5=133 argument_6=134 argument_7=34
+train-with-item required_item=3 state_cell=21 argument_3=40 error_message=39
+empower-trained-state required_power=5 state_cell=21 argument_3=38 argument_4=34 argument_5=133 argument_6=134 argument_7=37
+
+[24]
+approach control=1
+open-scene-object redraw_background=21 removed_object=0 replacement_object=122
+
+[25]
+approach control=1
+close-scene-object redraw_background=21 removed_object=122 replacement_object=0
+
+[26]
+approach control=1
+describe-arg argument_1=35
+enter-after-training error_message=36
+
+[27]
+approach control=1
+describe-arg argument_1=44
+take-set-state redraw_background=42 removed_object=140 inventory_item=215 state_value=0 state_cell=2
+
+[28]
+approach control=1
+describe-arg argument_1=48
+read-action-state state_cell=3 argument_2=50 argument_3=50 argument_4=50
+
+[29]
+approach control=1
+describe-arg argument_1=49
+drop-required-item revealed_object=140 exact_inventory_id=215 wrong_item_message=47
+
+[30]
+approach control=1
+describe-arg argument_1=60
+look-closer
+patch-with-item argument_1=48 state_value=4 state_cell=23
+
+[31]
+approach control=1
+describe-arg argument_1=62
+open-with-power argument_1=146
+open-with-item-75 argument_1=148
+
+[32]
+approach control=1
+describe-arg argument_1=64
+take-set-state redraw_background=47 removed_object=147 inventory_item=217 state_value=0 state_cell=2 argument_6=0
+
+[33]
+approach control=1
+open-at-state4 argument_1=122 argument_2=21
+
+[34]
+approach control=1
+describe-arg argument_1=71
+open-with-item-78 argument_1=152
+open-with-power argument_1=152
+
+[35]
+approach control=1
+describe-arg argument_1=69
+enter-linked-room-15
+
+[36]
+approach control=1
+describe-arg argument_1=72
+open-with-item-78 argument_1=50
+open-with-power argument_1=50
+
+[37]
+approach control=1
+describe-arg argument_1=3
+refuse-jump error_message=76
+open-with-power argument_1=153
+
+[38]
+approach control=1
+describe-arg argument_1=69
+enter-linked-room-13
+
+[39]
+approach control=1
+describe-arg argument_1=25
+open-with-item-56 argument_1=14
+
+[40]
+approach control=1
+open-with-item-20 argument_1=40
+open-with-power argument_1=40
+
+[41]
+approach control=1
+open-with-item-20 argument_1=20
+open-with-power argument_1=20
+
+[42]
+approach control=1
+describe-arg argument_1=60
+enter-after-state required_state_cell=2 argument_2=61 argument_3=9 argument_4=63 argument_5=122 argument_6=151
+enter-with-power required_power=3
+
+[43]
+approach control=1
+describe-arg argument_1=68
+buy-with-item argument_1=53 argument_2=65 argument_3=9 argument_4=63 argument_5=122 argument_6=151
+
+[44]
+approach control=1
+describe-arg argument_1=71
+listen-state-reply argument_1=13 argument_2=64 argument_3=9 argument_4=63 argument_5=122 argument_6=151 argument_7=64
+
+[45]
+approach control=1
+describe-arg argument_1=70
+listen-state-reply argument_1=14 argument_2=66 argument_3=9 argument_4=63 argument_5=54 argument_6=152 argument_7=67
+
+[46]
+approach control=1
+close-and-darken added_object=158 argument_2=59 light_state_cell=15 dark_overlay=60 darkness_message=72 set_state_cell=17
+
+[47]
+approach control=1
+open-restore-light redraw_background=59 removed_object=158 replacement_object=59 cleared_state_cell=17
+
+[48]
+approach control=1
+describe-arg argument_1=75
+listen-state-reply argument_1=12 argument_2=62 argument_3=9 argument_4=63 argument_5=123 argument_6=146 argument_7=76
+cheer-with-item argument_1=2 argument_2=77 argument_3=9 argument_4=63 argument_5=123 argument_6=146 argument_7=76
+
+[49]
+approach control=1
+describe-arg argument_1=40
+take-after-state required_state_cell=12 argument_2=41 argument_3=9 argument_4=63 argument_5=123 argument_6=146 revealed_object=51 inventory_item=214
+
+[50]
+approach control=1
+describe-arg argument_1=60
+enter-after-state required_state_cell=12 argument_2=62 argument_3=9 argument_4=63 argument_5=123 argument_6=146
+
+[51]
+approach control=1
+describe-arg argument_1=45
+path-enter-with-item required_state_cell=18 error_message=86 required_item=229
+
+[52]
+approach control=1
+describe-arg argument_1=83
+strike-with-item argument_1=63
+
+[53]
+approach control=1
+describe-arg argument_1=84
+fill-with-item-64 required_item=29 message=85 state_value=1 state_cell=18
+
+[54]
+approach control=1
+describe-inline
+  message:
+    "SIEDZIBA"
+    "WŁADCÓW"
+enter-second-stage
+
+[55]
+empty
+
+[56]
+empty
+
+[57]
+empty
+
+[58]
+empty
+
+[59]
+empty
+
+[60]
+empty
+
+[61]
+empty
+
+[62]
+empty
+
+[63]
+empty
+
+[64]
+empty
+
+[65]
+empty

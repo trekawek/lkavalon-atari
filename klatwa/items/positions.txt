@@ -1,0 +1,37 @@
+# stage item-id x-byte y-pixels; each x byte is four Atari pixels.
+# All allocated slots are listed, including unused/spare coordinates.
+# Stage 2 copies the first 11 entries (Klatwa) or 23 (Wladcy).
+1 202 22 72
+1 203 7 60
+1 204 26 54
+1 205 13 66
+1 206 31 60
+1 207 9 60
+1 208 22 72
+1 209 32 32
+1 210 7 60
+1 211 27 60
+1 212 7 60
+1 213 22 72
+1 214 26 54
+1 215 13 66
+1 216 7 60
+1 217 0 0
+1 218 23 54
+1 219 21 66
+1 220 0 0
+1 221 0 0
+1 222 0 0
+1 223 0 0
+2 202 31 72
+2 203 6 66
+2 204 31 66
+2 205 20 60
+2 206 20 60
+2 207 31 66
+2 208 7 66
+2 209 6 66
+2 210 32 32
+2 211 32 32
+2 212 31 66
+2 213 32 32

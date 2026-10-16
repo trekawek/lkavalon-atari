@@ -1,0 +1,3 @@
+# One quoted line per displayed line.
+"DRABINA ZE SZCZEBLAMI"
+"POLITYCZNEJ KARIERY"

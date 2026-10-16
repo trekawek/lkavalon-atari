@@ -9,7 +9,6 @@ import unittest
 from pathlib import Path
 import sys
 sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "util"))
-from reference_media import read_reference
 from unittest.mock import patch
 
 import decompile
@@ -40,11 +39,11 @@ def uncommented_tokens(text):
 
 
 class DictionaryTests(unittest.TestCase):
-    def test_boot_residue_and_resource_boundaries(self):
-        raw = read_reference(ROOT / "reference/klatwa-v1.atr")
+    def test_boot_image_stops_before_retired_disk_residue(self):
+        raw = (ROOT / "build/klatwa.atr").read_bytes()
         data = recover.memory(raw)
         self.assertEqual(data[0x0E80:0x8880], raw[16:0x7A10])
-        self.assertEqual(data[0x8880:0x8B80], raw[0x7A10:0x7D10])
+        self.assertEqual(data[0x8880:0x8B80], bytes(0x300))
         self.assertEqual(recover.cell(data, 0x0F1C), recover.END)
         self.assertEqual(recover.cell(data, 0x0F0C), recover.LAST)
         bad = bytearray(raw)
@@ -108,7 +107,7 @@ class ThreadTests(unittest.TestCase):
         extra += ["3 T-DISK 4000 T-ORG"] + listing.lines + ["T-FINISH"]
         lines += [("<synthetic>", i, line) for i, line in enumerate(extra, 1) if line]
         machine = compiler.ForthMachine(
-            ROOT / "reference/figforth.atr", lines, 20_000_000
+            ROOT / "build/figforth.atr", lines, 20_000_000
         )
         machine.run()
         self.assertEqual(bytes(machine.output_disks[3][: len(body)]), body)
@@ -130,7 +129,8 @@ class PackingTests(unittest.TestCase):
         manifest = json.loads((ROOT / "sources.json").read_text())
         expected = []
         with tempfile.TemporaryDirectory(prefix="klatwa-screens-") as dirname:
-            temp = Path(dirname)
+            temp = Path(dirname) / "klatwa"
+            temp.mkdir()
             (temp / "sources.json").write_text(json.dumps(manifest))
             for name in dependencies('klatwa'):
                 path = temp / name

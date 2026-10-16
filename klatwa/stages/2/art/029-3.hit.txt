@@ -1,0 +1,14 @@
+# klatwa, stages/2, resource 29, variant 3
+size 6 11
+grid
+......
+P111P.
+P111P.
+P111P.
+P111P.
+P111P.
+P111P.
+P111P.
+P111P.
+P111P.
+......

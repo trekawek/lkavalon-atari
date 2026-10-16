@@ -1,0 +1,10 @@
+# wladcy-ciemnosci, stages/1, resource 4, variant 3
+size 5 7
+grid
+UUUUU
+UUUUU
+UUUUU
+UUUUU
+UUUUU
+UUUUU
+UUUUU

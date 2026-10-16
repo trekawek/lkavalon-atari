@@ -6,7 +6,6 @@
     "src/06-assembler.fth",
     "src/10-kernel.fth",
     "src/20-framework.fth",
-    "src/30-game.fth",
-    "src/40-disk-residue.fth"
+    "src/30-game.fth"
   ]
 }

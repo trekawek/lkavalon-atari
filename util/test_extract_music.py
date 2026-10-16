@@ -82,13 +82,31 @@ class MusicExtractionTests(unittest.TestCase):
             for filename, data in files.items():
                 with self.subTest(game=game, file=filename):
                     if filename == "extraction.json":
-                        if game == "ad2044":
-                            continue
-                        target = extract_music.ROOT / game / "music" / filename
-                        self.assertEqual(target.read_bytes(), data)
+                        continue  # Provenance catalogs are generated, not inputs.
                     else:
                         generated, _ = extract_music.build_music(game)
                         self.assertEqual(generated[filename], data)
+
+    def test_cmc_exports_need_only_the_two_native_modules(self):
+        for game in ("klatwa", "wladcy-ciemnosci"):
+            with self.subTest(game=game), tempfile.TemporaryDirectory() as tmp:
+                root = Path(tmp)
+                music = root / game / "music"
+                music.mkdir(parents=True)
+                for filename in ("gameplay.cmc", "title.cmc"):
+                    (music / filename).write_bytes(self.exports[game][0][filename])
+                with patch.object(extract_music, "ROOT", root):
+                    files, manifest = extract_music.build_music(game)
+                    self.assertEqual(manifest["build_inputs"], ["music/gameplay.cmc", "music/title.cmc"])
+                    changed = bytearray((music / "title.cmc").read_bytes())
+                    changed[100] ^= 1
+                    (music / "title.cmc").write_bytes(changed)
+                    edited, _ = extract_music.build_music(game)
+                    self.assertEqual(edited["title.cmc"], changed)
+                    self.assertEqual(edited["gameplay.cmc"], files["gameplay.cmc"])
+                    (music / "title.cmc").write_bytes(changed[:-1])
+                    with self.assertRaisesRegex(ValueError, "segment size"):
+                        extract_music.build_music(game)
 
     def test_ad_music_uses_only_native_bank_and_regenerates_listening_exports(self):
         with tempfile.TemporaryDirectory() as tmp:

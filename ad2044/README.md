@@ -162,5 +162,5 @@ asset layout: they were editor output. The current room pictures, hitmaps,
 actions and map remain suitable editable inputs. GAM integration would improve
 the code without requiring those old containers as authored assets.
 
-This layout is the first simplification pass. Klątwa and Władcy Ciemności
-still use their existing asset manifests pending review of this version.
+Klątwa and Władcy Ciemności now use a related readable layout, with shared
+stage art and action collections suited to their engines.

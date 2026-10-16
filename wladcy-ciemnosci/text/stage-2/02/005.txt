@@ -1,0 +1,4 @@
+# One quoted line per displayed line.
+"RZĄD WPUSZCZA"
+"TYLKO UZDROWICIELI"
+"FINANSÓW"

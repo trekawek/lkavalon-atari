@@ -16,8 +16,6 @@ from pathlib import Path
 import sys
 
 import graphics_common
-import pack_assets
-import structured_assets
 from reference_media import read_reference
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -223,43 +221,80 @@ def check_ad_authored_graphics(root, files):
     return len(expected) + 1  # The separately checked cursor.
 
 
-def check_exports(game, files, disks):
-    """Check retained views and the structured replacements of old exports.
+def check_gam_authored_graphics(root, files, disk):
+    """Compare later-game pixels, placements, hit/depth cells, fonts and sprites.
 
-    AD2044 instead compares authored pictures/fonts/cursor by decoded content;
-    it no longer has a retained physical-layout or extraction-file manifest.
-    Removed raw hit maps and duplicate group containers are checked through
-    their complete re-encoded disk spans. They must be explicitly accounted
-    for in the migration catalog, so a missing genuine graphic still fails.
+    Compression and physical sectors are deliberately absent from this check.
+    Original graphics are decoded by the independent forensic game helpers;
+    authored resources pass through the current production encoders.
     """
-    root = ROOT / game
+    import gam_assets
+    import gam_content
+
+    root = Path(root)
+    report = json.loads(files["extraction.json"])["details"]
+    helper = load_helper("klatwa")
+    expected, actual = {}, {}
+    for item in report["pictures"]:
+        resource = item.get("record", item.get("resource"))
+        key = "picture", item["group"], resource, item["subrecord"]
+        header = bytes([item.get("x", item.get("x_byte")), item["y"],
+                        item["width_bytes"], item["height"]])
+        expected[key] = header + files[item.get("raw", item.get("raw_file"))]
+    for item in report["masks"]:
+        resource = item.get("record", item.get("resource"))
+        key = "hitmap", item["group"], resource, item["subrecord"]
+        expected[key] = bytes([item["width"], item["height"]]) + files[item.get("raw", item.get("raw_file"))]
+    for item in report["sprites"]:
+        key = "sprite", item.get("direction", item.get("direction_index")), item.get("frame", item.get("frame_index"))
+        header = bytes([item["x_offset"], item["y_offset"], item["width_bytes"], item["height"]])
+        expected[key] = header + files[item.get("raw", item.get("raw_file"))]
+    for item in report["fonts"]:
+        filename = item.get("raw", item.get("file"))
+        label = "game" if Path(filename).stem == "gameplay" else "title"
+        expected["font", label] = files[filename]
+        actual["font", label] = (root / f"interface/{label}.fnt").read_bytes()
+
+    for directory, group in (("interface", 3), ("stages/1", 4), ("items/1", 5),
+                             ("stages/2", 6), ("items/2", 7)):
+        bodies = gam_content.art(root, directory)
+        for _, fields in gam_content.lines(root / directory / "art.txt"):
+            kind, resource, variant, *_ = fields
+            if kind == "placeholder":
+                continue
+            resource = int(resource)
+            subrecord = 0 if variant == "-" else int(variant)
+            body = bodies[resource]
+            if variant != "-":
+                children, _ = helper.read_records(body)
+                body = children[subrecord]["data"]
+            header = 4 if kind == "picture" else 2
+            width, height = body[header - 2:header]
+            decoded, _ = gam_assets.decompress_rle(body[header:], width, height)
+            actual[kind, group, resource, subrecord] = body[:header] + decoded
+    directions, _ = helper.read_records(gam_content.player_bank(root))
+    for direction in directions:
+        frames, _ = helper.read_records(direction["data"])
+        for frame in frames:
+            body = frame["data"]
+            actual["sprite", direction["index"], frame["index"]] = body[:4 + body[2] * body[3]]
+    cursor = {"klatwa": 0x4E8D, "wladcy-ciemnosci": 0x4E9C}[root.name] - 0x0E70
+    expected["cursor"] = disk[cursor:cursor + 39]
+    actual["cursor"] = (root / "interface/cursor.pmg").read_bytes()
+    if actual.keys() != expected.keys():
+        raise ValueError("Authored graphic resource IDs differ from release: "
+                         f"missing={expected.keys()-actual.keys()}, extra={actual.keys()-expected.keys()}")
+    for key, original in expected.items():
+        if actual[key] != original:
+            raise ValueError(f"Authored graphic differs from release: {key}")
+    return len(expected)
+
+
+def check_exports(game, files, disks):
+    """Compare authored graphics without historical allocation/catalog inputs."""
     if game == "ad2044":
-        return check_ad_authored_graphics(root, files)
-    catalog = root / "assets/binary-migration.json"
-    migrations = json.loads(catalog.read_text("ascii"))["files"] if catalog.exists() else {}
-    for filename, data in files.items():
-        relative = "graphics/" + filename
-        target = root / relative
-        if target.is_file():
-            if target.read_bytes() != data:
-                raise ValueError(f"Export differs: {target}")
-            continue
-        entry = migrations.get(relative)
-        if not entry:
-            raise ValueError(f"Export is missing and has no replacement: {target}")
-        source = root / entry["source"]
-        if not source.exists():
-            raise ValueError(f"Migration source is missing: {source}")
-        if entry["disposition"] in ("structured-source", "renamed-font", "duplicate-font"):
-            encoded = structured_assets.encode_file(root, entry["source"])
-            if encoded != data:
-                raise ValueError(f"Structured export differs: {source}")
-    layout = pack_assets.load_manifest(root)
-    templates = pack_assets.build_disks(root, layout)
-    for spec, disk in zip(layout["disks"], disks, strict=True):
-        start = 16 + spec["compiled_prefix_bytes"]
-        if templates[spec["output"]][start:] != disk[start:]:
-            raise ValueError(f"Structured graphics/data differ from release disk: {game}/{spec['output']}")
+        return check_ad_authored_graphics(ROOT / game, files)
+    return check_gam_authored_graphics(ROOT / game, files, disks[0])
 
 
 def main():
@@ -270,14 +305,19 @@ def main():
     parser.add_argument(
         "--check", action="store_true", help="compare current graphics with the historical release without writing"
     )
+    parser.add_argument("--reference", type=Path, action="append", help="explicit original ATR; repeat for AD2044's two sides; requires --game")
+    parser.add_argument("--output", type=Path, help="export directory; defaults to GAME/build/graphics; requires --game")
     args = parser.parse_args()
+    if (args.reference or args.output) and not args.game:
+        parser.error("--reference and --output require --game")
     for game in ([args.game] if args.game else REFERENCES):
-        disks = [
-            read_reference(ROOT / game / "reference" / name)
-            for name, _ in REFERENCES[game]
-        ]
+        paths = args.reference or [ROOT / game / "reference" / name for name, _ in REFERENCES[game]]
+        disks = [read_reference(path) for path in paths]
         files, _ = extract_game(game, disks)
-        output = ROOT / game / "build/graphics"
+        output = (args.output or ROOT / game / "build/graphics").resolve()
+        for project in REFERENCES:
+            if output.is_relative_to(ROOT / project) and not output.is_relative_to(ROOT / project / "build"):
+                parser.error("exports inside a game directory must go under build/ to protect authored inputs")
         if args.check:
             checked = check_exports(game, files, disks)
         for filename, data in files.items():
@@ -289,8 +329,8 @@ def main():
             name.endswith(".png") and not name.startswith("contact-sheets/")
             for name in files
         )
-        if args.check and game == "ad2044":
-            print(f"ad2044: checked {checked} authored pictures/fonts/cursor against release; "
+        if args.check:
+            print(f"{game}: checked {checked} authored graphics against release; "
                   "disk placement, text and program are outside this check")
         else:
             print(f"{game}: {'checked' if args.check else 'extracted'} {previews} previews, {len(files)} files")

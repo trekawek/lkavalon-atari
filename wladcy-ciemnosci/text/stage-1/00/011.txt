@@ -1,0 +1,6 @@
+# One quoted line per displayed line.
+"NIESTETY, NIE MOGŁEŚ NAUCZYĆ"
+"SIĘ TEJ SZTUKI."
+"MISTRZ W TEJ"
+"DYSCYPLINIE URODZI SIĘ"
+"ZNACZNIE PÓŹNIEJ."

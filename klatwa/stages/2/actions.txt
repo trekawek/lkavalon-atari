@@ -1,0 +1,231 @@
+# Shared action collections. Room selector rows choose these IDs.
+
+[00]
+approach control=4
+
+[01]
+approach control=255
+
+[02]
+approach facing=0 run=1 x=17 y=13 final=0
+enter-room
+
+[03]
+approach facing=1 run=7 x=29 y=16 final=1
+enter-room
+
+[04]
+approach facing=2 run=1 x=18 y=19 final=2
+enter-room
+
+[05]
+approach facing=3 run=8 x=2 y=16 final=3
+enter-room
+
+[06]
+approach facing=1 run=7 x=29 y=16 final=1
+describe
+  message:
+    "PRZEJŚCIE"
+enter-room
+
+[07]
+approach facing=3 run=7 x=3 y=18 final=3
+enter-view
+
+[08]
+approach facing=1 run=7 x=29 y=18 final=1
+enter-view
+
+[09]
+approach facing=0 run=1 x=18 y=14 final=0
+enter-view
+
+[10]
+approach facing=0 run=0 x=9 y=14 final=0
+enter-view
+
+[11]
+approach facing=0 run=0 x=16 y=17 final=0
+describe
+  message:
+    "STOLIK WĘŻA"
+enter-view
+
+[12]
+approach facing=3 run=0 x=11 y=15 final=3
+describe
+  message:
+    "KOPKA SIANA"
+destroy-with-item argument_1=116 argument_2=17
+replace-with-spell argument_1=116 argument_2=17
+
+[13]
+approach facing=0 run=0 x=9 y=14 final=0
+describe
+  message:
+    "MARMUROWA TABLICA"
+    "Z WYRYTYM NAPISEM"
+read-message
+  message:
+    "SIÓDMY SEGMENT PRAWEJ"
+    "KOLUMNY BRAMĘ OTWIERA"
+
+[14]
+approach facing=0 run=0 x=12 y=15 final=0
+describe
+  message:
+    "RUCHOMY KAMIEŃ"
+open-replacement-45 redraw_background=129 removed_object=0 replacement_object=129
+
+[15]
+approach facing=1 run=0 x=22 y=17 final=1
+describe
+  message:
+    "RUCHOMY FRAGMENT"
+    "KOLUMNY"
+open-replacement-45 redraw_background=9 removed_object=111 replacement_object=13
+
+[16]
+approach facing=3 run=4 x=6 y=16 final=3
+describe
+  message:
+    "MAGICZNY OGIEŃ"
+cannot-take-37
+  message:
+    "NIE MOŻESZ,"
+    "TO TWÓR MAGII."
+
+[17]
+approach control=1
+describe
+  message:
+    "GŁOWA"
+    "^^^^^"
+    "PIERWSZY SEGMENT WĘŻA"
+
+[18]
+approach control=1
+describe
+  message:
+    "OGON"
+    "^^^^"
+    "CZWARTY SEGMENT WĘŻA"
+
+[19]
+approach control=1
+describe
+  message:
+    "TUŁÓW"
+    "^^^^^"
+    "DRUGI SEGMENT WĘŻA"
+
+[20]
+approach facing=0 run=1 x=17 y=14 final=0
+describe
+  message:
+    "SPIŻOWA BRAMA"
+open-with-item argument_1=13
+open-with-spell argument_1=13
+
+[21]
+approach facing=0 run=1 x=17 y=14 final=0
+describe
+  message:
+    "ZŁOTE DRZWI"
+open-with-item argument_1=129
+open-with-spell argument_1=129
+
+[22]
+approach control=1
+describe
+  message:
+    "KSIĘGA WĘŻA,"
+    "ZAMKNIĘTA MAGICZNĄ PIECZĘCIĄ."
+open-with-item argument_1=22
+spell-add-object added_object=22
+
+[23]
+approach control=1
+read-message
+  message:
+    "NIE SIĘGNIE PASZCZA OGONA"
+    "Z KAMIENI CZAR*WĘŻA POKONA"
+
+[24]
+approach facing=1 run=3 x=25 y=16 final=1
+describe
+  message:
+    "MYSIA DZIURA"
+enter-view
+
+[25]
+approach control=1
+describe-spell
+copy-spell
+
+[26]
+approach facing=3 run=7 x=3 y=18 final=3
+view-if-ready
+
+[27]
+approach control=1
+describe
+  message:
+    "TUŁÓW"
+    "^^^^^"
+    "TRZECI SEGMENT WĘŻA"
+
+[28]
+approach facing=0 run=0 x=19 y=16 final=0
+describe
+  message:
+    "CZARNOKSIĘŻNIK"
+listen
+  message:
+    "JEŚLI CHCESZ PRZEŻYĆ,"
+    "MUSISZ MI ZAPŁACIĆ."
+    "ODDAJ MI KLEPSYDRĘ CZASU."
+    "BĘDĘ WŁADAŁ"
+    "CZASEM I PRZESTRZENIĄ."
+pay-warlock
+  message:
+    "CO ROBISZ?"
+    "CHCESZ ODDAĆ WŁADZĘ NAD"
+    "ŚWIATEM W RĘCE CIEMNOŚCI?"
+    "JA CI NIE POZWOLĘ."
+    "SPRÓBUJ OSZUKAĆ CZARNOKSIĘŻNIKA."
+    "AUTOR"
+
+[29]
+approach facing=3 run=0 x=12 y=15 final=3
+examine-if-ready-46
+  message:
+    "KRYSZTAŁOWA KULA"
+    "WIECZNEGO ŻYCIA"
+final-destruction argument_1=28 argument_2=28
+  message:
+    "POKONAŁEŚ CZARNOKSIĘŻNIKA."
+    "KLĄTWA RZUCONA PRZEZ NIEGO"
+    "STRACIŁA SWĄ MOC."
+    "CZY JEDNAK JEJ NISZCZYCIELSKA SIŁA"
+    "NIE CZYNI SPUSTOSZENIA W INNYCH"
+    "CZASACH? TEGO NIKT NIE WIE."
+    "TWÓJ NADWIŚLAŃSKI LUD OBWOŁAŁ"
+    "CIĘ KRÓLEM. RZĄDŹ SPRAWIEDLIWIE."
+
+[30]
+approach facing=3 run=2 x=8 y=16 final=3
+examine-if-ready-46
+  message:
+    "DĘBOWY KUFER"
+examine-if-ready-49
+  message:
+    "KUFER JEST ZAMKNIĘTY."
+    "CZARNOKSIĘŻNIK CIĘ OSZUKAŁ."
+
+[31]
+approach facing=1 run=6 x=28 y=18 final=1
+examine-if-ready-46
+  message:
+    "OBRAZ PRZEDSTAWIA CIEMNOŚĆ"

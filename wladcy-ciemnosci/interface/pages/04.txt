@@ -1,0 +1,4 @@
+# One quoted line per displayed line.
+"\\x0F\\x09========{MUZYKA}=========\\x14"
+"\\x12==============================\\x08"
+"\\x0C==={LESZEK}=={HOŁDA}==\\x0A\\x0B"

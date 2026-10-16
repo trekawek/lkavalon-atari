@@ -1,0 +1,368 @@
+# Shared action collections. Room selector rows choose these IDs.
+
+[00]
+approach control=2
+
+[01]
+approach control=255
+
+[02]
+approach facing=1 run=1 x=19 y=15 final=0
+close-replacement redraw_background=7 removed_object=108 replacement_object=8
+
+[03]
+approach control=1
+describe
+  message:
+    "TEKOWE DRZWI"
+
+[04]
+approach legacy=3,6,4,18
+describe
+  message:
+    "WNĘKA W ŚCIANIE"
+enter-view
+
+[05]
+approach control=1
+
+[06]
+approach facing=2 run=1 x=18 y=19 final=2
+enter-room
+
+[07]
+approach facing=3 run=4 x=6 y=16 final=3
+enter-room
+
+[08]
+approach facing=0 run=1 x=18 y=13 final=0
+enter-room
+
+[09]
+approach facing=1 run=2 x=27 y=16 final=1
+enter-room
+
+[10]
+approach control=1
+describe
+  message:
+    "ZWYKŁE LUSTRO"
+
+[11]
+approach control=1
+describe
+  message:
+    "DRZWICZKI"
+
+[12]
+approach facing=3 run=10 x=4 y=18 final=3
+open-with-item argument_1=116
+open-with-spell argument_1=116
+
+[13]
+approach legacy=3,10,4,18
+close-pair removed_object_1=116 removed_object_2=0 added_object=16 argument_4=0
+enter-view
+
+[14]
+approach facing=1 run=3 x=22 y=17 final=0
+open-pair removed_object=14 argument_2=0 added_object_1=114 added_object_2=0
+
+[15]
+approach facing=1 run=3 x=22 y=17 final=0
+close-pair removed_object_1=114 removed_object_2=0 added_object=14 argument_4=0
+enter-view
+
+[16]
+approach facing=1 run=3 x=22 y=15 final=2
+enter-view
+describe
+  message:
+    "MAHONIOWY BLAT"
+
+[17]
+approach facing=1 run=2 x=30 y=17 final=1
+enter-room
+
+[18]
+approach facing=3 run=2 x=1 y=17 final=3
+enter-room
+
+[19]
+approach facing=0 run=0 x=15 y=16 final=0
+describe
+  message:
+    "PODEST"
+enter-view
+
+[20]
+approach control=1
+describe
+  message:
+    "ZBROJA"
+
+[21]
+approach facing=3 run=1 x=17 y=14 final=0
+open-replacement-16 redraw_background=7 removed_object=8 replacement_object=108
+describe
+  message:
+    "KLAMKA"
+
+[22]
+approach legacy=2,1,14,19,2,0
+enter-room
+
+[23]
+approach facing=0 run=1 x=16 y=14 final=0
+enter-room
+
+[24]
+approach facing=3 run=1 x=11 y=16 final=3
+open-replacement-16 redraw_background=110 removed_object=146 replacement_object=46
+
+[25]
+approach facing=0 run=1 x=18 y=14 final=0
+enter-view
+
+[26]
+approach facing=3 run=1 x=11 y=16 final=3
+enter-view
+
+[27]
+approach facing=0 run=0 x=20 y=18 final=0
+examine-object
+open-with-item argument_1=131
+open-with-spell argument_1=131
+
+[28]
+approach facing=0 run=0 x=17 y=18 final=0
+enter-view
+
+[29]
+approach control=1
+describe-spell
+copy-spell
+
+[30]
+approach facing=0 run=0 x=6 y=17 final=3
+describe
+  message:
+    "PLATYNOWY ŁAŃCUCH"
+destroy-with-item argument_1=118 argument_2=49
+
+[31]
+approach facing=0 run=0 x=4 y=17 final=3
+lift-if-ready argument_1=18 argument_2=118 argument_3=0
+
+[32]
+approach control=1
+describe-object
+touch-magic-stone
+
+[33]
+approach facing=3 run=1 x=15 y=15 final=0
+describe
+  message:
+    "ZŁOTA SZTABA"
+destroy-with-item argument_1=123 argument_2=125
+
+[34]
+approach facing=3 run=1 x=15 y=15 final=0
+open-if-ready argument_1=22 argument_2=123 replacement_object=25
+
+[35]
+approach facing=1 run=1 x=17 y=16 final=0
+close-replacement redraw_background=22 removed_object=25 replacement_object=123
+
+[36]
+approach facing=1 run=2 x=27 y=17 final=1
+enter-view
+
+[37]
+approach facing=0 run=0 x=17 y=16 final=0
+open-magic-trap argument_1=22 argument_2=123 argument_3=25
+
+[38]
+approach facing=3 run=1 x=16 y=17 final=0
+describe
+  message:
+    "OBŁOCZEK"
+replace-with-spell argument_1=123 argument_2=53
+destroy-with-item argument_1=123 argument_2=53
+
+[39]
+approach facing=3 run=8 x=3 y=18 final=3
+enter-view
+
+[40]
+approach facing=3 run=5 x=6 y=16 final=3
+enter-view
+
+[41]
+approach facing=3 run=7 x=4 y=18 final=0
+enter-view
+
+[42]
+approach facing=3 run=1 x=17 y=15 final=0
+describe
+  message:
+    "WNĘTRZE PIECA"
+enter-view
+spell-remote-view view=2 required_spell=6 expected_object=218 replacement_object=219
+  message:
+    "NIE MA W PIECU"
+    "ODPOWIEDNIEGO SUROWCA"
+
+[43]
+approach control=1
+describe
+  message:
+    "PIEC"
+    "ALCHEMICZNY"
+
+[44]
+approach control=1
+add-scene-object added_object=136
+
+[45]
+approach control=1
+remove-scene-object removed_object=136
+enter-view
+
+[46]
+approach facing=1 run=1 x=19 y=14 final=0
+describe
+  message:
+    "MIECZ"
+take-reward redraw_background=8 removed_object=143 inventory_item=217 puzzle_cell=7
+
+[47]
+approach facing=1 run=3 x=22 y=17 final=0
+play-for-prize argument_1=204 argument_2=203 argument_3=218 argument_4=6
+  message:
+    "NIE GRAM KOŚCIĄ,"
+    "KTÓRA MA OCZKA"
+describe
+  message:
+    "CHIMERYCZNY"
+    "HAZARDZISTA"
+
+[48]
+approach facing=1 run=3 x=22 y=17 final=0
+enter-view
+
+[49]
+approach facing=1 run=1 x=19 y=15 final=0
+close-puzzle-view redraw_background=7 removed_object=108 replacement_object=8 puzzle_cell=7
+
+[50]
+approach facing=3 run=1 x=17 y=14 final=0
+describe
+  message:
+    "TWARZ SKĄPCA."
+    "STRAŻNIK DRZWI."
+pay-or-trigger-trap argument_1=7 argument_2=8 argument_3=108
+  message:
+    "CHCIAŁEŚ MNIE"
+    "OSZUKAĆ"
+
+[51]
+approach facing=3 run=1 x=15 y=16 final=0
+cannot-take-37
+  message:
+    "NIE MOŻESZ,"
+    "TO PRODUKT MAGII"
+replace-with-spell argument_1=44 argument_2=144
+
+[52]
+approach facing=0 run=0 x=15 y=16 final=0
+cannot-take-37
+  message:
+    "NIE MOŻESZ,"
+    "TO PRODUKT MAGII"
+spell-replacement argument_1=20 argument_2=50
+
+[53]
+approach facing=0 run=0 x=6 y=17 final=3
+describe
+  message:
+    "WĘZEŁ GORDYJSKI"
+destroy-with-item argument_1=118 argument_2=49
+
+[54]
+approach facing=0 run=1 x=17 y=13 final=0
+describe
+  message:
+    "NIEWIDZIALNE PRZEJŚCIE"
+enter-room
+
+[55]
+approach facing=3 run=2 x=1 y=17 final=3
+describe
+  message:
+    "TAJNE PRZEJŚCIE"
+cross-antimagic-wall
+
+[56]
+approach facing=3 run=2 x=11 y=16 final=3
+describe
+  message:
+    "PTAK"
+catch-with-item redraw_background=110 removed_object=148 inventory_item=209 puzzle_cell=0 required_item=11
+
+[57]
+approach facing=3 run=10 x=4 y=18 final=3
+describe
+  message:
+    "NIC NIE WIDZISZ"
+spell-remove-object removed_object=149 required_spell=8
+
+[58]
+approach facing=0 run=0 x=4 y=17 final=3
+describe
+  message:
+    "CIĘŻKA SPIŻOWA"
+    "KRATA"
+cannot-take-41
+  message:
+    "TO WYMAGA"
+    "WIĘKSZEJ SIŁY"
+replace-with-spell argument_1=18 argument_2=118
+
+[59]
+approach control=1
+describe
+  message:
+    "ZWYKŁY GOBELIN"
+
+[60]
+approach control=1
+describe
+  message:
+    "MAGICZNY GOBELIN"
+
+[61]
+approach facing=0 run=2 x=17 y=14 final=2
+describe
+  message:
+    "WNĘKA CZASU"
+travel-through-time
+
+[62]
+approach facing=0 run=1 x=15 y=16 final=0
+describe-spell
+copy-hidden-spell argument_1=20
+
+[63]
+approach facing=1 run=2 x=30 y=17 final=1
+cross-antimagic-wall
+
+[64]
+approach facing=1 run=10 x=29 y=18 final=1
+describe
+  message:
+    "LUSTRO Z NAPISEM"
+read-message
+  message:
+    "CZAR SIŁY"
+    "SCHOWAŁ ALCHEMIK"

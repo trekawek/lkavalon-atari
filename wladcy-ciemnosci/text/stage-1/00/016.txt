@@ -1,0 +1,6 @@
+# One quoted line per displayed line.
+"GŁOWA TUBYLCA"
+"\\x76\\x76\\x76"
+"KAMIENNA PŁASKORZEŹBA"
+"BOHATERA LUB"
+"POSZUKIWANEGO KRYMINALISTY"

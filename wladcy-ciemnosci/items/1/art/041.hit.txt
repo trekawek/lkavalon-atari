@@ -1,0 +1,8 @@
+# wladcy-ciemnosci, items/1, resource 41, variant -
+size 3 4
+legend 1=221
+grid
+.1.
+.11
+111
+111

@@ -1,0 +1,4 @@
+# One quoted line per displayed line.
+"{SCENARIUSZ}"
+"\\xA0"
+"{~DANUTA  PANTOŁA}"

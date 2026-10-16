@@ -1,0 +1,5 @@
+# Room 13; shared art is in stages/1/art.txt.
+stage 1
+colors 04 F8 1C
+layers 3 4 7 13 21 10 47 11
+notice none

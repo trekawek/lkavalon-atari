@@ -1,0 +1,7 @@
+# Initial mutable drawables. 0 reserves an empty slot; 1 is a placeholder.
+# IDs 2..99 select shared art frame 0; 102..199 select frame 2.
+# IDs 202+ are items. View 0 is the room; later views are close-ups.
+view 0 107 0 0
+view 1 23 0
+view 2 121 0
+view 3 115 203

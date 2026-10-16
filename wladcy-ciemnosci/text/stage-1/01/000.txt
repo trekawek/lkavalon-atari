@@ -1,0 +1,6 @@
+# One quoted line per displayed line.
+"MUSIAŁEM WYJECHAĆ."
+"DOBYTEK SCHOWAŁEM"
+"I OZNACZYŁEM"
+"\\x76\\x76\\x76"
+"BANITA"

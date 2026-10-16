@@ -17,7 +17,6 @@ overwriting the current native assets.
 from __future__ import annotations
 
 import argparse
-import structured_assets
 from pathlib import Path
 
 
@@ -29,10 +28,12 @@ ASSETS_BY_GAME = {
         {"path": "music/ad2044.snd", "start": 0x5E00, "size": 0xE2F},
     ),
     "klatwa": (
-        {"path": "graphics/cursors/player-planes.bin", "start": 0x4E8D, "size": 39},
+        {"path": "interface/cursor.pmg", "start": 0x4E8D, "size": 39},
+        {"path": "world/initial.txt", "start": 0x5562, "size": 881},
     ),
     "wladcy-ciemnosci": (
-        {"path": "graphics/cursors/player-planes.bin", "start": 0x4E9C, "size": 39},
+        {"path": "interface/cursor.pmg", "start": 0x4E9C, "size": 39},
+        {"path": "world/initial.txt", "start": 0x5502, "size": 888},
     ),
 }
 ASSET_SIZES = {
@@ -49,7 +50,12 @@ class AssetError(ValueError):
 
 def dependencies(game: str) -> tuple[str, ...]:
     """Return game-relative native inputs for build prerequisites."""
-    return tuple(asset["path"] for asset in ASSETS_BY_GAME[game])
+    paths = tuple(asset["path"] for asset in ASSETS_BY_GAME[game])
+    if game in ("klatwa", "wladcy-ciemnosci"):
+        import gam_world
+        root = Path(__file__).resolve().parents[1] / game
+        paths += tuple(str(path.relative_to(root)) for path in gam_world.dependencies(root))
+    return tuple(dict.fromkeys(paths))
 
 
 def bytes_lines(data: bytes):
@@ -66,11 +72,17 @@ def read_asset(game_root: Path, name: str) -> bytes:
     path = root / name
     if not path.resolve().is_relative_to(root):
         raise AssetError(f"INCBIN asset escapes game directory: {name}")
-    try:
-        data = structured_assets.encode_file(root, name)
-    except (OSError, structured_assets.AssetError) as exc:
-        raise AssetError(f"cannot read INCBIN asset {name}: {exc}") from exc
     expected = ASSET_SIZES[name]
+    try:
+        if name == "world/initial.txt":
+            import gam_world
+            data = gam_world.encode_world(root)
+            profile, _ = gam_world._initial(root)
+            expected = profile["end"] - profile["base"]
+        else:
+            data = path.read_bytes()
+    except (OSError, ValueError) as exc:
+        raise AssetError(f"cannot read INCBIN asset {name}: {exc}") from exc
     if len(data) != expected:
         raise AssetError(
             f"INCBIN asset {name}: expected {expected} bytes, got {len(data)}"

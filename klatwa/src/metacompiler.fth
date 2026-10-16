@@ -68,4 +68,4 @@ A200 CONSTANT T-LAST
 ( address T: name defines an executable target CFA emitter. )
 ( value #16 and value #8 emit target literal instructions. )
 ( Target has no boot-loader overlap; disk tail is asset data. )
-( Its D3 disk must already contain the original game assets. )
+( D3 can be blank, or contain the freshly built assets. )

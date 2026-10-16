@@ -1,0 +1,224 @@
+# Shared action collections. Room selector rows choose these IDs.
+
+[00]
+item 1
+
+[01]
+item 201
+drop-item
+
+[02]
+item 202
+
+[03]
+item 203
+describe-inline
+  message:
+    "PIĘŚCIAK"
+take-item
+
+[04]
+item 204
+describe-inline
+  message:
+    "MAGICZNA"
+    "LASKA"
+take-item
+
+[05]
+item 205
+describe-inline
+  message:
+    "CZARNY PIOTRUŚ"
+take-item
+transform-with-power required_power=2 replacement_item=207
+
+[06]
+item 206
+describe-inline
+  message:
+    "KLUCZ"
+take-item
+
+[07]
+item 207
+describe-inline
+  message:
+    "BIAŁY PIOTR"
+    "\\x76\\x76\\x76"
+    "CZYLI CZARNY PIOTRUŚ"
+    "PO ZMIANIE IDEOLOGII"
+take-item
+transform-with-power required_power=2 replacement_item=205
+
+[08]
+item 208
+describe-inline
+  message:
+    "ZAPISANA"
+    "TABLICZKA GLINIANA"
+read-action-state state_cell=9 argument_2=4 argument_3=30
+take-item
+
+[09]
+item 209
+describe-inline
+  message:
+    "BECZUŁKA Z NAPISEM"
+read-action-state state_cell=9 argument_2=4 argument_3=32
+take-item
+
+[10]
+item 210
+describe-inline
+  message:
+    "KRZEŚIWO"
+take-item
+
+[11]
+item 211
+describe-inline
+  message:
+    "PŁONĄCY"
+    "KAGANEK"
+refuse-take error_message=81
+extinguish argument_1=0 replacement_item=213 updated_state_cell=15 darkness_state_cell=17 darkness_message=72
+
+[12]
+item 212
+describe-inline
+  message:
+    "KOŚĆ NIEZGODY"
+take-set-two-states state_value_1=2 state_cell_1=7 state_value_2=4 state_cell_2=11
+
+[13]
+item 213
+describe-inline
+  message:
+    "KAGANEK"
+    "OŚWIATY"
+take-item
+light-with-item required_item=10 replacement_item=211 argument_3=80 argument_4=11 argument_5=1 argument_6=15 required_state_cell=16
+fill-with-item-36 required_item=9 message=79 state_value=1 state_cell=16
+
+[14]
+item 214
+describe-inline
+  message:
+    "TOPÓR WOJENNY"
+take-item
+bury-in-room-range exclusive_room_lower=0 exclusive_room_upper=5 additional_allowed_room=7 argument_4=74 argument_5=73 argument_6=4 argument_7=7 required_item=27
+
+[15]
+item 215
+describe-inline
+  message:
+    "ZAMKNIĘTE"
+    "NACZYNIE SZKLANE"
+take-item
+break-release-power argument_1=3 power_id=3 requirement_1=20 requirement_2=56 text="NIEWIDKI"
+
+[16]
+item 216
+
+[17]
+item 217
+describe-inline
+  message:
+    "MAGICZNE JAJO"
+take-item
+break-release-power argument_1=0 power_id=1 requirement_1=56 requirement_2=56 text="ŻYCIA"
+
+[18]
+item 218
+describe-inline
+  message:
+    "JĘZYK"
+take-item
+
+[19]
+item 219
+describe-inline
+  message:
+    "MIEDZIAK"
+take-item
+transform-with-power required_power=4 replacement_item=225
+
+[20]
+item 220
+describe-inline
+  message:
+    "DZIWNA"
+    "CZAPKA"
+take-item
+
+[21]
+item 221
+describe-inline
+  message:
+    "ZOSTAŁEŚ OSZUKANY"
+    "\\x76\\x76\\x76"
+    "W BUTELCE JEST"
+    "BRUDNA WODA"
+take-item
+transform-with-power required_power=2 replacement_item=222
+
+[22]
+item 222
+describe-inline
+  message:
+    "CZYSTA WÓDKA"
+take-item
+transform-with-power required_power=2 replacement_item=221
+
+[23]
+item 223
+describe-inline
+  message:
+    "KOKON"
+take-item
+break-release-power argument_1=0 power_id=2 requirement_1=56 requirement_2=56 text="PRZEMIANY"
+
+[24]
+item 224
+describe-inline
+  message:
+    "PRZEKLĘTY PRZEDMIOT"
+    "Z PRZYSZŁOSCI"
+take-item
+release-power-in-view-79 required_room=1 required_view=2 error_message=90 argument_4=0 power_id=4 requirement_1=56 requirement_2=56 text="MNOŻENIA"
+transform-with-power required_power=55 replacement_item=224
+
+[25]
+item 225
+describe-inline
+  message:
+    "DZIESIĘĆ"
+    "MIEDZIAKÓW"
+take-item
+
+[26]
+item 226
+
+[27]
+item 227
+describe-inline
+  message:
+    "ŁOPATKA"
+take-item
+
+[28]
+item 228
+describe-inline
+  message:
+    "SKOBELEK"
+    "\\x76\\x76\\x76\\x76"
+    "PREKURSOR KLUCZA"
+take-item
+
+[29]
+item 229
+describe-inline
+  message:
+    "BUKŁACZEK"
+take-item
